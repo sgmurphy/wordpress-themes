@@ -1,0 +1,39 @@
+.customize-control-ht--typography li.ht--typography-line-height,
+.customize-control-ht--typography li.ht--typography-font-size,
+.customize-control-ht--typography li.ht--typography-letter-spacing{
+    clear: both;
+    margin-bottom: 15px;
+}
+
+.ht--typography-loading {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.ht--typography-customize-control-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ht--typography-font-family,
+.ht--typography-text-transform{
+    float: left;
+    width: 48%;
+    margin-bottom: 10px;
+}
+
+.ht--typography-font-style,
+.ht--typography-text-decoration{
+    float: right;
+    width: 48%;
+    margin-bottom: 10px;
+}
+
+.ht--typography-color{
+    position: relative;
+}
+
+.customize-control.has-switchers li > .control-wrap:not(.active) {
+    display: none;
+    width: 100%;
+}
