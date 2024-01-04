@@ -20,3 +20,8 @@ jobs:
         cache: 'pip'
     - run: pip install -r requirements.txt
     - run: python mirror-themes.py
+    - run: |
+        git config --global user.name 'Sean Murphy'
+        git config --global user.email 'sean@iamseanmurphy.com'
+        git commit -am "Updated themes"
+        git push
