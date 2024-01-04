@@ -83,11 +83,11 @@
 	*/
 
 		// Colors
-		ashe_customizer_label( 'colors_content_accent', 'General', 'https://www.youtube.com/watch?v=cW6qT8OocpE' );
+		ashe_customizer_label( 'colors_content_accent', 'General', 'https://www.youtube.com/watch?v=MAQxlKnHR4U' );
 		ashe_customizer_label( 'background_image', 'Body Background', '' );
 
 		// General Layouts
-		ashe_customizer_label( 'general_sidebar_width', 'General', 'https://www.youtube.com/watch?v=WhEWOo8PoB0' );
+		ashe_customizer_label( 'general_sidebar_width', 'General', 'https://www.youtube.com/watch?v=rdpSx4H56M0' );
 		ashe_customizer_label( 'general_home_layout', 'Page Layouts', '' );
 		ashe_customizer_label( 'general_header_width', 'Boxed Controls', '' );
 
@@ -95,10 +95,10 @@
 		ashe_customizer_checkbox_label( 'top_bar_label', '' );
 
 		// Page Header
-		ashe_customizer_checkbox_label( 'header_image_label', 'https://www.youtube.com/watch?v=xH4Z-d_KlQk' );
+		ashe_customizer_checkbox_label( 'header_image_label', 'https://www.youtube.com/watch?v=Cv-bd_MCAaU' );
 
 		// Site Identity
-		ashe_customizer_label( 'custom_logo', 'Logo Setup', 'https://www.youtube.com/watch?v=W_IoRYj1pKY' );
+		ashe_customizer_label( 'custom_logo', 'Logo Setup', 'https://www.youtube.com/watch?v=iLyeE0rR16o' );
 		ashe_customizer_label( 'site_icon', 'Favicon', '' );
 
 		// Main Navigation
@@ -106,16 +106,16 @@
 		ashe_customizer_label( 'main_nav_mini_logo', 'Logo', '' );
 
 		// Featured Slider
-		ashe_customizer_checkbox_label( 'featured_slider_label', 'https://www.youtube.com/watch?v=H9i-cKOey98' );
+		ashe_customizer_checkbox_label( 'featured_slider_label', 'https://www.youtube.com/watch?v=TKzjEdPfh5g' );
 
 		// Featured Links
-		ashe_customizer_checkbox_label( 'featured_links_label', 'https://www.youtube.com/watch?v=pCtjGwieCoo' );
+		ashe_customizer_checkbox_label( 'featured_links_label', 'https://www.youtube.com/watch?v=eYPYED6obms' );
 		ashe_customizer_label( 'featured_links_title_1', 'Featured Link #1', '' );
 		ashe_customizer_label( 'featured_links_title_2', 'Featured Link #2', '' );
 		ashe_customizer_label( 'featured_links_title_3', 'Featured Link #3', '' );
 
 		// Blog Page
-		ashe_customizer_label( 'blog_page_post_description', 'General', 'https://www.youtube.com/watch?v=DgtVfFQo7H8' );
+		ashe_customizer_label( 'blog_page_post_description', 'General', 'https://www.youtube.com/watch?v=e4xTOMSS00A' );
 		ashe_customizer_label( 'blog_page_show_dropcaps', 'Post Elements', '' );
 
 		// Single Page
@@ -123,7 +123,7 @@
 		ashe_customizer_label( 'single_page_related_title', 'Post Footer', '' );
 		
 		// Social Media
-		ashe_customizer_label( 'social_media_icon_1', 'Social Icon #1', 'https://www.youtube.com/watch?v=yiQLoofNYYs' );
+		ashe_customizer_label( 'social_media_icon_1', 'Social Icon #1', 'https://www.youtube.com/watch?v=5y7_GjF1P3U' );
 		ashe_customizer_label( 'social_media_icon_2', 'Social Icon #2', '' );
 		ashe_customizer_label( 'social_media_icon_3', 'Social Icon #3', '' );
 		ashe_customizer_label( 'social_media_icon_4', 'Social Icon #4', '' );
@@ -133,7 +133,7 @@
 		ashe_customizer_label( 'typography_nav_family', 'Navigation', '' );
 
 		// Copyright
-		ashe_customizer_label( 'page_footer_copyright', 'Copyright', 'https://www.youtube.com/watch?v=NoOQmxSm5rk' );
+		ashe_customizer_label( 'page_footer_copyright', 'Copyright', 'https://www.youtube.com/watch?v=VpYOufJK_jY' );
 
 		// Contditional Logics
 		ashe_customizer_select( 'featured_slider_display', '#customize-control-ashe_options-featured_slider_category', 'category' );

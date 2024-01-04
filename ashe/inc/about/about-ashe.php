@@ -24,7 +24,7 @@ function ashe_about_page_output() {
 
 		<div class="welcome-text">
 			<p>
-				<span><?php /* translators: %s theme name */ printf( esc_html__( '%s theme is one of the most Popular Free WordPress theme of 2021-2023 years. To understand better what the theme can offer, please click the button below.', 'ashe' ), esc_html( $theme_data->Name ) ); ?></span>
+				<span><?php /* translators: %s theme name */ printf( esc_html__( '%s theme is one of the most Popular Free WordPress theme of 2021-2024 years. To understand better what the theme can offer, please click the button below.', 'ashe' ), esc_html( $theme_data->Name ) ); ?></span>
 				<br>
 				
 			</p>
@@ -108,7 +108,7 @@ function ashe_about_page_output() {
 					<?php else : ?>
 						<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=woocommerce' ), 'install-plugin_woocommerce' ) ); ?>" id="ashe-woocommerce-install" class="button button-primary"><?php esc_html_e( 'Install Woocommerce', 'ashe' ); ?></a>
 					<?php endif; ?>
-					<a style="width: 215px; display: block" href="<?php echo esc_url('https://wp-royal-themes.com/video-tutorial-coming-soon/') ?>" target="_blank" class="button button-primary import-video"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Shop Setup Video Tutorial', 'ashe' ); ?></a>
+					<!-- <a style="width: 215px; display: block" href="<?php echo esc_url('https://wp-royal-themes.com/video-tutorial-coming-soon/') ?>" target="_blank" class="button button-primary import-video"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Shop Setup Video Tutorial', 'ashe' ); ?></a> -->
 				</div>
 
 				<div class="column-width-4">
@@ -271,66 +271,66 @@ function ashe_about_page_output() {
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Setup Menu', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=wuggfN2nzDM"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=zCrAbVshkEs"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('nav-menus.php')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Setup Logo Image', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=W_IoRYj1pKY"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=iLyeE0rR16o"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=title_tagline')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Setup Social Media', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=yiQLoofNYYs"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=5y7_GjF1P3U"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=ashe_social_media')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Setup Copyright', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=NoOQmxSm5rk"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=VpYOufJK_jY"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=ashe_page_footer')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Setup Colors', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=cW6qT8OocpE"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=MAQxlKnHR4U"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=ashe_colors')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Setup Header Image', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=xH4Z-d_KlQk"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=Cv-bd_MCAaU"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=header_image')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Setup Random Header Images', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=sayr8QwpbrM"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=8BaiFbxuX9c"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=header_image')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Setup Featured Slider', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=H9i-cKOey98"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=TKzjEdPfh5g"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=ashe_featured_slider')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Setup Featured Links', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=pCtjGwieCoo"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=eYPYED6obms"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=ashe_featured_links')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Customize General Layouts', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=WhEWOo8PoB0"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=rdpSx4H56M0"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=ashe_general')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Customize Blog Page', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=DgtVfFQo7H8"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=e4xTOMSS00A"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=ashe_blog_page')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Create Blog Post', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=gvW0FhT-cSQ"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=cQk0Ndst2jU"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Translate The Theme', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=7LtyVjw46r8"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=1nZ6sUZel7c"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 				</div>
 
 			</div>
@@ -441,7 +441,7 @@ function ashe_about_page_output() {
 				<tbody>
 					<tr>
 						<td>
-							<h3><?php esc_html_e( '800+ Google Fonts', 'ashe' ); ?></h3>
+							<h3><?php esc_html_e( '1400+ Google Fonts', 'ashe' ); ?></h3>
 						</td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
