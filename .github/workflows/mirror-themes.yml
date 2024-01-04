@@ -1,4 +1,4 @@
-name: Mirror WordPress Plugins
+name: Mirror WordPress Themes
 
 on:
   workflow_dispatch: {}
@@ -19,4 +19,4 @@ jobs:
         python-version: '3.10'
         cache: 'pip'
     - run: pip install -r requirements.txt
-    - run: python mirror-plugins.py
+    - run: python mirror-themes.py
