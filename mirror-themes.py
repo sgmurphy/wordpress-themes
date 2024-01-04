@@ -8,7 +8,7 @@ from ratelimit import RateLimitException
 from concurrent.futures import ThreadPoolExecutor
 
 @on_exception(expo, RateLimitException, max_tries=8)
-def get_plugins(page=1, active_installs_threshold=50000):
+def get_plugins(page=1):
     plugins = []
 
     print(f'Fetching plugins info page {page}...')
@@ -23,9 +23,6 @@ def get_plugins(page=1, active_installs_threshold=50000):
     data = response.json()
 
     for plugin in data['plugins']:
-        if plugin['active_installs'] < active_installs_threshold:
-            return plugins
-
         plugins.append({
             'slug': plugin['slug'],
             'version': plugin['version'],
@@ -33,10 +30,10 @@ def get_plugins(page=1, active_installs_threshold=50000):
             'download_link': plugin['download_link']
         })
 
-    return plugins + get_plugins(page + 1, active_installs_threshold) if page < data['info']['pages'] else plugins
+    return plugins + get_plugins(page + 1) if page < data['info']['pages'] else plugins
 
 @on_exception(expo, RateLimitException, max_tries=8)
-def get_themes(page=1, active_installs_threshold=50000):
+def get_themes(page=1):
     themes = []
 
     print(f'Fetching themes info page {page}...')
@@ -51,9 +48,6 @@ def get_themes(page=1, active_installs_threshold=50000):
     data = response.json()
 
     for theme in data['themes']:
-        if theme['active_installs'] < active_installs_threshold:
-            return themes
-
         themes.append({
             'slug': theme['slug'],
             'version': theme['version'],
@@ -61,7 +55,7 @@ def get_themes(page=1, active_installs_threshold=50000):
             'download_link': theme['download_link']
         })
 
-    return themes + get_themes(page + 1, active_installs_threshold) if page < data['info']['pages'] else themes
+    return themes + get_themes(page + 1) if page < data['info']['pages'] else themes
 
 def download_file(url, filepath):
     print(f'Downloading {url}...')
@@ -78,7 +72,7 @@ def download_file(url, filepath):
             print(f'Could not extract zip {filepath}')
 
 if __name__ == '__main__':
-    themes = get_themes(active_installs_threshold=50000)
+    themes = [theme for theme in get_themes() if theme['active_installs'] >= 50000]
 
     with ThreadPoolExecutor(max_workers=20) as executor:
         running_tasks = [executor.submit(download_file(theme['download_link'], f'{theme["slug"]}.{theme["version"]}.zip')) for theme in themes]
