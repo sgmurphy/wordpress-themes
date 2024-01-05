@@ -34,6 +34,18 @@ h6 {
 }
 
 
+// headings when have a different wrapper tag
+.ct-module-title,
+.related-entry-title,
+.woocommerce-loop-product__title,
+.woocommerce-loop-category__title {
+
+	&:is(p, span) {
+		color: var(--theme-heading-color);
+	}
+}
+
+
 // hr line
 hr {
 	background-color: var(--theme-form-field-border-initial-color);

@@ -298,6 +298,26 @@ $options = [
 									'product_title' => [
 										'label' => __('Title', 'blocksy'),
 										'options' => [
+											'heading_tag' => [
+												'label' => __('Heading tag', 'blocksy'),
+												'type' => 'ct-select',
+												'value' => 'h2',
+												'view' => 'text',
+												'design' => 'inline',
+												'choices' => blocksy_ordered_keys(
+													[
+														'h1' => 'H1',
+														'h2' => 'H2',
+														'h3' => 'H3',
+														'h4' => 'H4',
+														'h5' => 'H5',
+														'h6' => 'H6',
+														'p' => 'p',
+														'span' => 'span',
+													]
+												),
+											],
+
 											'spacing' => [
 												'label' => __( 'Bottom Spacing', 'blocksy' ),
 												'type' => 'ct-slider',
@@ -539,7 +559,7 @@ $options = [
 								],
 
 								'cardProductTitleColor' => [
-									'label' => __( 'Title Color', 'blocksy' ),
+									'label' => __( 'Title Font Color', 'blocksy' ),
 									'type'  => 'ct-color-picker',
 									'design' => 'block:right',
 									'responsive' => true,
@@ -559,7 +579,35 @@ $options = [
 										[
 											'title' => __( 'Initial', 'blocksy' ),
 											'id' => 'default',
-											'inherit' => 'var(--theme-heading-2-color, var(--theme-headings-color))'
+											'inherit' => [
+												'var(--theme-heading-1-color, var(--theme-headings-color))' => [
+													'woo_card_layout:array-ids:product_title:heading_tag' => 'h1'
+												],
+
+												'var(--theme-heading-2-color, var(--theme-headings-color))' => [
+													'woo_card_layout:array-ids:product_title:heading_tag' => 'h2'
+												],
+
+												'var(--theme-heading-3-color, var(--theme-headings-color))' => [
+													'woo_card_layout:array-ids:product_title:heading_tag' => 'h3'
+												],
+
+												'var(--theme-heading-4-color, var(--theme-headings-color))' => [
+													'woo_card_layout:array-ids:product_title:heading_tag' => 'h4'
+												],
+
+												'var(--theme-heading-5-color, var(--theme-headings-color))' => [
+													'woo_card_layout:array-ids:product_title:heading_tag' => 'h5'
+												],
+
+												'var(--theme-heading-6-color, var(--theme-headings-color))' => [
+													'woo_card_layout:array-ids:product_title:heading_tag' => 'h6'
+												],
+
+												'var(--theme-text-color)' => [
+													'woo_card_layout:array-ids:product_title:heading_tag' => 'span|p'
+												],
+											]
 										],
 
 										[
@@ -627,7 +675,7 @@ $options = [
 								],
 
 								'cardProductPriceColor' => [
-									'label' => __( 'Price Color', 'blocksy' ),
+									'label' => __( 'Price Font Color', 'blocksy' ),
 									'type'  => 'ct-color-picker',
 									'design' => 'block:right',
 									'responsive' => true,

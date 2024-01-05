@@ -48,7 +48,7 @@ const WooColumnsAndRows = ({
 					}}
 				/>
 				<p className="ct-option-description">
-					{__('Number of columns', 'blc')}
+					{__('Number of columns', 'blocksy')}
 				</p>
 			</div>
 
@@ -57,7 +57,7 @@ const WooColumnsAndRows = ({
 					liftedOptionStateDescriptor={liftedOptionStateDescriptor}
 					option={{
 						min: 1,
-						max: 100,
+						max: 200,
 						responsive: false,
 						value: 4,
 						attr: {
@@ -83,7 +83,7 @@ const WooColumnsAndRows = ({
 					}}
 				/>
 				<p className="ct-option-description">
-					{__('Number of rows', 'blc')}
+					{__('Number of rows', 'blocksy')}
 				</p>
 			</div>
 		</div>

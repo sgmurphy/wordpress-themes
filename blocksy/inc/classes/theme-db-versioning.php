@@ -12,7 +12,14 @@ namespace Blocksy;
 
 class DbVersioning {
 	public function __construct() {
-		add_action('init', [$this, 'init']);
+		add_action(
+			'init',
+			[$this, 'init'],
+
+			// Some CPT plugins are registering their CPTs on init with
+			// priority 10. We need to run this after them.
+			15
+		);
 
 		add_action(
 			'blocksy:db-versioning:trigger-migration',
@@ -43,7 +50,7 @@ class DbVersioning {
 		$successfull_patches = 0;
 
 		if (count($patches_to_run) > 0) {
-			delete_transient('blocksy_dynamic_styles_descriptor');
+			// delete_transient('blocksy_dynamic_styles_descriptor');
 		}
 
 		foreach ($patches_to_run as $single_patch) {
@@ -178,22 +185,42 @@ class DbVersioning {
 
 			[
 				'version' => '2.0.0-beta26',
-				'cb' => [new DbVersioning\V200(), 'migrate']
+				'cb' => function () {
+					$obj = new DbVersioning\V200();
+					$obj->migrate();
+				}
 			],
 
 			[
 				'version' => '2.0.2',
-				'cb' => [new DbVersioning\V202(), 'migrate']
+				'cb' => function () {
+					$obj = new DbVersioning\V202();
+					$obj->migrate();
+				}
 			],
 
 			[
 				'version' => '2.0.3',
-				'cb' => [new DbVersioning\V203(), 'migrate']
+				'cb' => function () {
+					$obj = new DbVersioning\V203();
+					$obj->migrate();
+				}
 			],
 
 			[
 				'version' => '2.0.9',
-				'cb' => [new DbVersioning\V209(), 'migrate']
+				'cb' => function () {
+					$obj = new DbVersioning\V209();
+					$obj->migrate();
+				}
+			],
+
+			[
+				'version' => '2.0.15',
+				'cb' => function () {
+					$obj = new DbVersioning\V2015();
+					$obj->migrate();
+				}
 			]
 		];
 	}

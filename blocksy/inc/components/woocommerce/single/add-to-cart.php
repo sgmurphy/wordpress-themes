@@ -5,6 +5,8 @@ namespace Blocksy;
 class WooCommerceAddToCart {
 	use WordPressActionsManager;
 
+	private $handled_product_ids = [];
+
 	private $actions = [
 		[
 			'action' => 'woocommerce_before_add_to_cart_form',
@@ -40,6 +42,10 @@ class WooCommerceAddToCart {
 		]);
 	}
 
+	private function product_was_handled($product) {
+		return in_array($product->get_id(), $this->handled_product_ids);
+	}
+
 	private function output_cart_action_open() {
 		if (
 			(is_product() || wp_doing_ajax())
@@ -66,12 +72,20 @@ class WooCommerceAddToCart {
 		global $product;
 		global $root_product;
 
+		if ($this->product_was_handled($product)) {
+			return;
+		}
+
 		$root_product = $product;
 	}
 
 	public function woocommerce_before_add_to_cart_quantity() {
 		global $product;
 		global $root_product;
+
+		if ($this->product_was_handled($product)) {
+			return;
+		}
 
 		if (! $root_product) {
 			return;
@@ -98,6 +112,10 @@ class WooCommerceAddToCart {
 		global $product;
 		global $root_product;
 
+		if ($this->product_was_handled($product)) {
+			return;
+		}
+
 		if (! $root_product) {
 			return;
 		}
@@ -115,6 +133,10 @@ class WooCommerceAddToCart {
 
 	public function woocommerce_after_add_to_cart_button() {
 		global $product;
+
+		if ($this->product_was_handled($product)) {
+			return;
+		}
 
 		if (! $product) {
 			return;
@@ -154,12 +176,24 @@ class WooCommerceAddToCart {
 
 		echo '</div>';
 
-		$this->detach_hooks();
+
+		// On single product pages we know for sure that there's only one
+		// product that needs handling. On other pages or during AJAX requests,
+		// we need to make sure that we don't handle the same product twice.
+		if (is_product()) {
+			$this->detach_hooks();
+		} else {
+			$this->handled_product_ids[] = $product->get_id();
+		}
 	}
 
 	public function woocommerce_post_class($classes) {
 		global $product;
 		global $woocommerce_loop;
+
+		if ($this->product_was_handled($product)) {
+			return $classes;
+		}
 
 		$default_product_layout = blocksy_get_woo_single_layout_defaults();
 
@@ -232,5 +266,4 @@ class WooCommerceAddToCart {
 		return $classes;
 	}
 }
-
 

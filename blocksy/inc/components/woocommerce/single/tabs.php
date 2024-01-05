@@ -35,7 +35,11 @@ if ( !function_exists('blocksy_custom_accordion_tabs') ) {
 
 						<article id="tab-<?php echo esc_attr( $key ); ?>" aria-hidden="<?php echo $is_open && !$index ? "false" : "true" ?>" data-behaviour="drop-down">
 							<div class="entry-content">
-								<?php call_user_func( $tab['callback'], $key, $tab ); ?>
+								<?php
+									if (isset($tab['callback'])) {
+										call_user_func( $tab['callback'], $key, $tab );
+									}
+								?>
 							</div>
 						</article>
 					</div>

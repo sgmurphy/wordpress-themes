@@ -316,6 +316,7 @@ if ($type === 'type-1') {
 			'variableName' => 'margin-bottom',
 			'value' => $hero_margin_bottom,
 			'unit' => '',
+			'previousUnit' => 'px',
 		]);
 	}
 }

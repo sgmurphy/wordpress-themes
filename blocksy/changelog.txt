@@ -1,3 +1,17 @@
+2.0.16: 2024-01-05
+- Improvement: Make sure the header column is outputted when it is really needed
+
+2.0.15: 2024-01-04
+- New: Option to change heading html tag for product titles in archive
+- Improvement: Dynamic data block dont attempt to render a product field when WooCommerce is not present
+- Improvement: Embedded color picker closes if the view is scrolled using the scroll bar
+- Improvement: Increase the number of maximum rows in product archives
+- Improvement: Inserting WooCommerce related header elements and deactivating WooCommerce leaves ghost elements in header row
+- Improvement: Single post title type-1 bottom spacing unit is not migrating while updating from v1
+- Improvement: Trigger database migration after custom post types are declared to ensure correct css regeneration
+- Fix: Extra long links break WooCommerce product reviews CSS layout
+- Fix: Selecting "pages" search criteria for the search box element, along with two other criteria breaks the taxonomy filter
+
 2.0.14: 2023-12-26
 - Improvement: Better flow in dynamic data block in combination with products
 - Improvement: Don't apply height forms CSS to WooCommerce cart and checkout blocks

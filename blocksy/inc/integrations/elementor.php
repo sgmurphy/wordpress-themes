@@ -1,6 +1,11 @@
 <?php
 
 add_action('init', function () {
+
+	if (class_exists('Elementor\Plugin')) {
+		\Elementor\Plugin::$instance->experiments->remove_feature('block_editor_assets_optimize');
+	}
+
 	if (
 		get_option(
 			'elementor_disable_color_schemes',

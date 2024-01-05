@@ -511,7 +511,7 @@ if (
 		'css' => $css,
 		'tablet_css' => $tablet_css,
 		'mobile_css' => $mobile_css,
-		'selector' => blocksy_prefix_selector('.ct-related-posts .ct-block-title', $prefix),
+		'selector' => blocksy_prefix_selector('.ct-related-posts .ct-module-title', $prefix),
 		'variableName' => 'horizontal-alignment',
 		'value' => blocksy_get_theme_mod($prefix . '_related_label_alignment', 'CT_CSS_SKIP_RULE'),
 		'unit' => '',
@@ -540,7 +540,7 @@ if (
 		'css' => $css,
 		'tablet_css' => $tablet_css,
 		'mobile_css' => $mobile_css,
-		'selector' => blocksy_prefix_selector('.ct-related-posts-container .ct-block-title', $prefix),
+		'selector' => blocksy_prefix_selector('.ct-related-posts .ct-module-title', $prefix),
 	]);
 
 	blocksy_output_colors([
@@ -551,7 +551,7 @@ if (
 		'css' => $css,
 		'variables' => [
 			'default' => [
-				'selector' => blocksy_prefix_selector('.ct-related-posts-container .ct-block-title', $prefix),
+				'selector' => blocksy_prefix_selector('.ct-related-posts .ct-module-title', $prefix),
 				'variable' => 'theme-heading-color'
 			],
 		],
@@ -567,7 +567,7 @@ if (
 		'css' => $css,
 		'tablet_css' => $tablet_css,
 		'mobile_css' => $mobile_css,
-		'selector' => blocksy_prefix_selector('.related-entry-title', $prefix),
+		'selector' => blocksy_prefix_selector('.ct-related-posts .related-entry-title', $prefix),
 	]);
 
 	blocksy_output_colors([
@@ -579,12 +579,12 @@ if (
 		'css' => $css,
 		'variables' => [
 			'default' => [
-				'selector' => blocksy_prefix_selector('.related-entry-title', $prefix),
+				'selector' => blocksy_prefix_selector('.ct-related-posts .related-entry-title', $prefix),
 				'variable' => 'theme-heading-color'
 			],
 
 			'hover' => [
-				'selector' => blocksy_prefix_selector('.related-entry-title', $prefix),
+				'selector' => blocksy_prefix_selector('.ct-related-posts .related-entry-title', $prefix),
 				'variable' => 'theme-link-hover-color'
 			],
 		],

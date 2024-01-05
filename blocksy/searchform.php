@@ -137,6 +137,27 @@ if ($has_taxonomy_filter) {
 		)
 	);
 
+	if (empty($allowed_post_types)) {	
+		$allowed_post_types[] = 'post';
+		$allowed_post_types[] = 'page';
+
+		if (class_exists('WooCommerce')) {
+			$allowed_post_types[] = 'product';
+		}
+		
+		$all_cpts = blocksy_manager()->post_types->get_supported_post_types();
+		
+		if (function_exists('is_bbpress')) {
+			$allowed_post_types[] = 'forum';
+			$allowed_post_types[] = 'topic';
+			$allowed_post_types[] = 'reply';
+		}
+		
+		foreach ($all_cpts as $single_cpt) {
+			$allowed_post_types[] = $single_cpt;
+		}
+	}
+
 	foreach ($allowed_post_types as $post_type) {
 		$terms_els = [];
 
@@ -244,7 +265,11 @@ $button_html_atts = array_merge(
 	<input type="search" <?php echo $class_output ?> placeholder="<?php echo $placeholder; ?>" value="<?php echo get_search_query(); ?>" name="s" autocomplete="off" title="<?php echo __('Search for...', 'blocksy') ?>" aria-label="<?php echo __('Search for...', 'blocksy') ?>">
 
 	<div class="ct-search-form-controls">
-		<?php if ($has_taxonomy_filter) {
+		<?php if (
+			$has_taxonomy_filter
+			&&
+			count($options) > 1
+		) {
 			echo blocksy_html_tag(
 				'select',
 				[

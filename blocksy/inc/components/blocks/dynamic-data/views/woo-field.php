@@ -1,11 +1,14 @@
 <?php
 
+if (! class_exists('WooCommerce')) {
+	return;
+}
+
 $value_fallback = blocksy_akg('fallback', $attributes, '');
 
 $value = '';
 
 $has_fallback = false;
-
 
 $product = wc_get_product();
 

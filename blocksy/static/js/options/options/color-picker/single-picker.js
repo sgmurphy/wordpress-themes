@@ -225,10 +225,11 @@ const SinglePicker = ({
 			additionalRefs={[modalRef]}
 			onOutsideClick={(e) => {
 				if (
-					el.current.closest('.ct-color-picker-container') ===
+					(el.current.closest('.ct-color-picker-container') ===
 						e.target.closest('.ct-color-picker-container') &&
-					(e.target.closest('.ct-color-picker-single') ||
-						e.target.matches('.ct-color-picker-single'))
+						(e.target.closest('.ct-color-picker-single') ||
+							e.target.matches('.ct-color-picker-single'))) ||
+					el.current.closest('.ct-modal-tabs-content') === e.target
 				) {
 					return
 				}

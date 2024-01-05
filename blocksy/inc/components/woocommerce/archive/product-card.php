@@ -285,7 +285,7 @@ add_action($action_to_hook, function () {
 					);
 
 					echo blocksy_html_tag(
-						'h2',
+						blocksy_akg('heading_tag', $layout, 'h2'),
 						[
 							'class' => esc_attr(
 								apply_filters(
@@ -476,7 +476,7 @@ add_action($action_to_hook, function () {
 					}
 
 					echo blocksy_html_tag(
-						'h2',
+						blocksy_akg('heading_tag', $layout, 'h2'),
 						[
 							'class' => 'woocommerce-loop-category__title',
 						],

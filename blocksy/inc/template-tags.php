@@ -581,7 +581,7 @@ function blocksy_related_posts($location = null) {
 
 			<?php if (! empty($label)) { ?>
 				<?php do_action('blocksy:single:related_posts:title:before') ?>
-				<<?php echo $label_tag ?> class="ct-block-title">
+				<<?php echo $label_tag ?> class="ct-module-title">
 					<?php echo wp_kses_post($label) ?>
 				</<?php echo $label_tag ?>>
 				<?php do_action('blocksy:single:related_posts:title:after') ?>

@@ -37,10 +37,6 @@ class Blocksy_Header_Builder_Elements {
 				continue;
 			}
 
-			if ($render->is_row_empty($row)) {
-				// return '';
-			}
-
 			$mobile_content .= $render->render_items_collection(
 				$row['placements'][0]['items'],
 				[

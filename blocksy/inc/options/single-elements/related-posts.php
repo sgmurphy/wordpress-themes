@@ -190,7 +190,7 @@ $options = [
 							'sync' => [
 								'prefix' => $prefix,
 								'selector' => '.ct-related-posts',
-								'loader_selector' => '.ct-block-title',
+								'loader_selector' => '.ct-module-title',
 								'render' => function () {
 									blocksy_related_posts();
 								}

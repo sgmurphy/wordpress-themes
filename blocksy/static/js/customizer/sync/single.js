@@ -112,7 +112,7 @@ watchOptionsWithPrefix({
 
 		if (id === `${prefix}_related_label`) {
 			Array.from(
-				document.querySelectorAll('.ct-related-posts .ct-block-title')
+				document.querySelectorAll('.ct-related-posts .ct-module-title')
 			).map((el) => {
 				el.innerHTML = getOptionFor('related_label', prefix)
 			})
