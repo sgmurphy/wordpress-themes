@@ -4381,9 +4381,6 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 
 .selector-footer { display: none; }
 
-/* Style for Ultimate VC Addon in Admin area */
-.smile_icon li > [class^="auxicon-"], .smile_icon li [class*=" auxicon-"] { margin: 0 !important; width: 100%; height: 100%; }
-
 .wp-ulike-notice, .sbi_review_notice, .yp-update-info-bar { display: none; }
 
 .grp-wrapper { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg=="); }

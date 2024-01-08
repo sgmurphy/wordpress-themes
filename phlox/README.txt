@@ -3,8 +3,8 @@ Contributors: averta, averta_support
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, custom-colors, editor-style, featured-images, featured-image-header, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, translation-ready, blog, e-commerce, portfolio, threaded-comments, translation-ready
 Requires PHP: 5.4
 Requires at least: 4.6
-Tested up to: 6.2.0
-Stable tag: 2.15.1
+Tested up to: 6.4.2
+Stable tag: 2.15.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,7 +28,7 @@ Phlox is a modern, lightweight and customizable theme perfect for almost any typ
 
 = Ownership and licensing =
 
-Phlox WordPress Theme, Copyright 2016, 2017 averta
+Phlox WordPress Theme, Copyright 2016, 2024 averta
 Phlox is distributed under the terms of the GNU GPL
 
 This theme is free software: except as may be stated below (if at all), you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License or (at your option) any later version.
@@ -94,6 +94,11 @@ Phlox bundles the following third-party resources:
 
 
 == Changelog ==
+
+= 2.15.5 =
+- [Fix]: Fixed an issue with typography options of pagination.
+- [Fix]: An issue with displaying widgets in sidebar fixed
+- [Fix]: B bug with mailchimp element after importing a template fixed.
 
 = 2.12.0 =
 - [Fix]: Bug fix and compatibility improvement with CF7 plugin

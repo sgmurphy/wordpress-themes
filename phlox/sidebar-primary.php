@@ -5,7 +5,7 @@
  *
  * 
  * @package    Auxin
- * @author     averta (c) 2014-2023
+ * @author     averta (c) 2014-2024
  * @link       http://averta.net
 */
 
@@ -60,9 +60,7 @@
         // if the current page is a blog page
         if ( ( $post->post_type == 'post' || strpos( $page_template_name, 'blog' ) !== false ) && is_active_sidebar( 'auxin-blog-primary-sidebar-widget-area' ) ) {
             echo '<div class="aux-widget-area">';
-            if( is_active_sidebar( 'auxin-blog-primary-sidebar-widget-area' ) ){
-                dynamic_sidebar( 'auxin-blog-primary-sidebar-widget-area' );
-            }
+            dynamic_sidebar( 'auxin-blog-primary-sidebar-widget-area' );
             echo '</div>';
         } elseif ( function_exists('is_shop') && is_shop() ) {
             
@@ -74,9 +72,7 @@
 
         } elseif( is_active_sidebar( 'auxin-pages-primary-sidebar-widget-area' ) ){
             echo '<div class="aux-widget-area">';
-            if( is_active_sidebar( 'auxin-pages-primary-sidebar-widget-area' ) ){
-                dynamic_sidebar( 'auxin-pages-primary-sidebar-widget-area' );
-            }
+            dynamic_sidebar( 'auxin-pages-primary-sidebar-widget-area' );
             echo '</div>';
         }
 

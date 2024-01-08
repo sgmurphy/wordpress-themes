@@ -4,6 +4,6 @@
  *
  * 
  * @package    Auxin
- * @author     averta (c) 2014-2023
+ * @author     averta (c) 2014-2024
  * @link       http://averta.net
  */

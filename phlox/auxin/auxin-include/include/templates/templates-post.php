@@ -4,7 +4,7 @@
  *
  * 
  * @package    Auxin
- * @author     averta (c) 2014-2023
+ * @author     averta (c) 2014-2024
  * @link       http://averta.net
  */
 
@@ -430,7 +430,7 @@ function auxin_content_main_class( $class = '' ){
         $classes['user_entry']    = 'aux-user-entry';
 
         // determine if the content has sidebar
-        if( 'no-sidebar' !== $classes['sidebar_pos'] ){
+        if( 'no-sidebar' !== $classes['sidebar_pos'] && ( auxin_primary_sidebar_has_content() || auxin_secondary_sidebar_has_content() ) ){
             $classes['sidebar_pos'] .= ' aux-has-sidebar';
         }
 

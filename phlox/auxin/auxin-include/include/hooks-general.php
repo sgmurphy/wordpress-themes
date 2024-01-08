@@ -4,7 +4,7 @@
  *
  * 
  * @package    Auxin
- * @author     averta (c) 2014-2023
+ * @author     averta (c) 2014-2024
  * @link       http://averta.net
 */
 
@@ -331,9 +331,17 @@ function auxin_set_content_width(){
     $sidebar_num = (int) auxin_has_sidebar( $post );
     if( $sidebar_num ){
         if( 1 === $sidebar_num ){
-            $theme_width -= 300;
+            if ( auxin_primary_sidebar_has_content() ) {
+                $theme_width -= 300;
+            }
         } elseif( 2 === $sidebar_num ){
-            $theme_width -= 560;
+            if ( auxin_primary_sidebar_has_content() && auxin_secondary_sidebar_has_content() ) {
+                $theme_width -= 560;
+            }
+
+            if ( auxin_primary_sidebar_has_content() || auxin_secondary_sidebar_has_content() ) {
+                $theme_width -= 300;
+            }
         }
     }
 
@@ -751,6 +759,7 @@ function auxin_allow_img_srcset_shortcode( $allowedposttags, $context ) {
             'id' => [],
             'cx' => [],
             'cy' => [],
+            'r' => [],
             'gradienttransform' => [],
             'gradientunits' => []
         ];
@@ -766,7 +775,8 @@ function auxin_allow_img_srcset_shortcode( $allowedposttags, $context ) {
             'height' => [],
             'x' => [],
             'y' => [],
-            'opacity' => []
+            'opacity' => [],
+            'color-interpolation-filters' => []
         ];
         $allowedposttags['feoffset'] = [
             'dx' => [],
@@ -779,7 +789,14 @@ function auxin_allow_img_srcset_shortcode( $allowedposttags, $context ) {
         ];
         $allowedposttags['feflood'] = [
             'flood-color' => [],
-            'flood-opacity' => []
+            'flood-opacity' => [],
+            'result' => []
+        ];
+        $allowedposttags['feblend'] = [
+            'mode' => [],
+            'in' => [],
+            'in2' => [],
+            'result' => []
         ];
         $allowedposttags['fecomposite'] = [
             'operator' => [],

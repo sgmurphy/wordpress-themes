@@ -4,7 +4,7 @@
  *
  * 
  * @package    Auxin
- * @author     averta (c) 2014-2023
+ * @author     averta (c) 2014-2024
  * @link       http://averta.net
  */
 
@@ -28,13 +28,10 @@ function auxin_theme_register_recommended_plugins() {
      */
     $plugins = array(
         array(
-            'name'             => __('Phlox Core Elements', 'phlox'),
-            'slug'             => 'auxin-elements',
-            'version'          => '2.9.12',
-            'source'           => 'https://www.phlox.pro/wp-content/uploads/2023/12/auxin-elements.zip',
-            'badge'            => __( 'Exclusive', 'phlox' ),
-            'required'         => true,
-            'categories'       => array('auxin', 'essential', 'bundled')
+            'name'      => __('Phlox Core Elements', 'phlox'),
+            'slug'      => 'auxin-elements',
+            'required'  => false,
+            'categories'=> array('auxin', 'essential')
         ),
 
         array(
@@ -728,14 +725,3 @@ function auxin_maybe_port_deprecated_elementor_footer_template() {
 
 add_action( 'admin_init', 'auxin_maybe_port_deprecated_elementor_footer_template', 12 );
 
-// todo: remove these lines and class-auxin-ajax-plugins file after approving auxin elements
-if ( !class_exists( 'Auxin_Welcome' ) ) {
-
-    function auxin_ajax_setup_plugins() {
-
-        Auxin_Ajax_Plugins::get_instance();
-
-	}
-
-    add_action( 'auxin_loaded'	, 'auxin_ajax_setup_plugins' );
-}

@@ -4,7 +4,7 @@
  *
  * 
  * @package    Auxin
- * @author     averta (c) 2014-2023
+ * @author     averta (c) 2014-2024
  * @link       http://averta.net
 */
 
@@ -1983,7 +1983,7 @@ class Auxin_Elementor_Edit_Template extends Auxin_Customize_Control {
  * A simple customizer controller for displaying information
  * 
  * @package    Auxin
- * @author     averta (c) 2014-2023
+ * @author     averta (c) 2014-2024
  * @link       http://averta.net
  */
 class Auxin_Customize_Info extends Auxin_Customize_Control {
@@ -2047,7 +2047,7 @@ class Auxin_Customize_Info extends Auxin_Customize_Control {
  * A simple customizer controller for displaying information
  * 
  * @package    Auxin
- * @author     averta (c) 2014-2023
+ * @author     averta (c) 2014-2024
  * @link       http://averta.net
  */
 class Auxin_Customize_Color_Repeater extends Auxin_Customize_Control {
