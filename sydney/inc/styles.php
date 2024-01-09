@@ -17,6 +17,11 @@ if ( !class_exists( 'Sydney_Custom_CSS' ) ) :
 		private static $instance;
 
 		/**
+		 * Customizer JS
+		 */
+		public $customizer_js;
+
+		/**
 		 * Initiator
 		 */
 		public static function get_instance() {
@@ -188,8 +193,7 @@ if ( !class_exists( 'Sydney_Custom_CSS' ) ) :
             $custom .= "#secondary { background-color:" . esc_attr($sidebar_background) . "}"."\n";
             //Sidebar color
             $sidebar_color = get_theme_mod( 'sidebar_color', '#737C8C' );
-            $custom .= "#secondary, #secondary a { color:" . esc_attr($sidebar_color) . "}"."\n";	
-           
+            $custom .= "#secondary, #secondary a:not(.wp-block-button__link) { color:" . esc_attr($sidebar_color) . "}"."\n";           
 
             //Mobile menu icon
             $mobile_menu_color = get_theme_mod( 'mobile_menu_color', '#ffffff' );
