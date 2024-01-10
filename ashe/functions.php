@@ -160,7 +160,7 @@ function ashe_classic_widgets_notice() {
 
     ?>
 
-    <div class="notice is-dismissible ashe-widgets-notice-wrap">
+    <div class="is-dismissible ashe-widgets-notice-wrap">
     	<div>
         	<p><?php esc_html_e( 'Want to switch back to the Classic Widgets?', 'ashe' ); ?></p>
 
@@ -170,7 +170,7 @@ function ashe_classic_widgets_notice() {
         </div>
     </div>
 
-	<style>.widgets-php .ashe-widgets-notice-wrap{display:-webkit-box!important;display:-ms-flexbox!important;display:flex!important;max-width:360px;margin:0 auto;z-index:999;background:0 0;border:none;-webkit-box-shadow:none;box-shadow:none;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:10px}.widgets-php .ashe-widgets-notice-wrap>div{display:-webkit-box;display:-ms-flexbox;display:flex}.widgets-php .ashe-widgets-notice-wrap .button-primary{height:20px;line-height:26px;font-size:12px;letter-spacing:.5px;margin-left:10px;margin-top:5px}.widgets-php .ashe-widgets-notice-wrap .notice-dismiss{display:none}.widgets-php .ashe-widgets-notice{text-align:center} </style>
+	<style>.widgets-php .ashe-widgets-notice-wrap{display:-webkit-box!important;display:-ms-flexbox!important;display:flex!important;position:relative;max-width:360px;margin:0 auto;z-index:999;background:0 0;border:none;-webkit-box-shadow:none;box-shadow:none;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:10px}.widgets-php .ashe-widgets-notice-wrap>div{display:-webkit-box;display:-ms-flexbox;display:flex}.widgets-php .ashe-widgets-notice-wrap .button-primary{height:20px;line-height:26px;font-size:12px;letter-spacing:.5px;margin-left:10px;margin-top:5px}.widgets-php .ashe-widgets-notice-wrap .notice-dismiss{display:none}.widgets-php .ashe-widgets-notice{text-align:center} </style>
 
     <?php
 }

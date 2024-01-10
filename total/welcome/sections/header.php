@@ -1,5 +1,5 @@
 <div class="welcome-header clearfix">
-    <a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-newyear&utm_campaign=total-upgrade'); ?>" target="_blank"><img style="width:100%;margin-bottom:40px;display:block;" src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/christmas-sale.jpg'); ?>"></a>
+    <!--<a href="<?php echo esc_url('https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-newyear&utm_campaign=total-upgrade'); ?>" target="_blank"><img style="width:100%;margin-bottom:40px;display:block;" src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/christmas-sale.jpg'); ?>"></a>-->
     <div class="welcome-intro">
         <h2>
             <?php
