@@ -32,7 +32,7 @@ class BlockWrapper {
 			'blocksy/widgets-wrapper',
 			[
 				'api_version' => 3,
-				'render_callback' => function ($attributes, $content) {
+				'render_callback' => function ($attributes, $content, $block) {
 					if (strpos($content, 'class="ct-') === false) {
 						return '';
 					}
@@ -46,7 +46,9 @@ class BlockWrapper {
 					$attributes = wp_parse_args(
 						$attributes,
 						[
-							'style' => []
+							'style' => [],
+							'isCollapsible' => false,
+							'defaultExpanded' => true,
 						]
 					);
 
@@ -55,6 +57,76 @@ class BlockWrapper {
 					);
 
 					$wp_styles_css = isset($wp_styles['css']) ? $wp_styles['css'] : '';
+
+					if ($attributes['isCollapsible']) {
+						$blocks = $block->parsed_block['innerBlocks'];
+
+						$heading_block_index = array_search(
+							'core/heading',
+							array_column($blocks, 'blockName')
+						);
+
+						if (
+							$heading_block_index === 0
+							&&
+							count($blocks) > 1
+						) {
+							$id = '';
+
+							$accordion_block = $blocks[$heading_block_index + 1];
+							$accordion_block_html = render_block($accordion_block);
+
+							$p = new \WP_HTML_Tag_Processor($accordion_block_html);
+
+							$accordion_tag = 'DIV';
+
+							while ($p->next_tag()) {
+								if (
+									$p->get_tag() === 'DIV'
+									&&
+									$p->has_class('ct-filter-widget-wrapper')
+								) {
+									$p->set_attribute('data-behaviour', 'drop-down');
+									$p->set_attribute('aria-hidden', $attributes['defaultExpanded'] ? 'false' : 'true');
+
+									break;
+								}
+							}
+
+							$id = $p->get_attribute('id');
+							$accordion_block_html = $p->get_updated_html();
+
+							$heading_block = $blocks[$heading_block_index];
+							$heading_block_html = render_block($heading_block);
+
+							$p = new \WP_HTML_Tag_Processor($heading_block_html);
+
+							$heading_tag = '';
+							$header_tags = array( 'H1', 'H2', 'H3', 'H4', 'H5', 'H6' );
+
+							while ($p->next_tag()) {
+								if (in_array($p->get_tag(), $header_tags, true)) {
+									$heading_tag = $p->get_tag();
+
+									$p->add_class('ct-expandable-trigger');
+									$p->set_attribute('aria-expanded', $attributes['defaultExpanded'] ? 'true' : 'false');
+
+									break;
+								}
+							}
+
+							$icon_content = '<svg class="ct-icon" width="10" height="10" viewBox="0 0 25 25"><path d="M.207 17.829 12.511 5.525l1.768 1.768L1.975 19.596z"></path><path d="m10.721 7.243 1.768-1.768L24.793 17.78l-1.768 1.767z"></path></svg>';
+
+							$heading_block_html = preg_replace (
+								'/<\\/' . strtolower($heading_tag) . '>/',
+								$icon_content . '</' . strtolower($heading_tag) . '>',
+								$p->get_updated_html(),
+								1
+							);
+
+							$content = $heading_block_html . $accordion_block_html;
+						}
+					}
 
 					return blocksy_html_tag(
 						'div',

@@ -4,7 +4,7 @@
 }
 
 .checkout_coupon {
-	margin-bottom: 50px;
+	margin-bottom: 2rem;
 	border-bottom: 1px dashed rgba(224, 229, 235, 0.8);
 
 	p {
@@ -16,12 +16,12 @@
 	.form-row {
 		@include media-breakpoint-up (md) {
 			width: 49%;
-			margin-bottom: 40px;
+			margin-bottom: 2rem;
 		}
 	}
 
-	.button {
-		width: 100%;
-		min-width: 100%;
-	}
+	// .button {
+	// 	width: 100%;
+	// 	min-width: 100%;
+	// }
 }

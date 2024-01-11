@@ -79,6 +79,55 @@ export const getWooGeneralVariablesFor = () => ({
 		type: 'color',
 	},
 
+	// info message
+	info_message_text_color: [
+		{
+			selector: '.woocommerce-info, .woocommerce-thankyou-order-received, .wc-block-components-notice-banner.is-info',
+			variable: 'theme-text-color',
+			type: 'color:default',
+		},
+
+		{
+			selector: '.woocommerce-info, .woocommerce-thankyou-order-received, .wc-block-components-notice-banner.is-info',
+			variable: 'theme-link-hover-color',
+			type: 'color:hover',
+		},
+	],
+
+	info_message_background_color: {
+		selector: '.woocommerce-info, .woocommerce-thankyou-order-received, .wc-block-components-notice-banner.is-info',
+		variable: 'background-color',
+		type: 'color',
+	},
+
+	info_message_button_text_color: [
+		{
+			selector: '.woocommerce-info, .wc-block-components-notice-banner.is-info',
+			variable: 'theme-button-text-initial-color',
+			type: 'color:default',
+		},
+
+		{
+			selector: '.woocommerce-info, .wc-block-components-notice-banner.is-info',
+			variable: 'theme-button-text-hover-color',
+			type: 'color:hover',
+		},
+	],
+
+	info_message_button_background: [
+		{
+			selector: '.woocommerce-info, .wc-block-components-notice-banner.is-info',
+			variable: 'theme-button-background-initial-color',
+			type: 'color:default',
+		},
+
+		{
+			selector: '.woocommerce-info, .wc-block-components-notice-banner.is-info',
+			variable: 'theme-button-background-hover-color',
+			type: 'color:hover',
+		},
+	],
+
 	// success message
 	success_message_text_color: [
 		{
@@ -128,85 +177,36 @@ export const getWooGeneralVariablesFor = () => ({
 		},
 	],
 
-	// info message
-	info_message_text_color: [
-		{
-			selector: '.woocommerce-info, .woocommerce-thankyou-order-received',
-			variable: 'theme-text-color',
-			type: 'color:default',
-		},
-
-		{
-			selector: '.woocommerce-info, .woocommerce-thankyou-order-received',
-			variable: 'theme-link-hover-color',
-			type: 'color:hover',
-		},
-	],
-
-	info_message_background_color: {
-		selector: '.woocommerce-info, .woocommerce-thankyou-order-received',
-		variable: 'background-color',
-		type: 'color',
-	},
-
-	info_message_button_text_color: [
-		{
-			selector: '.woocommerce-info',
-			variable: 'theme-button-text-initial-color',
-			type: 'color:default',
-		},
-
-		{
-			selector: '.woocommerce-info',
-			variable: 'theme-button-text-hover-color',
-			type: 'color:hover',
-		},
-	],
-
-	info_message_button_background: [
-		{
-			selector: '.woocommerce-info',
-			variable: 'theme-button-background-initial-color',
-			type: 'color:default',
-		},
-
-		{
-			selector: '.woocommerce-info',
-			variable: 'theme-button-background-hover-color',
-			type: 'color:hover',
-		},
-	],
-
 	// error message
 	error_message_text_color: [
 		{
-			selector: '.woocommerce-error',
+			selector: '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 			variable: 'theme-text-color',
 			type: 'color:default',
 		},
 
 		{
-			selector: '.woocommerce-error',
+			selector: '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 			variable: 'theme-link-hover-color',
 			type: 'color:hover',
 		},
 	],
 
 	error_message_background_color: {
-		selector: '.woocommerce-error',
+		selector: '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 		variable: 'background-color',
 		type: 'color',
 	},
 
 	error_message_button_text_color: [
 		{
-			selector: '.woocommerce-error',
+			selector: '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 			variable: 'theme-button-text-initial-color',
 			type: 'color:default',
 		},
 
 		{
-			selector: '.woocommerce-error',
+			selector: '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 			variable: 'theme-button-text-hover-color',
 			type: 'color:hover',
 		},
@@ -214,13 +214,13 @@ export const getWooGeneralVariablesFor = () => ({
 
 	error_message_button_background: [
 		{
-			selector: '.woocommerce-error',
+			selector: '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 			variable: 'theme-button-background-initial-color',
 			type: 'color:default',
 		},
 
 		{
-			selector: '.woocommerce-error',
+			selector: '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 			variable: 'theme-button-background-hover-color',
 			type: 'color:hover',
 		},

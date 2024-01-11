@@ -1,0 +1,25 @@
+.woocommerce-page {
+
+	.wc-block-components-notice-banner {
+		margin: 0 0 2rem 0;
+
+		&:is(.is-info, .is-error, .is-success) {
+			border: none;
+			color: var(--theme-text-color);
+			background-color: var(--background-color);
+
+			svg {
+				fill: var(--theme-button-text-initial-color);
+				background-color: var(--theme-button-background-initial-color);
+			}
+		}
+
+		.wc-block-components-notice-banner__content {
+
+			.wc-forward {
+				text-decoration: none;
+				color: inherit !important;
+			}
+		}
+	}
+}

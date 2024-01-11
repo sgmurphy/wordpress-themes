@@ -1,11 +1,9 @@
-let mounted = false
-
 export const mount = (reference) => {
-	if (mounted) {
+	if (reference.popperMounted) {
 		return
 	}
 
-	mounted = true
+	reference.popperMounted = true
 
 	if (!reference.nextElementSibling) {
 		return
@@ -13,13 +11,11 @@ export const mount = (reference) => {
 
 	const target = reference.nextElementSibling
 
-	let initialPlacement =
-		reference.getBoundingClientRect().left > innerWidth / 2
-			? 'left'
-			: 'right'
-
 	const referenceRect = reference.getBoundingClientRect()
 	const targetRect = target.getBoundingClientRect()
+
+	let initialPlacement =
+		referenceRect.left > innerWidth / 2 ? 'left' : 'right'
 
 	let placement = initialPlacement
 

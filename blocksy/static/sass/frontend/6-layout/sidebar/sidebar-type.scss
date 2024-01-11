@@ -2,11 +2,6 @@
 	position: relative;
 	z-index: 1;
 
-	.widget-title:not(:empty) {
-		display: block;
-		// margin-bottom: 20px;
-	}
-
 	// widgets spacing
 	.ct-widget {
 		color: var(--theme-text-color);

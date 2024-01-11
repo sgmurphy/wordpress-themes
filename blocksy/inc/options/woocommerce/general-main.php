@@ -58,11 +58,11 @@ $options = [
 
 							'value' => [
 								'default' => [
-									'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									'color' => 'var(--theme-text-color)',
 								],
 
 								'hover' => [
-									'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									'color' => 'var(--theme-link-hover-color)',
 								],
 							],
 
@@ -70,13 +70,11 @@ $options = [
 								[
 									'title' => __( 'Initial', 'blocksy' ),
 									'id' => 'default',
-									'inherit' => 'var(--theme-text-color)'
 								],
 
 								[
 									'title' => __( 'Hover', 'blocksy' ),
 									'id' => 'hover',
-									'inherit' => 'var(--theme-link-hover-color)'
 								],
 							],
 						],

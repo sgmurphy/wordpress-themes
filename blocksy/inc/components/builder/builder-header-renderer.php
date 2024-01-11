@@ -253,10 +253,6 @@ class Blocksy_Header_Builder_Render extends Blocksy_Builder_Render {
 			'device' => 'desktop'
 		]);
 
-		if ($this->is_row_empty($row)) {
-			return '';
-		}
-
 		$row_config = $this->get_item_config_for($row['id']);
 
 		$simplified_id = str_replace(
@@ -411,7 +407,11 @@ class Blocksy_Header_Builder_Render extends Blocksy_Builder_Render {
 
 		$row_content = $start_placement . $middle_placement . $end_placement;
 
-		if (empty($row_content)) {
+		if (
+			empty($row_content)
+			&&
+			blocksy_akg('render_empty_row', $atts, 'no') === 'no'
+		) {
 			return '';
 		}
 

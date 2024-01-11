@@ -1,3 +1,10 @@
+2.0.17: 2024-01-11
+- Improvement: Better compatibility with Yith AJAX Filters and infinite/load more pagination
+- Improvement: Make sure the new WooCommerce block notices inherit the theme styles
+- Improvement: Mini cart is not aligned correctly on small screens in RTL mode
+- Improvement: Respect locale setting when deciding how to count words in excerpts
+- Fix: Lazy loading does not get disabled for the "featured image" separate layer for single posts
+
 2.0.16: 2024-01-05
 - Improvement: Make sure the header column is outputted when it is really needed
 

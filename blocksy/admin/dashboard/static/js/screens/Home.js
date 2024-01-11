@@ -10,6 +10,25 @@ import ctEvents from 'ct-events'
 
 import $ from 'jquery'
 
+const DocumentationButton = ({ href = '' }) => {
+	if (ctDashboardLocalizations.plugin_data.hide_docs_section) {
+		return null
+	}
+
+	return (
+		<a href={href} target="_blank">
+			<svg
+				width="14px"
+				height="14px"
+				viewBox="0 0 24 24"
+				fill="currentColor">
+				<path d="M23 2.1h-6.6c-1.8 0-3.4.9-4.4 2.3C11 3 9.4 2.1 7.6 2.1H1c-.6 0-1 .4-1 1v16.5c0 .6.4 1 1 1h7.7c1.3 0 2.3 1 2.3 2.3 0 .6.4 1 1 1s1-.4 1-1c0-1.3 1-2.3 2.3-2.3H23c.6 0 1-.4 1-1V3.1c0-.6-.4-1-1-1zM11 19.3c-.7-.4-1.5-.7-2.3-.7H2V4.1h5.6c1.9 0 3.4 1.5 3.4 3.4v11.8zm11-.7h-6.7c-.8 0-1.6.2-2.3.7V7.5c0-1.9 1.5-3.4 3.4-3.4H22v14.5z" />
+			</svg>
+			{__('Documentation', 'blocksy')}
+		</a>
+	)
+}
+
 const Home = () => {
 	const {
 		is_companion_active,
@@ -54,21 +73,7 @@ const Home = () => {
 							</p>
 
 							<div className="ct-shortcut-actions">
-								<a
-									href="https://creativethemes.com/blocksy/docs/general-options/colors/"
-									target="_blank">
-									<svg
-										width="14px"
-										height="14px"
-										viewBox="0 0 24 24"
-										fill="currentColor">
-										<path d="M23 2.1h-6.6c-1.8 0-3.4.9-4.4 2.3C11 3 9.4 2.1 7.6 2.1H1c-.6 0-1 .4-1 1v16.5c0 .6.4 1 1 1h7.7c1.3 0 2.3 1 2.3 2.3 0 .6.4 1 1 1s1-.4 1-1c0-1.3 1-2.3 2.3-2.3H23c.6 0 1-.4 1-1V3.1c0-.6-.4-1-1-1zM11 19.3c-.7-.4-1.5-.7-2.3-.7H2V4.1h5.6c1.9 0 3.4 1.5 3.4 3.4v11.8zm11-.7h-6.7c-.8 0-1.6.2-2.3.7V7.5c0-1.9 1.5-3.4 3.4-3.4H22v14.5z" />
-									</svg>
-									{__(
-										'Documentation',
-										'blocksy'
-									)}
-								</a>
+								<DocumentationButton href="https://creativethemes.com/blocksy/docs/general-options/colors/" />
 
 								<a
 									href={`${
@@ -80,7 +85,7 @@ const Home = () => {
 										height="15px"
 										viewBox="0 0 24 24"
 										fill="currentColor">
-										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z"/>
+										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z" />
 									</svg>
 									{__('Customize', 'blocksy')}
 								</a>
@@ -98,21 +103,7 @@ const Home = () => {
 							</p>
 
 							<div className="ct-shortcut-actions">
-								<a
-									href="https://creativethemes.com/blocksy/docs/general-options/typography/"
-									target="_blank">
-									<svg
-										width="14px"
-										height="14px"
-										viewBox="0 0 24 24"
-										fill="currentColor">
-										<path d="M23 2.1h-6.6c-1.8 0-3.4.9-4.4 2.3C11 3 9.4 2.1 7.6 2.1H1c-.6 0-1 .4-1 1v16.5c0 .6.4 1 1 1h7.7c1.3 0 2.3 1 2.3 2.3 0 .6.4 1 1 1s1-.4 1-1c0-1.3 1-2.3 2.3-2.3H23c.6 0 1-.4 1-1V3.1c0-.6-.4-1-1-1zM11 19.3c-.7-.4-1.5-.7-2.3-.7H2V4.1h5.6c1.9 0 3.4 1.5 3.4 3.4v11.8zm11-.7h-6.7c-.8 0-1.6.2-2.3.7V7.5c0-1.9 1.5-3.4 3.4-3.4H22v14.5z" />
-									</svg>
-									{__(
-										'Documentation',
-										'blocksy'
-									)}
-								</a>
+								<DocumentationButton href="https://creativethemes.com/blocksy/docs/general-options/typography/" />
 
 								<a
 									href={`${
@@ -124,7 +115,7 @@ const Home = () => {
 										height="15px"
 										viewBox="0 0 24 24"
 										fill="currentColor">
-										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z"/>
+										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z" />
 									</svg>
 									{__('Customize', 'blocksy')}
 								</a>
@@ -142,21 +133,7 @@ const Home = () => {
 							</p>
 
 							<div className="ct-shortcut-actions">
-								<a
-									href="https://creativethemes.com/blocksy/docs/header-elements/header-builder-elements/"
-									target="_blank">
-									<svg
-										width="14px"
-										height="14px"
-										viewBox="0 0 24 24"
-										fill="currentColor">
-										<path d="M23 2.1h-6.6c-1.8 0-3.4.9-4.4 2.3C11 3 9.4 2.1 7.6 2.1H1c-.6 0-1 .4-1 1v16.5c0 .6.4 1 1 1h7.7c1.3 0 2.3 1 2.3 2.3 0 .6.4 1 1 1s1-.4 1-1c0-1.3 1-2.3 2.3-2.3H23c.6 0 1-.4 1-1V3.1c0-.6-.4-1-1-1zM11 19.3c-.7-.4-1.5-.7-2.3-.7H2V4.1h5.6c1.9 0 3.4 1.5 3.4 3.4v11.8zm11-.7h-6.7c-.8 0-1.6.2-2.3.7V7.5c0-1.9 1.5-3.4 3.4-3.4H22v14.5z" />
-									</svg>
-									{__(
-										'Documentation',
-										'blocksy'
-									)}
-								</a>
+								<DocumentationButton href="https://creativethemes.com/blocksy/docs/header-elements/header-builder-elements/" />
 
 								<a
 									href={`${
@@ -168,7 +145,7 @@ const Home = () => {
 										height="15px"
 										viewBox="0 0 24 24"
 										fill="currentColor">
-										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z"/>
+										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z" />
 									</svg>
 									{__('Customize', 'blocksy')}
 								</a>
@@ -186,21 +163,7 @@ const Home = () => {
 							</p>
 
 							<div className="ct-shortcut-actions">
-								<a
-									href="https://creativethemes.com/blocksy/docs/footer-options/footer-introduction/"
-									target="_blank">
-									<svg
-										width="14px"
-										height="14px"
-										viewBox="0 0 24 24"
-										fill="currentColor">
-										<path d="M23 2.1h-6.6c-1.8 0-3.4.9-4.4 2.3C11 3 9.4 2.1 7.6 2.1H1c-.6 0-1 .4-1 1v16.5c0 .6.4 1 1 1h7.7c1.3 0 2.3 1 2.3 2.3 0 .6.4 1 1 1s1-.4 1-1c0-1.3 1-2.3 2.3-2.3H23c.6 0 1-.4 1-1V3.1c0-.6-.4-1-1-1zM11 19.3c-.7-.4-1.5-.7-2.3-.7H2V4.1h5.6c1.9 0 3.4 1.5 3.4 3.4v11.8zm11-.7h-6.7c-.8 0-1.6.2-2.3.7V7.5c0-1.9 1.5-3.4 3.4-3.4H22v14.5z" />
-									</svg>
-									{__(
-										'Documentation',
-										'blocksy'
-									)}
-								</a>
+								<DocumentationButton href="https://creativethemes.com/blocksy/docs/footer-options/footer-introduction/" />
 
 								<a
 									href={`${
@@ -212,7 +175,7 @@ const Home = () => {
 										height="15px"
 										viewBox="0 0 24 24"
 										fill="currentColor">
-										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z"/>
+										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z" />
 									</svg>
 									{__('Customize', 'blocksy')}
 								</a>
@@ -230,21 +193,7 @@ const Home = () => {
 							</p>
 
 							<div className="ct-shortcut-actions">
-								<a
-									href="https://creativethemes.com/blocksy/docs/post-types/blog-posts/"
-									target="_blank">
-									<svg
-										width="14px"
-										height="14px"
-										viewBox="0 0 24 24"
-										fill="currentColor">
-										<path d="M23 2.1h-6.6c-1.8 0-3.4.9-4.4 2.3C11 3 9.4 2.1 7.6 2.1H1c-.6 0-1 .4-1 1v16.5c0 .6.4 1 1 1h7.7c1.3 0 2.3 1 2.3 2.3 0 .6.4 1 1 1s1-.4 1-1c0-1.3 1-2.3 2.3-2.3H23c.6 0 1-.4 1-1V3.1c0-.6-.4-1-1-1zM11 19.3c-.7-.4-1.5-.7-2.3-.7H2V4.1h5.6c1.9 0 3.4 1.5 3.4 3.4v11.8zm11-.7h-6.7c-.8 0-1.6.2-2.3.7V7.5c0-1.9 1.5-3.4 3.4-3.4H22v14.5z" />
-									</svg>
-									{__(
-										'Documentation',
-										'blocksy'
-									)}
-								</a>
+								<DocumentationButton href="https://creativethemes.com/blocksy/docs/post-types/blog-posts/" />
 
 								<a
 									href={`${
@@ -256,7 +205,7 @@ const Home = () => {
 										height="15px"
 										viewBox="0 0 24 24"
 										fill="currentColor">
-										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z"/>
+										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z" />
 									</svg>
 									{__('Customize', 'blocksy')}
 								</a>
@@ -274,21 +223,7 @@ const Home = () => {
 							</p>
 
 							<div className="ct-shortcut-actions">
-								<a
-									href="https://creativethemes.com/blocksy/docs/post-types/single-posts/"
-									target="_blank">
-									<svg
-										width="14px"
-										height="14px"
-										viewBox="0 0 24 24"
-										fill="currentColor">
-										<path d="M23 2.1h-6.6c-1.8 0-3.4.9-4.4 2.3C11 3 9.4 2.1 7.6 2.1H1c-.6 0-1 .4-1 1v16.5c0 .6.4 1 1 1h7.7c1.3 0 2.3 1 2.3 2.3 0 .6.4 1 1 1s1-.4 1-1c0-1.3 1-2.3 2.3-2.3H23c.6 0 1-.4 1-1V3.1c0-.6-.4-1-1-1zM11 19.3c-.7-.4-1.5-.7-2.3-.7H2V4.1h5.6c1.9 0 3.4 1.5 3.4 3.4v11.8zm11-.7h-6.7c-.8 0-1.6.2-2.3.7V7.5c0-1.9 1.5-3.4 3.4-3.4H22v14.5z" />
-									</svg>
-									{__(
-										'Documentation',
-										'blocksy'
-									)}
-								</a>
+								<DocumentationButton href="https://creativethemes.com/blocksy/docs/post-types/single-posts/" />
 
 								<a
 									href={`${
@@ -302,7 +237,7 @@ const Home = () => {
 										height="15px"
 										viewBox="0 0 24 24"
 										fill="currentColor">
-										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z"/>
+										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z" />
 									</svg>
 									{__('Customize', 'blocksy')}
 								</a>
@@ -320,21 +255,7 @@ const Home = () => {
 							</p>
 
 							<div className="ct-shortcut-actions">
-								<a
-									href="https://creativethemes.com/blocksy/docs/post-types/pages/"
-									target="_blank">
-									<svg
-										width="14px"
-										height="14px"
-										viewBox="0 0 24 24"
-										fill="currentColor">
-										<path d="M23 2.1h-6.6c-1.8 0-3.4.9-4.4 2.3C11 3 9.4 2.1 7.6 2.1H1c-.6 0-1 .4-1 1v16.5c0 .6.4 1 1 1h7.7c1.3 0 2.3 1 2.3 2.3 0 .6.4 1 1 1s1-.4 1-1c0-1.3 1-2.3 2.3-2.3H23c.6 0 1-.4 1-1V3.1c0-.6-.4-1-1-1zM11 19.3c-.7-.4-1.5-.7-2.3-.7H2V4.1h5.6c1.9 0 3.4 1.5 3.4 3.4v11.8zm11-.7h-6.7c-.8 0-1.6.2-2.3.7V7.5c0-1.9 1.5-3.4 3.4-3.4H22v14.5z" />
-									</svg>
-									{__(
-										'Documentation',
-										'blocksy'
-									)}
-								</a>
+								<DocumentationButton href="https://creativethemes.com/blocksy/docs/post-types/pages/" />
 
 								<a
 									href={`${
@@ -346,7 +267,7 @@ const Home = () => {
 										height="15px"
 										viewBox="0 0 24 24"
 										fill="currentColor">
-										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z"/>
+										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z" />
 									</svg>
 									{__('Customize', 'blocksy')}
 								</a>
@@ -364,21 +285,7 @@ const Home = () => {
 							</p>
 
 							<div className="ct-shortcut-actions">
-								<a
-									href="https://creativethemes.com/blocksy/docs/general-options/sidebar/"
-									target="_blank">
-									<svg
-										width="14px"
-										height="14px"
-										viewBox="0 0 24 24"
-										fill="currentColor">
-										<path d="M23 2.1h-6.6c-1.8 0-3.4.9-4.4 2.3C11 3 9.4 2.1 7.6 2.1H1c-.6 0-1 .4-1 1v16.5c0 .6.4 1 1 1h7.7c1.3 0 2.3 1 2.3 2.3 0 .6.4 1 1 1s1-.4 1-1c0-1.3 1-2.3 2.3-2.3H23c.6 0 1-.4 1-1V3.1c0-.6-.4-1-1-1zM11 19.3c-.7-.4-1.5-.7-2.3-.7H2V4.1h5.6c1.9 0 3.4 1.5 3.4 3.4v11.8zm11-.7h-6.7c-.8 0-1.6.2-2.3.7V7.5c0-1.9 1.5-3.4 3.4-3.4H22v14.5z" />
-									</svg>
-									{__(
-										'Documentation',
-										'blocksy'
-									)}
-								</a>
+								<DocumentationButton href="https://creativethemes.com/blocksy/docs/general-options/sidebar/" />
 
 								<a
 									href={`${
@@ -390,7 +297,7 @@ const Home = () => {
 										height="15px"
 										viewBox="0 0 24 24"
 										fill="currentColor">
-										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z"/>
+										<path d="M4 11c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v7c0 .6.4 1 1 1zM12 11c-.6 0-1 .4-1 1v9c0 .6.4 1 1 1s1-.4 1-1v-9c0-.6-.4-1-1-1zM20 13c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1s-1 .4-1 1v9c0 .6.4 1 1 1zM7 13H1c-.6 0-1 .4-1 1s.4 1 1 1h2v6c0 .6.4 1 1 1s1-.4 1-1v-6h2c.6 0 1-.4 1-1s-.4-1-1-1zM15 7h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v4H9c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1zM23 15h-6c-.6 0-1 .4-1 1s.4 1 1 1h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h2c.6 0 1-.4 1-1s-.4-1-1-1z" />
 									</svg>
 									{__('Customize', 'blocksy')}
 								</a>

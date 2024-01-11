@@ -341,6 +341,11 @@ if (! function_exists('blocksy_debug')) {
 	}
 }
 
+// Deprecated.
+//
+// This function is no longer needed. Use StringHelpers class instead.
+// Keeping it for few more releases to avoid updates crashes.
+//
 // Ref: https://php.watch/versions/8.2/utf8_encode-utf8_decode-deprecated
 function blocksy_utf8_decode($s) {
 	$len = \strlen($s);

@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-05 17:12+0000\n"
+"POT-Creation-Date: 2024-01-11 18:05+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
@@ -282,7 +282,7 @@ msgstr ""
 msgid "We strongly recommend you to activate the"
 msgstr ""
 
-#: admin/notices/templates.php:43 admin/dashboard/static/js/screens/Home.js:552
+#: admin/notices/templates.php:43 admin/dashboard/static/js/screens/Home.js:459
 msgid "Blocksy Companion"
 msgstr ""
 
@@ -303,7 +303,7 @@ msgstr ""
 
 #: inc/classes/screen-manager.php:209, inc/options/customizer.php:118,
 #: inc/options/posts/categories.php:10,
-#: inc/options/woocommerce/card-product-elements.php:373
+#: inc/options/woocommerce/card-product-elements.php:406
 msgid "Categories"
 msgstr ""
 
@@ -389,8 +389,8 @@ msgstr ""
 #: inc/options/single-elements/featured-image.php:69,
 #: inc/options/single-elements/post-nav.php:41,
 #: inc/options/single-elements/related-posts.php:145,
-#: inc/options/woocommerce/card-product-elements.php:384,
-#: inc/options/woocommerce/general-main.php:642,
+#: inc/options/woocommerce/card-product-elements.php:417,
+#: inc/options/woocommerce/general-main.php:640,
 #: inc/options/woocommerce/single-product-layers.php:61,
 #: inc/options/woocommerce/single-product-layers.php:106,
 #: inc/options/woocommerce/single-product-layers.php:355,
@@ -623,11 +623,11 @@ msgstr ""
 #: inc/options/single-elements/post-share-box.php:592,
 #: inc/options/single-elements/related-posts.php:29,
 #: inc/options/woocommerce/archive-main.php:48,
-#: inc/options/woocommerce/card-product-elements.php:126,
-#: inc/options/woocommerce/general-main.php:440,
-#: inc/options/woocommerce/general-main.php:571,
-#: inc/options/woocommerce/general-main.php:821,
-#: inc/options/woocommerce/general-main.php:1157,
+#: inc/options/woocommerce/card-product-elements.php:159,
+#: inc/options/woocommerce/general-main.php:438,
+#: inc/options/woocommerce/general-main.php:569,
+#: inc/options/woocommerce/general-main.php:819,
+#: inc/options/woocommerce/general-main.php:1155,
 #: inc/options/woocommerce/single-main.php:49,
 #: inc/options/woocommerce/single-product-elements.php:14,
 #: inc/options/woocommerce/single-product-gallery.php:10,
@@ -986,7 +986,7 @@ msgstr ""
 #: inc/options/meta/page.php:111, inc/options/meta/post.php:76,
 #: inc/options/meta/post.php:110,
 #: inc/options/single-elements/post-share-box.php:96,
-#: inc/options/woocommerce/general-main.php:643,
+#: inc/options/woocommerce/general-main.php:641,
 #: inc/options/woocommerce/single-product-layers.php:41,
 #: inc/options/woocommerce/single-product-layers.php:62,
 #: inc/options/woocommerce/single-product-layers.php:107,
@@ -1037,8 +1037,8 @@ msgstr ""
 #: inc/options/single-elements/author-box.php:44,
 #: inc/options/single-elements/post-share-box.php:71,
 #: inc/options/woocommerce/archive-main.php:66,
-#: inc/options/woocommerce/general-main.php:470,
-#: inc/options/woocommerce/general-main.php:589,
+#: inc/options/woocommerce/general-main.php:468,
+#: inc/options/woocommerce/general-main.php:587,
 #: inc/options/woocommerce/single-product-tabs.php:29,
 #: inc/panel-builder/header/cart/options.php:32,
 #: inc/panel-builder/header/menu/options.php:49,
@@ -1054,8 +1054,8 @@ msgstr ""
 #: inc/options/single-elements/author-box.php:49,
 #: inc/options/single-elements/post-share-box.php:76,
 #: inc/options/woocommerce/archive-main.php:71,
-#: inc/options/woocommerce/general-main.php:471,
-#: inc/options/woocommerce/general-main.php:594,
+#: inc/options/woocommerce/general-main.php:469,
+#: inc/options/woocommerce/general-main.php:592,
 #: inc/options/woocommerce/single-product-tabs.php:34,
 #: inc/panel-builder/header/cart/options.php:37,
 #: inc/panel-builder/header/menu/options.php:54,
@@ -1068,7 +1068,7 @@ msgstr ""
 #: inc/options/general/breadcrumbs.php:72,
 #: inc/options/general/content-elements.php:49,
 #: inc/options/general/sidebar.php:40,
-#: inc/options/woocommerce/general-main.php:599,
+#: inc/options/woocommerce/general-main.php:597,
 #: inc/options/woocommerce/single-product-tabs.php:39,
 #: inc/panel-builder/header/cart/options.php:42,
 #: inc/panel-builder/header/menu/options.php:59,
@@ -1294,11 +1294,11 @@ msgstr ""
 #: inc/options/single-elements/post-share-box.php:598,
 #: inc/options/single-elements/related-posts.php:461,
 #: inc/options/woocommerce/archive-main.php:133,
-#: inc/options/woocommerce/card-product-elements.php:541,
-#: inc/options/woocommerce/general-main.php:482,
-#: inc/options/woocommerce/general-main.php:734,
-#: inc/options/woocommerce/general-main.php:876,
-#: inc/options/woocommerce/general-main.php:1189,
+#: inc/options/woocommerce/card-product-elements.php:574,
+#: inc/options/woocommerce/general-main.php:480,
+#: inc/options/woocommerce/general-main.php:732,
+#: inc/options/woocommerce/general-main.php:874,
+#: inc/options/woocommerce/general-main.php:1187,
 #: inc/options/woocommerce/single-main.php:61,
 #: inc/options/woocommerce/single-product-elements.php:123,
 #: inc/options/woocommerce/single-product-gallery.php:218,
@@ -1329,7 +1329,7 @@ msgid "Design"
 msgstr ""
 
 #: inc/options/general/back-to-top.php:224,
-#: inc/options/woocommerce/card-product-elements.php:50,
+#: inc/options/woocommerce/card-product-elements.php:53,
 #: inc/panel-builder/header/cart/options.php:298,
 #: inc/panel-builder/header/cart/options.php:326,
 #: inc/panel-builder/header/cart/options.php:356,
@@ -1398,39 +1398,41 @@ msgstr ""
 #: inc/options/single-elements/related-posts.php:484,
 #: inc/options/single-elements/related-posts.php:546,
 #: inc/options/single-elements/related-posts.php:614,
-#: inc/options/woocommerce/card-product-elements.php:68,
-#: inc/options/woocommerce/card-product-elements.php:100,
-#: inc/options/woocommerce/card-product-elements.php:580,
-#: inc/options/woocommerce/card-product-elements.php:652,
-#: inc/options/woocommerce/card-product-elements.php:692,
-#: inc/options/woocommerce/card-product-elements.php:750,
-#: inc/options/woocommerce/card-product-elements.php:790,
-#: inc/options/woocommerce/card-product-elements.php:822,
-#: inc/options/woocommerce/card-product-elements.php:869,
-#: inc/options/woocommerce/card-product-elements.php:909,
-#: inc/options/woocommerce/card-product-elements.php:940,
-#: inc/options/woocommerce/card-product-elements.php:981,
-#: inc/options/woocommerce/card-product-elements.php:1018,
+#: inc/options/woocommerce/card-product-elements.php:76,
+#: inc/options/woocommerce/card-product-elements.php:87,
+#: inc/options/woocommerce/card-product-elements.php:123,
+#: inc/options/woocommerce/card-product-elements.php:134,
+#: inc/options/woocommerce/card-product-elements.php:613,
+#: inc/options/woocommerce/card-product-elements.php:685,
+#: inc/options/woocommerce/card-product-elements.php:725,
+#: inc/options/woocommerce/card-product-elements.php:783,
+#: inc/options/woocommerce/card-product-elements.php:823,
+#: inc/options/woocommerce/card-product-elements.php:855,
+#: inc/options/woocommerce/card-product-elements.php:902,
+#: inc/options/woocommerce/card-product-elements.php:942,
+#: inc/options/woocommerce/card-product-elements.php:973,
+#: inc/options/woocommerce/card-product-elements.php:1014,
+#: inc/options/woocommerce/card-product-elements.php:1051,
 #: inc/options/woocommerce/general-main.php:71,
-#: inc/options/woocommerce/general-main.php:98,
-#: inc/options/woocommerce/general-main.php:121,
-#: inc/options/woocommerce/general-main.php:151,
-#: inc/options/woocommerce/general-main.php:187,
-#: inc/options/woocommerce/general-main.php:214,
-#: inc/options/woocommerce/general-main.php:237,
-#: inc/options/woocommerce/general-main.php:267,
-#: inc/options/woocommerce/general-main.php:303,
-#: inc/options/woocommerce/general-main.php:328,
-#: inc/options/woocommerce/general-main.php:351,
-#: inc/options/woocommerce/general-main.php:379,
-#: inc/options/woocommerce/general-main.php:503,
-#: inc/options/woocommerce/general-main.php:538,
-#: inc/options/woocommerce/general-main.php:545,
-#: inc/options/woocommerce/general-main.php:897,
-#: inc/options/woocommerce/general-main.php:927,
-#: inc/options/woocommerce/general-main.php:953,
-#: inc/options/woocommerce/general-main.php:1209,
-#: inc/options/woocommerce/general-main.php:1230,
+#: inc/options/woocommerce/general-main.php:96,
+#: inc/options/woocommerce/general-main.php:119,
+#: inc/options/woocommerce/general-main.php:149,
+#: inc/options/woocommerce/general-main.php:185,
+#: inc/options/woocommerce/general-main.php:212,
+#: inc/options/woocommerce/general-main.php:235,
+#: inc/options/woocommerce/general-main.php:265,
+#: inc/options/woocommerce/general-main.php:301,
+#: inc/options/woocommerce/general-main.php:326,
+#: inc/options/woocommerce/general-main.php:349,
+#: inc/options/woocommerce/general-main.php:377,
+#: inc/options/woocommerce/general-main.php:501,
+#: inc/options/woocommerce/general-main.php:536,
+#: inc/options/woocommerce/general-main.php:543,
+#: inc/options/woocommerce/general-main.php:895,
+#: inc/options/woocommerce/general-main.php:925,
+#: inc/options/woocommerce/general-main.php:951,
+#: inc/options/woocommerce/general-main.php:1207,
+#: inc/options/woocommerce/general-main.php:1228,
 #: inc/options/woocommerce/single-product-elements.php:156,
 #: inc/options/woocommerce/single-product-elements.php:197,
 #: inc/options/woocommerce/single-product-elements.php:231,
@@ -1569,24 +1571,24 @@ msgstr ""
 #: inc/options/single-elements/post-share-box.php:581,
 #: inc/options/single-elements/related-posts.php:580,
 #: inc/options/single-elements/related-posts.php:620,
-#: inc/options/woocommerce/card-product-elements.php:614,
-#: inc/options/woocommerce/card-product-elements.php:755,
-#: inc/options/woocommerce/card-product-elements.php:796,
-#: inc/options/woocommerce/card-product-elements.php:828,
-#: inc/options/woocommerce/card-product-elements.php:915,
-#: inc/options/woocommerce/card-product-elements.php:946,
-#: inc/options/woocommerce/card-product-elements.php:986,
-#: inc/options/woocommerce/general-main.php:77,
-#: inc/options/woocommerce/general-main.php:127,
-#: inc/options/woocommerce/general-main.php:157,
-#: inc/options/woocommerce/general-main.php:193,
-#: inc/options/woocommerce/general-main.php:243,
-#: inc/options/woocommerce/general-main.php:273,
-#: inc/options/woocommerce/general-main.php:308,
-#: inc/options/woocommerce/general-main.php:356,
-#: inc/options/woocommerce/general-main.php:384,
-#: inc/options/woocommerce/general-main.php:510,
-#: inc/options/woocommerce/general-main.php:551,
+#: inc/options/woocommerce/card-product-elements.php:647,
+#: inc/options/woocommerce/card-product-elements.php:788,
+#: inc/options/woocommerce/card-product-elements.php:829,
+#: inc/options/woocommerce/card-product-elements.php:861,
+#: inc/options/woocommerce/card-product-elements.php:948,
+#: inc/options/woocommerce/card-product-elements.php:979,
+#: inc/options/woocommerce/card-product-elements.php:1019,
+#: inc/options/woocommerce/general-main.php:76,
+#: inc/options/woocommerce/general-main.php:125,
+#: inc/options/woocommerce/general-main.php:155,
+#: inc/options/woocommerce/general-main.php:191,
+#: inc/options/woocommerce/general-main.php:241,
+#: inc/options/woocommerce/general-main.php:271,
+#: inc/options/woocommerce/general-main.php:306,
+#: inc/options/woocommerce/general-main.php:354,
+#: inc/options/woocommerce/general-main.php:382,
+#: inc/options/woocommerce/general-main.php:508,
+#: inc/options/woocommerce/general-main.php:549,
 #: inc/options/woocommerce/single-product-elements.php:237,
 #: inc/options/woocommerce/single-product-elements.php:280,
 #: inc/options/woocommerce/single-product-elements.php:317,
@@ -1729,8 +1731,8 @@ msgstr ""
 #: inc/options/general/page-title.php:1130,
 #: inc/options/general/posts-listing.php:448,
 #: inc/options/single-elements/author-box.php:305,
-#: inc/options/woocommerce/general-main.php:757,
-#: inc/options/woocommerce/general-main.php:788,
+#: inc/options/woocommerce/general-main.php:755,
+#: inc/options/woocommerce/general-main.php:786,
 #: inc/components/blocks/contact-info/options.php:19,
 #: inc/panel-builder/header/cart/options.php:476,
 #: inc/panel-builder/header/cart/options.php:507,
@@ -1824,7 +1826,7 @@ msgstr ""
 
 #: inc/options/general/buttons.php:34,
 #: inc/options/general/posts-listing.php:315,
-#: inc/options/woocommerce/card-product-elements.php:244
+#: inc/options/woocommerce/card-product-elements.php:277
 #: static/js/editor/blocks/dynamic-data/components/InspectorControls.js:114
 msgid "Hover Effect"
 msgstr ""
@@ -1884,10 +1886,10 @@ msgstr ""
 #: inc/options/general/sidebar.php:384,
 #: inc/options/single-elements/author-box.php:439,
 #: inc/options/single-elements/post-share-box.php:559,
-#: inc/options/woocommerce/card-product-elements.php:82,
-#: inc/options/woocommerce/general-main.php:85,
-#: inc/options/woocommerce/general-main.php:201,
-#: inc/options/woocommerce/general-main.php:315,
+#: inc/options/woocommerce/card-product-elements.php:100,
+#: inc/options/woocommerce/general-main.php:83,
+#: inc/options/woocommerce/general-main.php:199,
+#: inc/options/woocommerce/general-main.php:313,
 #: inc/panel-builder/header/cart/options.php:773,
 #: inc/panel-builder/header/cart/options.php:1029,
 #: inc/panel-builder/header/offcanvas/options.php:330,
@@ -1962,8 +1964,8 @@ msgstr ""
 
 #: inc/options/general/colors.php:586,
 #: inc/options/general/posts-listing.php:438,
-#: inc/options/woocommerce/general-main.php:763,
-#: inc/options/woocommerce/general-main.php:793,
+#: inc/options/woocommerce/general-main.php:761,
+#: inc/options/woocommerce/general-main.php:791,
 #: inc/options/woocommerce/single-product-tabs.php:317,
 #: inc/panel-builder/header/cart/options.php:470,
 #: inc/panel-builder/header/cart/options.php:502,
@@ -2104,7 +2106,7 @@ msgstr ""
 #: inc/options/general/content-elements.php:25,
 #: inc/options/general/page-title.php:746,
 #: inc/options/general/posts-listing.php:323,
-#: inc/options/woocommerce/card-product-elements.php:252,
+#: inc/options/woocommerce/card-product-elements.php:285,
 #: inc/components/blocks/about-me/options.php:191,
 #: inc/components/blocks/contact-info/options.php:524,
 #: inc/components/blocks/share-box/options.php:141,
@@ -2166,14 +2168,14 @@ msgid "The Events Calendar"
 msgstr ""
 
 #: inc/options/general/custom-post-types.php:81,
-#: inc/options/woocommerce/general-main.php:616,
-#: inc/options/woocommerce/general-main.php:696
+#: inc/options/woocommerce/general-main.php:614,
+#: inc/options/woocommerce/general-main.php:694
 msgid "Archive"
 msgstr ""
 
 #: inc/options/general/custom-post-types.php:90,
-#: inc/options/woocommerce/general-main.php:617,
-#: inc/options/woocommerce/general-main.php:697
+#: inc/options/woocommerce/general-main.php:615,
+#: inc/options/woocommerce/general-main.php:695
 msgid "Single"
 msgstr ""
 
@@ -2249,9 +2251,9 @@ msgstr ""
 #: inc/options/general/form-elements.php:224,
 #: inc/options/general/form-elements.php:268,
 #: inc/options/general/form-elements.php:298,
-#: inc/options/woocommerce/general-main.php:417,
-#: inc/options/woocommerce/general-main.php:903,
-#: inc/options/woocommerce/general-main.php:933,
+#: inc/options/woocommerce/general-main.php:415,
+#: inc/options/woocommerce/general-main.php:901,
+#: inc/options/woocommerce/general-main.php:931,
 #: inc/options/woocommerce/single-product-tabs.php:230,
 #: inc/options/woocommerce/single-product-tabs.php:285,
 #: inc/panel-builder/footer/menu/options.php:196,
@@ -2377,7 +2379,7 @@ msgid "Author Avatar"
 msgstr ""
 
 #: inc/options/general/meta.php:215, inc/options/general/page-title.php:401,
-#: inc/options/woocommerce/general-main.php:841
+#: inc/options/woocommerce/general-main.php:839
 msgid "Avatar Size"
 msgstr ""
 
@@ -2410,20 +2412,20 @@ msgid "Taxonomy"
 msgstr ""
 
 #: inc/options/general/meta.php:346,
-#: inc/options/woocommerce/card-product-elements.php:377,
+#: inc/options/woocommerce/card-product-elements.php:410,
 #: inc/panel-builder/header/trigger/options.php:50
 msgid "Style"
 msgstr ""
 
 #: inc/options/general/meta.php:355,
-#: inc/options/woocommerce/card-product-elements.php:385,
+#: inc/options/woocommerce/card-product-elements.php:418,
 #: inc/components/woocommerce/single/additional-actions-layer.php:56,
 #: inc/panel-builder/header/button/config.php:4
 msgid "Button"
 msgstr ""
 
 #: inc/options/general/meta.php:356,
-#: inc/options/woocommerce/card-product-elements.php:386,
+#: inc/options/woocommerce/card-product-elements.php:419,
 #: inc/panel-builder/footer/widget-area-1/options.php:111
 #: static/js/options/options/typography/FontOptions.js:232
 msgid "Underline"
@@ -2493,7 +2495,7 @@ msgstr ""
 
 #: inc/options/general/page-title.php:106,
 #: inc/options/general/posts-listing.php:396,
-#: inc/options/woocommerce/card-product-elements.php:410
+#: inc/options/woocommerce/card-product-elements.php:443
 #: static/js/editor/blocks/dynamic-data/hooks/use-dynamic-data-descriptor.js:25
 msgid "Excerpt"
 msgstr ""
@@ -2527,7 +2529,7 @@ msgstr ""
 #: inc/options/general/page-title.php:327,
 #: inc/options/general/page-title.php:360,
 #: inc/options/general/posts-listing.php:217,
-#: inc/options/woocommerce/card-product-elements.php:299,
+#: inc/options/woocommerce/card-product-elements.php:332,
 #: inc/options/woocommerce/single-product-layers.php:83,
 #: inc/options/woocommerce/single-product-layers.php:133,
 #: inc/options/woocommerce/single-product-layers.php:229,
@@ -2551,7 +2553,7 @@ msgstr ""
 
 #: inc/options/general/page-title.php:331,
 #: inc/options/general/posts-listing.php:221,
-#: inc/options/woocommerce/card-product-elements.php:302
+#: inc/options/woocommerce/card-product-elements.php:335
 msgid "Heading tag"
 msgstr ""
 
@@ -2663,7 +2665,7 @@ msgstr ""
 #: inc/options/single-elements/featured-image.php:34,
 #: inc/options/single-elements/post-nav.php:89,
 #: inc/options/single-elements/related-posts.php:248,
-#: inc/options/woocommerce/card-product-elements.php:225,
+#: inc/options/woocommerce/card-product-elements.php:258,
 #: inc/options/woocommerce/single-product-gallery.php:119,
 #: inc/components/blocks/about-me/options.php:81,
 #: inc/panel-builder/header/cart/options.php:690
@@ -2685,7 +2687,7 @@ msgstr ""
 #: inc/options/general/page-title.php:848,
 #: inc/options/general/posts-listing.php:720,
 #: inc/options/integrations/tutorlms-single.php:8,
-#: inc/options/woocommerce/card-product-elements.php:553,
+#: inc/options/woocommerce/card-product-elements.php:586,
 #: inc/options/woocommerce/single-product-elements.php:135
 msgid "Title Font"
 msgstr ""
@@ -2693,7 +2695,7 @@ msgstr ""
 #: inc/options/general/page-title.php:857,
 #: inc/options/general/posts-listing.php:733,
 #: inc/options/integrations/tutorlms-single.php:17,
-#: inc/options/woocommerce/card-product-elements.php:562,
+#: inc/options/woocommerce/card-product-elements.php:595,
 #: inc/options/woocommerce/single-product-elements.php:143
 msgid "Title Font Color"
 msgstr ""
@@ -2924,7 +2926,7 @@ msgstr ""
 #: inc/options/general/posts-listing.php:266,
 #: inc/options/single-elements/featured-image.php:26,
 #: inc/options/single-elements/related-posts.php:240,
-#: inc/options/woocommerce/card-product-elements.php:210,
+#: inc/options/woocommerce/card-product-elements.php:243,
 #: inc/options/woocommerce/single-product-gallery.php:104,
 #: inc/panel-builder/header/cart/options.php:682
 msgid "Image Ratio"
@@ -2932,25 +2934,25 @@ msgstr ""
 
 #: inc/options/general/posts-listing.php:286,
 #: inc/options/single-elements/featured-image.php:62,
-#: inc/options/woocommerce/card-product-elements.php:131
+#: inc/options/woocommerce/card-product-elements.php:164
 msgid "Image Width"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:324,
-#: inc/options/woocommerce/card-product-elements.php:254
+#: inc/options/woocommerce/card-product-elements.php:287
 #: static/js/editor/blocks/dynamic-data/components/InspectorControls.js:121
 msgid "Zoom In"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:325,
-#: inc/options/woocommerce/card-product-elements.php:255
+#: inc/options/woocommerce/card-product-elements.php:288
 #: static/js/editor/blocks/dynamic-data/components/InspectorControls.js:122
 msgid "Zoom Out"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:343,
 #: inc/options/single-elements/featured-image.php:46,
-#: inc/options/woocommerce/card-product-elements.php:272
+#: inc/options/woocommerce/card-product-elements.php:305
 #: static/js/editor/blocks/dynamic-data/components/InspectorControls.js:104
 msgid "Video Thumbnail"
 msgstr ""
@@ -2968,7 +2970,7 @@ msgid "Full Post"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:415,
-#: inc/options/woocommerce/card-product-elements.php:413,
+#: inc/options/woocommerce/card-product-elements.php:446,
 #: inc/components/blocks/dynamic-data/options.php:9
 msgid "Length"
 msgstr ""
@@ -3016,9 +3018,9 @@ msgstr ""
 #: inc/options/general/posts-listing.php:964,
 #: inc/options/general/posts-listing.php:1010,
 #: inc/options/general/posts-listing.php:1056,
-#: inc/options/woocommerce/general-main.php:105,
-#: inc/options/woocommerce/general-main.php:221,
-#: inc/options/woocommerce/general-main.php:335,
+#: inc/options/woocommerce/general-main.php:103,
+#: inc/options/woocommerce/general-main.php:219,
+#: inc/options/woocommerce/general-main.php:333,
 #: inc/options/woocommerce/single-product-elements.php:294,
 #: inc/options/woocommerce/single-product-elements.php:367
 msgid "Button Font Color"
@@ -3041,7 +3043,7 @@ msgid "Card Overlay Color"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:1279,
-#: inc/options/woocommerce/card-product-elements.php:1004
+#: inc/options/woocommerce/card-product-elements.php:1037
 msgid "Card Background Color"
 msgstr ""
 
@@ -3050,7 +3052,7 @@ msgid "Card Border"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:1311,
-#: inc/options/woocommerce/card-product-elements.php:1026
+#: inc/options/woocommerce/card-product-elements.php:1059
 msgid "Card Shadow"
 msgstr ""
 
@@ -3098,7 +3100,7 @@ msgid "Number of posts"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:1531,
-#: inc/options/woocommerce/card-product-elements.php:119
+#: inc/options/woocommerce/card-product-elements.php:152
 msgid "Card Options"
 msgstr ""
 
@@ -3193,7 +3195,7 @@ msgstr ""
 
 #: inc/options/general/sidebar.php:258,
 #: inc/options/single-elements/post-share-box.php:124,
-#: inc/options/woocommerce/general-main.php:1180,
+#: inc/options/woocommerce/general-main.php:1178,
 #: inc/panel-builder/header/logo/options.php:287
 #: static/js/options/options/ct-spacing/input.js:109
 msgid "Top"
@@ -3201,7 +3203,7 @@ msgstr ""
 
 #: inc/options/general/sidebar.php:259,
 #: inc/options/single-elements/post-share-box.php:125,
-#: inc/options/woocommerce/general-main.php:1181,
+#: inc/options/woocommerce/general-main.php:1179,
 #: inc/panel-builder/header/cart/options.php:125,
 #: inc/panel-builder/header/search/options.php:100,
 #: inc/panel-builder/header/trigger/options.php:126
@@ -3272,13 +3274,13 @@ msgid "Course Structure"
 msgstr ""
 
 #: inc/options/integrations/tutorlms-single.php:39,
-#: inc/options/woocommerce/card-product-elements.php:713
+#: inc/options/woocommerce/card-product-elements.php:746
 msgid "Categories Font"
 msgstr ""
 
 #: inc/options/integrations/tutorlms-single.php:52,
-#: inc/options/woocommerce/card-product-elements.php:732,
-#: inc/options/woocommerce/card-product-elements.php:772
+#: inc/options/woocommerce/card-product-elements.php:765,
+#: inc/options/woocommerce/card-product-elements.php:805
 msgid "Categories Font Color"
 msgstr ""
 
@@ -3299,7 +3301,7 @@ msgid "Rating Font Color"
 msgstr ""
 
 #: inc/options/integrations/tutorlms-single.php:162,
-#: inc/options/woocommerce/general-main.php:400
+#: inc/options/woocommerce/general-main.php:398
 msgid "Star Rating Color"
 msgstr ""
 
@@ -3755,7 +3757,7 @@ msgid "Bottom Box Spacing"
 msgstr ""
 
 #: inc/options/single-elements/post-share-box.php:413,
-#: inc/options/woocommerce/card-product-elements.php:489,
+#: inc/options/woocommerce/card-product-elements.php:522,
 #: inc/panel-builder/header/logo/options.php:305,
 #: inc/panel-builder/header/text/options.php:57
 msgid "Content Alignment"
@@ -3843,7 +3845,7 @@ msgid "Posts Meta Font Color"
 msgstr ""
 
 #: inc/options/single-elements/related-posts.php:628,
-#: inc/options/woocommerce/card-product-elements.php:1053
+#: inc/options/woocommerce/card-product-elements.php:1086
 msgid "Image Border Radius"
 msgstr ""
 
@@ -3959,53 +3961,55 @@ msgstr ""
 msgid "Sort by price (desc)"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:18,
-#: inc/options/woocommerce/card-product-elements.php:46,
+#: inc/options/woocommerce/card-product-elements.php:20,
+#: inc/options/woocommerce/card-product-elements.php:49,
 #: inc/components/woocommerce/single/additional-actions-layer.php:45
 msgid "Additional Actions"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:74,
-#: inc/options/woocommerce/card-product-elements.php:106,
+#: inc/options/woocommerce/card-product-elements.php:81,
+#: inc/options/woocommerce/card-product-elements.php:92,
+#: inc/options/woocommerce/card-product-elements.php:128,
+#: inc/options/woocommerce/card-product-elements.php:139,
 #: inc/panel-builder/header/menu/options.php:883,
 #: inc/panel-builder/header/menu/options.php:914,
 #: inc/panel-builder/header/menu/options.php:944
 msgid "Hover/Active"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:132,
-#: inc/options/woocommerce/card-product-elements.php:233
+#: inc/options/woocommerce/card-product-elements.php:165,
+#: inc/options/woocommerce/card-product-elements.php:266
 msgid "Image height will be automatically calculated based on the image ratio."
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:152,
-#: inc/options/woocommerce/card-product-elements.php:165,
+#: inc/options/woocommerce/card-product-elements.php:185,
+#: inc/options/woocommerce/card-product-elements.php:198,
 #: inc/panel-builder/header/menu/options.php:600
 #: static/js/editor/blocks/dynamic-data/components/Dimensions.js:130
 msgid "Width"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:178
+#: inc/options/woocommerce/card-product-elements.php:211
 #: static/js/editor/blocks/dynamic-data/components/Dimensions.js:153
 msgid "Height"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:205
+#: inc/options/woocommerce/card-product-elements.php:238
 msgid "Product Image"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:253
+#: inc/options/woocommerce/card-product-elements.php:286
 msgid "Swap Images"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:283,
-#: inc/options/woocommerce/card-product-elements.php:322,
-#: inc/options/woocommerce/card-product-elements.php:342,
-#: inc/options/woocommerce/card-product-elements.php:359,
-#: inc/options/woocommerce/card-product-elements.php:395,
-#: inc/options/woocommerce/card-product-elements.php:422,
-#: inc/options/woocommerce/card-product-elements.php:443,
-#: inc/options/woocommerce/card-product-elements.php:465,
+#: inc/options/woocommerce/card-product-elements.php:316,
+#: inc/options/woocommerce/card-product-elements.php:355,
+#: inc/options/woocommerce/card-product-elements.php:375,
+#: inc/options/woocommerce/card-product-elements.php:392,
+#: inc/options/woocommerce/card-product-elements.php:428,
+#: inc/options/woocommerce/card-product-elements.php:455,
+#: inc/options/woocommerce/card-product-elements.php:476,
+#: inc/options/woocommerce/card-product-elements.php:498,
 #: inc/options/woocommerce/single-product-layers.php:136,
 #: inc/options/woocommerce/single-product-layers.php:153,
 #: inc/options/woocommerce/single-product-layers.php:173,
@@ -4020,82 +4024,82 @@ msgstr ""
 msgid "Bottom Spacing"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:336,
+#: inc/options/woocommerce/card-product-elements.php:369,
 #: inc/options/woocommerce/single-product-layers.php:167
 #: static/js/editor/blocks/dynamic-data/hooks/use-dynamic-data-descriptor.js:88
 msgid "Price"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:356,
-#: inc/options/woocommerce/general-main.php:394,
+#: inc/options/woocommerce/card-product-elements.php:389,
+#: inc/options/woocommerce/general-main.php:392,
 #: inc/options/woocommerce/single-product-layers.php:150
 msgid "Star Rating"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:436,
+#: inc/options/woocommerce/card-product-elements.php:469,
 #: inc/options/woocommerce/single-product-layers.php:225
 msgid "Add to Cart"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:458
+#: inc/options/woocommerce/card-product-elements.php:491
 msgid "Add to Cart and Price"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:507
+#: inc/options/woocommerce/card-product-elements.php:540
 msgid "Columns Gap"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:519
+#: inc/options/woocommerce/card-product-elements.php:552
 msgid "Rows Gap"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:631
+#: inc/options/woocommerce/card-product-elements.php:664
 msgid "Short Description Font"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:638
+#: inc/options/woocommerce/card-product-elements.php:671
 msgid "Short Description Color"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:669,
+#: inc/options/woocommerce/card-product-elements.php:702,
 #: inc/options/woocommerce/single-product-elements.php:174
 msgid "Price Font"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:678,
+#: inc/options/woocommerce/card-product-elements.php:711,
 #: inc/options/woocommerce/single-product-elements.php:184
 msgid "Price Font Color"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:804
+#: inc/options/woocommerce/card-product-elements.php:837
 msgid "Categories Button Color"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:848
+#: inc/options/woocommerce/card-product-elements.php:881
 msgid "SKU Font"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:855
+#: inc/options/woocommerce/card-product-elements.php:888
 msgid "SKU Color"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:890,
-#: inc/options/woocommerce/card-product-elements.php:962
+#: inc/options/woocommerce/card-product-elements.php:923,
+#: inc/options/woocommerce/card-product-elements.php:995
 #: static/js/editor/blocks/search/Edit.js:281
 msgid "Button Text Color"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:923,
-#: inc/options/woocommerce/general-main.php:135,
-#: inc/options/woocommerce/general-main.php:251,
-#: inc/options/woocommerce/general-main.php:363,
+#: inc/options/woocommerce/card-product-elements.php:956,
+#: inc/options/woocommerce/general-main.php:133,
+#: inc/options/woocommerce/general-main.php:249,
+#: inc/options/woocommerce/general-main.php:361,
 #: inc/options/woocommerce/single-product-elements.php:325,
 #: inc/options/woocommerce/single-product-elements.php:398
 #: static/js/editor/blocks/search/Edit.js:311
 msgid "Button Background Color"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:1057
+#: inc/options/woocommerce/card-product-elements.php:1090
 msgid "Card Border Radius"
 msgstr ""
 
@@ -4112,214 +4116,214 @@ msgid "Info Messages"
 msgstr ""
 
 #: inc/options/woocommerce/general-main.php:54,
-#: inc/options/woocommerce/general-main.php:170,
-#: inc/options/woocommerce/general-main.php:286
+#: inc/options/woocommerce/general-main.php:168,
+#: inc/options/woocommerce/general-main.php:284
 #: static/js/editor/blocks/about-me/Edit.js:89
 #: static/js/editor/blocks/breadcrumbs/Edit.js:43
 #: static/js/editor/blocks/contact-info/Edit.js:96
 msgid "Text Color"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:166
+#: inc/options/woocommerce/general-main.php:164
 msgid "Success Messages"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:282
+#: inc/options/woocommerce/general-main.php:280
 msgid "Error Messages"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:423
+#: inc/options/woocommerce/general-main.php:421
 msgid "Inactive"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:434,
+#: inc/options/woocommerce/general-main.php:432,
 #: inc/panel-builder/header/cart/options.php:671
 msgid "Quantity Input"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:445
+#: inc/options/woocommerce/general-main.php:443
 msgid "Custom Quantity Input"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:487
+#: inc/options/woocommerce/general-main.php:485
 msgid "Quantity Main Color"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:518,
+#: inc/options/woocommerce/general-main.php:516,
 #: inc/options/woocommerce/single-product-elements.php:245
 msgid "Quantity Arrows Color"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:565
+#: inc/options/woocommerce/general-main.php:563
 msgid "Product Badges"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:577
+#: inc/options/woocommerce/general-main.php:575
 msgid "Badge Shape"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:605
+#: inc/options/woocommerce/general-main.php:603
 msgid "Show Sale Badge"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:636
+#: inc/options/woocommerce/general-main.php:634
 msgid "Sale Badge Value"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:656,
-#: inc/options/woocommerce/general-main.php:670,
-#: inc/options/woocommerce/general-main.php:715
+#: inc/options/woocommerce/general-main.php:654,
+#: inc/options/woocommerce/general-main.php:668,
+#: inc/options/woocommerce/general-main.php:713
 msgid "Badge Label"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:685
+#: inc/options/woocommerce/general-main.php:683
 msgid "Show Stock Badge"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:718,
+#: inc/options/woocommerce/general-main.php:716,
 #: inc/components/woocommerce/common/stock-badge.php:34
 msgid "SOLD OUT"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:740
+#: inc/options/woocommerce/general-main.php:738
 msgid "Sale Badge"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:771
+#: inc/options/woocommerce/general-main.php:769
 msgid "Out of Stock Badge"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:815
+#: inc/options/woocommerce/general-main.php:813
 msgid "Account Page"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:826
+#: inc/options/woocommerce/general-main.php:824
 msgid "User Avatar"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:854
+#: inc/options/woocommerce/general-main.php:852
 msgid "User Name"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:864
+#: inc/options/woocommerce/general-main.php:862
 msgid "Navigation Quick Links"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:881
+#: inc/options/woocommerce/general-main.php:879
 msgid "Navigation Text Color"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:911
+#: inc/options/woocommerce/general-main.php:909
 msgid "Navigation Background Color"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:941
+#: inc/options/woocommerce/general-main.php:939
 msgid "Navigation Divider Color"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:961
+#: inc/options/woocommerce/general-main.php:959
 msgid "Navigation Shadow"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:987
+#: inc/options/woocommerce/general-main.php:985
 msgid "Checkout Page"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:994
+#: inc/options/woocommerce/general-main.php:992
 msgid "Coupon Form"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1010
+#: inc/options/woocommerce/general-main.php:1008
 msgid "Highlight Required Fields"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1021
+#: inc/options/woocommerce/general-main.php:1019
 msgid "Company Name Field"
+msgstr ""
+
+#: inc/options/woocommerce/general-main.php:1026,
+#: inc/options/woocommerce/general-main.php:1044,
+#: inc/options/woocommerce/general-main.php:1062
+msgid "Hidden"
+msgstr ""
+
+#: inc/options/woocommerce/general-main.php:1027,
+#: inc/options/woocommerce/general-main.php:1045,
+#: inc/options/woocommerce/general-main.php:1063
+msgid "Optional"
 msgstr ""
 
 #: inc/options/woocommerce/general-main.php:1028,
 #: inc/options/woocommerce/general-main.php:1046,
 #: inc/options/woocommerce/general-main.php:1064
-msgid "Hidden"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1029,
-#: inc/options/woocommerce/general-main.php:1047,
-#: inc/options/woocommerce/general-main.php:1065
-msgid "Optional"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1030,
-#: inc/options/woocommerce/general-main.php:1048,
-#: inc/options/woocommerce/general-main.php:1066
 msgid "Required"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1039
+#: inc/options/woocommerce/general-main.php:1037
 msgid "Address Line 2 Field"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1057
+#: inc/options/woocommerce/general-main.php:1055
 msgid "Phone Field"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1075
+#: inc/options/woocommerce/general-main.php:1073
 msgid "Privacy Policy Page"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1088
+#: inc/options/woocommerce/general-main.php:1086
 msgid "Terms And Conditions Page"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1100
+#: inc/options/woocommerce/general-main.php:1098
 msgid "Privacy policy"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1101
+#: inc/options/woocommerce/general-main.php:1099
 msgid ""
 "Optionally add some text about your store privacy policy to show during "
 "checkout."
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1103
+#: inc/options/woocommerce/general-main.php:1101
 msgid ""
 "Your personal data will be used to process your order, support your "
 "experience throughout this website, and for other purposes described in our "
 "[privacy_policy]."
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1116
+#: inc/options/woocommerce/general-main.php:1114
 msgid "Terms and conditions"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1117
+#: inc/options/woocommerce/general-main.php:1115
 msgid ""
 "Optionally add some text for the terms checkbox that customers must accept."
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1120
+#: inc/options/woocommerce/general-main.php:1118
 msgid "I have read and agree to the website %s"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1146
+#: inc/options/woocommerce/general-main.php:1144
 msgid "Store Notice"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1164
+#: inc/options/woocommerce/general-main.php:1162
 msgid ""
 "This is a demo store for testing purposes &mdash; no orders shall be "
 "fulfilled."
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1174
+#: inc/options/woocommerce/general-main.php:1172
 msgid "Notice Position"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1194
+#: inc/options/woocommerce/general-main.php:1192
 msgid "Notice Font Color"
 msgstr ""
 
-#: inc/options/woocommerce/general-main.php:1216
+#: inc/options/woocommerce/general-main.php:1214
 msgid "Notice Background Color"
 msgstr ""
 
@@ -6014,7 +6018,7 @@ msgid "Install"
 msgstr ""
 
 #: admin/dashboard/static/js/components/SubmitSupport.js:18
-#: admin/dashboard/static/js/screens/Home.js:404
+#: admin/dashboard/static/js/screens/Home.js:311
 msgid "Need help or advice?"
 msgstr ""
 
@@ -6062,181 +6066,181 @@ msgstr ""
 msgid "Released on %s"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:135
+#: admin/dashboard/static/js/screens/Home.js:126
 msgid "Header Options"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:138
+#: admin/dashboard/static/js/screens/Home.js:129
 msgid ""
 "Configure the header to your liking with an easy to use drag and drop "
 "builder."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:179
+#: admin/dashboard/static/js/screens/Home.js:156
 msgid "Footer Options"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:182
+#: admin/dashboard/static/js/screens/Home.js:159
 msgid ""
 "Arrange your footer in a way that actually makes sense with our drag and "
 "drop builder."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:223
+#: admin/dashboard/static/js/screens/Home.js:186
 msgid "Blog Options"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:226
+#: admin/dashboard/static/js/screens/Home.js:189
 msgid ""
 "Adjust your blog roll options in a single place and make it stand out in the "
 "crowd."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:267
+#: admin/dashboard/static/js/screens/Home.js:216
 msgid "Posts Options"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:270
+#: admin/dashboard/static/js/screens/Home.js:219
 msgid "Set the footer type, number of columns, spacing and colors."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:313
+#: admin/dashboard/static/js/screens/Home.js:248
 msgid "Page Options"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:316
+#: admin/dashboard/static/js/screens/Home.js:251
 msgid "Set the page container width, spacing, sidebar and more."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:357
+#: admin/dashboard/static/js/screens/Home.js:27
+msgid "Documentation"
+msgstr ""
+
+#: admin/dashboard/static/js/screens/Home.js:278
 msgid "Sidebar Options"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:360
+#: admin/dashboard/static/js/screens/Home.js:281
 msgid ""
 "Change the sidebar behaviour and style with a nice set of options that come "
 "in handy."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:377
-msgid "Documentation"
-msgstr ""
-
-#: admin/dashboard/static/js/screens/Home.js:395
+#: admin/dashboard/static/js/screens/Home.js:302
 msgid "Customize"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:420
+#: admin/dashboard/static/js/screens/Home.js:327
 msgid "Facebook Community"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:424
+#: admin/dashboard/static/js/screens/Home.js:331
 msgid ""
 "Share ideas, help others, ask questions and discuss your next project in our "
 "friendly community."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:43
-msgid "Customizer Shortcuts"
-msgstr ""
-
-#: admin/dashboard/static/js/screens/Home.js:435
+#: admin/dashboard/static/js/screens/Home.js:342
 msgid "Join Our Facebook Community"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:453
+#: admin/dashboard/static/js/screens/Home.js:360
 msgid "Video Tutorials"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:457
+#: admin/dashboard/static/js/screens/Home.js:364
 msgid ""
 "Learn how to do just about anything within Blocksy by following our byte-"
 "sized video tutorials."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:468
+#: admin/dashboard/static/js/screens/Home.js:375
 msgid "Watch Tutorials"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:47
-msgid "Color Options"
-msgstr ""
-
-#: admin/dashboard/static/js/screens/Home.js:483
+#: admin/dashboard/static/js/screens/Home.js:390
 msgid "Knowledge Base"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:487
+#: admin/dashboard/static/js/screens/Home.js:394
 msgid ""
 "Dive in deeper with our documentation and learn advanced tips and tricks "
 "about Blocksy and its components."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:498
+#: admin/dashboard/static/js/screens/Home.js:405
 msgid "View Documentation"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:50
-msgid ""
-"Manage the colour palette, as well as setting colours for different elements "
-"of the website."
-msgstr ""
-
-#: admin/dashboard/static/js/screens/Home.js:513
+#: admin/dashboard/static/js/screens/Home.js:420
 msgid "Support"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:517
+#: admin/dashboard/static/js/screens/Home.js:424
 msgid ""
 "If your questions that have not been answered by our documentation or video "
 "tutorials, just drop us a line."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:528
+#: admin/dashboard/static/js/screens/Home.js:435
 msgid "Submit a Ticket"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:556
+#: admin/dashboard/static/js/screens/Home.js:463
 msgid ""
 "By downloading and installing this plugin you will have access to demo "
 "templates, extensions and a lot more stunning features."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:588
+#: admin/dashboard/static/js/screens/Home.js:495
 #: static/js/notification/Notification.js:109
 msgid "Installing & activating..."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:593
+#: admin/dashboard/static/js/screens/Home.js:500
 #: static/js/notification/Notification.js:111
 msgid "Install Blocksy Companion"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:598
+#: admin/dashboard/static/js/screens/Home.js:505
 #: static/js/notification/Notification.js:113
 msgid "Activate Blocksy Companion"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:602
+#: admin/dashboard/static/js/screens/Home.js:509
 #: static/js/notification/Notification.js:114
 msgid "Blocksy Companion active!"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:619
+#: admin/dashboard/static/js/screens/Home.js:526
 msgid "Blocksy Child Theme"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:623
+#: admin/dashboard/static/js/screens/Home.js:530
 msgid ""
 "By using a child theme you can modify any file without the fear of breaking "
 "something in the parent theme."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:633
+#: admin/dashboard/static/js/screens/Home.js:540
 msgid "Download now"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:91
+#: admin/dashboard/static/js/screens/Home.js:62
+msgid "Customizer Shortcuts"
+msgstr ""
+
+#: admin/dashboard/static/js/screens/Home.js:66
+msgid "Color Options"
+msgstr ""
+
+#: admin/dashboard/static/js/screens/Home.js:69
+msgid ""
+"Manage the colour palette, as well as setting colours for different elements "
+"of the website."
+msgstr ""
+
+#: admin/dashboard/static/js/screens/Home.js:96
 msgid "Typography Options"
 msgstr ""
 
@@ -6984,6 +6988,14 @@ msgstr ""
 
 #: static/js/editor/blocks/socials/index.js:15
 msgid "Socials Controls"
+msgstr ""
+
+#: static/js/editor/blocks/widgets-wrapper/Edit.js:73
+msgid "Expandable Container"
+msgstr ""
+
+#: static/js/editor/blocks/widgets-wrapper/Edit.js:84
+msgid "Expanded by Default"
 msgstr ""
 
 #: static/js/editor/blocks/widgets-wrapper/index.js:12

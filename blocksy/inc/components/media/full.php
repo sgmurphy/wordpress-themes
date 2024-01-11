@@ -241,12 +241,13 @@ if (! function_exists('blocksy_get_image_element')) {
 		$output = '';
 
 		$parser = new Blocksy_Attributes_Parser();
+		$global_lazyload = blocksy_get_theme_mod('has_lazy_load', 'yes') === 'yes';
 
 		$image = wp_get_attachment_image(
 			$args['attachment_id'],
 			$args['size'],
 			false,
-			$args['lazyload'] ? ['loading' => 'lazy'] : ['loading' => false]
+			$global_lazyload && $args['lazyload'] ? ['loading' => 'lazy'] : ['loading' => false]
 		);
 
 		$has_srcset = strpos($image, 'srcset') !== false;
@@ -273,7 +274,7 @@ if (! function_exists('blocksy_get_image_element')) {
 					$other_image,
 					$args['size'],
 					false,
-					$args['lazyload'] ? [] : ['loading' => false]
+					$global_lazyload && $args['lazyload'] ? [] : ['loading' => false]
 				);
 
 				$other_image = $parser->add_attribute_to_images(

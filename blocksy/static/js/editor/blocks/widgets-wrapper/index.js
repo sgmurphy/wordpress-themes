@@ -45,6 +45,14 @@ registerBlockType('blocksy/widgets-wrapper', {
 			type: 'object',
 			default: {},
 		},
+		isCollapsible: {
+			type: 'boolean',
+			default: false,
+		},
+		defaultExpanded: {
+			type: 'boolean',
+			default: true,
+		},
 	},
 	supports: {
 		className: false,

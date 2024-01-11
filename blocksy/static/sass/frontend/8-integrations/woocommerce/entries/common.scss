@@ -36,6 +36,16 @@
 		--theme-font-size: 15px;
 	}
 
+	.ct-woo-card-extra,
+	.ct-woo-card-actions {
+		--theme-icon-size: 14px;
+		--theme-icon-color: currentColor;
+
+		--theme-button-border: none;
+		--theme-button-shadow: none;
+		--theme-button-transform: none;
+	}
+
 	.ct-woo-card-extra {
 		position: absolute;
 		z-index: 2;

@@ -126,98 +126,22 @@ blocksy_output_colors([
 ]);
 
 
-// success message
-blocksy_output_colors([
-	'value' => blocksy_get_theme_mod('success_message_text_color'),
-	'default' => [
-		'default' => ['color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT')],
-		'hover' => ['color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT')],
-	],
-	'css' => $css,
-	'variables' => [
-		'default' => [
-			'selector' => '.woocommerce-message',
-			'variable' => 'theme-text-color'
-		],
-
-		'hover' => [
-			'selector' => '.woocommerce-message',
-			'variable' => 'theme-link-hover-color'
-		],
-	],
-]);
-
-blocksy_output_colors([
-	'value' => blocksy_get_theme_mod('success_message_background_color'),
-	'default' => [
-		'default' => ['color' => '#F0F1F3'],
-	],
-	'css' => $css,
-	'variables' => [
-		'default' => [
-			'selector' => '.woocommerce-message',
-			'variable' => 'background-color'
-		],
-	],
-]);
-
-blocksy_output_colors([
-	'value' => blocksy_get_theme_mod('success_message_button_text_color'),
-	'default' => [
-		'default' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
-		'hover' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
-	],
-	'css' => $css,
-	'variables' => [
-		'default' => [
-			'selector' => '.woocommerce-message',
-			'variable' => 'theme-button-text-initial-color'
-		],
-
-		'hover' => [
-			'selector' => '.woocommerce-message',
-			'variable' => 'theme-button-text-hover-color'
-		],
-	],
-]);
-
-blocksy_output_colors([
-	'value' => blocksy_get_theme_mod('success_message_button_background'),
-	'default' => [
-		'default' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
-		'hover' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
-	],
-	'css' => $css,
-	'variables' => [
-		'default' => [
-			'selector' => '.woocommerce-message',
-			'variable' => 'theme-button-background-initial-color'
-		],
-
-		'hover' => [
-			'selector' => '.woocommerce-message',
-			'variable' => 'theme-button-background-hover-color'
-		],
-	],
-]);
-
-
 // info message
 blocksy_output_colors([
 	'value' => blocksy_get_theme_mod('info_message_text_color'),
 	'default' => [
-		'default' => ['color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT')],
-		'hover' => ['color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT')],
+		'default' => ['color' => 'var(--theme-text-color)'],
+		'hover' => ['color' => 'var(--theme-link-hover-color)'],
 	],
 	'css' => $css,
 	'variables' => [
 		'default' => [
-			'selector' => '.woocommerce-info, .woocommerce-thankyou-order-received',
+			'selector' => '.woocommerce-info, .woocommerce-thankyou-order-received, .wc-block-components-notice-banner.is-info',
 			'variable' => 'theme-text-color'
 		],
 
 		'hover' => [
-			'selector' => '.woocommerce-info, .woocommerce-thankyou-order-received',
+			'selector' => '.woocommerce-info, .woocommerce-thankyou-order-received, .wc-block-components-notice-banner.is-info',
 			'variable' => 'theme-link-hover-color'
 		],
 	],
@@ -231,7 +155,7 @@ blocksy_output_colors([
 	'css' => $css,
 	'variables' => [
 		'default' => [
-			'selector' => '.woocommerce-info, .woocommerce-thankyou-order-received',
+			'selector' => '.woocommerce-info, .woocommerce-thankyou-order-received, .wc-block-components-notice-banner.is-info',
 			'variable' => 'background-color'
 		],
 	],
@@ -246,12 +170,12 @@ blocksy_output_colors([
 	'css' => $css,
 	'variables' => [
 		'default' => [
-			'selector' => '.woocommerce-info',
+			'selector' => '.woocommerce-info, .wc-block-components-notice-banner.is-info',
 			'variable' => 'theme-button-text-initial-color'
 		],
 
 		'hover' => [
-			'selector' => '.woocommerce-info',
+			'selector' => '.woocommerce-info, .wc-block-components-notice-banner.is-info',
 			'variable' => 'theme-button-text-hover-color'
 		],
 	],
@@ -266,12 +190,88 @@ blocksy_output_colors([
 	'css' => $css,
 	'variables' => [
 		'default' => [
-			'selector' => '.woocommerce-info',
+			'selector' => '.woocommerce-info, .wc-block-components-notice-banner.is-info',
 			'variable' => 'theme-button-background-initial-color'
 		],
 
 		'hover' => [
-			'selector' => '.woocommerce-info',
+			'selector' => '.woocommerce-info, .wc-block-components-notice-banner.is-info',
+			'variable' => 'theme-button-background-hover-color'
+		],
+	],
+]);
+
+
+// success message
+blocksy_output_colors([
+	'value' => blocksy_get_theme_mod('success_message_text_color'),
+	'default' => [
+		'default' => ['color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT')],
+		'hover' => ['color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT')],
+	],
+	'css' => $css,
+	'variables' => [
+		'default' => [
+			'selector' => '.woocommerce-message, .wc-block-components-notice-banner.is-success',
+			'variable' => 'theme-text-color'
+		],
+
+		'hover' => [
+			'selector' => '.woocommerce-message, .wc-block-components-notice-banner.is-success',
+			'variable' => 'theme-link-hover-color'
+		],
+	],
+]);
+
+blocksy_output_colors([
+	'value' => blocksy_get_theme_mod('success_message_background_color'),
+	'default' => [
+		'default' => ['color' => '#F0F1F3'],
+	],
+	'css' => $css,
+	'variables' => [
+		'default' => [
+			'selector' => '.woocommerce-message, .wc-block-components-notice-banner.is-success',
+			'variable' => 'background-color'
+		],
+	],
+]);
+
+blocksy_output_colors([
+	'value' => blocksy_get_theme_mod('success_message_button_text_color'),
+	'default' => [
+		'default' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+		'hover' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+	],
+	'css' => $css,
+	'variables' => [
+		'default' => [
+			'selector' => '.woocommerce-message, .wc-block-components-notice-banner.is-success',
+			'variable' => 'theme-button-text-initial-color'
+		],
+
+		'hover' => [
+			'selector' => '.woocommerce-message, .wc-block-components-notice-banner.is-success',
+			'variable' => 'theme-button-text-hover-color'
+		],
+	],
+]);
+
+blocksy_output_colors([
+	'value' => blocksy_get_theme_mod('success_message_button_background'),
+	'default' => [
+		'default' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+		'hover' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+	],
+	'css' => $css,
+	'variables' => [
+		'default' => [
+			'selector' => '.woocommerce-message, .wc-block-components-notice-banner.is-success',
+			'variable' => 'theme-button-background-initial-color'
+		],
+
+		'hover' => [
+			'selector' => '.woocommerce-message, .wc-block-components-notice-banner.is-success',
 			'variable' => 'theme-button-background-hover-color'
 		],
 	],
@@ -288,12 +288,12 @@ blocksy_output_colors([
 	'css' => $css,
 	'variables' => [
 		'default' => [
-			'selector' => '.woocommerce-error',
+			'selector' => '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 			'variable' => 'theme-text-color'
 		],
 
 		'hover' => [
-			'selector' => '.woocommerce-error',
+			'selector' => '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 			'variable' => 'theme-link-hover-color'
 		],
 	],
@@ -307,7 +307,7 @@ blocksy_output_colors([
 	'css' => $css,
 	'variables' => [
 		'default' => [
-			'selector' => '.woocommerce-error',
+			'selector' => '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 			'variable' => 'background-color'
 		],
 	],
@@ -322,12 +322,12 @@ blocksy_output_colors([
 	'css' => $css,
 	'variables' => [
 		'default' => [
-			'selector' => '.woocommerce-error',
+			'selector' => '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 			'variable' => 'theme-button-text-initial-color'
 		],
 
 		'hover' => [
-			'selector' => '.woocommerce-error',
+			'selector' => '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 			'variable' => 'theme-button-text-hover-color'
 		],
 	],
@@ -342,12 +342,12 @@ blocksy_output_colors([
 	'css' => $css,
 	'variables' => [
 		'default' => [
-			'selector' => '.woocommerce-error',
+			'selector' => '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 			'variable' => 'theme-button-background-initial-color'
 		],
 
 		'hover' => [
-			'selector' => '.woocommerce-error',
+			'selector' => '.woocommerce-error, .wc-block-components-notice-banner.is-error',
 			'variable' => 'theme-button-background-hover-color'
 		],
 	],

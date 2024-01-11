@@ -49,6 +49,8 @@ add_filter(
 		$classes['WooCommerceAddToCart'] = $prefix . 'single/add-to-cart.php';
 		$classes['SingleProductAdditionalActions'] = $prefix . 'single/additional-actions-layer.php';
 
+		$classes['WooDefaultPages'] = $prefix . 'common/default-pages.php';
+
 		return $classes;
 	}
 );
@@ -58,6 +60,8 @@ class WooCommerce {
 
 	public function __construct() {
 		new WooCommerceBoot();
+
+		new WooDefaultPages();
 		new WooCommerceImageSizes();
 
 		$this->single = new WooCommerceSingle();

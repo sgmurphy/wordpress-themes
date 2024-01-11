@@ -1,3 +1,20 @@
+##### [Version 3.1.1](https://github.com/Codeinwp/hestia-pro/compare/v3.1.0...v3.1.1) (2024-01-11)
+
+### Improvements
+- Updated dependencies
+- Updated Twitter to X icon
+- Upgrade to Font Awesome 6 version
+
+### Bug Fixes
+- Fixed string translation issue with WPML
+- Fix comma alignment and color in WoCommerce Category on Shop
+- Fixed gallery layout issue with the lightbox
+- Fixed mini cart counter issue
+- Fixed custom layout compatibility issue with Polylang
+- Fixed mega menu opening issue on screen resize
+- Fixed mutation events deprecation
+- Fixed compatibility issue with Otter block
+
 #### [Version 3.1.0](https://github.com/Codeinwp/hestia-pro/compare/v3.0.30...v3.1.0) (2023-08-29)
 
 - Improved The Onboarding Experience With A New Setup Wizard.

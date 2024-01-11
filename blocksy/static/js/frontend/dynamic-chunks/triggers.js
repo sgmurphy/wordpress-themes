@@ -7,6 +7,21 @@ const triggersList = {
 	click: handleClickTrigger,
 	scroll: handleScrollTrigger,
 
+	input: (trigger, chunk, loadChunkWithPayload) => {
+		;[...document.querySelectorAll(trigger.selector)].map((el) => {
+			if (el.hasLazyLoadChangeListener) {
+				return
+			}
+
+			el.hasLazyLoadChangeListener = true
+
+			el.addEventListener('input', (event) => {
+				event.preventDefault()
+				loadChunkWithPayload(chunk, { event }, el)
+			})
+		})
+	},
+
 	change: (trigger, chunk, loadChunkWithPayload) => {
 		;[...document.querySelectorAll(trigger.selector)].map((el) => {
 			if (el.hasLazyLoadChangeListener) {

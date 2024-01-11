@@ -19,6 +19,8 @@ class ThemeAutoloader {
 
 			'SearchModifications' => 'inc/components/search.php',
 
+			'StringHelpers' => 'inc/classes/StringHelpers.php',
+
 			'Database' => 'inc/classes/database.php',
 			'DbVersioning' => 'inc/classes/theme-db-versioning.php',
 

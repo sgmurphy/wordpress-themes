@@ -2,22 +2,56 @@ import InfiniteScroll from 'infinite-scroll'
 import { watchLayoutContainerForReveal } from '../animated-element'
 import ctEvents from 'ct-events'
 
-const generateQuerySelector = (el, initial = '') => {
-	let str = initial
+const generateQuerySelector = (el) => {
+	let itemsToSkip = '.yit-wcan-container'
 
-	if (!str) {
-		str = el.tagName
-		str += el.id != '' ? '#' + el.id : ''
-		if (el.classList.length > 0) {
-			str += `.${[...el.classList].join('.')}`
+	let parents = []
+
+	let elem = el
+
+	for (; elem && elem !== document; elem = elem.parentNode) {
+		if (elem.matches(itemsToSkip)) {
+			continue
 		}
+
+		parents.push(elem)
 	}
 
-	if (el.parentNode.tagName.toLowerCase() === 'body') {
-		return str
-	}
+	parents = parents.reverse()
 
-	return generateQuerySelector(el.parentNode) + ' > ' + str
+	return parents
+		.filter((el) => !el.matches('body, html'))
+		.map((elForSelector) => {
+			if (elForSelector === document.body) {
+				return 'body'
+			}
+
+			let str = elForSelector.tagName
+
+			if (elForSelector !== el) {
+				str += elForSelector.id != '' ? '#' + elForSelector.id : ''
+				str += elForSelector.dataset.target
+					? `[data-target="${elForSelector.dataset.target}"]`
+					: ''
+			}
+
+			if (elForSelector.className) {
+				const classes = elForSelector.className.split(/\s/)
+
+				for (let i = 0; i < classes.length; i++) {
+					if (
+						classes[i] &&
+						classes[i] !== 'active' &&
+						classes[i] !== 'ct-active'
+					) {
+						str += '.' + classes[i]
+					}
+				}
+			}
+
+			return str
+		})
+		.join(' > ')
 }
 
 /**
@@ -129,6 +163,7 @@ function getAppendSelectorFor(layoutEl) {
 
 	if (layoutEl.classList.contains('products')) {
 		const selector = generateQuerySelector(layoutEl, '[data-products]')
+
 		return `${selector} > li`
 	}
 

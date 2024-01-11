@@ -3,14 +3,12 @@
 @import '1-helpers/functions';
 @import '1-helpers/variables';
 
-
 .rtl {
-
+	
 	// menu type
-	[data-menu="type-2:left"] > ul > li {
+	[data-menu='type-2:left'] > ul > li {
 		--menu-indicator-right: calc(var(--menu-items-spacing, 25px) / 2);
 	}
-
 
 	// off canvas panel
 	[data-behaviour*='right-side'] .ct-panel-inner {
@@ -21,25 +19,21 @@
 		--theme-panel-reveal-left: 20%;
 	}
 
-
 	// entry button
 	.entry-button svg {
 		transform: rotate(180deg);
 	}
 
-
 	// trending block
 	.ct-trending-block {
-
 		.ct-arrow-left:before {
-			transform: rotate(135deg)
+			transform: rotate(135deg);
 		}
 
 		.ct-arrow-right:before {
 			transform: rotate(-45deg);
 		}
 	}
-
 
 	// posts nav
 	.post-navigation {
@@ -52,24 +46,20 @@
 		}
 	}
 
-
 	// quote widget
 	.ct-quote-widget:before {
 		transform: rotate(0deg);
 	}
 
-
 	// select
 	select {
 		background-position: left 10px top 50%, 0 0;
 	}
-	
 
 	// breadcrumbs
 	.ct-breadcrumbs svg.separator {
 		transform: rotate(180deg);
 	}
-
 
 	// pagination
 	.ct-pagination {
@@ -82,17 +72,15 @@
 		}
 	}
 
-	.ct-pagination[data-type="next_prev"] .next {
+	.ct-pagination[data-type='next_prev'] .next {
 		float: left;
 	}
-
 
 	// WooCommerce
 	.flexy-items,
 	.flexy-pills [data-flexy] {
 		direction: ltr;
 	}
-
 
 	// reviews
 	.star-rating {
@@ -101,15 +89,14 @@
 
 	.woocommerce-Reviews {
 		.star-rating {
-			@include media-breakpoint-up (sm) {
+			@include media-breakpoint-up(sm) {
 				float: left;
 			}
 		}
 	}
 
-
 	// shop table
-	@include media-breakpoint-up (md) {
+	@include media-breakpoint-up(md) {
 		.form-row-first {
 			float: right;
 		}
@@ -130,11 +117,9 @@
 		float: right;
 	}
 
-
 	.woocommerce-info .showcoupon {
 		float: left;
 	}
-
 
 	// widgets
 	.widget_product_categories li .count {
