@@ -39,6 +39,10 @@
 
 		td {
 			text-align: var(--theme-table-text-align, end);
+
+			@include media-breakpoint-down(sm) {
+				padding-inline-start: 0;
+			}
 		}
 	}
 

@@ -211,6 +211,18 @@ class Blocksy_Static_Css_Files {
 							||
 							is_customize_preview()
 							||
+							(
+								has_shortcode(
+									$post->post_content,
+									'blocksy_posts'
+								)
+								&&
+								strpos(
+									$post->post_content,
+									'view="slider"'
+								) !== false
+							)
+							||
 							has_shortcode($post->post_content, 'product_page')
 						)
 					)

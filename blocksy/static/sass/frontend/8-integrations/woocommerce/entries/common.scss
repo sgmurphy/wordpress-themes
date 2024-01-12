@@ -41,7 +41,6 @@
 		--theme-icon-size: 14px;
 		--theme-icon-color: currentColor;
 
-		--theme-button-border: none;
 		--theme-button-shadow: none;
 		--theme-button-transform: none;
 	}
@@ -49,6 +48,8 @@
 	.ct-woo-card-extra {
 		position: absolute;
 		z-index: 2;
+		
+		--theme-button-border: none;
 	}
 
 	.ct-woo-card-actions {

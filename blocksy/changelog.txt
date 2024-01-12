@@ -1,3 +1,7 @@
+2.0.18: 2024-01-12
+- Improvement: Mobile cart view alignment problem with shipping methods
+- Fix: WooCommerce cards type 1 - add to cart button does not inherit border styles from global button settings
+
 2.0.17: 2024-01-11
 - Improvement: Better compatibility with Yith AJAX Filters and infinite/load more pagination
 - Improvement: Make sure the new WooCommerce block notices inherit the theme styles
