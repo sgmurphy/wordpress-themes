@@ -24,7 +24,7 @@ function ashe_about_page_output() {
 
 		<div class="welcome-text">
 			<p>
-				<span><?php /* translators: %s theme name */ printf( esc_html__( '%s theme is one of the most Popular Free WordPress theme of 2021-2024 years. To understand better what the theme can offer, please click the button below.', 'ashe' ), esc_html( $theme_data->Name ) ); ?></span>
+				<span><?php /* translators: %s theme name */ printf( esc_html__( '%s theme is one of the most Popular Free WordPress theme of 2023-2024 years. To understand better what the theme can offer, please click the button below.', 'ashe' ), esc_html( $theme_data->Name ) ); ?></span>
 				<br>
 				
 			</p>
