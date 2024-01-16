@@ -1,3 +1,6 @@
+== 1.1.51 | 15th January 2024 ==
+* Fix: Issue with starter templates admin page link.
+
 == 1.1.50 | 18th December 2023 ==
 * Update: add requests after content hook.
 * Update: Google Fonts selection.

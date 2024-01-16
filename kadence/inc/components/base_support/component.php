@@ -123,22 +123,25 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 		$installed_plugins = get_plugins();
 		if ( ! isset( $installed_plugins['kadence-starter-templates/kadence-starter-templates.php'] ) ) {
-			$button_label = esc_html__( 'Install Kadence Starter Templates', 'kadence' );
+			$button_label = esc_html__( 'Install AI Starter Templates', 'kadence' );
 			$data_action  = 'install';
 		} elseif ( ! self::active_plugin_check( 'kadence-starter-templates/kadence-starter-templates.php' ) ) {
-			$button_label = esc_html__( 'Activate Kadence Starter Templates', 'kadence' );
+			$button_label = esc_html__( 'Activate AI Starter Templates', 'kadence' );
 			$data_action  = 'activate';
 		} else {
 			return;
 		}
+		$starter_link = class_exists( '\\KadenceWP\\KadenceBlocks\\StellarWP\\Uplink\\Register' ) ? admin_url( 'admin.php?page=kadence-starter-templates' ) : admin_url( 'themes.php?page=kadence-starter-templates' );
 		?>
 		<div id="kadence-notice-starter-templates" class="notice is-dismissible notice-info">
-			<h2 class="notice-title"><?php echo esc_html__( 'Thanks for choosing the Kadence Theme!', 'kadence' ); ?></h2>
-			<p class="kadence-notice-description"><?php /* translators: %s: <strong> <a> */ printf( esc_html__( 'Want to get started with a beautiful %1$sstarter template%2$s? Install the Kadence Starter Templates plugin to launch an optimized design in minutes.', 'kadence' ), '<a href="https://wordpress.org/plugins/kadence-starter-templates/" target="_blank">', '</a>', '<strong>', '</strong>' ); ?></p>
+			<div class="sub-notice-title"><?php echo esc_html__( 'Thanks for choosing the Kadence Theme!', 'kadence' ); ?></div>
+			<h2 class="notice-title"><?php echo esc_html__( 'Get Started with an AI Powered Website!', 'kadence' ); ?></h2>
+			<p class="kadence-notice-description"><?php /* translators: %s: <strong> <a> */ printf( esc_html__( 'Want to get started with a beautiful AI Powered %1$sstarter template%2$s? Install the Kadence AI Powered Starter Templates plugin to launch an AI optimized website in minutes.', 'kadence' ), '<a href="https://wordpress.org/plugins/kadence-starter-templates/" target="_blank">', '</a>', '<strong>', '</strong>' ); ?></p>
 			<p class="install-submit">
-				<button class="button button-primary kadence-install-starter-btn" data-redirect-url="<?php echo esc_url( admin_url( 'themes.php?page=kadence-starter-templates' ) ); ?>" data-activating-label="<?php echo esc_attr__( 'Activating...', 'kadence' ); ?>" data-activated-label="<?php echo esc_attr__( 'Activated', 'kadence' ); ?>" data-installing-label="<?php echo esc_attr__( 'Installing...', 'kadence' ); ?>" data-installed-label="<?php echo esc_attr__( 'Installed', 'kadence' ); ?>" data-action="<?php echo esc_attr( $data_action ); ?>"><?php echo esc_html( $button_label ); ?></button>
+				<button class="button button-primary kadence-install-starter-btn" data-redirect-url="<?php echo esc_url( $starter_link ); ?>" data-activating-label="<?php echo esc_attr__( 'Activating...', 'kadence' ); ?>" data-activated-label="<?php echo esc_attr__( 'Activated', 'kadence' ); ?>" data-installing-label="<?php echo esc_attr__( 'Installing...', 'kadence' ); ?>" data-installed-label="<?php echo esc_attr__( 'Installed', 'kadence' ); ?>" data-action="<?php echo esc_attr( $data_action ); ?>"><?php echo esc_html( $button_label ); ?></button>
 			</p>
 		</div>
+		<style>#kadence-notice-starter-templates {padding: 24px;}#kadence-notice-starter-templates .kadence-notice-description {max-width: 600px;font-size: 15px;margin-bottom: 12px;}#kadence-notice-starter-templates button.kadence-install-starter-btn {padding: 4px 16px;font-size: 15px;}#kadence-notice-starter-templates h2.notice-title {font-size: 24px;margin-bottom: 8px;}</style>
 		<?php
 		wp_enqueue_script( 'kadence-starter-install' );
 		wp_localize_script(

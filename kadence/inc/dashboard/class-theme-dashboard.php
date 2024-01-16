@@ -127,10 +127,11 @@ class Kadence_Dashboard_Settings {
 				'starterTemplates' => ( defined( 'KADENCE_STARTER_TEMPLATES_VERSION' ) ? true : false ),
 				'ajax_url'   => admin_url( 'admin-ajax.php' ),
 				'ajax_nonce' => wp_create_nonce( 'kadence-ajax-verification' ),
+				'proURL'       => esc_url( \Kadence\kadence()->get_pro_url( 'https://www.kadencewp.com/kadence-theme/premium/', 'https://www.kadencewp.com/kadence-theme/premium/', 'in-app', 'theme-dash' ) ),
 				'status'       => $data_action,
 				'starterLabel' => $button_label,
 				'starterImage' => esc_attr( get_template_directory_uri() . '/assets/images/starter-templates-banner.jpeg' ),
-				'starterURL' => esc_url( admin_url( 'themes.php?page=kadence-starter-templates' ) ),
+				'starterURL' => esc_url( class_exists( '\\KadenceWP\\KadenceBlocks\\StellarWP\\Uplink\\Register' ) ? admin_url( 'admin.php?page=kadence-starter-templates' ) : admin_url( 'themes.php?page=kadence-starter-templates' ) ),
 				'videoImage' => esc_attr( get_template_directory_uri() . '/assets/images/getting-started-video.jpg' ),
 			)
 		);
@@ -303,21 +304,21 @@ class Kadence_Dashboard_Settings {
 							<div class="components-panel__body is-opened">
 								<h2><?php esc_html_e( 'Video Tutorials', 'kadence' ); ?></h2>
 								<p><?php esc_html_e( 'Want a guide? We have video tutorials to walk you through getting started.', 'kadence' ); ?></p>
-								<a href="https://kadence-theme.com/learn-kadence/" target="_blank" class="sidebar-link"><?php esc_html_e( 'Watch Videos', 'kadence' ); ?></a>
+								<a href="https://kadence-theme.com/learn-kadence/?utm_source=in-app&utm_medium=theme-dash&utm_campaign=videos" target="_blank" class="sidebar-link"><?php esc_html_e( 'Watch Videos', 'kadence' ); ?></a>
 							</div>
 						</div>
 						<div class="support-section sidebar-section components-panel">
 							<div class="components-panel__body is-opened">
 								<h2><?php esc_html_e( 'Documentation', 'kadence' ); ?></h2>
 								<p><?php esc_html_e( 'Need help? We have a knowledge base full of articles to get you started.', 'kadence' ); ?></p>
-								<a href="https://kadence-theme.com/knowledge-base/" target="_blank" class="sidebar-link"><?php esc_html_e( 'Browse Docs', 'kadence' ); ?></a>
+								<a href="<?php echo esc_url( \Kadence\kadence()->get_pro_url( 'https://www.kadencewp.com/help-center/knowledge-base/kadence-theme/', 'https://www.kadencewp.com/help-center/knowledge-base/kadence-theme/', 'in-app', 'theme-dash', 'docs' ) ); ?>" target="_blank" class="sidebar-link"><?php esc_html_e( 'Browse Docs', 'kadence' ); ?></a>
 							</div>
 						</div>
 						<div class="support-section sidebar-section components-panel">
 							<div class="components-panel__body is-opened">
 								<h2><?php esc_html_e( 'Support', 'kadence' ); ?></h2>
 								<p><?php esc_html_e( 'Have a question, we are happy to help! Get in touch with our support team.', 'kadence' ); ?></p>
-								<a href="https://www.kadencewp.com/free-support/" target="_blank" class="sidebar-link"><?php esc_html_e( 'Submit a Ticket', 'kadence' ); ?></a>
+								<a href="https://www.kadencewp.com/free-support/?utm_source=in-app&utm_medium=theme-dash&utm_campaign=help" target="_blank" class="sidebar-link"><?php esc_html_e( 'Submit a Ticket', 'kadence' ); ?></a>
 							</div>
 						</div>
 					</div>

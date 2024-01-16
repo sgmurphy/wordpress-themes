@@ -1436,6 +1436,10 @@ p.stars.selected a:not(.active)::before {
 	background-color: #027ABB;
 }
 
+.wc-block-grid__products .wc-block-grid__product-price {
+	text-align: left;
+}
+
 .wc-block-grid .wc-block-sort-select {
 	display: -webkit-box;
 	display: -ms-flexbox;

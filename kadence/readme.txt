@@ -4,7 +4,7 @@ Tags: translation-ready, two-columns, right-sidebar, left-sidebar, footer-widget
 Requires at least: 6.2
 Tested up to: 6.4
 Requires PHP: 7.2
-Stable tag: 1.1.50
+Stable tag: 1.1.51
 License: GNU General Public License v3.0 (or later)
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -34,6 +34,9 @@ assist you with verification, CVE assignment, and notify the
 developers of this theme.
 
 = Changelog =
+
+== 1.1.51 | 15th January 2024 ==
+* Fix: Issue with starter templates admin page link.
 
 == 1.1.50 | 18th December 2023 ==
 * Update: add requests after content hook.
