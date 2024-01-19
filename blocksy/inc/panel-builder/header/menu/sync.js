@@ -16,6 +16,12 @@ export const handleMenuVariables = ({ itemId }) => ({
 		unit: 'px',
 	},
 
+	headerMenuItemsGap: {
+		selector: assembleSelector(getRootSelectorFor({ itemId })),
+		variable: 'menu-items-gap',
+		unit: 'px',
+	},
+
 	headerMenuItemsHeight: {
 		selector: assembleSelector(
 			mutateSelector({
@@ -270,12 +276,21 @@ export const handleMenuVariables = ({ itemId }) => ({
 		},
 	],
 
-	menuIndicatorColor: {
-		selector: assembleSelector(getRootSelectorFor({ itemId })),
-		variable: 'menu-indicator-active-color',
-		type: 'color:active',
-		responsive: true,
-	},
+	menuIndicatorColor: [
+		{
+			selector: assembleSelector(getRootSelectorFor({ itemId })),
+			variable: 'menu-indicator-hover-color',
+			type: 'color:hover',
+			responsive: true,
+		},
+
+		{
+			selector: assembleSelector(getRootSelectorFor({ itemId })),
+			variable: 'menu-indicator-active-color',
+			type: 'color:active',
+			responsive: true,
+		},
+	],
 
 	headerDropdownFontColor: [
 		{
@@ -426,19 +441,35 @@ export const handleMenuVariables = ({ itemId }) => ({
 		},
 	],
 
-	transparentMenuIndicatorColor: {
-		selector: assembleSelector(
-			mutateSelector({
-				selector: getRootSelectorFor({ itemId }),
-				operation: 'between',
-				to_add: '[data-transparent-row="yes"]',
-			})
-		),
+	transparentMenuIndicatorColor: [
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: getRootSelectorFor({ itemId }),
+					operation: 'between',
+					to_add: '[data-transparent-row="yes"]',
+				})
+			),
 
-		variable: 'menu-indicator-active-color',
-		type: 'color:active',
-		responsive: true,
-	},
+			variable: 'menu-indicator-hover-color',
+			type: 'color:hover',
+			responsive: true,
+		},
+
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: getRootSelectorFor({ itemId }),
+					operation: 'between',
+					to_add: '[data-transparent-row="yes"]',
+				})
+			),
+
+			variable: 'menu-indicator-active-color',
+			type: 'color:active',
+			responsive: true,
+		},
+	],
 
 	transparentHeaderDropdownFontColor: [
 		{
@@ -607,18 +638,33 @@ export const handleMenuVariables = ({ itemId }) => ({
 		},
 	],
 
-	stickyMenuIndicatorColor: {
-		selector: assembleSelector(
-			mutateSelector({
-				selector: getRootSelectorFor({ itemId }),
-				operation: 'between',
-				to_add: '[data-sticky*="yes"]',
-			})
-		),
-		variable: 'menu-indicator-active-color',
-		type: 'color:active',
-		responsive: true,
-	},
+	stickyMenuIndicatorColor: [
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: getRootSelectorFor({ itemId }),
+					operation: 'between',
+					to_add: '[data-sticky*="yes"]',
+				})
+			),
+			variable: 'menu-indicator-hover-color',
+			type: 'color:hover',
+			responsive: true,
+		},
+
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: getRootSelectorFor({ itemId }),
+					operation: 'between',
+					to_add: '[data-sticky*="yes"]',
+				})
+			),
+			variable: 'menu-indicator-active-color',
+			type: 'color:active',
+			responsive: true,
+		},
+	],
 
 	stickyHeaderDropdownFontColor: [
 		{

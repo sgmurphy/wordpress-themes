@@ -168,7 +168,7 @@ export const subscribeForStateChanges = (videoOrIframe, cb = () => {}) => {
 			try {
 				const data = JSON.parse(e.data)
 
-				if (data.event === 'ready') {
+				if (data.event === 'ready' && !videoOrIframe.isReady) {
 					videoOrIframe.contentWindow.postMessage(
 						JSON.stringify({
 							method: 'addEventListener',
@@ -184,6 +184,8 @@ export const subscribeForStateChanges = (videoOrIframe, cb = () => {}) => {
 						}),
 						'*'
 					)
+
+					videoOrIframe.isReady = true
 
 					cb(data.event)
 				}

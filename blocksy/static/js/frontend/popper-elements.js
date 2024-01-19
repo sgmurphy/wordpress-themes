@@ -1,4 +1,6 @@
-export const mount = (reference) => {
+import { loadStyle } from '../helpers'
+
+const mountPopper = (reference) => {
 	if (reference.popperMounted) {
 		return
 	}
@@ -53,4 +55,15 @@ export const mount = (reference) => {
 	}
 
 	target.dataset.placement = placement
+}
+
+export const mount = (reference) => {
+	Promise.all(
+		ct_localizations.dynamic_styles_selectors
+			.filter(
+				(styleDescriptor) =>
+					!!reference.closest(styleDescriptor.selector)
+			)
+			.map(({ url }) => loadStyle(url))
+	).then(() => mountPopper(reference))
 }

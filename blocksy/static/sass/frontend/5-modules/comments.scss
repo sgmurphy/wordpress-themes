@@ -18,6 +18,7 @@
 }
 
 .ct-comment-list {
+	
 	.children {
 		@include media-breakpoint-down(sm) {
 			--theme-list-indent: 35px;

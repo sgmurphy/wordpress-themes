@@ -42,6 +42,7 @@ $options = [
 				'attr' => [ 'data-type' => 'background' ],
 				'setting' => [ 'transport' => 'postMessage' ],
 				'switchDeviceOnChange' => 'desktop',
+				'divider' => 'bottom',
 				'choices' => [
 
 					'type-1' => [
@@ -76,7 +77,7 @@ $options = [
 						'type' => 'ct-select',
 						'value' => 'default',
 						'view' => 'text',
-						'divider' => 'top',
+						'divider' => 'bottom',
 						'design' => 'inline',
 						'choices' => blocksy_ordered_keys(
 							[
@@ -90,13 +91,39 @@ $options = [
 				],
 			],
 
+			blocksy_rand_md5() => [
+				'type' => 'ct-condition',
+				'condition' => [ 'header_menu_type' => '!type-1' ],
+				'options' => [
+
+					'headerMenuItemsGap' => [
+						'label' => __( 'Items Spacing', 'blocksy' ),
+						'type' => 'ct-slider',
+						'value' => 0,
+						'min' => 0,
+						'max' => 100,
+						'setting' => [ 'transport' => 'postMessage' ],
+					],
+
+				]
+			],
+
 			'headerMenuItemsSpacing' => [
-				'label' => __( 'Items Spacing', 'blocksy' ),
+				// 'label' => __( 'Items Spacing', 'blocksy' ),
+				'label' => [
+					__('Items Spacing', 'blocksy') => [
+						'header_menu_type' => 'type-1'
+					],
+
+					__('Items Inner Spacing', 'blocksy') => [
+						'header_menu_type' => '!type-1'
+					]
+				],
 				'type' => 'ct-slider',
 				'value' => 25,
 				'min' => 5,
 				'max' => 100,
-				'divider' => 'top',
+				// 'divider' => 'top',
 				'setting' => [ 'transport' => 'postMessage' ],
 			],
 
@@ -214,7 +241,7 @@ $options = [
 							],
 
 							'active-type-3' => [
-								'color' => '#ffffff',
+								'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
 							],
 						],
 
@@ -248,6 +275,7 @@ $options = [
 								'title' => __( 'Active', 'blocksy' ),
 								'id' => 'active-type-3',
 								'condition' => [ 'header_menu_type' => 'type-3' ],
+								'inherit' => 'self:hover-type-3'
 							],
 						],
 					],
@@ -309,6 +337,7 @@ $options = [
 								'title' => __( 'Active', 'blocksy' ),
 								'id' => 'active-type-3',
 								'condition' => [ 'header_menu_type' => 'type-3' ],
+								'inherit' => 'self:hover-type-3'
 							],
 						],
 					],
@@ -370,6 +399,7 @@ $options = [
 								'title' => __( 'Active', 'blocksy' ),
 								'id' => 'active-type-3',
 								'condition' => [ 'header_menu_type' => 'type-3' ],
+								'inherit' => 'self:hover-type-3'
 							],
 						],
 					],
@@ -379,7 +409,15 @@ $options = [
 
 			blocksy_rand_md5() => [
 				'type' => 'ct-labeled-group',
-				'label' => __( 'Active Indicator Color', 'blocksy' ),
+				'label' => [
+					__('Indicator Color', 'blocksy') => [
+						'header_menu_type' => '!type-3'
+					],
+
+					__('Background Color', 'blocksy') => [
+						'header_menu_type' => 'type-3'
+					]
+				],
 				'responsive' => false,
 				'divider' => 'top',
 				'choices' => [
@@ -412,12 +450,24 @@ $options = [
 				'options' => [
 
 					'menuIndicatorColor' => [
-						'label' => __( 'Active Indicator Color', 'blocksy' ),
+						'label' => [
+							__('Indicator Color', 'blocksy') => [
+								'header_menu_type' => '!type-3'
+							],
+
+							__('Background Color', 'blocksy') => [
+								'header_menu_type' => 'type-3'
+							]
+						],
 						'type'  => 'ct-color-picker',
 						'design' => 'inline',
 						'setting' => [ 'transport' => 'postMessage' ],
 
 						'value' => [
+							'hover' => [
+								'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+							],
+
 							'active' => [
 								'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
 							],
@@ -425,20 +475,38 @@ $options = [
 
 						'pickers' => [
 							[
+								'title' => __( 'Hover', 'blocksy' ),
+								'id' => 'hover',
+								'inherit' => 'var(--theme-palette-color-2)',
+							],
+
+							[
 								'title' => __( 'Active', 'blocksy' ),
 								'id' => 'active',
-								'inherit' => 'var(--theme-palette-color-2)',
+								'inherit' => 'self:hover'
 							],
 						],
 					],
 
 					'transparentMenuIndicatorColor' => [
-						'label' => __( 'Active Indicator Color', 'blocksy' ),
+						'label' => [
+							__('Indicator Color', 'blocksy') => [
+								'header_menu_type' => '!type-3'
+							],
+
+							__('Background Color', 'blocksy') => [
+								'header_menu_type' => 'type-3'
+							]
+						],
 						'type'  => 'ct-color-picker',
 						'design' => 'inline',
 						'setting' => [ 'transport' => 'postMessage' ],
 
 						'value' => [
+							'hover' => [
+								'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+							],
+
 							'active' => [
 								'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
 							],
@@ -446,19 +514,37 @@ $options = [
 
 						'pickers' => [
 							[
+								'title' => __( 'Hover', 'blocksy' ),
+								'id' => 'hover',
+							],
+
+							[
 								'title' => __( 'Active', 'blocksy' ),
 								'id' => 'active',
+								'inherit' => 'self:hover'
 							],
 						],
 					],
 
 					'stickyMenuIndicatorColor' => [
-						'label' => __( 'Active Indicator Color', 'blocksy' ),
+						'label' => [
+							__('Indicator Color', 'blocksy') => [
+								'header_menu_type' => '!type-3'
+							],
+
+							__('Background Color', 'blocksy') => [
+								'header_menu_type' => 'type-3'
+							]
+						],
 						'type'  => 'ct-color-picker',
 						'design' => 'inline',
 						'setting' => [ 'transport' => 'postMessage' ],
 
 						'value' => [
+							'hover' => [
+								'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+							],
+
 							'active' => [
 								'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
 							],
@@ -466,8 +552,14 @@ $options = [
 
 						'pickers' => [
 							[
+								'title' => __( 'Hover', 'blocksy' ),
+								'id' => 'hover',
+							],
+
+							[
 								'title' => __( 'Active', 'blocksy' ),
 								'id' => 'active',
+								'inherit' => 'self:hover'
 							],
 						],
 					],

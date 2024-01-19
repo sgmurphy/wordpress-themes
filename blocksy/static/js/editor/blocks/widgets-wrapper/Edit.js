@@ -58,9 +58,8 @@ const Edit = ({ attributes, setAttributes, clientId, ...rest }) => {
 
 	const blockProps = useBlockProps({
 		className: {
-			'wp-block-blocksy-widgets-wrapper--collapsible': collapsible,
-			'wp-block-blocksy-widgets-wrapper--expanded':
-				attributes.defaultExpanded,
+			'wp-block-blocksy-widgets-wrapper--collapsible': attributes.isCollapsible,
+			'wp-block-blocksy-widgets-wrapper--expanded': attributes.defaultExpanded,
 		},
 	})
 

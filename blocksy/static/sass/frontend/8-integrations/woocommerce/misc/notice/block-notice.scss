@@ -17,8 +17,14 @@
 		.wc-block-components-notice-banner__content {
 
 			.wc-forward {
-				text-decoration: none;
 				color: inherit !important;
+				line-height: unset;
+				font-weight: unset;
+				text-decoration-line: unset;
+				margin-inline-end: 5px;
+				padding: unset;
+				min-height: unset;
+				background-color: unset;
 			}
 		}
 	}

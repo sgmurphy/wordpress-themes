@@ -43,10 +43,21 @@ export const fastOverlayHandleClick = (e, settings) => {
 		}
 	}
 
-	if (settings.container.querySelector('.flexy')) {
-		loadStyle(ct_localizations.dynamic_styles.flexy_styles).then(() => {
-			mount()
-		})
+	const potentialStyles = ct_localizations.dynamic_styles_selectors.filter(
+		(styleDescriptor) => {
+			return (
+				settings.container.matches(styleDescriptor.selector) ||
+				settings.container.querySelector(styleDescriptor.selector)
+			)
+		}
+	)
+
+	if (potentialStyles.length > 0) {
+		Promise.all(
+			potentialStyles.map((styleDescriptor) =>
+				loadStyle(styleDescriptor.url)
+			)
+		).then(mount)
 	} else {
 		mount()
 	}

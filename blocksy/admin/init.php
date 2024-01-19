@@ -152,12 +152,7 @@ add_action(
 			'ct-options-scripts',
 			'ct_localizations',
 			[
-				'conditions_override' => apply_filters(
-					'blocksy:options:conditions:overrides',
-					[
-						'product_view_type' => 'default-gallery'
-					]
-				),
+				'conditions_override' => blocksy_manager()->get_conditions_overrides(),
 				'theme_version' => $theme->get('Version'),
 				'current_palette' => array_keys(
 					blocksy_manager()->colors->get_color_palette()

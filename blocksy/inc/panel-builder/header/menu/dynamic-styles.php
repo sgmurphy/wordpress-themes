@@ -17,6 +17,17 @@ if ($headerMenuItemsSpacing !== 25) {
 }
 
 
+// Items gap
+$headerMenuItemsGap = blocksy_akg( 'headerMenuItemsGap', $atts, 0 );
+
+if ($headerMenuItemsGap !== 0) {
+	$css->put(
+		blocksy_assemble_selector($root_selector),
+		'--menu-items-gap: ' . $headerMenuItemsGap . 'px'
+	);
+}
+
+
 // Items height
 $headerMenuItemsHeight = blocksy_akg( 'headerMenuItemsHeight', $atts, 100 );
 
@@ -66,7 +77,7 @@ blocksy_output_colors([
 		'active' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 
 		'hover-type-3' => [ 'color' => '#ffffff' ],
-		'active-type-3' => [ 'color' => '#ffffff' ],
+		'active-type-3' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 	],
 	'css' => $css,
 	'variables' => [
@@ -131,10 +142,16 @@ blocksy_output_colors([
 blocksy_output_colors([
 	'value' => blocksy_akg('menuIndicatorColor', $atts),
 	'default' => [
+		'hover' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 		'active' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 	],
 	'css' => $css,
 	'variables' => [
+		'hover' => [
+			'selector' => blocksy_assemble_selector($root_selector),
+			'variable' => 'menu-indicator-hover-color'
+		],
+		
 		'active' => [
 			'selector' => blocksy_assemble_selector($root_selector),
 			'variable' => 'menu-indicator-active-color'
@@ -315,11 +332,23 @@ if (isset($has_transparent_header) && $has_transparent_header) {
 	blocksy_output_colors([
 		'value' => blocksy_akg('transparentMenuIndicatorColor', $atts),
 		'default' => [
+			'hover' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 			'active' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 		],
 		'css' => $css,
 
 		'variables' => [
+			'hover' => [
+				'selector' => blocksy_assemble_selector(
+					blocksy_mutate_selector([
+						'selector' => $root_selector,
+						'operation' => 'between',
+						'to_add' => '[data-transparent-row="yes"]'
+					])
+				),
+				'variable' => 'menu-indicator-hover-color'
+			],
+
 			'active' => [
 				'selector' => blocksy_assemble_selector(
 					blocksy_mutate_selector([
@@ -527,11 +556,23 @@ if (isset($has_sticky_header) && $has_sticky_header) {
 	blocksy_output_colors([
 		'value' => blocksy_akg('stickyMenuIndicatorColor', $atts),
 		'default' => [
+			'hover' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 			'active' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 		],
 		'css' => $css,
 
 		'variables' => [
+			'hover' => [
+				'selector' => blocksy_assemble_selector(
+					blocksy_mutate_selector([
+						'selector' => $root_selector,
+						'operation' => 'between',
+						'to_add' => '[data-sticky*="yes"]'
+					])
+				),
+				'variable' => 'menu-indicator-hover-color'
+			],
+
 			'active' => [
 				'selector' => blocksy_assemble_selector(
 					blocksy_mutate_selector([

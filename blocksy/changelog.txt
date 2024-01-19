@@ -1,3 +1,13 @@
+2.0.20: 2024-01-19
+- Improvement: Minor styling improvement for search block submit button
+- Improvement: Safer output of html in the html header and footer builder item
+
+2.0.19: 2024-01-18
+- Improvement: "Additional Info" single product element duplicated entries are not translatable with WPML's string translation
+- Improvement: Better integrate infinite/load more pagination with WP Grid Builder plugin
+- Improvement: WooCommerce new block notice style improvements
+- Improvement: WooCommerce product reviews replies are not shown indented
+
 2.0.18: 2024-01-12
 - Improvement: Mobile cart view alignment problem with shipping methods
 - Fix: WooCommerce cards type 1 - add to cart button does not inherit border styles from global button settings

@@ -312,7 +312,21 @@ add_filter(
 			return $css_class;
 		}
 
-		$css_class[] = 'animated-submenu';
+		if (
+			isset($args['blocksy_always_inline'])
+			&&
+			$args['blocksy_always_inline']
+		) {
+			$classes[] = 'animated-submenu-inline';
+		} else {
+			if ($depth === 0) {
+				$classes[] = 'animated-submenu-block';
+			}
+
+			if ($depth > 0) {
+				$classes[] = 'animated-submenu-inline';
+			}
+		}
 
 		return $css_class;
 	},
@@ -369,7 +383,22 @@ add_filter(
 				! $args->blocksy_ajax_submenu
 			)
 		) {
-			$classes[] = 'animated-submenu';
+
+			if (
+				isset($args->blocksy_always_inline)
+				&&
+				$args->blocksy_always_inline
+			) {
+				$classes[] = 'animated-submenu-inline';
+			} else {
+				if ($depth === 0) {
+					$classes[] = 'animated-submenu-block';
+				}
+
+				if ($depth > 0) {
+					$classes[] = 'animated-submenu-inline';
+				}
+			}
 		}
 
 		return $classes;

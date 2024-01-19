@@ -411,6 +411,13 @@ var options = {
 		},
 
 		{
+			input: 'static/sass/frontend/8-integrations/woocommerce/cart-header-element-lazy.scss',
+			output: 'static/bundle',
+			filename: 'cart-header-element-lazy.min',
+			// header: buildProcess.headerFor(false, data),
+		},
+
+		{
 			input: 'static/sass/frontend/8-integrations/page-scroll-to-id.scss',
 			output: 'static/bundle',
 			filename: 'page-scroll-to-id.min',

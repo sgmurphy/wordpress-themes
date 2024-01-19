@@ -60,7 +60,6 @@ $options = [
 								apply_filters(
 									'blocksy:options:woocommerce:archive:card-type:choices',
 									[
-
 										'type-1' => [
 											'src'   => blocksy_image_picker_url( 'woo-type-1.svg' ),
 											'title' => __( 'Type 1', 'blocksy' ),
@@ -70,7 +69,6 @@ $options = [
 											'src'   => blocksy_image_picker_url( 'woo-type-2.svg' ),
 											'title' => __( 'Type 2', 'blocksy' ),
 										],
-
 									]
 								),
 

@@ -4,7 +4,7 @@ import { isIosDevice } from '../helpers/is-ios-device'
 const isRtl = () => document.querySelector('html').dir === 'rtl'
 
 const isEligibleForSubmenu = (el) =>
-	el.classList.contains('animated-submenu') &&
+	el.className.includes('animated-submenu') &&
 	(!el.parentNode.classList.contains('menu') ||
 		(el.className.indexOf('ct-mega-menu') === -1 &&
 			el.parentNode.classList.contains('menu')))
@@ -39,13 +39,17 @@ function furthest(el, s) {
 }
 
 const getPreferedPlacementFor = (el) => {
-	const farmost = furthest(el, 'li.menu-item')
+	let farmost = furthest(el, 'li.menu-item')
 
-	if (!farmost) {
-		return isRtl() ? 'left' : 'right'
+	if (el.closest('.ct-header-account')) {
+		farmost = el.closest('.ct-header-account')
+	} else {
+		if (!farmost.querySelector('.sub-menu .sub-menu .sub-menu')) {
+			return isRtl() ? 'left' : 'right'
+		}
 	}
 
-	if (!farmost.querySelector('.sub-menu .sub-menu .sub-menu')) {
+	if (!farmost) {
 		return isRtl() ? 'left' : 'right'
 	}
 
@@ -163,6 +167,10 @@ const closeSubmenu = (e) => {
 }
 
 export const mountMenuLevel = (menuLevel, args = {}) => {
+	args = {
+		checkForFirstLevel: true,
+		...args,
+	}
 	;[...menuLevel.children]
 		.filter((el) =>
 			el.matches('.menu-item-has-children, .page_item_has_children')
@@ -270,7 +278,10 @@ export const mountMenuLevel = (menuLevel, args = {}) => {
 					}
 
 					// If first level
-					if (!el.parentNode.classList.contains('.sub-menu')) {
+					if (
+						args.checkForFirstLevel &&
+						!el.parentNode.classList.contains('.sub-menu')
+					) {
 						;[...el.parentNode.children]
 							.filter((firstLevelEl) => firstLevelEl !== el)
 							.map((firstLevelEl) => {

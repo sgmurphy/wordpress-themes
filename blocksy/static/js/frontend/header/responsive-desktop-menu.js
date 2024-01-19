@@ -2,7 +2,7 @@ import ctEvents from 'ct-events'
 import { getItemsDistribution } from './get-items-distribution'
 
 const isEligibleForSubmenu = (el) =>
-	el.classList.contains('animated-submenu') &&
+	el.className.includes('animated-submenu') &&
 	(!el.parentNode.classList.contains('menu') ||
 		(el.className.indexOf('ct-mega-menu') === -1 &&
 			el.parentNode.classList.contains('menu')))
@@ -25,7 +25,7 @@ const maybeCreateMoreItemsFor = (nav, onDone) => {
 
 	moreContainer.classList.add('menu-item-has-children')
 	moreContainer.classList.add('more-items-container')
-	moreContainer.classList.add('animated-submenu')
+	moreContainer.classList.add('animated-submenu-block')
 	moreContainer.classList.add('menu-item')
 	moreContainer.role = 'none'
 
@@ -61,11 +61,30 @@ const computeItemsWidth = (nav) => {
 
 				const props = window.getComputedStyle(a, null)
 
+				let extraWidth = 0
+
+				let parentComputedStyle = window.getComputedStyle(
+					el.parentNode,
+					null
+				)
+
+				if (parentComputedStyle.gap !== 'normal') {
+					extraWidth = parseFloat(parentComputedStyle.gap)
+
+					if (
+						el.parentNode.firstElementChild === el ||
+						el === el.parentNode.lastElementChild
+					) {
+						extraWidth = extraWidth / 2
+					}
+				}
+
 				let actualWidth =
 					a.firstElementChild.getBoundingClientRect().width +
 					parseInt(props.getPropertyValue('padding-left'), 10) +
 					parseInt(props.getPropertyValue('padding-right'), 10) +
-					(a.querySelector('.ct-toggle-dropdown-desktop') ? 13 : 0)
+					(a.querySelector('.ct-toggle-dropdown-desktop') ? 13 : 0) +
+					extraWidth
 
 				a.innerHTML = a.firstElementChild.innerHTML
 
@@ -159,7 +178,12 @@ export const mount = (nav) => {
 					)
 				)
 					.filter((el) => !!el.closest('[class*="ct-mega-menu"]'))
-					.map((el) => el.classList.remove('animated-submenu'))
+					.map((el) =>
+						el.classList.remove(
+							'animated-submenu-block',
+							'animated-submenu-inline'
+						)
+					)
 			})
 
 			nav.querySelector('.more-items-container').remove()
@@ -179,13 +203,13 @@ export const mount = (nav) => {
 		notFit.map((el) => {
 			nav.querySelector('.more-items-container .sub-menu').appendChild(el)
 
-			el.classList.add('animated-submenu')
+			el.classList.add('animated-submenu-inline')
 
 			Array.from(
 				el.querySelectorAll(
 					'.menu-item-has-children, .page_item_has_children'
 				)
-			).map((el) => el.classList.add('animated-submenu'))
+			).map((el) => el.classList.add('animated-submenu-inline'))
 		})
 
 		fit.map((el) => {
@@ -200,7 +224,12 @@ export const mount = (nav) => {
 				)
 			)
 				.filter((el) => !!el.closest('[class*="ct-mega-menu"]'))
-				.map((el) => el.classList.remove('animated-submenu'))
+				.map((el) =>
+					el.classList.remove(
+						'animated-submenu-block',
+						'animated-submenu-inline'
+					)
+				)
 		})
 
 		resetSubmenus()

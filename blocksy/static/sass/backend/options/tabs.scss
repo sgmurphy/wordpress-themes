@@ -4,9 +4,17 @@
 	> ul {
 		display: flex;
 		column-gap: 7px;
-		margin: var(--tabs-pills-margin, 0 14px);
+		position: sticky;
+		z-index: 2;
+		top: 14px;
+		margin: 0;
+		padding: var(--tabs-pills-margin, 0 14px);
+		box-shadow: inset 0px -1px 0px 0px var(--optionBorderColor);
+		background: var(--tabs-pills-active-background-color, #f0f0f1);
 
 		> li {
+			position: relative;
+			z-index: 1;
 			flex: 1 1 0;
 			display: flex;
 			align-items: center;
@@ -44,25 +52,40 @@
 
 				&:after {
 					inset-inline-start: 0;
-					bottom: -2px;
+					bottom: -1px;
 					width: 100%;
-					height: 3px;
+					height: 1px;
 					background: var(--tabs-pills-active-background-color, #f0f0f1);
 				}
 			}
 
 			&:not(.active) {
+
 				&:hover {
 					color: var(--tabs-pills-hover-color, #444);
 					background: var(--tabs-pills-hover-background-color, #fff);
 				}
 			}
 		}
-	}
 
-	> ul + .ct-current-tab {
-		margin-top: -1px;
-		border-top: 1px solid var(--optionBorderColor);
+		// helpers
+		&:before, &:after {
+			position: absolute;
+			content: '';
+		}
+
+		&:before {
+			inset: -15px 0 1px 0;
+			background: var(--tabs-pills-active-background-color, #f0f0f1);
+		}
+
+		&:after {
+			inset-inline: 0;
+			bottom: -5px;
+			width: 100%;
+			height: 5px;
+			background: var(--tabs-pills-active-background-color, #f0f0f1);
+		}
 	}
 
 	.ct-current-tab {

@@ -11,6 +11,75 @@ class WooCommerceSingle {
 		new WooCommerceAddToCart();
 	}
 
+	public function register_translations() {	
+		$default_product_layout = blocksy_get_woo_single_layout_defaults();
+	
+		$layout = blocksy_get_theme_mod(
+			'woo_single_layout',
+			$default_product_layout
+		);
+	
+		$layout = blocksy_normalize_layout(
+			$layout,
+			$default_product_layout
+		);
+	
+		$product_view_type = blocksy_get_product_view_type();
+	
+		if (
+			$product_view_type === 'top-gallery'
+			||
+			$product_view_type === 'columns-top-gallery'
+		) {
+			$woo_single_split_layout = blocksy_get_theme_mod(
+				'woo_single_split_layout',
+				[
+					'left' => blocksy_get_woo_single_layout_defaults('left'),
+					'right' => blocksy_get_woo_single_layout_defaults('right')
+				]
+			);
+	
+			$layout = array_merge(
+				$woo_single_split_layout['left'],
+				$woo_single_split_layout['right']
+			);
+		}
+	
+		$additional_info_layer = array_values(array_filter($layout, function($k) {
+			return $k['id'] === 'additional_info';
+		}));
+	
+		if (empty($additional_info_layer)) {
+			return;
+		}
+
+		$items = blocksy_akg('additional_info_items', $additional_info_layer[0], []);
+
+		// blocksy_print($additional_info_layer[0]);
+
+		add_filter(
+			'blocksy:translations-manager:all-translation-keys',
+			function ($all_keys) use ($additional_info_layer) {
+				$items = blocksy_akg('additional_info_items', $additional_info_layer[0], []);
+
+				foreach ($items as $key => $item) {
+					$item_i18n_id_prefix = 'single_product:additional_info_item:' . $item['id'];
+
+					if (isset($item['__id'])) {
+						$item_i18n_id_prefix = 'single_product:additional_info_item:' . $item['__id'];
+					}
+
+					$all_keys[] = [
+						'key' => $item_i18n_id_prefix . ':item_title',
+						'value' => $item['item_title']
+					];
+				}
+
+				return $all_keys;
+			}
+		);
+	}
+
 	public function render_layout($args = []) {
 		$args = wp_parse_args(
 			$args,
@@ -262,27 +331,27 @@ class WooCommerceSingle {
 	public function additional_info($layer) {
 		$items = [
 			[
-				'id' => 'additional_info_item',
+				'id' => 'additional_info_item_premium_quality',
 				'enabled' => true,
 				'item_title' => __('Premium Quality', 'blocksy'),
 			],
 			[
-				'id' => 'additional_info_item',
+				'id' => 'additional_info_item_secure_payments',
 				'enabled' => true,
 				'item_title' => __('Secure Payments', 'blocksy'),
 			],
 			[
-				'id' => 'additional_info_item',
+				'id' => 'additional_info_item_satisfaction_guarantee',
 				'enabled' => true,
 				'item_title' => __('Satisfaction Guarantee', 'blocksy')
 			],
 			[
-				'id' => 'additional_info_item',
+				'id' => 'additional_info_item_worldwide_shipping',
 				'enabled' => true,
 				'item_title' => __('Worldwide Shipping', 'blocksy')
 			],
 			[
-				'id' => 'additional_info_item',
+				'id' => 'additional_info_item_money_back_guarantee',
 				'enabled' => true,
 				'item_title' => __('Money Back Guarantee', 'blocksy')
 			],
@@ -305,7 +374,7 @@ class WooCommerceSingle {
 		$out = '<div class="ct-product-additional-info">';
 		$out .= '<span class="ct-module-title">' . $section_title . '</span>';
 		$out .= '<ul>';
-
+		
 		foreach ($items as $key => $item) {
 			$icon = '<svg width="15" height="15" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm6.2 9.5-7.6 7.6c-.4.4-1.1.4-1.5 0l-3.3-3.3c-.4-.4-.4-1.1 0-1.5.4-.4 1.1-.4 1.5 0l2.5 2.5L16.7 8c.4-.4 1.1-.4 1.5 0 .4.4.4 1.1 0 1.5z"/></svg>';
 
@@ -336,14 +405,23 @@ class WooCommerceSingle {
 					);
 				}
 
-				$out .= $icon;
+				$item_i18n_id_prefix = 'single_product:additional_info_item:' . $item['id'];
 
+				if (isset($item['__id'])) {
+					$item_i18n_id_prefix = 'single_product:additional_info_item:' . $item['__id'];
+				}
+
+				$out .= $icon;
+				
 				$out .= blocksy_html_tag(
 					'span',
 					[
 						'class' => 'ct-label'
 					],
-					$item['item_title']
+					blocksy_translate_dynamic(
+						$item['item_title'],
+						$item_i18n_id_prefix . ':item_title'
+					)
 				);
 				$out .= '</li>';
 			}

@@ -309,12 +309,7 @@ add_action(
 					[]
 				),
 
-				'conditions_override' => apply_filters(
-					'blocksy:options:conditions:overrides',
-					[
-						'product_view_type' => 'default-gallery'
-					]
-				)
+				'conditions_override' => blocksy_manager()->get_conditions_overrides(),
 			]
 		);
 	}

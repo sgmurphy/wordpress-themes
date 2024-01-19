@@ -274,13 +274,6 @@ class Blocksy_Manager {
 					)
 				),
 
-				'flexy_styles' => add_query_arg(
-					'ver',
-					$theme->get('Version'),
-					blocksy_cdn_url(
-						get_template_directory_uri() . '/static/bundle/flexy.min.css'
-					)
-				),
 
 				'search_lazy' => add_query_arg(
 					'ver',
@@ -299,7 +292,29 @@ class Blocksy_Manager {
 				)
 			],
 
-			'dynamic_styles_selectors' => []
+			'dynamic_styles_selectors' => [
+				[
+					'selector' => '.ct-header-cart, #woo-cart-panel',
+					'url' => add_query_arg(
+						'ver',
+						$theme->get('Version'),
+						blocksy_cdn_url(
+							get_template_directory_uri() . '/static/bundle/cart-header-element-lazy.min.css'
+						)
+					)
+				],
+
+				[
+					'selector' => '.flexy',
+					'url' => add_query_arg(
+						'ver',
+						$theme->get('Version'),
+						blocksy_cdn_url(
+							get_template_directory_uri() . '/static/bundle/flexy.min.css'
+						)
+					),
+				]
+			]
 		]);
 
 		foreach ($data['dynamic_styles_selectors'] as $dynamic_style_index => $dynamic_style) {
@@ -393,6 +408,22 @@ class Blocksy_Manager {
 			'blocksy:options:prefix-global-actions',
 			[],
 			$args
+		);
+	}
+
+	public function get_conditions_overrides() {
+		$shop_cards_type = blocksy_get_theme_mod('shop_cards_type', 'type-1');
+
+		if ($shop_cards_type !== 'type-1' && $shop_cards_type !== 'type-2') {
+			$shop_cards_type = 'type-1';
+		}
+
+		return apply_filters(
+			'blocksy:options:conditions:overrides',
+			[
+				'product_view_type' => 'default-gallery',
+				'shop_cards_type' => $shop_cards_type,
+			]
 		);
 	}
 

@@ -42,7 +42,7 @@ $text = str_replace(
 	$text
 );
 
-$text = do_shortcode(str_replace(
+$text = blocksy_output_html_safely(str_replace(
 	'{theme_author}',
 	blocksy_html_tag(
 		'a',

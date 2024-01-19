@@ -38,7 +38,7 @@ if ($panel_type === 'header') {
 
 $class .= ' ' . blocksy_visibility_classes($visibility);
 
-$text = do_shortcode(
+$text = blocksy_output_html_safely(
 	blocksy_translate_dynamic(
 		blocksy_default_akg(
 			'header_text',

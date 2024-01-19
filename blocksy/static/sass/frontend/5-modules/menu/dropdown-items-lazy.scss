@@ -57,7 +57,7 @@
 	}
 
 	// dropdown top adjuster when items have no divider
-	.animated-submenu [data-submenu]:not(:first-child) > ul {
-		--top: calc((1 - var(--has-divider)) * -16px);
+	[class*="animated-submenu"] [data-submenu]:not(:first-child) > ul {
+		top: calc((1 - var(--has-divider)) * -16px);
 	}
 }

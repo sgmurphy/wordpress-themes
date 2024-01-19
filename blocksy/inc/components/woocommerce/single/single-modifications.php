@@ -40,6 +40,10 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
 
+add_action('init', function() {
+	blocksy_manager()->woocommerce->single->register_translations();
+});
+
 if (!wp_doing_ajax()) {
 	add_filter('template_include', function ($template) {
 		if (blocksy_woocommerce_has_flexy_view()) {

@@ -347,6 +347,8 @@ if (! function_exists('blocksy_debug')) {
 // Keeping it for few more releases to avoid updates crashes.
 //
 // Ref: https://php.watch/versions/8.2/utf8_encode-utf8_decode-deprecated
+//
+// To be removed in March 2024.
 function blocksy_utf8_decode($s) {
 	$len = \strlen($s);
 
@@ -373,4 +375,14 @@ function blocksy_utf8_decode($s) {
 	}
 
 	return substr($s, 0, $j);
+}
+
+function blocksy_output_html_safely($html) {
+	$html = do_shortcode($html);
+
+	if (current_user_can('unfiltered_html')) {
+		return $html;
+	}
+
+	return wp_filter_post_kses($html);
 }

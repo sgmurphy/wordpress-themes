@@ -1,81 +1,81 @@
-[data-submenu] {
-	position: relative;
+[class*="animated-submenu"] {
+
+	&[data-submenu] {
+		position: relative;
+	}
+
+	> .sub-menu {
+		position: var(--dropdown-position, absolute);
+		top: 100%;
+		z-index: 10;
+		min-width: 100px;
+		margin-top: var(--sticky-state-dropdown-top-offset, var(--dropdown-top-offset, 0));
+		border-radius: var(--theme-border-radius);
+		width: var(--dropdown-width, 200px);
+		background-color: var(--dropdown-background-color, var(--theme-palette-color-4));
+		box-shadow: var(--theme-box-shadow);
+
+		// drop-down bridge
+		&:before {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: var(--sticky-state-dropdown-top-offset, var(--dropdown-top-offset, 0));
+			transform: translateY(-100%);
+			transition: height 0.2s ease;
+		}
+	}
 }
 
-// drop-down
-.animated-submenu > .sub-menu {
-	position: var(--dropdown-position, absolute);
-	top: var(--top, 100%);
-	z-index: 10;
-	min-width: 100px;
-	margin-top: var(--sticky-state-dropdown-top-offset, var(--dropdown-top-offset, 0));
-	border-radius: var(--theme-border-radius);
-	width: var(--dropdown-width, 200px);
-	background-color: var(--dropdown-background-color, var(--theme-palette-color-4));
-	box-shadow: var(--theme-box-shadow);
 
-	// drop-down bridge
-	&:before {
-		position: absolute;
-		content: '';
+// first level drop-down
+.animated-submenu-block {
+
+	&[data-submenu='right'] > .sub-menu {
+		left: var(--theme-submenu-inline-offset, 0);
+	}
+
+	&[data-submenu='left'] > .sub-menu {
+		right: var(--theme-submenu-inline-offset, 0);
+	}
+}
+
+
+// other levels drop-downs
+.animated-submenu-inline {
+
+	> .sub-menu {
 		top: 0;
-		left: 0;
-		width: 100%;
-		height: var(--sticky-state-dropdown-top-offset, var(--dropdown-top-offset, 0));
-		transform: translateY(-100%);
-		transition: height 0.2s ease;
+		margin-top: 0;
+
+		&:before {
+			width: var(--dropdown-horizontal-offset, 5px);
+			height: 100%;
+			transform: initial;
+		}
 	}
-}
 
-// first drop-down
-.menu > [data-submenu='right'] > .sub-menu {
-	left: var(--theme-submenu-inline-offset, 0);
-}
-
-.menu > [data-submenu='left'] > .sub-menu {
-	right: var(--theme-submenu-inline-offset, 0);
-}
-
-[data-submenu] .menu-item:not([data-submenu]) {
-	--top: 0;
-	--dropdown-position: fixed;
-}
-
-// other drop-downs
-.animated-submenu [data-submenu] > ul {
-	--top: 0;
-	margin-top: 0;
-
-	&:before {
-		width: var(--dropdown-horizontal-offset, 5px);
-		height: 100%;
-		transform: initial;
-	}
-}
-
-.animated-submenu [data-submenu='right'] {
-	> ul {
-		right: calc(var(--dropdown-horizontal-offset, 5px) * -1);
-		margin-right: -100%;
+	&[data-submenu='right'] > .sub-menu {
+		left: calc(100% + var(--dropdown-horizontal-offset, 5px));
 
 		&:before {
 			left: calc(var(--dropdown-horizontal-offset, 5px) * -1);
 			right: initial;
 		}
 	}
-}
 
-.animated-submenu [data-submenu='left'] {
-	> ul {
-		left: calc(var(--dropdown-horizontal-offset, 5px) * -1);
-		margin-left: -100%;
+	&[data-submenu='left'] > .sub-menu {
+		right: calc(100% + var(--dropdown-horizontal-offset, 5px));
 
 		&:before {
 			left: initial;
 			right: calc(var(--dropdown-horizontal-offset, 5px) * -1);
-		}
+		}	
 	}
 }
+
 
 // dropdown toggle
 .ct-toggle-dropdown-desktop {
@@ -85,12 +85,17 @@
 	--toggle-button-margin-start: var(--dropdown-toggle-margin-start, 0.2em);
 }
 
-.animated-submenu [data-submenu='left'] > a {
-	--toggle-icon-transform: rotate(90deg);
-}
+.animated-submenu-inline {
+	--dropdown-toggle-margin-start: auto;
+	--toggle-ghost-inset-end: calc(var(--dropdown-items-spacing, 13px) * 1.5 + 13px);
 
-.animated-submenu [data-submenu='right'] > a {
-	--toggle-icon-transform: rotate(-90deg);
+	&[data-submenu='left'] > a {
+		--toggle-icon-transform: rotate(90deg);
+	}
+
+	&[data-submenu='right'] > a {
+		--toggle-icon-transform: rotate(-90deg);
+	}
 }
 
 
@@ -102,9 +107,4 @@
 
 	--toggle-button-size: 18px;
 	--toggle-button-margin-end: -18px;
-}
-
-.sub-menu {
-	--dropdown-toggle-margin-start: auto;
-	--toggle-ghost-inset-end: calc(var(--dropdown-items-spacing, 13px) * 1.5 + 13px);
 }

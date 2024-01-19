@@ -8,13 +8,13 @@ $buttons-base:
 	'.wp-block-button__link',
 
 	// special buttons
-	'a.showlogin',
-	'a.restore-item',
 	'button.regform-button',
 	'button[class*="ajax"]',
 	
 	// integrations
 	'.woocommerce button.button',
+	'.woocommerce-message .showlogin',
+	'.woocommerce-message .restore-item',
 	'.forminator-ui[data-design="none"] .forminator-button',
 	'.fluentform .ff-el-group button.ff-btn',
 ;
