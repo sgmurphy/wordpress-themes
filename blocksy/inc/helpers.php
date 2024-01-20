@@ -384,5 +384,18 @@ function blocksy_output_html_safely($html) {
 		return $html;
 	}
 
-	return wp_filter_post_kses($html);
+	// Just drop scripts from the html content, if user doesnt have
+	// unfiltered_html capability.
+	return preg_replace('#<script(.*?)>(.*?)</script>#is', '', $html);
+
+	// Dont use wp_filter_post_kses() as it is very unstable as far as slashes go.
+	// Just call wp_kses() directly.
+	//
+	// Context:
+	//
+	// https://github.com/WP-API/WP-API/issues/2848
+	// https://github.com/WP-API/WP-API/issues/2788
+	// https://core.trac.wordpress.org/ticket/38609
+	// return wp_kses($html, 'post');
 }
+
