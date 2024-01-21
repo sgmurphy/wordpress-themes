@@ -4,7 +4,7 @@ Author: SiteOrigin
 Author URI: https://siteorigin.com/
 Theme URI: https://siteorigin.com/theme/vantage/
 Description: Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Smart Slider 3 for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store. We offer free support on our <a href="https://siteorigin.com/thread/">forum</a> (https://siteorigin.com/thread/).
-Version: 1.20.18
+Version: 1.20.19
 Tested up to: 6.4
 Requires at least: 4.7
 Requires PHP: 5.6.20
@@ -581,6 +581,7 @@ body {
   padding-bottom: 45px;
 }
 #masthead .hgroup:not(.masthead-sidebar) {
+  gap: 25px;
   display: flex;
   justify-content: space-between;
 }
@@ -624,10 +625,16 @@ body {
   box-sizing: border-box;
   height: 100%;
 }
+@media (min-width: 680px) {
+  #masthead .hgroup #header-sidebar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+}
 #masthead .hgroup #header-sidebar aside.widget {
-  float: left;
-  margin-right: 25px;
-  margin-bottom: 0;
+  margin: 0;
   position: relative;
 }
 #masthead .hgroup #header-sidebar aside.widget.widget_circleicon-widget {
@@ -841,7 +848,6 @@ body.sidebar-position-none #secondary {
 #masthead.force-responsive .hgroup #header-sidebar .widget {
   display: block;
   margin: 0 auto;
-  float: none;
 }
 #masthead.force-responsive .hgroup #header-sidebar > .widget {
   margin-bottom: 1.25em;
@@ -883,7 +889,6 @@ body.sidebar-position-none #secondary {
   body.responsive #masthead .hgroup #header-sidebar .widget {
     display: block;
     margin: 0 auto;
-    float: none;
   }
   body.responsive #masthead .hgroup #header-sidebar > .widget {
     margin-bottom: 1.25em;

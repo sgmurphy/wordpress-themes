@@ -1,4 +1,4 @@
-# Copyright (C) 2023 vantage
+# Copyright (C) 2024 vantage
 # This file is distributed under the same license as the vantage package.
 msgid ""
 msgstr ""
@@ -2243,19 +2243,19 @@ msgstr ""
 msgid "You can also read through the %sVantage documentation%s to get to know it even faster."
 msgstr ""
 
-#: inc/customizer/customizer.php:446
+#: inc/customizer/customizer.php:445
 msgid "Theme Design"
 msgstr ""
 
-#: inc/customizer/customizer.php:447
+#: inc/customizer/customizer.php:446
 msgid "Theme Specific Customizations For %s."
 msgstr ""
 
-#: inc/customizer/customizer.php:671
+#: inc/customizer/customizer.php:670
 msgid "Are you sure you want to reset your theme customizations?"
 msgstr ""
 
-#: inc/customizer/customizer.php:672
+#: inc/customizer/customizer.php:671
 msgid "Reset Customizations"
 msgstr ""
 
