@@ -615,8 +615,8 @@ function ashe_customize_register( $wp_customize ) {
 				'section'	  => 'ashe_colors',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Colors', 'ashe' ),
-				'description' => esc_html( 'https://wp-royal-themes.com/themes/item-ashe-pro/?ref=ashe-free-colors-customizer#!/ashe-pro-page-colors' ),
-				// 'description' => esc_html( 'https://ashe-pro.wp-royal-themes.com/wp-content/plugins/open-house-theme-options/redirect.php?multisite=typography-v2&section=ashe_colors' ),
+				// 'description' => esc_html( 'https://wp-royal-themes.com/themes/item-ashe-pro/?ref=ashe-free-colors-customizer#!/ashe-pro-page-colors' ),
+				'description' => esc_html( 'https://ashe-pro.wp-royal-themes.com/wp-content/plugins/open-house-theme-options/redirect.php?multisite=food&section=ashe_colors' ),
 				'priority'	  => 100
 			)
 		)
