@@ -13,6 +13,7 @@ Object.defineProperty(exports, "__esModule", ({
 exports.ActionLinks = void 0;
 const ActionLinks = ({
   image,
+  alt,
   title,
   message,
   button,
@@ -22,7 +23,7 @@ const ActionLinks = ({
     className: "hello_elementor__action_links"
   }, /*#__PURE__*/React.createElement("img", {
     src: image,
-    alt: "Elementor"
+    alt: alt
   }), /*#__PURE__*/React.createElement("p", {
     className: "hello_elementor__action_links__title"
   }, title), /*#__PURE__*/React.createElement("p", {
@@ -168,6 +169,7 @@ var _actionLinks = __webpack_require__(222);
 const actionLinks = {
   'install-elementor': {
     image: helloAdminData.templateDirectoryURI + '/assets/images/elementor.svg',
+    alt: (0, _i18n.__)('Elementor', 'hello-elementor'),
     title: (0, _i18n.__)('Install Elementor', 'hello-elementor'),
     message: (0, _i18n.__)('Create cross-site header & footer using Elementor.', 'hello-elementor'),
     button: (0, _i18n.__)('Install Elementor', 'hello-elementor'),
@@ -175,6 +177,7 @@ const actionLinks = {
   },
   'activate-elementor': {
     image: helloAdminData.templateDirectoryURI + '/assets/images/elementor.svg',
+    alt: (0, _i18n.__)('Elementor', 'hello-elementor'),
     title: (0, _i18n.__)('Activate Elementor', 'hello-elementor'),
     message: (0, _i18n.__)('Create cross-site header & footer using Elementor.', 'hello-elementor'),
     button: (0, _i18n.__)('Activate Elementor', 'hello-elementor'),
@@ -182,13 +185,15 @@ const actionLinks = {
   },
   'activate-header-footer-experiment': {
     image: helloAdminData.templateDirectoryURI + '/assets/images/elementor.svg',
+    alt: (0, _i18n.__)('Elementor', 'hello-elementor'),
     title: (0, _i18n.__)('Style using Elementor', 'hello-elementor'),
     message: (0, _i18n.__)('Design your cross-site header & footer from Elementor’s "Site Settings" panel.', 'hello-elementor'),
-    button: (0, _i18n.__)('Activate Hello theme header & footer experiment', 'hello-elementor'),
+    button: (0, _i18n.__)('Activate header & footer experiment', 'hello-elementor'),
     link: helloAdminData.actionLinkURL
   },
   'style-header-footer': {
     image: helloAdminData.templateDirectoryURI + '/assets/images/elementor.svg',
+    alt: (0, _i18n.__)('Elementor', 'hello-elementor'),
     title: (0, _i18n.__)('Style cross-site header & footer', 'hello-elementor'),
     message: (0, _i18n.__)('Customize your cross-site header & footer from Elementor’s "Site Settings" panel.', 'hello-elementor'),
     button: (0, _i18n.__)('Start Designing', 'hello-elementor'),

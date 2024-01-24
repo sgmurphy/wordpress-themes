@@ -3,8 +3,8 @@
 Contributors: elemntor, KingYes, ariel.k, bainternet
 Requires at least: 6.0
 Tested up to: 6.4
-Stable tag: 3.0.0
-Version: 3.0.0
+Stable tag: 3.0.1
+Version: 3.0.1
 Requires PHP: 7.3
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -35,6 +35,10 @@ License: CC0 1.0 Universal (CC0 1.0)
 Source: https://stocksnap.io/photo/4B83RD7BV9
 
 == Changelog ==
+
+= 3.0.1 - 2024-01-24 =
+* Fix: Harden security for admin notice dismiss button
+* Fix: Add `alt` attribute to all the images in the dashboard
 
 = 3.0.0 - 2023-12-26 =
 * New: Option to disable cross-site header & footer
