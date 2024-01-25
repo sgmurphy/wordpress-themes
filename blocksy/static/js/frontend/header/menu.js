@@ -38,24 +38,92 @@ function furthest(el, s) {
 	return nodes[nodes.length - 1]
 }
 
+const getAllParentsUntil = (el, parent) => {
+	const parents = []
+
+	while (el.parentNode !== parent) {
+		parents.push(el.parentNode)
+		el = el.parentNode
+	}
+
+	return parents
+}
+
+const reversePlacementIfNeeded = (placement) => {
+	if (!isRtl()) {
+		return placement
+	}
+
+	if (placement === 'left') {
+		return 'right'
+	}
+
+	if (placement === 'right') {
+		return 'left'
+	}
+
+	return placement
+}
+
 const getPreferedPlacementFor = (el) => {
 	let farmost = furthest(el, 'li.menu-item')
 
-	if (el.closest('.ct-header-account')) {
-		farmost = el.closest('.ct-header-account')
-	} else {
-		if (!farmost.querySelector('.sub-menu .sub-menu .sub-menu')) {
-			return isRtl() ? 'left' : 'right'
-		}
-	}
-
 	if (!farmost) {
-		return isRtl() ? 'left' : 'right'
+		return reversePlacementIfNeeded('right')
 	}
 
-	return farmost.getBoundingClientRect().left > innerWidth / 2
-		? 'left'
-		: 'right'
+	const submenusWithParents = [...farmost.querySelectorAll('.sub-menu')].map(
+		(el) => {
+			return { el, parents: getAllParentsUntil(el, farmost) }
+		}
+	)
+
+	if (submenusWithParents.length === 0) {
+		return reversePlacementIfNeeded('right')
+	}
+
+	const submenusWithParentsSorted = submenusWithParents
+		.sort((a, b) => a.parents.length - b.parents.length)
+		.reverse()
+
+	const submenuWithMostParents = submenusWithParentsSorted[0]
+
+	const allSubmenus = [
+		...submenuWithMostParents.parents.filter((el) =>
+			el.matches('.sub-menu')
+		),
+
+		...[submenuWithMostParents.el],
+	]
+
+	const allSubmenusAlignedWidth = allSubmenus.reduce((acc, el, index) => {
+		const style = getComputedStyle(el)
+
+		return (
+			acc +
+			el.getBoundingClientRect().width +
+			(index === 0
+				? 0
+				: parseFloat(
+						style.getPropertyValue(
+							'--dropdown-horizontal-offset'
+						) || '5px'
+				  ))
+		)
+	}, 0)
+
+	const farmostRect = farmost.getBoundingClientRect()
+
+	let willItFitToTheRight =
+		innerWidth - farmostRect.left > allSubmenusAlignedWidth
+
+	if (farmost.matches('.animated-submenu-inline')) {
+		willItFitToTheRight =
+			innerWidth - farmostRect.left - farmostRect.width >
+			allSubmenusAlignedWidth
+	}
+
+	return reversePlacementIfNeeded(willItFitToTheRight ? 'right' : 'left')
 }
 
 const computeItemSubmenuFor = (

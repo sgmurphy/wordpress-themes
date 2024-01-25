@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-20 12:08+0000\n"
+"POT-Creation-Date: 2024-01-25 18:07+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
@@ -4532,7 +4532,7 @@ msgid "Payment Methods"
 msgstr ""
 
 #: inc/options/woocommerce/single-product-layers.php:295,
-#: inc/components/woocommerce/single/single.php:243
+#: inc/components/woocommerce/single/single.php:230
 msgid "Guaranteed Safe Checkout"
 msgstr ""
 
@@ -4541,7 +4541,7 @@ msgid "Additional Info"
 msgstr ""
 
 #: inc/options/woocommerce/single-product-layers.php:385,
-#: inc/components/woocommerce/single/single.php:368
+#: inc/components/woocommerce/single/single.php:355
 msgid "Extra Features"
 msgstr ""
 
@@ -4550,27 +4550,27 @@ msgid "Items"
 msgstr ""
 
 #: inc/options/woocommerce/single-product-layers.php:400,
-#: inc/components/woocommerce/single/single.php:336
+#: inc/components/woocommerce/single/single.php:323
 msgid "Premium Quality"
 msgstr ""
 
 #: inc/options/woocommerce/single-product-layers.php:405,
-#: inc/components/woocommerce/single/single.php:341
+#: inc/components/woocommerce/single/single.php:328
 msgid "Secure Payments"
 msgstr ""
 
 #: inc/options/woocommerce/single-product-layers.php:410,
-#: inc/components/woocommerce/single/single.php:346
+#: inc/components/woocommerce/single/single.php:333
 msgid "Satisfaction Guarantee"
 msgstr ""
 
 #: inc/options/woocommerce/single-product-layers.php:415,
-#: inc/components/woocommerce/single/single.php:351
+#: inc/components/woocommerce/single/single.php:338
 msgid "Worldwide Shipping"
 msgstr ""
 
 #: inc/options/woocommerce/single-product-layers.php:420,
-#: inc/components/woocommerce/single/single.php:356
+#: inc/components/woocommerce/single/single.php:343
 msgid "Money Back Guarantee"
 msgstr ""
 

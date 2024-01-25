@@ -40,16 +40,10 @@
 		}
 
 		select {
-			// appearance: none;
 			position: absolute;
 			inset: 0;
 			width: 100%;
 			height: var(--theme-form-field-height, 40px);
-			// padding-inline-end: 25px;
-			// background-image: url("data:image/svg+xml,%3Csvg width='21' height='13' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.5.379L20.621 2.5 10.5 12.621.379 2.5 2.5.379l8 8z' fill='%2currentColor' fill-rule='nonzero'/%3E%3C/svg%3E");
-			// background-repeat: no-repeat, repeat;
-			// background-size: 8px auto, 100%;
-			// background-position: right 10px top 50%, 0 0;
 			border-start-start-radius: 0;
 			border-end-start-radius: 0;
 		}

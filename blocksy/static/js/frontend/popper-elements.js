@@ -1,15 +1,15 @@
 import { loadStyle } from '../helpers'
 
 const mountPopper = (reference) => {
-	if (reference.popperMounted) {
-		return
-	}
-
-	reference.popperMounted = true
-
 	if (!reference.nextElementSibling) {
 		return
 	}
+
+	if (reference.nextElementSibling.popperMounted) {
+		return
+	}
+
+	reference.nextElementSibling.popperMounted = true
 
 	const target = reference.nextElementSibling
 

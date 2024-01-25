@@ -4,13 +4,13 @@
 	.wp-element-button {
 		border: none;
 		box-sizing: border-box;
-		min-width: var(--theme-form-field-height, 40px);
 		min-height: var(--theme-form-field-height, 40px);
 	}
 
 	// button with icon
 	&.wp-block-search__icon-button .wp-element-button {
 		padding: 5px;
+		min-width: var(--theme-form-field-height, 40px);
 	}
 
 	// button with text

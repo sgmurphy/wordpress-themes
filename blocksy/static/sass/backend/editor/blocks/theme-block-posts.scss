@@ -8,16 +8,6 @@
 
 .ct-posts-block {
 
-	a {
-		pointer-events: none;
-		text-decoration: none;
-	}
-
-	ul {
-		margin: 0;
-		padding: 0;
-	}
-
 	p {
 		margin-top: 0;
 
@@ -32,8 +22,6 @@
 		img {
 			width: inherit;
 			max-width: 100%;
-			border-radius: inherit;
-			object-fit: cover;
 		}
 
 		.ct-video-indicator {

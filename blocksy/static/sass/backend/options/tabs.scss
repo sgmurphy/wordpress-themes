@@ -6,7 +6,7 @@
 		column-gap: 7px;
 		position: sticky;
 		z-index: 2;
-		top: 14px;
+		top: var(--tabs-sticky-offset, 0px);
 		margin: 0;
 		padding: var(--tabs-pills-margin, 0 14px);
 		box-shadow: inset 0px -1px 0px 0px var(--optionBorderColor);
@@ -98,3 +98,14 @@
 		}
 	}
 }
+
+
+#customize-controls {
+	--tabs-sticky-offset: 14px;
+
+	.ct-available-items > .ct-tabs,
+	.ct-options-container > .ct-tabs {
+		--tabs-sticky-offset: 2px;
+	}
+}
+

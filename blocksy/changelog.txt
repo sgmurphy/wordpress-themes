@@ -1,3 +1,12 @@
+2.0.22: 2024-01-25
+- Improvement: Correctly display the new WooCommerce block notice when product is sold individually and Ajax add to cart is enabled
+- Improvement: Menu dropdown position improvement if more than two nested levels are present
+- Improvement: Social icons block - do not allow clicking the links in backend
+- Fix: WooCommerce mini cart dropdown stops showing in certain cases
+
+2.0.21: 2024-01-20
+- Improvement: Better slashing handling in html output
+
 2.0.20: 2024-01-19
 - Improvement: Minor styling improvement for search block submit button
 - Improvement: Safer output of html in the html header and footer builder item

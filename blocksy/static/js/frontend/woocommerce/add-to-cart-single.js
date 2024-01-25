@@ -61,15 +61,18 @@ function singleProductAddToCart(wrapper) {
 			const div = document.createElement('div')
 			div.innerHTML = addToCartData
 
-			let error = div.querySelector('.woocommerce-error')
+			const errorSelector =
+				'.woocommerce-error, .wc-block-components-notice-banner.is-error'
+
+			let error = div.querySelector(errorSelector)
 
 			if (error && error.innerHTML.length > 0) {
 				let notices = document.querySelector(
 					'.woocommerce-notices-wrapper'
 				)
 
-				if (notices.querySelector('.woocommerce-error')) {
-					notices.querySelector('.woocommerce-error').remove()
+				if (notices.querySelector(errorSelector)) {
+					notices.querySelector(errorSelector).remove()
 				}
 
 				if (notices) {

@@ -19,11 +19,11 @@ function blocksy_woocommerce_has_flexy_view() {
 	if (
 		(is_product() || wp_doing_ajax())
 		&&
-		!blocksy_manager()->screen->uses_woo_default_template()
+		! blocksy_manager()->screen->uses_woo_default_template()
 		&&
-		!is_customize_preview()
+		! is_customize_preview()
 		&&
-		!$is_variations_action
+		! $is_variations_action
 	) {
 		return false;
 	}
