@@ -1,3 +1,14 @@
+##### [Version 3.1.2](https://github.com/Codeinwp/hestia-pro/compare/v3.1.1...v3.1.2) (2024-02-01)
+
+### Fixes
+- Updated references from SendinBlue to Brevo 
+- Solved warning on checking styles 
+- Add undefined check for mutations of addViewCart
+- Enhanced Security
+
+### Improvements
+- Added CTA in Customizer
+
 ##### [Version 3.1.1](https://github.com/Codeinwp/hestia-pro/compare/v3.1.0...v3.1.1) (2024-01-11)
 
 ### Improvements

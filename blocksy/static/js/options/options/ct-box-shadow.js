@@ -25,6 +25,7 @@ const BoxShadow = ({ value, option, onChange }) => {
 
 	const containerRef = useRef()
 	const modalRef = useRef()
+	const shadowModalRef = useRef()
 
 	return (
 		<div ref={el} className={classnames('ct-box-shadow')}>
@@ -32,8 +33,8 @@ const BoxShadow = ({ value, option, onChange }) => {
 				useCapture={false}
 				disabled={!isPicking}
 				className="ct-box-shadow-values"
-				additionalRefs={[colorPicker, modalRef]}
-				onOutsideClick={() => {
+				additionalRefs={[colorPicker, modalRef, shadowModalRef]}
+				onOutsideClick={(e) => {
 					if (!isPicking) {
 						return
 					}
@@ -116,6 +117,7 @@ const BoxShadow = ({ value, option, onChange }) => {
 
 			<BoxShadowModal
 				el={el}
+				modalRef={shadowModalRef}
 				value={value}
 				onChange={(value) =>
 					onChange({

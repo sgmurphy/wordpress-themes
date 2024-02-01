@@ -13,7 +13,7 @@ import { initAllPanels } from '../options/initPanels'
 
 import { initBuilder } from './panels-builder'
 
-import Options from './controls/options.js'
+import Options from './controls/options'
 import { initWidget } from '../backend/widgets'
 
 import $ from 'jquery'

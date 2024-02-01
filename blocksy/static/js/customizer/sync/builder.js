@@ -283,6 +283,7 @@ wp.customize.bind('preview-ready', () => {
 
 	wp.customize.selectiveRefresh.Partial.prototype.createEditShortcutForPlacement =
 		() => {}
+
 	wp.customize.selectiveRefresh.Partial.prototype.ready = function () {
 		var partial = this
 

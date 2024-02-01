@@ -1,3 +1,16 @@
+2.0.23: 2024-02-01
+- Improvement: Accessibility improvement for expandable containers
+- Improvement: Better compatibility with Simply Static plugin
+- Improvement: Correctly output the `woocommerce_after_single_product` hook
+- Improvement: Correctly propagate values on tablet and mobile in responsive options
+- Improvement: Header button - add secondary label option
+- Improvement: Improve performance of the customizer live preview when under heavy usage
+- Improvement: Introduce nonce protection for the admin ajax actions
+- Improvement: Lower the CSS specificity of entry content elements
+- Improvement: Properly listen for Vimeo ready event and better handling of multiple videos on same page
+- Improvement: Replace all custom colors when swatching color palettes
+- Improvement: WooCommerce archive - better output variation image size
+
 2.0.22: 2024-01-25
 - Improvement: Correctly display the new WooCommerce block notice when product is sold individually and Ajax add to cart is enabled
 - Improvement: Menu dropdown position improvement if more than two nested levels are present

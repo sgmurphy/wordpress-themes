@@ -5,7 +5,7 @@ import PalettePreview from './PalettePreview'
 
 import { ColorPalettesContext } from '../ct-color-palettes-picker'
 
-const CustomPalettes = ({ setIsEditingPalettes, option, onChange, value }) => {
+const CustomPalettes = ({ setIsEditingPalettes, option, onChange }) => {
 	const { customPalettes, setCustomPalettes } =
 		useContext(ColorPalettesContext)
 
@@ -21,11 +21,7 @@ const CustomPalettes = ({ setIsEditingPalettes, option, onChange, value }) => {
 						currentPalette={palette}
 						hasColorRemove={false}
 						onClick={() => {
-							onChange({
-								...value,
-								...colors,
-							})
-
+							onChange(colors)
 							setIsEditingPalettes(false)
 						}}
 						renderBefore={() => (

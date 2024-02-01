@@ -17,7 +17,6 @@ $options = [
 					'attr' => [ 'data-type' => 'small' ],
 				],
 
-
 				blocksy_rand_md5() => [
 					'type' => 'ct-condition',
 					'condition' => [

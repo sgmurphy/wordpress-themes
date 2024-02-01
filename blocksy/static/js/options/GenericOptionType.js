@@ -21,6 +21,8 @@ import { __ } from 'ct-i18n'
 import { getOptionLabelFor } from './helpers/get-label'
 import ctEvents from 'ct-events'
 
+import { mutateResponsiveValueWithScalar } from './helpers/mutate-responsive-value'
+
 const CORE_OPTIONS_CONTEXT = require.context('./options/', false, /\.js$/)
 CORE_OPTIONS_CONTEXT.keys().forEach(CORE_OPTIONS_CONTEXT)
 
@@ -225,103 +227,27 @@ const GenericOptionType = ({
 			isOptionResponsiveFor(option)
 		)
 
-		onChangeWithMobileBridge(
-			isOptionResponsiveFor(option, { ignoreHidden: true })
-				? {
-						...responsiveValue,
-						[device === 'tablet' &&
-						isOptionEnabledFor('tablet', option.responsive) ===
-							'skip'
-							? 'mobile'
-							: device]: scalarValue,
-						...(device === 'desktop'
-							? Object.keys(responsiveValue).reduce(
-									(currentValue, key) => ({
-										...currentValue,
-										...(key !== 'desktop' &&
-										key !== '__changed' &&
-										Object.keys(
-											maybePromoteScalarValueIntoResponsive(
-												option.value
-											)
-										).reduce(
-											(result, key) =>
-												result
-													? maybePromoteScalarValueIntoResponsive(
-															option.value
-													  )[key] ===
-													  maybePromoteScalarValueIntoResponsive(
-															option.value
-													  ).desktop
-													: false,
-											true
-										) &&
-										(
-											responsiveValue.__changed || []
-										).indexOf('tablet') === -1
-											? {
-													[key]: scalarValue,
-											  }
-											: {}),
-									}),
-									{}
-							  )
-							: {}),
-						...(device === 'tablet' &&
-						isOptionEnabledFor('tablet', option.responsive) !==
-							'skip'
-							? Object.keys(responsiveValue).reduce(
-									(currentValue, key) => ({
-										...currentValue,
-										...(key !== 'desktop' &&
-										key !== 'tablet' &&
-										key !== '__changed' &&
-										Object.keys(
-											maybePromoteScalarValueIntoResponsive(
-												option.value
-											)
-										).reduce(
-											(result, key) =>
-												result
-													? maybePromoteScalarValueIntoResponsive(
-															option.value
-													  )[key] ===
-													  maybePromoteScalarValueIntoResponsive(
-															option.value
-													  ).desktop
-													: false,
-											true
-										) &&
-										(
-											responsiveValue.__changed || []
-										).indexOf(key) === -1
-											? {
-													[key]: scalarValue,
-											  }
-											: {}),
-									}),
-									{}
-							  )
-							: {}),
-						...([
-							...(responsiveValue.__changed || []),
-							...(device !== 'desktop' ? [device] : []),
-						].length > 0
-							? {
-									__changed: [
-										...(responsiveValue.__changed || []),
-										...(device !== 'desktop'
-											? [device]
-											: []),
-									].filter(
-										(value, index, self) =>
-											self.indexOf(value) === index
-									),
-							  }
-							: {}),
-				  }
-				: scalarValue
-		)
+		let newValue = scalarValue
+
+		if (isOptionResponsiveFor(option, { ignoreHidden: true })) {
+			const isTabletSkipping =
+				device === 'tablet' &&
+				isOptionEnabledFor('tablet', option.responsive) === 'skip'
+
+			newValue = mutateResponsiveValueWithScalar({
+				scalarValue,
+				responsiveValue,
+				device,
+
+				...(isTabletSkipping
+					? {
+							devices: ['desktop', 'mobile'],
+					  }
+					: {}),
+			})
+		}
+
+		onChangeWithMobileBridge(newValue)
 	}
 
 	/**
@@ -451,7 +377,6 @@ const GenericOptionType = ({
 		return (
 			((option.type !== 'ct-image-picker' &&
 				option.type !== 'ct-layers' &&
-				option.type !== 'ct-image-uploader' &&
 				option.type !== 'ct-panel' &&
 				hasRevertButton &&
 				!option.disableRevertButton) ||

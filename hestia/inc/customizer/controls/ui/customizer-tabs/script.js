@@ -190,6 +190,20 @@ wp.customize.controlConstructor['interface-tabs'] = wp.customize.Control.extend(
                 }
 			}
 		}
+    },
+
+    /**
+     * Make the upgrade links to open the link. By default, external links do not work.
+     */
+    unlockUpgradeLinks: function() {
+        var upgradeLinks = document.querySelectorAll('.customize-control[id*="hestia"][id*="_upgrade"] a');
+        upgradeLinks.forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                window.open(link.href, link.target);
+            } );
+        });
     }
 });
 

@@ -25,6 +25,8 @@ const BoxShadowModal = ({
 
 	isTransitioning,
 	isPicking,
+
+	modalRef,
 }) => {
 	const { styles, popoverProps } = usePopoverMaker({
 		ref: el,
@@ -84,16 +86,8 @@ const BoxShadowModal = ({
 							className="ct-option-modal ct-box-shadow-modal"
 							onClick={(e) => {
 								e.preventDefault()
-								e.stopPropagation()
 							}}
-							onMouseDownCapture={(e) => {
-								e.nativeEvent.stopImmediatePropagation()
-								e.nativeEvent.stopPropagation()
-							}}
-							onMouseUpCapture={(e) => {
-								e.nativeEvent.stopImmediatePropagation()
-								e.nativeEvent.stopPropagation()
-							}}>
+							ref={modalRef}>
 							<div className="ct-shadow-trigger">
 								<label>{__('Enable/Disable', 'blocksy')}</label>
 								<Switch

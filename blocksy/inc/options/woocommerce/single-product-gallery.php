@@ -22,46 +22,56 @@ $options = [
 					),
 
 					[
-						'has_product_single_lightbox' => [
-							'label' => __( 'Lightbox', 'blocksy' ),
-							'type' => 'ct-switch',
-							'value' => 'no',
-							'divider' => 'top:full',
-							'sync' => blocksy_sync_whole_page([
-								'prefix' => 'product',
-								'loader_selector' => '.woocommerce-product-gallery'
-							]),
-						],
-
-						'has_product_single_zoom' => [
-							'label' => __( 'Zoom Effect', 'blocksy' ),
-							'type' => 'ct-switch',
-							'value' => 'yes',
-							'sync' => blocksy_sync_whole_page([
-								'prefix' => 'product',
-								'loader_selector' => '.woocommerce-product-gallery'
-							]),
-						],
-
-						blocksy_rand_md5() => [
-							'type' => 'ct-condition',
-							'condition' => [
-								'product_view_type' => 'default-gallery|stacked-gallery'
+						[
+							'has_product_single_lightbox' => [
+								'label' => __( 'Lightbox', 'blocksy' ),
+								'type' => 'ct-switch',
+								'value' => 'no',
+								'divider' => 'top:full',
+								'sync' => blocksy_sync_whole_page([
+									'prefix' => 'product',
+									'loader_selector' => '.woocommerce-product-gallery'
+								]),
 							],
-							'options' => [
-								'has_product_sticky_gallery' => [
-									'label' => __('Sticky Gallery', 'blocksy'),
-									'type' => 'ct-switch',
-									'value' => 'no',
-									'sync' => 'live'
+	
+							'has_product_single_zoom' => [
+								'label' => __( 'Zoom Effect', 'blocksy' ),
+								'type' => 'ct-switch',
+								'value' => 'yes',
+								'sync' => blocksy_sync_whole_page([
+									'prefix' => 'product',
+									'loader_selector' => '.woocommerce-product-gallery'
+								]),
+							],
+	
+							blocksy_rand_md5() => [
+								'type' => 'ct-condition',
+								'condition' => [
+									'product_view_type' => 'default-gallery|stacked-gallery'
+								],
+								'options' => [
+									'has_product_sticky_gallery' => [
+										'label' => __('Sticky Gallery', 'blocksy'),
+										'type' => 'ct-switch',
+										'value' => 'no',
+										'sync' => 'live'
+									],
 								],
 							],
 						],
 
-						blocksy_rand_md5() => [
-							'type' => 'ct-divider',
+						[
+							apply_filters(
+								'blocksy:options:single_product:product-general-tab:sticky:after',
+								[]
+							),
 						],
 
+						[
+							blocksy_rand_md5() => [
+								'type' => 'ct-divider',
+							],
+						]
 
 					],
 

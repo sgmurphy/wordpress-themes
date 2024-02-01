@@ -1,12 +1,20 @@
 <?php
 
-add_action( 'wp_ajax_blocksy_dismissed_notice_handler', function () {
+add_action('wp_ajax_blocksy_dismissed_notice_handler', function () {
 	update_option('dismissed-blocksy_plugin_notice', true);
 	wp_die();
 });
 
 add_action('wp_ajax_blocksy_notice_button_click', function () {
-	if (! current_user_can('activate_plugins') ) return;
+	if (
+		! current_user_can('activate_plugins')
+		||
+		! isset($_REQUEST['nonce'])
+		||
+		! wp_verify_nonce($_REQUEST['nonce'], 'ct-ajax-nonce')
+	) {
+		wp_send_json_error();
+	}
 
 	$manager = new Blocksy_Plugin_Manager();
 	$status_descriptor = $manager->get_companion_status();

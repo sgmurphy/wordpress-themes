@@ -42,6 +42,16 @@ class WooCommerceImageSizes {
 				return $sizes;
 			}
 		);
+
+		add_filter(
+			'woocommerce_thumbnail_size',
+			[$this, 'swap_archive_thumbnail_size']
+		);
+
+		add_filter(
+			'woocommerce_gallery_image_size',
+			[$this, 'swap_archive_thumbnail_size']
+		);
 	}
 
 	public function add_image_sizes() {
@@ -140,5 +150,15 @@ class WooCommerceImageSizes {
 		}
 
 		return $size;
+	}
+
+	public function swap_archive_thumbnail_size($size) {
+		global $blocksy_rendering_woo_card;
+
+		if (! $blocksy_rendering_woo_card) {
+			return $size;
+		}
+
+		return 'woocommerce_archive_thumbnail';
 	}
 }

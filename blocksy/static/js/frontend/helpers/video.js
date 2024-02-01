@@ -107,35 +107,19 @@ export const subscribeForStateChanges = (videoOrIframe, cb = () => {}) => {
 	}
 
 	if (videoOrIframe.matches('video')) {
-		cb('ready')
-		videoOrIframe.addEventListener('play', () => cb('play'))
-		videoOrIframe.addEventListener('pause', () => cb('pause'))
-		return
+		videoOrIframe.addEventListener('loadeddata', () => {
+			cb('ready')
+
+			videoOrIframe.addEventListener('play', () => cb('play'))
+			videoOrIframe.addEventListener('pause', () => cb('pause'))
+
+			return
+		})
 	}
 
 	if (videoOrIframe.matches('iframe[src*="youtu"]')) {
-		videoOrIframe.contentWindow.postMessage(
-			JSON.stringify({
-				event: 'listening',
-				id: 1,
-				channel: 'widget',
-			}),
-			'*'
-		)
-
-		videoOrIframe.contentWindow.postMessage(
-			JSON.stringify({
-				event: 'command',
-				func: 'addEventListener',
-				args: ['onStateChange'],
-				id: 1,
-				channel: 'widget',
-			}),
-			'*'
-		)
-
 		window.addEventListener('message', (e) => {
-			if (!e.data) {
+			if (!e.data || e.source !== videoOrIframe.contentWindow) {
 				return
 			}
 
@@ -154,21 +138,43 @@ export const subscribeForStateChanges = (videoOrIframe, cb = () => {}) => {
 			} catch (e) {}
 		})
 
-		cb('ready')
+		videoOrIframe.addEventListener('load', () => {
+			videoOrIframe.contentWindow.postMessage(
+				JSON.stringify({
+					event: 'listening',
+					id: 1,
+					channel: 'widget',
+				}),
+				'*'
+			)
+
+			videoOrIframe.contentWindow.postMessage(
+				JSON.stringify({
+					event: 'command',
+					func: 'addEventListener',
+					args: ['onStateChange'],
+					id: 1,
+					channel: 'widget',
+				}),
+				'*'
+			)
+
+			cb('ready')
+		})
 
 		return
 	}
 
 	if (videoOrIframe.matches('iframe[src*="vimeo"]')) {
 		window.addEventListener('message', (e) => {
-			if (!e.data) {
+			if (!e.data || e.source !== videoOrIframe.contentWindow) {
 				return
 			}
 
 			try {
 				const data = JSON.parse(e.data)
 
-				if (data.event === 'ready' && !videoOrIframe.isReady) {
+				if (data.event === 'ready') {
 					videoOrIframe.contentWindow.postMessage(
 						JSON.stringify({
 							method: 'addEventListener',
@@ -184,8 +190,6 @@ export const subscribeForStateChanges = (videoOrIframe, cb = () => {}) => {
 						}),
 						'*'
 					)
-
-					videoOrIframe.isReady = true
 
 					cb(data.event)
 				}

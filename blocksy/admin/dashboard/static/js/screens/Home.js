@@ -477,6 +477,7 @@ const Home = () => {
 											type: 'POST',
 											data: {
 												action: 'blocksy_notice_button_click',
+												nonce: ct_localizations.nonce,
 											},
 										}).then(({ success, data }) => {
 											if (success) {

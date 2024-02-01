@@ -56,7 +56,7 @@ add_action(
 					$decoded['dynamic_styles_selectors'][0]['url']
 				);
 
-			$result = 'var ct_localizations = ' . json_encode($decoded) . ';' .  implode(
+			$result = 'var ct_localizations = ' . json_encode($decoded, JSON_UNESCAPED_UNICODE) . ';' .  implode(
 				'};',
 				$all_components
 			);

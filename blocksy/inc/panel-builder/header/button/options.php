@@ -43,11 +43,54 @@ $options = [
 				],
 
 				'header_button_text' => [
-					'label' => __( 'Label', 'blocksy' ),
+					'label' => __( 'Label Text', 'blocksy' ),
 					'type' => 'text',
 					'design' => 'inline',
 					'divider' => 'top',
 					'value' => __( 'Download', 'blocksy' ),
+				],
+
+				'has_header_button_secondary_text' => [
+					'label' => __( 'Secondary Label', 'blocksy' ),
+					'type'  => 'ct-switch',
+					'value' => 'no',
+					'divider' => 'top',
+				],
+
+				blocksy_rand_md5() => [
+					'type' => 'ct-condition',
+					'condition' => [ 'has_header_button_secondary_text' => 'yes' ],
+					'options' => [
+
+						'header_button_secondary_text' => [
+							'label' => __( 'Label Text', 'blocksy' ),
+							'type' => 'text',
+							'design' => 'inline',
+							'value' => __( 'Hurry Up!', 'blocksy' ),
+							'divider' => 'bottom',
+						],
+
+						'header_button_text_horizontal_alignment' => [
+							'type' => 'ct-radio',
+							'label' => __( 'Text Alignment', 'blocksy' ),
+							'view' => 'text',
+							'design' => 'block',
+							'responsive' => true,
+							'attr' => [ 'data-type' => 'alignment' ],
+							'setting' => [ 'transport' => 'postMessage' ],
+							'value' => 'CT_CSS_SKIP_RULE',
+							'choices' => [
+								'left' => '',
+								'center' => '',
+								'right' => '',
+							],
+						],
+
+					],
+				],
+
+				blocksy_rand_md5() => [
+					'type' => 'ct-divider',
 				],
 
 				'header_button_open' => [
@@ -60,7 +103,6 @@ $options = [
 					'value' => 'link',
 					'view' => 'text',
 					'design' => 'inline',
-					'divider' => 'top:full',
 					'choices' => [
 						'link' => __('Open Link', 'blocksy'),
 						'popup' => __('Open Popup', 'blocksy'),
@@ -274,9 +316,16 @@ $options = [
 		'type' => 'tab',
 		'options' => [
 
+			'headerButtonFont' => [
+				'type' => 'ct-typography',
+				'label' => __( 'Label Text Font', 'blocksy' ),
+				'value' => blocksy_typography_default_values([]),
+				'setting' => [ 'transport' => 'postMessage' ],
+			],
+
 			blocksy_rand_md5() => [
 				'type' => 'ct-labeled-group',
-				'label' => __( 'Font Color', 'blocksy' ),
+				'label' => __( 'Label Text Color', 'blocksy' ),
 				'divider' => 'bottom',
 				'responsive' => true,
 				'choices' => [
@@ -306,7 +355,7 @@ $options = [
 				'options' => [
 
 					'headerButtonFontColor' => [
-						'label' => __( 'Font Color', 'blocksy' ),
+						'label' => __( 'Label Text Color', 'blocksy' ),
 						'type'  => 'ct-color-picker',
 						'design' => 'block:right',
 						'responsive' => true,
@@ -358,7 +407,7 @@ $options = [
 					],
 
 					'transparentHeaderButtonFontColor' => [
-						'label' => __( 'Font Color', 'blocksy' ),
+						'label' => __( 'Label Text Color', 'blocksy' ),
 						'type'  => 'ct-color-picker',
 						'design' => 'block:right',
 						'responsive' => true,
@@ -408,7 +457,7 @@ $options = [
 					],
 
 					'stickyHeaderButtonFontColor' => [
-						'label' => __( 'Font Color', 'blocksy' ),
+						'label' => __( 'Label Text Color', 'blocksy' ),
 						'type'  => 'ct-color-picker',
 						'design' => 'block:right',
 						'responsive' => true,
@@ -456,6 +505,207 @@ $options = [
 							],
 						],
 					],
+				],
+			],
+
+
+			blocksy_rand_md5() => [
+				'type' => 'ct-condition',
+				'condition' => [ 'has_header_button_secondary_text' => 'yes' ],
+				'options' => [
+
+					'headerButtonSecondaryLabelFont' => [
+						'type' => 'ct-typography',
+						'label' => __( 'Secondary Label Text Font', 'blocksy' ),
+						'value' => blocksy_typography_default_values([
+							'size' => '12px',
+						]),
+						'setting' => [ 'transport' => 'postMessage' ],
+					],
+
+					blocksy_rand_md5() => [
+						'type' => 'ct-labeled-group',
+						'label' => __( 'Secondary Label Text Color', 'blocksy' ),
+						'divider' => 'bottom',
+						'responsive' => true,
+						'choices' => [
+							[
+								'id' => 'headerButtonSecondaryFontColor',
+								'label' => __('Default State', 'blocksy')
+							],
+
+							[
+								'id' => 'transparentHeaderButtonSecondaryFontColor',
+								'label' => __('Transparent State', 'blocksy'),
+								'condition' => [
+									'row' => '!offcanvas',
+									'builderSettings/has_transparent_header' => 'yes',
+								],
+							],
+
+							[
+								'id' => 'stickyHeaderButtonSecondaryFontColor',
+								'label' => __('Sticky State', 'blocksy'),
+								'condition' => [
+									'row' => '!offcanvas',
+									'builderSettings/has_sticky_header' => 'yes',
+								],
+							],
+						],
+						'options' => [
+
+							'headerButtonSecondaryFontColor' => [
+								'label' => __( 'Label Text Color', 'blocksy' ),
+								'type'  => 'ct-color-picker',
+								'design' => 'block:right',
+								'responsive' => true,
+								'value' => [
+									'default' => [
+										'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									],
+
+									'hover' => [
+										'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									],
+
+									'default_2' => [
+										'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									],
+
+									'hover_2' => [
+										'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									],
+								],
+
+								'pickers' => [
+									[
+										'title' => __( 'Initial', 'blocksy' ),
+										'id' => 'default',
+										'condition' => [ 'header_button_type' => 'type-1' ]
+									],
+
+									[
+										'title' => __( 'Hover', 'blocksy' ),
+										'id' => 'hover',
+										'condition' => [ 'header_button_type' => 'type-1' ]
+									],
+
+									[
+										'title' => __( 'Initial', 'blocksy' ),
+										'id' => 'default_2',
+										'condition' => [ 'header_button_type' => 'type-2' ]
+									],
+
+									[
+										'title' => __( 'Hover', 'blocksy' ),
+										'id' => 'hover_2',
+										'condition' => [ 'header_button_type' => 'type-2' ]
+									],
+								],
+							],
+
+							'transparentHeaderButtonSecondaryFontColor' => [
+								'label' => __( 'Label Text Color', 'blocksy' ),
+								'type'  => 'ct-color-picker',
+								'design' => 'block:right',
+								'responsive' => true,
+								'value' => [
+									'default' => [
+										'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									],
+
+									'hover' => [
+										'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									],
+
+									'default_2' => [
+										'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									],
+
+									'hover_2' => [
+										'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									],
+								],
+
+								'pickers' => [
+									[
+										'title' => __( 'Initial', 'blocksy' ),
+										'id' => 'default',
+										'condition' => [ 'header_button_type' => 'type-1' ]
+									],
+
+									[
+										'title' => __( 'Hover', 'blocksy' ),
+										'id' => 'hover',
+										'condition' => [ 'header_button_type' => 'type-1' ]
+									],
+
+									[
+										'title' => __( 'Initial', 'blocksy' ),
+										'id' => 'default_2',
+										'condition' => [ 'header_button_type' => 'type-2' ]
+									],
+
+									[
+										'title' => __( 'Hover', 'blocksy' ),
+										'id' => 'hover_2',
+										'condition' => [ 'header_button_type' => 'type-2' ]
+									],
+								],
+							],
+
+							'stickyHeaderButtonSecondaryFontColor' => [
+								'label' => __( 'Label Text Color', 'blocksy' ),
+								'type'  => 'ct-color-picker',
+								'design' => 'block:right',
+								'responsive' => true,
+								'value' => [
+									'default' => [
+										'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									],
+
+									'hover' => [
+										'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									],
+
+									'default_2' => [
+										'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									],
+
+									'hover_2' => [
+										'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+									],
+								],
+
+								'pickers' => [
+									[
+										'title' => __( 'Initial', 'blocksy' ),
+										'id' => 'default',
+										'condition' => [ 'header_button_type' => 'type-1' ]
+									],
+
+									[
+										'title' => __( 'Hover', 'blocksy' ),
+										'id' => 'hover',
+										'condition' => [ 'header_button_type' => 'type-1' ]
+									],
+
+									[
+										'title' => __( 'Initial', 'blocksy' ),
+										'id' => 'default_2',
+										'condition' => [ 'header_button_type' => 'type-2' ]
+									],
+
+									[
+										'title' => __( 'Hover', 'blocksy' ),
+										'id' => 'hover_2',
+										'condition' => [ 'header_button_type' => 'type-2' ]
+									],
+								],
+							],
+						],
+					],
+
 				],
 			],
 
@@ -586,6 +836,14 @@ $options = [
 			'headerCtaRadius' => [
 				'label' => __( 'Border Radius', 'blocksy' ),
 				'type' => 'ct-spacing',
+				'value' => blocksy_spacing_value(),
+				'responsive' => true
+			],
+
+			'headerCtaPadding' => [
+				'label' => __( 'Padding', 'blocksy' ),
+				'type' => 'ct-spacing',
+				'divider' => 'top',
 				'value' => blocksy_spacing_value(),
 				'responsive' => true
 			],

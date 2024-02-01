@@ -34,10 +34,7 @@ const PredefinedPalettes = ({
 						)}
 						onClick={() => {
 							setIsEditingPalettes(false)
-							onChange({
-								...value,
-								...colors,
-							})
+							onChange(colors)
 						}}
 					/>
 				)

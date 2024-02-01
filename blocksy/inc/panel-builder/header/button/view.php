@@ -85,6 +85,17 @@ $text = do_shortcode(
 	)
 );
 
+$secondary_text = do_shortcode(
+	blocksy_translate_dynamic(
+		blocksy_default_akg(
+			'header_button_secondary_text',
+			$atts,
+			__('Hurry Up!', 'blocksy')
+		),
+		$panel_type . ':' . $section_id . ':' . $item_id . ':header_button_secondary_text'
+	)
+);
+
 $aria_label = do_shortcode(
 	blocksy_translate_dynamic(
 		blocksy_default_akg(
@@ -157,6 +168,31 @@ if (function_exists('blc_get_icon')) {
 			'class' => 'ct-icon',
 		]
 	]);
+}
+
+if (
+	blocksy_akg('has_header_button_secondary_text', $atts, 'no') === 'yes'
+	&&
+	(
+		! empty(trim($secondary_text))
+		||
+		is_customize_preview()
+	)
+) {
+	$text = blocksy_html_tag(
+		'span',
+		[
+			'class' => 'ct-button-text'
+		],
+		$text .
+		blocksy_html_tag(
+			'span',
+			[
+				'class' => 'ct-button-secondary-text'
+			],
+			$secondary_text
+		)
+	);
 }
 
 if ($icon_position === 'left') {

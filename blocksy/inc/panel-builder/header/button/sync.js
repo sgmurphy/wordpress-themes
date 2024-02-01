@@ -1,4 +1,5 @@
 import ctEvents from 'ct-events'
+import { typographyOption } from '../../../../static/js/customizer/sync/variables/typography'
 import { updateAndSaveEl } from '../../../../static/js/customizer/sync'
 import {
 	getRootSelectorFor,
@@ -16,6 +17,26 @@ const getVariables = ({ itemId, fullItemId, panelType }) => ({
 		unit: 'px',
 	},
 
+	headerCtaRadius: {
+		selector: assembleSelector(getRootSelectorFor({ itemId, panelType })),
+		type: 'spacing',
+		variable: 'theme-button-border-radius',
+		responsive: true,
+	},
+
+	headerCtaPadding: {
+		selector: assembleSelector(
+			mutateSelector({
+				selector: getRootSelectorFor({ itemId, panelType }),
+				operation: 'suffix',
+				to_add: 'a',
+			})
+		),
+		type: 'spacing',
+		variable: 'theme-button-padding',
+		responsive: true,
+	},
+
 	headerCtaMargin: {
 		selector: assembleSelector(getRootSelectorFor({ itemId, panelType })),
 		type: 'spacing',
@@ -24,12 +45,42 @@ const getVariables = ({ itemId, fullItemId, panelType }) => ({
 		important: true,
 	},
 
-	headerCtaRadius: {
-		selector: assembleSelector(getRootSelectorFor({ itemId, panelType })),
-		type: 'spacing',
-		variable: 'theme-button-border-radius',
+	...typographyOption({
+		id: 'headerButtonFont',
+		prefix: 'button',
+		selector: assembleSelector(
+			mutateSelector({
+				selector: getRootSelectorFor({ itemId, panelType }),
+				operation: 'suffix',
+				to_add: '.ct-button',
+			})
+		),
+	}),
+
+	header_button_text_horizontal_alignment: {
+		selector: assembleSelector(
+			mutateSelector({
+				selector: getRootSelectorFor({ itemId, panelType }),
+				operation: 'suffix',
+				to_add: '.ct-button-text',
+			})
+		),
+		variable: 'horizontal-alignment',
 		responsive: true,
+		unit: '',
 	},
+
+	...typographyOption({
+		id: 'headerButtonSecondaryLabelFont',
+		prefix: 'button',
+		selector: assembleSelector(
+			mutateSelector({
+				selector: getRootSelectorFor({ itemId, panelType }),
+				operation: 'suffix',
+				to_add: '.ct-button-secondary-text',
+			})
+		),
+	}),
 
 	// default state
 	headerButtonFontColor: [
@@ -78,6 +129,60 @@ const getVariables = ({ itemId, fullItemId, panelType }) => ({
 					selector: getRootSelectorFor({ itemId, panelType }),
 					operation: 'suffix',
 					to_add: '.ct-button-ghost',
+				})
+			),
+			variable: 'theme-button-text-hover-color',
+			type: 'color:hover_2',
+			responsive: true,
+		},
+	],
+
+	headerButtonSecondaryFontColor: [
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: getRootSelectorFor({ itemId, panelType }),
+					operation: 'suffix',
+					to_add: '.ct-button .ct-button-secondary-text',
+				})
+			),
+			variable: 'theme-button-text-initial-color',
+			type: 'color:default',
+			responsive: true,
+		},
+
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: getRootSelectorFor({ itemId, panelType }),
+					operation: 'suffix',
+					to_add: '.ct-button .ct-button-secondary-text',
+				})
+			),
+			variable: 'theme-button-text-hover-color',
+			type: 'color:hover',
+			responsive: true,
+		},
+
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: getRootSelectorFor({ itemId, panelType }),
+					operation: 'suffix',
+					to_add: '.ct-button-ghost .ct-button-secondary-text',
+				})
+			),
+			variable: 'theme-button-text-initial-color',
+			type: 'color:default_2',
+			responsive: true,
+		},
+
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: getRootSelectorFor({ itemId, panelType }),
+					operation: 'suffix',
+					to_add: '.ct-button-ghost .ct-button-secondary-text',
 				})
 			),
 			variable: 'theme-button-text-hover-color',
@@ -181,6 +286,80 @@ const getVariables = ({ itemId, fullItemId, panelType }) => ({
 		},
 	],
 
+	transparentHeaderButtonSecondaryFontColor: [
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: mutateSelector({
+						selector: getRootSelectorFor({ itemId, panelType }),
+						operation: 'suffix',
+						to_add: '.ct-button .ct-button-secondary-text',
+					}),
+					operation: 'between',
+					to_add: '[data-transparent-row="yes"]',
+				})
+			),
+
+			variable: 'theme-button-text-initial-color',
+			type: 'color:default',
+			responsive: true,
+		},
+
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: mutateSelector({
+						selector: getRootSelectorFor({ itemId, panelType }),
+						operation: 'suffix',
+						to_add: '.ct-button .ct-button-secondary-text',
+					}),
+					operation: 'between',
+					to_add: '[data-transparent-row="yes"]',
+				})
+			),
+
+			variable: 'theme-button-text-hover-color',
+			type: 'color:hover',
+			responsive: true,
+		},
+
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: mutateSelector({
+						selector: getRootSelectorFor({ itemId, panelType }),
+						operation: 'suffix',
+						to_add: '.ct-button-ghost .ct-button-secondary-text',
+					}),
+					operation: 'between',
+					to_add: '[data-transparent-row="yes"]',
+				})
+			),
+
+			variable: 'theme-button-text-initial-color',
+			type: 'color:default_2',
+			responsive: true,
+		},
+
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: mutateSelector({
+						selector: getRootSelectorFor({ itemId, panelType }),
+						operation: 'suffix',
+						to_add: '.ct-button-ghost .ct-button-secondary-text',
+					}),
+					operation: 'between',
+					to_add: '[data-transparent-row="yes"]',
+				})
+			),
+
+			variable: 'theme-button-text-hover-color',
+			type: 'color:hover_2',
+			responsive: true,
+		},
+	],
+
 	transparentHeaderButtonForeground: [
 		{
 			selector: assembleSelector(
@@ -271,6 +450,76 @@ const getVariables = ({ itemId, fullItemId, panelType }) => ({
 						selector: getRootSelectorFor({ itemId, panelType }),
 						operation: 'suffix',
 						to_add: '.ct-button-ghost',
+					}),
+					operation: 'between',
+					to_add: '[data-sticky*="yes"]',
+				})
+			),
+			variable: 'theme-button-text-hover-color',
+			type: 'color:hover_2',
+			responsive: true,
+		},
+	],
+
+	stickyHeaderButtonSecondaryFontColor: [
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: mutateSelector({
+						selector: getRootSelectorFor({ itemId, panelType }),
+						operation: 'suffix',
+						to_add: '.ct-button .ct-button-secondary-text',
+					}),
+					operation: 'between',
+					to_add: '[data-sticky*="yes"]',
+				})
+			),
+			variable: 'theme-button-text-initial-color',
+			type: 'color:default',
+			responsive: true,
+		},
+
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: mutateSelector({
+						selector: getRootSelectorFor({ itemId, panelType }),
+						operation: 'suffix',
+						to_add: '.ct-button .ct-button-secondary-text',
+					}),
+					operation: 'between',
+					to_add: '[data-sticky*="yes"]',
+				})
+			),
+			variable: 'theme-button-text-hover-color',
+			type: 'color:hover',
+			responsive: true,
+		},
+
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: mutateSelector({
+						selector: getRootSelectorFor({ itemId, panelType }),
+						operation: 'suffix',
+						to_add: '.ct-button-ghost .ct-button-secondary-text',
+					}),
+					operation: 'between',
+					to_add: '[data-sticky*="yes"]',
+				})
+			),
+			variable: 'theme-button-text-initial-color',
+			type: 'color:default_2',
+			responsive: true,
+		},
+
+		{
+			selector: assembleSelector(
+				mutateSelector({
+					selector: mutateSelector({
+						selector: getRootSelectorFor({ itemId, panelType }),
+						operation: 'suffix',
+						to_add: '.ct-button-ghost .ct-button-secondary-text',
 					}),
 					operation: 'between',
 					to_add: '[data-sticky*="yes"]',
@@ -391,19 +640,32 @@ ctEvents.on(
 
 		if (optionId === 'header_button_text') {
 			updateAndSaveEl(selector, (el) => {
-				const maybeIcon = el.querySelector(
-					'[class*="ct-button"] .ct-icon'
-				)
-				let icon = ''
+				if (el.querySelector('.ct-button-secondary-text')) {
+					const maybeSmallTag = el.querySelector('.ct-button-secondary-text')
 
-				if (maybeIcon) {
-					icon = maybeIcon.outerHTML
+					el.querySelector('.ct-button-text').innerHTML =
+						optionValue + maybeSmallTag.outerHTML
+				} else {
+					const maybeIcon = el.querySelector(
+						'[class*="ct-button"] .ct-icon'
+					)
+					let icon = ''
+
+					if (maybeIcon) {
+						icon = maybeIcon.outerHTML
+					}
+
+					el.querySelector('[class*="ct-button"]').innerHTML =
+						icon_position === 'right'
+							? `${optionValue}${icon}`
+							: `${icon}${optionValue}`
 				}
+			})
+		}
 
-				el.querySelector('[class*="ct-button"]').innerHTML =
-					icon_position === 'right'
-						? `${optionValue}${icon}`
-						: `${icon}${optionValue}`
+		if (optionId === 'header_button_secondary_text') {
+			updateAndSaveEl(selector, (el) => {
+				el.querySelector('.ct-button-secondary-text').innerHTML = optionValue
 			})
 		}
 

@@ -553,29 +553,7 @@ if ($cart_drawer_type === 'dropdown' || is_customize_preview()) {
 						'to_add' => '.ct-cart-content'
 					])
 				),
-				'variable' => 'backgroundColor'
-			]
-		],
-	]);
-
-	blocksy_output_colors([
-		'value' => blocksy_akg('cartDropDownBackground', $atts),
-		'default' => [
-			'default' => ['color' => '#29333C']
-		],
-		'css' => $css,
-		'important' => true,
-		'variables' => [
-			'default' => [
-				'selector' => blocksy_assemble_selector(
-					blocksy_mutate_selector([
-						'selector' => $root_selector,
-						'operation' => 'suffix',
-						'to_add' => '.ct-cart-content .blockUI.blockOverlay'
-					])
-				),
-				'variableType' => 'property',
-				'variable' => 'background-color'
+				'variable' => 'mini-cart-background-color'
 			]
 		],
 	]);
@@ -688,24 +666,6 @@ if ($cart_drawer_type === 'offcanvas' || is_customize_preview()) {
 		'tablet_css' => $tablet_css,
 		'mobile_css' => $mobile_css,
 		'responsive' => true,
-		'value' => blocksy_akg('cart_panel_background', $atts,
-			blocksy_background_default_value([
-				'backgroundColor' => [
-					'default' => [
-						'color' => '#ffffff'
-					],
-				],
-			])
-		)
-	]);
-
-	blocksy_output_background_css([
-		'selector' => '#woo-cart-panel .blockUI.blockOverlay',
-		'css' => $css,
-		'tablet_css' => $tablet_css,
-		'mobile_css' => $mobile_css,
-		'responsive' => true,
-		'important' => true,
 		'value' => blocksy_akg('cart_panel_background', $atts,
 			blocksy_background_default_value([
 				'backgroundColor' => [

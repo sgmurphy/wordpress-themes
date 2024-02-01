@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-25 18:07+0000\n"
+"POT-Creation-Date: 2024-02-01 18:15+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
@@ -274,7 +274,7 @@ msgstr ""
 msgid "Blocksy"
 msgstr ""
 
-#: admin/notices/templates.php:40 static/js/notification/Notification.js:62
+#: admin/notices/templates.php:40 static/js/notification/Notification.js:68
 msgid "Thanks for installing Blocksy, you rock!"
 msgstr ""
 
@@ -1174,11 +1174,11 @@ msgstr ""
 #: inc/panel-builder/footer/middle-row/options.php:454,
 #: inc/panel-builder/footer/socials/options.php:198,
 #: inc/panel-builder/footer/socials/options.php:217,
-#: inc/panel-builder/header/button/options.php:216,
+#: inc/panel-builder/header/button/options.php:258,
 #: inc/panel-builder/header/cart/options.php:96,
-#: inc/panel-builder/header/logo/options.php:183,
-#: inc/panel-builder/header/logo/options.php:230,
-#: inc/panel-builder/header/logo/options.php:370,
+#: inc/panel-builder/header/logo/options.php:182,
+#: inc/panel-builder/header/logo/options.php:229,
+#: inc/panel-builder/header/logo/options.php:369,
 #: inc/panel-builder/header/search/options.php:73,
 #: inc/panel-builder/header/socials/options.php:152,
 #: inc/panel-builder/header/text/options.php:122,
@@ -1209,13 +1209,13 @@ msgstr ""
 #: inc/panel-builder/footer/middle-row/options.php:455,
 #: inc/panel-builder/footer/socials/options.php:199,
 #: inc/panel-builder/footer/socials/options.php:218,
-#: inc/panel-builder/header/button/options.php:160,
-#: inc/panel-builder/header/button/options.php:217,
+#: inc/panel-builder/header/button/options.php:202,
+#: inc/panel-builder/header/button/options.php:259,
 #: inc/panel-builder/header/cart/options.php:97,
 #: inc/panel-builder/header/cart/options.php:1128,
-#: inc/panel-builder/header/logo/options.php:184,
-#: inc/panel-builder/header/logo/options.php:231,
-#: inc/panel-builder/header/logo/options.php:371,
+#: inc/panel-builder/header/logo/options.php:183,
+#: inc/panel-builder/header/logo/options.php:230,
+#: inc/panel-builder/header/logo/options.php:370,
 #: inc/panel-builder/header/middle-row/options.php:127,
 #: inc/panel-builder/header/mobile-menu/options.php:165,
 #: inc/panel-builder/header/search/options.php:74,
@@ -1253,13 +1253,13 @@ msgstr ""
 #: inc/panel-builder/footer/middle-row/options.php:456,
 #: inc/panel-builder/footer/socials/options.php:200,
 #: inc/panel-builder/footer/socials/options.php:219,
-#: inc/panel-builder/header/button/options.php:161,
-#: inc/panel-builder/header/button/options.php:218,
+#: inc/panel-builder/header/button/options.php:203,
+#: inc/panel-builder/header/button/options.php:260,
 #: inc/panel-builder/header/cart/options.php:98,
 #: inc/panel-builder/header/cart/options.php:1129,
-#: inc/panel-builder/header/logo/options.php:185,
-#: inc/panel-builder/header/logo/options.php:232,
-#: inc/panel-builder/header/logo/options.php:372,
+#: inc/panel-builder/header/logo/options.php:184,
+#: inc/panel-builder/header/logo/options.php:231,
+#: inc/panel-builder/header/logo/options.php:371,
 #: inc/panel-builder/header/middle-row/options.php:128,
 #: inc/panel-builder/header/mobile-menu/options.php:166,
 #: inc/panel-builder/header/search/options.php:75,
@@ -1301,7 +1301,7 @@ msgstr ""
 #: inc/options/woocommerce/general-main.php:1187,
 #: inc/options/woocommerce/single-main.php:61,
 #: inc/options/woocommerce/single-product-elements.php:123,
-#: inc/options/woocommerce/single-product-gallery.php:218,
+#: inc/options/woocommerce/single-product-gallery.php:228,
 #: inc/options/woocommerce/single-product-tabs.php:182,
 #: inc/options/integrations/the-events-calendar/archive.php:36,
 #: inc/options/integrations/the-events-calendar/single.php:38,
@@ -1310,10 +1310,10 @@ msgstr ""
 #: inc/panel-builder/footer/middle-row/options.php:464,
 #: inc/panel-builder/footer/socials/options.php:227,
 #: inc/panel-builder/footer/widget-area-1/options.php:57,
-#: inc/panel-builder/header/button/options.php:273,
+#: inc/panel-builder/header/button/options.php:315,
 #: inc/panel-builder/header/cart/options.php:146,
 #: inc/panel-builder/header/cart/options.php:704,
-#: inc/panel-builder/header/logo/options.php:407,
+#: inc/panel-builder/header/logo/options.php:406,
 #: inc/panel-builder/header/menu/options.php:169,
 #: inc/panel-builder/header/menu/options.php:747,
 #: inc/panel-builder/header/middle-row/options.php:139,
@@ -1443,10 +1443,10 @@ msgstr ""
 #: inc/options/woocommerce/single-product-elements.php:384,
 #: inc/options/woocommerce/single-product-elements.php:415,
 #: inc/options/woocommerce/single-product-elements.php:485,
-#: inc/options/woocommerce/single-product-gallery.php:239,
-#: inc/options/woocommerce/single-product-gallery.php:269,
-#: inc/options/woocommerce/single-product-gallery.php:305,
-#: inc/options/woocommerce/single-product-gallery.php:335,
+#: inc/options/woocommerce/single-product-gallery.php:249,
+#: inc/options/woocommerce/single-product-gallery.php:279,
+#: inc/options/woocommerce/single-product-gallery.php:315,
+#: inc/options/woocommerce/single-product-gallery.php:345,
 #: inc/options/woocommerce/single-product-tabs.php:219,
 #: inc/options/woocommerce/single-product-tabs.php:256,
 #: inc/panel-builder/footer/copyright/options.php:127,
@@ -1456,15 +1456,21 @@ msgstr ""
 #: inc/panel-builder/footer/socials/options.php:314,
 #: inc/panel-builder/footer/socials/options.php:363,
 #: inc/panel-builder/footer/widget-area-1/options.php:84,
-#: inc/panel-builder/header/button/options.php:333,
-#: inc/panel-builder/header/button/options.php:347,
-#: inc/panel-builder/header/button/options.php:385,
-#: inc/panel-builder/header/button/options.php:397,
-#: inc/panel-builder/header/button/options.php:435,
-#: inc/panel-builder/header/button/options.php:447,
-#: inc/panel-builder/header/button/options.php:510,
-#: inc/panel-builder/header/button/options.php:540,
-#: inc/panel-builder/header/button/options.php:568,
+#: inc/panel-builder/header/button/options.php:382,
+#: inc/panel-builder/header/button/options.php:396,
+#: inc/panel-builder/header/button/options.php:434,
+#: inc/panel-builder/header/button/options.php:446,
+#: inc/panel-builder/header/button/options.php:484,
+#: inc/panel-builder/header/button/options.php:496,
+#: inc/panel-builder/header/button/options.php:582,
+#: inc/panel-builder/header/button/options.php:594,
+#: inc/panel-builder/header/button/options.php:632,
+#: inc/panel-builder/header/button/options.php:644,
+#: inc/panel-builder/header/button/options.php:682,
+#: inc/panel-builder/header/button/options.php:694,
+#: inc/panel-builder/header/button/options.php:760,
+#: inc/panel-builder/header/button/options.php:790,
+#: inc/panel-builder/header/button/options.php:818,
 #: inc/panel-builder/header/cart/options.php:217,
 #: inc/panel-builder/header/cart/options.php:248,
 #: inc/panel-builder/header/cart/options.php:277,
@@ -1476,12 +1482,12 @@ msgstr ""
 #: inc/panel-builder/header/cart/options.php:972,
 #: inc/panel-builder/header/cart/options.php:1007,
 #: inc/panel-builder/header/cart/options.php:1047,
-#: inc/panel-builder/header/logo/options.php:476,
-#: inc/panel-builder/header/logo/options.php:507,
-#: inc/panel-builder/header/logo/options.php:537,
-#: inc/panel-builder/header/logo/options.php:618,
-#: inc/panel-builder/header/logo/options.php:640,
-#: inc/panel-builder/header/logo/options.php:661,
+#: inc/panel-builder/header/logo/options.php:475,
+#: inc/panel-builder/header/logo/options.php:506,
+#: inc/panel-builder/header/logo/options.php:536,
+#: inc/panel-builder/header/logo/options.php:617,
+#: inc/panel-builder/header/logo/options.php:639,
+#: inc/panel-builder/header/logo/options.php:660,
 #: inc/panel-builder/header/menu/options.php:250,
 #: inc/panel-builder/header/menu/options.php:313,
 #: inc/panel-builder/header/menu/options.php:375,
@@ -1595,24 +1601,30 @@ msgstr ""
 #: inc/options/woocommerce/single-product-elements.php:348,
 #: inc/options/woocommerce/single-product-elements.php:390,
 #: inc/options/woocommerce/single-product-elements.php:421,
-#: inc/options/woocommerce/single-product-gallery.php:245,
-#: inc/options/woocommerce/single-product-gallery.php:275,
-#: inc/options/woocommerce/single-product-gallery.php:311,
-#: inc/options/woocommerce/single-product-gallery.php:341,
+#: inc/options/woocommerce/single-product-gallery.php:255,
+#: inc/options/woocommerce/single-product-gallery.php:285,
+#: inc/options/woocommerce/single-product-gallery.php:321,
+#: inc/options/woocommerce/single-product-gallery.php:351,
 #: inc/options/woocommerce/single-product-tabs.php:224,
 #: inc/panel-builder/footer/menu/options.php:190,
 #: inc/panel-builder/footer/socials/options.php:281,
 #: inc/panel-builder/footer/socials/options.php:320,
 #: inc/panel-builder/footer/socials/options.php:368,
-#: inc/panel-builder/header/button/options.php:340,
-#: inc/panel-builder/header/button/options.php:353,
-#: inc/panel-builder/header/button/options.php:391,
-#: inc/panel-builder/header/button/options.php:403,
-#: inc/panel-builder/header/button/options.php:441,
-#: inc/panel-builder/header/button/options.php:453,
-#: inc/panel-builder/header/button/options.php:516,
-#: inc/panel-builder/header/button/options.php:545,
-#: inc/panel-builder/header/button/options.php:573,
+#: inc/panel-builder/header/button/options.php:389,
+#: inc/panel-builder/header/button/options.php:402,
+#: inc/panel-builder/header/button/options.php:440,
+#: inc/panel-builder/header/button/options.php:452,
+#: inc/panel-builder/header/button/options.php:490,
+#: inc/panel-builder/header/button/options.php:502,
+#: inc/panel-builder/header/button/options.php:588,
+#: inc/panel-builder/header/button/options.php:600,
+#: inc/panel-builder/header/button/options.php:638,
+#: inc/panel-builder/header/button/options.php:650,
+#: inc/panel-builder/header/button/options.php:688,
+#: inc/panel-builder/header/button/options.php:700,
+#: inc/panel-builder/header/button/options.php:766,
+#: inc/panel-builder/header/button/options.php:795,
+#: inc/panel-builder/header/button/options.php:823,
 #: inc/panel-builder/header/cart/options.php:223,
 #: inc/panel-builder/header/cart/options.php:253,
 #: inc/panel-builder/header/cart/options.php:282,
@@ -1622,9 +1634,9 @@ msgstr ""
 #: inc/panel-builder/header/cart/options.php:977,
 #: inc/panel-builder/header/cart/options.php:1013,
 #: inc/panel-builder/header/cart/options.php:1053,
-#: inc/panel-builder/header/logo/options.php:481,
-#: inc/panel-builder/header/logo/options.php:512,
-#: inc/panel-builder/header/logo/options.php:542,
+#: inc/panel-builder/header/logo/options.php:480,
+#: inc/panel-builder/header/logo/options.php:511,
+#: inc/panel-builder/header/logo/options.php:541,
 #: inc/panel-builder/header/menu/options.php:255,
 #: inc/panel-builder/header/menu/options.php:269,
 #: inc/panel-builder/header/menu/options.php:318,
@@ -1845,10 +1857,6 @@ msgstr ""
 #: inc/panel-builder/footer/menu/options.php:164,
 #: inc/panel-builder/footer/socials/options.php:258,
 #: inc/panel-builder/footer/widget-area-1/options.php:62,
-#: inc/panel-builder/header/button/options.php:279,
-#: inc/panel-builder/header/button/options.php:309,
-#: inc/panel-builder/header/button/options.php:361,
-#: inc/panel-builder/header/button/options.php:411,
 #: inc/panel-builder/header/cart/options.php:200,
 #: inc/panel-builder/header/cart/options.php:231,
 #: inc/panel-builder/header/cart/options.php:260,
@@ -1920,7 +1928,8 @@ msgstr ""
 msgid "Border"
 msgstr ""
 
-#: inc/options/general/buttons.php:130
+#: inc/options/general/buttons.php:130,
+#: inc/panel-builder/header/button/options.php:844
 msgid "Padding"
 msgstr ""
 
@@ -1931,7 +1940,7 @@ msgstr ""
 #: inc/options/general/sidebar.php:479,
 #: inc/options/single-elements/author-box.php:491,
 #: inc/options/single-elements/featured-image.php:133,
-#: inc/panel-builder/header/button/options.php:587,
+#: inc/panel-builder/header/button/options.php:837,
 #: inc/panel-builder/header/cart/options.php:1080,
 #: inc/panel-builder/header/middle-row/options.php:514,
 #: inc/panel-builder/header/offcanvas/options.php:371,
@@ -2120,11 +2129,11 @@ msgstr ""
 #: inc/components/blocks/socials/options.php:112,
 #: inc/panel-builder/footer/socials/options.php:109,
 #: inc/panel-builder/footer/widget-area-1/options.php:109,
-#: inc/panel-builder/header/button/options.php:121,
+#: inc/panel-builder/header/button/options.php:163,
 #: inc/panel-builder/header/socials/options.php:108
 #: static/js/editor/blocks/dynamic-data/components/InspectorControls.js:120
 #: static/js/options/options/ct-border.js:75
-#: static/js/options/options/ct-box-shadow.js:68
+#: static/js/options/options/ct-box-shadow.js:69
 msgid "None"
 msgstr ""
 
@@ -2392,8 +2401,7 @@ msgstr ""
 
 #: inc/options/general/meta.php:233, inc/options/general/meta.php:273,
 #: inc/options/general/meta.php:308, inc/options/general/meta.php:367,
-#: inc/options/general/pagination.php:58,
-#: inc/panel-builder/header/button/options.php:46
+#: inc/options/general/pagination.php:58
 msgid "Label"
 msgstr ""
 
@@ -2612,8 +2620,8 @@ msgstr ""
 #: inc/panel-builder/footer/menu/options.php:84,
 #: inc/panel-builder/footer/socials/options.php:152,
 #: inc/panel-builder/footer/widget-area-1/options.php:23,
-#: inc/panel-builder/header/button/options.php:172,
-#: inc/panel-builder/header/logo/options.php:327,
+#: inc/panel-builder/header/button/options.php:214,
+#: inc/panel-builder/header/logo/options.php:326,
 #: inc/panel-builder/header/mobile-menu/options.php:135,
 #: inc/panel-builder/header/offcanvas/options.php:79,
 #: inc/panel-builder/header/text/options.php:78
@@ -2631,8 +2639,8 @@ msgstr ""
 #: inc/panel-builder/footer/middle-row/options.php:411,
 #: inc/panel-builder/footer/socials/options.php:169,
 #: inc/panel-builder/footer/widget-area-1/options.php:39,
-#: inc/panel-builder/header/button/options.php:189,
-#: inc/panel-builder/header/logo/options.php:343,
+#: inc/panel-builder/header/button/options.php:231,
+#: inc/panel-builder/header/logo/options.php:342,
 #: inc/panel-builder/header/offcanvas/options.php:63,
 #: inc/panel-builder/header/text/options.php:95
 msgid "Vertical Alignment"
@@ -2673,7 +2681,7 @@ msgstr ""
 #: inc/options/single-elements/post-nav.php:89,
 #: inc/options/single-elements/related-posts.php:248,
 #: inc/options/woocommerce/card-product-elements.php:258,
-#: inc/options/woocommerce/single-product-gallery.php:119,
+#: inc/options/woocommerce/single-product-gallery.php:129,
 #: inc/components/blocks/about-me/options.php:81,
 #: inc/panel-builder/header/cart/options.php:690
 msgid "Image Size"
@@ -2765,7 +2773,7 @@ msgstr ""
 #: inc/panel-builder/footer/widget-area-1/options.php:110
 #: static/js/options/options/background/ImagePicker.js:119
 #: static/js/options/options/ct-border.js:45
-#: static/js/options/options/ct-box-shadow.js:65
+#: static/js/options/options/ct-box-shadow.js:66
 msgid "Inherit"
 msgstr ""
 
@@ -2845,10 +2853,10 @@ msgstr ""
 
 #: inc/options/general/pagination.php:226,
 #: inc/options/general/posts-listing.php:1098,
-#: inc/panel-builder/header/button/options.php:465,
-#: inc/panel-builder/header/button/options.php:494,
-#: inc/panel-builder/header/button/options.php:524,
-#: inc/panel-builder/header/button/options.php:552
+#: inc/panel-builder/header/button/options.php:715,
+#: inc/panel-builder/header/button/options.php:744,
+#: inc/panel-builder/header/button/options.php:774,
+#: inc/panel-builder/header/button/options.php:802
 msgid "Button Color"
 msgstr ""
 
@@ -2934,7 +2942,7 @@ msgstr ""
 #: inc/options/single-elements/featured-image.php:26,
 #: inc/options/single-elements/related-posts.php:240,
 #: inc/options/woocommerce/card-product-elements.php:243,
-#: inc/options/woocommerce/single-product-gallery.php:104,
+#: inc/options/woocommerce/single-product-gallery.php:114,
 #: inc/panel-builder/header/cart/options.php:682
 msgid "Image Ratio"
 msgstr ""
@@ -2998,7 +3006,7 @@ msgstr ""
 #: inc/panel-builder/footer/socials/options.php:129,
 #: inc/panel-builder/header/socials/options.php:127,
 #: inc/panel-builder/header/trigger/options.php:58
-#: static/js/options/options/box-shadow/box-shadow-modal.js:227
+#: static/js/options/options/box-shadow/box-shadow-modal.js:221
 msgid "Outline"
 msgstr ""
 
@@ -3203,7 +3211,7 @@ msgstr ""
 #: inc/options/general/sidebar.php:258,
 #: inc/options/single-elements/post-share-box.php:124,
 #: inc/options/woocommerce/general-main.php:1178,
-#: inc/panel-builder/header/logo/options.php:287
+#: inc/panel-builder/header/logo/options.php:286
 #: static/js/options/options/ct-spacing/input.js:109
 msgid "Top"
 msgstr ""
@@ -3765,7 +3773,7 @@ msgstr ""
 
 #: inc/options/single-elements/post-share-box.php:413,
 #: inc/options/woocommerce/card-product-elements.php:522,
-#: inc/panel-builder/header/logo/options.php:305,
+#: inc/panel-builder/header/logo/options.php:304,
 #: inc/panel-builder/header/text/options.php:57
 msgid "Content Alignment"
 msgstr ""
@@ -4360,7 +4368,7 @@ msgstr ""
 
 #: inc/options/woocommerce/single-product-elements.php:73,
 #: inc/panel-builder/header/cart/options.php:123,
-#: inc/panel-builder/header/logo/options.php:285,
+#: inc/panel-builder/header/logo/options.php:284,
 #: inc/panel-builder/header/search/options.php:98,
 #: inc/panel-builder/header/trigger/options.php:124
 #: static/js/options/options/ct-spacing/input.js:111
@@ -4369,7 +4377,7 @@ msgstr ""
 
 #: inc/options/woocommerce/single-product-elements.php:84,
 #: inc/panel-builder/header/cart/options.php:124,
-#: inc/panel-builder/header/logo/options.php:286,
+#: inc/panel-builder/header/logo/options.php:285,
 #: inc/panel-builder/header/search/options.php:99,
 #: inc/panel-builder/header/trigger/options.php:125
 #: static/js/options/options/ct-spacing/input.js:112
@@ -4400,78 +4408,78 @@ msgstr ""
 msgid "Product Gallery"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:26
+#: inc/options/woocommerce/single-product-gallery.php:27
 msgid "Lightbox"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:37
+#: inc/options/woocommerce/single-product-gallery.php:38
 msgid "Zoom Effect"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:53
+#: inc/options/woocommerce/single-product-gallery.php:54
 msgid "Sticky Gallery"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:82
+#: inc/options/woocommerce/single-product-gallery.php:92
 msgid "Gallery Container Width"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:101
+#: inc/options/woocommerce/single-product-gallery.php:111
 msgid "Main Image Ratio"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:120
+#: inc/options/woocommerce/single-product-gallery.php:130
 msgid "Image size used for the main image on single product pages."
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:142
+#: inc/options/woocommerce/single-product-gallery.php:152
 msgid "Thumbnails Position"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:149,
+#: inc/options/woocommerce/single-product-gallery.php:159,
 #: inc/components/blocks/contact-info/options.php:557,
 #: inc/panel-builder/footer/menu/options.php:45,
 #: inc/panel-builder/footer/socials/options.php:145
 msgid "Horizontal"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:150,
+#: inc/options/woocommerce/single-product-gallery.php:160,
 #: inc/components/blocks/contact-info/options.php:556,
 #: inc/panel-builder/footer/menu/options.php:46,
 #: inc/panel-builder/footer/socials/options.php:146
 msgid "Vertical"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:171
+#: inc/options/woocommerce/single-product-gallery.php:181
 msgid "Thumbnails Size"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:172
+#: inc/options/woocommerce/single-product-gallery.php:182
 msgid "Image size used for the gallery thumbnails on single product pages."
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:191
+#: inc/options/woocommerce/single-product-gallery.php:201
 msgid "Thumbnails Spacing"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:194,
+#: inc/options/woocommerce/single-product-gallery.php:204,
 #: inc/panel-builder/footer/middle-row/options.php:374
 msgid "Columns Spacing"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:223
+#: inc/options/woocommerce/single-product-gallery.php:233
 msgid "Prev/Next Arrow"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:253
+#: inc/options/woocommerce/single-product-gallery.php:263
 msgid "Prev/Next Background"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:288
+#: inc/options/woocommerce/single-product-gallery.php:298
 msgid "Lightbox Button Icon Color"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-gallery.php:319
+#: inc/options/woocommerce/single-product-gallery.php:329
 msgid "Lightbox Button Background"
 msgstr ""
 
@@ -4917,7 +4925,7 @@ msgid "Link to term page"
 msgstr ""
 
 #: inc/components/blocks/dynamic-data/options.php:201,
-#: inc/panel-builder/header/button/options.php:83
+#: inc/panel-builder/header/button/options.php:125
 msgid "Open in new tab"
 msgstr ""
 
@@ -5083,10 +5091,10 @@ msgstr ""
 #: inc/panel-builder/footer/copyright/options.php:67,
 #: inc/panel-builder/footer/menu/options.php:124,
 #: inc/panel-builder/footer/socials/options.php:205,
-#: inc/panel-builder/header/button/options.php:149,
-#: inc/panel-builder/header/button/options.php:205,
+#: inc/panel-builder/header/button/options.php:191,
+#: inc/panel-builder/header/button/options.php:247,
 #: inc/panel-builder/header/cart/options.php:1117,
-#: inc/panel-builder/header/logo/options.php:359,
+#: inc/panel-builder/header/logo/options.php:358,
 #: inc/panel-builder/header/mobile-menu/options.php:153,
 #: inc/panel-builder/header/search/options.php:841,
 #: inc/panel-builder/header/socials/options.php:168,
@@ -5100,9 +5108,9 @@ msgstr ""
 #: inc/panel-builder/footer/menu/options.php:204,
 #: inc/panel-builder/footer/socials/options.php:378,
 #: inc/panel-builder/footer/widget-area-1/options.php:116,
-#: inc/panel-builder/header/button/options.php:594,
+#: inc/panel-builder/header/button/options.php:852,
 #: inc/panel-builder/header/cart/options.php:547,
-#: inc/panel-builder/header/logo/options.php:678,
+#: inc/panel-builder/header/logo/options.php:677,
 #: inc/panel-builder/header/menu/options.php:587,
 #: inc/panel-builder/header/mobile-menu/options.php:490,
 #: inc/panel-builder/header/offcanvas-logo/options.php:76,
@@ -5300,6 +5308,14 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
+#: inc/panel-builder/header/button/options.php:46,
+#: inc/panel-builder/header/button/options.php:66,
+#: inc/panel-builder/header/cart/options.php:130,
+#: inc/panel-builder/header/search/options.php:105,
+#: inc/panel-builder/header/trigger/options.php:131
+msgid "Label Text"
+msgstr ""
+
 #: inc/panel-builder/header/button/options.php:50,
 #: inc/panel-builder/header/button/view.php:82
 #: admin/dashboard/static/js/components/SinglePremiumPlugin.js:109
@@ -5307,81 +5323,109 @@ msgid "Download"
 msgstr ""
 
 #: inc/panel-builder/header/button/options.php:54
-msgid "Click Behavior"
+msgid "Secondary Label"
 msgstr ""
 
-#: inc/panel-builder/header/button/options.php:65
-msgid "Open Link"
+#: inc/panel-builder/header/button/options.php:69,
+#: inc/panel-builder/header/button/view.php:93
+msgid "Hurry Up!"
 msgstr ""
 
-#: inc/panel-builder/header/button/options.php:66
-msgid "Open Popup"
-msgstr ""
-
-#: inc/panel-builder/header/button/options.php:76
-msgid "Link/URL"
-msgstr ""
-
-#: inc/panel-builder/header/button/options.php:91
-msgid "Set link to nofollow"
+#: inc/panel-builder/header/button/options.php:75
+msgid "Text Alignment"
 msgstr ""
 
 #: inc/panel-builder/header/button/options.php:97
+msgid "Click Behavior"
+msgstr ""
+
+#: inc/panel-builder/header/button/options.php:107
+msgid "Open Link"
+msgstr ""
+
+#: inc/panel-builder/header/button/options.php:108
+msgid "Open Popup"
+msgstr ""
+
+#: inc/panel-builder/header/button/options.php:118
+msgid "Link/URL"
+msgstr ""
+
+#: inc/panel-builder/header/button/options.php:133
+msgid "Set link to nofollow"
+msgstr ""
+
+#: inc/panel-builder/header/button/options.php:139
 msgid "Set link to sponsored"
 msgstr ""
 
-#: inc/panel-builder/header/button/options.php:115,
-#: inc/panel-builder/header/button/options.php:129
+#: inc/panel-builder/header/button/options.php:157,
+#: inc/panel-builder/header/button/options.php:171
 msgid "Popup Template"
 msgstr ""
 
-#: inc/panel-builder/header/button/options.php:132
+#: inc/panel-builder/header/button/options.php:174
 msgid "Create Popup"
 msgstr ""
 
-#: inc/panel-builder/header/button/options.php:225,
+#: inc/panel-builder/header/button/options.php:267,
 #: inc/panel-builder/header/text/options.php:131
 msgid "User Visibility"
 msgstr ""
 
-#: inc/panel-builder/header/button/options.php:235,
+#: inc/panel-builder/header/button/options.php:277,
 #: inc/panel-builder/header/text/options.php:141
 msgid "Logged In"
 msgstr ""
 
-#: inc/panel-builder/header/button/options.php:236,
+#: inc/panel-builder/header/button/options.php:278,
 #: inc/panel-builder/header/text/options.php:142
 msgid "Logged Out"
 msgstr ""
 
-#: inc/panel-builder/header/button/options.php:243,
-#: inc/panel-builder/header/logo/options.php:379
+#: inc/panel-builder/header/button/options.php:285,
+#: inc/panel-builder/header/logo/options.php:378
 msgid "CSS Class"
 msgstr ""
 
-#: inc/panel-builder/header/button/options.php:248,
-#: inc/panel-builder/header/logo/options.php:384
+#: inc/panel-builder/header/button/options.php:290,
+#: inc/panel-builder/header/logo/options.php:383
 msgid "Separate multiple classes with spaces."
 msgstr ""
 
-#: inc/panel-builder/header/button/options.php:254,
-#: inc/panel-builder/header/logo/options.php:388
+#: inc/panel-builder/header/button/options.php:296,
+#: inc/panel-builder/header/logo/options.php:387
 msgid "Custom Aria Label"
 msgstr ""
 
 #. translators: placeholder here means the actual URL.
-#: inc/panel-builder/header/button/options.php:261,
-#: inc/panel-builder/header/logo/options.php:395
+#: inc/panel-builder/header/button/options.php:303,
+#: inc/panel-builder/header/logo/options.php:394
 msgid "Add a custom %saria label%s attribute."
 msgstr ""
 
-#: inc/panel-builder/header/button/options.php:285,
-#: inc/panel-builder/header/button/options.php:470,
+#: inc/panel-builder/header/button/options.php:321
+msgid "Label Text Font"
+msgstr ""
+
+#: inc/panel-builder/header/button/options.php:328,
+#: inc/panel-builder/header/button/options.php:358,
+#: inc/panel-builder/header/button/options.php:410,
+#: inc/panel-builder/header/button/options.php:460,
+#: inc/panel-builder/header/button/options.php:558,
+#: inc/panel-builder/header/button/options.php:608,
+#: inc/panel-builder/header/button/options.php:658
+msgid "Label Text Color"
+msgstr ""
+
+#: inc/panel-builder/header/button/options.php:334,
+#: inc/panel-builder/header/button/options.php:534,
+#: inc/panel-builder/header/button/options.php:720,
 #: inc/panel-builder/header/cart/options.php:177,
 #: inc/panel-builder/header/cart/options.php:303,
 #: inc/panel-builder/header/cart/options.php:424,
-#: inc/panel-builder/header/logo/options.php:434,
-#: inc/panel-builder/header/logo/options.php:580,
+#: inc/panel-builder/header/logo/options.php:433,
+#: inc/panel-builder/header/logo/options.php:579,
 #: inc/panel-builder/header/menu/options.php:197,
 #: inc/panel-builder/header/menu/options.php:426,
 #: inc/panel-builder/header/menu/options.php:774,
@@ -5404,13 +5448,14 @@ msgstr ""
 msgid "Default State"
 msgstr ""
 
-#: inc/panel-builder/header/button/options.php:290,
-#: inc/panel-builder/header/button/options.php:475,
+#: inc/panel-builder/header/button/options.php:339,
+#: inc/panel-builder/header/button/options.php:539,
+#: inc/panel-builder/header/button/options.php:725,
 #: inc/panel-builder/header/cart/options.php:182,
 #: inc/panel-builder/header/cart/options.php:308,
 #: inc/panel-builder/header/cart/options.php:432,
-#: inc/panel-builder/header/logo/options.php:439,
-#: inc/panel-builder/header/logo/options.php:585,
+#: inc/panel-builder/header/logo/options.php:438,
+#: inc/panel-builder/header/logo/options.php:584,
 #: inc/panel-builder/header/menu/options.php:202,
 #: inc/panel-builder/header/menu/options.php:432,
 #: inc/panel-builder/header/menu/options.php:779,
@@ -5433,13 +5478,14 @@ msgstr ""
 msgid "Transparent State"
 msgstr ""
 
-#: inc/panel-builder/header/button/options.php:299,
-#: inc/panel-builder/header/button/options.php:484,
+#: inc/panel-builder/header/button/options.php:348,
+#: inc/panel-builder/header/button/options.php:548,
+#: inc/panel-builder/header/button/options.php:734,
 #: inc/panel-builder/header/cart/options.php:191,
 #: inc/panel-builder/header/cart/options.php:317,
 #: inc/panel-builder/header/cart/options.php:442,
-#: inc/panel-builder/header/logo/options.php:448,
-#: inc/panel-builder/header/logo/options.php:594,
+#: inc/panel-builder/header/logo/options.php:447,
+#: inc/panel-builder/header/logo/options.php:593,
 #: inc/panel-builder/header/menu/options.php:211,
 #: inc/panel-builder/header/menu/options.php:442,
 #: inc/panel-builder/header/menu/options.php:788,
@@ -5462,6 +5508,14 @@ msgstr ""
 msgid "Sticky State"
 msgstr ""
 
+#: inc/panel-builder/header/button/options.php:519
+msgid "Secondary Label Text Font"
+msgstr ""
+
+#: inc/panel-builder/header/button/options.php:528
+msgid "Secondary Label Text Color"
+msgstr ""
+
 #: inc/panel-builder/header/cart/config.php:4
 msgid "Cart"
 msgstr ""
@@ -5479,12 +5533,6 @@ msgstr ""
 #: inc/panel-builder/header/search/options.php:91,
 #: inc/panel-builder/header/trigger/options.php:117
 msgid "Label Position"
-msgstr ""
-
-#: inc/panel-builder/header/cart/options.php:130,
-#: inc/panel-builder/header/search/options.php:105,
-#: inc/panel-builder/header/trigger/options.php:131
-msgid "Label Text"
 msgstr ""
 
 #: inc/panel-builder/header/cart/options.php:161
@@ -5607,65 +5655,65 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: inc/panel-builder/header/logo/options.php:28
+#: inc/panel-builder/header/logo/options.php:27
 msgid "Transparent State Logo"
 msgstr ""
 
-#: inc/panel-builder/header/logo/options.php:61
+#: inc/panel-builder/header/logo/options.php:60
 msgid "Sticky State Logo"
 msgstr ""
 
-#: inc/panel-builder/header/logo/options.php:88,
-#: inc/panel-builder/header/logo/options.php:129,
+#: inc/panel-builder/header/logo/options.php:87,
+#: inc/panel-builder/header/logo/options.php:128,
 #: inc/panel-builder/header/offcanvas-logo/options.php:43
 msgid "Logo Height"
 msgstr ""
 
-#: inc/panel-builder/header/logo/options.php:108
+#: inc/panel-builder/header/logo/options.php:107
 msgid "Sticky State Shrink"
 msgstr ""
 
-#: inc/panel-builder/header/logo/options.php:149,
-#: inc/panel-builder/header/logo/options.php:418
+#: inc/panel-builder/header/logo/options.php:148,
+#: inc/panel-builder/header/logo/options.php:417
 msgid "Site Title"
 msgstr ""
 
-#: inc/panel-builder/header/logo/options.php:169
+#: inc/panel-builder/header/logo/options.php:168
 msgid "Site Title Visibility"
 msgstr ""
 
-#: inc/panel-builder/header/logo/options.php:197
+#: inc/panel-builder/header/logo/options.php:196
 msgid "Site Tagline"
 msgstr ""
 
-#: inc/panel-builder/header/logo/options.php:217
+#: inc/panel-builder/header/logo/options.php:216
 msgid "Site Tagline Visibility"
 msgstr ""
 
-#: inc/panel-builder/header/logo/options.php:247,
+#: inc/panel-builder/header/logo/options.php:246,
 #: inc/panel-builder/header/offcanvas-logo/options.php:60
 msgid "Inline SVG File"
 msgstr ""
 
-#: inc/panel-builder/header/logo/options.php:276
+#: inc/panel-builder/header/logo/options.php:275
 msgid "Logo Image Position"
 msgstr ""
 
-#: inc/panel-builder/header/logo/options.php:429,
-#: inc/panel-builder/header/logo/options.php:458,
-#: inc/panel-builder/header/logo/options.php:489,
-#: inc/panel-builder/header/logo/options.php:519
+#: inc/panel-builder/header/logo/options.php:428,
+#: inc/panel-builder/header/logo/options.php:457,
+#: inc/panel-builder/header/logo/options.php:488,
+#: inc/panel-builder/header/logo/options.php:518
 msgid "Site Title Color"
 msgstr ""
 
-#: inc/panel-builder/header/logo/options.php:565
+#: inc/panel-builder/header/logo/options.php:564
 msgid "Site Tagline Font"
 msgstr ""
 
-#: inc/panel-builder/header/logo/options.php:575,
-#: inc/panel-builder/header/logo/options.php:604,
-#: inc/panel-builder/header/logo/options.php:626,
-#: inc/panel-builder/header/logo/options.php:647
+#: inc/panel-builder/header/logo/options.php:574,
+#: inc/panel-builder/header/logo/options.php:603,
+#: inc/panel-builder/header/logo/options.php:625,
+#: inc/panel-builder/header/logo/options.php:646
 msgid "Site Tagline Color"
 msgstr ""
 
@@ -5779,7 +5827,7 @@ msgid "Top Offset (Sticky State)"
 msgstr ""
 
 #: inc/panel-builder/header/menu/options.php:734
-#: static/js/options/options/box-shadow/box-shadow-modal.js:117
+#: static/js/options/options/box-shadow/box-shadow-modal.js:111
 msgid "Horizontal Offset"
 msgstr ""
 
@@ -6204,37 +6252,37 @@ msgid ""
 "templates, extensions and a lot more stunning features."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:495
-#: static/js/notification/Notification.js:109
+#: admin/dashboard/static/js/screens/Home.js:496
+#: static/js/notification/Notification.js:116
 msgid "Installing & activating..."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:500
-#: static/js/notification/Notification.js:111
+#: admin/dashboard/static/js/screens/Home.js:501
+#: static/js/notification/Notification.js:118
 msgid "Install Blocksy Companion"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:505
-#: static/js/notification/Notification.js:113
+#: admin/dashboard/static/js/screens/Home.js:506
+#: static/js/notification/Notification.js:120
 msgid "Activate Blocksy Companion"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:509
-#: static/js/notification/Notification.js:114
+#: admin/dashboard/static/js/screens/Home.js:510
+#: static/js/notification/Notification.js:121
 msgid "Blocksy Companion active!"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:526
+#: admin/dashboard/static/js/screens/Home.js:527
 msgid "Blocksy Child Theme"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:530
+#: admin/dashboard/static/js/screens/Home.js:531
 msgid ""
 "By using a child theme you can modify any file without the fear of breaking "
 "something in the parent theme."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Home.js:540
+#: admin/dashboard/static/js/screens/Home.js:541
 msgid "Download now"
 msgstr ""
 
@@ -7030,7 +7078,7 @@ msgstr ""
 msgid "Reset all"
 msgstr ""
 
-#: static/js/notification/Notification.js:123
+#: static/js/notification/Notification.js:130
 msgid "Why you need Blocksy Companion?"
 msgstr ""
 
@@ -7038,18 +7086,18 @@ msgstr ""
 msgid "Dismiss this notice."
 msgstr ""
 
-#: static/js/notification/Notification.js:67
+#: static/js/notification/Notification.js:73
 msgid ""
 "We strongly recommend you to activate the <b>Blocksy Companion</b> plugin."
 "<br>This way you will have access to custom extensions, demo templates and "
 "many other awesome features."
 msgstr ""
 
-#: static/js/notification/Notification.js:80
+#: static/js/notification/Notification.js:86
 msgid "Download Blocksy Companion"
 msgstr ""
 
-#: static/js/options/GenericOptionType.js:639
+#: static/js/options/GenericOptionType.js:564
 msgid "Option can't be edited for current device"
 msgstr ""
 
@@ -7196,23 +7244,23 @@ msgstr ""
 msgid "Zig Zag"
 msgstr ""
 
-#: static/js/options/options/box-shadow/box-shadow-modal.js:146
+#: static/js/options/options/box-shadow/box-shadow-modal.js:140
 msgid "Vertical Offset"
 msgstr ""
 
-#: static/js/options/options/box-shadow/box-shadow-modal.js:171
+#: static/js/options/options/box-shadow/box-shadow-modal.js:165
 msgid "Blur"
 msgstr ""
 
-#: static/js/options/options/box-shadow/box-shadow-modal.js:196
+#: static/js/options/options/box-shadow/box-shadow-modal.js:190
 msgid "Spread"
 msgstr ""
 
-#: static/js/options/options/box-shadow/box-shadow-modal.js:239
+#: static/js/options/options/box-shadow/box-shadow-modal.js:233
 msgid "Inset"
 msgstr ""
 
-#: static/js/options/options/box-shadow/box-shadow-modal.js:98
+#: static/js/options/options/box-shadow/box-shadow-modal.js:92
 msgid "Enable/Disable"
 msgstr ""
 
@@ -7225,16 +7273,16 @@ msgstr ""
 msgid "Predefined"
 msgstr ""
 
-#: static/js/options/options/color-palettes/CustomPalettes.js:35
+#: static/js/options/options/color-palettes/CustomPalettes.js:31
 msgid "Custom Palette #%s"
 msgstr ""
 
-#: static/js/options/options/color-palettes/CustomPalettes.js:59
+#: static/js/options/options/color-palettes/CustomPalettes.js:55
 #: static/js/options/options/ct-image-uploader.js:401
 msgid "Remove"
 msgstr ""
 
-#: static/js/options/options/color-palettes/CustomPalettes.js:71
+#: static/js/options/options/color-palettes/CustomPalettes.js:67
 msgid "No custom palettes yet."
 msgstr ""
 
@@ -7276,7 +7324,7 @@ msgstr ""
 msgid "No Color"
 msgstr ""
 
-#: static/js/options/options/ct-box-shadow.js:67
+#: static/js/options/options/ct-box-shadow.js:68
 msgid "Adjust"
 msgstr ""
 

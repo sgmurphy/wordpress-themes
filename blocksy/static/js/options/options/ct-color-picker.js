@@ -10,7 +10,18 @@ import {
 import SinglePicker from './color-picker/single-picker'
 import { normalizeCondition, matchValuesWithCondition } from 'match-conditions'
 
-const ColorPicker = ({ option, values, value, onChange, device }) => {
+const ColorPicker = ({
+	option,
+	values,
+	value: internalValue,
+	onChange: onInternalChange,
+	device,
+}) => {
+	const value = internalValue
+	const onChange = onInternalChange
+
+	// const [value, onChange] = useState(internalValue)
+
 	const [{ isPicking, isTransitioning }, setState] = useState({
 		isPicking: null,
 		isTransitioning: null,
@@ -67,12 +78,12 @@ const ColorPicker = ({ option, values, value, onChange, device }) => {
 								isTransitioning: false,
 							}))
 						}
-						onChange={(newPicker) =>
+						onChange={(newPicker) => {
 							onChange({
 								...value,
 								[picker.id]: newPicker,
 							})
-						}
+						}}
 						value={value[picker.id] || option.value[picker.id]}
 					/>
 				))}

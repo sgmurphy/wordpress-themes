@@ -410,7 +410,7 @@ ctEvents.on(
 						to_add: '.ct-cart-content',
 					})
 				),
-				variable: 'backgroundColor',
+				variable: 'mini-cart-background-color',
 				type: 'color:default',
 			},
 

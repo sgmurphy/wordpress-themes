@@ -338,8 +338,23 @@ remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_di
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
 add_action(
+	'woocommerce_before_single_product',
+	function() {
+		blocksy_manager()->get_hooks()->redirect_callbacks([
+			'token' => 'single_product_after_ralated',
+			'source' => ['woocommerce_after_single_product'],
+			'destination' => 'blocksy:woocommerce:product-single:related:after',
+		]);
+	}
+);
+
+add_action(
 	'woocommerce_after_main_content',
-	'blocksy_woo_single_product_after_main_content',
+	function() {
+		blocksy_woo_single_product_after_main_content();
+
+		do_action('blocksy:woocommerce:product-single:related:after');
+	},
 	5
 );
 

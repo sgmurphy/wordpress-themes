@@ -98,28 +98,19 @@ const loadVideoOrIframeViaAjax = (el) => {
 
 		const videoOrIframe = el.querySelector('video,iframe')
 
-		const subscriber = () => {
-			listenForStateChanges(videoOrIframe, {
-				onPlay: () => {
-					setTimeout(() => {
-						el.querySelector(
-							'.ct-video-indicator'
-						).classList.remove('loading')
-					}, 120)
-				},
+		listenForStateChanges(videoOrIframe, {
+			onPlay: () => {
+				setTimeout(() => {
+					el.querySelector('.ct-video-indicator').classList.remove(
+						'loading'
+					)
+				}, 120)
+			},
 
-				onReady: () => {
-					playVideo(videoOrIframe)
-				},
-			})
-		}
-
-		if (videoOrIframe.matches('video')) {
-			videoOrIframe.onloadeddata = subscriber
-			return
-		}
-
-		videoOrIframe.onload = subscriber
+			onReady: () => {
+				playVideo(videoOrIframe)
+			},
+		})
 	})
 }
 
