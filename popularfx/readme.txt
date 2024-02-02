@@ -8,7 +8,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Requires at least: 4.5
 Tested up to: 6.0
 Requires PHP: 5.5
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 
 A starter theme called PopularFX.
 
@@ -39,6 +39,8 @@ Features :
 PopularFX includes support for Pagelayer, WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
+= 1.2.5 - Feb 02 2024 =
+* [Security-fix] There was a privilege check failure which has been fixed.
 
 = 1.2.2 - Dec 17 2021 =
 * Customizer Max width bug fixed

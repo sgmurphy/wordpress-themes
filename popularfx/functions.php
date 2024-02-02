@@ -9,7 +9,7 @@
 
 if ( ! defined( 'POPULARFX_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'POPULARFX_VERSION', '1.2.4' );
+	define( 'POPULARFX_VERSION', '1.2.5' );
 }
 
 if ( ! defined( 'POPULARFX_PAGELAYER_API' ) ) {
@@ -487,6 +487,7 @@ function popularfx_getting_started_notice(){
 	
 	// Are we to disable the promo
 	if(isset($_GET['popularfx-getting-started']) && (int)$_GET['popularfx-getting-started'] == 0){
+		check_ajax_referer('popularfx_getting_started_nonce', 'popularfx_nonce');
 		set_theme_mod('popularfx_getting_started', time());
 		die('DONE');
 	}
@@ -500,7 +501,7 @@ jQuery(document).ready(function(){
 			var data;
 			jQuery("#popularfx-getting-started-notice").hide();
 			// Save this preference
-			jQuery.post("'.esc_url(admin_url('?popularfx-getting-started=0')).'", data, function(response) {
+			jQuery.post("'.admin_url('?popularfx-getting-started=0&popularfx_nonce='.wp_create_nonce("popularfx_getting_started_nonce")).'", data, function(response) {
 				//alert(response);
 			});
 			return false;
