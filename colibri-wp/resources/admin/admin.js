@@ -93,7 +93,9 @@ __webpack_require__(365);
     });
 
     function disableNotice() {
-        wp.ajax.post('colibriwp_disable_big_notice');
+        wp.ajax.post('colibriwp_disable_big_notice', {
+            nonce: colibriwp_builder_status.colibriwp_disable_big_notice_nonce
+        });
     }
 
     function toggleProcessing(value) {
@@ -145,7 +147,10 @@ __webpack_require__(365);
     function activateBuilder(callback) {
         pluginNotice(colibriwp_builder_status.messages.activating);
 
-        wp.ajax.post('colibriwp_activate_plugin', { slug: colibriwp_builder_status.slug }).done(function () {
+        wp.ajax.post('colibriwp_activate_plugin', {
+            slug: colibriwp_builder_status.slug,
+            _wpnonce: colibriwp_builder_status.plugin_activate_nonce
+        }).done(function () {
             $(window).off('beforeunload.colibri-admin-big-notice');
             if (callback) {
                 callback();
@@ -158,7 +163,10 @@ __webpack_require__(365);
     }
 
     function processBuilderInstalationStepts(callback) {
-        wp.ajax.post('colibriwp_front_set_predesign', { index: selectedFrontPage });
+        wp.ajax.post('colibriwp_front_set_predesign', {
+            index: selectedFrontPage,
+            nonce: colibriwp_builder_status.colibriwp_front_set_predesign_nonce
+        });
         if (colibriwp_builder_status.status === "not-installed") {
             toggleProcessing(true);
             installBuilder(callback);

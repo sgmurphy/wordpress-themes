@@ -135,6 +135,7 @@ class Theme {
 
 
         add_action( 'wp_ajax_colibriwp_disable_big_notice', function () {
+            check_ajax_referer( 'colibriwp_disable_big_notice_nonce', 'nonce' );
             $slug = get_template() . "-page-info";
             update_option( "{$slug}-theme-notice-dismissed", true );
         } );

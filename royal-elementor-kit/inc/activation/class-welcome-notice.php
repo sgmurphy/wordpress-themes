@@ -363,7 +363,11 @@ class REK_Welcome_Notice {
 	** Dismissed handler
 	*/
 	public function dismissed_handler() {
-		wp_verify_nonce( null );
+        check_ajax_referer('rek_dismiss_notice_nonce', 'nonce');
+
+        if ( ! current_user_can('administrator') ) {
+            return;
+        }
 
 		if ( isset( $_POST['notice'] ) ) {
 			set_transient( sanitize_text_field( wp_unslash( $_POST['notice'] ) ), true, 0 );
@@ -377,6 +381,9 @@ class REK_Welcome_Notice {
 		
 		wp_enqueue_script( 'jquery' );
 
+        // Generate a nonce
+        $nonce = wp_create_nonce('rek_dismiss_notice_nonce');
+
 		ob_start();
 		?>
 		<script>
@@ -385,6 +392,7 @@ class REK_Welcome_Notice {
 					jQuery.post( 'ajax_url', {
 						action: 'rek_dismissed_handler',
 						notice: $( this ).closest( '.rek-notice' ).data( 'notice' ),
+                        nonce: '<?php echo $nonce; ?>', // Pass the nonce here
 					});
 					$( '.rek-notice' ).hide();
 				} );

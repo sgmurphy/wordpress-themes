@@ -107,7 +107,7 @@ class PluginsManager {
         } );
 
         add_action( 'wp_ajax_colibriwp_activate_plugin', function () {
-
+            check_ajax_referer( 'plugin_activate_nonce');
             $slug = isset( $_REQUEST['slug'] ) ? wp_unslash( $_REQUEST['slug'] ) : false;
 
             if ( ! current_user_can( 'activate_plugin', $slug ) ) {

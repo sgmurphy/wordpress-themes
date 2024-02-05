@@ -359,6 +359,7 @@ class Customizer {
                 'translations'              => Translations::all(),
                 'section_default_tab'       => ColibriControl::DEFAULT_COLIBRI_TAB,
                 'style_tab'                 => ColibriControl::STYLE_COLIBRI_TAB,
+                'colibriwp_disable_big_notice_nonce' => wp_create_nonce('colibriwp_disable_big_notice_nonce'),
                 'colibri_autofocus'         => Utils::pathGet( $_REQUEST, 'colibri_autofocus' ),
                 'colibri_autofocus_aliases' => (object) Hooks::colibri_apply_filters( 'customizer_autofocus_aliases',
                     array() )

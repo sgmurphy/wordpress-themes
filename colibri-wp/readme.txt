@@ -3,7 +3,7 @@
 Contributors: extendthemes
 Tags: entertainment, food-and-drink, portfolio, one-column, two-columns, right-sidebar, grid-layout, custom-header, custom-menu, custom-logo, full-width-template, theme-options, translation-ready, featured-images, threaded-comments
 Requires at least: 5.6
-Tested up to: 6.4
+Tested up to: 6.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Requires PHP: 5.6

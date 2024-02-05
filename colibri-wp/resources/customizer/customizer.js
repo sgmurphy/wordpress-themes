@@ -42389,7 +42389,9 @@ var ColibriCustomizer = function () {
 window.colibriCustomizer = new ColibriCustomizer(window);
 
 jQuery(function ($) {
-    wp.ajax.post('colibriwp_disable_big_notice');
+    wp.ajax.post('colibriwp_disable_big_notice', {
+        nonce: window.colibri_Customizer_Data.colibriwp_disable_big_notice_nonce
+    });
 
     if (window.colibriCustomizer.settings.colibri_autofocus) {
         var id = window.colibriCustomizer.settings.colibri_autofocus;
@@ -76702,7 +76704,10 @@ function activateBuilder() {
     pluginNotice(colibriwp_plugin_status.messages.activating);
 
     prepareCall(function () {
-        wp.ajax.post('colibriwp_activate_plugin', { slug: 'colibri-page-builder' }).done(function () {
+        wp.ajax.post('colibriwp_activate_plugin', {
+            slug: 'colibri-page-builder',
+            _wpnonce: colibriwp_plugin_status.plugin_activate_nonce
+        }).done(function () {
             window.location = colibriwp_plugin_status.admin_url;
         });
     });

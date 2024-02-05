@@ -379,6 +379,7 @@ function colibriwp_allow_internal_host( $allow, $host, $url ) {
 }
 
 add_action( 'wp_ajax_colibriwp_front_set_predesign', function () {
+    check_ajax_referer( 'colibriwp_front_set_predesign_nonce', 'nonce' );
     $predesign_index = isset( $_REQUEST['index'] ) ? $_REQUEST['index'] : 0;
     $predesign_index = intval( $predesign_index );
     $meta            = array();

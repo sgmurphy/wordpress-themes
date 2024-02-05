@@ -81,6 +81,9 @@ foreach ( Defaults::get( 'front_page_designs', array() ) as $colibriwp_current_d
                 ),
                 admin_url( 'themes.php' )
             ),
+            'colibriwp_front_set_predesign_nonce' =>  wp_create_nonce( 'colibriwp_front_set_predesign_nonce' ),
+            'colibriwp_disable_big_notice_nonce' => wp_create_nonce( 'colibriwp_disable_big_notice_nonce' ),
+            'plugin_activate_nonce' => wp_create_nonce( 'plugin_activate_nonce' ),
             "messages"       => array(
                 "installing" => \ColibriWP\Theme\Translations::get( 'installing',
                     'Colibri Page Builder' ),
