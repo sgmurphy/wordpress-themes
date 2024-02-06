@@ -211,6 +211,15 @@ class Hestia_Setup_Wizard {
 			return false;
 		}
 
+		// Prevent requests without a valid nonce.
+		if ( ! isset( $_GET['nonce'] ) || false === wp_verify_nonce( $_GET['nonce'], 'hestia_dismiss_wizard' ) ) {
+			if ( false !== $redirect_to_dashboard ) {
+				wp_safe_redirect( admin_url( 'index.php' ) );
+				exit;
+			}
+			return false;
+		}
+
 		update_option( self::OPTION_NAME, 1 );
 		if ( false !== $redirect_to_dashboard ) {
 			wp_safe_redirect( admin_url( 'index.php' ) );
