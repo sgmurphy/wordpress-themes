@@ -101,19 +101,21 @@
 .wp-block-button__link:not(.wp-block-coblocks-social__button) {
     box-shadow: .4em .4em 0 0 rgba(0, 0, 0, .075);
     overflow: hidden;
+    transition: width 100ms cubic-bezier(.7, 0, .3, 1);
 }
 
 .wp-block-search__button::after,
 .wp-block-button__link:not(.wp-block-coblocks-social__button)::after {
     content: "→";
     display: inline-block;
+    max-width: 0;
     opacity: 0;
     overflow: hidden;
     position: relative;
     top: 1px;
-    transition: width 100ms cubic-bezier(.7, 0, .3, 1) 100ms,
-                opacity 200ms cubic-bezier(.7, 0, .3, 1),
-                margin 200ms cubic-bezier(.7, 0, .3, 1) 100ms;
+    transition: max-width 100ms cubic-bezier(.7, 0, .3, 1),
+                opacity 100ms cubic-bezier(.7, 0, .3, 1),
+                margin 100ms cubic-bezier(.7, 0, .3, 1) 100ms;
     width: 0;
 }
 
@@ -121,8 +123,9 @@
 .wp-block-button__link:not(.wp-block-coblocks-social__button):focus::after,
 .wp-block-button__link:not(.wp-block-coblocks-social__button):hover::after {
     margin-left: 10px;
+    max-width: 300px;
     opacity: 1;
-    width: 10px;
+    width: auto;
 }
 
 .header .site-search .search-input__button {
