@@ -223,7 +223,7 @@ function blocksy_single_content($content = null) {
 					echo $content;
 				} else {
 					the_content(
-						sprintf(
+						blocksy_safe_sprintf(
 							wp_kses(
 								/* translators: 1: span open 2: Name of current post. Only visible to screen readers 3: span closing */
 								__(
@@ -269,7 +269,7 @@ function blocksy_single_content($content = null) {
 		<?php
 			if (get_post_type() === 'post') {
 				edit_post_link(
-					sprintf(
+					blocksy_safe_sprintf(
 						/* translators: 1: span opening 2: Post title 3: span closing. */
 						__( 'Edit%1$s "%2$s"%3$s', 'blocksy' ),
 						'<span class="screen-reader-text">',

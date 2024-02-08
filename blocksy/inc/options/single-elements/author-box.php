@@ -124,13 +124,13 @@ $options = [
 						'label' => __( 'Social Icons', 'blocksy' ),
 						'type' => 'ct-switch',
 						'value' => 'yes',
-						'desc' => sprintf(
+						'desc' => blocksy_safe_sprintf(
 							// translators: placeholder here is the link URL.
 							__(
 								'You can set the author social channels %shere%s.',
 								'blocksy'
 							),
-							sprintf(
+							blocksy_safe_sprintf(
 								'<a href="%s" target="_blank">',
 								admin_url('/profile.php')
 							),

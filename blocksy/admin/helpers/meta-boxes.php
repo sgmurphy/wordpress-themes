@@ -136,7 +136,7 @@ class Blocksy_Meta_Boxes {
 
 			add_meta_box(
 				'blocksy_settings_meta_box',
-				sprintf(
+				blocksy_safe_sprintf(
 					// Translators: %s is the theme name.
 					__( '%s Settings', 'blocksy' ),
 					__( 'Blocksy', 'blocksy' )

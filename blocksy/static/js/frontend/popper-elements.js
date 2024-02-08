@@ -21,11 +21,17 @@ const mountPopper = (reference) => {
 
 	let placement = initialPlacement
 
-	if (referenceRect.left + targetRect.width > innerWidth) {
+	const offset = parseFloat(
+		getComputedStyle(target).getPropertyValue(
+			'--theme-submenu-inline-offset'
+		) || -20
+	)
+
+	if (targetRect.width > innerWidth - referenceRect.left + offset) {
 		placement = 'left'
 	}
 
-	if (referenceRect.left - targetRect.width < 0) {
+	if (referenceRect.right - offset - targetRect.width < 0) {
 		placement = 'right'
 	}
 
@@ -55,6 +61,24 @@ const mountPopper = (reference) => {
 	}
 
 	target.dataset.placement = placement
+
+	const observer = new MutationObserver((mutations) => {
+		const maybeMutation = mutations.find(
+			(mutation) =>
+				mutation.type === 'childList' &&
+				[...mutation.removedNodes].find((el) => el === target)
+		)
+
+		if (!maybeMutation) {
+			return
+		}
+
+		observer.disconnect()
+
+		mountPopper(reference)
+	})
+
+	observer.observe(target.parentNode, { childList: true })
 }
 
 export const mount = (reference) => {

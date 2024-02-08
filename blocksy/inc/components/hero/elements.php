@@ -190,7 +190,7 @@ foreach ($hero_elements as $index => $single_hero_element) {
 					$title = get_the_author_meta('display_name', blocksy_get_author_id());
 				}
 			} else {
-				$title = sprintf(
+				$title = blocksy_safe_sprintf(
 					// translators: 1: the search query
 					__(
 						'Search Results for %1$s',
@@ -320,7 +320,7 @@ foreach ($hero_elements as $index => $single_hero_element) {
 					}
 				}
 			} else {
-				$title = sprintf(
+				$title = blocksy_safe_sprintf(
 					// translators: 1: span opening 2: span closing 3: the number of results
 					__(
 						'%1$sSearch Results for%2$s %3$s',
@@ -333,7 +333,7 @@ foreach ($hero_elements as $index => $single_hero_element) {
 
 				if (! have_posts()) {
 					// translators: %s are the opening and closing of the html tags
-					$description = sprintf(
+					$description = blocksy_safe_sprintf(
 						__('%sSorry, but nothing matched your search terms. Please try again with some different keywords.%s', 'blocksy'),
 						'<div class="' . $description_class . '">',
 						'</div>'

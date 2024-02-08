@@ -10,10 +10,10 @@ $options = [
 		'setting' => [ 'transport' => 'postMessage' ],
 		'placeholder' => __('Select menu...', 'blocksy'),
 		'choices' => blocksy_ordered_keys(blocksy_get_menus_items()),
-		'desc' => sprintf(
+		'desc' => blocksy_safe_sprintf(
 			// translators: placeholder here means the actual URL.
 			__( 'Manage your menus in the %sMenus screen%s.', 'blocksy' ),
-			sprintf(
+			blocksy_safe_sprintf(
 				'<a href="%s" target="_blank">',
 				admin_url('/nav-menus.php')
 			),

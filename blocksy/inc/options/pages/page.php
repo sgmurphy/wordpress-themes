@@ -64,7 +64,7 @@ $page_elements_options = [
 
 	$maybe_taxonomy ? [
 		'single_page_has_post_tags' => [
-			'label' => sprintf(
+			'label' => blocksy_safe_sprintf(
 				__('Page %s', 'blocksy'),
 				get_taxonomy($maybe_taxonomy)->label
 			),
@@ -154,7 +154,7 @@ if (
 		blocksy_rand_md5() => [
 			'type' => 'ct-notification',
 			'attr' => [ 'data-type' => 'background:white' ],
-			'text' => sprintf(
+			'text' => blocksy_safe_sprintf(
 				__('This single page is overrided by a custom template, to edit it please access %sthis page%s.', 'blocksy'),
 				'<a href="' . get_edit_post_link(blc_get_content_block_that_matches([
 					'template_type' => 'single',

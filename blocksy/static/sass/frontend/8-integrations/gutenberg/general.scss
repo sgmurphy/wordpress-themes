@@ -7,11 +7,11 @@ article > .entry-content {
 			max-width: var(--theme-default-editor, var(--theme-block-wide-max-width));
 		}
 
-		&:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright) {
+		&:where(:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright)) {
 			max-width: var(--theme-default-editor, var(--theme-block-max-width));
 		}
 
-		&:not(.alignfull):not(.alignleft):not(.alignright) {
+		&:where(:not(.alignfull):not(.alignleft):not(.alignright)) {
 			width: var(--theme-default-editor, var(--theme-block-width));
 		}
 	}

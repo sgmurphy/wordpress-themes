@@ -277,7 +277,7 @@ if (! function_exists('blocksy_display_posts_pagination')) {
 			) . '">' . $proper_links . '</div>';
 		}
 
-		return sprintf(
+		return blocksy_safe_sprintf(
 			$template,
 			$arrow_links[0] . $proper_links . $arrow_links[1],
 			$button_output

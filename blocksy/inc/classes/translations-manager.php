@@ -322,3 +322,36 @@ if (! function_exists('blocksy_translate_dynamic')) {
 		return $text;
 	}
 }
+
+function blocksy_safe_sprintf($format, ...$args) {
+	$result = $format;
+
+	$is_error = false;
+
+	// vsprintf() triggers a warning on PHP < 8 and throws an exception on PHP 8+
+	// We need to handle both.
+	// https://www.php.net/manual/en/function.vsprintf.php#refsect1-function.vsprintf-errors
+
+	set_error_handler(function () use (&$is_error) {
+		$is_error = true;
+	});
+
+	if (interface_exists('Throwable')) {
+		try {
+			$result = vsprintf($format, $args);
+		} catch (\Throwable $e) {
+			$is_error = true;
+		}
+	} else {
+		$result = vsprintf($format, $args);
+	}
+
+	restore_error_handler();
+
+	if ($is_error) {
+		// TODO: maybe cleanup format from %s, %d, etc
+		return $format;
+	}
+
+	return $result;
+}

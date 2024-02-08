@@ -290,7 +290,7 @@ class Blocksy_Attributes_Parser {
 		$tag = 'img',
 		$self_closing = true
 	) {
-		$attr = sprintf(
+		$attr = blocksy_safe_sprintf(
 			' %s="%s"',
 			esc_attr($attribute_name),
 			esc_attr($attribute_value)

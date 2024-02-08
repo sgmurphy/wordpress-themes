@@ -108,7 +108,7 @@ class Colors {
 				'slug' => 'palette-color-' . str_replace('color', '', $key),
 				'color' => $value['color'],
 				'variable' => $variableName,
-				'title' => sprintf(
+				'title' => blocksy_safe_sprintf(
 					__('Palette Color %s', 'blocksy'),
 					str_replace('color', '', $key)
 				)

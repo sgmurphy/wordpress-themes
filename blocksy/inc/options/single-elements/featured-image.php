@@ -22,34 +22,44 @@ $options = [
 				'type' => 'tab',
 				'options' => [
 
-					$prefix . 'featured_image_ratio' => [
-						'label' => __( 'Image Ratio', 'blocksy' ),
-						'type' => 'ct-ratio',
-						'value' => 'original',
-						'design' => 'inline',
-						'sync' => 'live',
+					[
+						
+						$prefix . 'featured_image_ratio' => [
+							'label' => __( 'Image Ratio', 'blocksy' ),
+							'type' => 'ct-ratio',
+							'value' => 'original',
+							'design' => 'inline',
+							'sync' => 'live',
+						],
+	
+						$prefix . 'featured_image_size' => [
+							'label' => __('Image Size', 'blocksy'),
+							'type' => 'ct-select',
+							'value' => 'full',
+							'view' => 'text',
+							'design' => 'inline',
+							'sync' => blocksy_sync_single_post_container([
+								'prefix' => $prefix
+							]),
+							'choices' => blocksy_ordered_keys(blocksy_get_all_image_sizes())
+						],
+						
 					],
 
-					$prefix . 'featured_image_size' => [
-						'label' => __('Image Size', 'blocksy'),
-						'type' => 'ct-select',
-						'value' => 'full',
-						'view' => 'text',
-						'design' => 'inline',
-						'sync' => blocksy_sync_single_post_container([
-							'prefix' => $prefix
-						]),
-						'choices' => blocksy_ordered_keys(blocksy_get_all_image_sizes())
-					],
-
-					$prefix . 'video_thumbnail' => [
-						'label' => __( 'Video Thumbnail', 'blocksy' ),
-						'type' => 'ct-switch',
-						'value' => 'no',
-						'sync' => blocksy_sync_single_post_container([
-							'prefix' => $prefix
-						]),
-					],
+					(
+						function_exists('blc_fs')
+						&&
+						blc_fs()->can_use_premium_code()
+					) ? [
+						$prefix . 'video_thumbnail' => [
+							'label' => __( 'Video Thumbnail', 'blocksy' ),
+							'type' => 'ct-switch',
+							'value' => 'no',
+							'sync' => blocksy_sync_single_post_container([
+								'prefix' => $prefix
+							]),
+						]
+					] : [],
 
 					blocksy_rand_md5() => [
 						'type' => 'ct-condition',

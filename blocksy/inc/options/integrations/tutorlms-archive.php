@@ -8,7 +8,7 @@ $options = [
 				'prefix' => 'courses_archive',
 				'is_single' => true,
 				'is_cpt' => true,
-				'enabled_label' => sprintf(
+				'enabled_label' => blocksy_safe_sprintf(
 					__('%s Title', 'blocksy'),
 					'Courses'
 				),

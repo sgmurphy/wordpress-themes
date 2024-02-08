@@ -78,7 +78,6 @@ let allFrontendEntryPoints = [
 		],
 		load: () => import('./frontend/popper-elements'),
 		trigger: ['hover-with-click'],
-		events: ['ct:popper-elements:update'],
 	},
 
 	{

@@ -129,7 +129,7 @@ if (! function_exists('blocksy_entry_excerpt')) {
 
 			ob_start();
 			the_content(
-				sprintf(
+				blocksy_safe_sprintf(
 					wp_kses(
 						/* translators: 1: span open 2: Name of current post. Only visible to screen readers 3: span closing */
 						__(
@@ -324,7 +324,7 @@ function blocksy_post_navigation() {
 					<div class="item-content">
 						<span class="item-label">
 							<?php
-								echo wp_kses_post(sprintf(
+								echo wp_kses_post(blocksy_safe_sprintf(
 									apply_filters(
 										'blocksy:post-navigation:previous-post:label',
 										// translators: post title
@@ -352,7 +352,7 @@ function blocksy_post_navigation() {
 					<div class="item-content">
 						<span class="item-label">
 							<?php
-								echo wp_kses_post(sprintf(
+								echo wp_kses_post(blocksy_safe_sprintf(
 									apply_filters(
 										'blocksy:post-navigation:next-post:label',
 										// translators: post title

@@ -273,7 +273,7 @@ if (! function_exists('blocksy_flexy_pills')) {
 					'tag_name' => 'span',
 					'size' => "woocommerce_gallery_thumbnail",
 					'html_atts' => [
-						'aria-label' => sprintf(__('Slide %s', 'blocksy'), $index)
+						'aria-label' => blocksy_safe_sprintf(__('Slide %s', 'blocksy'), $index)
 					],
 					// TODO: need to discuss
 					'display_video' => 'pill',
@@ -285,7 +285,7 @@ if (! function_exists('blocksy_flexy_pills')) {
 				echo blocksy_html_tag(
 					'li',
 					array_merge([
-						'aria-label' => sprintf(__('Slide %s', 'blocksy'), $index)
+						'aria-label' => blocksy_safe_sprintf(__('Slide %s', 'blocksy'), $index)
 					], intval($index) === $args['active_index'] ? [
 						'class' => 'active'
 					] : []),

@@ -57,6 +57,7 @@ class CustomPostTypes {
 				'atbdp_orders',
 				'at_biz_dir',
 				'gspbstylebook',
+				'br_labels',
 
 
 				// tutor lms

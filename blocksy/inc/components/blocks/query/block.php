@@ -221,7 +221,7 @@ class Query {
 					 */
 					wp_reset_postdata();
 
-					$result = sprintf(
+					$result = blocksy_safe_sprintf(
 						'<div %1$s>%2$s</div>',
 						$wrapper_attributes,
 						$content

@@ -19,7 +19,7 @@ $options = [
 					'type'  => 'ct-color-palettes-picker',
 					'design' => 'block',
 					// translators: The interpolations addes a html link around the word.
-					'desc' => sprintf(
+					'desc' => blocksy_safe_sprintf(
 						__('Learn more about palettes and colors %shere%s.', 'blocksy'),
 						'<a href="https://creativethemes.com/blocksy/docs/general-options/colors/" target="_blank">',
 						'</a>'

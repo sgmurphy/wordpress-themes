@@ -28,7 +28,6 @@ export const mount = () => {
 	)
 
 	$(document.body).on('wc_fragments_loaded', () => {
-		setTimeout(() => ctEvents.trigger('ct:popper-elements:update'))
 		setTimeout(() => ctEvents.trigger('blocksy:frontend:init'))
 	})
 
@@ -99,22 +98,9 @@ export const mount = () => {
 		addedToCart = false
 		setTimeout(() => {
 			ctEvents.trigger('blocksy:frontend:init')
-			ctEvents.trigger('ct:popper-elements:update')
 			clearCartContent()
 		})
 	})
-
-	$(document.body).on('removed_from_cart', (_, __, ___, button) =>
-		[...document.querySelectorAll(selector)].map((cart) => {
-			if (!button) return
-
-			try {
-				button[0]
-					.closest('li')
-					.parentNode.removeChild(button[0].closest('li'))
-			} catch (e) {}
-		})
-	)
 
 	$(document).on('uael_quick_view_loader_stop', () => {
 		ctEvents.trigger('ct:add-to-cart:quantity')
@@ -137,7 +123,6 @@ export const mount = () => {
 	$(document.body).on('wc_fragments_loaded', () => {
 		setTimeout(() => {
 			ctEvents.trigger('blocksy:frontend:init')
-			ctEvents.trigger('ct:popper-elements:update')
 
 			clearCartContent()
 		})
@@ -150,4 +135,45 @@ export const mount = () => {
 			maybeItem.classList.add('processing')
 		}
 	})
+
+	$(document.body).on('removed_from_cart', (_, __, ___, button) => {
+		;[...document.querySelectorAll(selector)].map((cart) => {
+			if (!button) return
+
+			try {
+				if (button[0].closest('.updating')) {
+					button[0].closest('.updating').classList.remove('updating')
+				}
+
+				button[0].closest('li').remove()
+			} catch (e) {}
+		})
+	})
+
+	$(document.body).on('click', '.remove_from_cart_button', (e) => {
+		if (!e.target.closest('[data-placement]')) {
+			return
+		}
+
+		window.blocksySkippedFragments = [e.target.closest('[data-placement]')]
+	})
+
+	const originalReplaceWith = jQuery.fn.replaceWith
+
+	jQuery.fn.replaceWith = function () {
+		if (
+			window.blocksySkippedFragments &&
+			window.blocksySkippedFragments.includes(this[0])
+		) {
+			const div = document.createElement('div')
+			div.innerHTML = arguments[0]
+			;[...div.firstElementChild.attributes].map(({ name, value }) => {
+				this[0].setAttribute(name, value)
+			})
+
+			return this
+		}
+
+		return originalReplaceWith.apply(this, arguments)
+	}
 }

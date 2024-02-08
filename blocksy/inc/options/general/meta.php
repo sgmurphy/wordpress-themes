@@ -177,7 +177,7 @@ $date_format_options = [
 				'design' => 'block',
 				'value' => 'M j, Y',
 				// translators: The interpolations addes a html link around the word.
-				'desc' => sprintf(
+				'desc' => blocksy_safe_sprintf(
 					__('Date format %sinstructions%s.', 'blocksy'),
 					'<a href="https://wordpress.org/support/article/formatting-date-and-time/#format-string-examples" target="_blank">',
 					'</a>'

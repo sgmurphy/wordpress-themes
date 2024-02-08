@@ -120,9 +120,9 @@ $options = [
 		'type' => 'ct-layers',
 		'divider' => 'top:full',
 		'manageable' => true,
-		'desc' => sprintf(
+		'desc' => blocksy_safe_sprintf(
 			__('You can configure social URLs in %s.', 'blocksy'),
-			sprintf(
+			blocksy_safe_sprintf(
 				'<a href="%s" target="_blank">%s</a>',
 				admin_url('/customize.php?autofocus[section]=social_accounts'),
 				__('Customizer', 'blocksy')

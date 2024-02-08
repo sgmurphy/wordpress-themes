@@ -28,13 +28,28 @@ if ($field === 'wp:archive_title') {
 
 if ($field === 'wp:archive_description') {
 	$value = get_the_archive_description();
+
+	$is_page = blocksy_is_page();
+
+	if (
+		function_exists('is_woocommerce')
+		&&
+		is_shop()
+		&&
+		$is_page
+	) {
+		$value = blocksy_entry_excerpt([
+			'length' => PHP_INT_MAX,
+			'post_id' => $is_page
+		]);
+	}
 }
 
 if ($field === 'wp:title') {
 	$value = get_the_title();
 
 	if (blocksy_akg('has_field_link', $attributes, 'no') === 'yes') {
-		$value = sprintf(
+		$value = blocksy_safe_sprintf(
 			'<a href="%s" %s %s>%s</a>',
 
 			get_permalink(),
@@ -82,7 +97,7 @@ if ($field === 'wp:date') {
 	}
 
 	if (blocksy_akg('has_field_link', $attributes, 'no') === 'yes') {
-		$value = sprintf(
+		$value = blocksy_safe_sprintf(
 			'<a href="%s" %s %s>%s</a>',
 
 			get_permalink(),

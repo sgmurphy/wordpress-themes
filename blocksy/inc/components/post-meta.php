@@ -212,7 +212,7 @@ if (! function_exists('blocksy_post_meta')) {
 						'class' => 'ct-meta-element-author',
 						'href' => esc_url(get_author_posts_url($authordata->ID, $authordata->user_nicename)),
 						/* translators: %s: Author's display name. */
-						'title' => esc_attr(sprintf(__('Posts by %s', 'blocksy'), get_the_author())),
+						'title' => esc_attr(blocksy_safe_sprintf(__('Posts by %s', 'blocksy'), get_the_author())),
 						'rel' => 'author',
 					], blocksy_schema_org_definitions('author_url', [
 						'array' => true

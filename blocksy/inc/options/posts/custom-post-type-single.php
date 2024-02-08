@@ -17,7 +17,7 @@ $page_title_options = blocksy_get_options(
 			'is_single' => true,
 			'is_bbpress' => $is_bbpress,
 			'is_cpt' => true,
-			'enabled_label' => sprintf(
+			'enabled_label' => blocksy_safe_sprintf(
 				__('%s Title', 'blocksy'),
 				$post_type->labels->singular_name
 			),
@@ -29,7 +29,7 @@ $page_title_options = blocksy_get_options(
 $page_structure_options = [
 	blocksy_rand_md5() => [
 		'type' => 'ct-title',
-		'label' => sprintf(
+		'label' => blocksy_safe_sprintf(
 			__('%s Structure', 'blocksy'),
 			$post_type->labels->singular_name
 		),
@@ -109,7 +109,7 @@ if ($is_general_cpt) {
 
 		$maybe_taxonomy ? [
 			$post_type->name . '_single_has_post_tags' => [
-				'label' => sprintf(
+				'label' => blocksy_safe_sprintf(
 					__('%s %s', 'blocksy'),
 					$post_type->labels->singular_name,
 					get_taxonomy($maybe_taxonomy)->label
@@ -189,7 +189,7 @@ $inner_options = array_merge(
 			$is_general_cpt ? [
 				blocksy_rand_md5() => [
 					'type' => 'ct-title',
-					'label' => sprintf(
+					'label' => blocksy_safe_sprintf(
 						__('%s Elements', 'blocksy'),
 						$post_type->labels->singular_name
 					),
@@ -214,7 +214,7 @@ if (
 		blocksy_rand_md5() => [
 			'type' => 'ct-notification',
 			'attr' => [ 'data-type' => 'background:white' ],
-			'text' => sprintf(
+			'text' => blocksy_safe_sprintf(
 				__('This single page is overrided by a custom template, to edit it please access %sthis page%s.', 'blocksy'),
 				'<a href="' . get_edit_post_link(blc_get_content_block_that_matches([
 					'template_type' => 'single',

@@ -141,10 +141,10 @@ $options = [
 								'none'   => '<span></span>
 								<i class="ct-tooltip">' . __( 'Disabled', 'blocksy' ) . '</i>',
 							],
-							'desc' => sprintf(
+							'desc' => blocksy_safe_sprintf(
 								// translators: placeholder here means the actual URL.
 								__( 'You can customize the global spacing value in General ➝ Layout ➝ %sContent Area Spacing%s.', 'blocksy' ),
-								sprintf(
+								blocksy_safe_sprintf(
 									'<a data-trigger-section="general" href="%s">',
                                     admin_url('/customize.php?autofocus[section]=general&ct_autofocus=general:layout_panel')
 								),
@@ -188,7 +188,7 @@ $options = [
 
 	$maybe_taxonomy ? [
 		'disable_post_tags' => [
-			'label' => sprintf(
+			'label' => blocksy_safe_sprintf(
 				__('Disable Page %s', 'blocksy'),
 				get_taxonomy($maybe_taxonomy)->label
 			),

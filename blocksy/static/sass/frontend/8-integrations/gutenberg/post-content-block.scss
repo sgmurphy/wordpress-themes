@@ -8,11 +8,11 @@ article > .entry-content .wp-block-post-content.entry-content {
 	> * {
 		margin-inline: var(--theme-default-editor, auto);
 
-		&:not(.alignfull) {
+		&:where(:not(.alignfull)) {
 			width: var(--theme-default-editor, var(--theme-block-width));
 		}
 
-		&:not(.alignwide):not(.alignfull) {
+		&:where(:not(.alignwide):not(.alignfull)) {
 			max-width: var(--theme-default-editor, var(--theme-block-max-width));
 		}
 	}

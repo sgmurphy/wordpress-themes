@@ -5,6 +5,7 @@
 		flex-direction: column;
 		align-items: var(--horizontal-alignment);
 		text-align: var(--text-horizontal-alignment);
+		position: relative;
 
 		> * {
 			margin-bottom: var(--product-element-spacing, 10px);

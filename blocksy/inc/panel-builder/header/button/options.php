@@ -298,10 +298,10 @@ $options = [
 					'design' => 'block',
 					'divider' => 'top',
 					'value' => '',
-					'desc' => sprintf(
+					'desc' => blocksy_safe_sprintf(
 						// translators: placeholder here means the actual URL.
 						__( 'Add a custom %saria label%s attribute.', 'blocksy' ),
-						sprintf(
+						blocksy_safe_sprintf(
 							'<a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label" target="_blank">'
 						),
 						'</a>'

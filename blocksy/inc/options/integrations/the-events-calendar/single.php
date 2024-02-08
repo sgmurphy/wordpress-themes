@@ -11,7 +11,7 @@ $options = [
 				'is_single' => true,
 				'is_page' => true,
 				'enabled_default' => 'no',
-				'enabled_label' => sprintf(
+				'enabled_label' => blocksy_safe_sprintf(
 					__('%s Title', 'blocksy'),
 					'Events Calendar Single'
 				)

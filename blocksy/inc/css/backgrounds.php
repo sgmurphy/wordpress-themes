@@ -105,7 +105,7 @@ if (! function_exists('blocksy_get_svg_pattern')) {
 				)
 			));
 
-			$color = sprintf("#%02x%02x%02x", $rgb_array[0], $rgb_array[1], $rgb_array[2]);
+			$color = blocksy_safe_sprintf("#%02x%02x%02x", $rgb_array[0], $rgb_array[1], $rgb_array[2]);
 
 			if (count($rgb_array) > 3) {
 				$opacity = $rgb_array[3];

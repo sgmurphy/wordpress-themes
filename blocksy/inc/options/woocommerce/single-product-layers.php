@@ -36,7 +36,7 @@ $payment_method_options = array_merge(
 	$payment_method_options,
 	$is_pro ? [
 		'custom_link' => [
-			'label' => sprintf(
+			'label' => blocksy_safe_sprintf(
 				__('%s', 'blocksy'),
 				__('Custom', 'blocksy')
 			),
@@ -47,7 +47,7 @@ $payment_method_options = array_merge(
 
 $additional_info_options = [
 	'additional_info_item' => [
-		'label' => sprintf('<%%= item_title || "%s" %%>', __('Item Label', 'blocksy')),
+		'label' => blocksy_safe_sprintf('<%%= item_title || "%s" %%>', __('Item Label', 'blocksy')),
 		'clone' => 10,
 		'options' => [
 			$is_pro ? [
@@ -224,7 +224,7 @@ $options = apply_filters(
 		'product_add_to_cart' => [
 			'label' => __('Add to Cart', 'blocksy'),
 			'options' => [
-				
+
 				'add_to_cart_layer_title' => [
 					'label' => __('Title', 'blocksy'),
 					'type' => 'text',

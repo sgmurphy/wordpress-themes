@@ -1345,12 +1345,12 @@ $overridable_card_options = [
 $options = [
 	blocksy_rand_md5() => [
 		'type'  => 'ct-title',
-		'label' => sprintf(
+		'label' => blocksy_safe_sprintf(
 			// translators: placeholder here means the actual structure title.
 			__('%s Structure', 'blocksy'),
 			$title
 		),
-		'desc' => sprintf(
+		'desc' => blocksy_safe_sprintf(
 			// translators: placeholder here means the actual structure title.
 			__('Set the %s entries default structure.', 'blocksy'),
 			$title
@@ -1535,6 +1535,40 @@ $options = [
 				'inner-options' => $overridable_card_options
 			],
 
+			$prefix . 'content_area_spacing' => [
+				'label' => __( 'Content Area Vertical Spacing', 'blocksy' ),
+				'type' => 'ct-radio',
+				'value' => 'both',
+				'view' => 'text',
+				'design' => 'block',
+				'divider' => 'top:full',
+				'attr' => [ 'data-type' => 'content-spacing' ],
+				'choice_attr' => [ 'data-tooltip' => 'top' ],
+				'sync' => "live",
+				'choices' => [
+					'both'   => '<span></span>
+					<i class="ct-tooltip">' . __( 'Top & Bottom', 'blocksy' ) . '</i>',
+
+					'top'    => '<span></span>
+					<i class="ct-tooltip">' . __( 'Only Top', 'blocksy' ) . '</i>',
+
+					'bottom' => '<span></span>
+					<i class="ct-tooltip">' . __( 'Only Bottom', 'blocksy' ) . '</i>',
+
+					'none'   => '<span></span>
+					<i class="ct-tooltip">' . __( 'Disabled', 'blocksy' ) . '</i>',
+				],
+				'desc' => blocksy_safe_sprintf(
+					// translators: placeholder here means the actual URL.
+					__( 'You can customize the global spacing value in General ➝ Layout ➝ %sContent Area Spacing%s.', 'blocksy' ),
+					blocksy_safe_sprintf(
+						'<a data-trigger-section="general:layout_panel" href="%s">',
+						admin_url('/customize.php?autofocus[section]=general&ct_autofocus=general:layout_panel')
+					),
+					'</a>'
+				),
+			],
+
 		],
 	],
 
@@ -1557,10 +1591,10 @@ $options = [
 						],
 					],
 				]),
-				'desc' => sprintf(
+				'desc' => blocksy_safe_sprintf(
 					// translators: placeholder here means the actual URL.
 					__( 'Please note, by default this option is inherited from Colors ➝ %sSite Background%s.', 'blocksy' ),
-					sprintf(
+					blocksy_safe_sprintf(
 						'<a data-trigger-section="color" href="%s">',
 						admin_url('/customize.php?autofocus[section]=color')
 					),

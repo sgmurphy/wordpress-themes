@@ -4,7 +4,7 @@ $page_title_options = blocksy_get_options('general/page-title', [
 	'prefix' => $post_type->name . '_archive',
 	'is_cpt' => true,
 	'is_archive' => true,
-	'enabled_label' => sprintf(
+	'enabled_label' => blocksy_safe_sprintf(
 		__('%s Title', 'blocksy'),
 		$post_type->labels->name
 	),

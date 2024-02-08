@@ -228,7 +228,7 @@ function blocksy_custom_comment_template($comment, $args, $depth) {
 				<div class="ct-comment-meta-data">
 					<?php
 
-						$date_link_content = sprintf(
+						$date_link_content = blocksy_safe_sprintf(
 							/* translators: 1: date, 2: time */
 							wp_kses_post( __( '%1$s / %2$s', 'blocksy' ) ),
 							wp_kses_post( get_comment_date() ),

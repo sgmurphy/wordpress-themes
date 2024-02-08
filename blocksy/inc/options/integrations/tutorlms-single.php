@@ -191,7 +191,7 @@ $options = [
 				'is_single' => true,
 				'is_cpt' => true,
 				'has_hero_elements' => false,
-				'enabled_label' => sprintf(
+				'enabled_label' => blocksy_safe_sprintf(
 					__('%s Title', 'blocksy'),
 					'Course'
 				),

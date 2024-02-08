@@ -120,7 +120,7 @@ foreach ($custom_post_types as $post_type) {
 	$cpt_single = apply_filters(
 		'blocksy:custom_post_types:single-options',
 		[
-			'title' => sprintf(
+			'title' => blocksy_safe_sprintf(
 				__('Single %s', 'blocksy'),
 				$post_type_object->labels->singular_name
 			),

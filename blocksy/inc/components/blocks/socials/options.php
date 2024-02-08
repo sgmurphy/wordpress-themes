@@ -19,13 +19,13 @@ $options = [
 		'label' => __('Social Channels', 'blocksy'),
 		'type' => 'ct-layers',
 		'manageable' => true,
-		'desc' => sprintf(
+		'desc' => blocksy_safe_sprintf(
 			// translators: placeholder here means the actual URL.
 			__(
 				'Configure the social links in Customizer ➝ General ➝ %sSocial Network Accounts%s.',
 				'blocksy'
 			),
-			sprintf(
+			blocksy_safe_sprintf(
 				'<a href="%s" data-trigger-section="general:social_section_options" target="_blank">',
 				admin_url(
 					'/customize.php?autofocus[section]=general&ct_autofocus=general:social_section_options'

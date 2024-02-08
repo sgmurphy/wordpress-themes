@@ -31,10 +31,10 @@ $options = [
 						],
 					],
 				]),
-				'desc' => sprintf(
+				'desc' => blocksy_safe_sprintf(
 					// translators: placeholder here means the actual URL.
 					__( 'Please note, by default this option is inherited from Colors ➝ %sSite Background%s.', 'blocksy' ),
-					sprintf(
+					blocksy_safe_sprintf(
 						'<a data-trigger-section="color" href="%s">',
 						admin_url('/customize.php?autofocus[section]=color')
 					),

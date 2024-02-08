@@ -26,7 +26,7 @@ $value = get_avatar(
 	$author_id,
 	$avatar_size,
 	'',
-	sprintf(
+	blocksy_safe_sprintf(
 		__('%s Avatar', 'blocksy'),
 		get_the_author_meta('display_name', $author_id)
 	),

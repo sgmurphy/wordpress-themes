@@ -29,13 +29,13 @@ if ($custom_logo_id) {
 	 * If the logo alt attribute is empty, get the site title and explicitly
 	 * pass it to the attributes used by wp_get_attachment_image().
 	 */
-	$image_alt = get_post_meta(
+	$custom_logo_attr['alt'] = get_post_meta(
 		$custom_logo_id,
 		'_wp_attachment_image_alt',
 		true
 	);
 
-	if (empty($image_alt)) {
+	if (empty($custom_logo_attr['alt'])) {
 		$custom_logo_attr['alt'] = get_bloginfo('name', 'display');
 	}
 

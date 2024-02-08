@@ -72,6 +72,10 @@ if ($field === 'wp:featured_image') {
 	}
 }
 
+if (empty($value)) {
+	return;
+}
+
 if ($field !== 'wp:featured_image') {
 	$value = wp_get_attachment_image(
 		$value['id'],
@@ -128,10 +132,6 @@ $wrapper_attr['style'] = implode(' ', $styles);
 
 if ($image_hover_effect !== 'none') {
 	$wrapper_attr['data-hover'] = $image_hover_effect;
-}
-
-if (empty($value)) {
-	return;
 }
 
 if (

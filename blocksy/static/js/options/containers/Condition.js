@@ -5,7 +5,7 @@ import { useDeviceManagerState } from '../../customizer/components/useDeviceMana
 
 import useForceUpdate from './use-force-update'
 
-const pendingRequests = []
+let pendingRequests = []
 
 const Condition = ({
 	renderingChunk,

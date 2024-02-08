@@ -1,3 +1,11 @@
+2.0.24: 2024-02-08
+- Improvement: Account drop down opens in wrong direction on mobile if placed near the edge
+- Improvement: Add "Content Area Vertical Spacing" option for archives
+- Improvement: Don't attempt to re-compute responsive desktop menus on non-desktop sizes
+- Improvement: Don't close mini cart when removing a product from the list
+- Improvement: Introduce a safe sprintf function to avoid errors on translations
+- Improvement: Post content block - CSS specificity improvement
+
 2.0.23: 2024-02-01
 - Improvement: Accessibility improvement for expandable containers
 - Improvement: Better compatibility with Simply Static plugin

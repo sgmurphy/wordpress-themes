@@ -83,7 +83,7 @@ $wrapper_class = apply_filters(
 									 *
 									 * @since 2.1.0
 									 */
-									echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
+									echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', blocksy_safe_sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
 								}
 
 								do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
@@ -105,7 +105,7 @@ $wrapper_class = apply_filters(
 							<div class="product-mobile-actions ct-hidden-lg product-remove">
 								<?php
 									if ( $_product->is_sold_individually() ) {
-										$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1">', $cart_item_key );
+										$product_quantity = blocksy_safe_sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1">', $cart_item_key );
 									} else {
 										$product_quantity = woocommerce_quantity_input(
 											array(
@@ -156,13 +156,13 @@ $wrapper_class = apply_filters(
 								<?php
 									echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										'woocommerce_cart_item_remove_link',
-										sprintf(
+										blocksy_safe_sprintf(
 											'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">
 												<svg class="ct-icon" width="10px" height="10px" viewBox="0 0 24 24"><path d="M9.6,0l0,1.2H1.2v2.4h21.6V1.2h-8.4l0-1.2H9.6z M2.8,6l1.8,15.9C4.8,23.1,5.9,24,7.1,24h9.9c1.2,0,2.2-0.9,2.4-2.1L21.2,6H2.8z"></path></svg>
 											</a>',
 											esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 											/* translators: %s is the product name */
-											esc_attr( sprintf( __( 'Remove %s from cart', 'blocksy' ), wp_strip_all_tags($product_name) ) ),
+											esc_attr( blocksy_safe_sprintf( __( 'Remove %s from cart', 'blocksy' ), wp_strip_all_tags($product_name) ) ),
 											esc_attr( $product_id ),
 											esc_attr( $_product->get_sku() )
 										),
@@ -175,7 +175,7 @@ $wrapper_class = apply_filters(
 						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'blocksy' ); ?>">
 							<?php
 								if ( $_product->is_sold_individually() ) {
-									$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1">', $cart_item_key );
+									$product_quantity = blocksy_safe_sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1">', $cart_item_key );
 								} else {
 									$product_quantity = woocommerce_quantity_input(
 										array(
@@ -204,13 +204,13 @@ $wrapper_class = apply_filters(
 							<?php
 								echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									'woocommerce_cart_item_remove_link',
-									sprintf(
+									blocksy_safe_sprintf(
 										'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">
 											<svg class="ct-icon" width="10px" height="10px" viewBox="0 0 24 24"><path d="M9.6,0l0,1.2H1.2v2.4h21.6V1.2h-8.4l0-1.2H9.6z M2.8,6l1.8,15.9C4.8,23.1,5.9,24,7.1,24h9.9c1.2,0,2.2-0.9,2.4-2.1L21.2,6H2.8z"></path></svg>
 										</a>',
 										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 										/* translators: %s is the product name */
-										esc_attr( sprintf( __( 'Remove %s from cart', 'blocksy' ), $product_name ) ),
+										esc_attr( blocksy_safe_sprintf( __( 'Remove %s from cart', 'blocksy' ), $product_name ) ),
 										esc_attr( $product_id ),
 										esc_attr( $_product->get_sku() )
 									),

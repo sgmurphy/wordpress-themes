@@ -1114,7 +1114,7 @@ $options = [
 							'label' => __( 'Terms and conditions', 'blocksy' ),
 							'desc' => __( 'Optionally add some text for the terms checkbox that customers must accept.', 'blocksy' ),
 							'type' => 'text',
-							'value' => sprintf(
+							'value' => blocksy_safe_sprintf(
 								__(
 									'I have read and agree to the website %s',
 									'blocksy'

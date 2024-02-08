@@ -1052,7 +1052,7 @@ $when_enabled_design_settings = [
 			'options' => [
 				$prefix . 'pageExcerptFont' => [
 					'type' => 'ct-typography',
-					'label' => $is_single ? __( 'Excerpt Font', 'blocksy' ) : sprintf(
+					'label' => $is_single ? __( 'Excerpt Font', 'blocksy' ) : blocksy_safe_sprintf(
 						// translators: %s entity of font
 						__('%s Font', 'blocksy'),
 						$custom_description_layer_name
@@ -1064,7 +1064,7 @@ $when_enabled_design_settings = [
 				],
 
 				$prefix . 'pageExcerptColor' => [
-					'label' => $is_single ? __('Excerpt Font Color', 'blocksy' ) : sprintf(
+					'label' => $is_single ? __('Excerpt Font Color', 'blocksy' ) : blocksy_safe_sprintf(
 						// translators: %s entity of font color
 						__('%s Font Color', 'blocksy'),
 						$custom_description_layer_name

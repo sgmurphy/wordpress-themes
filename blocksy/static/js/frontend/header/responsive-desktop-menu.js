@@ -1,5 +1,6 @@
 import ctEvents from 'ct-events'
 import { getItemsDistribution } from './get-items-distribution'
+import { getCurrentScreen } from '../helpers/current-screen'
 
 const isEligibleForSubmenu = (el) =>
 	el.className.includes('animated-submenu') &&
@@ -162,6 +163,10 @@ export const mount = (nav) => {
 
 	cacheInfo[nav.__id].previousRenderedWidth = window.innerWidth
 
+	if (getCurrentScreen() !== 'desktop') {
+		return
+	}
+
 	let { fit, notFit } = getItemsDistribution(nav)
 
 	if (notFit.length === 0) {
@@ -177,13 +182,19 @@ export const mount = (nav) => {
 						'.menu-item-has-children, .page_item_has_children'
 					)
 				)
+					.map((el) => {
+						el.classList.remove('animated-submenu-inline')
+						el.classList.add('animated-submenu-block')
+
+						return el
+					})
 					.filter((el) => !!el.closest('[class*="ct-mega-menu"]'))
-					.map((el) =>
+					.map((el) => {
 						el.classList.remove(
 							'animated-submenu-block',
 							'animated-submenu-inline'
 						)
-					)
+					})
 			})
 
 			nav.querySelector('.more-items-container').remove()
@@ -203,13 +214,14 @@ export const mount = (nav) => {
 		notFit.map((el) => {
 			nav.querySelector('.more-items-container .sub-menu').appendChild(el)
 
-			el.classList.add('animated-submenu-inline')
-
 			Array.from(
 				el.querySelectorAll(
 					'.menu-item-has-children, .page_item_has_children'
 				)
-			).map((el) => el.classList.add('animated-submenu-inline'))
+			).map((el) => {
+				el.classList.add('animated-submenu-inline')
+				el.classList.remove('animated-submenu-block')
+			})
 		})
 
 		fit.map((el) => {
@@ -223,13 +235,19 @@ export const mount = (nav) => {
 					'.menu-item-has-children, .page_item_has_children'
 				)
 			)
+				.map((el) => {
+					el.classList.remove('animated-submenu-inline')
+					el.classList.add('animated-submenu-block')
+
+					return el
+				})
 				.filter((el) => !!el.closest('[class*="ct-mega-menu"]'))
-				.map((el) =>
+				.map((el) => {
 					el.classList.remove(
 						'animated-submenu-block',
 						'animated-submenu-inline'
 					)
-				)
+				})
 		})
 
 		resetSubmenus()

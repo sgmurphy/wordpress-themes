@@ -10,7 +10,7 @@ $options = [
 				'prefix' => 'tribe_events_archive',
 				'is_single' => true,
 				'is_page' => true,
-				'enabled_label' => sprintf(
+				'enabled_label' => blocksy_safe_sprintf(
 					__('%s Title', 'blocksy'),
 					'Events Calendar Archive'
 				)
