@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitebd15d991fda185d08d22a990e492dea
+class ComposerStaticInit7ddc42e41280a34e9c3ce3b7ef9d157f
 {
     public static $files = array (
         '23cc7d20cf0e5cb79054a1631f7842e6' => __DIR__ . '/..' . '/vektor-inc/tgm-plugin-activation/class-tgm-plugin-activation.php',
@@ -64,9 +64,9 @@ class ComposerStaticInitebd15d991fda185d08d22a990e492dea
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitebd15d991fda185d08d22a990e492dea::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitebd15d991fda185d08d22a990e492dea::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitebd15d991fda185d08d22a990e492dea::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7ddc42e41280a34e9c3ce3b7ef9d157f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7ddc42e41280a34e9c3ce3b7ef9d157f::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit7ddc42e41280a34e9c3ce3b7ef9d157f::$classMap;
 
         }, null, ClassLoader::class);
     }
