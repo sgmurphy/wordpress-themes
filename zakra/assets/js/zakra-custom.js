@@ -70,6 +70,17 @@ document.addEventListener(
 			// Create close icon element.
 			closeButton = document.getElementById( 'zak-mobile-nav-close' );
 
+			document.querySelector( '.zak-mobile-menu' ).addEventListener(
+				'click',
+				function ( e ) {
+					if ( e.target.tagName === 'A' ) {
+						toggleButton.click();
+					}
+				}
+			)
+
+
+
 			if ( menu ) {
 				listItems = menu.querySelectorAll(
 					'li.page_item_has_children, li.menu-item-has-children'

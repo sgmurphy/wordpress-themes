@@ -46,9 +46,8 @@ if ( ! class_exists( 'Zakra_Demo_Import_Migration_Notice' ) ) {
 		public function notice_markup() {
 			$demo_imported  = get_option( 'themegrill_demo_importer_activated_id' );
 			$notice_dismiss = get_option( 'zakra_demo_import_migration_notice_dismiss' );
-			$migrated = get_option( 'zakra_customizer_migration_v3' );
 
-			if ( ! $notice_dismiss && ( $demo_imported || $migrated ) ) :
+			if ( ! $notice_dismiss && Zakra_Migration::maybe_run_migration() ) :
 					?>
 					<div class="notice notice-info zakra-notice demo-import-migrate-notice" style="position:relative;">
 						<p>

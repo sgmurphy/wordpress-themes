@@ -113,9 +113,9 @@ if ( ! function_exists( 'zakra_plugin_version_compare' ) ) {
 	/**
 	 * Compare user's current version of plugin.
 	 *
-	 * @param String $plugin_base_name Eg. zakra-pro/zakra-pro.php
-	 * @param String $version_to_compare Eg. 1.3.0
-	 * @param String $operator Eg. <, <=, >, >=, ==, lt, le, gt, ge etc.
+	 * @param string $plugin_base_name Eg. zakra-pro/zakra-pro.php
+	 * @param string $version_to_compare Eg. 1.3.0
+	 * @param string $operator Eg. <, <=, >, >=, ==, lt, le, gt, ge etc.
 	 *
 	 * @return bool|int
 	 */
@@ -864,13 +864,13 @@ if ( ! function_exists( 'zakra_search_icon_menu_item' ) ) {
 		$header_search = get_theme_mod( 'zakra_enable_header_search', true );
 		if ( $header_search ) {
 			?>
-            <div class="zak-header-action <?php zakra_css_class( 'zakra_header_search_class' ); ?>">
-                <a href="#" class="zak-header-search__toggle">
-					<?php zakra_get_icon( 'magnifying-glass' ); ?>
-                </a>
-				<?php get_search_form( true ); ?>
-            </div>
-			<?php
+<div class="zak-header-action <?php zakra_css_class( 'zakra_header_search_class' ); ?>">
+    <a href="#" class="zak-header-search__toggle">
+        <?php zakra_get_icon( 'magnifying-glass' ); ?>
+    </a>
+    <?php get_search_form( true ); ?>
+</div>
+<?php
 		}
 
 		return ob_get_clean();

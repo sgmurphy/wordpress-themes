@@ -154,6 +154,7 @@ if ( is_admin() ) {
 	require ZAKRA_PARENT_INC_DIR . '/admin/class-zakra-upgrade-notice.php';
 	require ZAKRA_PARENT_INC_DIR . '/admin/class-zakra-dashboard.php';
 	require ZAKRA_PARENT_INC_DIR . '/admin/class-zakra-theme-review-notice.php';
+	require ZAKRA_PARENT_INC_DIR . '/admin/class-zakra-changelog-parser.php';
 	require ZAKRA_PARENT_INC_DIR . '/admin/class-zakra-demo-import-migration-notice.php';
 	require ZAKRA_PARENT_INC_DIR . '/admin/class-zakra-pro-minimum-version-notice.php';
 }
@@ -211,3 +212,96 @@ function zakra_content_width_rdr() {
 }
 
 add_action( 'template_redirect', 'zakra_content_width_rdr' );
+
+add_filter( 'themegrill_demo_importer_show_main_menu', '__return_false' );
+
+add_filter( 'themegrill_demo_importer_routes', 'zakra_demo_importer_routes', 10, 1 );
+
+function zakra_demo_importer_routes( $routes ) {
+	// Remove the existing routes from the TDI
+	unset( $routes['themes.php?page=demo-importer&demo=:slug'] );
+	unset( $routes['themes.php?page=demo-importer&browse=:sort'] );
+	unset( $routes['themes.php?page=demo-importer&search=:query'] );
+	unset( $routes['themes.php?page=demo-importer'] );
+
+	// Add the new routes
+	$routes['themes.php?page=zakra&tab=starter-templates&demo=:slug']    = 'preview';
+	$routes['themes.php?page=zakra&tab=starter-templates&browse=:sort']  = 'sort';
+	$routes['themes.php?page=zakra&tab=starter-templates&search=:query'] = 'search';
+	$routes['themes.php?page=zakra&tab=starter-templates']               = 'sort';
+
+	return $routes;
+}
+
+add_filter( 'themegrill_demo_importer_baseURL', 'zakra_demo_importer_baseURL', 10, 1 );
+
+function zakra_demo_importer_baseURL( $base_url ) {
+	// Update the base URL in the demo importer.
+	$base_url = 'themes.php?page=zakra&tab=starter-templates';
+
+	return $base_url;
+}
+
+add_filter( 'themegrill_demo_importer_redirect_link', 'zakra_demo_importer_redirect_url' );
+
+function zakra_demo_importer_redirect_url( $redirect_url ) {
+	// Update the base URL in the demo importer.
+	$redirect_url = admin_url( 'themes.php?page=zakra&tab=starter-templates&browse=all' );
+
+	return $redirect_url;
+}
+
+add_action( 'wp_ajax_install_plugin', 'zakra_plugin_action_callback' );
+add_action( 'wp_ajax_activate_plugin', 'zakra_plugin_action_callback' );
+
+function zakra_plugin_action_callback() {
+
+	if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( $_POST['security'], 'zakra_demo_import_nonce' ) ) {
+		wp_send_json_error( array( 'message' => 'Security check failed.' ) );
+	}
+	if ( ! current_user_can( 'install_plugins' ) ) {
+		wp_send_json_error( array( 'message' => 'You are not allowed to perform this action.' ) );
+	}
+
+	$plugin      = sanitize_text_field( $_POST['plugin'] );
+	$plugin_slug = sanitize_text_field( $_POST['slug'] );
+
+	if ( zakra_is_plugin_installed( $plugin ) ) {
+		if ( is_plugin_active( $plugin ) ) {
+			wp_send_json_success( array( 'message' => 'Plugin is already activated.' ) );
+		} else {
+			// Activate the plugin
+			$result = activate_plugin( $plugin );
+
+			if ( is_wp_error( $result ) ) {
+				wp_send_json_error( array( 'message' => 'Error activating the plugin.' ) );
+			} else {
+				wp_send_json_success( array( 'message' => 'Plugin activated successfully!' ) );
+			}
+		}
+	} else {
+		// Install and activate the plugin
+		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+		$plugin_info = plugins_api( 'plugin_information', array( 'slug' => $plugin_slug ) );
+		$upgrader    = new Plugin_Upgrader( new WP_Ajax_Upgrader_Skin() );
+		$result      = $upgrader->install( $plugin_info->download_link );
+
+		if ( is_wp_error( $result ) ) {
+			wp_send_json_error( array( 'message' => 'Error installing the plugin.' ) );
+		}
+
+		$result = activate_plugin( $plugin );
+
+		if ( is_wp_error( $result ) ) {
+			wp_send_json_error( array( 'message' => 'Error activating the plugin.' ) );
+		} else {
+			wp_send_json_success( array( 'message' => 'Plugin installed and activated successfully!' ) );
+		}
+	}
+}
+
+function zakra_is_plugin_installed( $plugin_path ) {
+	$plugins = get_plugins();
+	return isset( $plugins[ $plugin_path ] );
+}

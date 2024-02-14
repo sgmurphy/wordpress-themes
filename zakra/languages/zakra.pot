@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: team@zakratheme.com\n"
-"POT-Creation-Date: 2024-01-16 04:13+0000\n"
+"POT-Creation-Date: 2024-02-13 11:29+0000\n"
 "Report-Msgid-Bugs-To: team@zakratheme.com\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -44,184 +44,123 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: inc/admin/class-zakra-admin.php:33
+#: inc/admin/class-zakra-admin.php:32
 msgid "Processing..."
 msgstr ""
 
-#: inc/admin/class-zakra-admin.php:33
-msgid "Activating..."
+#: inc/admin/class-zakra-changelog-parser.php:102
+msgid "Could not access filesystem."
 msgstr ""
 
-#: inc/admin/class-zakra-admin.php:33
-msgid "Redirecting..."
+#: inc/admin/class-zakra-changelog-parser.php:106
+msgid "Changelog not found."
 msgstr ""
 
-#. translators: %s: Theme Name.
-#: inc/admin/class-zakra-dashboard.php:32
-msgid "%s Options"
+#: inc/admin/class-zakra-changelog-parser.php:112
+msgid "Failed to read changelog."
 msgstr ""
 
-#: inc/admin/class-zakra-dashboard.php:54
-msgid "Demo Library"
+#: inc/admin/class-zakra-dashboard.php:265
+msgid "Dashboard"
 msgstr ""
 
-#: inc/admin/class-zakra-dashboard.php:52
-msgid "Install ThemeGrill Demo Importer Plugin"
+#: inc/admin/class-zakra-dashboard.php:271, inc/admin/views/dashboard.php:147
+msgid "Starter Templates"
 msgstr ""
 
-#: inc/admin/class-zakra-dashboard.php:50
-msgid "Activate ThemeGrill Demo Importer Plugin"
+#: inc/admin/class-zakra-dashboard.php:277
+msgid "Products"
 msgstr ""
 
-#: inc/admin/class-zakra-dashboard.php:73
-msgid "Header Top Bar"
+#: inc/admin/class-zakra-dashboard.php:283
+msgid "Free Vs Pro"
 msgstr ""
 
-#: inc/admin/class-zakra-dashboard.php:74
-msgid "Header Main Area"
+#: inc/admin/class-zakra-dashboard.php:289
+msgid "Help"
 msgstr ""
 
-#: inc/admin/class-zakra-dashboard.php:75, inc/customizer/class-zakra-customizer-register-panels-sections.php:128, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:37, inc/meta-boxes/class-zakra-meta-box-page-settings.php:89
+#: inc/admin/class-zakra-dashboard.php:355, inc/customizer/class-zakra-customizer-register-panels-sections.php:112
+msgid "Site Identity"
+msgstr ""
+
+#: inc/admin/class-zakra-dashboard.php:363, inc/admin/class-zakra-dashboard.php:419, inc/customizer/class-zakra-customizer-register-panels-sections.php:120, inc/customizer/options/header/class-zakra-customize-main-header-option.php:34
+msgid "Main Header"
+msgstr ""
+
+#: inc/admin/class-zakra-dashboard.php:371, inc/customizer/class-zakra-customizer-register-panels-sections.php:246
+msgid "Footer Column"
+msgstr ""
+
+#: inc/admin/class-zakra-dashboard.php:379
+msgid "Global Colors"
+msgstr ""
+
+#: inc/admin/class-zakra-dashboard.php:387, inc/customizer/class-zakra-customizer-register-panels-sections.php:65, inc/customizer/class-zakra-customizer-register-panels-sections.php:231, inc/meta-boxes/class-zakra-meta-box-page-settings.php:180
+msgid "Sidebar"
+msgstr ""
+
+#: inc/admin/class-zakra-dashboard.php:395, inc/admin/class-zakra-dashboard.php:427, inc/customizer/class-zakra-customizer-register-panels-sections.php:207
+msgid "Blog"
+msgstr ""
+
+#: inc/admin/class-zakra-dashboard.php:415, inc/customizer/class-zakra-customizer-register-panels-sections.php:96, inc/customizer/options/header/class-zakra-customize-top-bar-option.php:36
+msgid "Top Bar"
+msgstr ""
+
+#: inc/admin/class-zakra-dashboard.php:423, inc/customizer/class-zakra-customizer-register-panels-sections.php:128, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:37, inc/meta-boxes/class-zakra-meta-box-page-settings.php:89
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/admin/class-zakra-dashboard.php:76, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:471
+#: inc/admin/class-zakra-dashboard.php:431
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/admin/class-zakra-dashboard.php:435
+msgid "Header Transparent"
+msgstr ""
+
+#: inc/admin/class-zakra-dashboard.php:439, inc/customizer/class-zakra-customizer-register-panels-sections.php:254, inc/customizer/options/footer/class-zakra-customize-footer-bar-option.php:34
+msgid "Footer Bar"
+msgstr ""
+
+#: inc/admin/class-zakra-dashboard.php:443, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:471
 msgid "Mobile Menu"
 msgstr ""
 
-#: inc/admin/class-zakra-dashboard.php:77, inc/customizer/options/global/class-zakra-customize-container-option.php:55, inc/customizer/options/global/class-zakra-customize-content-area-option.php:55, inc/customizer/options/global/class-zakra-customize-sidebar-layout-option.php:106, inc/customizer/options/header/class-zakra-customize-main-header-option.php:53, inc/customizer/options/header/class-zakra-customize-page-header-option.php:63, inc/customizer/options/woocommerce/class-zakra-customize-layout-woocommerce-option.php:70, inc/meta-boxes/class-zakra-meta-box-page-settings.php:118
-msgid "Layout"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:78
-msgid "Blog/Archive"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:79, inc/customizer/class-zakra-customizer-register-panels-sections.php:215, inc/customizer/options/global/class-zakra-customize-sidebar-layout-option.php:173
+#: inc/admin/class-zakra-dashboard.php:447, inc/customizer/class-zakra-customizer-register-panels-sections.php:215, inc/customizer/options/global/class-zakra-customize-sidebar-layout-option.php:173
 msgid "Single Post"
 msgstr ""
 
-#: inc/admin/class-zakra-dashboard.php:80, inc/customizer/class-zakra-customizer-register-panels-sections.php:223
-msgid "Meta"
+#: inc/admin/class-zakra-dashboard.php:451
+msgid "WooCommerce Layout"
 msgstr ""
 
-#: inc/admin/class-zakra-dashboard.php:81, inc/customizer/class-zakra-customizer-register-panels-sections.php:73, inc/customizer/options/content/class-zakra-customize-blog-option.php:129, inc/customizer/options/content/class-zakra-customize-blog-sidebar-option.php:43, inc/customizer/options/content/class-zakra-customize-blog-sidebar-option.php:120, inc/customizer/options/header/class-zakra-customize-breadcrumb-option.php:91, inc/customizer/options/header/class-zakra-customize-page-header-option.php:332, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:331, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:408, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:485, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:114, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:228
-msgid "Typography"
+#: inc/admin/class-zakra-dashboard.php:455
+msgid "Global Heading Color"
 msgstr ""
 
-#: inc/admin/class-zakra-dashboard.php:82, inc/customizer/options/woocommerce/class-zakra-customize-layout-woocommerce-option.php:108
-msgid "WooCommerce"
+#: inc/admin/class-zakra-dashboard.php:459
+msgid "Global Heading Typography"
 msgstr ""
 
-#: inc/admin/class-zakra-dashboard.php:83
-msgid "Footer Widgets"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:84
-msgid "Footer Bottom Bar"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:92, inc/admin/class-zakra-welcome-notice.php:72, inc/admin/class-zakra-welcome-notice.php:119, inc/helper/utils.php:288
-msgid "Zakra"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:100
-msgid "Theme Info"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:101
-msgid "Demos"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:102
-msgid "Premium"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:103
-msgid "Support"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:104
-msgid "Documentation"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:113
-msgid "Premium Features"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:120, inc/admin/class-zakra-welcome-notice.php:39
-msgid "Learn More"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:132
-msgid "Get Started"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:134
-msgid "Learn Basics &#129066;"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:137
-msgid "Starter Demos"
-msgstr ""
-
-#. translators: 1: Theme Name, 2: Demo Link.
-#: inc/admin/class-zakra-dashboard.php:143
-msgid "You do not need to build your site from scratch, %1$s provides a variety of %2$s"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:145
-msgid "Demos."
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:149
-msgid "Import demo site and start editing as your liking."
-msgstr ""
-
-#. translators: %s: Theme Name.
-#: inc/admin/class-zakra-dashboard.php:160
-msgid "%s Community"
-msgstr ""
-
-#. translators: %s: Theme Name.
-#: inc/admin/class-zakra-dashboard.php:171
-msgid "Connect with us and other helpful %s users like you."
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:176
-msgid "Join Now &#129066;"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:180
-msgid "Review"
-msgstr ""
-
-#. translators: 1: Theme Name, 2: Review Link.
-#: inc/admin/class-zakra-dashboard.php:186
-msgid "Love using %1$s? Help us by leaving a review %2$s"
-msgstr ""
-
-#: inc/admin/class-zakra-dashboard.php:188
-msgid "here &#129066;"
-msgstr ""
-
-#: inc/admin/class-zakra-demo-import-migration-notice.php:56
+#: inc/admin/class-zakra-demo-import-migration-notice.php:55
 msgid "It seems you've either imported Zakra demos recently or updated Zakra to 3.0 version. After these actions, if you've seen any design issues in your site, please try clicking the button below:"
 msgstr ""
 
-#: inc/admin/class-zakra-demo-import-migration-notice.php:64
+#: inc/admin/class-zakra-demo-import-migration-notice.php:63
 msgid "Fix Migration Issue"
 msgstr ""
 
-#: inc/admin/class-zakra-demo-import-migration-notice.php:67, inc/admin/class-zakra-welcome-notice.php:45, inc/admin/class-zakra-welcome-notice.php:45
+#: inc/admin/class-zakra-demo-import-migration-notice.php:66, inc/admin/class-zakra-welcome-notice.php:45, inc/admin/class-zakra-welcome-notice.php:45, inc/admin/views/help.php:45
 msgid "Contact Support"
 msgstr ""
 
-#: inc/admin/class-zakra-demo-import-migration-notice.php:81, inc/admin/class-zakra-notice.php:58, inc/admin/class-zakra-notice.php:77, inc/admin/class-zakra-pro-minimum-version-notice.php:80, inc/admin/class-zakra-theme-review-notice.php:156, inc/admin/class-zakra-theme-review-notice.php:174, inc/admin/class-zakra-welcome-notice.php:150, inc/migration/class-zakra-migration.php:1409
+#: inc/admin/class-zakra-demo-import-migration-notice.php:80, inc/admin/class-zakra-notice.php:58, inc/admin/class-zakra-notice.php:77, inc/admin/class-zakra-pro-minimum-version-notice.php:80, inc/admin/class-zakra-theme-review-notice.php:156, inc/admin/class-zakra-theme-review-notice.php:174, inc/admin/class-zakra-welcome-notice.php:190, inc/migration/class-zakra-migration.php:1409
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
-#: inc/admin/class-zakra-notice.php:62, inc/admin/class-zakra-notice.php:81, inc/admin/class-zakra-welcome-notice.php:154
+#: inc/admin/class-zakra-notice.php:62, inc/admin/class-zakra-notice.php:81, inc/admin/class-zakra-welcome-notice.php:194
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
@@ -283,7 +222,11 @@ msgid "Got pre sales queries?"
 msgstr ""
 
 #: inc/admin/class-zakra-welcome-notice.php:33, inc/admin/class-zakra-welcome-notice.php:33
-msgid "Get started with Zakra"
+msgid "Get started"
+msgstr ""
+
+#: inc/admin/class-zakra-welcome-notice.php:39, inc/admin/views/products.php:55, inc/admin/views/products.php:131
+msgid "Learn More"
 msgstr ""
 
 #: inc/admin/class-zakra-welcome-notice.php:39
@@ -294,23 +237,275 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#. translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag.
-#: inc/admin/class-zakra-welcome-notice.php:80
-msgid "Introducing Zakra 3.0 !!"
+#. translators: %s: welcome page link starting username
+#: inc/admin/class-zakra-welcome-notice.php:87, inc/admin/class-zakra-welcome-notice.php:150
+msgid "Welcome %s!"
+msgstr ""
+
+#: inc/admin/class-zakra-welcome-notice.php:95, inc/admin/class-zakra-welcome-notice.php:158
+msgid "Start Building with Zakra!"
 msgstr ""
 
 #. translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag.
-#: inc/admin/class-zakra-welcome-notice.php:88
-msgid "This is a major release with significant changes. It wouldn&#39;t break anything off your site but improves its UI/UX. Even though if you&#39;re experiencing any problems with your site due to this update, you can contact our support by clicking the button below:"
+#: inc/admin/class-zakra-welcome-notice.php:103, inc/admin/class-zakra-welcome-notice.php:166
+msgid "Welcome! Thank you for choosing Zakra! Let’s get you started right away with our visually appealing and attractive demos."
 msgstr ""
 
-#. translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag.
-#: inc/admin/class-zakra-welcome-notice.php:127
-msgid "Welcome! Thank you for choosing Zakra! To fully take advantage of the best our theme can offer, please make sure you visit our %1$swelcome page%2$s."
+#: inc/admin/class-zakra-welcome-notice.php:110, inc/admin/class-zakra-welcome-notice.php:173
+msgid "Clicking this button will install and activate the ThemeGrill Demo Importer plugin allowing you to import the theme’s demos."
 msgstr ""
 
-#: inc/admin/class-zakra-welcome-notice.php:136
-msgid "Clicking the button will install and activate the ThemeGrill demo importer plugin."
+#: inc/admin/views/changelog.php:45
+msgid "No changelog data available"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:20, inc/admin/views/starter-templates.php:24
+msgid "View Starter Templates"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:18, inc/admin/views/starter-templates.php:22
+msgid "Install ThemeGrill Demo Importer Plugin"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:16, inc/admin/views/starter-templates.php:20
+msgid "Activate ThemeGrill Demo Importer Plugin"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:31
+msgid "Welcome to Zakra!"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:34, inc/admin/views/free-vs-pro.php:200
+msgid "Free"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:34, inc/admin/views/free-vs-pro.php:201, inc/admin/views/layout.php:64
+msgid "Pro"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:39
+msgid "Create websites of different niches with very little effort with Zakra. Loaded with powerful features and demos for every kind of website, you can get started immediately! "
+msgstr ""
+
+#: inc/admin/views/dashboard.php:50
+msgid "Quick Settings"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:52
+msgid "Go to Customizer"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:86
+msgid "Customize"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:96
+msgid "Features"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:96
+msgid "Premium Features"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:101, inc/admin/views/free-vs-pro.php:272
+msgid "Upgrade Now"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:121, inc/admin/views/dashboard.php:196
+msgid "Documentation"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:128, inc/admin/views/dashboard.php:152, inc/admin/views/layout.php:18, inc/admin/views/layout.php:79, inc/helper/utils.php:288
+msgid "Zakra"
+msgstr ""
+
+#. translators: %s HTML br tag
+#: inc/admin/views/dashboard.php:159
+msgid "Explore diverse demos from Zakra theme to get your site running in no time! %s  Simply choose the demo that fits your requirements, import it, and give it some of your personal touch! "
+msgstr ""
+
+#: inc/admin/views/dashboard.php:187
+msgid "View Documentation"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:192
+msgid "Stuck due to an issue? Our detailed documentation will surely clear up any confusions you have!"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:206, inc/admin/views/help.php:89
+msgid "Leave us a Review"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:217, inc/admin/views/help.php:98
+msgid "Based on 1430+ Reviews"
+msgstr ""
+
+#. translators: %s: Theme Name.
+#: inc/admin/views/dashboard.php:223
+msgid "What do you think of our theme? Was it a good experience and did it match your expectations? Let us know so we can improve!"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:229, inc/admin/views/help.php:110
+msgid "Submit a Review"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:243, inc/admin/views/help.php:126
+msgid "Feature Request"
+msgstr ""
+
+#. translators: %s: Theme Name.
+#: inc/admin/views/dashboard.php:248, inc/admin/views/help.php:133
+msgid "Please take a moment to suggest any features that could enhance our product."
+msgstr ""
+
+#: inc/admin/views/dashboard.php:252, inc/admin/views/help.php:138
+msgid "Request a Feature"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:262, inc/admin/views/help.php:43
+msgid "Support"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:267, inc/admin/views/help.php:44
+msgid "We would be happy to guide you through any issues and queries you have regarding Zakra!"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:271
+msgid "Create a Ticket"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:276, inc/admin/views/help.php:143
+msgid "Useful Plugins"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:302, inc/admin/views/help.php:202, inc/admin/views/products.php:146
+msgid "Install"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:298, inc/admin/views/help.php:199, inc/admin/views/products.php:141
+msgid "Activate"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:295, inc/admin/views/help.php:197, inc/admin/views/products.php:137
+msgid "Activated"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:325
+msgid "ThemeGrill Community"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:330
+msgid "Join our Facebook group filled with ThemeGrill themes users, including Zakra users to discuss anything about the theme!"
+msgstr ""
+
+#: inc/admin/views/dashboard.php:334
+msgid "Join our Facebook Group"
+msgstr ""
+
+#. translators: %s: HTML br tag
+#: inc/admin/views/free-vs-pro.php:277
+msgid "Access all premium extensions, features, and upcoming updates right away by %s upgrading to the Pro version."
+msgstr ""
+
+#: inc/admin/views/free-vs-pro.php:282
+msgid "Get Zakra Pro Now"
+msgstr ""
+
+#: inc/admin/views/help.php:35
+msgid "Need Some Help?"
+msgstr ""
+
+#: inc/admin/views/help.php:36
+msgid "Please check out basic documentation for detailed information on how to use Zakra."
+msgstr ""
+
+#: inc/admin/views/help.php:37
+msgid "View Now"
+msgstr ""
+
+#: inc/admin/views/help.php:48
+msgid "Join Our Community"
+msgstr ""
+
+#: inc/admin/views/help.php:51
+msgid "facebook"
+msgstr ""
+
+#: inc/admin/views/help.php:54
+msgid "Facebook Community"
+msgstr ""
+
+#: inc/admin/views/help.php:55
+msgid "Join our Facebook community to connect with fellow users for the latest news, updates, and discussions."
+msgstr ""
+
+#: inc/admin/views/help.php:56
+msgid "Join us on Facebook"
+msgstr ""
+
+#: inc/admin/views/help.php:61
+msgid "x"
+msgstr ""
+
+#: inc/admin/views/help.php:64
+msgid "X Community"
+msgstr ""
+
+#: inc/admin/views/help.php:65
+msgid "Follow us on Twitter and stay in the loop for the latest news and updates on our products!"
+msgstr ""
+
+#: inc/admin/views/help.php:66
+msgid "Join us on Twitter"
+msgstr ""
+
+#: inc/admin/views/help.php:71
+msgid "youtube"
+msgstr ""
+
+#: inc/admin/views/help.php:74
+msgid "Youtube Community"
+msgstr ""
+
+#: inc/admin/views/help.php:75
+msgid "Visit our YouTube channel for videos about tutorials, updates, and news on our products!"
+msgstr ""
+
+#: inc/admin/views/help.php:76
+msgid "Visit us on YouTube"
+msgstr ""
+
+#. translators: %s: Theme Name.
+#: inc/admin/views/help.php:104
+msgid "Sharing your review is a valuable way to help us enhance your experience."
+msgstr ""
+
+#: inc/admin/views/layout.php:57
+msgid "Core"
+msgstr ""
+
+#: inc/admin/views/layout.php:72
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: inc/admin/views/layout.php:99
+msgid "Latest Updates"
+msgstr ""
+
+#: inc/admin/views/products.php:20
+msgid "Themes"
+msgstr ""
+
+#: inc/admin/views/products.php:56, inc/admin/views/products.php:132
+msgid "Live demo"
+msgstr ""
+
+#: inc/admin/views/products.php:63
+msgid "Plugins"
+msgstr ""
+
+#: inc/admin/views/starter-templates.php:57
+msgid "In order to be able to import any starter sites for <br> Zakra you need to install ThemeGrill demo <br> importer plugin active."
 msgstr ""
 
 #: inc/class-breadcrumb-trail.php:267
@@ -474,8 +669,8 @@ msgstr ""
 msgid "Content Area"
 msgstr ""
 
-#: inc/customizer/class-zakra-customizer-register-panels-sections.php:65, inc/customizer/class-zakra-customizer-register-panels-sections.php:231, inc/meta-boxes/class-zakra-meta-box-page-settings.php:180
-msgid "Sidebar"
+#: inc/customizer/class-zakra-customizer-register-panels-sections.php:73, inc/customizer/options/content/class-zakra-customize-blog-option.php:129, inc/customizer/options/content/class-zakra-customize-blog-sidebar-option.php:43, inc/customizer/options/content/class-zakra-customize-blog-sidebar-option.php:120, inc/customizer/options/header/class-zakra-customize-breadcrumb-option.php:91, inc/customizer/options/header/class-zakra-customize-page-header-option.php:332, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:331, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:408, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:485, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:114, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:228
+msgid "Typography"
 msgstr ""
 
 #: inc/customizer/class-zakra-customizer-register-panels-sections.php:81, inc/customizer/class-zakra-customizer-register-panels-sections.php:152, inc/customizer/options/content/class-zakra-customize-blog-option.php:206, inc/customizer/options/global/class-zakra-customize-button-option.php:35
@@ -484,18 +679,6 @@ msgstr ""
 
 #: inc/customizer/class-zakra-customizer-register-panels-sections.php:89
 msgid "Header & Navigation"
-msgstr ""
-
-#: inc/customizer/class-zakra-customizer-register-panels-sections.php:96, inc/customizer/options/header/class-zakra-customize-top-bar-option.php:36
-msgid "Top Bar"
-msgstr ""
-
-#: inc/customizer/class-zakra-customizer-register-panels-sections.php:112
-msgid "Site Identity"
-msgstr ""
-
-#: inc/customizer/class-zakra-customizer-register-panels-sections.php:120, inc/customizer/options/header/class-zakra-customize-main-header-option.php:34
-msgid "Main Header"
 msgstr ""
 
 #: inc/customizer/class-zakra-customizer-register-panels-sections.php:144, inc/customizer/options/header/class-zakra-customize-main-header-option.php:267
@@ -518,20 +701,12 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: inc/customizer/class-zakra-customizer-register-panels-sections.php:207
-msgid "Blog"
+#: inc/customizer/class-zakra-customizer-register-panels-sections.php:223
+msgid "Meta"
 msgstr ""
 
 #: inc/customizer/class-zakra-customizer-register-panels-sections.php:239
 msgid "Footer"
-msgstr ""
-
-#: inc/customizer/class-zakra-customizer-register-panels-sections.php:246
-msgid "Footer Column"
-msgstr ""
-
-#: inc/customizer/class-zakra-customizer-register-panels-sections.php:254, inc/customizer/options/footer/class-zakra-customize-footer-bar-option.php:34
-msgid "Footer Bar"
 msgstr ""
 
 #: inc/customizer/class-zakra-customizer-register-panels-sections.php:262
@@ -1224,6 +1399,10 @@ msgstr ""
 msgid "Links"
 msgstr ""
 
+#: inc/customizer/options/global/class-zakra-customize-container-option.php:55, inc/customizer/options/global/class-zakra-customize-content-area-option.php:55, inc/customizer/options/global/class-zakra-customize-sidebar-layout-option.php:106, inc/customizer/options/header/class-zakra-customize-main-header-option.php:53, inc/customizer/options/header/class-zakra-customize-page-header-option.php:63, inc/customizer/options/woocommerce/class-zakra-customize-layout-woocommerce-option.php:70, inc/meta-boxes/class-zakra-meta-box-page-settings.php:118
+msgid "Layout"
+msgstr ""
+
 #: inc/customizer/options/global/class-zakra-customize-container-option.php:61
 msgid "Wide"
 msgstr ""
@@ -1414,6 +1593,10 @@ msgstr ""
 
 #: inc/customizer/options/header/class-zakra-customize-site-identity-option.php:178
 msgid "Tagline"
+msgstr ""
+
+#: inc/customizer/options/woocommerce/class-zakra-customize-layout-woocommerce-option.php:108
+msgid "WooCommerce"
 msgstr ""
 
 #: inc/customizer/options/woocommerce/class-zakra-customize-layout-woocommerce-option.php:137

@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) || exit;
 class Zakra_Welcome_Notice {
 
 	public function __construct() {
-//		add_action( 'wp_loaded', array( $this, 'major_update_notice' ) );
+		//      add_action( 'wp_loaded', array( $this, 'major_update_notice' ) );
 		add_action( 'wp_loaded', array( $this, 'welcome_notice' ), 20 );
 		add_action( 'wp_loaded', array( $this, 'hide_notices' ), 15 );
 		add_action( 'wp_ajax_import_button', array( $this, 'welcome_notice_import_handler' ) );
@@ -30,7 +30,7 @@ class Zakra_Welcome_Notice {
 	 * @return string
 	 */
 	public function import_button_html() {
-		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Get started with Zakra', 'zakra' ) . '">' . esc_html__( 'Get started with Zakra', 'zakra' ) . '</a>';
+		$html = '<a class="btn-get-started button button-primary button-hero" href="#" data-name="' . esc_attr( 'themegrill-demo-importer' ) . '" data-slug="' . esc_attr( 'themegrill-demo-importer' ) . '" aria-label="' . esc_attr__( 'Get started', 'zakra' ) . '">' . esc_html__( 'Get started', 'zakra' ) . '</a>';
 
 		return $html;
 	}
@@ -63,41 +63,59 @@ class Zakra_Welcome_Notice {
 			'zakra_hide_notices_nonce',
 			'_zakra_notice_nonce'
 		);
+
+		// Get the current user object
+		$current_user = wp_get_current_user();
+
+		$username = $current_user->user_login;
+
+		if ( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
+			return;
+		}
+
 		?>
-		<div id="message" class="notice notice-success zakra-notice zakra-update">
+		<div id="message" class="notice notice-success zakra-notice">
 			<a class="zakra-message-close notice-dismiss" href="<?php echo esc_url( $dismiss_url ); ?>"></a>
 
-			<div class="zakra-message__content" style="flex-wrap: wrap;">
-				<div class="zakra-message__image" style="flex-basis: 320px;">
-					<img class="zakra-screenshot" src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.jpg" alt="<?php esc_attr_e( 'Zakra', 'zakra' ); ?>" /><?php // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped, Squiz.PHP.EmbeddedPhp.SpacingBeforeClose ?>
-				</div>
-
+			<div class="zakra-message__content">
 				<div class="zakra-message__text">
-					<h1 class="zakra-message__heading" style="padding: 0;">
-						<?php
-						printf(
-						/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-							esc_html__( 'Introducing Zakra 3.0 !!', 'zakra' )
-						);
-						?>
-						</h1>
-					<h2 class="zakra-message__heading" >
-						<?php
-						printf(
-						/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-							esc_html__( 'This is a major release with significant changes. It wouldn&#39;t break anything off your site but improves its UI/UX. Even though if you&#39;re experiencing any problems with your site due to this update, you can contact our support by clicking the button below:', 'zakra' )
-						);
-						?>
-					</h2>
-
-					<div class="zakra-message__cta">
-						<?php echo $this->update_button_html(); ?>
-						<?php echo $this->support_button_html(); ?>
-						<?php echo $this->faq_button_html(); ?>
+					<div class="zakra-message__head">
+						<p class="zakra-message__subheading">
+							<?php
+							sprintf(
+							    /* translators: %s: welcome page link starting username */
+								esc_html__( 'Welcome %s!', 'zakra' ),
+                                $username
+							);
+							?>
+						</p>
+						<h2 class="zakra-message__heading">
+							<?php
+							printf(
+								esc_html__( 'Start Building with Zakra!', 'zakra' ),
+							);
+							?>
+						</h2>
+						<p class="zakra-message__description">
+							<?php
+							printf(
+							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
+								esc_html__( 'Welcome! Thank you for choosing Zakra! Let’s get you started right away with our visually appealing and attractive demos.', 'zakra' ),
+							);
+							?>
+						</p>
 					</div>
+					<div class="zakra-message__cta">
+						<?php echo $this->import_button_html(); ?>
+						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking this button will install and activate the ThemeGrill Demo Importer plugin allowing you to import the theme’s demos.', 'zakra' ); ?></span>
+					</div>
+				</div>
+				<div class="zakra-message__image">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/admin/images/zakra-welcome-banner.png" alt="Zakra Templates">
 				</div>
 			</div>
 		</div> <!-- /.zakra-message__content -->
+
 		<?php
 	}
 
@@ -110,31 +128,53 @@ class Zakra_Welcome_Notice {
 			'zakra_hide_notices_nonce',
 			'_zakra_notice_nonce'
 		);
+		// Get the current user object
+		$current_user = wp_get_current_user();
+
+		$username = $current_user->user_login;
+
+		if ( is_plugin_active( 'themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
+			return;
+		}
 		?>
 		<div id="message" class="notice notice-success zakra-notice">
 			<a class="zakra-message-close notice-dismiss" href="<?php echo esc_url( $dismiss_url ); ?>"></a>
 
 			<div class="zakra-message__content">
-				<div class="zakra-message__image">
-					<img class="zakra-screenshot" src="<?php echo esc_url( get_template_directory_uri() . '/screenshot.jpg' ); ?>" alt="<?php esc_attr_e( 'Zakra', 'zakra' ); ?>" />
-				</div>
-
 				<div class="zakra-message__text">
-					<h2 class="zakra-message__heading">
-						<?php
-						printf(
-						/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-							esc_html__( 'Welcome! Thank you for choosing Zakra! To fully take advantage of the best our theme can offer, please make sure you visit our %1$swelcome page%2$s.', 'zakra' ),
-							'<a href="' . esc_url( admin_url( 'themes.php?page=zakra-options' ) ) . '">',
-							'</a>'
-						);
-						?>
-					</h2>
-
+					<div class="zakra-message__head">
+						<p class="zakra-message__subheading">
+							<?php
+							sprintf(
+							    /* translators: %s: welcome page link starting username */
+								esc_html__( 'Welcome %s!', 'zakra' ),
+                                $username
+							);
+							?>
+						</p>
+						<h2 class="zakra-message__heading">
+							<?php
+							printf(
+								esc_html__( 'Start Building with Zakra!', 'zakra' ),
+							);
+							?>
+						</h2>
+						<p class="zakra-message__description">
+							<?php
+							printf(
+							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
+								esc_html__( 'Welcome! Thank you for choosing Zakra! Let’s get you started right away with our visually appealing and attractive demos.', 'zakra' ),
+							);
+							?>
+						</p>
+					</div>
 					<div class="zakra-message__cta">
 						<?php echo $this->import_button_html(); ?>
-						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking the button will install and activate the ThemeGrill demo importer plugin.', 'zakra' ); ?></span>
+						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking this button will install and activate the ThemeGrill Demo Importer plugin allowing you to import the theme’s demos.', 'zakra' ); ?></span>
 					</div>
+				</div>
+				<div class="zakra-message__image">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/inc/admin/images/zakra-welcome-banner.png" alt="Zakra Templates">
 				</div>
 			</div>
 		</div> <!-- /.zakra-message__content -->
@@ -182,9 +222,9 @@ class Zakra_Welcome_Notice {
 		}
 
 		if ( 'activated' === $state ) {
-			$response['redirect'] = admin_url( '/themes.php?page=demo-importer&browse=all&zakra-hide-notice=welcome' );
+			$response['redirect'] = admin_url( '/themes.php?page=zakra&tab=starter-templates' );
 		} elseif ( 'installed' === $state ) {
-			$response['redirect'] = admin_url( '/themes.php?page=demo-importer&browse=all&zakra-hide-notice=welcome' );
+			$response['redirect'] = admin_url( '/themes.php?page=zakra&tab=starter-templates' );
 			if ( current_user_can( 'activate_plugin' ) ) {
 				$result = activate_plugin( 'themegrill-demo-importer/themegrill-demo-importer.php' );
 
@@ -197,7 +237,7 @@ class Zakra_Welcome_Notice {
 			wp_enqueue_style( 'plugin-install' );
 			wp_enqueue_script( 'plugin-install' );
 
-			$response['redirect'] = admin_url( '/themes.php?page=demo-importer&browse=all&zakra-hide-notice=welcome' );
+			$response['redirect'] = admin_url( '/themes.php?page=zakra&tab=starter-templates' );
 
 			/**
 			 * Install Plugin.

@@ -32,10 +32,14 @@ if ( ! class_exists( 'Zakra_SVG_Icons' ) ) {
 				'aria-hidden' => true,
 				'role'        => true,
 				'focusable'   => true,
+				'fill'        => true,
+				'stroke'      => true,
+				'fill-rule'   => true,
 			),
 			'path'    => array(
 				'fill'      => true,
 				'fill-rule' => true,
+				'clip-rule' => true,
 				'd'         => true,
 				'transform' => true,
 			),
@@ -50,6 +54,13 @@ if ( ! class_exists( 'Zakra_SVG_Icons' ) ) {
 				'points'    => true,
 				'transform' => true,
 				'focusable' => true,
+			),
+			'rect'    => array(
+				'x'      => true,
+				'rx'     => true,
+				'fill'   => true,
+				'height' => true,
+				'width'  => true,
 			),
 		);
 
