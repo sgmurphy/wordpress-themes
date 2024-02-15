@@ -114,6 +114,12 @@ const getPreferedPlacementFor = (el) => {
 
 	const farmostRect = farmost.getBoundingClientRect()
 
+	if (isRtl()) {
+		let willItFitToTheLeft = allSubmenusAlignedWidth < farmostRect.right
+
+		return willItFitToTheLeft ? 'left' : 'right'
+	}
+
 	let willItFitToTheRight =
 		innerWidth - farmostRect.left > allSubmenusAlignedWidth
 
@@ -123,7 +129,7 @@ const getPreferedPlacementFor = (el) => {
 			allSubmenusAlignedWidth
 	}
 
-	return reversePlacementIfNeeded(willItFitToTheRight ? 'right' : 'left')
+	return willItFitToTheRight ? 'right' : 'left'
 }
 
 const computeItemSubmenuFor = (

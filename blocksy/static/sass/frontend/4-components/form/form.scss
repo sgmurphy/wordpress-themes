@@ -12,7 +12,7 @@ input[type='number'],
 input[type='search'],
 input[type='password'],
 fieldset .wc-stripe-elements-field,
-.ff-el-input--content select.ff-el-form-control:not([size]):not([multiple]) {
+.ff-inherit-theme-style select.ff-el-form-control:not([size]):not([multiple]) {
 	appearance: none;
 	width: var(--theme-form-field-width, 100%);
 	height: var(--theme-form-field-height, 40px);

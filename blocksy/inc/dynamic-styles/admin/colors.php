@@ -347,11 +347,17 @@ blocksy_output_colors([
 	'value' => blocksy_get_theme_mod('global_quantity_arrows'),
 	'default' => [
 		'default' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+		'default_type_2' => [ 'color' => 'var(--theme-text-color)' ],
 		'hover' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 	],
 	'css' => $css,
 	'variables' => [
 		'default' => [
+			'selector' => $selector,
+			'variable' => 'quantity-arrows-initial-color'
+		],
+
+		'default_type_2' => [
 			'selector' => $selector,
 			'variable' => 'quantity-arrows-initial-color'
 		],

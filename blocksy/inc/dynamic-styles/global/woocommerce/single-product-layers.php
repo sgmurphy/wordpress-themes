@@ -297,7 +297,7 @@ blocksy_output_colors([
 	'value' => blocksy_get_theme_mod('quantity_arrows'),
 	'default' => [
 		'default' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
-		'default_type_2' => [ 'color' => 'var(--theme-text-color)' ],
+		'default_type_2' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 		'hover' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 	],
 	'css' => $css,

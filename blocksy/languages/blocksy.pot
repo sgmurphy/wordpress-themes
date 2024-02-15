@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-02-08 17:37+0000\n"
+"POT-Creation-Date: 2024-02-15 17:48+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
@@ -1438,11 +1438,11 @@ msgstr ""
 #: inc/options/woocommerce/single-product-elements.php:231,
 #: inc/options/woocommerce/single-product-elements.php:265,
 #: inc/options/woocommerce/single-product-elements.php:273,
-#: inc/options/woocommerce/single-product-elements.php:311,
-#: inc/options/woocommerce/single-product-elements.php:342,
-#: inc/options/woocommerce/single-product-elements.php:384,
-#: inc/options/woocommerce/single-product-elements.php:415,
-#: inc/options/woocommerce/single-product-elements.php:485,
+#: inc/options/woocommerce/single-product-elements.php:312,
+#: inc/options/woocommerce/single-product-elements.php:343,
+#: inc/options/woocommerce/single-product-elements.php:385,
+#: inc/options/woocommerce/single-product-elements.php:416,
+#: inc/options/woocommerce/single-product-elements.php:486,
 #: inc/options/woocommerce/single-product-gallery.php:249,
 #: inc/options/woocommerce/single-product-gallery.php:279,
 #: inc/options/woocommerce/single-product-gallery.php:315,
@@ -1596,11 +1596,11 @@ msgstr ""
 #: inc/options/woocommerce/general-main.php:508,
 #: inc/options/woocommerce/general-main.php:549,
 #: inc/options/woocommerce/single-product-elements.php:237,
-#: inc/options/woocommerce/single-product-elements.php:280,
-#: inc/options/woocommerce/single-product-elements.php:317,
-#: inc/options/woocommerce/single-product-elements.php:348,
-#: inc/options/woocommerce/single-product-elements.php:390,
-#: inc/options/woocommerce/single-product-elements.php:421,
+#: inc/options/woocommerce/single-product-elements.php:281,
+#: inc/options/woocommerce/single-product-elements.php:318,
+#: inc/options/woocommerce/single-product-elements.php:349,
+#: inc/options/woocommerce/single-product-elements.php:391,
+#: inc/options/woocommerce/single-product-elements.php:422,
 #: inc/options/woocommerce/single-product-gallery.php:255,
 #: inc/options/woocommerce/single-product-gallery.php:285,
 #: inc/options/woocommerce/single-product-gallery.php:321,
@@ -2866,7 +2866,7 @@ msgstr ""
 #: inc/options/general/pagination.php:266,
 #: inc/options/general/posts-listing.php:502,
 #: inc/options/general/sidebar.php:437,
-#: inc/options/woocommerce/single-product-elements.php:440,
+#: inc/options/woocommerce/single-product-elements.php:441,
 #: inc/options/woocommerce/single-product-layers.php:207
 msgid "Divider"
 msgstr ""
@@ -3039,8 +3039,8 @@ msgstr ""
 #: inc/options/woocommerce/general-main.php:103,
 #: inc/options/woocommerce/general-main.php:219,
 #: inc/options/woocommerce/general-main.php:333,
-#: inc/options/woocommerce/single-product-elements.php:294,
-#: inc/options/woocommerce/single-product-elements.php:367
+#: inc/options/woocommerce/single-product-elements.php:295,
+#: inc/options/woocommerce/single-product-elements.php:368
 msgid "Button Font Color"
 msgstr ""
 
@@ -4125,8 +4125,8 @@ msgstr ""
 #: inc/options/woocommerce/general-main.php:133,
 #: inc/options/woocommerce/general-main.php:249,
 #: inc/options/woocommerce/general-main.php:361,
-#: inc/options/woocommerce/single-product-elements.php:325,
-#: inc/options/woocommerce/single-product-elements.php:398
+#: inc/options/woocommerce/single-product-elements.php:326,
+#: inc/options/woocommerce/single-product-elements.php:399
 #: static/js/editor/blocks/search/Edit.js:311
 msgid "Button Background Color"
 msgstr ""
@@ -4409,15 +4409,15 @@ msgstr ""
 msgid "Quantity Color"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-elements.php:290
+#: inc/options/woocommerce/single-product-elements.php:291
 msgid "Add To Cart Button"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-elements.php:363
+#: inc/options/woocommerce/single-product-elements.php:364
 msgid "View Cart Button"
 msgstr ""
 
-#: inc/options/woocommerce/single-product-elements.php:471
+#: inc/options/woocommerce/single-product-elements.php:472
 msgid "Payment Methods Icons Color"
 msgstr ""
 
@@ -5049,7 +5049,7 @@ msgstr ""
 msgid "Product Status"
 msgstr ""
 
-#: inc/components/woocommerce/common/sale-flash.php:8
+#: inc/components/woocommerce/common/sale-flash.php:13
 msgid "SALE"
 msgstr ""
 

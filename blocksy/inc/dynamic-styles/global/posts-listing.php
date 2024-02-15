@@ -321,8 +321,10 @@ if ($card_type === 'boxed' || $card_type === 'cover') {
 		if ($maybeWidth !== 0) {
 			$result = [];
 
-			foreach ($image_border_radius[$device] as $value) {
-				$result[] = 'calc(' . $value . ' - ' . $maybeWidth . ')';
+			if (is_array($image_border_radius[$device])) {
+				foreach ($image_border_radius[$device] as $value) {
+					$result[] = 'calc(' . $value . ' - ' . $maybeWidth . ')';
+				}
 			}
 
 			$image_border_radius[$device] = $result;

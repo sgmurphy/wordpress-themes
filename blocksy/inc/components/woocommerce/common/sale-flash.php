@@ -3,6 +3,11 @@
 add_filter(
 	'woocommerce_sale_flash',
 	function ($text, $post, $product) {
+
+		if (strpos($text, '<span class="onsale">') === false) {
+			return $text;
+		}
+		
 		$text = blocksy_get_theme_mod(
 			'sale_badge_default_value',
 			__('SALE', 'blocksy')

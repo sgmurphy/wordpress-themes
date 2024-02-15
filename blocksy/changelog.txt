@@ -1,3 +1,10 @@
+2.0.25: 2024-02-15
+- Improvement: Better integration with Woo Jet Builder + sale badges
+- Improvement: Better output colors for quantity input initial arrows
+- Improvement: Correctly open menu dropdown in RTL mode
+- Fix: Menu drop downs open one beneath the other if "more" menu is present
+- Fix: Notice in card image border radius dynamic styles logic
+
 2.0.24: 2024-02-08
 - Improvement: Account drop down opens in wrong direction on mobile if placed near the edge
 - Improvement: Add "Content Area Vertical Spacing" option for archives

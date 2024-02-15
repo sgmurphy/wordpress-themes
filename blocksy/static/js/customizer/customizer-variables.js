@@ -177,6 +177,12 @@ export const listenToVariables = () => {
 
 			{
 				selector: ':root',
+				variable: 'quantity-arrows-initial-color',
+				type: 'color:default_type_2',
+			},
+
+			{
+				selector: ':root',
 				variable: 'quantity-arrows-hover-color',
 				type: 'color:hover',
 			},

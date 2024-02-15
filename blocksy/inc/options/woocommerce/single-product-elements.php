@@ -252,7 +252,7 @@ $options = [
 										],
 
 										'default_type_2' => [
-											'color' => 'var(--theme-text-color)',
+											'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
 										],
 
 										'hover' => [
@@ -272,6 +272,7 @@ $options = [
 										[
 											'title' => __('Initial', 'blocksy'),
 											'id' => 'default_type_2',
+											'inherit' => 'var(--quantity-arrows-initial-color, var(--theme-text-color))',
 											'condition_source' => 'global',
 											'condition' => ['quantity_type' => 'type-2']
 										],

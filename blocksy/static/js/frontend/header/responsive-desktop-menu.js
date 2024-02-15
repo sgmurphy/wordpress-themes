@@ -177,17 +177,20 @@ export const mount = (nav) => {
 					nav.querySelector('.more-items-container')
 				)
 
+				if (
+					el.matches(
+						'.menu-item-has-children, .page_item_has_children'
+					)
+				) {
+					el.classList.remove('animated-submenu-inline')
+					el.classList.add('animated-submenu-block')
+				}
+
 				Array.from(
 					el.querySelectorAll(
 						'.menu-item-has-children, .page_item_has_children'
 					)
 				)
-					.map((el) => {
-						el.classList.remove('animated-submenu-inline')
-						el.classList.add('animated-submenu-block')
-
-						return el
-					})
 					.filter((el) => !!el.closest('[class*="ct-mega-menu"]'))
 					.map((el) => {
 						el.classList.remove(
@@ -214,14 +217,12 @@ export const mount = (nav) => {
 		notFit.map((el) => {
 			nav.querySelector('.more-items-container .sub-menu').appendChild(el)
 
-			Array.from(
-				el.querySelectorAll(
-					'.menu-item-has-children, .page_item_has_children'
-				)
-			).map((el) => {
+			if (
+				el.matches('.menu-item-has-children, .page_item_has_children')
+			) {
 				el.classList.add('animated-submenu-inline')
 				el.classList.remove('animated-submenu-block')
-			})
+			}
 		})
 
 		fit.map((el) => {
@@ -230,17 +231,18 @@ export const mount = (nav) => {
 				nav.querySelector('.more-items-container')
 			)
 
+			if (
+				el.matches('.menu-item-has-children, .page_item_has_children')
+			) {
+				el.classList.remove('animated-submenu-inline')
+				el.classList.add('animated-submenu-block')
+			}
+
 			Array.from(
 				el.querySelectorAll(
 					'.menu-item-has-children, .page_item_has_children'
 				)
 			)
-				.map((el) => {
-					el.classList.remove('animated-submenu-inline')
-					el.classList.add('animated-submenu-block')
-
-					return el
-				})
 				.filter((el) => !!el.closest('[class*="ct-mega-menu"]'))
 				.map((el) => {
 					el.classList.remove(
