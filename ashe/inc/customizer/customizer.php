@@ -735,7 +735,8 @@ function ashe_customize_register( $wp_customize ) {
 				'section'	  => 'header_image',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Header Options', 'ashe' ),
-				'description' => esc_html( 'https://wp-royal-themes.com/themes/ashe/customizer/free/header-image2.html?ref=ashe-free-header-customizer' ),
+				// 'description' => esc_html( 'https://wp-royal-themes.com/themes/ashe/customizer/free/header-image2.html?ref=ashe-free-header-customizer' ),
+				'description' => esc_html( 'https://ashe-pro.wp-royal-themes.com/wp-content/plugins/open-house-theme-options/redirect.php?multisite=lifestyle&section=header_image' ),
 				'priority'	  => 100
 			)
 		)
@@ -764,7 +765,8 @@ function ashe_customize_register( $wp_customize ) {
 				'section'	  => 'title_tagline',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Logo Options', 'ashe' ),
-				'description' => esc_html( 'https://wp-royal-themes.com/themes/ashe/customizer/free/typography-logo.html?ref=ashe-free-site-identity-customizer' ),
+				// 'description' => esc_html( 'https://wp-royal-themes.com/themes/ashe/customizer/free/typography-logo.html?ref=ashe-free-site-identity-customizer' ),
+				'description' => esc_html( 'https://ashe-pro.wp-royal-themes.com/wp-content/plugins/open-house-theme-options/redirect.php?multisite=typography-v2&section=ashe_typography' ),
 				'priority'	  => 50
 			)
 		)
@@ -991,7 +993,8 @@ function ashe_customize_register( $wp_customize ) {
 				'section'	  => 'ashe_featured_links',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Feat. Links Options ', 'ashe' ),
-				'description' => esc_html( 'https://wp-royal-themes.com/themes/ashe/customizer/free/featured-links.html?ref=ashe-free-featured-links' ),
+				// 'description' => esc_html( 'https://wp-royal-themes.com/themes/ashe/customizer/free/featured-links.html?ref=ashe-free-featured-links' ),
+				'description' => esc_html( 'https://ashe-pro.wp-royal-themes.com/wp-content/plugins/open-house-theme-options/redirect.php?multisite=sample-v5&section=ashe_featured_links' ),
 				'priority'	  => 100
 			)
 		)
@@ -1270,7 +1273,8 @@ function ashe_customize_register( $wp_customize ) {
 				'section'	  => 'ashe_typography',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Typography Options', 'ashe' ),
-				'description' => esc_html( 'https://wp-royal-themes.com/themes/ashe/customizer/free/typography-logo.html?ref=ashe-free-typography-customizer' ),
+				// 'description' => esc_html( 'https://wp-royal-themes.com/themes/ashe/customizer/free/typography-logo.html?ref=ashe-free-typography-customizer' ),
+				'description' => esc_html( 'https://ashe-pro.wp-royal-themes.com/wp-content/plugins/open-house-theme-options/redirect.php?multisite=typography-v2&section=ashe_typography' ),
 				'priority'	  => 10
 			)
 		)
@@ -1306,7 +1310,8 @@ function ashe_customize_register( $wp_customize ) {
 				'section'	  => 'ashe_page_footer',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Footer Options', 'ashe' ),
-				'description' => esc_html( 'https://wp-royal-themes.com/themes/ashe/customizer/free/page-footer.html?ref=ashe-free-page-footer-customizer' ),
+				// 'description' => esc_html( 'https://wp-royal-themes.com/themes/ashe/customizer/free/page-footer.html?ref=ashe-free-page-footer-customizer' ),
+				'description' => esc_html( 'https://ashe-pro.wp-royal-themes.com/wp-content/plugins/open-house-theme-options/redirect.php?multisite=typography-v2&section=ashe_page_footer' ),
 				'priority'	  => 100
 			)
 		)
