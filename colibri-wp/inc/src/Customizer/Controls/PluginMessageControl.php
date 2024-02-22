@@ -71,7 +71,7 @@ class PluginMessageControl extends VueControl {
                 "status"       => colibriwp_theme()->getPluginsManager()->getPluginState(  $this->getBuilderSlug() ),
                 "install_url"  => colibriwp_theme()->getPluginsManager()->getInstallLink(  $this->getBuilderSlug() ),
                 "activate_url" => colibriwp_theme()->getPluginsManager()->getActivationLink(  $this->getBuilderSlug() ),
-                'plugin_activate_nonce' => wp_create_nonce( 'plugin_activate_nonce' ),
+                'colibri_plugin_install_activate_nonce' => wp_create_nonce( 'colibri_plugin_install_activate_nonce' ),
                 "messages"     => array(
                     "installing" => Translations::get( 'installing',
                         'Colibri Page Builder' ),

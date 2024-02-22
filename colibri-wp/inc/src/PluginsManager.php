@@ -56,6 +56,7 @@ class PluginsManager {
         add_action( 'tgmpa_register', array( $this, 'tgmpaRegitster' ) );
 
         add_action( 'wp_ajax_colibriwp_install_plugin', function () {
+            check_ajax_referer( 'colibri_plugin_install_activate_nonce');
             $slug = isset( $_REQUEST['slug'] ) ? wp_unslash( $_REQUEST['slug'] ) : false;
 
             if ( ! current_user_can( 'install_plugins', $slug ) ) {
@@ -107,7 +108,7 @@ class PluginsManager {
         } );
 
         add_action( 'wp_ajax_colibriwp_activate_plugin', function () {
-            check_ajax_referer( 'plugin_activate_nonce');
+            check_ajax_referer( 'colibri_plugin_install_activate_nonce');
             $slug = isset( $_REQUEST['slug'] ) ? wp_unslash( $_REQUEST['slug'] ) : false;
 
             if ( ! current_user_can( 'activate_plugin', $slug ) ) {
