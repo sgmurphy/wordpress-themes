@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 
 :is(.entry-content, .is-layout-flow, .is-layout-constrained) {
 
-	> *:not(h1, h2, h3, h4, h5, h6) {
+	> *:where(:not(h1, h2, h3, h4, h5, h6)) {
 		margin-bottom: var(--theme-content-spacing);
 
 		&:where(:last-child) {

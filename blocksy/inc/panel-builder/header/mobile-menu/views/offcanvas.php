@@ -13,6 +13,8 @@ if ($mobile_menu_interactive === 'yes') {
 	);
 }
 
+$attr['data-submenu-dots'] = blocksy_akg('mobile_menu_submenu_dots', $atts, 'yes');
+
 
 ob_start();
 

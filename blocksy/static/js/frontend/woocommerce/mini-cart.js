@@ -56,6 +56,7 @@ export const mount = () => {
 			if (
 				!document.querySelector('#ct-compare-modal.active') &&
 				!document.querySelector('.quick-view-modal.active') &&
+				!document.querySelector('#woo-cart-panel.active') &&
 				((!document.body.classList.contains('single-product') &&
 					cart.querySelector('[data-auto-open*="archive"]')) ||
 					(document.body.classList.contains('single-product') &&

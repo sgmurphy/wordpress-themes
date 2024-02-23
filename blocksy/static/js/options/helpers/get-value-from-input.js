@@ -82,8 +82,10 @@ export const getValueFromInput = (
 						isObject(values[currentOptionId]) &&
 						!Array.isArray(values[currentOptionId])
 					) {
+						// Dont touch responsive values and dont spread all keys
+						// together.
 						actualValue = {
-							...(firstLevelOptions[currentOptionId].value || {}),
+							// ...(firstLevelOptions[currentOptionId].value || {}),
 							...values[currentOptionId],
 						}
 					}

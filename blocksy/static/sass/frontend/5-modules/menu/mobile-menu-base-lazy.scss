@@ -18,7 +18,9 @@
 		}
 	}
 
-	[class*='children'] > ul {
+	&[data-submenu-dots="yes"] [class*='children'] > ul {
+		padding-inline-start: calc(30px * var(--has-indentation, 1));
+
 		li {
 			a {
 				&:not(:empty) {
@@ -38,15 +40,19 @@
 					}
 				}
 			}
+
+			a:hover,
+			&.dropdown-active > .ct-sub-menu-parent > a {
+				&:before {
+					opacity: 1;
+					width: 15px;
+				}
+			}
 		}
 	}
 
-	[class*='children'] > ul li a:hover,
-	[class*='children'] > ul li.dropdown-active > .ct-sub-menu-parent > a {
-		&:before {
-			opacity: 1;
-			width: 15px;
-		}
+	&[data-submenu-dots="no"] [class*='children'] > ul {
+		padding-inline-start: 20px;
 	}
 
 	// toggle

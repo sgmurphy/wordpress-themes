@@ -63,6 +63,8 @@ div.woocommerce-product-gallery {
 // thumbs on the left
 @include media-breakpoint-up (md) {
 	.thumbs-left {
+		--thumbs-width: 100px;
+
 		.flexy {
 			margin-inline-start: calc(var(--thumbs-width) + var(--thumbs-spacing, 15px));
 		}

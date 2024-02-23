@@ -1,23 +1,5 @@
 <?php
 
-// vertical gallery helper
-$product_view_type = blocksy_get_product_view_type();
-
-$gallery_style = blocksy_get_theme_mod('gallery_style', 'horizontal');
-
-if ($product_view_type && $gallery_style === 'vertical') {
-
-	global $_wp_additional_image_sizes;
-
-	if (isset($_wp_additional_image_sizes['woocommerce_gallery_thumbnail'])) {
-		$css->put(
-			'.product-entry-wrapper',
-			'--thumbs-width: ' . $_wp_additional_image_sizes['woocommerce_gallery_thumbnail']['width'] . 'px'
-		);
-	}
-}
-
-
 // gallery width
 $productGalleryWidth = blocksy_get_theme_mod( 'productGalleryWidth', 50 );
 

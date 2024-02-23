@@ -1,3 +1,13 @@
+2.0.26: 2024-02-22
+- Improvement: Better handling of the responsive value updates to avoid unneeded fields
+- Improvement: Better integration with WooCommerce min/max quantities plugin
+- Improvement: Button block can't be text edited if the text is left blank, page saved, then page is edited
+- Improvement: Don't allow `%` unit inside archive cards row gap option
+- Improvement: Improve integration with Simple Static plugin
+- Improvement: Lower the specificity of theme margin bottom for `entry-content` elements
+- Improvement: Option to hide/show mobile submenu items dots
+- Improvement: Properly output the thumbnail size option for single product gallery with vertical thumbs
+
 2.0.25: 2024-02-15
 - Improvement: Better integration with Woo Jet Builder + sale badges
 - Improvement: Better output colors for quantity input initial arrows

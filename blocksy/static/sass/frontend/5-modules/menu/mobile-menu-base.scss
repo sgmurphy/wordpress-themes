@@ -26,7 +26,6 @@
 			margin-inline-end: -10px;
 			padding-inline-end: 10px;
 			overflow: hidden;
-			padding-inline-start: calc(30px * var(--has-indentation, 1));
 
 			&.is-animating {
 				transition: height 0.3s ease;

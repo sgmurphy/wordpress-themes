@@ -3,6 +3,7 @@
 	.ct-panel-inner {
 		position: absolute;
 		inset-block: 0;
+		height: 100%;
 		width: var(--side-panel-width, 500px);
 		box-shadow: var(--theme-box-shadow);
 		transition: transform $transition-duration ease-in-out;

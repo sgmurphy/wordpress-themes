@@ -2,6 +2,8 @@ import { handleClickTrigger } from './click-trigger'
 import { handleScrollTrigger } from './scroll-trigger'
 import $ from 'jquery'
 
+import { isTouchDevice } from '../helpers/is-touch-device'
+
 // trigger: { id: 'hover', selector: '.js-lazy-load-on-hover' }
 const triggersList = {
 	click: handleClickTrigger,
@@ -60,6 +62,10 @@ const triggersList = {
 	},
 
 	hover: (trigger, chunk, loadChunkWithPayload) => {
+		if (chunk.skipOnTouchDevices && isTouchDevice()) {
+			return
+		}
+
 		;[...document.querySelectorAll(trigger.selector)].map((el) => {
 			if (el.hasLazyLoadHoverListener) {
 				return

@@ -9,7 +9,8 @@ $config = [
 		'menu',
 		'mobile_menu_type',
 		'mobile_menu_interactive',
-		'mobile_menu_toggle_shape'
+		'mobile_menu_toggle_shape',
+		'mobile_menu_submenu_dots'
 	]
 ];
 

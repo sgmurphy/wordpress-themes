@@ -89,6 +89,14 @@ $options = [
 						],
 					],
 
+					'mobile_menu_submenu_dots' => [
+						'label' => __( 'Submenu Dots', 'blocksy' ),
+						'type' => 'ct-switch',
+						'value' => 'yes',
+						'divider' => 'top',
+						'setting' => [ 'transport' => 'postMessage' ],
+					],
+
 					'mobile_menu_items_spacing' => [
 						'label' => __( 'Items Vertical Spacing', 'blocksy' ),
 						'type' => 'ct-slider',
@@ -96,7 +104,7 @@ $options = [
 						'max' => 50,
 						'value' => 5,
 						'responsive' => true,
-						'divider' => 'top',
+						'divider' => 'top:full',
 						'setting' => [ 'transport' => 'postMessage' ],
 					],
 

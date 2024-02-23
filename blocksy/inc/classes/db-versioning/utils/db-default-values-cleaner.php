@@ -139,7 +139,7 @@ class DefaultValuesCleaner {
 			}
 
 			if ($item_value != $collected[$item_key]['value']) {
-				$new_item[$item_key] = $item_value;
+				$new_item[$item_key] = $this->clean_responsive_value($item_value);
 				$item_changed = true;
 			}
 		}
@@ -155,5 +155,28 @@ class DefaultValuesCleaner {
 			'item_changed' => $item_changed,
 			'new_item' => $new_item
 		];
+	}
+
+	private function clean_responsive_value($value) {
+		if (! is_array($value) || ! isset($value['desktop'])) {
+			return $value;
+		}
+
+		$allowed_keys = [
+			'desktop',
+			'tablet',
+			'mobile',
+			'__changed'
+		];
+
+		$new_value = [];
+
+		foreach ($allowed_keys as $device) {
+			if (isset($value[$device])) {
+				$new_value[$device] = $value[$device];
+			}
+		}
+
+		return $new_value;
 	}
 }
