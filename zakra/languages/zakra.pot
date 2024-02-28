@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: team@zakratheme.com\n"
-"POT-Creation-Date: 2024-02-13 11:29+0000\n"
+"POT-Creation-Date: 2024-02-28 06:17+0000\n"
 "Report-Msgid-Bugs-To: team@zakratheme.com\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -1753,15 +1753,15 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: sidebar.php:37, sidebar.php:42
+#: sidebar.php:44, sidebar.php:49
 msgid "Example Widget"
 msgstr ""
 
 #. translators: 1. Label for Contact Page or Right sidebar area, 2. Opening of the link for widgets.php WordPress section, 3. Closing of the link for widgets.php WordPress section
-#: sidebar.php:40
+#: sidebar.php:47
 msgid "This is an example widget to show how the %s Sidebar looks by default. You can add custom widgets from the %swidgets screen%s in the admin. If custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
-#: sidebar.php:29
+#: sidebar.php:36
 msgid "Click here to add widgets for this area"
 msgstr ""

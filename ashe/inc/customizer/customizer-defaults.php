@@ -75,7 +75,7 @@ function ashe_options( $control ) {
 		'social_media_window' => true,
 		'social_media_icon_1' => 'facebook',
 		'social_media_url_1' => '',
-		'social_media_icon_2' => 'twitter',
+		'social_media_icon_2' => 'x-twitter',
 		'social_media_url_2' => '',
 		'social_media_icon_3' => 'instagram',
 		'social_media_url_3' => '',

@@ -4,6 +4,7 @@
 ** Sets up theme defaults and registers support for various WordPress features
 */
 function ashe_setup() {
+
 	// Make theme available for translation
 	load_theme_textdomain( 'ashe', get_template_directory() . '/languages' );
 
@@ -75,7 +76,6 @@ function ashe_setup() {
 
 	// Add Image Sizes
 	ashe_add_image_sizes();
-	
 }
 add_action( 'after_setup_theme', 'ashe_setup' );
 
@@ -193,10 +193,10 @@ add_action( 'wp_head', 'ashe_pingback_header' );
 function ashe_scripts() {
 
 	// Theme Stylesheet
-	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.9.7' );
+	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '2.234' );
 
 	// FontAwesome Icons
-	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/fontawesome.min.css' ) );
+	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/fontawesome.min.css' ), [], '6.5.1' );
 
 	// Fontello Icons
 	wp_enqueue_style( 'fontello', get_theme_file_uri( '/assets/css/fontello.css' ) );
@@ -695,7 +695,7 @@ if ( ! function_exists( 'ashe_post_sharing' ) ) {
 		<?php if ( ashe_options( 'blog_page_show_twitter' ) ) : 
 		$twitter_src = 'https://twitter.com/intent/tweet?url='. esc_url( get_the_permalink() ); ?>
 		<a class="twitter-share" target="_blank" href="<?php echo esc_url ( $twitter_src ); ?>">
-			<i class="fa-brands fa-twitter"></i>
+			<i class="fa-brands fa-x-twitter"></i>
 		</a>
 		<?php endif; ?>
 

@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 3.0.10
+Version: 3.0.11
 Tested up to: 6.4
 Requires PHP: 5.6
 Requires at least: 4.7
-Stable tag: 3.0.10
+Stable tag: 3.0.11
 
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -62,8 +62,12 @@ License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
-= Version 3.0.10 - 2024-02-13 =
+= Version 3.0.11 - 2024-02-28 =
+* Enhancement - Introduced `zakra_sidebar_before` and `zakra_sidebar_after` hook.
+
+= Version 3.0.10 - 2024-02-14 =
 * Update - Dashboard design update.
+* Fix    - One page menu issue.
 
 = Version 3.0.9 - 2024-01-16 =
 * Fix - PHP error.

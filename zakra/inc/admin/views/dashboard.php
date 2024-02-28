@@ -109,7 +109,7 @@ if ( file_exists( WP_PLUGIN_DIR . '/themegrill-demo-importer/themegrill-demo-imp
 							<h4><?php echo esc_html( $item['title'] ); ?></h4>
 							<?php $premium_feat_url = isset( $item['link'] ) ? $item['link'] : '#'; ?>
 							<a href="<?php echo esc_url( $premium_feat_url ); ?>" target="_blank">
-								'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="14px" height="14px"
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="14px" height="14px"
 									fill="#7A7A7A">
 									<path fill-rule="evenodd"
 										d="M1.94 1.44A1.5 1.5 0 0 1 3 1h4.25a.5.5 0 0 1 .354.146l2.75 2.75a.5.5 0 0 1 .146.354v6.25A1.5 1.5 0 0 1 9 12H3a1.5 1.5 0 0 1-1.5-1.5v-8c0-.398.158-.78.44-1.06ZM3 2a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5V4.457L7.043 2H3Z"

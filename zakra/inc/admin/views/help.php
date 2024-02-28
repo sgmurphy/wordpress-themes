@@ -53,7 +53,7 @@ $star_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 11" fill="
 				<div class="zak-content">
 					<h3><?php esc_html_e( 'Facebook Community', 'zakra' ); ?></h3>
 					<p><?php esc_html_e( 'Join our Facebook community to connect with fellow users for the latest news, updates, and discussions.','zakra' ); ?></p>
-					<a href="<?php echo esc_url( 'https://www.facebook.com/themegrill' ); ?>" target="_blank"><span><?php esc_html_e( 'Join us on Facebook','zakra' ); ?></span></a>
+					<a href="<?php echo esc_url( 'https://www.facebook.com/groups/themegrill/' ); ?>" target="_blank"><span><?php esc_html_e( 'Join us on Facebook','zakra' ); ?></span></a>
 				</div>
 			</div>
 			<div class="postbox zak-community">

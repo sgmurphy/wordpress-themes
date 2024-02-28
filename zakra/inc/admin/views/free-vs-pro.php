@@ -195,7 +195,7 @@ $cross_mark = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" vi
 				$show_free_pro = $feature['showFreePro'];
 				?>
 				<tr class="fvp-heading" >
-					<td ><?php esc_html_e( $category ); ?></td>
+					<td ><?php echo esc_html( $category ); ?></td>
 					<?php if ( $show_free_pro ) : ?>
 						<td><?php esc_html_e( 'Free','zakra' ); ?></td>
 						<td><?php esc_html_e( 'Pro','zakra' ); ?></td>

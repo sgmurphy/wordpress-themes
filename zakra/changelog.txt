@@ -1,6 +1,10 @@
 == Changelog ==
-= 3.0.10 - 2024-02-13 =
+= 3.0.11 - 2024-02-28 =
+* Enhancement - Introduced `zakra_sidebar_before` and `zakra_sidebar_after` hook.
+
+= 3.0.10 - 2024-02-14 =
 * Update - Dashboard design update.
+* Fix    - One page menu issue.
 
 = 3.0.9 - 2023-12-13 =
 * Fix - PHP error.

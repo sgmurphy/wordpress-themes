@@ -6,9 +6,9 @@
 <font id="con-left-open-big" horiz-adv-x="1000" >
 <font-face font-family="con-left-open-big" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
-<glyph glyph-name="left-open-big" unicode="&#xe806;" d="M452-20q26-26 0-48-26-26-48 0l-392 394q-24 24 0 50l392 394q22 26 48 0 26-22 0-48l-358-372z" horiz-adv-x="465" />
+<glyph glyph-name="right-open-1" unicode="&#xe802;" d="M31 684q30 31 74 31t74-31l335-334-335-334q-31-31-74-31t-74 31-31 74 31 74l188 186-188 186q-31 32-31 74t31 74z" horiz-adv-x="514" />
 
-<glyph glyph-name="right-open-big" unicode="&#xe807;" d="M13-20l358 370-358 372q-26 26 0 48 26 26 48 0l392-394q24-26 0-50l-392-394q-22-26-48 0-26 22 0 48z" horiz-adv-x="465" />
+<glyph glyph-name="left-open-1" unicode="&#xe803;" d="M481 684q32-31 32-74t-32-74l-186-186 186-186q32-31 32-74t-32-74-73-31-74 31l-334 334 334 334q30 31 74 31t73-31z" horiz-adv-x="513" />
 </font>
 </defs>
 </svg>

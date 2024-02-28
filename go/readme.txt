@@ -4,7 +4,7 @@ Tags: block-styles, custom-colors, custom-logo, custom-menu, e-commerce, editor-
 Requires at least: 5.0
 Tested up to: 6.4
 Requires PHP: 5.6
-Stable tag: 1.8.8
+Stable tag: 1.8.9
 License: GPL-2.0-only
 License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
 
@@ -108,7 +108,6 @@ List of bespoke icons:
 - Comments icon
 
 == Changelog ==
-= 1.8.8 / 2024-01-06 =
+= 1.8.9 / 2024-02-27 =
 ### Updates
-- Fix style issue in Trendy design style where button arrow is cut off above a certain font size. [902](https://github.com/godaddy-wordpress/go/pull/902)
-- Replace deprecated `is_amp_endpoint` with `amp_is_request`. [904](https://github.com/godaddy-wordpress/go/pull/904)
+- Update WooCommerce product colors when inside of 'has-secondary-background-color' block. [905](https://github.com/godaddy-wordpress/go/pull/905)

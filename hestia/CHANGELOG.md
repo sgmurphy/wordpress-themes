@@ -1,3 +1,13 @@
+##### [Version 3.1.4](https://github.com/Codeinwp/hestia-pro/compare/v3.1.3...v3.1.4) (2024-02-27)
+
+### Bug Fixes
+- Fixed WPML compatibility with custom layouts
+
+### Improvements
+- Updated dependencies
+- Added NPS Survey
+- Preparation for future BF campaign
+
 ##### [Version 3.1.3](https://github.com/Codeinwp/hestia-pro/compare/v3.1.2...v3.1.3) (2024-02-06)
 
 ### Fixes
