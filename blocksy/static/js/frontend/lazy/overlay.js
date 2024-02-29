@@ -110,11 +110,34 @@ const showOffcanvas = (initialSettings) => {
 		settings.computeScrollContainer ||
 		settings.container.querySelector('.ct-panel-content')
 	) {
-		scrollLockManager().disable(
-			settings.computeScrollContainer
-				? settings.computeScrollContainer()
-				: settings.container.querySelector('.ct-panel-content')
-		)
+		const scrollContainer = settings.computeScrollContainer
+			? settings.computeScrollContainer()
+			: settings.container.querySelector('.ct-panel-content')
+
+		scrollLockManager().disable(scrollContainer)
+
+		const observer = new MutationObserver((mutations) => {
+			if (scrollContainer.isConnected) {
+				return
+			}
+
+			scrollLockManager().enable()
+
+			setTimeout(() => {
+				scrollLockManager().disable(
+					settings.computeScrollContainer
+						? settings.computeScrollContainer()
+						: settings.container.querySelector('.ct-panel-content')
+				)
+			}, 1000)
+		})
+
+		observer.observe(settings.container, {
+			childList: true,
+			subtree: true,
+		})
+
+		settings.container.__overlay_observer__ = observer
 
 		setTimeout(() => {
 			focusLockManager().focusLockOn(
@@ -219,6 +242,11 @@ const hideOffcanvas = (initialSettings, args = {}) => {
 
 			ctEvents.trigger('ct:modal:closed', settings.container)
 		})
+	}
+
+	if (settings.container.__overlay_observer__) {
+		settings.container.__overlay_observer__.disconnect()
+		settings.container.__overlay_observer__ = null
 	}
 
 	window.removeEventListener('click', settings.handleWindowClick, {

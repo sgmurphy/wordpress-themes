@@ -209,20 +209,20 @@ if ($has_taxonomy_filter) {
 					);
 				}
 			}
+		}
 
-			if ( ! empty($terms_els) ) {
-				if (count($allowed_post_types) === 1) {
-					$options[] = join('', $terms_els);
-				} else {
-					$options[] = blocksy_html_tag(
-						'optgroup',
-						[
-							'value' => $post_type,
-							'label' => get_post_type_object($post_type)->labels->name
-						],
-						join('', $terms_els)
-					);
-				}
+		if ( ! empty($terms_els) ) {
+			if (count($allowed_post_types) === 1) {
+				$options[] = join('', $terms_els);
+			} else {
+				$options[] = blocksy_html_tag(
+					'optgroup',
+					[
+						'value' => $post_type,
+						'label' => get_post_type_object($post_type)->labels->name
+					],
+					join('', $terms_els)
+				);
 			}
 		}
 	}

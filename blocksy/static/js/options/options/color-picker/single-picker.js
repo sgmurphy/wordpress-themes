@@ -26,7 +26,8 @@ const resolveInherit = (picker, option, values, device) => {
 					: values[option.id]) || option.value
 			const pickerToInheritFrom = picker.inherit.split(':')[1]
 
-			let maybeNextValue = currentValue[pickerToInheritFrom].color
+			let maybeNextValue =
+				currentValue[pickerToInheritFrom]?.color || 'CT_CSS_SKIP_RULE'
 
 			if (maybeNextValue.indexOf('CT_CSS_SKIP_RULE') > -1) {
 				maybeNextValue = option.pickers.find(

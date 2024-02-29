@@ -17,85 +17,17 @@ class CustomPostTypes {
 			]));
 
 			$potential_post_types = array_values(array_diff($potential_post_types, [
-				'cmplz-processing',
-				'cmplz-dataleak',
-				'iamport_payment',
-				'wpcw_achievements',
-				'zoom-meetings',
-				'pafe-formabandonment',
-				'pafe-form-database',
-				'pafe-form-booking',
-				'piotnetforms',
-				'piotnetforms-aban',
-				'piotnetforms-data',
-				'piotnetforms-book',
-				'piotnetforms-fonts',
-				'jet-popup',
-				'jet-smart-filters',
-				'jet-theme-core',
-				'jet-woo-builder',
-				'jet-engine',
-				'jet-engine-booking',
-				'jet_options_preset',
-				'jet-menu',
-				'adsforwp',
-				'adsforwp-groups',
-				'popup',
+
+				// theme
 				'ct_content_block',
-				'product',
-				'elementor_library',
-				'brizy_template',
-				'editor-story',
-				'forum',
-				'topic',
-				'reply',
-				'blockslider',
-				'mailpoet_page',
-				'ha_nav_content',
-				'course',
-				'lesson',
-				'atbdp_orders',
-				'at_biz_dir',
-				'gspbstylebook',
-				'br_labels',
 
+				// elements kit
+				'elementskit_content',
+				'elementskit_template',
+				'elementskit_widget',
 
-				// tutor lms
-				'tutor_quiz',
-				'tutor_assignments',
-				'tutor_zoom_meeting',
-
-				// Lifter LMS
-				'llms_quiz',
-				'llms_membership',
-				'llms_certificate',
-				'llms_my_certificate',
-
-				// learn dash
-				'ld-exam',
-				'groups',
-
-				'tribe_events',
-				'tribe_event_series',
-				'tribe_venue',
-				'tribe_organizer',
-
-				'testimonial',
-				'frm_display',
-				'mec_esb',
-				'mec-events',
-
-				'sfwd-assignment',
-				'sfwd-essays',
-				'sfwd-transactions',
-				'sfwd-certificates',
-				'e-landing-page',
+				// zion builder
 				'zion_template',
-				'pafe-fonts',
-				'pgc_simply_gallery',
-				'pdfviewer',
-				'da_image',
-
 
 				// thrive
 				'tcb_lightbox',
@@ -104,11 +36,112 @@ class CustomPostTypes {
 				'tvo_capture',
 				'tvo_display',
 
+				// learn dash
+				'ld-exam',
+				'groups',
+				'sfwd-assignment',
+				'sfwd-essays',
+				'sfwd-transactions',
+				'sfwd-certificates',
+
+				// Lifter LMS
+				'llms_quiz',
+				'llms_membership',
+				'llms_certificate',
+				'llms_my_certificate',
+
+				// tribe events
+				'tribe_events',
+				'tribe_event_series',
+				'tribe_venue',
+				'tribe_organizer',
+
+				// tutor lms
+				'tutor_quiz',
+				'tutor_assignments',
+				'tutor_zoom_meeting',
+
+				// jet engine
+				'jet-popup',
+				'jet-smart-filters',
+				'jet-theme-core',
+				'jet-woo-builder',
+				'jet-engine',
+				'jet-engine-booking',
+				'jet_options_preset',
+				'jet-menu',
+
+				// piotnet forms
+				'piotnetforms',
+				'piotnetforms-aban',
+				'piotnetforms-data',
+				'piotnetforms-book',
+				'piotnetforms-fonts',
+				'pafe-formabandonment',
+				'pafe-form-database',
+				'pafe-form-booking',
+				'pafe-fonts',
+
+				// complianz
+				'cmplz-processing',
+				'cmplz-dataleak',
+
+				// elementor
+				'elementor_library',
+
+				// brizy
+				'brizy_template',
+				'editor-story',
+
+				// mailpoet
+				'mailpoet_page',
+
+				// modern events calendar
+				'mec_esb',
+				'mec-events',
+
+				// woolentor
 				'woolentor-template',
+
+				// shopengine
 				'shopengine-template',
-				'elementskit_content',
-				'elementskit_template',
-				'elementskit_widget',
+
+				// blockslider
+				'blockslider',
+
+				// funelfit
+				'wffn_landing',
+				'wffn_ty',
+				'wffn_optin',
+				'wffn_oty',
+				'wfacp_checkout',
+				'wfocu_funnel',
+				'wfocu_offer',
+
+				// other
+				'iamport_payment',
+				'wpcw_achievements',
+				'zoom-meetings',
+				'adsforwp',
+				'adsforwp-groups',
+				'popup',
+				'product',
+				'forum',
+				'topic',
+				'reply',
+				'ha_nav_content',
+				'course',
+				'lesson',
+				'atbdp_orders',
+				'at_biz_dir',
+				'gspbstylebook',
+				'br_labels',
+				'testimonial',
+				'frm_display',
+				'e-landing-page',
+				'pgc_simply_gallery',
+				'pdfviewer',
+				'da_image',
 				'ha_library',
 			]));
 

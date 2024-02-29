@@ -108,7 +108,8 @@ const replaceFirstImage = ({ container, image }) => {
 				? image.gallery_thumbnail_src
 				: image.src
 
-			if (image.srcset && img.srcset && image.srcset !== 'false') {
+			// if (image.srcset && img.srcset && image.srcset !== 'false') {
+			if (image.srcset && image.srcset !== 'false') {
 				img.srcset = image.srcset
 			} else {
 				img.removeAttribute('srcset')
@@ -163,11 +164,25 @@ const performInPlaceUpdate = ({
 	nextVariationObj,
 }) => {
 	const currentImage = currentVariationObj
-		? { id: currentVariationObj.image_id, ...currentVariationObj.image }
+		? {
+				id: currentVariationObj.image_id,
+				...(currentVariationObj.image?.src
+					? { ...currentVariationObj.image }
+					: {
+							...currentVariationObj.blocksy_original_image,
+					  }),
+		  }
 		: (nextVariationObj || {}).blocksy_original_image
 
 	const nextImage = nextVariationObj
-		? { id: nextVariationObj.image_id, ...nextVariationObj.image }
+		? {
+				id: nextVariationObj.image_id,
+				...(nextVariationObj.image?.src
+					? { ...nextVariationObj.image }
+					: {
+							...nextVariationObj.blocksy_original_image,
+					  }),
+		  }
 		: (currentVariationObj || {}).blocksy_original_image
 
 	if (!nextImage) {

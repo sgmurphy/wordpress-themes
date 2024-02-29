@@ -40,9 +40,17 @@ add_filter(
 
 		$original_image = wc_get_product_attachment_props(
 			$product->get_image_id()
-		);
+		);		
 
 		$original_image['id'] = $product->get_image_id();
+
+		if (
+			! isset($original_image['url'])
+			||
+			empty($original_image['url'])
+		) {
+			$original_image['src'] = wc_placeholder_img_src('full');
+		}
 
 		$result['blocksy_original_image'] = $original_image;
 

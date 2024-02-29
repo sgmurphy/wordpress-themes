@@ -3,6 +3,8 @@
 namespace Blocksy;
 
 class ThemeDynamicCss {
+	private $allow_styles_for_customize_preview = false;
+
 	public function get_css_version() {
 		return 6;
 	}
@@ -19,6 +21,8 @@ class ThemeDynamicCss {
 		add_filter(
 			'customize_render_partials_response',
 			function ($response, $obj, $partials) {
+				$this->allow_styles_for_customize_preview = true;
+
 				$css_output = blocksy_get_all_dynamic_styles_for([
 					'context' => 'inline'
 				]);
@@ -67,6 +71,8 @@ class ThemeDynamicCss {
 
 				$response['ct_dynamic_css'] = $final_css;
 
+				$this->allow_styles_for_customize_preview = true;
+
 				return $response;
 			},
 			10, 3
@@ -91,6 +97,10 @@ class ThemeDynamicCss {
 
 			$this->load_backend_dynamic_css();
 		});
+	}
+
+	public function is_customize_preview() {
+		return $this->allow_styles_for_customize_preview;
 	}
 
 	public function load_frontend_css($args = []) {
@@ -311,11 +321,14 @@ class ThemeDynamicCss {
 		$doing_debug = false;
 
 		if (is_customize_preview()) {
+			$this->allow_styles_for_customize_preview = true;
 			$doing_debug = true;
 		}
 
 		if ($doing_debug) {
-			return $this->maybe_set_global_styles_descriptor();
+			$result = $this->maybe_set_global_styles_descriptor();
+			$this->allow_styles_for_customize_preview = false;
+			return $result;
 		}
 
 		if ($global_styles_descriptor !== false) {

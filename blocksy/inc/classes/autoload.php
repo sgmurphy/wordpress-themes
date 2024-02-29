@@ -24,6 +24,8 @@ class ThemeAutoloader {
 			'Database' => 'inc/classes/database.php',
 			'DbVersioning' => 'inc/classes/theme-db-versioning.php',
 
+			'DbVersioning\\CacheManager' => 'inc/classes/db-versioning/utils/cache-manager.php',
+
 			'DbVersioning\\V200' => 'inc/classes/db-versioning/v2-0-0.php',
 			'DbVersioning\\V202' => 'inc/classes/db-versioning/v2-0-2.php',
 			'DbVersioning\\V203' => 'inc/classes/db-versioning/v2-0-3.php',
@@ -31,6 +33,7 @@ class ThemeAutoloader {
 			'DbVersioning\\V2015' => 'inc/classes/db-versioning/v2-0-15.php',
 			'DbVersioning\\V2019' => 'inc/classes/db-versioning/v2-0-19.php',
 			'DbVersioning\\V2026' => 'inc/classes/db-versioning/v2-0-26.php',
+			'DbVersioning\\V2027' => 'inc/classes/db-versioning/v2-0-27.php',
 
 			'DbVersioning\\DefaultValuesCleaner' => 'inc/classes/db-versioning/utils/db-default-values-cleaner.php',
 

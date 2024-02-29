@@ -13,25 +13,32 @@
  * @param string $tag HTML tag.
  */
 if (! function_exists('blocksy_entry_title')) {
-function blocksy_entry_title( $tag = 'h2' ) {
-	if (empty(get_the_title())) {
-		return '';
+	function blocksy_entry_title( $tag = 'h2', $has_link = true ) {
+		if (empty(get_the_title())) {
+			return '';
+		}
+
+		$title = get_the_title();
+
+		if ($has_link) {
+			$title = blocksy_html_tag(
+				'a',
+				[
+					'href' => esc_url(get_permalink()),
+					'rel' => 'bookmark'
+				],
+				$title
+			);
+		}
+
+		return blocksy_html_tag(
+			esc_attr($tag),
+			[
+				'class' => 'entry-title'
+			],
+			$title
+		);
 	}
-
-	ob_start();
-
-	?>
-
-	<<?php echo esc_attr( $tag ); ?> class="entry-title">
-		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
-			<?php the_title(); ?>
-		</a>
-	</<?php echo esc_attr( $tag ); ?>>
-
-	<?php
-
-	return ob_get_clean();
-}
 }
 
 /**

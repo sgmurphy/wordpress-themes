@@ -115,7 +115,7 @@ class SearchModifications {
 			if (class_exists('Addify_Products_Visibility_Front')) {
 				$visibility = new \Addify_Products_Visibility_Front();
 
-				$q = new WP_Query();
+				$q = new \WP_Query();
 
 				$visibility->afpvu_custom_pre_get_posts_query($q);
 

@@ -10,14 +10,18 @@ export const mount = (el) => {
 	var item_quantity = $(el).val()
 	var currentVal = parseFloat(item_quantity)
 
+	const isValid = el.reportValidity()
+
+	if (!isValid) {
+		return
+	}
+
 	if (request) {
 		request.abort()
 		request = null
 	}
 
-	const maybeMiniCartItem = el.closest(
-		'.woocommerce-mini-cart-item'
-	)
+	const maybeMiniCartItem = el.closest('.woocommerce-mini-cart-item')
 
 	if (maybeMiniCartItem) {
 		maybeMiniCartItem.classList.add('processing')

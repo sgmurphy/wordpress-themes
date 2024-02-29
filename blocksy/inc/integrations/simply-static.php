@@ -76,9 +76,13 @@ add_action(
 			get_template_directory() . '/static/bundle'
 		);
 
-		if (defined(BLOCKSY_PATH)) {
+		if (defined('BLOCKSY_PATH')) {
 			\Simply_Static\Setup_Task::add_additional_files_to_db(
 				BLOCKSY_PATH . '/static/bundle'
+			);
+
+			\Simply_Static\Setup_Task::add_additional_files_to_db(
+				BLOCKSY_PATH . '/framework/premium/static/bundle'
 			);
 		}
 	}

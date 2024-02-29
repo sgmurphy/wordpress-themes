@@ -98,9 +98,7 @@ class WooCommerceAddToCart {
 			&&
 			! $root_product->is_type('variable')
 			&&
-			! $root_product->is_type('subscription')
-			&&
-			! $root_product->is_type('variable-subscription')
+			! $this->check_product_type($root_product)
 		) {
 			return;
 		}
@@ -147,13 +145,11 @@ class WooCommerceAddToCart {
 			&&
 			! $product->is_type('variable')
 			&&
-			! $product->is_type('subscription')
-			&&
-			! $product->is_type('variable-subscription')
-			&&
 			! $product->is_type('grouped')
 			&&
 			! $product->is_type('external')
+			&&
+			! $this->check_product_type($product)
 		) {
 			return;
 		}
@@ -164,9 +160,7 @@ class WooCommerceAddToCart {
 				||
 				$product->is_type('variable')
 				||
-				$product->is_type('subscription')
-				||
-				$product->is_type('variable-subscription')
+				$this->check_product_type($product)
 			)
 			&&
 			! did_action('woocommerce_before_add_to_cart_quantity')
@@ -175,7 +169,6 @@ class WooCommerceAddToCart {
 		}
 
 		echo '</div>';
-
 
 		// On single product pages we know for sure that there's only one
 		// product that needs handling. On other pages or during AJAX requests,
@@ -264,6 +257,16 @@ class WooCommerceAddToCart {
 		}
 
 		return $classes;
+	}
+
+	public function check_product_type($product) {
+		$allowed_custom_product_types = [
+			'subscription',
+			'variable-subscription',
+			'woosb'
+		];
+
+		return in_array($product->get_type(), $allowed_custom_product_types);
 	}
 }
 

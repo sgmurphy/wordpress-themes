@@ -189,9 +189,11 @@ if (! function_exists('blocksy_render_archive_card')) {
 			}
 
 			if ($single_component['id'] === 'title') {
-				$has_title = true;
+				$has_title = blocksy_default_akg('has_link', $single_component, 'yes') === 'yes';
 			}
 		}
+
+		$has_link = blocksy_default_akg('has_link', $featured_image_settings, 'yes') === 'yes';
 
 		$featured_image_args = [
 			'attachment_id' => apply_filters(
@@ -200,12 +202,16 @@ if (! function_exists('blocksy_render_archive_card')) {
 			),
 			'post_id' => get_the_ID(),
 			'ratio' => blocksy_default_akg('thumb_ratio', $featured_image_settings, '4/3'),
-			'tag_name' => 'a',
+			'tag_name' => $has_link ? 'a' : 'figure',
 			'size' => $featured_image_size,
-			'html_atts' => [
-				'href' => esc_url(get_permalink()),
-				'aria-label' => wp_strip_all_tags(get_the_title()),
-			],
+			'html_atts' => array_merge(
+				[
+					'aria-label' => wp_strip_all_tags(get_the_title()),
+				],
+				$has_link ? [
+					'href' => esc_url(get_permalink()),
+				] : []
+			),
 			'lazyload' => blocksy_get_theme_mod(
 				'has_lazy_load_archives_image',
 				'yes'
@@ -227,7 +233,11 @@ if (! function_exists('blocksy_render_archive_card')) {
 			$featured_image_args['ratio'] = 'original';
 		}
 
-		if ($has_title) {
+		if (
+			$has_title
+			&&
+			$has_link
+		) {
 			$featured_image_args['html_atts']['tabindex'] = '-1';
 		}
 
@@ -398,7 +408,10 @@ if (! function_exists('blocksy_render_archive_card')) {
 				}
 
 				$outputs = apply_filters('blocksy:archive:render-card-layers', [
-					'title' => blocksy_entry_title(blocksy_default_akg('heading_tag', $title_settings, 'h2')),
+					'title' => blocksy_entry_title(
+						blocksy_default_akg('heading_tag', $title_settings, 'h2'),
+						blocksy_default_akg('has_link', $title_settings, 'yes') === 'yes'
+					),
 
 					'featured_image' => apply_filters(
 						'post_thumbnail_html',

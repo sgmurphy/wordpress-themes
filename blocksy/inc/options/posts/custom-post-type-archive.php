@@ -108,7 +108,7 @@ $inner_options = [
 ];
 
 $options = [
-	$post_type->name . '_section_options' => [
+	$post_type->name . '_post_type_section_options' => [
 		'type' => 'ct-options',
 		'inner-options' => $inner_options
 	],

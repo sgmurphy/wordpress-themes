@@ -6,7 +6,7 @@ import {
 
 import { isIosDevice } from '../../helpers/is-ios-device'
 
-export var enable = function (el) {
+export var enable = function () {
 	if (!isIosDevice()) {
 		document.body.style.overflow = ''
 		document.body.style.removeProperty('--scrollbar-width')

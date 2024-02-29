@@ -149,16 +149,22 @@ export const mount = (paginationContainer) => {
 }
 
 function getAppendSelectorFor(layoutEl) {
-	let layoutIndex = [...layoutEl.parentNode.children].indexOf(layoutEl)
+	const layoutIndex = [...layoutEl.parentNode.parentNode.children].indexOf(
+		layoutEl.parentNode
+	)
 
 	if (layoutEl.closest('.ct-posts-shortcode')) {
-		let layoutIndex = [...layoutEl.parentNode.parentNode.children].indexOf(
-			layoutEl.parentNode
-		)
-
 		return layoutEl.classList.contains('products')
 			? `.ct-posts-shortcode:nth-child(${layoutIndex + 1}) .products > li`
 			: `.ct-posts-shortcode:nth-child(${layoutIndex + 1}) .entries > *`
+	}
+
+	if (layoutEl.closest('.wp-block-blocksy-query')) {
+		const base = `.wp-block-blocksy-query:nth-child(${layoutIndex + 1})`
+
+		return layoutEl.classList.contains('products')
+			? `${base} .products > li`
+			: `${base} .entries > *`
 	}
 
 	if (layoutEl.classList.contains('products')) {

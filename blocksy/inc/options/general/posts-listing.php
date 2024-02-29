@@ -161,6 +161,7 @@ $overridable_card_options = [
 							'id' => 'title',
 							'heading_tag' => 'h2',
 							'enabled' => true,
+							'has_link' => 'yes',
 						],
 
 						[
@@ -169,6 +170,7 @@ $overridable_card_options = [
 							'is_boundless' => 'yes',
 							'image_size' => 'medium_large',
 							'enabled' => true,
+							'has_link' => 'yes',
 						],
 
 						[
@@ -238,6 +240,15 @@ $overridable_card_options = [
 									),
 								],
 
+								'has_link' => [
+									'label' => __('Link To Post', 'blocksy'),
+									'type' => 'ct-switch',
+									'value' => 'yes',
+									'sync' => [
+										'id' => $prefix . 'archive_order_heading_tag',
+									],
+								],
+
 							],
 						],
 
@@ -245,6 +256,7 @@ $overridable_card_options = [
 							'label' => __('Featured Image', 'blocksy'),
 							'options' => [
 								[
+
 									blocksy_rand_md5() => [
 										'type' => 'ct-condition',
 										'condition' => [
@@ -386,6 +398,15 @@ $overridable_card_options = [
 											],
 											'value' => 'yes',
 										],
+									],
+								],
+
+								'has_link' => [
+									'label' => __('Link To Post', 'blocksy'),
+									'type' => 'ct-switch',
+									'value' => 'yes',
+									'sync' => [
+										'id' => $prefix . 'archive_order_image',
 									],
 								],
 

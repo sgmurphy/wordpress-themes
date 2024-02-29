@@ -89,7 +89,30 @@ if (! function_exists('blocksy_output_font_css')) {
 			) . ": {$weight_and_style['weight']}"
 		);
 
-		if ($weight_and_style['style'] !== 'normal') {
+		$default_family = blocksy_get_theme_mod(
+			'rootTypography',
+			blocksy_typography_default_values([
+				'family' => 'System Default',
+				'variation' => 'n4',
+				'size' => '16px',
+				'line-height' => '1.65',
+				'letter-spacing' => '0em',
+				'text-transform' => 'none',
+				'text-decoration' => 'none',
+			])
+		);
+
+		if (
+			$weight_and_style['style'] !== 'normal'
+			||
+			strpos($default_family['variation'], 'i') !== false
+			||
+
+			// always output specific font style if we are in the customizer
+			// otherwise we will have to make the sync logic smarter and
+			// detect changes in the rootTypography
+			blocksy_manager()->dynamic_css->is_customize_preview()
+		) {
 			$args['css']->put(
 				$args['selector'],
 				"--" . blocksy_prefix_theme_variable(

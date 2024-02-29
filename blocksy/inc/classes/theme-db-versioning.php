@@ -28,6 +28,8 @@ class DbVersioning {
 	}
 
 	public function init() {
+		new \Blocksy\DbVersioning\CacheManager();
+
 		$saved_version = get_option('blocksy_db_version', '1.0.0');
 
 		$theme = blocksy_get_wp_parent_theme();
@@ -235,6 +237,14 @@ class DbVersioning {
 				'version' => '2.0.26',
 				'cb' => function () {
 					$obj = new DbVersioning\V2026();
+					$obj->migrate();
+				}
+			],
+
+			[
+				'version' => '2.0.27',
+				'cb' => function () {
+					$obj = new DbVersioning\V2027();
 					$obj->migrate();
 				}
 			]

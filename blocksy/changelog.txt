@@ -1,3 +1,15 @@
+2.0.27: 2024-02-29
+- Improvement: Add "Link to post" option in posts archive title and image layer
+- Improvement: Advanced Search block shows duplicate taxonomies when used with CPT + multiple taxonomies
+- Improvement: Better integration with FunnelKit plugin
+- Improvement: Cleanup responsive values from the whole customizer
+- Improvement: Ensure base font style don't propagate when it is not needed
+- Improvement: Make color picker more robust with unexpected color values
+- Improvement: Re-disable global scroll on iOS when the scroll container is removed from DOM
+- Improvement: Variation images return blank src when the parent product doesn't have a featured image
+- Fix: Advanced Posts block + Infinite/Load More pagination does not work
+- Fix: Having a post type named as a Customizer section makes it disappear
+
 2.0.26: 2024-02-22
 - Improvement: Better handling of the responsive value updates to avoid unneeded fields
 - Improvement: Better integration with WooCommerce min/max quantities plugin

@@ -6,7 +6,6 @@ require get_template_directory() . '/inc/components/woocommerce/general.php';
 
 require get_template_directory() . '/inc/components/woocommerce/common/layer-defaults.php';
 require get_template_directory() . '/inc/components/woocommerce/common/rest-api.php';
-require get_template_directory() . '/inc/components/woocommerce/common/checkout.php';
 require get_template_directory() . '/inc/components/woocommerce/common/cart.php';
 require get_template_directory() . '/inc/components/woocommerce/common/account.php';
 require get_template_directory() . '/inc/components/woocommerce/common/store-notice.php';
@@ -50,6 +49,7 @@ add_filter(
 		$classes['SingleProductAdditionalActions'] = $prefix . 'single/additional-actions-layer.php';
 
 		$classes['WooDefaultPages'] = $prefix . 'common/default-pages.php';
+		$classes['WooCommerceCheckout'] = $prefix . 'common/checkout.php';
 
 		return $classes;
 	}
@@ -57,6 +57,7 @@ add_filter(
 
 class WooCommerce {
 	public $single = null;
+	public $checkout = null;
 
 	public function __construct() {
 		new WooCommerceBoot();
@@ -65,6 +66,8 @@ class WooCommerce {
 		new WooCommerceImageSizes();
 
 		$this->single = new WooCommerceSingle();
+
+		$this->checkout = new WooCommerceCheckout();
 	}
 }
 

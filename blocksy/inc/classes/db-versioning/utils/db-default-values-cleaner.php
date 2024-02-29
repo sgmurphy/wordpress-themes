@@ -3,6 +3,30 @@
 namespace Blocksy\DbVersioning;
 
 class DefaultValuesCleaner {
+	public function clean_whole_customizer() {
+		$all_mods = get_theme_mods();
+
+		$ignored_mods = [
+			'header_placements',
+			'footer_placements'
+		];
+
+		foreach ($all_mods as $mod_name => $mod_value) {
+			if (in_array($mod_name, $ignored_mods)) {
+				continue;
+			}
+
+			if (isset($mod_value['desktop'])) {
+				set_theme_mod(
+					$mod_name,
+					$this->clean_responsive_value($mod_value)
+				);
+			}
+		}
+
+		blocksy_manager()->db->wipe_cache();
+	}
+
 	public function clean_header() {
 		$header_placements = blocksy_get_theme_mod(
 			'header_placements',

@@ -270,6 +270,10 @@ ctEvents.on('blocksy:frontend:init', () => {
 		import('./frontend/integration/stackable').then(
 			({ mountStackableIntegration }) => mountStackableIntegration()
 		)
+
+		import('./frontend/integration/greenshift.js').then(
+			({ mountGreenshiftIntegration }) => mountGreenshiftIntegration()
+		)
 	}
 })
 
