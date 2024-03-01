@@ -1,3 +1,6 @@
+2.0.28: 2024-02-29
+- Improvement: General fixes and improvements
+
 2.0.27: 2024-02-29
 - Improvement: Add "Link to post" option in posts archive title and image layer
 - Improvement: Advanced Search block shows duplicate taxonomies when used with CPT + multiple taxonomies
