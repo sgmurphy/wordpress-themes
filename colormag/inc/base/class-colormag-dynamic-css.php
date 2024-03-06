@@ -911,6 +911,32 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_css( '', $site_tagline_color, $site_tagline_color_css );
 
 		/**
+		 * Sidebar width.
+		 */
+		$sidebar_width_default = array(
+			'size' => 30,
+			'unit' => '%',
+		);
+
+		$sidebar_width = get_theme_mod( 'colormag_sidebar_width', $sidebar_width_default );
+
+		$content_width_css = array(
+			'.cm-primary' => array(
+				'width' => ( 100 - (float) $sidebar_width['size'] ) . '%',
+			),
+		);
+
+		$parse_css .= '@media screen and (min-width: 992px) {';
+		$parse_css .= colormag_parse_css( 70, ( 100 - (float) $sidebar_width['size'] ), $content_width_css );
+		$parse_css .= colormag_parse_slider_css(
+			$sidebar_width_default,
+			$sidebar_width,
+			'.cm-secondary ',
+			'width'
+		);
+		$parse_css .= '}';
+
+		/**
 		 * Primary menu top border width.
 		 */
 		$primary_menu_width_default = array(
@@ -979,7 +1005,7 @@ class ColorMag_Dynamic_CSS {
 		$parse_css .= colormag_parse_css( '#207daf', $button_background_color, $button_background_color_css );
 
 		// Button background hover color.
-		$button_background_hover_color = get_theme_mod( 'colormag_button_background_color', '' );
+		$button_background_hover_color = get_theme_mod( 'colormag_button_background_hover_color', '' );
 
 		$button_background_hover_color_css = array(
 			'.colormag-button:hover,
@@ -1124,7 +1150,7 @@ class ColorMag_Dynamic_CSS {
 			'background-repeat'     => 'repeat',
 		);
 		$primary_menu_background         = get_theme_mod( 'colormag_primary_menu_background', $primary_menu_background_default );
-		$parse_css                      .= colormag_parse_background_css( $primary_menu_background_default, $primary_menu_background, '#cm-primary-nav, .cm-layout-2 #cm-primary-nav' );
+		$parse_css                      .= colormag_parse_background_css( $primary_menu_background_default, $primary_menu_background, '#cm-primary-nav, .cm-layout-2 #cm-primary-nav, .cm-header .cm-main-header .cm-primary-nav .cm-row, .cm-home-icon.front_page_on' );
 
 		$primary_menu_top_border_color     = get_theme_mod( 'colormag_primary_menu_top_border_color', '#207daf' );
 		$primary_menu_top_border_color_css = array(
