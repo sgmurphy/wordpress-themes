@@ -306,7 +306,7 @@ export const getPostListingVariables = () => ({
 						variable: 'card-media-max-width',
 						unit: '%',
 						extractValue: () => {
-							return layer.image_width
+							return layer.image_width || 40
 						},
 					},
 				]

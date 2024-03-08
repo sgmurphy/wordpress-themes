@@ -154,7 +154,11 @@ class CustomPostTypes {
 		return $this->supported_post_types;
 	}
 
-	public function is_supported_post_type() {
+	public function is_supported_post_type($args = []) {
+		$args = wp_parse_args($args, [
+			'allow_built_in' => false
+		]);
+
 		global $post;
 		global $wp_taxonomies;
 		global $wp_query;
@@ -162,7 +166,6 @@ class CustomPostTypes {
 		$post_type = get_post_type($post);
 
 		$tax_query = $wp_query->tax_query;
-
 
 		if (
 			$tax_query
@@ -199,6 +202,20 @@ class CustomPostTypes {
 
 		if (! $post_type) {
 			$post_type = get_query_var('post_type');
+		}
+
+		$builtin_post_types = ['post', 'page'];
+
+		if (function_exists('is_woocommerce')) {
+			$builtin_post_types[] = 'product';
+		}
+
+		if (
+			in_array($post_type, $builtin_post_types)
+			&&
+			$args['allow_built_in']
+		) {
+			return $post_type;
 		}
 
 		$post_type = apply_filters(

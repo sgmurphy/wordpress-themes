@@ -40,6 +40,9 @@ $buttons-base:
 	&:disabled, &.disabled {
 		opacity: 0.5;
 		cursor: not-allowed;
+
+		--theme-button-shadow: none;
+		--theme-button-transform: none;
 	}
 
 	@include media-breakpoint-down (xs) {

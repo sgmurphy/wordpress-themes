@@ -283,7 +283,7 @@ add_action(
 			'ct-customizer-controls',
 			'ct_customizer_localizations',
 			[
-				'customizer_reset_none' => wp_create_nonce( 'ct-customizer-reset' ),
+				'customizer_reset_none' => wp_create_nonce('ct-customizer-reset'),
 				'static_public_url' => get_template_directory_uri() . '/static/',
 				'header_builder_data' => Blocksy_Manager::instance()
 					->builder

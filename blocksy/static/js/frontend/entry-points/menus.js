@@ -92,7 +92,7 @@ export const menuEntryPoints = [
 					baseContainer.getBoundingClientRect().width -
 						[
 							...baseContainer.querySelectorAll(
-								'[data-id]:not([data-id*="menu"])'
+								'[data-items] > [data-id]:not([data-id*="menu"])'
 							),
 						].reduce((t, item) => {
 							let style = window.getComputedStyle(item)

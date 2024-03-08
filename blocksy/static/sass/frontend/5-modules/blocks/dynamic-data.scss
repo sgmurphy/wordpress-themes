@@ -7,8 +7,13 @@
 
 // dynamic media
 .ct-dynamic-media {
+	display: inline-flex;
 	overflow: hidden;
 	position: relative;
+
+	img {
+		aspect-ratio: inherit;
+	}
 
 	@media (hover: hover) {
 

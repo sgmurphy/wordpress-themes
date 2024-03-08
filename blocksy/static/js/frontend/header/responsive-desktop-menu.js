@@ -13,7 +13,9 @@ let cacheInfo = {}
 export const getCacheFor = (id) => cacheInfo[id]
 
 const getNavRootEl = (nav) => {
-	return Array.from(nav.children).filter((t) => !t.matches('link'))[0]
+	return Array.from(nav.children).filter(
+		(t) => !t.matches('link') && !t.matches('style')
+	)[0]
 }
 
 const maybeCreateMoreItemsFor = (nav, onDone) => {

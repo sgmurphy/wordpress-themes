@@ -15,6 +15,12 @@ if (window.WP_Grid_Builder) {
 }
 
 if ($) {
+	if (window.wpcFilterFront) {
+		$(document).on('ready', (e) => {
+			ctEvents.trigger('blocksy:frontend:init')
+		})
+	}
+
 	document.addEventListener('wpfAjaxSuccess', (e) => {
 		ctEvents.trigger('blocksy:frontend:init')
 	})

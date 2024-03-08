@@ -143,6 +143,20 @@ if (! function_exists('blocksy_media')) {
 					unset($args['img_atts']['title']);
 				}
 
+				$attachment = get_post($args['attachment_id']);
+
+				$args['img_atts'] = apply_filters(
+					'wp_get_attachment_image_attributes',
+					array_merge(
+						[
+							'class' => ''
+						],
+						$args['img_atts']
+					),
+					$attachment,
+					$args['size']
+				);
+
 				if (
 					$info
 					&&

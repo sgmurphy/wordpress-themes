@@ -13,9 +13,17 @@ class WooCommerceCheckout {
 
 		add_action('elementor/widget/before_render_content', function($widget) {
 			if (
-				class_exists('Elementor\Jet_Woo_Builder_Checkout_Order_Review')
-				&&
-				$widget instanceof \Elementor\Jet_Woo_Builder_Checkout_Order_Review
+				(
+					class_exists('Elementor\Jet_Woo_Builder_Checkout_Order_Review')
+					&&
+					$widget instanceof \Elementor\Jet_Woo_Builder_Checkout_Order_Review
+				)
+				||
+				(
+					class_exists('ElementorPro\Modules\Woocommerce\Widgets\Checkout')
+					&&
+					$widget instanceof \ElementorPro\Modules\Woocommerce\Widgets\Checkout
+				)
 			) {
 				global $ct_skip_checkout;
 				$ct_skip_checkout = true;

@@ -139,13 +139,20 @@ $breadcrumbs_options = [
 				]),
 			],
 
-			'breadcrumb_blog_item' => [
-				'label' => __('Blog Page in Breadcrumbs', 'blocksy'),
-				'type' => 'ct-switch',
-				'value' => 'no',
-				'sync' => blocksy_sync_whole_page([
-					'loader_selector' => '.ct-breadcrumbs'
-				]),
+			blocksy_rand_md5() => [
+				'type' => 'ct-condition',
+				'condition' => ['show_on_front' => '!posts'],
+				'values_source' => 'global',
+				'options' => [
+					'breadcrumb_blog_item' => [
+						'label' => __('Blog Page in Breadcrumbs', 'blocksy'),
+						'type' => 'ct-switch',
+						'value' => 'no',
+						'sync' => blocksy_sync_whole_page([
+							'loader_selector' => '.ct-breadcrumbs'
+						]),
+					],
+				]
 			],
 
 			blocksy_rand_md5() => [

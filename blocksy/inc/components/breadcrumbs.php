@@ -353,41 +353,73 @@ class BreadcrumbsBuilder {
 	}
 
 	private function post_process_breadcrumbs($items) {
+		$post_type = blocksy_manager()->post_types->is_supported_post_type([
+			'allow_built_in' => true
+		]);
+
 		if (
 			blocksy_get_theme_mod('breadcrumb_shop_item', 'no') === 'yes'
 			&&
 			function_exists('wc_get_page_id')
 			&&
-			is_single()
+			(
+				is_tax()
+				||
+				is_single()
+			)
 			&&
-			get_post_type() === 'product'
+			$post_type === 'product'
 		) {
 			$shop_page_id = wc_get_page_id('shop');
-			$shop_page_url = get_permalink(wc_get_page_id('shop'));
+			$shop_page_url = esc_url(get_permalink(wc_get_page_id('shop')));
+
+			$shop_name = __('Shop', 'blocksy');
+
+			if ($shop_page_id) {
+				$shop_name = get_the_title($shop_page_id);
+			}
 
 			array_splice($items, 1, 0, [
 				[
-					'url' => esc_url($shop_page_url),
-					'name' => $shop_page_id ? get_the_title($shop_page_id) : __('Shop', 'blocksy'),
+					'url' => $shop_page_url,
+					'name' => $shop_name
 				]
 			]);
 		}
 
 		if (
-			is_single()
+			(
+				is_tax()
+				||
+				is_category()
+				||
+				is_tag()
+				||
+				is_single()
+			)
 			&&
-			get_post_type() === 'post'
+			$post_type === 'post'
 			&&
 			blocksy_get_theme_mod('breadcrumb_blog_item', 'no') === 'yes'
 		) {
 			$page_for_posts = get_option('page_for_posts');
 
-			array_splice($items, 1, 0, [
-				[
-					'url' => esc_url(get_post_type_archive_link('post')),
-					'name' => $page_for_posts ? get_the_title($page_for_posts) : __('Blog', 'blocksy'),
-				]
-			]);
+			$blog_url = esc_url(get_post_type_archive_link('post'));
+
+			$blog_name = __('Blog', 'blocksy');
+
+			if ($page_for_posts) {
+				$blog_name = get_the_title($page_for_posts);
+			}
+
+			if (trim($items[0]['url'], '/') !== trim($blog_url, '/')) {
+				array_splice($items, 1, 0, [
+					[
+						'url' => $blog_url,
+						'name' => $blog_name
+					]
+				]);
+			}
 		}
 
 		return apply_filters('blocksy:breadcrumbs:items-array', $items);

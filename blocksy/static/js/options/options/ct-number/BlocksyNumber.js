@@ -8,7 +8,13 @@ import { getNumericKeyboardEvents } from '../../helpers/getNumericKeyboardEvents
 const BlocksyNumberOption = ({
 	value,
 	option,
-	option: { attr, step = 1, markAsAutoFor },
+	option: {
+		attr,
+		step = 1,
+		blockDecimal = true,
+		decimalPlaces = 1,
+		markAsAutoFor,
+	},
 	device,
 	onChange,
 	liftedOptionStateDescriptor,
@@ -41,7 +47,8 @@ const BlocksyNumberOption = ({
 								min,
 								max,
 								parseFloat(parsedValue) - parseFloat(step)
-							)
+							),
+							decimalPlaces
 						)
 					)
 				}
@@ -58,7 +65,8 @@ const BlocksyNumberOption = ({
 								min,
 								max,
 								parseFloat(parsedValue) + parseFloat(step)
-							)
+							),
+							decimalPlaces
 						)
 					)
 				}
@@ -66,7 +74,7 @@ const BlocksyNumberOption = ({
 
 			<input
 				type="number"
-				step={1}
+				// step={1}
 				value={
 					liftedOptionState && liftedOptionState.isEmptyInput
 						? ''
@@ -78,7 +86,9 @@ const BlocksyNumberOption = ({
 					})
 
 					if (parseFloat(parsedValue)) {
-						onChange(round(clamp(min, max, parsedValue)))
+						onChange(
+							round(clamp(min, max, parsedValue), decimalPlaces)
+						)
 					}
 				}}
 				onChange={({ target: { value } }) => {
@@ -94,16 +104,21 @@ const BlocksyNumberOption = ({
 					})
 
 					_.isNumber(parseFloat(value))
-						? onChange(round(value))
+						? onChange(round(value, decimalPlaces))
 						: parseFloat(value)
-						? onChange(round(Math.min(parseFloat(value), max)))
-						: onChange(round(value))
+						? onChange(
+								round(
+									Math.min(parseFloat(value), max),
+									decimalPlaces
+								)
+						  )
+						: onChange(round(value, decimalPlaces))
 				}}
 				{...getNumericKeyboardEvents({
-					blockDecimal: true,
+					blockDecimal,
 					value: parsedValue,
 					onChange: (value) => {
-						onChange(round(clamp(min, max, value)))
+						onChange(round(clamp(min, max, value), decimalPlaces))
 					},
 				})}
 			/>

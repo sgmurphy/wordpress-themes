@@ -9,6 +9,7 @@ const SinglePremiumPlugin = ({ status, plugin, onPluginsSync }) => {
 
 		body.append('plugin', plugin)
 		body.append('action', actionName)
+		body.append('nonce', ctDashboardLocalizations.dashboard_actions_nonce)
 
 		setIsLoading(true)
 

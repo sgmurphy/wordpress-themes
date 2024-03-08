@@ -159,6 +159,7 @@ const makeAllShortcuts = () => {
 		),
 		...document.querySelectorAll('.hero-section'),
 		...document.querySelectorAll('.entries[data-cards]'),
+		...document.querySelectorAll('.entries[data-layout="gutenberg"]'),
 		...document.querySelectorAll('aside#sidebar'),
 		...document.querySelectorAll('#main-container > footer [data-row]'),
 		...document.querySelectorAll('#offcanvas .ct-bag-container'),

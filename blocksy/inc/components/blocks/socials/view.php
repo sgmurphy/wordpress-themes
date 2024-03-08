@@ -29,8 +29,8 @@ if ($link_rel === 'yes') {
 }
 
 $colors = [
-	'--theme-icon-color' => blocksy_default_akg('customIconColor', $atts, ''),
-	'--theme-icon-hover-color' => blocksy_default_akg('customIconHoverColor', $atts, ''),
+	'--theme-icon-color' => blocksy_default_akg('customInitialColor', $atts, ''),
+	'--theme-icon-hover-color' => blocksy_default_akg('customHoverColor', $atts, ''),
 ];
 
 if ($type !== 'simple') {

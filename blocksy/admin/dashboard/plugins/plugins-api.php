@@ -11,7 +11,8 @@ class Blocksy_Admin_Dashboard_API_Premium_Plugins extends Blocksy_Admin_Dashboar
 	);
 
 	public function get_premium_plugins_status() {
-		$this->check_capability( 'edit_plugins' );
+		$this->check_capability('edit_plugins');
+		$this->check_nonce();
 
 		$result = [];
 		// Is not installed.
@@ -22,8 +23,8 @@ class Blocksy_Admin_Dashboard_API_Premium_Plugins extends Blocksy_Admin_Dashboar
 		$plugins = $plugin_manager_config;
 		$installed_plugins = $manager->get_installed_plugins();
 
-		foreach ( array_keys( $plugins ) as $plugin ) {
-			$installed_path = $manager->is_plugin_installed( $plugin );
+		foreach (array_keys($plugins) as $plugin) {
+			$installed_path = $manager->is_plugin_installed($plugin);
 
 			if (! $installed_path) {
 				$status = 'uninstalled'; // Plugin is not installed.
@@ -41,17 +42,19 @@ class Blocksy_Admin_Dashboard_API_Premium_Plugins extends Blocksy_Admin_Dashboar
 			);
 		}
 
-		wp_send_json_success( $result );
+		wp_send_json_success($result);
 	}
 
 	public function premium_plugin_download() {
-		$this->check_capability( 'install_plugins' );
+		$this->check_capability('install_plugins');
+		$this->check_nonce();
+
 		$plugin = $this->get_plugin_from_request();
 
 		$manager = new Blocksy_Plugin_Manager();
-		$install = $manager->prepare_install( $plugin );
+		$install = $manager->prepare_install($plugin);
 
-		if ( $install ) {
+		if ($install) {
 			wp_send_json_success();
 		}
 
@@ -59,63 +62,75 @@ class Blocksy_Admin_Dashboard_API_Premium_Plugins extends Blocksy_Admin_Dashboar
 	}
 
 	public function premium_plugin_activate() {
-		$this->check_capability( 'edit_plugins' );
+		$this->check_capability('edit_plugins');
+		$this->check_nonce();
+
 		$plugin = $this->get_plugin_from_request();
 
 		$manager = new Blocksy_Plugin_Manager();
-		$result = $manager->plugin_activation( $plugin );
+		$result = $manager->plugin_activation($plugin);
 
-		if ( is_wp_error( $result ) ) {
-			wp_send_json_error( $result );
+		if (is_wp_error($result)) {
+			wp_send_json_error($result);
 		}
 
 		wp_send_json_success();
 	}
 
 	public function premium_plugin_deactivate() {
-		$this->check_capability( 'edit_plugins' );
+		$this->check_capability('edit_plugins');
+		$this->check_nonce();
+
 		$plugin = $this->get_plugin_from_request();
 
 		$manager = new Blocksy_Plugin_Manager();
-		$result = $manager->plugin_deactivation( $plugin );
+		$result = $manager->plugin_deactivation($plugin);
 
-		if ( is_wp_error( $result ) ) {
-			wp_send_json_error( $result );
+		if (is_wp_error($result)) {
+			wp_send_json_error($result);
 		}
 
 		wp_send_json_success();
 	}
 
 	public function premium_plugin_delete() {
-		$this->check_capability( 'delete_plugins' );
+		$this->check_capability('delete_plugins');
+		$this->check_nonce();
+
 		$plugin = $this->get_plugin_from_request();
 
 		$manager = new Blocksy_Plugin_Manager();
-		$result = $manager->uninstall_plugin( $plugin );
+		$result = $manager->uninstall_plugin($plugin);
 
-		if ( is_wp_error( $result ) ) {
-			wp_send_json_error( $result );
+		if (is_wp_error($result)) {
+			wp_send_json_error($result);
 		}
 
 		wp_send_json_success();
 	}
 
-	public function check_capability( $cap = 'install_plugins' ) {
+	public function check_capability($cap = 'install_plugins') {
 		$manager = new Blocksy_Plugin_Manager();
-		if ( ! $manager->can( $cap ) ) {
+
+		if (! $manager->can($cap)) {
 			wp_send_json_error();
 		}
 
 		return true;
 	}
 
+	public function check_nonce() {
+		if (! check_ajax_referer('ct-dashboard', 'nonce', false)) {
+			wp_send_json_error('nonce');
+		}
+	}
+
 	public function get_plugin_from_request() {
-		if ( ! isset( $_POST['plugin'] ) ) {
+		if (! isset($_POST['plugin'])) {
 			wp_send_json_error();
 		}
 
 		return sanitize_text_field(wp_unslash($_POST['plugin']));
 	}
-
 }
 

@@ -19,15 +19,7 @@ if ($maybe_custom_output) {
 	return;
 }
 
-$blog_post_structure = blocksy_listing_page_structure([
-	'prefix' => $prefix
-]);
-
 $container_class = 'ct-container';
-
-if ($blog_post_structure === 'gutenberg') {
-	$container_class = 'ct-container-narrow';
-}
 
 
 /**

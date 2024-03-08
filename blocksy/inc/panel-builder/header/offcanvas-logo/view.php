@@ -10,17 +10,31 @@ if (! empty($default_logo[$device])) {
 	$custom_logo_id = $default_logo[$device];
 }
 
+$logo_type_classes = apply_filters("blocksy:{$panel_type}:logo:img:class", [
+	'default_logo' => '',
+	'transparent_state_logo' => '',
+	'sticky_state_logo' => '',
+	'dark_mode_logo' => '',
+	'offcanvas_logo' => ''
+]);
+
 $additional_logos = apply_filters(
 	'blocksy:panel-builder:offcanvas-logo:additional-logos',
 	[],
 	$atts,
 	$device,
-	$panel_type
+	$panel_type,
+	$logo_type_classes
 );
 
 if ($custom_logo_id) {
 	$custom_logo_attr = [
-		'class' => 'default-logo',
+		'class' => trim(
+			implode(' ', [
+				'default-logo',
+				$logo_type_classes['offcanvas_logo']
+			])
+		),
 		'itemprop' => 'logo',
 		'loading' => false
 	];

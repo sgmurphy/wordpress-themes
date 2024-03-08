@@ -36,6 +36,8 @@ if ($video_thumbnail === 'yes') {
 	]);
 }
 
+$link_attr = [];
+
 if ($field === 'wp:featured_image') {
 	$value = wp_get_attachment_image(
 		get_post_thumbnail_id(),
@@ -57,18 +59,16 @@ if ($field === 'wp:featured_image') {
 			'href' => get_permalink()
 		];
 
-		$has_field_link_new_tab = blocksy_akg('has_field_link_new_tab', $attributes, '_self');
+		$has_field_link_new_tab = blocksy_akg('has_field_link_new_tab', $attributes, 'no');
 		$has_field_link_rel = blocksy_akg('has_field_link_rel', $attributes, '');
 
-		if ($has_field_link_new_tab !== '_self') {
-			$link_attr['target'] = $has_field_link_new_tab;
+		if ($has_field_link_new_tab !== 'no') {
+			$link_attr['target'] = '_blank';
 		}
 
 		if (! empty($has_field_link_rel)) {
 			$link_attr['rel'] = $has_field_link_rel;
 		}
-
-		$value = blocksy_html_tag('a', $link_attr, $value);
 	}
 }
 
@@ -159,6 +159,13 @@ if (
 
 $wrapper_attr['class'] .= ' ' . implode(' ', $classes);
 
+$tag_name = 'figure';
+
+if (! empty($link_attr)) {
+	$tag_name = 'a';
+	$wrapper_attr = array_merge($wrapper_attr, $link_attr);
+}
+
 $wrapper_attr = get_block_wrapper_attributes($wrapper_attr);
 
 if (
@@ -174,9 +181,9 @@ if (
 	&&
 	!$maybe_video
 ) {
-	echo block_core_image_render_lightbox(blocksy_html_tag('figure', $wrapper_attr, $value), []);
+	echo block_core_image_render_lightbox(blocksy_html_tag($tag_name, $wrapper_attr, $value), []);
 
 	return;
 }
 
-echo blocksy_html_tag('figure', $wrapper_attr, $value);
+echo blocksy_html_tag($tag_name, $wrapper_attr, $value);

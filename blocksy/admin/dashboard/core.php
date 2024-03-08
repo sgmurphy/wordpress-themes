@@ -105,7 +105,8 @@ class Blocksy_Dashboard_Page {
 			'ct-dashboard-scripts',
 			'ctDashboardLocalizations',
 			[
-				'ajax_url'      => admin_url( 'admin-ajax.php' ),
+				'ajax_url' => admin_url('admin-ajax.php'),
+				'dashboard_actions_nonce' => wp_create_nonce('ct-dashboard'),
 				'customizer_url' => admin_url('/customize.php?autofocus'),
 				'theme_version' => $theme->get('Version'),
 				'theme_name'    => $theme->get('Name'),

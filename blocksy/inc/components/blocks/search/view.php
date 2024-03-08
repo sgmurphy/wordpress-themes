@@ -16,7 +16,7 @@ if (function_exists('is_bbpress')) {
 
 foreach ($all_cpts as $single_cpt) {
 	if (! isset($search_through[$single_cpt])) {
-		$search_through[$single_cpt] = true;
+		$search_through[$single_cpt] = false;
 	}
 }
 

@@ -191,10 +191,10 @@ export const setRatioFor = (ratio, el) => {
 				? [
 						imgEl.parentNode.dataset.w
 							? parseInt(imgEl.parentNode.dataset.w)
-							: imgEl.width,
+							: imgEl.naturalWidth,
 						imgEl.parentNode.dataset.h
 							? parseInt(imgEl.parentNode.dataset.h)
-							: imgEl.height,
+							: imgEl.naturalHeight,
 				  ]
 				: [1, 1]
 			: (ratio || '4/3').split(

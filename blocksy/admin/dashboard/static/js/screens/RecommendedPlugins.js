@@ -36,6 +36,7 @@ const RecommendedPlugins = () => {
 
 		const body = new FormData()
 		body.append('action', 'get_premium_plugins_status')
+		body.append('nonce', ctDashboardLocalizations.dashboard_actions_nonce)
 
 		try {
 			const response = await fetch(ctDashboardLocalizations.ajax_url, {
@@ -83,14 +84,32 @@ const RecommendedPlugins = () => {
 							<animated.p
 								style={props}
 								className="ct-loading-text">
-								
-								<svg width="16" height="16" viewBox="0 0 100 100">
-
+								<svg
+									width="16"
+									height="16"
+									viewBox="0 0 100 100">
 									<g transform="translate(50,50)">
 										<g transform="scale(1)">
-											<circle cx="0" cy="0" r="50" fill="currentColor"></circle>
-											<circle cx="0" cy="-26" r="12" fill="#ffffff" transform="rotate(161.634)">
-												<animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 0 0;360 0 0" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform>
+											<circle
+												cx="0"
+												cy="0"
+												r="50"
+												fill="currentColor"></circle>
+											<circle
+												cx="0"
+												cy="-26"
+												r="12"
+												fill="#ffffff"
+												transform="rotate(161.634)">
+												<animateTransform
+													attributeName="transform"
+													type="rotate"
+													calcMode="linear"
+													values="0 0 0;360 0 0"
+													keyTimes="0;1"
+													dur="1s"
+													begin="0s"
+													repeatCount="indefinite"></animateTransform>
 											</circle>
 										</g>
 									</g>

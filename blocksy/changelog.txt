@@ -1,3 +1,19 @@
+2.0.30: 2024-03-08
+- Improvement: Correctly pass all arguments to the `wp_get_attachment_image_attributes` filter
+
+2.0.29: 2024-03-07
+- Improvement: Advanced Posts block - lazy load doesn't load offscreen images
+- Improvement: Advanced Posts block preview does not inherit the image options from Customizer
+- Improvement: Better integration with Filter Everything plugin and post cards reveal effect
+- Improvement: Better integration with single product gallery and Woo Image SEO plugin
+- Improvement: Bring consistency to breadcrumbs generation on category pages
+- Improvement: Checkout page edited with Elementor Pro does not respect two column design
+- Improvement: Contacts block overflows if a very long e-mail address is used
+- Improvement: Don't enable searching by newly declared custom post types by default
+- Improvement: Ensure all dashboard AJAX actions are protected with nonces
+- Improvement: Filter to add custom class to the `img` tag of the logo element
+- Fix: Socials block custom icon color is not applied correctly
+
 2.0.28: 2024-02-29
 - Improvement: General fixes and improvements
 

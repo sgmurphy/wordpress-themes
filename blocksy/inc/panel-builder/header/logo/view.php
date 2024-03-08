@@ -12,6 +12,14 @@ $transparent_logo = blocksy_expand_responsive_value(
 	blocksy_default_akg('transparent_logo', $atts, '')
 );
 
+$logo_type_classes = apply_filters("blocksy:{$panel_type}:logo:img:class", [
+	'default_logo' => '',
+	'transparent_state_logo' => '',
+	'sticky_state_logo' => '',
+	'dark_mode_logo' => '',
+	'offcanvas_logo' => ''
+]);
+
 $sticky_logo = blocksy_expand_responsive_value(
 	blocksy_default_akg('sticky_logo', $atts, '')
 );
@@ -41,6 +49,8 @@ if (
 	}
 }
 
+$will_use_transparent_logo = false;
+
 if (
 	isset($has_transparent_header)
 	&&
@@ -53,6 +63,7 @@ if (
 	! empty($transparent_logo[$device])
 ) {
 	$custom_logo_id = $transparent_logo[$device];
+	$will_use_transparent_logo = true;
 } else {
 	if (! empty($default_logo[$device])) {
 		$custom_logo_id = $default_logo[$device];
@@ -80,7 +91,12 @@ if (
 	)
 ) {
 	$additional_logos[] = [
-		'class' => 'sticky-logo',
+		'class' => trim(
+			implode(' ', [
+				'sticky-logo',
+				$logo_type_classes['sticky_state_logo']
+			])
+		),
 		'id' => $sticky_logo[$device]
 	];
 }
@@ -90,7 +106,8 @@ $additional_logos = apply_filters(
 	$additional_logos,
 	$atts,
 	$device,
-	$panel_type
+	$panel_type,
+	$logo_type_classes
 );
 
 $custom_logo_id = apply_filters(
@@ -100,7 +117,12 @@ $custom_logo_id = apply_filters(
 
 if ($custom_logo_id) {
 	$custom_logo_attr = [
-		'class' => 'default-logo',
+		'class' => trim(
+			implode(' ', [
+				'default-logo',
+				($will_use_transparent_logo ? $logo_type_classes['transparent_state_logo'] : $logo_type_classes['default_logo'])
+			])
+		),
 		'itemprop' => 'logo'
 	];
 
