@@ -156,7 +156,7 @@ if ( file_exists( WP_PLUGIN_DIR . '/themegrill-demo-importer/themegrill-demo-imp
 						printf(
 							wp_kses_post(
 								/* translators: %s HTML br tag */
-								__( 'Explore diverse demos from Zakra theme to get your site running in no time! %s  Simply choose the demo that fits your requirements, import it, and give it some of your personal touch! ', 'zakra' ),
+								__( 'Explore diverse demos from Zakra theme to get your site running in no time! %s  Simply choose the demo that fits your requirements, import it, and give it some of your personal touch! ', 'zakra' )
 							),
 							'<br> <br>'
 						);

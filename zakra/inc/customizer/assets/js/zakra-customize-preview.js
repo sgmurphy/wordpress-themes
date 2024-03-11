@@ -1,4 +1,12 @@
+/**
+ * File customizer.js.
+ *
+ * Theme Customizer enhancements for a better user experience.
+ *
+ * Contains handlers to make Theme Customizer preview reload changes asynchronously.
+ */
 
+zakraGenerateSliderCSS( 'zakra_content_area_padding', '.zak-primary, .zak-secondary',['padding-top', 'padding-bottom'] );
 zakraGenerateCSS( 'zakra_site_identity_color', '.site-title', 'color' );
 zakraGenerateCSS( 'zakra_site_tagline_color', '.site-description', 'color' );
 zakraGenerateSliderCSS( 'zakra_container_width', '.zak-container, .zak-container--boxed .zak-site', 'max-width');

@@ -2312,6 +2312,7 @@ body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button
 	text-transform: capitalize;
 	font-weight: 500;
 	color: #27272A;
+	word-break: normal;
 }
 
 .woocommerce-cart td {
@@ -2542,6 +2543,7 @@ table.shop_table_responsive tr td {
 	display: block;
 	text-align: right;
 	clear: both;
+	word-break: normal;
 }
 
 table.shop_table_responsive tr td::before {

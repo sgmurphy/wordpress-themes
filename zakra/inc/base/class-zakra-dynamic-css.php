@@ -47,6 +47,21 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 				);
 			}
 
+			// Content margin.
+			$content_padding_default = array(
+				'size' => '',
+				'unit' => 'px',
+			);
+
+			$content_padding = get_theme_mod( 'zakra_content_area_padding', $content_padding_default );
+
+			$parse_css .= zakra_parse_slider_css(
+				$content_padding_default,
+				$content_padding,
+				'.zak-primary, .zak-secondary',
+				'padding-top, padding-bottom'
+			);
+
 			/**
 			 * Container width.
 			 */
@@ -115,7 +130,8 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 				.zak-header-action .yith-wcwl-items-count .yith-wcwl-icon span,
 				.pagebuilder-content a, .zak-entry-footer a,
 				.zak-header-buttons .zak-header-button--2 .zak-button,
-				.zak-header-buttons .zak-header-button .zak-button:hover' => array(
+				.zak-header-buttons .zak-header-button .zak-button:hover,
+				.woocommerce-cart .coupon button.button' => array(
 					'color' => esc_html( $primary_color ),
 				),
 
@@ -136,7 +152,9 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 				.zak-button:hover,
 				.zak-header-buttons .zak-header-button .zak-button,
 				.zak-header-buttons .zak-header-button.zak-header-button--2 .zak-button,
-				.zak-header-buttons .zak-header-button .zak-button:hover' => array(
+				.zak-header-buttons .zak-header-button .zak-button:hover,
+				.woocommerce-cart .coupon button.button,
+				.woocommerce-cart .actions > button.button' => array(
 					'border-color' => esc_html( $primary_color ),
 				),
 
@@ -154,7 +172,10 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 				.widget .wp-block-heading::before,
 				#comments .comments-title::before,
 				#comments .comment-reply-title::before,
-				.widget .widget-title::before' => array(
+				.widget .widget-title::before,
+				.woocommerce-cart .actions .coupon button.button:hover,
+				.woocommerce-cart .actions > button.button,
+				.woocommerce-cart .actions > button.button:hover' => array(
 					'background-color' => esc_html( $primary_color ),
 				),
 
@@ -987,10 +1008,10 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			// Primary menu item color.
 			$primary_menu_item_color_normal     = get_theme_mod( 'zakra_main_menu_color', '' );
 			$primary_menu_item_color_normal_css = array(
-				'.zak-primary-nav ul li a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+				'.zak-main-nav.zak-primary-nav ul.zak-primary-menu li a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
 					'color' => esc_html( $primary_menu_item_color_normal ),
 				),
-				'.zak-primary-nav ul li .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon' => array(
+				'.zak-main-nav.zak-primary-nav ul.zak-primary-menu li .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon' => array(
 					'fill' => esc_html( $primary_menu_item_color_normal ),
 				),
 			);

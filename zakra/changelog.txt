@@ -1,4 +1,10 @@
 == Changelog ==
+= 3.0.12 - 2024-03-08 =
+* Added - Option to change content area padding.
+* Fix   - Cart table word break issue.
+* Fix   - Apply coupon and update cart primary color issue.
+* Fix   - PHP 7.0.0 and 7.0.2 issue.
+
 = 3.0.11 - 2024-02-28 =
 * Enhancement - Introduced `zakra_sidebar_before` and `zakra_sidebar_after` hook.
 

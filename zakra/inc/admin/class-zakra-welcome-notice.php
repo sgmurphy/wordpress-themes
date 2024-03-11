@@ -92,7 +92,7 @@ class Zakra_Welcome_Notice {
 						<h2 class="zakra-message__heading">
 							<?php
 							printf(
-								esc_html__( 'Start Building with Zakra!', 'zakra' ),
+								esc_html__( 'Start Building with Zakra!', 'zakra' )
 							);
 							?>
 						</h2>
@@ -100,7 +100,7 @@ class Zakra_Welcome_Notice {
 							<?php
 							printf(
 							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-								esc_html__( 'Welcome! Thank you for choosing Zakra! Let’s get you started right away with our visually appealing and attractive demos.', 'zakra' ),
+								esc_html__( 'Welcome! Thank you for choosing Zakra! Let’s get you started right away with our visually appealing and attractive demos.', 'zakra' )
 							);
 							?>
 						</p>
@@ -155,7 +155,7 @@ class Zakra_Welcome_Notice {
 						<h2 class="zakra-message__heading">
 							<?php
 							printf(
-								esc_html__( 'Start Building with Zakra!', 'zakra' ),
+								esc_html__( 'Start Building with Zakra!', 'zakra' )
 							);
 							?>
 						</h2>
@@ -163,7 +163,7 @@ class Zakra_Welcome_Notice {
 							<?php
 							printf(
 							/* translators: 1: welcome page link starting html tag, 2: welcome page link ending html tag. */
-								esc_html__( 'Welcome! Thank you for choosing Zakra! Let’s get you started right away with our visually appealing and attractive demos.', 'zakra' ),
+								esc_html__( 'Welcome! Thank you for choosing Zakra! Let’s get you started right away with our visually appealing and attractive demos.', 'zakra' )
 							);
 							?>
 						</p>

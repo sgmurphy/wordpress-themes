@@ -67,6 +67,48 @@ if ( ! class_exists( 'Zakra_Customize_Content_Area_Option' ) ) :
 						),
 					),
 				),
+
+				// Divider.
+				array(
+					'name'     => 'zakra_content_area_style_divider',
+					'type'     => 'control',
+					'control'  => 'zakra-divider',
+					'style'    => 'dashed',
+					'section'  => 'zakra_content_area',
+					'priority' => 50,
+				),
+
+				array(
+					'name'     => 'zakra_content_area_style_heading',
+					'type'     => 'control',
+					'control'  => 'zakra-subtitle',
+					'label'    => esc_html__( 'Style', 'zakra' ),
+					'section'  => 'zakra_content_area',
+					'priority' => 50,
+				),
+
+				array(
+					'name'        => 'zakra_content_area_padding',
+					'default'     => array(
+						'size' => '',
+						'unit' => 'px',
+					),
+					'suffix'      => array( 'px' ),
+					'type'        => 'control',
+					'control'     => 'zakra-slider',
+					'label'       => esc_html__( 'Padding', 'zakra' ),
+					'section'     => 'zakra_content_area',
+					'transport'   => 'postMessage',
+					'priority'    => 50,
+					'input_attrs' => array(
+						'px' => array(
+							'min'  => 0,
+							'max'  => 500,
+							'step' => 1,
+						),
+					),
+				),
+
 			);
 
 			$options = array_merge( $options, $configs );
