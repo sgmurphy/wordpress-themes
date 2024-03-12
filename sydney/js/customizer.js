@@ -214,7 +214,7 @@
 
 
 	//Background colors
-	var $bg_color_options = { "color_forms_background":"input[type=\"text\"],input[type=\"email\"],input[type=\"url\"],input[type=\"password\"],input[type=\"search\"],input[type=\"number\"],input[type=\"tel\"],input[type=\"range\"],input[type=\"date\"],input[type=\"month\"],input[type=\"week\"],input[type=\"time\"],input[type=\"datetime\"],input[type=\"datetime-local\"],input[type=\"color\"],textarea,select,.woocommerce .select2-container .select2-selection--single,.woocommerce-page .select2-container .select2-selection--single,.woocommerce-cart .woocommerce-cart-form .actions .coupon input[type=\"text\"]","shop_product_card_background":".woocommerce-page ul.products li.product","offcanvas_menu_background":".sydney-offcanvas-menu","mobile_header_background":"#masthead-mobile","main_header_submenu_background":".mainnav ul ul li","main_header_bottom_background":".bottom-header-row","main_header_background":".main-header,.header-search-form","main_header_background_sticky":".main-header.sticky-active","topbar_background":".top-bar","button_background_color":"button,.roll-button,a.button,.wp-block-button:not(.is-style-outline) a,input[type=\"button\"],input[type=\"reset\"],input[type=\"submit\"]","scrolltop_bg_color":".go-top", };
+	var $bg_color_options = { "color_forms_background":"input[type=\"text\"],input[type=\"email\"],input[type=\"url\"],input[type=\"password\"],input[type=\"search\"],input[type=\"number\"],input[type=\"tel\"],input[type=\"range\"],input[type=\"date\"],input[type=\"month\"],input[type=\"week\"],input[type=\"time\"],input[type=\"datetime\"],input[type=\"datetime-local\"],input[type=\"color\"],textarea,select,.woocommerce .select2-container .select2-selection--single,.woocommerce-page .select2-container .select2-selection--single,.woocommerce-cart .woocommerce-cart-form .actions .coupon input[type=\"text\"]","shop_product_card_background":".woocommerce-page ul.products li.product","offcanvas_submenu_color": ".sydney-offcanvas-menu #mainnav ul ul a","offcanvas_menu_background":".sydney-offcanvas-menu","mobile_header_background":"#masthead-mobile","main_header_submenu_background":".mainnav ul ul li","main_header_bottom_background":".bottom-header-row","main_header_background":".main-header,.header-search-form","main_header_background_sticky":".main-header.sticky-active","topbar_background":".top-bar","button_background_color":"button,.roll-button,a.button,.wp-block-button:not(.is-style-outline) a,input[type=\"button\"],input[type=\"reset\"],input[type=\"submit\"]","scrolltop_bg_color":".go-top", };
 
 	$.each( $bg_color_options, function( option, selector ) {
 		wp.customize( option, function( value ) {
@@ -479,8 +479,21 @@
 	wp.customize( 'mobile_menu_alignment', function( value ) {
 		value.bind( function( to ) {
 			$( '.sydney-offcanvas-menu .mainnav ul li' ).css( 'text-align', to );
+			$( '.mobile-header-item.offcanvas-items' ).css( 'text-align', to );
+			$( '.mobile-header-item.offcanvas-items .social-profile' ).css( 'text-align', to );
+
+			if ( 'center' == to ) {
+				$( '.sydney-offcanvas-menu .header-item.header-woo' ).css( 'justify-content', 'center' );
+				$( '.mobile-header-item.offcanvas-items .button' ).css( 'align-self', 'center' );
+			} else if ( 'right' == to ) {
+				$( '.sydney-offcanvas-menu .header-item.header-woo' ).css( 'justify-content', 'flex-end' );
+				$( '.mobile-header-item.offcanvas-items .button' ).css( 'align-self', 'flex-end' );
+			} else {
+				$( '.sydney-offcanvas-menu .header-item.header-woo' ).css( 'justify-content', 'flex-start' );
+				$( '.mobile-header-item.offcanvas-items .button' ).css( 'align-self', 'flex-start' );
+			}
 		} );
-	} );		
+	} );	
 
 	wp.customize( 'mobile_menu_link_spacing', function( value ) {
 		value.bind( function( to ) {
@@ -1124,7 +1137,7 @@
 			if ( 'layout2' === to ) {
 				$( '.sydney-offcanvas-menu' ).css( 'max-width', '100%' );
 			} else {
-				$( '.sydney-offcanvas-menu' ).css( 'max-width', '' );
+				$( '.sydney-offcanvas-menu' ).css( 'max-width', '300px' );
 			}
 		} );
 	} );
@@ -1338,6 +1351,18 @@
 		} );
 	});
 		
+	wp.customize('offcanvas_menu_font_size',function( value ) {
+		value.bind( function( to ) {
+			$('.sydney-offcanvas-menu #mainnav > div > ul > li > a').css('font-size', to + 'px');
+		} );
+	});
+
+	wp.customize('offcanvas_submenu_font_size',function( value ) {
+		value.bind( function( to ) {
+			$('.sydney-offcanvas-menu #mainnav ul ul li a').css('font-size', to + 'px');
+		} );
+	});	
+
 } )( jQuery );
 
 function hideControls( options ) {

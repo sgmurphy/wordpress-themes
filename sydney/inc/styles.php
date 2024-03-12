@@ -440,7 +440,21 @@ if ( !class_exists( 'Sydney_Custom_CSS' ) ) :
 
 			//Mobile menu
 			$mobile_menu_alignment = get_theme_mod( 'mobile_menu_alignment', 'left' );
-			$custom .= ".sydney-offcanvas-menu .mainnav ul li { text-align:" . esc_attr( $mobile_menu_alignment ) . ";}" . "\n";
+			$custom .= ".sydney-offcanvas-menu .mainnav ul li,.mobile-header-item.offcanvas-items,.mobile-header-item.offcanvas-items .social-profile { text-align:" . esc_attr( $mobile_menu_alignment ) . ";}" . "\n";
+
+            if ( 'center' === $mobile_menu_alignment ) {
+                $custom .= ".sydney-offcanvas-menu .header-item.header-woo {justify-content:center;} .mobile-header-item.offcanvas-items .button {align-self:center;}" . "\n";
+            } elseif ( 'right' === $mobile_menu_alignment ) {
+                $custom .= ".sydney-offcanvas-menu .header-item.header-woo {justify-content:flex-end;} .mobile-header-item.offcanvas-items .button {align-self:flex-end;}" . "\n";
+            }
+
+			$custom .= $this->get_color_css( 'offcanvas_submenu_color', '', '.sydney-offcanvas-menu #mainnav ul ul a' );
+
+            $offcanvas_menu_font_size = get_theme_mod( 'offcanvas_menu_font_size', '18' );
+            $custom .= ".sydney-offcanvas-menu #mainnav > div > ul > li > a { font-size:" . intval($offcanvas_menu_font_size) . "px; }"."\n";
+
+            $offcanvas_submenu_font_size = get_theme_mod( 'offcanvas_submenu_font_size', '16' );
+            $custom .= ".sydney-offcanvas-menu #mainnav ul ul li a { font-size:" . intval($offcanvas_submenu_font_size) . "px; }"."\n";
 
 			$mobile_menu_link_separator 	= get_theme_mod( 'mobile_menu_link_separator', 0 );
 			$link_separator_color 			= get_theme_mod( 'link_separator_color', 'rgba(238, 238, 238, 0.14)' );
@@ -461,8 +475,8 @@ if ( !class_exists( 'Sydney_Custom_CSS' ) ) :
 			$custom .= ".mobile-header { padding-top:" . esc_attr( $mobile_header_padding ) . 'px;padding-bottom:' . esc_attr( $mobile_header_padding ) . "px;}" . "\n";
 
 			$custom .= $this->get_background_color_css( 'offcanvas_menu_background', '', '.sydney-offcanvas-menu' );
-			$custom .= $this->get_color_css( 'offcanvas_menu_color', '', '.sydney-offcanvas-menu,.sydney-offcanvas-menu #mainnav a:not(.button),.sydney-offcanvas-menu a:not(.button)' );
-			$custom .= $this->get_fill_css( 'offcanvas_menu_color', '', '.sydney-offcanvas-menu svg, .sydney-offcanvas-menu .dropdown-symbol .sydney-svg-icon svg' );
+			$custom .= $this->get_color_css( 'offcanvas_menu_color', '#ffffff', '.offcanvas-header-custom-text,.sydney-offcanvas-menu,.sydney-offcanvas-menu #mainnav a:not(.button),.sydney-offcanvas-menu a:not(.button)' );
+			$custom .= $this->get_fill_css( 'offcanvas_menu_color', '#ffffff', '.sydney-offcanvas-menu svg, .sydney-offcanvas-menu .dropdown-symbol .sydney-svg-icon svg' );
 
 			$offcanvas_mode = get_theme_mod( 'header_offcanvas_mode', 'layout1' );
 			if ( 'layout2' === $offcanvas_mode ) {
