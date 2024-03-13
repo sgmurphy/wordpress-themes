@@ -2,7 +2,7 @@
 Lightning WordPress theme, Copyright (C) 2015-2023 Vektor,Inc.
 Lightning WordPress theme is licensed under the GPL.
 Tested up to: 6.4
-Stable tag: 15.20.1
+Stable tag: 15.20.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,13 +38,17 @@ https://www.vektor-inc.co.jp/inquiry/
 
 == Changelog ==
 
+v15.20.2
+[ G3 ][ Design Bug Fix ][ OriginIII ] Fixed margin-bottom of vk_button does not work if vk_button is adjacent within an element of .is-layout-flow or .is-layout-constrained.
+[ G3 ][ Design Bug Fix ][ OriginIII ] Fixed the issue where the OriginIII title design was incorrectly applied to the post title block.
+
 v15.20.1
-[ Design Bug Fix ][ G3 ] CSS Rebuild
+[ G3 ][ Design Bug Fix ] CSS Rebuild
 
 v15.20.0
-[ Design Bug Fix ][ G3 ] Fixed to exclude hover decoration when submitbutton is disabled
-[ Design Bug Fix ][ G3 ] Fixed the header layout where the logo link area is wider when the navigation wraps around.
-[ Other ][ G3 ] Adjusting the preview mode for the VK Blocks Slider Block.
+[ G3 ][ Design Bug Fix ] Fixed to exclude hover decoration when submitbutton is disabled
+[ G3 ][ Design Bug Fix ] Fixed the header layout where the logo link area is wider when the navigation wraps around.
+[ G3 ][ Other ] Adjusting the preview mode for the VK Blocks Slider Block.
 [ Other ] Update CSS optimizer 0.2.2
 
 v15.19.1
