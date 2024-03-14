@@ -121,7 +121,8 @@ echo blocksy_get_social_share_box([
 					'desktop' => true,
 					'tablet' => true,
 					'mobile' => true,
-				]
+				],
+				'share_box_title' => '',
 			]
 		),
 	],

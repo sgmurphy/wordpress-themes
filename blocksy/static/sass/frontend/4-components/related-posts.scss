@@ -30,4 +30,16 @@
 
 		--theme-link-initial-color: var(--theme-text-color);
 	}
+
+
+	// slider type
+	.flexy-items {
+		margin-inline: calc(var(--grid-columns-gap, 30px) / -2);
+
+		.flexy-item {
+			flex: 0 0 var(--grid-columns-width, 25%);
+			width: var(--grid-columns-width, 25%);
+			padding-inline: calc(var(--grid-columns-gap, 30px) / 2);
+		}	
+	}
 }

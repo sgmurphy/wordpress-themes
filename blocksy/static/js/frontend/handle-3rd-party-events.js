@@ -1,16 +1,14 @@
 import $ from 'jquery'
 
 if (window.WP_Grid_Builder) {
-	WP_Grid_Builder.on('init', (wpgb) => {
-		Object.values(window.WP_Grid_Builder.instances).map((instance) => {
-			if (!instance.facets) {
-				return
-			}
+	Object.values(window.WP_Grid_Builder.instances).map((instance) => {
+		if (!instance.facets) {
+			return
+		}
 
-			instance.facets.on('render', (layout) =>
-				setTimeout(() => ctEvents.trigger('blocksy:frontend:init'))
-			)
-		})
+		instance.facets.on('render', (layout) =>
+			setTimeout(() => ctEvents.trigger('blocksy:frontend:init'))
+		)
 	})
 }
 

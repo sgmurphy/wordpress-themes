@@ -139,7 +139,8 @@ if (! function_exists('blocksy_cards_get_deep_link')) {
 			[
 				'suffix' => '',
 				'prefix' => null,
-				'shortcut' => 'border:outside'
+				'shortcut' => 'border:outside',
+				'return' => 'string'
 			]
 		);
 
@@ -158,6 +159,10 @@ if (! function_exists('blocksy_cards_get_deep_link')) {
 			if (! empty($args['suffix'])) {
 				$attr['data-shortcut-location'] .= ':' . $args['suffix'];
 			}
+		}
+
+		if ($args['return'] === 'array') {
+			return $attr;
 		}
 
 		return blocksy_attr_to_html($attr);

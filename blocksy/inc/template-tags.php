@@ -614,6 +614,11 @@ function blocksy_related_posts($location = null) {
 						) {
 							do_action('blocksy:single:related_posts:featured_image:before');
 
+							$featured_image_has_link = blocksy_get_theme_mod(
+								$prefix . '_related_featured_image_has_link',
+								'yes'
+							) === 'yes';
+
 							echo blocksy_media(
 								[
 									'attachment_id' => get_post_thumbnail_id(),
@@ -622,17 +627,16 @@ function blocksy_related_posts($location = null) {
 										$prefix . '_related_featured_image_ratio',
 										'16/9'
 									),
-									'tag_name' => 'a',
+									'tag_name' => $featured_image_has_link ? 'a' : 'figure',
 									'size' => blocksy_get_theme_mod(
 										$prefix . '_related_featured_image_size',
 										'medium'
 									),
-									'html_atts' => [
-										'href' => esc_url( get_permalink() ),
+									'html_atts' => $featured_image_has_link ? [
+										'href' => esc_url(get_permalink()),
 										'aria-label' => wp_strip_all_tags( get_the_title() ),
 										'tabindex' => "-1"
-									],
-
+									] : [],
 									'lazyload' => blocksy_get_theme_mod(
 										'has_lazy_load_related_posts_image',
 										'yes'
@@ -644,11 +648,31 @@ function blocksy_related_posts($location = null) {
 						}
 					?>
 
-					<?php if (! empty(get_the_title())) { ?>
-						<<?php echo $posts_title_tag ?> class="related-entry-title" <?php echo blocksy_schema_org_definitions('name') ?>>
-							<a href="<?php echo esc_url( get_permalink() ); ?>" <?php echo blocksy_schema_org_definitions('url') ?> rel="bookmark"><?php the_title(); ?></a>
-						</<?php echo $posts_title_tag ?>>
-					<?php } ?>
+					<?php if (! empty(get_the_title())) {
+
+						$title = get_the_title();
+
+						if (blocksy_get_theme_mod($prefix . '_related_featured_title_has_link', 'yes') === 'yes') {
+							$title = blocksy_html_tag(
+								'a',
+								[
+									'href' => esc_url(get_permalink()),
+									'rel' => 'bookmark',
+									'itemprop' => 'url'
+								],
+								$title
+							);
+						}
+
+						echo blocksy_html_tag(
+							$posts_title_tag,
+							[
+								'class' => 'related-entry-title',
+								'itemprop' => 'name'
+							],
+							$title
+						);
+					} ?>
 
 					<?php
 						echo blocksy_post_meta($meta_elements, [

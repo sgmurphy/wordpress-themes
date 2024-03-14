@@ -538,7 +538,6 @@ require get_template_directory() . '/inc/css/box-shadow-option.php';
 require get_template_directory() . '/inc/css/typography.php';
 require get_template_directory() . '/inc/css/backgrounds.php';
 require get_template_directory() . '/inc/sidebar.php';
-require get_template_directory() . '/inc/sidebar-render.php';
 
 require get_template_directory() . '/inc/components/single/single-helpers.php';
 require get_template_directory() . '/inc/components/single/content-helpers.php';
@@ -584,6 +583,7 @@ require get_template_directory() . '/inc/integrations/theme-builders.php';
 require get_template_directory() . '/inc/integrations/cartflows.php';
 require get_template_directory() . '/inc/integrations/bbpress.php';
 require get_template_directory() . '/inc/integrations/fluent-forms.php';
+require get_template_directory() . '/inc/integrations/coauthors.php';
 
 require get_template_directory() . '/inc/components/archive/helpers.php';
 require get_template_directory() . '/inc/components/archive/archive-card.php';

@@ -45,16 +45,9 @@ $page_elements_options = [
 		'prefix' => 'single_blog_post',
 	]),
 
-	[
-		'single_blog_post_has_post_tags' => [
-			'label' => __( 'Post Tags', 'blocksy' ),
-			'type' => 'ct-switch',
-			'value' => 'no',
-			'sync' => blocksy_sync_single_post_container([
-				'prefix' => 'single_blog_post'
-			]),
-		],
-	],
+	blocksy_get_options('single-elements/post-tags', [
+		'prefix' => 'single_blog_post'
+	]),
 
 	blocksy_get_options('single-elements/post-share-box', [
 		'prefix' => 'single_blog_post'

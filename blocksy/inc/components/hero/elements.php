@@ -187,7 +187,10 @@ foreach ($hero_elements as $index => $single_hero_element) {
 				}
 
 				if (is_author()) {
-					$title = get_the_author_meta('display_name', blocksy_get_author_id());
+					$title = blocksy_get_the_author_meta(
+						'display_name',
+						blocksy_get_author_id()
+					);
 				}
 			} else {
 				$title = blocksy_safe_sprintf(
@@ -250,7 +253,7 @@ foreach ($hero_elements as $index => $single_hero_element) {
 						'style' => 'height:' . (
 							intval($avatar_size) / 2
 						) . 'px',
-						'alt' => blocksy_get_avatar_alt_for(get_the_author_meta('ID'))
+						'alt' => blocksy_get_avatar_alt_for(blocksy_get_the_author_meta('ID'))
 					],
 				]
 			) . $title;
@@ -315,8 +318,8 @@ foreach ($hero_elements as $index => $single_hero_element) {
 				}
 
 				if (is_author()) {
-					if (! empty(trim(get_the_author_meta('description', blocksy_get_author_id())))) {
-						$description = '<div class="' . $description_class . '">' . wp_kses_post(get_the_author_meta('description', blocksy_get_author_id())) . '</div>';
+					if (! empty(trim(blocksy_get_the_author_meta('description', blocksy_get_author_id())))) {
+						$description = '<div class="' . $description_class . '">' . wp_kses_post(blocksy_get_the_author_meta('description', blocksy_get_author_id())) . '</div>';
 					}
 				}
 			} else {

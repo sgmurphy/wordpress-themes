@@ -4,6 +4,7 @@ import ctEvents from 'ct-events'
 
 const generateQuerySelector = (el) => {
 	let itemsToSkip = '.yit-wcan-container'
+
 	const classesToSkip = ['active', 'ct-active', 'wpgb-enabled']
 
 	let parents = []
@@ -88,10 +89,15 @@ export const mount = (paginationContainer) => {
 		return
 	}
 
+	const paginationSelector =
+		getAppendSelectorFor(layoutEl, {
+			toAppend: '.ct-pagination',
+		}) || '.ct-pagination'
+
 	let inf = new InfiniteScroll(layoutEl, {
 		// debug: true,
-		checkLastPage: '.ct-pagination .next',
-		path: '.ct-pagination .next',
+		checkLastPage: `${paginationSelector} .next`,
+		path: `${paginationSelector} .next`,
 		append: getAppendSelectorFor(layoutEl),
 		button:
 			paginationType === 'load_more'
@@ -148,30 +154,45 @@ export const mount = (paginationContainer) => {
 	paginationContainer.infiniteScroll = inf
 }
 
-function getAppendSelectorFor(layoutEl) {
+function getAppendSelectorFor(layoutEl, args = {}) {
+	args = {
+		toAppend: 'default',
+		...args,
+	}
+
 	const layoutIndex = [...layoutEl.parentNode.parentNode.children].indexOf(
 		layoutEl.parentNode
 	)
 
 	if (layoutEl.closest('.ct-posts-shortcode')) {
-		return layoutEl.classList.contains('products')
-			? `.ct-posts-shortcode:nth-child(${layoutIndex + 1}) .products > li`
-			: `.ct-posts-shortcode:nth-child(${layoutIndex + 1}) .entries > *`
+		if (layoutEl.classList.contains('products')) {
+			return `.ct-posts-shortcode:nth-child(${layoutIndex + 1}) ${
+				args.toAppend === 'default' ? '.products > li' : args.toAppend
+			}`
+		} else {
+			return `.ct-posts-shortcode:nth-child(${layoutIndex + 1}) ${
+				args.toAppend === 'default' ? '.entries > *' : args.toAppend
+			}`
+		}
 	}
 
 	if (layoutEl.closest('.wp-block-blocksy-query')) {
-		const base = `.wp-block-blocksy-query:nth-child(${layoutIndex + 1})`
-
-		return layoutEl.classList.contains('products')
-			? `${base} .products > li`
-			: `${base} .entries > *`
+		return `.wp-block-blocksy-query[data-id="${
+			layoutEl.closest('.wp-block-blocksy-query').dataset.id
+		}"] ${args.toAppend === 'default' ? '.entries > *' : args.toAppend}`
 	}
 
 	if (layoutEl.classList.contains('products')) {
 		const selector = generateQuerySelector(layoutEl, '[data-products]')
 
+		if (args.toAppend !== 'default') {
+			return null
+		}
+
 		return `${selector} > li`
 	}
 
-	return `section > .entries > *`
+	return `section > ${
+		args.toAppend === 'default' ? '.entries > *' : args.toAppend
+	}`
 }

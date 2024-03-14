@@ -34,6 +34,7 @@ class ThemeAutoloader {
 			'DbVersioning\\V2019' => 'inc/classes/db-versioning/v2-0-19.php',
 			'DbVersioning\\V2026' => 'inc/classes/db-versioning/v2-0-26.php',
 			'DbVersioning\\V2027' => 'inc/classes/db-versioning/v2-0-27.php',
+			'DbVersioning\\V2031' => 'inc/classes/db-versioning/v2-0-31.php',
 
 			'DbVersioning\\DefaultValuesCleaner' => 'inc/classes/db-versioning/utils/db-default-values-cleaner.php',
 
@@ -50,6 +51,7 @@ class ThemeAutoloader {
 
 			'BreadcrumbsBuilder' => 'inc/components/breadcrumbs.php',
 
+			'Sidebar' => 'inc/components/sidebar.php',
 			'WooCommerce' => 'inc/components/woocommerce-integration.php',
 
 			'Blocks' => 'inc/components/blocks/blocks.php',

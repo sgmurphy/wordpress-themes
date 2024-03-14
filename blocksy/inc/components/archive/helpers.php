@@ -9,7 +9,8 @@ if (! function_exists('blocksy_render_archive_cards')) {
 			[
 				'query' => $wp_query,
 				'prefix' => blocksy_manager()->screen->get_prefix(),
-				'has_pagination' => true
+				'has_pagination' => true,
+				'pagination_args' => []
 			]
 		);
 
@@ -109,10 +110,10 @@ if (! function_exists('blocksy_render_archive_cards')) {
 			 * Function blocksy_display_posts_pagination() used here escapes the value properly.
 			 */
 			if ($args['has_pagination']) {
-				echo blocksy_display_posts_pagination([
-					'query' => $args['query'],
-					'prefix' => $args['prefix']
-				]);
+				$args['pagination_args']['query'] = $args['query'];
+				$args['pagination_args']['prefix'] = $args['prefix'];
+
+				echo blocksy_display_posts_pagination($args['pagination_args']);
 			}
 		} else {
 			get_template_part('template-parts/content', 'none');

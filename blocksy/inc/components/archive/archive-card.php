@@ -204,14 +204,10 @@ if (! function_exists('blocksy_render_archive_card')) {
 			'ratio' => blocksy_default_akg('thumb_ratio', $featured_image_settings, '4/3'),
 			'tag_name' => $has_link ? 'a' : 'figure',
 			'size' => $featured_image_size,
-			'html_atts' => array_merge(
-				[
-					'aria-label' => wp_strip_all_tags(get_the_title()),
-				],
-				$has_link ? [
-					'href' => esc_url(get_permalink()),
-				] : []
-			),
+			'html_atts' => $has_link ? [
+				'href' => esc_url(get_permalink()),
+				'aria-label' => wp_strip_all_tags(get_the_title()),
+			] : [],
 			'lazyload' => blocksy_get_theme_mod(
 				'has_lazy_load_archives_image',
 				'yes'

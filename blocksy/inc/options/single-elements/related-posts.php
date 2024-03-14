@@ -262,6 +262,19 @@ $options = [
 									],
 								],
 
+								$prefix . 'related_featured_image_has_link' => [
+									'label' => __('Link To Post', 'blocksy'),
+									'type' => 'ct-switch',
+									'value' => 'yes',
+									'sync' => [
+										'prefix' => $prefix,
+										'selector' => '.ct-related-posts',
+										'render' => function () {
+											blocksy_related_posts();
+										}
+									]
+								],
+
 							],
 						],
 
@@ -287,6 +300,19 @@ $options = [
 									'span' => 'span',
 								]
 							),
+							'sync' => [
+								'prefix' => $prefix,
+								'selector' => '.ct-related-posts',
+								'render' => function () {
+									blocksy_related_posts();
+								}
+							]
+						],
+
+						$prefix . 'related_featured_title_has_link' => [
+							'label' => __('Link To Post', 'blocksy'),
+							'type' => 'ct-switch',
+							'value' => 'yes',
 							'sync' => [
 								'prefix' => $prefix,
 								'selector' => '.ct-related-posts',

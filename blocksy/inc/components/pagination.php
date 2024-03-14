@@ -39,7 +39,9 @@ if (! function_exists('blocksy_display_posts_pagination')) {
 				'total_pages' => null,
 				'current_page' => null,
 				'format' => null,
-				'base' => null
+				'base' => null,
+
+				'query_var' => ''
 			]
 		);
 
@@ -200,6 +202,16 @@ if (! function_exists('blocksy_display_posts_pagination')) {
 
 		if ($args['base']) {
 			$paginate_links_args['base'] = $args['base'];
+		}
+
+		if ($args['query_var']) {
+			$paginate_links_args['format'] = '?' . $args['query_var'] . '=%#%';
+
+			if (isset($_GET[$args['query_var']])) {
+				$paginate_links_args['current'] = intval(sanitize_text_field(
+					$_GET[$args['query_var']]
+				));
+			}
 		}
 
 		$links = paginate_links($paginate_links_args);

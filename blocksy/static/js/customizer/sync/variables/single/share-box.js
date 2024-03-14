@@ -3,6 +3,7 @@ import {
 	handleResponsiveSwitch,
 	getPrefixFor,
 } from '../../helpers'
+import { typographyOption } from '../../variables/typography'
 import { makeVariablesWithCondition } from '../../helpers/variables-with-conditions'
 
 let prefix = getPrefixFor()
@@ -11,6 +12,17 @@ export const getSingleShareBoxVariables = () =>
 	prefix === 'single_page'
 		? {}
 		: {
+				...typographyOption({
+					id: `${prefix}_share_box_title_font`,
+					selector: applyPrefixFor('.ct-share-box .ct-module-title', prefix),
+				}),
+
+				[`${prefix}_share_box_title_color`]: {
+					selector: applyPrefixFor('.ct-share-box .ct-module-title', prefix),
+					variable: 'theme-heading-color',
+					type: 'color:default',
+				},
+
 				...makeVariablesWithCondition(
 					`${prefix}_has_share_box`,
 					{
@@ -29,20 +41,14 @@ export const getSingleShareBoxVariables = () =>
 						},
 
 						[`${prefix}_top_share_box_spacing`]: {
-							selector: applyPrefixFor(
-								'.ct-share-box[data-location="top"]',
-								prefix
-							),
+							selector: applyPrefixFor('.ct-share-box[data-location="top"]', prefix),
 							variable: 'margin',
 							responsive: true,
 							unit: '',
 						},
 
 						[`${prefix}_bottom_share_box_spacing`]: {
-							selector: applyPrefixFor(
-								'.ct-share-box[data-location="bottom"]',
-								prefix
-							),
+							selector: applyPrefixFor('.ct-share-box[data-location="bottom"]', prefix),
 							variable: 'margin',
 							responsive: true,
 							unit: '',
@@ -57,48 +63,33 @@ export const getSingleShareBoxVariables = () =>
 					{
 						[`${prefix}_share_items_icon_color`]: [
 							{
-								selector: applyPrefixFor(
-									'.ct-share-box[data-type="type-1"]',
-									prefix
-								),
+								selector: applyPrefixFor('.ct-share-box[data-type="type-1"]', prefix),
 								variable: 'theme-icon-color',
 								type: 'color:default',
 							},
 
 							{
-								selector: applyPrefixFor(
-									'.ct-share-box[data-type="type-1"]',
-									prefix
-								),
+								selector: applyPrefixFor('.ct-share-box[data-type="type-1"]', prefix),
 								variable: 'theme-icon-hover-color',
 								type: 'color:hover',
 							},
 						],
 
 						[`${prefix}_share_items_border`]: {
-							selector: applyPrefixFor(
-								'.ct-share-box[data-type="type-1"]',
-								prefix
-							),
+							selector: applyPrefixFor('.ct-share-box[data-type="type-1"]', prefix),
 							variable: 'theme-border',
 							type: 'border',
 						},
 
 						[`${prefix}_share_items_icon`]: [
 							{
-								selector: applyPrefixFor(
-									'.ct-share-box[data-type="type-2"]',
-									prefix
-								),
+								selector: applyPrefixFor('.ct-share-box[data-type="type-2"]', prefix),
 								variable: 'theme-icon-color',
 								type: 'color:default',
 							},
 
 							{
-								selector: applyPrefixFor(
-									'.ct-share-box[data-type="type-2"]',
-									prefix
-								),
+								selector: applyPrefixFor('.ct-share-box[data-type="type-2"]', prefix),
 								variable: 'theme-icon-hover-color',
 								type: 'color:hover',
 							},
@@ -106,10 +97,7 @@ export const getSingleShareBoxVariables = () =>
 
 						[`${prefix}_share_box_alignment`]: [
 							{
-								selector: applyPrefixFor(
-									'.ct-share-box[data-type="type-2"]',
-									prefix
-								),
+								selector: applyPrefixFor('.ct-share-box[data-type="type-2"]', prefix),
 								variable: 'horizontal-alignment',
 								responsive: true,
 								unit: '',
@@ -118,19 +106,13 @@ export const getSingleShareBoxVariables = () =>
 
 						[`${prefix}_share_items_background`]: [
 							{
-								selector: applyPrefixFor(
-									'.ct-share-box[data-type="type-2"]',
-									prefix
-								),
+								selector: applyPrefixFor('.ct-share-box[data-type="type-2"]', prefix),
 								variable: 'background-color',
 								type: 'color:default',
 							},
 
 							{
-								selector: applyPrefixFor(
-									'.ct-share-box[data-type="type-2"]',
-									prefix
-								),
+								selector: applyPrefixFor('.ct-share-box[data-type="type-2"]', prefix),
 								variable: 'background-hover-color',
 								type: 'color:hover',
 							},

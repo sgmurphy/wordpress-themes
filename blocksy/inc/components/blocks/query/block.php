@@ -47,6 +47,8 @@ class Query {
 			);
 			$prefix = $this->get_prefix_for($body['attributes']);
 
+			$pagination_data = $this->get_pagination_descriptor($body['attributes']);
+
 			wp_send_json_success([
 				'taxonomies' => blocksy_get_taxonomies_for_cpt(
 					get_post_type($body['previewedPostId']),
@@ -60,7 +62,8 @@ class Query {
 				),
 				'pagination_output' => blocksy_display_posts_pagination([
 					'query' => $query,
-					'prefix' => $prefix
+					'prefix' => $prefix,
+					'query_var' => $pagination_data['query_var']
 				])
 			]);
 		});
@@ -100,8 +103,6 @@ class Query {
 			get_template_directory() . '/static/js/editor/blocks/query/block.json',
 			[
 				'render_callback' => function ($attributes, $content, $block) {
-					$prefix = $this->get_prefix_for($attributes);
-
 					if (
 						empty($block->inner_blocks)
 						&&
@@ -125,6 +126,10 @@ class Query {
 							$wrapper_attr['style'] = $border_result['style'];
 						}
 
+						if (! empty($attributes['uniqueId'])) {
+							$wrapper_attr['data-id'] = substr($attributes['uniqueId'], 0, 3);
+						}
+
 						$wrapper_attributes = get_block_wrapper_attributes($wrapper_attr);
 
 						if (! empty($content)) {
@@ -138,7 +143,22 @@ class Query {
 						return '';
 					}
 
-					return $content;
+					$block_reader = new \WP_HTML_Tag_Processor($content);
+
+					if (
+						$block_reader->next_tag([
+							'class_name' => 'wp-block-blocksy-query'
+						])
+						&&
+						! empty($attributes['uniqueId'])
+					) {
+						$block_reader->set_attribute(
+							'data-id',
+							substr($attributes['uniqueId'], 0, 3)
+						);
+					}
+
+					return $block_reader->get_updated_html();
 				}
 			]
 		);
@@ -230,9 +250,12 @@ class Query {
 					if (blocksy_akg('has_pagination', $block->context, 'no') === 'yes') {
 						$prefix = $this->get_prefix_for($block->context);
 
+						$pagination_data = $this->get_pagination_descriptor($block->context);
+
 						$result .= blocksy_display_posts_pagination([
 							'query' => $query,
-							'prefix' => $prefix
+							'prefix' => $prefix,
+							'query_var' => $pagination_data['query_var']
 						]);
 					}
 
@@ -316,12 +339,17 @@ class Query {
 			$wp_query = $query;
 		}
 
+		$pagination_data = $this->get_pagination_descriptor($attributes);
+
 		ob_start();
 
 		blocksy_render_archive_cards([
 			'prefix' => $prefix,
 			'query' => $query,
-			'has_pagination' => $attributes['has_pagination'] === 'yes'
+			'has_pagination' => $attributes['has_pagination'] === 'yes',
+			'pagination_args' => [
+				'query_var' => $pagination_data['query_var'],
+			]
 		]);
 
 		$result .= ob_get_clean();
@@ -395,13 +423,8 @@ class Query {
 		}
 
 		if ($attributes['has_pagination'] === 'yes') {
-			if (get_query_var('paged')) {
-				$query_args['paged'] = get_query_var('paged');
-			} elseif (get_query_var('page')) {
-				$query_args['paged'] = get_query_var('page');
-			} else {
-				$query_args['paged'] = 1;
-			}
+			$pagination_data = $this->get_pagination_descriptor($attributes);
+			$query_args['paged'] = $pagination_data['value'];
 		}
 
 		$to_include = [
@@ -689,6 +712,29 @@ class Query {
 		}
 
 		return $prefix;
+	}
+
+	// ?query-1-page=2
+	public function get_pagination_descriptor($attributes) {
+		$attributes = wp_parse_args(
+			$attributes,
+			[
+				'uniqueId' => ''
+			]
+		);
+
+		$query_var = 'query-' . substr($attributes['uniqueId'], 0, 3);
+
+		$current_page = 1;
+
+		if (isset($_GET[$query_var])) {
+			$current_page = intval(sanitize_text_field($_GET[$query_var]));
+		}
+
+		return [
+			'query_var' => $query_var,
+			'value' => $current_page
+		];
 	}
 }
 

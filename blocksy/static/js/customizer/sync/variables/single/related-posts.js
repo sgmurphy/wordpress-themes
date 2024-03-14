@@ -137,6 +137,34 @@ export const getSingleElementsVariables = () => ({
 		responsive: true,
 	},
 
+
+	// post tags
+	[`${prefix}_post_tags_alignment`]: {
+		selector: applyPrefixFor('.entry-tags', prefix),
+		variable: 'horizontal-alignment',
+		responsive: true,
+		unit: '',
+	},
+
+	...typographyOption({
+		id: `${prefix}_post_tags_title_font`,
+		selector: applyPrefixFor('.entry-tags .ct-module-title', prefix),
+	}),
+
+	[`${prefix}_post_tags_title_color`]: {
+		selector: applyPrefixFor('.entry-tags .ct-module-title', prefix),
+		variable: 'theme-heading-color',
+		type: 'color:default',
+	},
+
+	[`${prefix}_post_tags_border_radius`]: {
+		selector: applyPrefixFor('.entry-tags-items', prefix),
+		type: 'spacing',
+		variable: 'theme-border-radius',
+		responsive: true,
+	},
+
+
 	// related posts
 	[`${prefix}_related_label_alignment`]: {
 		selector: applyPrefixFor('.ct-related-posts .ct-module-title', prefix),

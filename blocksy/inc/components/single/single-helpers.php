@@ -56,6 +56,48 @@ if (! function_exists('blocksy_get_author_id')) {
 	}
 }
 
+function blocksy_get_the_author_meta($field, $user_id = false) {
+	if (! $user_id) {
+		$user_id = blocksy_get_author_id();
+	}
+
+	$maybe_meta = apply_filters(
+		'blocksy:author:get_the_author_meta',
+		null,
+		$field,
+		$user_id
+	);
+
+	if ($maybe_meta !== null) {
+		return $maybe_meta;
+	}
+
+	return get_the_author_meta($field, $user_id);
+}
+
+function blocksy_count_user_posts() {
+	$author_id = blocksy_get_author_id();
+
+	$maybe_count = apply_filters('blocksy:author:count_user_posts', null, $author_id);
+
+	if ($maybe_count !== null) {
+		return $maybe_count;
+	}
+
+	if (! get_userdata($author_id)) {
+		return 0;
+	}
+
+	return count_user_posts(
+		$author_id,
+		array_merge(
+			['post'],
+			blocksy_manager()->post_types->get_supported_post_types()
+		)
+	);
+}
+
+
 if (! function_exists('blocksy_post_uses_vc')) {
 	function blocksy_post_uses_vc() {
 		$post = get_post();
@@ -302,13 +344,8 @@ function blocksy_author_meta_elements($args = []) {
 		'count' => true,
 	]);
 
-	$posts_count = count_user_posts(
-		blocksy_get_author_id(),
-		array_merge(
-			['post'],
-			blocksy_manager()->post_types->get_supported_post_types()
-		)
-	);
+	$posts_count = 0;
+	$posts_count = blocksy_count_user_posts();
 
 	$container_attr = array_merge([
 		'class' => 'entry-meta',
@@ -400,7 +437,7 @@ function blocksy_author_box() {
 						$with_link ? [
 							'href' => get_author_posts_url(
 								blocksy_get_author_id(),
-								get_the_author_meta('user_nicename')
+								blocksy_get_the_author_meta('user_nicename')
 							),
 						] : [],
 						[]
@@ -423,7 +460,7 @@ function blocksy_author_box() {
 			<div class="author-box-bio">
 				<?php //the_author_meta('description'); ?>
 
-				<?php echo wp_kses_post(wpautop(get_the_author_meta('description'))); ?>
+				<?php echo wp_kses_post(wpautop(blocksy_get_the_author_meta('description'))); ?>
 			</div>
 
 			<?php

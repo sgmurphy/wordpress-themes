@@ -155,7 +155,7 @@ add_filter(
  */
 if (! function_exists('blocksy_custom_comment_template')) {
 function blocksy_custom_comment_template($comment, $args, $depth) {
-	$is_by_author = get_the_author_meta( 'email' ) === $comment->comment_author_email;
+	$is_by_author = blocksy_get_the_author_meta('email') === $comment->comment_author_email;
 
 	$prefix = blocksy_manager()->screen->get_prefix();
 

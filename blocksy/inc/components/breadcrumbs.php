@@ -226,14 +226,14 @@ class BreadcrumbsBuilder {
 		} elseif (is_author()) {
 			$author = [];
 
-			$author_data = get_userdata(get_the_author_meta('ID'));
+			$author['name'] = blocksy_get_the_author_meta('display_name');
+			$author['id'] = blocksy_get_author_id();
 
-			$author['name'] = $author_data->display_name;
-			$author['id'] = get_the_author_meta('ID');
 			$author['url'] = get_author_posts_url(
-				$author['id'],
-				$author_data->user_nicename
+				blocksy_get_author_id(),
+				blocksy_get_the_author_meta('user_nicename')
 			);
+
 			$author['type'] = 'author';
 
 			$return[] = $author;
@@ -646,6 +646,18 @@ class BreadcrumbsBuilder {
 
 		$source = blocksy_get_theme_mod('breadcrumbs_source', 'default');
 
+		$class = 'ct-breadcrumbs';
+
+		if (! empty($args['class'])) {
+			$class .= ' ' . $args['class'];
+		}
+
+		$style = '';
+
+		if (! empty($args['style'])) {
+			$style .= 'style="' . $args['style'] . '"';
+		}
+
 		if (
 			function_exists('rank_math_the_breadcrumbs')
 			&&
@@ -656,7 +668,7 @@ class BreadcrumbsBuilder {
 			$content = ob_get_clean();
 
 			if (! empty($content)) {
-				return '<div class="ct-breadcrumbs" data-source="' . $source . '">' . $content . '</div>';
+				return '<div class="' . $class . '" data-source="' . $source . '" ' . $style . '>' . $content . '</div>';
 			}
 		}
 
@@ -666,7 +678,7 @@ class BreadcrumbsBuilder {
 			$source === 'yoast'
 		) {
 			ob_start();
-			yoast_breadcrumb('<div class="ct-breadcrumbs" data-source="' . $source . '">', '</div>');
+			yoast_breadcrumb('<div class="' . $class . '" data-source="' . $source . '" ' . $style . '>', '</div>');
 			$content = ob_get_clean();
 
 			if (! empty($content)) {
@@ -680,7 +692,7 @@ class BreadcrumbsBuilder {
 			$source === 'seopress'
 		) {
 			ob_start();
-			echo '<div class="ct-breadcrumbs" data-source="' . $source . '">';
+			echo '<div class="' . $class . '" data-source="' . $source . '" ' . $style . '>';
 			seopress_display_breadcrumbs();
 			echo '</div>';
 			return ob_get_clean();
@@ -692,7 +704,7 @@ class BreadcrumbsBuilder {
 			$source === 'bcnxt'
 		) {
 			ob_start();
-			echo '<div class="ct-breadcrumbs" data-source="' . $source . '">';
+			echo '<div class="' . $class . '" data-source="' . $source . '" ' . $style . '>';
 			bcn_display();
 			echo '</div>';
 			return ob_get_clean();
@@ -718,17 +730,6 @@ class BreadcrumbsBuilder {
 
 		if (count($items) < 1) {
 			return '';
-		}
-
-		$class = 'ct-breadcrumbs';
-		$style = '';
-
-		if (! empty($args['class'])) {
-			$class .= ' ' . $args['class'];
-		}
-
-		if (! empty($args['style'])) {
-			$style .= 'style="' . $args['style'] . '"';
 		}
 
 		ob_start();

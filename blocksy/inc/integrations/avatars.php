@@ -12,6 +12,6 @@ if (! function_exists('blocksy_get_avatar_alt_for')) {
 			}
 		}
 
-		return get_the_author_meta('display_name', $user_id);
+		return blocksy_get_the_author_meta('display_name', $user_id);
 	}
 }

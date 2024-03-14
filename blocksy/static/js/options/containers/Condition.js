@@ -94,9 +94,7 @@ const Condition = ({
 			})
 		}
 
-		valueForCondition = {
-			...valueForCondition,
-
+		const finalOverrides = {
 			...(window.ct_customizer_localizations
 				? ct_customizer_localizations.conditions_override
 				: {}),
@@ -104,6 +102,21 @@ const Condition = ({
 			...(window.ct_localizations
 				? ct_localizations.conditions_override
 				: {}),
+		}
+
+		if (finalOverrides['shop_cards_type']) {
+			if (
+				valueForCondition.shop_cards_type === 'type-1' ||
+				valueForCondition.shop_cards_type === 'type-2'
+			) {
+				finalOverrides['shop_cards_type'] =
+					valueForCondition.shop_cards_type
+			}
+		}
+
+		valueForCondition = {
+			...valueForCondition,
+			...finalOverrides,
 		}
 
 		if (conditionOption.computed_fields) {

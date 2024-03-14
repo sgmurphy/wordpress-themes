@@ -596,7 +596,7 @@ export const getPostListingVariables = () => ({
 		? {
 				...handleBackgroundOptionFor({
 					id: `${prefix}_background`,
-					selector: `[data-prefix="${prefix}"]`,
+					selector: `body[data-prefix="${prefix}"]`,
 					responsive: true,
 				}),
 		  }

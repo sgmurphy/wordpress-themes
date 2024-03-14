@@ -14,6 +14,8 @@ watchOptionsWithPrefix({
 		`${prefix}_share_box_visibility`,
 
 		`${prefix}_author_box_visibility`,
+		`${prefix}_post_tags_title`,
+		`${prefix}_post_tags_visibility`,
 		`${prefix}_post_nav_title_visibility`,
 		`${prefix}_post_nav_thumb_visibility`,
 		`${prefix}_post_nav_visibility`,
@@ -31,6 +33,7 @@ watchOptionsWithPrefix({
 		const visibilities = [
 			{ selector: '.ct-share-box', id: 'share_box_visibility' },
 			{ selector: '.author-box', id: 'author_box_visibility' },
+			{ selector: '.entry-tags', id: 'post_tags_visibility' },
 			{
 				selector: '.post-navigation .item-title',
 				id: 'post_nav_title_visibility',
@@ -47,6 +50,14 @@ watchOptionsWithPrefix({
 				document.querySelectorAll('.ct-share-box .ct-module-title')
 			).map((el) => {
 				el.innerHTML = getOptionFor('share_box_title', prefix)
+			})
+		}
+
+		if (id === `${prefix}_post_tags_title`) {
+			Array.from(
+				document.querySelectorAll('.entry-tags .ct-module-title')
+			).map((el) => {
+				el.innerHTML = getOptionFor('post_tags_title', prefix)
 			})
 		}
 

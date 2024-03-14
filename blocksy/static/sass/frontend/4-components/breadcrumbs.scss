@@ -1,5 +1,6 @@
 .ct-breadcrumbs {
 	color: var(--theme-text-color);
+	--has-link-decoration: var(--false);
 }
 
 .ct-breadcrumbs[data-source="default"] {

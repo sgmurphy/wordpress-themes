@@ -22,7 +22,7 @@
 
 		[class*='ct-media-container'] {
 			border-radius: 100%;
-			margin-inline-end: 10px;
+			margin-inline-end: 0.5em;
 
 			+ svg {
 				display: none;
@@ -35,7 +35,7 @@
 		}
 
 		> span {
-			margin-inline-end: 5px;
+			margin-inline-end: 0.27em;
 		}
 	}
 

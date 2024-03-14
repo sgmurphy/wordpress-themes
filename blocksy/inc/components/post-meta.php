@@ -5,6 +5,111 @@ add_filter('safe_style_css', function($styles) {
 	return $styles;
 });
 
+if (! function_exists('blocksy_render_post_author_avatar')) {
+	function blocksy_render_post_author_avatar($author) {
+		global $blocksy_author_options, $blocksy_meta_args;
+
+		if ($blocksy_author_options['has_author_avatar'] === 'no') {
+			return '';
+		}
+
+		if (! isset($author->ID, $author->user_nicename, $author->display_name)) {
+			return '';
+		}
+
+		$result = '';
+
+		return blocksy_simple_image(
+			apply_filters(
+				'blocksy:post-meta:author:author-avatar-url',
+				blocksy_get_avatar_url([
+					'avatar_entity' => $author->ID,
+					'size' => intval($blocksy_author_options['avatar_size']) * 2
+				])
+			),
+			[
+				'tag_name' => 'a',
+				'aspect_ratio' => false,
+				'suffix' => 'static',
+				'html_atts' => [
+					'href' => get_author_posts_url($author->ID),
+					'tabindex' => -1
+				],
+				'has_default_alt' => false,
+				'img_atts' => [
+					'width' => intval($blocksy_author_options['avatar_size']),
+					'height' => intval($blocksy_author_options['avatar_size']),
+					'style' => 'height:' . intval($blocksy_author_options['avatar_size']) . 'px',
+					'alt' => blocksy_get_avatar_alt_for($author->ID)
+				],
+			]
+		);
+	}
+}
+
+if (! function_exists('blocksy_render_post_author_details')) {
+	function blocksy_render_post_author_details($author) {
+		global $blocksy_author_options, $blocksy_meta_args;
+
+		if (! isset($author->ID, $author->user_nicename, $author->display_name)) {
+			return '';
+		}
+
+		$meta_label = $blocksy_meta_args['prefix'] ? blocksy_translate_dynamic(
+			$blocksy_author_options['label'],
+			$blocksy_meta_args['prefix'] . '_' . $blocksy_author_options['id'] . '_label'
+		) : $blocksy_author_options['label'];
+
+		$result = '';
+
+		$result .= blocksy_html_tag(
+			'a',
+			array_merge(
+				[
+					'class' => 'ct-meta-element-author',
+					'href' => esc_url(get_author_posts_url($author->ID, $author->user_nicename)),
+					// translators: %s: Author's display name.
+					'title' => esc_attr(blocksy_safe_sprintf(__('Posts by %s', 'blocksy'), get_the_author())),
+					'rel' => 'author',
+				],
+				blocksy_schema_org_definitions(
+					'author_url',
+					[
+						'array' => true
+					]
+				),
+				(
+					$blocksy_meta_args['meta_type'] === 'label' ? [
+						'data-label' => $meta_label
+					] : []
+				)
+				
+			),
+			blocksy_html_tag(
+				'span',
+				blocksy_schema_org_definitions('author_name', ['array' => true]),
+				get_the_author()
+			)
+		); 
+
+		return $result;
+	}
+}
+if (! function_exists('blocksy_render_post_author')) {
+	function blocksy_render_post_author($author) {
+		global $blocksy_author_options, $blocksy_meta_args;
+
+		if (! isset($author->ID, $author->user_nicename, $author->display_name)) {
+			return '';
+		}
+
+		$result = blocksy_render_post_author_avatar($author);
+		$result .= blocksy_render_post_author_details($author);
+
+		return $result;
+	}
+}
+
 if (! function_exists('blocksy_post_meta')) {
 	function blocksy_post_meta($post_meta_descriptor = null, $args = []) {
 		if (! $post_meta_descriptor && ! is_array($post_meta_descriptor)) {
@@ -149,84 +254,80 @@ if (! function_exists('blocksy_post_meta')) {
 				$single_meta['id'] === 'author'
 				&&
 				get_the_author()
-			) { ?><li class="meta-author" <?php echo blocksy_schema_org_definitions('author') ?>><?php
-					if ($single_meta['has_author_avatar'] === 'yes') {
-						echo blocksy_simple_image(
-							apply_filters(
-								'blocksy:post-meta:author:author-avatar-url',
-								blocksy_get_avatar_url([
-									'avatar_entity' => get_the_author_meta('ID'),
-									'size' => intval($single_meta['avatar_size']) * 2
-								])
-							),
-							[
-								'tag_name' => 'a',
-								'aspect_ratio' => false,
-								'suffix' => 'static',
-								'html_atts' => [
-									'href' => get_author_posts_url(get_the_author_meta('ID')),
-									'tabindex' => -1
-								],
-								'has_default_alt' => false,
-								'img_atts' => [
-									'width' => intval($single_meta['avatar_size']),
-									'height' => intval($single_meta['avatar_size']),
-									'style' => 'height:' . intval($single_meta['avatar_size']) . 'px',
-									'alt' => blocksy_get_avatar_alt_for(get_the_author_meta('ID'))
-								],
-							]
-						);
-					}
+			) {
+				global $blocksy_author_options, $blocksy_meta_args;
+
+				$blocksy_author_options = $single_meta;
+				$blocksy_meta_args = $args;
+
+				$meta_label = '';
+
+				if ($args['meta_type'] === 'label') {
 
 					$meta_label = $args['prefix'] ? blocksy_translate_dynamic(
 						$single_meta['label'],
 						$args['prefix'] . '_' . $single_meta['id'] . '_label'
 					) : $single_meta['label'];
 
-					if (
-						$args['meta_type'] === 'label'
-						&&
-						!empty($meta_label)
-					) {
-						echo '<span>' . esc_html($meta_label) . '</span>';
+					if (! empty($meta_label)) {
+						$meta_label = blocksy_html_tag(
+							'span',
+							[],
+							esc_html($meta_label)
+						);
+					}					
+				}
+
+				$author_output = '';
+				
+				if (
+					(
+						$args['meta_type'] === 'icons'
+						||
+						$args['force_icons']
+					)
+					&&
+					$single_meta['has_author_avatar'] === 'no'
+				) {
+					$icon = '<svg width="13" height="13" viewBox="0 0 15 15"><path d="M13.6,1.4c-1.9-1.9-4.9-1.9-6.8,0L2.2,6C2.1,6.1,2,6.3,2,6.5V12l-1.8,1.8c-0.3,0.3-0.3,0.7,0,1C0.3,14.9,0.5,15,0.7,15s0.3-0.1,0.5-0.2L3,13h5.5c0.2,0,0.4-0.1,0.5-0.2l2.7-2.7c0,0,0,0,0,0l1.9-1.9C15.5,6.3,15.5,3.3,13.6,1.4z M8.2,11.6H4.4l1.4-1.4h3.9L8.2,11.6z M12.6,7.2L11,8.9H7.1l3.6-3.6c0.3-0.3,0.3-0.7,0-1C10.4,4,10,4,9.7,4.3L5,9.1c0,0,0,0,0,0l-1.6,1.6V6.8l4.4-4.4c1.3-1.3,3.5-1.3,4.8,0C14,3.7,14,5.9,12.6,7.2C12.6,7.2,12.6,7.2,12.6,7.2z"/></svg>';
+		
+					if (function_exists('blc_get_icon')) {
+						$icon = blc_get_icon([
+							'icon_descriptor' => blocksy_akg('icon', $single_meta, [
+								'icon' => 'blc blc-feather'
+							]),
+							'icon_container' => false
+						]);
 					}
-
-					if ($args['meta_type'] === 'icons' || $args['force_icons']) {
-						$icon = '<svg width="13" height="13" viewBox="0 0 15 15"><path d="M13.6,1.4c-1.9-1.9-4.9-1.9-6.8,0L2.2,6C2.1,6.1,2,6.3,2,6.5V12l-1.8,1.8c-0.3,0.3-0.3,0.7,0,1C0.3,14.9,0.5,15,0.7,15s0.3-0.1,0.5-0.2L3,13h5.5c0.2,0,0.4-0.1,0.5-0.2l2.7-2.7c0,0,0,0,0,0l1.9-1.9C15.5,6.3,15.5,3.3,13.6,1.4z M8.2,11.6H4.4l1.4-1.4h3.9L8.2,11.6z M12.6,7.2L11,8.9H7.1l3.6-3.6c0.3-0.3,0.3-0.7,0-1C10.4,4,10,4,9.7,4.3L5,9.1c0,0,0,0,0,0l-1.6,1.6V6.8l4.4-4.4c1.3-1.3,3.5-1.3,4.8,0C14,3.7,14,5.9,12.6,7.2C12.6,7.2,12.6,7.2,12.6,7.2z"/></svg>';
-
-						if (function_exists('blc_get_icon')) {
-							$icon = blc_get_icon([
-								'icon_descriptor' => blocksy_akg('icon', $single_meta, [
-									'icon' => 'blc blc-feather'
-								]),
-								'icon_container' => false
-							]);
-						}
-
-						echo trim($icon);
+		
+					if (! empty($icon)) {
+						$author_output .= trim($icon);
 					}
+				}
 
-					global $authordata;
+				$author_output .= apply_filters(
+					'blocksy:post_meta:author_output',
+					blocksy_render_post_author($authordata),
+					$blocksy_author_options['has_author_avatar'] === 'yes',
+					$meta_label
+				);				
 
-					echo blocksy_html_tag('a', array_merge([
-						'class' => 'ct-meta-element-author',
-						'href' => esc_url(get_author_posts_url($authordata->ID, $authordata->user_nicename)),
-						/* translators: %s: Author's display name. */
-						'title' => esc_attr(blocksy_safe_sprintf(__('Posts by %s', 'blocksy'), get_the_author())),
-						'rel' => 'author',
-					], blocksy_schema_org_definitions('author_url', [
-						'array' => true
-					]), (
-						$args['meta_type'] === 'label' ? [
-							// 'data-label' => $meta_label
-						] : []
-					)), blocksy_html_tag(
-						'span',
-						blocksy_schema_org_definitions('author_name', ['array' => true]),
-						get_the_author()
-					));
-
-				?></li><?php }
+				echo blocksy_html_tag(
+					'li',
+					array_merge(
+						[
+							'class' => 'meta-author',
+						],
+						blocksy_schema_org_definitions(
+							'author',
+							[
+								'array' => true
+							]
+						)
+					),
+					$author_output
+				);
+			}
 
 				if ($single_meta['id'] === 'post_date') {
 					?><li class="meta-date" <?php echo blocksy_schema_org_definitions('publish_date') ?>><?php

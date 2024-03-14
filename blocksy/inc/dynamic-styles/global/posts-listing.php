@@ -666,7 +666,7 @@ if ($card_type === 'simple') {
 }
 
 blocksy_output_background_css([
-	'selector' => blocksy_prefix_selector('', $prefix),
+	'selector' => 'body' . blocksy_prefix_selector('', $prefix),
 	'css' => $css,
 	'tablet_css' => $tablet_css,
 	'mobile_css' => $mobile_css,

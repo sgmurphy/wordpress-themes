@@ -151,7 +151,7 @@ if ($field === 'wp:author') {
 	$overide_link = '';
 
 	if ($author_field === 'email') {
-		$value = get_the_author_meta('user_email', $author_id);
+		$value = blocksy_get_the_author_meta('user_email', $author_id);
 
 		if (! empty($value)) {
 			$overide_link = 'mailto:' . $value;
@@ -159,23 +159,23 @@ if ($field === 'wp:author') {
 	}
 
 	if ($author_field === 'nicename') {
-		$value = get_the_author_meta('nickname', $author_id);
+		$value = blocksy_get_the_author_meta('nickname', $author_id);
 	}
 
 	if ($author_field === 'display_name') {
-		$value = get_the_author_meta('nickname', $author_id);
+		$value = blocksy_get_the_author_meta('nickname', $author_id);
 	}
 
 	if ($author_field === 'first_name') {
-		$value = get_the_author_meta('first_name', $author_id);
+		$value = blocksy_get_the_author_meta('first_name', $author_id);
 	}
 
 	if ($author_field === 'last_name') {
-		$value = get_the_author_meta('last_name', $author_id);
+		$value = blocksy_get_the_author_meta('last_name', $author_id);
 	}
 
 	if ($author_field === 'description') {
-		$value = get_the_author_meta('description', $author_id);
+		$value = blocksy_get_the_author_meta('description', $author_id);
 	}
 
 	if (empty($value) && ! empty($value_fallback)) {

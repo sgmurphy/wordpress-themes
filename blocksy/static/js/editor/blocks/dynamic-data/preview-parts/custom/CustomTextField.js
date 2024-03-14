@@ -42,9 +42,9 @@ const CustomTextField = ({
 				...(blockProps.style || {}),
 				...(borderProps.style || {}),
 			}}
-			className={classnames(blockProps.className, borderProps.className)}>
-			{valueToRender}
-		</TagName>
+			className={classnames(blockProps.className, borderProps.className)}
+			dangerouslySetInnerHTML={{ __html: valueToRender }}
+		/>
 	)
 }
 

@@ -1,3 +1,14 @@
+2.0.31: 2024-03-14
+- Improvement: Better compatibility with Co-Authors Plus plugin
+- Improvement: Better flow for isolated pagination in advanced posts block
+- Improvement: Cover cards type - image ratio potential issue in Safari browser
+- Improvement: Don't apply global archive background color to Advanced Posts block
+- Improvement: Don't apply page meta box settings if those are overwritten by customizer settings
+- Improvement: Option to remove links from related posts image & title elements
+- Improvement: Smarter load of some theme CSS files
+- Fix: Add to wishlist button and WP Grid Builder sorting option issue
+- Fix: Breadcrumbs block colors do not apply if third party provider is selected
+
 2.0.30: 2024-03-08
 - Improvement: Correctly pass all arguments to the `wp_get_attachment_image_attributes` filter
 

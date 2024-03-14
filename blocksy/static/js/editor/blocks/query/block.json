@@ -145,6 +145,7 @@
 
 	"usesContext": ["postId", "postType"],
 	"providesContext": {
+		"uniqueId": "uniqueId",
 		"post_type": "post_type",
 		"limit": "limit",
 		"order": "order",

@@ -118,6 +118,9 @@ class CustomPostTypes {
 				'wfocu_funnel',
 				'wfocu_offer',
 
+				// co-authors
+				'guest-author',
+
 				// other
 				'iamport_payment',
 				'wpcw_achievements',

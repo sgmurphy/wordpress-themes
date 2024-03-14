@@ -14,8 +14,12 @@ if (! isset($sync_prefix)) {
 	$sync_prefix = $prefix;
 }
 
-if (! isset($has_module_title)) {
-	$has_module_title = true;
+if (! isset($has_module_title_design)) {
+	$has_module_title_design = 'inline';
+}
+
+if (! isset($has_module_title_tag)) {
+	$has_module_title_tag = true;
 }
 
 if (! isset($has_share_box_type)) {
@@ -114,47 +118,50 @@ $general_tab_options = array_merge(
 				'top' => false,
 				'bottom' => true,
 			],
-			'sync' => blocksy_sync_whole_page([
-				'prefix' => $sync_prefix
-			]),
-
-			'divider' => 'top:bottom',
-
 			'choices' => blocksy_ordered_keys([
 				'top' => __( 'Top', 'blocksy' ),
 				'bottom' => __( 'Bottom', 'blocksy' ),
 			]),
+			'sync' => blocksy_sync_whole_page([
+				'prefix' => $sync_prefix
+			]),
 		],
 
-		$prefix . 'has_share_box_title' => [
+		$prefix . 'share_box_title' => array_merge([
 			'label' => __( 'Module Title', 'blocksy' ),
-			'type' => $has_module_title ? 'ct-switch' : 'hidden',
-			'value' => 'no',
+			'type' =>  'text',
+			'value' => __( 'Share your love', 'blocksy' ),
+			'design' => $has_module_title_design,
+			'divider' => 'top:full',
+		], $skip_sync_id ? [
+			'sync' => $skip_sync_id,
+			'setting' => [ 'transport' => 'postMessage' ],
+		] : [
+			'sync' => 'live'
+		]),
+
+		$prefix . 'share_box_title_tag' => [
+			'label' => __( 'Module Title Tag', 'blocksy' ),
+			'type' =>  $has_module_title_tag ? 'ct-select' : 'hidden',
+			'value' => 'span',
+			'view' => 'text',
+			'design' => 'inline',
+			'choices' => blocksy_ordered_keys(
+				[
+					'h1' => 'H1',
+					'h2' => 'H2',
+					'h3' => 'H3',
+					'h4' => 'H4',
+					'h5' => 'H5',
+					'h6' => 'H6',
+					'p' => 'p',
+					'span' => 'span',
+				]
+			),
 			'sync' => blocksy_sync_whole_page([
 				'prefix' => $sync_prefix,
 				'loader_selector' => '.ct-share-box'
 			]),
-		],
-
-		blocksy_rand_md5() => [
-			'type' => 'ct-condition',
-			'condition' => [ $prefix . 'has_share_box_title' => 'yes' ],
-			'options' => [
-
-				$prefix . 'share_box_title' => array_merge([
-					'label' => false,
-					'type' => 'text',
-					'design' => 'block',
-					'value' => __( 'Share your love', 'blocksy' ),
-					'disableRevertButton' => true,
-				], $skip_sync_id ? [
-					'sync' => $skip_sync_id,
-					'setting' => [ 'transport' => 'postMessage' ],
-				] : [
-					'sync' => 'live'
-				]),
-
-			],
 		],
 
 		blocksy_rand_md5() => [
@@ -456,6 +463,65 @@ $general_tab_options = array_merge(
 );
 
 $design_tab_options = [
+
+	$prefix . 'share_box_title_font' => [
+		'type' => 'ct-typography',
+		'label' => __( 'Module Title Font', 'blocksy' ),
+		'sync' => 'live',
+		'value' => blocksy_typography_default_values([
+			'size' => '14px',
+			'variation' => 'n6',
+		]),
+	],
+
+	$prefix . 'share_box_title_color' => [
+		'label' => __( 'Module Title Font Color', 'blocksy' ),
+		'type'  => 'ct-color-picker',
+		'design' => 'inline',
+		'divider' => 'bottom:full',
+		'sync' => 'live',
+		'value' => [
+			'default' => [
+				'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+			],
+		],
+		'pickers' => [
+			[
+				'title' => __( 'Initial', 'blocksy' ),
+				'id' => 'default',
+				'inherit' => [
+					'var(--theme-heading-1-color, var(--theme-headings-color))' => [
+						$prefix . 'share_box_title_tag' => 'h1'
+					],
+
+					'var(--theme-heading-2-color, var(--theme-headings-color))' => [
+						$prefix . 'share_box_title_tag' => 'h2'
+					],
+
+					'var(--theme-heading-3-color, var(--theme-headings-color))' => [
+						$prefix . 'share_box_title_tag' => 'h3'
+					],
+
+					'var(--theme-heading-4-color, var(--theme-headings-color))' => [
+						$prefix . 'share_box_title_tag' => 'h4'
+					],
+
+					'var(--theme-heading-5-color, var(--theme-headings-color))' => [
+						$prefix . 'share_box_title_tag' => 'h5'
+					],
+
+					'var(--theme-heading-6-color, var(--theme-headings-color))' => [
+						$prefix . 'share_box_title_tag' => 'h6'
+					],
+
+					'var(--theme-text-color)' => [
+						$prefix . 'share_box_title_tag' => 'span|p'
+					],
+				]
+			],
+		],
+	],
+
 	blocksy_rand_md5() => [
 		'type' => 'ct-condition',
 		'condition' => $display_style === 'design_only' ? [
@@ -600,7 +666,6 @@ $inner_options = [
 		'options' => $design_tab_options
 	]
 ];
-
 
 if ($display_style === 'panel') {
 	$options = [

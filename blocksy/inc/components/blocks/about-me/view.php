@@ -68,8 +68,8 @@ if ($about_source === 'from_wp') {
 		]
 	);
 
-	$about_name = get_the_author_meta('display_name', $user_id);
-	$about_text = get_the_author_meta('description', $user_id);
+	$about_name = blocksy_get_the_author_meta('display_name', $user_id);
+	$about_text = blocksy_get_the_author_meta('description', $user_id);
 }
 
 $size = blocksy_default_akg('about_social_icons_size', $atts, 'small');

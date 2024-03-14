@@ -291,6 +291,40 @@ function blocksy_single_content($content = null) {
 
 		<?php if ($has_post_tags) { ?>
 			<?php
+				$class = 'entry-tags';
+
+				$class .= ' ' . blocksy_visibility_classes(blocksy_get_theme_mod(
+					$prefix . '_post_tags_visibility',
+					[
+						'desktop' => true,
+						'tablet' => true,
+						'mobile' => true,
+					]
+				));
+
+				$module_title_output = '';
+				$module_title = blocksy_get_theme_mod($prefix . '_post_tags_title', __('Tags', 'blocksy'));
+				$module_wrapper = blocksy_get_theme_mod($prefix . '_post_tags_title_wrapper', 'span');
+
+				if (!empty($module_title) || is_customize_preview()) {
+					$module_title_output = blocksy_html_tag(
+						$module_wrapper,
+						[
+							'class' => 'ct-module-title'
+						],
+						$module_title
+					);
+				}
+
+				$deep_link_args = blocksy_generic_get_deep_link(
+					[
+						'prefix' => $prefix,
+						'suffix' => $prefix . '_has_post_tags',
+						'shortcut' => 'border',
+						'return' => 'array'
+					]
+				);
+
 				$tax_to_check = blocksy_maybe_get_matching_taxonomy(
 					get_post_type(),
 					false
@@ -313,12 +347,26 @@ function blocksy_single_content($content = null) {
 				) {
 					echo blocksy_html_tag(
 						'div',
-						['class' => 'entry-tags'],
-						blocksy_get_categories_list([
-							'taxonomy' => $tax_to_check,
-							'before_each' => '# ',
-							'has_term_class' => false
-						])
+						array_merge(
+							[
+								'class' => $class,
+							],
+							$deep_link_args
+						),
+
+						$module_title_output .
+
+						blocksy_html_tag(
+							'div',
+							[
+								'class' => 'entry-tags-items'
+							],
+							blocksy_get_categories_list([
+								'taxonomy' => $tax_to_check,
+								'before_each' => '<span>#</span> ',
+								'has_term_class' => false
+							])
+						)
 					);
 				}
 			?>

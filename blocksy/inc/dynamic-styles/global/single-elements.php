@@ -56,6 +56,33 @@ if (blocksy_get_theme_mod($prefix . '_has_share_box', 'no') === 'yes') {
 		]);
 	}
 
+	blocksy_output_font_css([
+		'font_value' => blocksy_get_theme_mod($prefix . '_share_box_title_font',
+			blocksy_typography_default_values([
+				'size' => '14px',
+				'variation' => 'n6',
+			])
+		),
+		'css' => $css,
+		'tablet_css' => $tablet_css,
+		'mobile_css' => $mobile_css,
+		'selector' => blocksy_prefix_selector('.ct-share-box .ct-module-title', $prefix),
+	]);
+
+	blocksy_output_colors([
+		'value' => blocksy_get_theme_mod($prefix . '_share_box_title_color'),
+		'default' => [
+			'default' => ['color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+		],
+		'css' => $css,
+		'variables' => [
+			'default' => [
+				'selector' => blocksy_prefix_selector('.ct-share-box .ct-module-title', $prefix),
+				'variable' => 'theme-heading-color'
+			],
+		],
+	]);
+
 
 	if ($share_box_type === 'type-1') {
 		blocksy_output_colors([
@@ -416,6 +443,67 @@ if (
 		]);
 	}
 }
+
+// post tags
+if (
+	blocksy_get_theme_mod($prefix . '_has_post_tags', 'no') === 'yes'
+	&&
+	$prefix !== 'single_page'
+) {
+
+	$post_tags_alignment = blocksy_get_theme_mod($prefix . '_post_tags_alignment', 'CT_CSS_SKIP_RULE');
+
+	blocksy_output_responsive([
+		'css' => $css,
+		'tablet_css' => $tablet_css,
+		'mobile_css' => $mobile_css,
+		'selector' => blocksy_prefix_selector('.entry-tags', $prefix),
+		'variableName' => 'horizontal-alignment',
+		'value' => $post_tags_alignment,
+		'unit' => '',
+	]);
+
+	blocksy_output_font_css([
+		'font_value' => blocksy_get_theme_mod($prefix . '_post_tags_title_font',
+			blocksy_typography_default_values([
+				'size' => '14px',
+				'variation' => 'n6',
+			])
+		),
+		'css' => $css,
+		'tablet_css' => $tablet_css,
+		'mobile_css' => $mobile_css,
+		'selector' => blocksy_prefix_selector('.entry-tags .ct-module-title', $prefix),
+	]);
+
+	blocksy_output_colors([
+		'value' => blocksy_get_theme_mod($prefix . '_post_tags_title_color'),
+		'default' => [
+			'default' => ['color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+		],
+		'css' => $css,
+		'variables' => [
+			'default' => [
+				'selector' => blocksy_prefix_selector('.entry-tags .ct-module-title', $prefix),
+				'variable' => 'theme-heading-color'
+			],
+		],
+	]);
+
+	blocksy_output_spacing([
+		'css' => $css,
+		'tablet_css' => $tablet_css,
+		'mobile_css' => $mobile_css,
+		'selector' => blocksy_prefix_selector('.entry-tags-items', $prefix),
+		'property' => 'theme-border-radius',
+		'value' => blocksy_get_theme_mod(
+			$prefix . '_post_tags_border_radius',
+			blocksy_spacing_value()
+		)
+	]);
+
+}
+
 
 // posts navigation
 if (

@@ -124,7 +124,7 @@ add_action('woocommerce_before_account_navigation', function () {
 					'style' => 'height:' . (
 						intval($avatar_size) / 2
 					) . 'px',
-					'alt' => blocksy_get_avatar_alt_for(get_the_author_meta('ID'))
+					'alt' => blocksy_get_avatar_alt_for(blocksy_get_the_author_meta('ID'))
 				],
 			]
 		) . $username;

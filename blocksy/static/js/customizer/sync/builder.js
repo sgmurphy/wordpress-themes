@@ -154,9 +154,7 @@ const makeAllShortcuts = () => {
 	;[
 		...document.querySelectorAll('#main-container > header [data-id]'),
 		...document.querySelectorAll('#main-container > header [data-row]'),
-		...document.querySelectorAll(
-			'#main-container > footer [data-shortcut]'
-		),
+		...document.querySelectorAll('#main-container > footer [data-shortcut]'),
 		...document.querySelectorAll('.hero-section'),
 		...document.querySelectorAll('.entries[data-cards]'),
 		...document.querySelectorAll('.entries[data-layout="gutenberg"]'),
@@ -165,18 +163,15 @@ const makeAllShortcuts = () => {
 		...document.querySelectorAll('#offcanvas .ct-bag-container'),
 		...document.querySelectorAll('.ct-trending-block'),
 		...document.querySelectorAll('.ct-pagination'),
-		...document.querySelectorAll(
-			'.archive .products, .woocommerce > .products'
-		),
+		...document.querySelectorAll('.archive .products, .woocommerce > .products'),
 		...document.querySelectorAll('.products.related'),
 		...document.querySelectorAll('.products.upsells'),
 		...document.querySelectorAll('.woocommerce-tabs'),
 		...document.querySelectorAll('.ct-compare-bar'),
 		...document.querySelectorAll('.product-entry-wrapper > .summary'),
-		...document.querySelectorAll(
-			'.product-entry-wrapper > .woocommerce-product-gallery'
-		),
+		...document.querySelectorAll('.product-entry-wrapper > .woocommerce-product-gallery'),
 		...document.querySelectorAll('.post-navigation'),
+		...document.querySelectorAll('.entry-tags'),
 		...document.querySelectorAll('.ct-share-box'),
 		...document.querySelectorAll('.author-box'),
 		...document.querySelectorAll('.ct-shortcuts-bar'),

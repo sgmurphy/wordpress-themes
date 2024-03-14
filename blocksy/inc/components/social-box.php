@@ -79,19 +79,19 @@ if (! function_exists('blocksy_get_social_share_box')) {
 		$before_content = '';
 		$after_content = '';
 
-		if (blocksy_akg_or_customizer('has_share_box_title', $args['strategy'], 'no') === 'yes') {
+		$module_title = blocksy_akg_or_customizer('share_box_title', $args['strategy'], __('Share your love', 'blocksy'));
+		$module_title_tag = blocksy_akg_or_customizer('share_box_title_tag', $args['strategy'], 'span');
+
+		if (!empty($module_title) || is_customize_preview()) {
 			$before_content = blocksy_html_tag(
-				'span',
+				$module_title_tag,
 				[
 					'class' => 'ct-module-title'
 				],
-				blocksy_akg_or_customizer(
-					'share_box_title',
-					$args['strategy'],
-					__('Share your love', 'blocksy')
-				)
+				$module_title
 			);
 		}
+		
 
 		if ($args['type'] === 'type-1') {
 			$args['links_wrapper_attr']['data-icons-type'] = 'simple';

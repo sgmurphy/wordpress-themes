@@ -919,117 +919,115 @@ $options = [
 
 						blocksy_rand_md5() => [
 							'type' => 'ct-condition',
-							'condition' => [ 'woo_card_layout:array-ids:product_add_to_cart:enabled' => '!no' ],
+							'condition' => [
+								'shop_cards_type' => 'type-1',
+								'woo_card_layout:array-ids:product_add_to_cart:enabled' => '!no'
+							],
 							'options' => [
 
-								blocksy_rand_md5() => [
-									'type' => 'ct-condition',
-									'condition' => [ 'shop_cards_type' => 'type-1' ],
-									'options' => [
+								'cardProductButton1Text' => [
+									'label' => __( 'Button Text Color', 'blocksy' ),
+									'type'  => 'ct-color-picker',
+									'design' => 'block:right',
+									'responsive' => true,
+									'divider' => 'top:full',
+									'setting' => [ 'transport' => 'postMessage' ],
 
-										'cardProductButton1Text' => [
-											'label' => __( 'Button Text Color', 'blocksy' ),
-											'type'  => 'ct-color-picker',
-											'design' => 'block:right',
-											'responsive' => true,
-											'divider' => 'top:full',
-											'setting' => [ 'transport' => 'postMessage' ],
-
-											'value' => [
-												'default' => [
-													'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
-												],
-
-												'hover' => [
-													'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
-												],
-											],
-
-											'pickers' => [
-												[
-													'title' => __( 'Initial', 'blocksy' ),
-													'id' => 'default',
-													'inherit' => 'var(--theme-button-text-initial-color)'
-												],
-
-												[
-													'title' => __( 'Hover', 'blocksy' ),
-													'id' => 'hover',
-													'inherit' => 'var(--theme-button-text-hover-color)'
-												],
-											],
+									'value' => [
+										'default' => [
+											'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
 										],
 
-										'cardProductButtonBackground' => [
-											'label' => __( 'Button Background Color', 'blocksy' ),
-											'type'  => 'ct-color-picker',
-											'design' => 'block:right',
-											'responsive' => true,
-											'setting' => [ 'transport' => 'postMessage' ],
-											'value' => [
-												'default' => [
-													'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
-												],
+										'hover' => [
+											'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+										],
+									],
 
-												'hover' => [
-													'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
-												],
-											],
-
-											'pickers' => [
-												[
-													'title' => __( 'Initial', 'blocksy' ),
-													'id' => 'default',
-													'inherit' => 'var(--theme-button-background-initial-color)'
-												],
-
-												[
-													'title' => __( 'Hover', 'blocksy' ),
-													'id' => 'hover',
-													'inherit' => 'var(--theme-button-background-hover-color)'
-												],
-											],
+									'pickers' => [
+										[
+											'title' => __( 'Initial', 'blocksy' ),
+											'id' => 'default',
+											'inherit' => 'var(--theme-button-text-initial-color)'
 										],
 
+										[
+											'title' => __( 'Hover', 'blocksy' ),
+											'id' => 'hover',
+											'inherit' => 'var(--theme-button-text-hover-color)'
+										],
 									],
 								],
 
-								blocksy_rand_md5() => [
-									'type' => 'ct-condition',
-									'condition' => [ 'shop_cards_type' => 'type-2' ],
-									'options' => [
-
-										'cardProductButton2Text' => [
-											'label' => __( 'Button Text Color', 'blocksy' ),
-											'type'  => 'ct-color-picker',
-											'design' => 'block:right',
-											'responsive' => true,
-											'divider' => 'top:full',
-											'setting' => [ 'transport' => 'postMessage' ],
-
-											'value' => [
-												'default' => [
-													'color' => 'var(--theme-text-color)',
-												],
-
-												'hover' => [
-													'color' => 'var(--theme-link-hover-color)',
-												],
-											],
-
-											'pickers' => [
-												[
-													'title' => __( 'Initial', 'blocksy' ),
-													'id' => 'default',
-												],
-
-												[
-													'title' => __( 'Hover', 'blocksy' ),
-													'id' => 'hover',
-												],
-											],
+								'cardProductButtonBackground' => [
+									'label' => __( 'Button Background Color', 'blocksy' ),
+									'type'  => 'ct-color-picker',
+									'design' => 'block:right',
+									'responsive' => true,
+									'setting' => [ 'transport' => 'postMessage' ],
+									'value' => [
+										'default' => [
+											'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
 										],
 
+										'hover' => [
+											'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+										],
+									],
+
+									'pickers' => [
+										[
+											'title' => __( 'Initial', 'blocksy' ),
+											'id' => 'default',
+											'inherit' => 'var(--theme-button-background-initial-color)'
+										],
+
+										[
+											'title' => __( 'Hover', 'blocksy' ),
+											'id' => 'hover',
+											'inherit' => 'var(--theme-button-background-hover-color)'
+										],
+									],
+								],
+
+							],
+						],
+
+						blocksy_rand_md5() => [
+							'type' => 'ct-condition',
+							'condition' => [
+								'shop_cards_type' => 'type-2',
+								'woo_card_layout:array-ids:product_add_to_cart_and_price:enabled' => '!no'
+							],
+							'options' => [
+
+								'cardProductButton2Text' => [
+									'label' => __( 'Button Text Color', 'blocksy' ),
+									'type'  => 'ct-color-picker',
+									'design' => 'block:right',
+									'responsive' => true,
+									'divider' => 'top:full',
+									'setting' => [ 'transport' => 'postMessage' ],
+
+									'value' => [
+										'default' => [
+											'color' => 'var(--theme-text-color)',
+										],
+
+										'hover' => [
+											'color' => 'var(--theme-link-hover-color)',
+										],
+									],
+
+									'pickers' => [
+										[
+											'title' => __( 'Initial', 'blocksy' ),
+											'id' => 'default',
+										],
+
+										[
+											'title' => __( 'Hover', 'blocksy' ),
+											'id' => 'hover',
+										],
 									],
 								],
 

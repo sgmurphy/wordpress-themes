@@ -32,28 +32,6 @@ add_action(
 	}
 );
 
-if (! function_exists('blocksy_get_sidebar_to_render')) {
-	function blocksy_get_sidebar_to_render() {
-		if (class_exists('BlocksySidebarsManager')) {
-			$manager = new BlocksySidebarsManager();
-
-			$maybe_sidebar = $manager->maybe_get_sidebar_that_matches();
-
-			if ($maybe_sidebar) {
-				return $maybe_sidebar;
-			}
-		}
-
-		$prefix = blocksy_manager()->screen->get_prefix();
-
-		if ($prefix === 'product' || $prefix === 'woo_categories') {
-			return 'sidebar-woocommerce';
-		}
-
-		return 'sidebar-1';
-	}
-}
-
 if (! function_exists('blocksy_sidebar_position_attr')) {
 	function blocksy_sidebar_position_attr($args = []) {
 		$args = wp_parse_args(

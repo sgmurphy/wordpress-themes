@@ -111,6 +111,15 @@ const triggersList = {
 			})
 		})
 	},
+
+	cookie: (trigger, chunk, loadChunkWithPayload) => {
+		if (
+			chunk.cookieAbsent &&
+			document.cookie.indexOf(chunk.cookieAbsent) === -1
+		) {
+			loadChunkWithPayload(chunk, {})
+		}
+	},
 }
 
 export const handleTrigger = (

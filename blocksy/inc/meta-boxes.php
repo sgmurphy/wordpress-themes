@@ -56,13 +56,42 @@ function blocksy_get_post_options($post_id = null, $args = []) {
 		$values = [[]];
 	}
 
-	$post_opts[$cache_key] = $values[0];
-
 	if (! is_array($values[0]) || ! $values[0]) {
 		return [];
 	}
 
-	return apply_filters('blocksy:posts:meta:values', $values[0], $post_id);
+	$final_values = $values[0];
+
+	// inc/options/meta/blog.php
+	$allowed_keys_for_special_posts = apply_filters(
+		'blocksy:posts:meta:blog-special-keys',
+		[
+			'disable_header',
+			'disable_footer',
+		]
+	);
+
+	if (
+		intval(get_option('page_for_posts')) === intval($post_id)
+		||
+		intval(get_option('woocommerce_shop_page_id')) === intval($post_id)
+	) {
+		foreach ($values[0] as $key => $value) {
+			if (! in_array($key, $allowed_keys_for_special_posts)) {
+				unset($final_values[$key]);
+			}
+		}
+	}
+
+	$final_values = apply_filters(
+		'blocksy:posts:meta:values',
+		$final_values,
+		$post_id
+	);
+
+	$post_opts[$cache_key] = $final_values;
+
+	return $final_values;
 }
 
 function blocksy_get_taxonomy_options($term_id = null) {
