@@ -95,11 +95,21 @@ function ashe_activation_notice() {
 	$theme_data	 = wp_get_theme();
 	$theme_vers	 = str_replace( '.', '_', $theme_data->get( 'Version' ) );
 
+    $nonce = wp_create_nonce( esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers . '_notice_ignore_nonce' );
+	
+	// Add the nonce to the dismiss button URL
+    $dismiss_url = add_query_arg(
+        array(
+            esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers . '_notice_ignore' => '0',
+            '_wpnonce' => $nonce
+        )
+    );
+
 	if ( ! get_user_meta( $user_id, esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' ) ) {
 
 		echo '<div class="notice notice-success ashe-activation-notice">';
 
-			printf( '<a href="%1$s" class="notice-dismiss dashicons dashicons-dismiss dashicons-dismiss-icon"></a>', '?' . esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore=0' );
+			printf( '<a href="%1$s" class="notice-dismiss dashicons dashicons-dismiss dashicons-dismiss-icon"></a>', $dismiss_url );
 		
 			echo '<p>';
 				/* translators: %1$s: theme name, %2$s link */
@@ -122,10 +132,14 @@ function ashe_notice_ignore() {
 	$user_id	 = $current_user->ID;
 	$theme_vers	 = str_replace( '.', '_', $theme_data->get( 'Version' ) );
 
-	/* If user clicks to ignore the notice, add that to their user meta */
-	if ( isset( $_GET[ esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' ] ) && '0' == $_GET[ esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' ] ) {
-		add_user_meta( $user_id, esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore', 'true', true );
-	}
+	/* If user clicks to ignore the notice, check the nonce before proceeding */
+    if (
+        isset( $_GET[ esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers . '_notice_ignore' ] ) &&
+        '0' == $_GET[ esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers . '_notice_ignore' ] &&
+        check_admin_referer( esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers . '_notice_ignore_nonce' )
+    ) {
+        add_user_meta( $user_id, esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers . '_notice_ignore', 'true', true );
+    }
 }
 add_action( 'admin_init', 'ashe_notice_ignore' );
 

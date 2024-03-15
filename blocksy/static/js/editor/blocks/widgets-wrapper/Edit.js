@@ -34,6 +34,11 @@ const Edit = ({ attributes, setAttributes, clientId, ...rest }) => {
 
 	let allowedBlocks = ['core/heading']
 
+	// Don't allow multiple headings
+	if (currentBlock.innerBlocks.find(({ name }) => name === 'core/heading')) {
+		allowedBlocks = []
+	}
+
 	if (attributes.hasDescription) {
 		template.push([
 			'core/paragraph',
@@ -43,7 +48,7 @@ const Edit = ({ attributes, setAttributes, clientId, ...rest }) => {
 			},
 		])
 
-		allowedBlocks = ['core/heading', 'core/paragraph']
+		allowedBlocks.push('core/paragraph')
 	}
 
 	template.push([
@@ -58,8 +63,10 @@ const Edit = ({ attributes, setAttributes, clientId, ...rest }) => {
 
 	const blockProps = useBlockProps({
 		className: {
-			'wp-block-blocksy-widgets-wrapper--collapsible': attributes.isCollapsible,
-			'wp-block-blocksy-widgets-wrapper--expanded': attributes.defaultExpanded,
+			'wp-block-blocksy-widgets-wrapper--collapsible':
+				attributes.isCollapsible,
+			'wp-block-blocksy-widgets-wrapper--expanded':
+				attributes.defaultExpanded,
 		},
 	})
 
@@ -80,10 +87,7 @@ const Edit = ({ attributes, setAttributes, clientId, ...rest }) => {
 
 						{attributes.isCollapsible ? (
 							<ToggleControl
-								label={__(
-									'Expanded by Default',
-									'blocksy'
-								)}
+								label={__('Expanded by Default', 'blocksy')}
 								checked={attributes.defaultExpanded}
 								onChange={() =>
 									setAttributes({

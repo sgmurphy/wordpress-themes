@@ -23,6 +23,10 @@ $wrapper_class = apply_filters(
 	'blocksy:woocommerce:cart:wrapper-class',
 	'ct-woocommerce-cart-form'
 );
+
+$image_size = blocksy_get_theme_mod('cart_page_image_size', 'woocommerce_thumbnail');
+$image_ratio = blocksy_get_theme_mod('cart_page_image_ratio', '1/1');
+
 ?>
 
 <div class="<?php echo $wrapper_class ?>">
@@ -62,14 +66,23 @@ $wrapper_class = apply_filters(
 					<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
 						<td class="product-thumbnail">
-							<?php
-								$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-
-								if ( ! $product_permalink ) {
-									echo $thumbnail; // PHPCS: XSS ok.
-								} else {
-									printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
-								}
+							<?php 
+								echo apply_filters(
+									'woocommerce_cart_item_thumbnail',
+									blocksy_media([
+										'no_image_type' => 'woo',
+										'attachment_id' => $_product->get_image_id(),
+										'post_id' => $_product->get_id(),
+										'size' => $image_size,
+										'ratio' => $image_ratio,
+										'tag_name' => 'a',
+										'html_atts' => [
+											'href' => esc_url( $_product->get_permalink() )
+										],
+									]),
+									$cart_item,
+									$cart_item_key
+								);
 							?>
 						</td>
 

@@ -106,15 +106,17 @@ if (! function_exists('blocksy_media')) {
 		}
 
 		if ($args['attachment_id']) {
-			global $blocksy_is_quick_view;
+			global $blocksy_is_quick_view, $post;
 
 			if (
 				function_exists('is_product')
 				&&
+				$post
+				&&
 				(
 					$blocksy_is_quick_view
 					||
-					is_product()
+					$post->post_type === 'product'
 				)
 				&&
 				wp_get_attachment_image_src($args['attachment_id'])

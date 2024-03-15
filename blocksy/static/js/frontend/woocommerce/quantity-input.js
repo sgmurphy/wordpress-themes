@@ -51,6 +51,22 @@ $(document.body).on('updated_cart_totals', () => {
 	ctEvents.trigger('blocksy:frontend:init')
 })
 
+$(document.body).on('updated_checkout', (_, data) => {
+	if (!data?.fragments?.['.woocommerce-checkout-review-order-table']) {
+		return
+	}
+
+	const node = document.createElement('div')
+	node.innerHTML = data.fragments['.woocommerce-checkout-review-order-table']
+
+	if ([...node.querySelectorAll('.cart_item')].length) {
+		node.remove()
+		return
+	}
+
+	window.location.reload()
+})
+
 export const mount = (el, { event }) => {
 	if ($ && !mounted) {
 		mounted = true
