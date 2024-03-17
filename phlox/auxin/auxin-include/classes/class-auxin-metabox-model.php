@@ -29,6 +29,13 @@ class Auxin_Metabox_Model {
     public $priority = 'default';
     public $css_class= '';
 
+    /**
+     * deprecation variable
+     *
+     * @var bool
+     */
+    public $is_deprecated;
+
     // Methods /////////////////////
 
     /**

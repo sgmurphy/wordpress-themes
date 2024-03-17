@@ -34,6 +34,15 @@ class Auxin_Welcome_Base {
     protected $page_slug;
 
     /**
+     * The slug name to refer to this menu
+     *
+     * @since 1.0
+     *
+     * @var string
+     */
+    protected $parent_slug;
+
+    /**
      * The class version number.
      *
      * @var string

@@ -614,7 +614,8 @@ function auxin_allow_img_srcset_shortcode( $allowedposttags, $context ) {
             'focusable' => [],
             'class' => [],
             'id' => [],
-            'style' => []
+            'style' => [],
+            'enable-background' => []
         ];
         $allowedposttags['path'] = [
             'id' => [],
@@ -661,6 +662,7 @@ function auxin_allow_img_srcset_shortcode( $allowedposttags, $context ) {
             'opacity' => [],
             'style' => [],
             'filter' => [],
+            'mask' => [],
         ];
         $allowedposttags['rect'] = [
             'id' => [],
@@ -748,7 +750,8 @@ function auxin_allow_img_srcset_shortcode( $allowedposttags, $context ) {
             'y1'  => [],
             'y2'  => [],
             'spreadmethod'  => [],
-            'gradientunits' => []
+            'gradientunits' => [],
+            'xlink:href' => []
         ];
         $allowedposttags['stop'] = [
             'offset'     => [],
@@ -805,11 +808,33 @@ function auxin_allow_img_srcset_shortcode( $allowedposttags, $context ) {
         ];
         $allowedposttags['desc'] = [];
         $allowedposttags['marker'] = [];
-        $allowedposttags['mask'] = [];
+        $allowedposttags['mask'] = [
+            'id' => [],
+            'style' => [],
+            'maskunits' => [],
+            'x' => [],
+            'y' => [],
+            'width' => [],
+            'height' => [],
+        ];
         $allowedposttags['metadata'] = [];
-        $allowedposttags['pattern'] = [];
+        $allowedposttags['pattern'] = [
+            'id' => [],
+            'patterncontentunits' => [],
+            'width' => [],
+            'height' => [],
+        ];
         $allowedposttags['textpath'] = [];
-        $allowedposttags['use'] = [];
+        $allowedposttags['use'] = [
+            'xlink:href' => [],
+            'transform' => [],
+        ];
+        $allowedposttags['image'] = [
+            'xlink:href' => [],
+            'width' => [],
+            'height' => [],
+            'id' => [],
+        ];
     }
 
     return $allowedposttags;

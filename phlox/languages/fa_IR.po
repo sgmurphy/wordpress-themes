@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Phlox Pro\n"
 "Report-Msgid-Bugs-To: http://averta.net/phlox/wordpress-theme/\n"
-"POT-Creation-Date: 2024-01-08 10:33:49+00:00\n"
+"POT-Creation-Date: 2024-03-17 07:49:33+00:00\n"
 "PO-Revision-Date: 2019-08-04 03:37+0430\n"
 "Last-Translator: test <monsterwordpress@gmail.com>\n"
 "Language-Team: WPMonster.co\n"
@@ -147,37 +147,32 @@ msgid "Installation Failed!"
 msgstr "نصب %1$s با خطا مواجه شد."
 
 #: auxin/auxin-include/classes/class-auxin-ajax-plugins.php:181
-#: build/phlox/auxin/auxin-include/classes/class-auxin-ajax-plugins.php:181
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-ajax-plugins.php:181
 msgid "No Slug Found"
 msgstr "Slug یافت نشد"
 
 #: auxin/auxin-include/classes/class-auxin-ajax-plugins.php:200
-#: build/phlox/auxin/auxin-include/classes/class-auxin-ajax-plugins.php:200
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-ajax-plugins.php:200
 #, fuzzy
 msgid "Activating"
 msgstr "در حال فعالسازی"
 
 #: auxin/auxin-include/classes/class-auxin-ajax-plugins.php:215
-#: build/phlox/auxin/auxin-include/classes/class-auxin-ajax-plugins.php:215
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-ajax-plugins.php:215
 msgid "Updating"
 msgstr "در حال بروزرسانی"
 
 #: auxin/auxin-include/classes/class-auxin-ajax-plugins.php:230
-#: build/phlox/auxin/auxin-include/classes/class-auxin-ajax-plugins.php:230
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-ajax-plugins.php:230
 #, fuzzy
 msgid "Installing"
 msgstr "در حال نصب"
 
 #: auxin/auxin-include/classes/class-auxin-ajax-plugins.php:241
-#: auxin/auxin-include/classes/class-auxin-welcome-base.php:203
-#: build/phlox/auxin/auxin-include/classes/class-auxin-ajax-plugins.php:241
-#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:206
+#: auxin/auxin-include/classes/class-auxin-welcome-base.php:212
+#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:215
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-ajax-plugins.php:241
-#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:206
+#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:215
 msgid "Activated"
 msgstr "فعال شده"
 
@@ -1416,36 +1411,36 @@ msgstr "یک %s مستندات %s کامل، که بصورت منظم بروزر
 msgid "Phlox Support"
 msgstr "پشتیبانی فلوکس"
 
-#: auxin/auxin-include/classes/class-auxin-welcome-base.php:126
-#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:129
-#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:129
+#: auxin/auxin-include/classes/class-auxin-welcome-base.php:135
+#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:138
+#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:138
 msgid "Theme Panel"
 msgstr "پنل قالب"
 
-#: auxin/auxin-include/classes/class-auxin-welcome-base.php:130
-#: auxin/auxin-include/classes/class-auxin-welcome-base.php:184
-#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:133
-#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:187
-#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:133
-#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:187
+#: auxin/auxin-include/classes/class-auxin-welcome-base.php:139
+#: auxin/auxin-include/classes/class-auxin-welcome-base.php:193
+#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:142
+#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:196
+#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:142
+#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:196
 msgid "Welcome"
 msgstr "خوش آمدید"
 
-#: auxin/auxin-include/classes/class-auxin-welcome-base.php:184
-#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:187
-#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:187
+#: auxin/auxin-include/classes/class-auxin-welcome-base.php:193
+#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:196
+#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:196
 msgid "Welcome to %s Theme"
 msgstr "به فلوکس پرو خوش آمدید!"
 
-#: auxin/auxin-include/classes/class-auxin-welcome-base.php:201
-#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:204
-#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:204
+#: auxin/auxin-include/classes/class-auxin-welcome-base.php:210
+#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:213
+#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:213
 msgid "Version %s"
 msgstr "نگارش %s"
 
-#: auxin/auxin-include/classes/class-auxin-welcome-base.php:204
-#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:207
-#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:207
+#: auxin/auxin-include/classes/class-auxin-welcome-base.php:213
+#: build/phlox/auxin/auxin-include/classes/class-auxin-welcome-base.php:216
+#: build/phlox-pro/auxin/auxin-include/classes/class-auxin-welcome-base.php:216
 #, fuzzy
 msgid "How to deactivate?"
 msgstr "فعال نشده"
@@ -2027,128 +2022,128 @@ msgid " Continue Reading"
 msgstr "ادامه خواندن"
 
 #: auxin/auxin-include/include/functions.php:697
-#: build/phlox/auxin/auxin-include/include/functions.php:614
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:614
+#: build/phlox/auxin/auxin-include/include/functions.php:700
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:700
 msgid "Input value for \"%s\" function should be array."
 msgstr "مقدار ورودی برای فانکشن \"%s\" میبایست آرایه داده شود."
 
 #: auxin/auxin-include/include/functions.php:2227
-#: build/phlox/auxin/auxin-include/include/functions.php:2119
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2119
+#: build/phlox/auxin/auxin-include/include/functions.php:2205
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2205
 msgid "The function name \"%s\" not found for Metabox hub \"%s\"."
 msgstr "نام فانکشن \"%s\" برای  Metabox hub \"%s\" پیدا نشد."
 
 #: auxin/auxin-include/include/functions.php:2477
-#: build/phlox/auxin/auxin-include/include/functions.php:2369
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2369
+#: build/phlox/auxin/auxin-include/include/functions.php:2455
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2455
 msgid "pattern 1"
 msgstr "الگوی 1"
 
 #: auxin/auxin-include/include/functions.php:2482
-#: build/phlox/auxin/auxin-include/include/functions.php:2374
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2374
+#: build/phlox/auxin/auxin-include/include/functions.php:2460
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2460
 msgid "pattern 2"
 msgstr "الگوی 2"
 
 #: auxin/auxin-include/include/functions.php:2487
-#: build/phlox/auxin/auxin-include/include/functions.php:2379
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2379
+#: build/phlox/auxin/auxin-include/include/functions.php:2465
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2465
 msgid "pattern 3"
 msgstr "الگوی 3"
 
 #: auxin/auxin-include/include/functions.php:2492
-#: build/phlox/auxin/auxin-include/include/functions.php:2384
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2384
+#: build/phlox/auxin/auxin-include/include/functions.php:2470
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2470
 msgid "pattern 4"
 msgstr "الگوی 4"
 
 #: auxin/auxin-include/include/functions.php:2497
-#: build/phlox/auxin/auxin-include/include/functions.php:2389
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2389
+#: build/phlox/auxin/auxin-include/include/functions.php:2475
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2475
 msgid "pattern 5"
 msgstr "الگوی 5"
 
 #: auxin/auxin-include/include/functions.php:2502
-#: build/phlox/auxin/auxin-include/include/functions.php:2394
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2394
+#: build/phlox/auxin/auxin-include/include/functions.php:2480
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2480
 msgid "pattern 6"
 msgstr "الگوی 6"
 
 #: auxin/auxin-include/include/functions.php:2507
-#: build/phlox/auxin/auxin-include/include/functions.php:2399
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2399
+#: build/phlox/auxin/auxin-include/include/functions.php:2485
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2485
 msgid "pattern 7"
 msgstr "الگوی 7"
 
 #: auxin/auxin-include/include/functions.php:2512
-#: build/phlox/auxin/auxin-include/include/functions.php:2404
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2404
+#: build/phlox/auxin/auxin-include/include/functions.php:2490
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2490
 msgid "pattern 8"
 msgstr "الگوی 8"
 
 #: auxin/auxin-include/include/functions.php:2517
-#: build/phlox/auxin/auxin-include/include/functions.php:2409
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2409
+#: build/phlox/auxin/auxin-include/include/functions.php:2495
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2495
 msgid "pattern 9"
 msgstr "الگوی 9"
 
 #: auxin/auxin-include/include/functions.php:2522
-#: build/phlox/auxin/auxin-include/include/functions.php:2414
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2414
+#: build/phlox/auxin/auxin-include/include/functions.php:2500
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2500
 msgid "pattern 10"
 msgstr "الگوی 10"
 
 #: auxin/auxin-include/include/functions.php:2527
-#: build/phlox/auxin/auxin-include/include/functions.php:2419
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2419
+#: build/phlox/auxin/auxin-include/include/functions.php:2505
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2505
 msgid "pattern 11"
 msgstr "الگوی 11"
 
 #: auxin/auxin-include/include/functions.php:2532
-#: build/phlox/auxin/auxin-include/include/functions.php:2424
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2424
+#: build/phlox/auxin/auxin-include/include/functions.php:2510
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2510
 msgid "pattern 12"
 msgstr "الگوی 12"
 
 #: auxin/auxin-include/include/functions.php:2537
-#: build/phlox/auxin/auxin-include/include/functions.php:2429
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2429
+#: build/phlox/auxin/auxin-include/include/functions.php:2515
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2515
 msgid "pattern 14"
 msgstr "الگوی 14"
 
 #: auxin/auxin-include/include/functions.php:2542
-#: build/phlox/auxin/auxin-include/include/functions.php:2434
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2434
+#: build/phlox/auxin/auxin-include/include/functions.php:2520
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2520
 msgid "pattern 15"
 msgstr "الگوی 15"
 
 #: auxin/auxin-include/include/functions.php:2547
-#: build/phlox/auxin/auxin-include/include/functions.php:2439
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2439
+#: build/phlox/auxin/auxin-include/include/functions.php:2525
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2525
 msgid "pattern 16"
 msgstr "الگوی 16"
 
 #: auxin/auxin-include/include/functions.php:2552
-#: build/phlox/auxin/auxin-include/include/functions.php:2444
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2444
+#: build/phlox/auxin/auxin-include/include/functions.php:2530
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2530
 msgid "pattern 17"
 msgstr "الگوی 17"
 
 #: auxin/auxin-include/include/functions.php:2557
-#: build/phlox/auxin/auxin-include/include/functions.php:2449
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2449
+#: build/phlox/auxin/auxin-include/include/functions.php:2535
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2535
 msgid "pattern 18"
 msgstr "الگوی 18"
 
 #: auxin/auxin-include/include/functions.php:2562
-#: build/phlox/auxin/auxin-include/include/functions.php:2454
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2454
+#: build/phlox/auxin/auxin-include/include/functions.php:2540
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2540
 msgid "pattern 19"
 msgstr "الگوی 19"
 
 #: auxin/auxin-include/include/functions.php:2668
-#: build/phlox/auxin/auxin-include/include/functions.php:2560
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2560
+#: build/phlox/auxin/auxin-include/include/functions.php:2646
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2646
 msgid "Please specify a unique dom name for %s"
 msgstr "لطفا یک نام دامنه منحصر به فرد برای %s مشخص کنید"
 
@@ -2166,7 +2161,7 @@ msgstr "لطفا یک نام دامنه منحصر به فرد برای %s مش�
 #: auxin-content/admin/metaboxes/metabox-fields-post-content-setting.php:71
 #: auxin-content/admin/metaboxes/metabox-fields-post-featured-image.php:22
 #: auxin-content/admin/metaboxes/metabox-fields-post-sidebar-layout.php:105
-#: build/phlox/auxin/auxin-include/include/functions.php:2612
+#: build/phlox/auxin/auxin-include/include/functions.php:2698
 #: build/phlox/auxin-content/admin/metaboxes/metabox-fields-general-layout.php:37
 #: build/phlox/auxin-content/admin/metaboxes/metabox-fields-general-layout.php:60
 #: build/phlox/auxin-content/admin/metaboxes/metabox-fields-general-layout.php:101
@@ -2180,7 +2175,7 @@ msgstr "لطفا یک نام دامنه منحصر به فرد برای %s مش�
 #: build/phlox/auxin-content/admin/metaboxes/metabox-fields-post-content-setting.php:74
 #: build/phlox/auxin-content/admin/metaboxes/metabox-fields-post-featured-image.php:25
 #: build/phlox/auxin-content/admin/metaboxes/metabox-fields-post-sidebar-layout.php:98
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2612
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2698
 #: build/phlox-pro/auxin-content/admin/metaboxes/metabox-fields-general-layout.php:37
 #: build/phlox-pro/auxin-content/admin/metaboxes/metabox-fields-general-layout.php:60
 #: build/phlox-pro/auxin-content/admin/metaboxes/metabox-fields-general-layout.php:101
@@ -2198,161 +2193,161 @@ msgid "Theme Default"
 msgstr "پیشفرض پوسته"
 
 #: auxin/auxin-include/include/functions.php:2721
-#: build/phlox/auxin/auxin-include/include/functions.php:2613
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2613
+#: build/phlox/auxin/auxin-include/include/functions.php:2699
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2699
 #, fuzzy
 msgid "- No Menu -"
 msgstr "افزودن به فهرست"
 
 #: auxin/auxin-include/include/functions.php:2802
-#: build/phlox/auxin/auxin-include/include/functions.php:2645
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2645
+#: build/phlox/auxin/auxin-include/include/functions.php:2731
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2731
 msgid "Category"
 msgstr "دسته بندی ها"
 
 #: auxin/auxin-include/include/functions.php:2807
 #: auxin/auxin-include/include/functions.php:2846
-#: build/phlox/auxin/auxin-include/include/functions.php:2650
-#: build/phlox/auxin/auxin-include/include/functions.php:2689
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2650
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2689
+#: build/phlox/auxin/auxin-include/include/functions.php:2736
+#: build/phlox/auxin/auxin-include/include/functions.php:2775
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2736
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2775
 msgid "All"
 msgstr "همه"
 
 #: auxin/auxin-include/include/functions.php:2872
-#: build/phlox/auxin/auxin-include/include/functions.php:2715
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2715
+#: build/phlox/auxin/auxin-include/include/functions.php:2801
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2801
 msgid "Default sorting"
 msgstr "مرتب سازی پیشفرض"
 
 #: auxin/auxin-include/include/functions.php:2876
 #: auxin/auxin-include/include/functions.php:2878
 #: auxin/auxin-include/include/functions.php:2885
-#: build/phlox/auxin/auxin-include/include/functions.php:2719
-#: build/phlox/auxin/auxin-include/include/functions.php:2721
-#: build/phlox/auxin/auxin-include/include/functions.php:2728
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2719
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2721
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2728
+#: build/phlox/auxin/auxin-include/include/functions.php:2805
+#: build/phlox/auxin/auxin-include/include/functions.php:2807
+#: build/phlox/auxin/auxin-include/include/functions.php:2814
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2805
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2807
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2814
 msgid "Sort By "
 msgstr "مرتب سازی بر اساس"
 
 #: auxin/auxin-include/include/functions.php:2893
-#: build/phlox/auxin/auxin-include/include/functions.php:2736
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2736
+#: build/phlox/auxin/auxin-include/include/functions.php:2822
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2822
 msgid "Terms Not Found"
 msgstr "شرایط یافت نشد"
 
 #: auxin/auxin-include/include/functions.php:2930
-#: build/phlox/auxin/auxin-include/include/functions.php:2773
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2773
+#: build/phlox/auxin/auxin-include/include/functions.php:2859
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2859
 msgid "All Categories"
 msgstr "همه دسته بندی ها"
 
 #: auxin/auxin-include/include/functions.php:2958
-#: build/phlox/auxin/auxin-include/include/functions.php:2801
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2801
+#: build/phlox/auxin/auxin-include/include/functions.php:2887
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2887
 msgid "Search..."
 msgstr "جستجو..."
 
 #: auxin/auxin-include/include/functions.php:2958
-#: build/phlox/auxin/auxin-include/include/functions.php:2801
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2801
+#: build/phlox/auxin/auxin-include/include/functions.php:2887
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2887
 msgid "Type here.."
 msgstr "اینجا تایپ کنید..."
 
 #: auxin/auxin-include/include/functions.php:2968
 #: auxin/auxin-include/include/functions.php:2971
-#: build/phlox/auxin/auxin-include/include/functions.php:2811
-#: build/phlox/auxin/auxin-include/include/functions.php:2814
+#: build/phlox/auxin/auxin-include/include/functions.php:2897
+#: build/phlox/auxin/auxin-include/include/functions.php:2900
 #: build/phlox/searchform.php:13
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2811
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2814
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2897
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:2900
 #: build/phlox-pro/searchform.php:13 searchform.php:10
 msgid "Search"
 msgstr "جستجو"
 
 #: auxin/auxin-include/include/functions.php:3074
-#: build/phlox/auxin/auxin-include/include/functions.php:2917
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2917
+#: build/phlox/auxin/auxin-include/include/functions.php:3003
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:3003
 #, fuzzy
 msgid "items"
 msgstr "آیتم های لیست"
 
 #: auxin/auxin-include/include/functions.php:3079
-#: build/phlox/auxin/auxin-include/include/functions.php:2922
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2922
+#: build/phlox/auxin/auxin-include/include/functions.php:3008
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:3008
 #, fuzzy
 msgid "Sub total"
 msgstr "ساب فوتر"
 
 #: auxin/auxin-include/include/functions.php:3085
-#: build/phlox/auxin/auxin-include/include/functions.php:2928
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2928
+#: build/phlox/auxin/auxin-include/include/functions.php:3014
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:3014
 #, fuzzy
 msgid "Proceed to checkout"
 msgstr "ادامه برای تسویه حساب"
 
 #: auxin/auxin-include/include/functions.php:3085
-#: build/phlox/auxin/auxin-include/include/functions.php:2928
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2928
+#: build/phlox/auxin/auxin-include/include/functions.php:3014
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:3014
 msgid "Checkout"
 msgstr "بررسی کنید"
 
 #: auxin/auxin-include/include/functions.php:3094
-#: build/phlox/auxin/auxin-include/include/functions.php:2937
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2937
+#: build/phlox/auxin/auxin-include/include/functions.php:3023
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:3023
 msgid "View Cart"
 msgstr "مشاهده سبد خرید"
 
 #: auxin/auxin-include/include/functions.php:3152
 #: auxin/auxin-include/include/templates/templates-footer.php:37
 #: auxin-content/options/auxin-options.php:2190
-#: build/phlox/auxin/auxin-include/include/functions.php:2995
+#: build/phlox/auxin/auxin-include/include/functions.php:3081
 #: build/phlox/auxin/auxin-include/include/templates/templates-footer.php:40
 #: build/phlox/auxin-content/options/auxin-options.php:2107
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:2995
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:3081
 #: build/phlox-pro/auxin/auxin-include/include/templates/templates-footer.php:40
 #: build/phlox-pro/auxin-content/options/auxin-options.php:2107
 msgid "Shopping Basket"
 msgstr "زنبیل خرید"
 
 #: auxin/auxin-include/include/functions.php:3157
-#: build/phlox/auxin/auxin-include/include/functions.php:3000
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:3000
+#: build/phlox/auxin/auxin-include/include/functions.php:3086
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:3086
 msgid "View your shopping cart"
 msgstr "نمایش سبد خرید"
 
 #: auxin/auxin-include/include/functions.php:3226
-#: build/phlox/auxin/auxin-include/include/functions.php:3069
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:3069
+#: build/phlox/auxin/auxin-include/include/functions.php:3155
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:3155
 #, fuzzy
 msgid "Post"
 msgstr "مطالب"
 
 #: auxin/auxin-include/include/functions.php:3230
-#: build/phlox/auxin/auxin-include/include/functions.php:3073
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:3073
+#: build/phlox/auxin/auxin-include/include/functions.php:3159
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:3159
 #, fuzzy
 msgid "Product"
 msgstr "آخرین محصولات"
 
 #: auxin/auxin-include/include/functions.php:3234
-#: build/phlox/auxin/auxin-include/include/functions.php:3077
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:3077
+#: build/phlox/auxin/auxin-include/include/functions.php:3163
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:3163
 #, fuzzy
 msgid "Portfolio"
 msgstr "نمونه کار"
 
 #: auxin/auxin-include/include/functions.php:3238
-#: build/phlox/auxin/auxin-include/include/functions.php:3081
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:3081
+#: build/phlox/auxin/auxin-include/include/functions.php:3167
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:3167
 msgid "News"
 msgstr ""
 
 #: auxin/auxin-include/include/functions.php:3242
-#: build/phlox/auxin/auxin-include/include/functions.php:3085
-#: build/phlox-pro/auxin/auxin-include/include/functions.php:3085
+#: build/phlox/auxin/auxin-include/include/functions.php:3171
+#: build/phlox-pro/auxin/auxin-include/include/functions.php:3171
 msgid "FAQ"
 msgstr ""
 
@@ -2380,7 +2375,7 @@ msgstr "افزونه هسته فلوکس"
 #: auxin-content/include/hooks-admin.php:97
 #: auxin-content/include/hooks-admin.php:120
 #: build/phlox/auxin/auxin-include/include/hooks-admin.php:125
-#: build/phlox/auxin-content/include/hooks-admin.php:48
+#: build/phlox/auxin-content/include/hooks-admin.php:45
 #: build/phlox-pro/auxin/auxin-include/include/hooks-admin.php:174
 #: build/phlox-pro/auxin-content/include/hooks-admin.php:39
 msgid "Elementor"
@@ -2529,119 +2524,119 @@ msgstr "فهرست سربرگ بالا"
 msgid "Footer Social Menu"
 msgstr "فهرست شبکه های اجتماعی پاورقی"
 
-#: auxin/auxin-include/include/hooks-general.php:1116
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1070
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1070
+#: auxin/auxin-include/include/hooks-general.php:1141
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1112
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1112
 msgid "Likes"
 msgstr "لایک"
 
-#: auxin/auxin-include/include/hooks-general.php:1139
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1093
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1093
+#: auxin/auxin-include/include/hooks-general.php:1164
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1135
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1135
 msgid "Global Primary Widget Area"
 msgstr "ناحیه ابزارک اصلی سراسری"
 
-#: auxin/auxin-include/include/hooks-general.php:1141
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1095
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1095
+#: auxin/auxin-include/include/hooks-general.php:1166
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1137
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1137
 msgid "It is accessible everywhere on primary sidebars."
 msgstr "در تمامی سایدبارهای اصلی در دسترس هستند."
 
-#: auxin/auxin-include/include/hooks-general.php:1149
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1103
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1103
+#: auxin/auxin-include/include/hooks-general.php:1174
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1145
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1145
 msgid "Global Secondary Widget Area"
 msgstr "ناحیه ابزارک ثانویه سراسری"
 
-#: auxin/auxin-include/include/hooks-general.php:1151
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1105
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1105
+#: auxin/auxin-include/include/hooks-general.php:1176
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1147
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1147
 msgid "It is accessible everywhere on secondary sidebars."
 msgstr "در تمامی سایدبارهای ثانویه در دسترس هستند."
 
-#: auxin/auxin-include/include/hooks-general.php:1160
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1114
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1114
+#: auxin/auxin-include/include/hooks-general.php:1185
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1156
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1156
 #, fuzzy
 msgid "Shop Sidebar Widget Area"
 msgstr "ناحیه ابزارک ثانویه وبلاگ"
 
-#: auxin/auxin-include/include/hooks-general.php:1162
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1116
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1116
+#: auxin/auxin-include/include/hooks-general.php:1187
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1158
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1158
 #, fuzzy
 msgid "It is accessible on shop page sidebar."
 msgstr "در تمامی سایدبارهای ثانویه در دسترس هستند."
 
-#: auxin/auxin-include/include/hooks-general.php:1171
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1125
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1125
+#: auxin/auxin-include/include/hooks-general.php:1196
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1167
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1167
 msgid "Pages Primary Widget Area"
 msgstr "ناحیه ابزارک اصلی صفحات"
 
-#: auxin/auxin-include/include/hooks-general.php:1173
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1127
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1127
+#: auxin/auxin-include/include/hooks-general.php:1198
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1169
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1169
 msgid "It is accessible on primary sidebars except the blog pages."
 msgstr "فقط در سایدبارهای اصلی به غیر از صفحات وبلاگ در دسترس است."
 
-#: auxin/auxin-include/include/hooks-general.php:1181
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1135
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1135
+#: auxin/auxin-include/include/hooks-general.php:1206
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1177
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1177
 msgid "Pages Secondary Widget Area"
 msgstr "ناحیه ابزارک ثانویه صفحات"
 
-#: auxin/auxin-include/include/hooks-general.php:1183
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1137
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1137
+#: auxin/auxin-include/include/hooks-general.php:1208
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1179
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1179
 msgid "It is accessible on secondary sidebars except the blog pages."
 msgstr "فقط در سایدبارهای ثانویه به غیر از صفحات وبلاگ در دسترس است."
 
-#: auxin/auxin-include/include/hooks-general.php:1191
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1145
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1145
+#: auxin/auxin-include/include/hooks-general.php:1216
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1187
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1187
 msgid "Blog Primary Widget Area"
 msgstr "ناحیه ابزارک اصلی وبلاگ"
 
-#: auxin/auxin-include/include/hooks-general.php:1193
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1147
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1147
+#: auxin/auxin-include/include/hooks-general.php:1218
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1189
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1189
 msgid "It is accessible only on primary sidebars in blog pages."
 msgstr "فقط در سایدبارهای اصلی و صفحات وبلاگ در دسترس است."
 
-#: auxin/auxin-include/include/hooks-general.php:1201
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1155
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1155
+#: auxin/auxin-include/include/hooks-general.php:1226
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1197
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1197
 msgid "Blog Secondary Widget Area"
 msgstr "ناحیه ابزارک ثانویه وبلاگ"
 
-#: auxin/auxin-include/include/hooks-general.php:1203
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1157
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1157
+#: auxin/auxin-include/include/hooks-general.php:1228
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1199
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1199
 msgid "It is accessible only on secondary sidebars in blog pages."
 msgstr "فقط در سایدبارهای ثانویه و صفحات وبلاگ در دسترس است."
 
-#: auxin/auxin-include/include/hooks-general.php:1211
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1165
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1165
+#: auxin/auxin-include/include/hooks-general.php:1236
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1207
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1207
 msgid "Search Result Widget Area"
 msgstr "ناحیه ابزارک نتایج جستجو"
 
-#: auxin/auxin-include/include/hooks-general.php:1213
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1167
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1167
+#: auxin/auxin-include/include/hooks-general.php:1238
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1209
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1209
 msgid "It is accessible only on primary sidebars in search result page."
 msgstr "فقط در سایدبارهای اصلی و صفحات نتایج جستجو در دسترس است."
 
-#: auxin/auxin-include/include/hooks-general.php:1223
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1177
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1177
+#: auxin/auxin-include/include/hooks-general.php:1248
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1219
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1219
 msgid "Subfooter Bar Widget Area"
 msgstr "ناحیه ابزارک نوار ساب فوتر"
 
-#: auxin/auxin-include/include/hooks-general.php:1225
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1179
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1179
+#: auxin/auxin-include/include/hooks-general.php:1250
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1221
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1221
 msgid ""
 "The widget area above the subfooter section. Perfect for placing the "
 "\"Newsletter\", \"Social icons\" or \"Instagram\" widget."
@@ -2649,50 +2644,50 @@ msgstr ""
 "ناحیه ابزارک زیر بخش ساب فوتر. برای قرار دادن ابزارک های \"خبرنامه\" ، "
 "\"شبکه های اجتماعی\" یا \"اینستاگرام\" عالی هست."
 
-#: auxin/auxin-include/include/hooks-general.php:1245
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1199
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1199
+#: auxin/auxin-include/include/hooks-general.php:1270
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1241
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1241
 msgid "Subfooter %s Widget Area"
 msgstr "ناحیه ابزارک %s ساب فوتر"
 
-#: auxin/auxin-include/include/hooks-general.php:1247
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1201
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1201
+#: auxin/auxin-include/include/hooks-general.php:1272
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1243
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1243
 msgid "The %s column in subfooter section."
 msgstr "ستون %s در بخش ساب فوتر"
 
-#: auxin/auxin-include/include/hooks-general.php:1298
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1252
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1252
+#: auxin/auxin-include/include/hooks-general.php:1323
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1294
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1294
 msgid "Post Options"
 msgstr "تنظیمات نوشته"
 
-#: auxin/auxin-include/include/hooks-general.php:1306
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1260
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1260
+#: auxin/auxin-include/include/hooks-general.php:1331
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1302
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1302
 msgid "Page Options"
 msgstr "تنظیمات برگه"
 
-#: auxin/auxin-include/include/hooks-general.php:1350
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1304
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1304
+#: auxin/auxin-include/include/hooks-general.php:1375
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1346
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1346
 msgid "Loading"
 msgstr "در حال بارگذاری"
 
-#: auxin/auxin-include/include/hooks-general.php:1554
+#: auxin/auxin-include/include/hooks-general.php:1579
 #: auxin-content/options/auxin-options.php:1245
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1508
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1550
 #: build/phlox/auxin-content/options/auxin-options.php:1182
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1508
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1550
 #: build/phlox-pro/auxin-content/options/auxin-options.php:1182
 msgid "Add a Comment"
 msgstr "یک دیدگاه بنویسید"
 
-#: auxin/auxin-include/include/hooks-general.php:1555
+#: auxin/auxin-include/include/hooks-general.php:1580
 #: auxin-content/options/auxin-options.php:1266
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1509
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1551
 #: build/phlox/auxin-content/options/auxin-options.php:1203
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1509
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1551
 #: build/phlox-pro/auxin-content/options/auxin-options.php:1203
 msgid "Your email address will not be published. Required fields are marked *"
 msgstr "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی با * نشان گذاری شده اند"
@@ -2976,9 +2971,9 @@ msgstr "نصب افزونه های لازم"
 #: auxin/auxin-include/modules/lib/class-tgm-plugin-activation.php:328
 #: auxin-content/include/hooks-admin.php:533
 #: build/phlox/auxin/auxin-include/modules/lib/class-tgm-plugin-activation.php:328
-#: build/phlox/auxin-content/include/hooks-admin.php:272
+#: build/phlox/auxin-content/include/hooks-admin.php:269
 #: build/phlox-pro/auxin/auxin-include/modules/lib/class-tgm-plugin-activation.php:328
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:409
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:406
 msgid "Install Plugins"
 msgstr "نصب افزونه ها"
 
@@ -3173,9 +3168,9 @@ msgstr "لازم"
 #: auxin/auxin-include/modules/lib/class-tgm-plugin-activation.php:2278
 #: auxin-content/include/hooks-admin.php:544
 #: build/phlox/auxin/auxin-include/modules/lib/class-tgm-plugin-activation.php:2274
-#: build/phlox/auxin-content/include/hooks-admin.php:283
+#: build/phlox/auxin-content/include/hooks-admin.php:280
 #: build/phlox-pro/auxin/auxin-include/modules/lib/class-tgm-plugin-activation.php:2274
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:420
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:417
 msgid "Recommended"
 msgstr "پیشنهادی"
 
@@ -5897,20 +5892,20 @@ msgstr "هسته المان های فلوکس"
 
 #: auxin-content/include/hooks-admin.php:90
 #: auxin-content/include/hooks-admin.php:144
-#: build/phlox/auxin-content/include/hooks-admin.php:41
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:66
+#: build/phlox/auxin-content/include/hooks-admin.php:38
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:63
 msgid "Phlox Portfolio"
 msgstr "نمونه کارهای فلوکس"
 
 #: auxin-content/include/hooks-admin.php:104
 #: auxin-content/include/hooks-admin.php:175
-#: build/phlox/auxin-content/include/hooks-admin.php:55
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:97
+#: build/phlox/auxin-content/include/hooks-admin.php:52
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:94
 msgid "WooCommerce"
 msgstr "ووکامرس"
 
 #: auxin-content/include/hooks-admin.php:112
-#: build/phlox/auxin-content/include/hooks-admin.php:62
+#: build/phlox/auxin-content/include/hooks-admin.php:59
 #: build/phlox-pro/auxin-content/include/hooks-admin.php:32
 msgid "Depicter"
 msgstr ""
@@ -5925,447 +5920,445 @@ msgstr "المنت پک المنتور"
 #: auxin-content/include/hooks-admin.php:169
 #: auxin-content/include/hooks-admin.php:187
 #: auxin-content/include/hooks-admin.php:206
-#: build/phlox/auxin-content/include/hooks-admin.php:35
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:60
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:69
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:80
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:91
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:109
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:128
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:66
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:77
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:88
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:106
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:125
 msgid "Exclusive"
 msgstr "انحصاری"
 
 #: auxin-content/include/hooks-admin.php:153
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:75
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:72
 msgid "Phlox Pro Features"
 msgstr "امکانات فلوکس پرو"
 
 #: auxin-content/include/hooks-admin.php:164
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:86
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:83
 msgid "Phlox News"
 msgstr "اخبار فلوکس"
 
 #: auxin-content/include/hooks-admin.php:182
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:104
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:101
 msgid "Phlox Shop"
 msgstr "فروشگاه فلوکس"
 
 #: auxin-content/include/hooks-admin.php:193
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:115
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:112
 #, fuzzy
 msgid "TI Woocommerce Wishlist"
 msgstr "ووکامرس"
 
 #: auxin-content/include/hooks-admin.php:201
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:123
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:120
 msgid "Master Slider Pro"
 msgstr "مستر اسلایدر پرو"
 
 #: auxin-content/include/hooks-admin.php:212
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:134
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:131
 msgid "Visual Composer Page Builder"
 msgstr "صفحه ساز ویژوال کامپوزر"
 
 #: auxin-content/include/hooks-admin.php:222
 #: auxin-content/include/hooks-admin.php:326
-#: build/phlox/auxin-content/include/hooks-admin.php:70
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:144
+#: build/phlox/auxin-content/include/hooks-admin.php:67
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:141
 msgid "HubSpot"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:229
 #: auxin-content/include/hooks-admin.php:333
-#: build/phlox/auxin-content/include/hooks-admin.php:77
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:151
+#: build/phlox/auxin-content/include/hooks-admin.php:74
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:148
 msgid "SellKit"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:237
 #: auxin-content/include/hooks-admin.php:341
-#: build/phlox/auxin-content/include/hooks-admin.php:85
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:159
+#: build/phlox/auxin-content/include/hooks-admin.php:82
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:156
 msgid "WP SMS"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:244
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:166
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:163
 msgid "Ultimate VC Addons"
 msgstr "اولتیمیت ادوانز ویژوال کامپوزر"
 
 #: auxin-content/include/hooks-admin.php:254
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:176
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:173
 msgid "Visual CSS Style Editor: Yellow Pencil"
 msgstr "مداد زرد"
 
 #: auxin-content/include/hooks-admin.php:264
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:186
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:183
 msgid "Revolution Slider"
 msgstr "رولووشن اسلایدر"
 
 #: auxin-content/include/hooks-admin.php:274
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:196
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:193
 msgid "LayerSlider"
 msgstr "لایر اسلایدر"
 
 #: auxin-content/include/hooks-admin.php:284
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:206
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:203
 msgid "Go Pricing Tables"
 msgstr "گو پرایسینگ"
 
 #: auxin-content/include/hooks-admin.php:294
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:216
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:213
 msgid "Convert Plus"
 msgstr "کانورت پلاس"
 
 #: auxin-content/include/hooks-admin.php:304
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:226
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:223
 #, fuzzy
 msgid "ZoomSounds - Audio Player"
 msgstr "پخش کننده صدا"
 
 #: auxin-content/include/hooks-admin.php:314
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:236
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:233
 msgid "Auto Theme Updater"
 msgstr "آپدیت اتوماتیک انواتو"
 
 #: auxin-content/include/hooks-admin.php:349
-#: build/phlox/auxin-content/include/hooks-admin.php:92
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:247
+#: build/phlox/auxin-content/include/hooks-admin.php:89
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:244
 msgid "Instagram Feed"
 msgstr "خوراک اینستاگرام"
 
 #: auxin-content/include/hooks-admin.php:356
-#: build/phlox/auxin-content/include/hooks-admin.php:99
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:254
+#: build/phlox/auxin-content/include/hooks-admin.php:96
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:251
 msgid "WordPress SEO"
 msgstr "سئوی وردپرس"
 
 #: auxin-content/include/hooks-admin.php:363
-#: build/phlox/auxin-content/include/hooks-admin.php:106
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:261
+#: build/phlox/auxin-content/include/hooks-admin.php:103
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:258
 msgid "Recent Tweets Widget"
 msgstr "ابزارک توییت های اخیر"
 
 #: auxin-content/include/hooks-admin.php:370
-#: build/phlox/auxin-content/include/hooks-admin.php:113
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:268
+#: build/phlox/auxin-content/include/hooks-admin.php:110
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:265
 msgid "Contact Form 7"
 msgstr "فرم تماس 7"
 
 #: auxin-content/include/hooks-admin.php:377
-#: build/phlox/auxin-content/include/hooks-admin.php:120
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:275
+#: build/phlox/auxin-content/include/hooks-admin.php:117
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:272
 msgid "Variation Swatches for WooCommerce"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:384
-#: build/phlox/auxin-content/include/hooks-admin.php:127
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:282
+#: build/phlox/auxin-content/include/hooks-admin.php:124
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:279
 msgid "WordPress Importer"
 msgstr "درون ریز وردپرس"
 
 #: auxin-content/include/hooks-admin.php:392
-#: build/phlox/auxin-content/include/hooks-admin.php:135
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:290
+#: build/phlox/auxin-content/include/hooks-admin.php:132
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:287
 msgid "Related Posts for WordPress"
 msgstr "مطالب اخیر وردپرس"
 
 #: auxin-content/include/hooks-admin.php:399
-#: build/phlox/auxin-content/include/hooks-admin.php:142
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:297
+#: build/phlox/auxin-content/include/hooks-admin.php:139
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:294
 msgid "WP ULike"
 msgstr "یو لایک"
 
 #: auxin-content/include/hooks-admin.php:406
-#: build/phlox/auxin-content/include/hooks-admin.php:149
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:304
+#: build/phlox/auxin-content/include/hooks-admin.php:146
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:301
 msgid "Autoptimize"
 msgstr "آتو آپتیمایز"
 
 #: auxin-content/include/hooks-admin.php:413
-#: build/phlox/auxin-content/include/hooks-admin.php:156
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:311
+#: build/phlox/auxin-content/include/hooks-admin.php:153
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:308
 msgid "Custom Facebook Feed"
 msgstr "خوراک سفارشی فیسبوک"
 
 #: auxin-content/include/hooks-admin.php:421
-#: build/phlox/auxin-content/include/hooks-admin.php:164
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:319
+#: build/phlox/auxin-content/include/hooks-admin.php:161
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:316
 msgid "Flickr Justified Gallery"
 msgstr "گالری تراز شده فلیکر"
 
 #: auxin-content/include/hooks-admin.php:429
-#: build/phlox/auxin-content/include/hooks-admin.php:172
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:327
+#: build/phlox/auxin-content/include/hooks-admin.php:169
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:324
 msgid "Image Optimization"
 msgstr "بهینه سازی تصویر"
 
 #: auxin-content/include/hooks-admin.php:437
-#: build/phlox/auxin-content/include/hooks-admin.php:180
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:335
+#: build/phlox/auxin-content/include/hooks-admin.php:177
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:332
 msgid "Export/Import Theme Options"
 msgstr "درون ریزی/برون بری تنظیمات قالب"
 
 #: auxin-content/include/hooks-admin.php:445
-#: build/phlox/auxin-content/include/hooks-admin.php:188
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:343
+#: build/phlox/auxin-content/include/hooks-admin.php:185
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:340
 msgid "Popular Posts"
 msgstr "مطالب محبوب"
 
 #: auxin-content/include/hooks-admin.php:453
-#: build/phlox/auxin-content/include/hooks-admin.php:195
+#: build/phlox/auxin-content/include/hooks-admin.php:192
 #, fuzzy
 msgid "Visual CSS Style Editor"
 msgstr "مداد زرد"
 
 #: auxin-content/include/hooks-admin.php:461
-#: build/phlox/auxin-content/include/hooks-admin.php:202
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:351
+#: build/phlox/auxin-content/include/hooks-admin.php:199
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:348
 msgid "EU Cookie Notce"
 msgstr "هشدار کوکی ها (اروپا)"
 
 #: auxin-content/include/hooks-admin.php:468
-#: build/phlox/auxin-content/include/hooks-admin.php:209
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:358
+#: build/phlox/auxin-content/include/hooks-admin.php:206
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:355
 msgid "MailChimp for WordPress"
 msgstr "میل چیمپ وردپرس"
 
 #: auxin-content/include/hooks-admin.php:475
-#: build/phlox/auxin-content/include/hooks-admin.php:216
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:365
+#: build/phlox/auxin-content/include/hooks-admin.php:213
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:362
 msgid "Real-time Bitcoin Converter"
 msgstr "مدبل واقعی بیت کوین"
 
 #: auxin-content/include/hooks-admin.php:482
-#: build/phlox/auxin-content/include/hooks-admin.php:223
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:372
+#: build/phlox/auxin-content/include/hooks-admin.php:220
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:369
 msgid "Custom Sidebars"
 msgstr "سایدبارهای سفارشی"
 
 #: auxin-content/include/hooks-admin.php:489
-#: build/phlox/auxin-content/include/hooks-admin.php:230
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:379
+#: build/phlox/auxin-content/include/hooks-admin.php:227
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:376
 msgid "Simple Taxonomy Ordering"
 msgstr "مرتب سازی سازی ساده طبقه بندی ها"
 
 #: auxin-content/include/hooks-admin.php:502
-#: build/phlox/auxin-content/include/hooks-admin.php:242
+#: build/phlox/auxin-content/include/hooks-admin.php:239
 #, fuzzy
 msgid "MasterSlider by averta"
 msgstr "مستر اسلایدر پرو"
 
 #: auxin-content/include/hooks-admin.php:532
-#: build/phlox/auxin-content/include/hooks-admin.php:271
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:408
+#: build/phlox/auxin-content/include/hooks-admin.php:268
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:405
 msgid "Install Recommended Plugins"
 msgstr "نصب افزونه های پیشنهادی"
 
 #: auxin-content/include/hooks-admin.php:545
-#: build/phlox/auxin-content/include/hooks-admin.php:284
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:421
+#: build/phlox/auxin-content/include/hooks-admin.php:281
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:418
 msgid "Essentials"
 msgstr "ضروری"
 
 #: auxin-content/include/hooks-admin.php:546
-#: build/phlox/auxin-content/include/hooks-admin.php:285
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:422
+#: build/phlox/auxin-content/include/hooks-admin.php:282
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:419
 msgid "Bundled"
 msgstr "مشمول پکیج"
 
 #: auxin-content/include/hooks-admin.php:547
-#: build/phlox/auxin-content/include/hooks-admin.php:286
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:423
+#: build/phlox/auxin-content/include/hooks-admin.php:283
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:420
 msgid "Visual Builder"
 msgstr "سازنده زنده"
 
 #: auxin-content/include/hooks-admin.php:548
-#: build/phlox/auxin-content/include/hooks-admin.php:287
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:424
+#: build/phlox/auxin-content/include/hooks-admin.php:284
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:421
 msgid "E-Commerce"
 msgstr "فروشگاه"
 
 #: auxin-content/include/hooks-admin.php:549
 #: auxin-content/options/auxin-options.php:4472
-#: build/phlox/auxin-content/include/hooks-admin.php:288
+#: build/phlox/auxin-content/include/hooks-admin.php:285
 #: build/phlox/auxin-content/options/auxin-options.php:4199
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:425
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:422
 #: build/phlox-pro/auxin-content/options/auxin-options.php:4199
 msgid "Blog"
 msgstr "وبلاگ"
 
 #: auxin-content/include/hooks-admin.php:550
-#: build/phlox/auxin-content/include/hooks-admin.php:289
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:426
+#: build/phlox/auxin-content/include/hooks-admin.php:286
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:423
 msgid "Social"
 msgstr "اجتماعی"
 
 #: auxin-content/include/hooks-admin.php:551
-#: build/phlox/auxin-content/include/hooks-admin.php:290
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:427
+#: build/phlox/auxin-content/include/hooks-admin.php:287
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:424
 msgid "Optimization"
 msgstr "بهینه سازی"
 
 #: auxin-content/include/hooks-admin.php:568
-#: build/phlox/auxin-content/include/hooks-admin.php:307
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:444
+#: build/phlox/auxin-content/include/hooks-admin.php:304
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:441
 msgid "Import Demo"
 msgstr "درون ریزی دموها"
 
 #: auxin-content/include/hooks-admin.php:569
-#: build/phlox/auxin-content/include/hooks-admin.php:308
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:445
+#: build/phlox/auxin-content/include/hooks-admin.php:305
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:442
 msgid "Clone a demo site in few clicks"
 msgstr "دموهای آماده را با یک کلیک نصب کنید."
 
 #: auxin-content/include/hooks-admin.php:570
-#: build/phlox/auxin-content/include/hooks-admin.php:309
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:446
+#: build/phlox/auxin-content/include/hooks-admin.php:306
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:443
 msgid "Run Importer"
 msgstr "شروع درون ریزی"
 
 #: auxin-content/include/hooks-admin.php:575
-#: build/phlox/auxin-content/include/hooks-admin.php:314
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:451
+#: build/phlox/auxin-content/include/hooks-admin.php:311
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:448
 msgid "Customize %s"
 msgstr "سفارشی سازی فلوکس"
 
 #: auxin-content/include/hooks-admin.php:576
-#: build/phlox/auxin-content/include/hooks-admin.php:315
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:452
+#: build/phlox/auxin-content/include/hooks-admin.php:312
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:449
 msgid "Customize any part of your website."
 msgstr "تمامی سایت خود را شخصی سازی کنید."
 
 #: auxin-content/include/hooks-admin.php:577
-#: build/phlox/auxin-content/include/hooks-admin.php:316
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:453
+#: build/phlox/auxin-content/include/hooks-admin.php:313
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:450
 msgid "Customize"
 msgstr "شروع سفارشی سازی"
 
 #: auxin-content/include/hooks-admin.php:591
-#: build/phlox/auxin-content/include/hooks-admin.php:330
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:467
+#: build/phlox/auxin-content/include/hooks-admin.php:327
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:464
 msgid "Need Some Help?"
 msgstr "به کمک نیاز دارید؟"
 
 #: auxin-content/include/hooks-admin.php:592
-#: build/phlox/auxin-content/include/hooks-admin.php:331
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:468
+#: build/phlox/auxin-content/include/hooks-admin.php:328
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:465
 msgid "We would love to be of any assistance."
 msgstr "یک تیکت پشتیبانی در راست چین برای ما باز کنید."
 
 #: auxin-content/include/hooks-admin.php:593
-#: build/phlox/auxin-content/include/hooks-admin.php:332
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:469
+#: build/phlox/auxin-content/include/hooks-admin.php:329
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:466
 msgid "Send Ticket"
 msgstr "ارسال تیکت"
 
 #: auxin-content/include/hooks-admin.php:599
 #: auxin-content/include/hooks-admin.php:736
-#: build/phlox/auxin-content/include/hooks-admin.php:338
-#: build/phlox/auxin-content/include/hooks-admin.php:475
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:475
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:612
+#: build/phlox/auxin-content/include/hooks-admin.php:335
+#: build/phlox/auxin-content/include/hooks-admin.php:472
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:472
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:609
 msgid "Documentation"
 msgstr "مستندات"
 
 #: auxin-content/include/hooks-admin.php:600
-#: build/phlox/auxin-content/include/hooks-admin.php:339
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:476
+#: build/phlox/auxin-content/include/hooks-admin.php:336
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:473
 msgid "Learn about any aspect of %s Theme."
 msgstr "کار کردن با قالب فلوکس را سریع و ساده یاد بگیرید."
 
 #: auxin-content/include/hooks-admin.php:601
-#: build/phlox/auxin-content/include/hooks-admin.php:340
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:477
+#: build/phlox/auxin-content/include/hooks-admin.php:337
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:474
 msgid "Start Reading"
 msgstr "شروع خواندن"
 
 #: auxin-content/include/hooks-admin.php:607
-#: build/phlox/auxin-content/include/hooks-admin.php:346
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:483
+#: build/phlox/auxin-content/include/hooks-admin.php:343
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:480
 msgid "Subscription"
 msgstr "پرتال مشتریان"
 
 #: auxin-content/include/hooks-admin.php:608
-#: build/phlox/auxin-content/include/hooks-admin.php:347
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:484
+#: build/phlox/auxin-content/include/hooks-admin.php:344
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:481
 msgid "Get the latest changes in your inbox."
 msgstr "این سیستم فقط مختص مشتریان هیولای وردپرس است!"
 
 #: auxin-content/include/hooks-admin.php:609
-#: build/phlox/auxin-content/include/hooks-admin.php:348
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:485
+#: build/phlox/auxin-content/include/hooks-admin.php:345
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:482
 msgid "Coming soon"
 msgstr "به زودی"
 
 #: auxin-content/include/hooks-admin.php:619
-#: build/phlox/auxin-content/include/hooks-admin.php:358
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:495
+#: build/phlox/auxin-content/include/hooks-admin.php:355
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:492
 msgid "Dashboard"
 msgstr "داشبورد"
 
 #: auxin-content/include/hooks-admin.php:637
-#: build/phlox/auxin-content/include/hooks-admin.php:376
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:513
+#: build/phlox/auxin-content/include/hooks-admin.php:373
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:510
 msgid "Customization"
 msgstr "سفارشی سازی"
 
 #: auxin-content/include/hooks-admin.php:729
-#: build/phlox/auxin-content/include/hooks-admin.php:468
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:605
+#: build/phlox/auxin-content/include/hooks-admin.php:465
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:602
 msgid "Play all video tutorials"
 msgstr "پخش تمامی ویدئوهای آموزشی"
 
 #: auxin-content/include/hooks-admin.php:731
-#: build/phlox/auxin-content/include/hooks-admin.php:470
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:607
+#: build/phlox/auxin-content/include/hooks-admin.php:467
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:604
 msgid "Video Tutorials"
 msgstr "آموزش های ویدئویی"
 
 #: auxin-content/include/hooks-admin.php:732
-#: build/phlox/auxin-content/include/hooks-admin.php:471
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:608
+#: build/phlox/auxin-content/include/hooks-admin.php:468
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:605
 msgid "Take your skills with %s to the next level!"
 msgstr "در استفاده از فلوکس پرو ماهر شوید!"
 
 #: auxin-content/include/hooks-admin.php:737
 #: auxin-content/include/hooks-admin.php:742
-#: build/phlox/auxin-content/include/hooks-admin.php:476
-#: build/phlox/auxin-content/include/hooks-admin.php:481
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:613
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:618
+#: build/phlox/auxin-content/include/hooks-admin.php:473
+#: build/phlox/auxin-content/include/hooks-admin.php:478
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:610
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:615
 #, fuzzy
 msgid "Check out"
 msgstr "بررسی کنید"
 
 #: auxin-content/include/hooks-admin.php:741
-#: build/phlox/auxin-content/include/hooks-admin.php:480
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:617
+#: build/phlox/auxin-content/include/hooks-admin.php:477
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:614
 msgid "Support Center"
 msgstr "مرکز پشتیبانی"
 
 #: auxin-content/include/hooks-admin.php:752
-#: build/phlox/auxin-content/include/hooks-admin.php:491
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:628
+#: build/phlox/auxin-content/include/hooks-admin.php:488
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:625
 msgid "Tutorials"
 msgstr "آموزش ها"
 
 #: auxin-content/include/hooks-admin.php:771
-#: build/phlox/auxin-content/include/hooks-admin.php:510
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:647
+#: build/phlox/auxin-content/include/hooks-admin.php:507
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:644
 msgid "Please install \"Phlox Core Elements\" plugin to enable this feature."
 msgstr ""
 "برای استفاده از این ویژگی لطفا افزونه \"هسته المان های فلوکس\" را فعال کنید."
 
 #: auxin-content/include/hooks-admin.php:780
-#: build/phlox/auxin-content/include/hooks-admin.php:519
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:656
+#: build/phlox/auxin-content/include/hooks-admin.php:516
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:653
 msgid "Demo Importer"
 msgstr "درون ریزی دموها"
 
 #: auxin-content/include/hooks-admin.php:809
-#: build/phlox/auxin-content/include/hooks-admin.php:548
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:685
+#: build/phlox/auxin-content/include/hooks-admin.php:545
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:682
 msgid ""
 "This theme requires at least WordPress version 4.7 and PHP 5.4. You are "
 "running WordPress version %s and PHP version %s. Please upgrade and try "
