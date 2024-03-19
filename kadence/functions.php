@@ -9,9 +9,9 @@
  * @package kadence
  */
 
-define( 'KADENCE_VERSION', '1.1.51' );
-define( 'KADENCE_MINIMUM_WP_VERSION', '5.4' );
-define( 'KADENCE_MINIMUM_PHP_VERSION', '7.2' );
+define( 'KADENCE_VERSION', '1.2.0' );
+define( 'KADENCE_MINIMUM_WP_VERSION', '5.6' );
+define( 'KADENCE_MINIMUM_PHP_VERSION', '7.4' );
 
 // Bail if requirements are not met.
 if ( version_compare( $GLOBALS['wp_version'], KADENCE_MINIMUM_WP_VERSION, '<' ) || version_compare( phpversion(), KADENCE_MINIMUM_PHP_VERSION, '<' ) ) {

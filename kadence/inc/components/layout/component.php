@@ -624,6 +624,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				if ( get_query_var( 'tribe_events_front_page' ) ) {
 					$archive_type = 'tribe_events_archive';
 					$trans_type   = 'archive';
+					$archivetrans = apply_filters( 'kadence_tribe_events_archive_transparent', 'disable' );
 				} else {
 					$post_id         = get_option( 'page_for_posts' );
 					$archivelayout   = get_post_meta( $post_id, '_kad_post_layout', true );
@@ -697,7 +698,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				$trans_type   = 'archive';
 			} elseif ( is_post_type_archive( 'tribe_events' ) ) {
 				$archive_type = 'tribe_events_archive';
-				$trans_type = 'archive';
+				$trans_type   = 'archive';
+				$archivetrans = apply_filters( 'kadence_tribe_events_archive_transparent', 'disable' );
 			} elseif ( is_tax( 'portfolio-type' ) || is_tax( 'portfolio-tag' ) ) {
 				$archive_type = 'portfolio_archive';
 				$trans_type   = 'archive';

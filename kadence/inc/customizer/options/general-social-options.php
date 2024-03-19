@@ -37,6 +37,13 @@ $settings = array(
 		'default'      => kadence()->default( 'twitter_link' ),
 		'label'        => esc_html__( 'Twitter', 'kadence' ),
 	),
+	'threads_link' => array(
+		'control_type' => 'kadence_text_control',
+		'sanitize'     => 'esc_url_raw',
+		'section'      => 'general_social',
+		'default'      => kadence()->default( 'threads_link' ),
+		'label'        => esc_html__( 'Threads', 'kadence' ),
+	),
 	'instagram_link' => array(
 		'control_type' => 'kadence_text_control',
 		'sanitize'     => 'esc_url_raw',

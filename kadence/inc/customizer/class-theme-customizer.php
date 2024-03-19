@@ -1968,8 +1968,8 @@ class Theme_Customizer {
 			--global-palette-highlight-alt2: ' . $this->render_color( kadence()->sub_option( 'link_color', 'highlight-alt2' ) ) . ';
 			--global-palette-btn: ' . $this->render_color( kadence()->sub_option( 'buttons_color', 'color' ) ) . ';
 			--global-palette-btn-hover: ' . $this->render_color( kadence()->sub_option( 'buttons_color', 'hover' ) ) . ';
-			--global-palette-btn-bg: ' . $this->render_color( kadence()->sub_option( 'buttons_background', 'color' ) ) . ';
-			--global-palette-btn-bg-hover: ' . $this->render_color( kadence()->sub_option( 'buttons_background', 'hover' ) ) . ';
+			--global-palette-btn-bg: ' . $this->render_color_or_gradient( kadence()->sub_option( 'buttons_background', 'color' ) ) . ';
+			--global-palette-btn-bg-hover: ' . $this->render_color_or_gradient( kadence()->sub_option( 'buttons_background', 'hover' ) ) . ';
 			--global-base-font: ' . kadence()->sub_option( 'base_font', 'family' ) . ';
 			--global-heading-font: ' . ( 'inherit' !== kadence()->sub_option( 'heading_font', 'family' ) ? kadence()->sub_option( 'heading_font', 'family' ) : 'var(--global-base-font)' ) . ';
 		}';
@@ -1977,6 +1977,21 @@ class Theme_Customizer {
 		if ( function_exists( 'wp_set_script_translations' ) ) {
 			wp_set_script_translations( 'kadence-customizer-controls', 'kadence' );
 		}
+	}
+	/**
+	 * Generates the color output.
+	 *
+	 * @param string $color any color attribute.
+	 * @return string
+	 */
+	public function render_color_or_gradient( $color ) {
+		if ( empty( $color ) ) {
+			return false;
+		}
+		if ( ! is_array( $color ) && 'palette' === substr( $color, 0, 7 ) ) {
+			$color = 'var(--global-' . $color . ')';
+		}
+		return $color;
 	}
 	/**
 	 * Generates the color output.

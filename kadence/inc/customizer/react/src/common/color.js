@@ -31,7 +31,7 @@ class ColorControl extends Component {
 			refresh: false,
 			stateColor: this.props.color,
 			color: this.props.color,
-			isPalette: ( this.props.color && this.props.color.includes( 'palette' ) ? true : false ),
+			isPalette: ( this.props.color && this.props.color.includes( 'palette' ) && ! this.props.color.includes( 'gradient' ) ? true : false ),
 			palette: ( this.props.presetColors && this.props.presetColors ? this.props.presetColors : [] ),
 			activePalette: ( this.props.presetColors && this.props.presetColors.active ? this.props.presetColors.active : 'palette' ),
 			supportGradient: ( undefined === GradientPicker && undefined === __experimentalGradientPicker ? false : true ),

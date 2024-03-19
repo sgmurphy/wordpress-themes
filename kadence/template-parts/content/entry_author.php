@@ -31,7 +31,7 @@ kadence()->print_styles( 'kadence-author-box' );
 		</div>
 		<div class="entry-author-follow author-follow">
 			<?php
-			foreach ( array( 'facebook', 'twitter', 'instagram', 'youtube', 'flickr', 'vimeo', 'linkedin', 'pinterest', 'dribbble', 'amazon', 'medium', 'goodreads', 'bookbub' ) as $social ) {
+			foreach ( array( 'facebook', 'twitter', 'instagram', 'threads', 'youtube', 'flickr', 'vimeo', 'linkedin', 'pinterest', 'dribbble', 'amazon', 'medium', 'goodreads', 'bookbub' ) as $social ) {
 				if ( get_the_author_meta( $social ) ) {
 					$url = get_the_author_meta( $social );
 

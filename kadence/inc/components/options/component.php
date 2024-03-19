@@ -4597,6 +4597,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		if ( empty( $initial_url ) ) {
 			$initial_url = $url;
 		}
+		$partner_url = get_option( 'kadence_partner_pro_url', '' );
+		if ( ! empty( $partner_url ) && in_array( $partner_url, self::$allowed_urls, true ) ) {
+			$url = $partner_url;
+		}
 		$url = apply_filters( 'kadence_get_pro_url', $url, $initial_url );
 		if ( in_array( $url, self::$allowed_urls, true ) ) {
 			$url = $url;

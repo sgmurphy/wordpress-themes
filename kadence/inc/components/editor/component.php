@@ -168,7 +168,7 @@ class Component implements Component_Interface {
 					$post_layout['layout'] = 'narrow';
 				}
 			}
-			$classes .= ' post-content-width-' . esc_attr( $post_layout['layout'] ) . ' admin-color-pcw-' . esc_attr( $post_layout['layout'] ) . ' post-content-style-' . esc_attr( $post_layout['boxed'] ) . ' admin-color-pcs-' . esc_attr( $post_layout['boxed'] ) . ' admin-color-post-type-' . esc_attr( $post_type ) . ' post-content-vertical-padding-' . esc_attr( $post_layout['padding'] ) . ' admin-color-pcvp-' . esc_attr( $post_layout['padding'] ) . ' post-content-title-' . esc_attr( $post_layout['title'] ) . ' admin-color-pct-' . esc_attr( $post_layout['title'] ) . '  post-content-sidebar-' . esc_attr( $post_layout['sidebar'] ) . ' ';
+			$classes .= ' post-content-width-' . esc_attr( $post_layout['layout'] ) . ' admin-color-pcw-' . esc_attr( $post_layout['layout'] ) . ' post-content-style-' . esc_attr( $post_layout['boxed'] ) . ' admin-color-pcs-' . esc_attr( $post_layout['boxed'] ) . ' admin-color-post-type-' . esc_attr( $post_type ) . ' post-content-vertical-padding-' . esc_attr( $post_layout['padding'] ) . ' admin-color-pcvp-' . esc_attr( $post_layout['padding'] ) . ' post-content-title-' . esc_attr( $post_layout['title'] ) . ' admin-color-pct-' . esc_attr( $post_layout['title'] ) . '  post-content-sidebar-' . esc_attr( $post_layout['sidebar'] ) . ' admin-color-pc-sidebar-' . esc_attr( $post_layout['sidebar'] ) . ' ';
 		}
 		return $classes;
 	}
@@ -191,38 +191,6 @@ class Component implements Component_Interface {
 		if ( apply_filters( 'kadence-theme-block-templates-support', true ) ) {
 			add_theme_support( 'block-templates' );
 		}
-		/*
-		 * Add support custom font sizes.
-		 * MOVED TO JSON
-		 */
-		add_theme_support(
-			'editor-font-sizes',
-			array(
-				array(
-					'name'      => __( 'Small', 'kadence' ),
-					'shortName' => __( 'S', 'kadence' ),
-					'size'      => 14,
-					'slug'      => 'small',
-				),
-				array(
-					'name'      => __( 'Medium', 'kadence' ),
-					'shortName' => __( 'M', 'kadence' ),
-					'size'      => 24,
-					'slug'      => 'medium',
-				),
-				array(
-					'name'      => __( 'Large', 'kadence' ),
-					'shortName' => __( 'L', 'kadence' ),
-					'size'      => 32,
-					'slug'      => 'large',
-				),
-				array(
-					'name'      => __( 'Larger', 'kadence' ),
-					'shortName' => __( 'XL', 'kadence' ),
-					'size'      => 40,
-					'slug'      => 'larger',
-				),
-			)
-		);
+
 	}
 }

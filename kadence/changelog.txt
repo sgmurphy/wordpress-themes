@@ -1,3 +1,11 @@
+== 1.2.0 | 19th March 2024 ==
+* Add: theme.json file to better support core blocks.
+* Add: Threads to social media options.
+* Update: Post styles in editor when using iframe editor.
+* Fix: Issue with possible desktop touch devices and top level menu items.
+* Fix: Issue with transparent header and tribe events.
+* Fix: Issue with button styles in the customizer. 
+
 == 1.1.51 | 15th January 2024 ==
 * Fix: Issue with starter templates admin page link.
 

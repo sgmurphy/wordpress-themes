@@ -1083,7 +1083,7 @@
 				if ( 'object' == typeof newValue ) {
 					if ( undefined !== rule['key'] && undefined !== newValue[ rule['key'] ] ) {
 						// Fetch the property newValue using the key from setting value.
-						if ( typeof newValue[ rule['key'] ] === 'string' && newValue[ rule['key'] ].includes('palette') ) {
+						if ( typeof newValue[ rule['key'] ] === 'string' && newValue[ rule['key'] ].includes('palette') && ! newValue[ rule['key'] ].includes('gradient') ) {
 							formattedValue = 'var(--global-' + newValue[ rule['key'] ] + ')';
 						} else {
 							formattedValue = newValue[ rule['key'] ];

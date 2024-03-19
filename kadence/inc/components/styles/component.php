@@ -1689,8 +1689,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$css->add_property( '--global-palette-highlight-alt', $css->render_color( kadence()->sub_option( 'link_color', 'highlight-alt' ) ) );
 		$css->add_property( '--global-palette-highlight-alt2', $css->render_color( kadence()->sub_option( 'link_color', 'highlight-alt2' ) ) );
 
-		$css->add_property( '--global-palette-btn-bg', $css->render_color( kadence()->sub_option( 'buttons_background', 'color' ) ) );
-		$css->add_property( '--global-palette-btn-bg-hover', $css->render_color( kadence()->sub_option( 'buttons_background', 'hover' ) ) );
+		$css->add_property( '--global-palette-btn-bg', $css->render_color_or_gradient( kadence()->sub_option( 'buttons_background', 'color' ) ) );
+		$css->add_property( '--global-palette-btn-bg-hover', $css->render_color_or_gradient( kadence()->sub_option( 'buttons_background', 'hover' ) ) );
 
 		$css->add_property( '--global-palette-btn', $css->render_color( kadence()->sub_option( 'buttons_color', 'color' ) ) );
 		$css->add_property( '--global-palette-btn-hover', $css->render_color( kadence()->sub_option( 'buttons_color', 'hover' ) ) );
@@ -1859,7 +1859,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		// Layout.
 		$css->add_property( 'max-width', kadence()->sub_option( 'content_width', 'size' ) . kadence()->sub_option( 'content_width', 'unit' ) );
 		$css->set_selector( '.site-container, .site-header-row-layout-contained, .site-footer-row-layout-contained, .entry-hero-layout-contained, .comments-area, .alignfull > .wp-block-cover__inner-container, .alignwide > .wp-block-cover__inner-container' );
-		$css->add_property( 'max-width', 'var(--global-content-width)' );
+		$css->add_property( 'max-width', 'var(--global-calc-content-width)' );
 		$css->set_selector( '.content-width-narrow .content-container.site-container, .content-width-narrow .hero-container.site-container' );
 		$css->add_property( 'max-width', 'var(--global-content-narrow-width)' );
 		$css->start_media_query( $media_query['alignwide'] );
@@ -3022,8 +3022,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 		$css->add_property( '--global-palette-btn', $css->render_color( kadence()->sub_option( 'buttons_color', 'color' ) ) );
 		$css->add_property( '--global-palette-btn-hover', $css->render_color( kadence()->sub_option( 'buttons_color', 'hover' ) ) );
-		$css->add_property( '--global-palette-btn-bg', $css->render_color( kadence()->sub_option( 'buttons_background', 'color' ) ) );
-		$css->add_property( '--global-palette-btn-bg-hover', $css->render_color( kadence()->sub_option( 'buttons_background', 'hover' ) ) );
+		$css->add_property( '--global-palette-btn-bg', $css->render_color_or_gradient( kadence()->sub_option( 'buttons_background', 'color' ) ) );
+		$css->add_property( '--global-palette-btn-bg-hover', $css->render_color_or_gradient( kadence()->sub_option( 'buttons_background', 'hover' ) ) );
 		$css->add_property( '--global-fallback-font', apply_filters( 'kadence_theme_global_typography_fallback', 'sans-serif' ) );
 		$css->add_property( '--global-display-fallback-font', apply_filters( 'kadence_theme_global_display_typography_fallback', 'sans-serif' ) );
 		$css->add_property( '--global-body-font-family', $css->render_font_family( kadence()->option( 'base_font' ), '' ) );
@@ -3033,8 +3033,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$css->add_property( '--global-content-edge-padding', $css->render_range( kadence()->option( 'content_edge_spacing' ), 'desktop' ) );
 		$css->add_property( '--global-content-wide-width', 'calc( var(--global-content-width) + 160px )' );
 		$css->add_property( '--global-content-narrow-wide-width', 'calc( var(--global-content-narrow-width) + 260px )' );
-		$css->add_property( '--global-content-width', 'calc(' . kadence()->sub_option( 'content_width', 'size' ) . kadence()->sub_option( 'content_width', 'unit' ) . ' - var(--global-content-edge-padding) - var(--global-content-edge-padding) )' );
-		$css->add_property( '--global-calc-content-width', 'calc(' . kadence()->sub_option( 'content_width', 'size' ) . kadence()->sub_option( 'content_width', 'unit' ) . ' - var(--global-content-edge-padding) - var(--global-content-edge-padding) )' );
+
+		//$css->add_property( '--global-content-width', 'calc(' . kadence()->sub_option( 'content_width', 'size' ) . kadence()->sub_option( 'content_width', 'unit' ) . ' - var(--global-content-edge-padding) - var(--global-content-edge-padding) )' );
+
+		$css->add_property( '--global-calc-content-width', 'calc(var(--global-content-width) - var(--global-content-edge-padding) - var(--global-content-edge-padding) )' );
 		$css->add_property( '--global-calc-wide-content-width', 'calc( var(--global-content-width) + 160px )' );
 		$css->start_media_query( $media_query['tablet'] );
 		$css->set_selector( ':root' );
@@ -3044,6 +3046,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$css->set_selector( ':root' );
 		$css->add_property( '--global-content-edge-padding', $css->render_range( kadence()->option( 'content_edge_spacing' ), 'mobile' ) );
 		$css->stop_media_query();
+
+		// Fix editor:
+		$css->set_selector( '.components-panel__header.edit-post-sidebar__panel-tabs ul' );
+		$css->add_property( 'margin', '0px' );
 		// Colors.
 		$css->set_selector( ':root .has-theme-palette-1-background-color' );
 		$css->add_property( 'background-color', 'var(--global-palette1)' );
@@ -3169,40 +3175,107 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$css->set_selector( '.editor-styles-wrapper .kt-button' );
 		$css->render_font( kadence()->option( 'buttons_typography' ), $css );
 
-		$css->set_selector( '.block-editor-page .editor-styles-wrapper' );
+		$css->set_selector( '.block-editor-page .editor-styles-wrapper, .editor-styles-wrapper' );
 		$css->render_background( kadence()->sub_option( 'site_background', 'desktop' ), $css );
 		$css->render_font( kadence()->option( 'base_font' ), $css );
 		// FSE Specific.
 		$css->set_selector( 'body.editor-styles-wrapper' );
 		$css->render_font( kadence()->option( 'base_font' ), $css );
 		$css->render_background( kadence()->sub_option( 'site_background', 'desktop' ), $css );
-		$css->set_selector( 'body.editor-styles-wrapper.admin-color-pcs-unboxed' );
-		$css->add_property( 'padding', '1em var(--global-content-edge-padding)' );
+		$css->render_background( kadence()->sub_option( 'site_background', 'desktop' ), $css, '--kad-editor-body-bg' );
+		$css->render_background( kadence()->sub_option( 'content_background', 'desktop' ), $css, '--kad-editor-content-bg' );
+		$css->render_background( kadence()->sub_option( 'above_title_background', 'desktop' ), $css, '--kad-editor-title-bg' );
+		$css->add_property( '--kad-editor-title-overlay-bg', $css->render_color_or_gradient( kadence()->sub_option( 'above_title_overlay_color', 'color' ) ) );
+		$css->add_property( '--kad-editor-title-color', $css->render_color( kadence()->sub_option( 'title_above_font', 'color' ) ) );
+		$css->add_property( '--kad-editor-vertical-top-padding', $css->render_range( kadence()->option( 'content_spacing' ), 'desktop' ) );
+		$css->add_property( '--kad-editor-vertical-bottom-padding', $css->render_range( kadence()->option( 'content_spacing' ), 'desktop' ) );
+		$css->start_media_query( $media_query['tablet'] );
+		$css->render_background( kadence()->sub_option( 'site_background', 'tablet' ), $css, '--kad-editor-body-bg' );
+		$css->render_background( kadence()->sub_option( 'content_background', 'tablet' ), $css, '--kad-editor-content-bg' );
+		$css->render_background( kadence()->sub_option( 'above_title_background', 'tablet' ), $css, '--kad-editor-title-bg' );
+		$css->add_property( '--kad-editor-vertical-top-padding', $css->render_range( kadence()->option( 'content_spacing' ), 'tablet' ) );
+		$css->add_property( '--kad-editor-vertical-bottom-padding', $css->render_range( kadence()->option( 'content_spacing' ), 'tablet' ) );
+		$css->stop_media_query();
+		$css->start_media_query( $media_query['mobile'] );
+		$css->render_background( kadence()->sub_option( 'site_background', 'mobile' ), $css, '--kad-editor-body-bg' );
+		$css->render_background( kadence()->sub_option( 'content_background', 'mobile' ), $css, '--kad-editor-content-bg' );
+		$css->render_background( kadence()->sub_option( 'above_title_background', 'mobile' ), $css, '--kad-editor-title-bg' );
+		$css->add_property( '--kad-editor-vertical-top-padding', $css->render_range( kadence()->option( 'content_spacing' ), 'mobile' ) );
+		$css->add_property( '--kad-editor-vertical-bottom-padding', $css->render_range( kadence()->option( 'content_spacing' ), 'mobile' ) );
+		$css->stop_media_query();
+		// $css->set_selector( 'body.editor-styles-wrapper.admin-color-pcs-unboxed' );
+		// $css->add_property( 'padding', '1em var(--global-content-edge-padding)' );
 		// Unboxed.
-		$css->set_selector( '.block-editor-page.post-content-style-unboxed .editor-styles-wrapper' );
+		$css->set_selector( '.block-editor-page.post-content-style-unboxed .editor-styles-wrapper, .admin-color-pcs-unboxed.editor-styles-wrapper' );
 		$css->render_background( kadence()->sub_option( 'content_background', 'desktop' ), $css );
 		// Page specific.
-		$css->set_selector( '.block-editor-page.post-type-page .editor-styles-wrapper' );
+		$css->set_selector( '.block-editor-page.post-type-page .editor-styles-wrapper, .admin-color-post-type-page.editor-styles-wrapper' );
 		$css->render_background( kadence()->sub_option( 'page_site_background', 'desktop' ), $css );
-		$css->set_selector( '.block-editor-page.post-type-page.post-content-style-unboxed .editor-styles-wrapper' );
+		$css->render_background( kadence()->sub_option( 'page_site_background', 'desktop' ), $css, '--kad-editor-body-bg' );
+		$css->render_background( kadence()->sub_option( 'page_content_background', 'desktop' ), $css, '--kad-editor-content-bg' );
+		$css->render_background( kadence()->sub_option( 'page_title_background', 'desktop' ), $css, '--kad-editor-title-bg' );
+		$css->add_property( '--kad-editor-title-overlay-bg', $css->render_color_or_gradient( kadence()->sub_option( 'page_title_overlay_color', 'color' ) ) );
+		$css->add_property( '--kad-editor-title-color', $css->render_color( kadence()->sub_option( 'page_title_font', 'color' ) ) );
+		$css->add_property( '--kad-editor-title-height', $this->render_range( kadence()->option( 'page_title_height' ), 'desktop' ) );
+		$css->add_property( '--kad-editor-title-align', kadence()->sub_option( 'page_title_align', 'desktop' ) );
+
+		$css->start_media_query( $media_query['tablet'] );
+		$css->render_background( kadence()->sub_option( 'page_site_background', 'tablet' ), $css, '--kad-editor-body-bg' );
+		$css->render_background( kadence()->sub_option( 'page_content_background', 'tablet' ), $css, '--kad-editor-content-bg' );
+		$css->render_background( kadence()->sub_option( 'page_title_background', 'tablet' ), $css, '--kad-editor-title-bg' );
+		$css->add_property( '--kad-editor-title-height', $this->render_range( kadence()->option( 'page_title_height' ), 'tablet' ) );
+		$css->add_property( '--kad-editor-title-align', kadence()->sub_option( 'page_title_align', 'tablet' ) );
+		$css->stop_media_query();
+		$css->start_media_query( $media_query['mobile'] );
+		$css->render_background( kadence()->sub_option( 'page_site_background', 'mobile' ), $css, '--kad-editor-body-bg' );
+		$css->render_background( kadence()->sub_option( 'page_content_background', 'mobile' ), $css, '--kad-editor-content-bg' );
+		$css->render_background( kadence()->sub_option( 'page_title_background', 'mobile' ), $css, '--kad-editor-title-bg' );
+		$css->add_property( '--kad-editor-title-height', $this->render_range( kadence()->option( 'page_title_height' ), 'mobile' ) );
+		$css->add_property( '--kad-editor-title-align', kadence()->sub_option( 'page_title_align', 'mobile' ) );
+		$css->stop_media_query();
+
+		$css->set_selector( '.block-editor-page.post-type-page.post-content-style-unboxed .editor-styles-wrapper, .admin-color-pcs-unboxed.admin-color-post-type-page.editor-styles-wrapper' );
 		$css->render_background( kadence()->sub_option( 'page_content_background', 'desktop' ), $css );
-		$css->set_selector( '.block-editor-page.post-type-page.post-content-style-boxed .editor-styles-wrapper:before' );
+		$css->set_selector( '.block-editor-page.post-type-page.post-content-style-boxed .editor-styles-wrapper:before, .admin-color-pcs-boxed.admin-color-post-type-page.editor-styles-wrapper:before' );
 		$css->render_background( kadence()->sub_option( 'page_content_background', 'desktop' ), $css );
 		// Post specific.
 		$css->set_selector( '.block-editor-page.post-type-post .editor-styles-wrapper, .admin-color-post-type-post.editor-styles-wrapper' );
 		$css->render_background( kadence()->sub_option( 'post_site_background', 'desktop' ), $css );
+		$css->render_background( kadence()->sub_option( 'post_site_background', 'desktop' ), $css, '--kad-editor-body-bg' );
+		$css->render_background( kadence()->sub_option( 'post_content_background', 'desktop' ), $css, '--kad-editor-content-bg' );
+		$css->render_background( kadence()->sub_option( 'post_title_background', 'desktop' ), $css, '--kad-editor-title-bg' );
+		$css->add_property( '--kad-editor-title-overlay-bg', $css->render_color_or_gradient( kadence()->sub_option( 'post_title_overlay_color', 'color' ) ) );
+		$css->add_property( '--kad-editor-title-color', $css->render_color( kadence()->sub_option( 'post_title_font', 'color' ) ) );
+		$css->add_property( '--kad-editor-title-height', $this->render_range( kadence()->option( 'post_title_height' ), 'desktop' ) );
+		$css->add_property( '--kad-editor-title-align', kadence()->sub_option( 'post_title_align', 'desktop' ) );
+
+		$css->start_media_query( $media_query['tablet'] );
+		$css->render_background( kadence()->sub_option( 'post_site_background', 'tablet' ), $css, '--kad-editor-body-bg' );
+		$css->render_background( kadence()->sub_option( 'post_content_background', 'tablet' ), $css, '--kad-editor-content-bg' );
+		$css->render_background( kadence()->sub_option( 'post_title_background', 'tablet' ), $css, '--kad-editor-title-bg' );
+		$css->add_property( '--kad-editor-title-height', $this->render_range( kadence()->option( 'post_title_height' ), 'tablet' ) );
+		$css->add_property( '--kad-editor-title-align', kadence()->sub_option( 'post_title_align', 'tablet' ) );
+		$css->stop_media_query();
+		$css->start_media_query( $media_query['mobile'] );
+		$css->render_background( kadence()->sub_option( 'post_site_background', 'mobile' ), $css, '--kad-editor-body-bg' );
+		$css->render_background( kadence()->sub_option( 'post_content_background', 'mobile' ), $css, '--kad-editor-content-bg' );
+		$css->render_background( kadence()->sub_option( 'post_title_background', 'mobile' ), $css, '--kad-editor-title-bg' );
+		$css->add_property( '--kad-editor-title-height', $this->render_range( kadence()->option( 'post_title_height' ), 'mobile' ) );
+		$css->add_property( '--kad-editor-title-align', kadence()->sub_option( 'post_title_align', 'mobile' ) );
+		$css->stop_media_query();
+
 		$css->set_selector( '.block-editor-page.post-type-post.post-content-style-unboxed .editor-styles-wrapper, .admin-color-post-type-post.admin-color-pcs-unboxed.editor-styles-wrapper' );
 		$css->render_background( kadence()->sub_option( 'post_content_background', 'desktop' ), $css );
 		$css->set_selector( '.block-editor-page.post-type-post.post-content-style-boxed .editor-styles-wrapper:before, .admin-color-post-type-post.admin-color-pcs-boxed.editor-styles-wrapper:before' );
 		$css->render_background( kadence()->sub_option( 'post_content_background', 'desktop' ), $css );
 		// Boxed Editor Width.
-		$css->set_selector( '.block-editor-page.post-content-style-boxed .editor-styles-wrapper:before' );
+		$css->set_selector( '.block-editor-page.post-content-style-boxed .editor-styles-wrapper:before, .admin-color-pcs-boxed.editor-styles-wrapper:before' );
 		$css->add_property( 'max-width', 'calc(' . kadence()->sub_option( 'content_width', 'size' ) . kadence()->sub_option( 'content_width', 'unit' ) . ' - var(--global-content-edge-padding) - var(--global-content-edge-padding) )' );
 		$css->render_background( kadence()->sub_option( 'content_background', 'desktop' ), $css );
 		$css->set_selector( '.admin-color-pcs-boxed.editor-styles-wrapper:before, .admin-color-pcs-unboxed.editor-styles-wrapper' );
 		$css->render_background( kadence()->sub_option( 'content_background', 'desktop' ), $css );
 		// Narrow width.
-		$css->set_selector( '.block-editor-page.post-content-style-boxed.post-content-width-narrow .editor-styles-wrapper:before' );
+		$css->set_selector( '.block-editor-page.post-content-style-boxed.post-content-width-narrow .editor-styles-wrapper:before, .admin-color-pcw-narrow.admin-color-pcs-boxed.editor-styles-wrapper:before' );
 		$css->add_property( 'max-width', 'calc(var(--global-content-narrow-width) - var(--global-content-edge-padding) - var(--global-content-edge-padding) )' );
 		// Sidebar Width.
 		$sidebar_size = kadence()->sub_option( 'sidebar_width', 'size' );
@@ -3223,39 +3296,31 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		} else {
 			$sidebar_neg = $sidebar_size . kadence()->sub_option( 'sidebar_width', 'unit' );
 		}
-		$css->set_selector( '.block-editor-page.post-content-style-boxed.post-content-sidebar-right .editor-styles-wrapper:before, .block-editor-page.post-content-style-boxed.post-content-sidebar-left .editor-styles-wrapper:before' );
+		$css->set_selector( '.block-editor-page.post-content-style-boxed.post-content-sidebar-right .editor-styles-wrapper:before, .block-editor-page.post-content-style-boxed.post-content-sidebar-left .editor-styles-wrapper:before, .admin-color-pc-sidebar-right.admin-color-pcs-boxed.editor-styles-wrapper:before, .admin-color-pc-sidebar-left.admin-color-pcs-boxed.editor-styles-wrapper:before' );
 		$css->add_property( 'max-width', 'calc(' . kadence()->sub_option( 'content_width', 'size' ) . kadence()->sub_option( 'content_width', 'unit' ) . ' - ' . $sidebar_neg . ' - 3.5rem - var(--global-content-edge-padding) - var(--global-content-edge-padding) )' );
 		// Full Width.
-		$css->set_selector( '.block-editor-page.post-content-style-boxed.post-content-width-fullwidth .editor-styles-wrapper:before' );
+		$css->set_selector( '.block-editor-page.post-content-style-boxed.post-content-width-fullwidth .editor-styles-wrapper:before, .admin-color-pcw-fullwidth.admin-color-pcs-boxed.editor-styles-wrapper:before' );
 		$css->add_property( 'max-width', '100%' );
 		// Content Editor Width.
 		$css->set_selector( '.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > *, .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper > *' );
-		$css->add_property( 'max-width', 'var(--global-content-width)' );
+		$css->add_property( 'max-width', 'var(--global-calc-content-width)' );
 		$css->set_selector( '.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper > [data-align="wide"], .editor-styles-wrapper .block-editor-block-list__layout.is-root-container > [data-align="wide"]' );
 		$css->add_property( 'max-width', 'var(--global-content-wide-width)' );
 		
 		// Boxed Content Editor Width.
-		$css->set_selector( '.post-content-style-boxed' );
-		$css->add_property( '--global-content-width', 'calc(' . kadence()->sub_option( 'content_width', 'size' ) . kadence()->sub_option( 'content_width', 'unit' ) . ' - var(--global-content-edge-padding) - var(--global-content-edge-padding) - 4rem )' );
-		$css->add_property( '--global-calc-content-width', 'calc(' . kadence()->sub_option( 'content_width', 'size' ) . kadence()->sub_option( 'content_width', 'unit' ) . ' - var(--global-content-edge-padding) - var(--global-content-edge-padding) - 4rem )' );
-		// $css->add_property( 'max-width', 'calc(var(--global-content-width) - var(--global-content-edge-padding) - 4rem )' );
+		$css->set_selector( '.post-content-style-boxed, .admin-color-pcs-boxed' );
+		$css->add_property( '--global-calc-content-width', 'calc(var(--global-content-width) - var(--global-content-edge-padding) - var(--global-content-edge-padding) - 4rem )' );
 		// Narrow Content Editor Width.
-		$css->set_selector( '.post-content-width-narrow' );
-		$css->add_property( '--global-content-width', 'calc(var(--global-content-narrow-width) - var(--global-content-edge-padding) - var(--global-content-edge-padding) )' );
-		// Boxed Narrow Content Editor Width.
-		$css->set_selector( '.post-content-style-boxed.post-content-width-narrow' );
-		$css->add_property( '--global-content-width', 'calc(var(--global-content-narrow-width) - var(--global-content-edge-padding) - var(--global-content-edge-padding) - 4rem)' );
+		$css->set_selector( '.post-content-width-narrow, .admin-color-pcw-narrow' );
+		$css->add_property( '--global-content-width', 'var(--global-content-narrow-width)' );
 		// Sidebar Content Editor Width.
-		$css->set_selector( '.post-content-sidebar-right, .post-content-sidebar-left' );
-		$css->add_property( '--global-content-width', 'calc(' . kadence()->sub_option( 'content_width', 'size' ) . kadence()->sub_option( 'content_width', 'unit' ) . ' - 3.5rem - ' . $sidebar_neg . ' - var(--global-content-edge-padding) - var(--global-content-edge-padding) )' );
-		// Boxed Sidebar Content Editor Width.
-		$css->set_selector( '.post-content-style-boxed.post-content-sidebar-right, .post-content-style-boxed.post-content-sidebar-left' );
-		$css->add_property( '--global-content-width', 'calc(' . kadence()->sub_option( 'content_width', 'size' ) . kadence()->sub_option( 'content_width', 'unit' ) . ' - 3.5rem - ' . $sidebar_neg . ' - var(--global-content-edge-padding) - var(--global-content-edge-padding) - 4rem )' );
+		$css->set_selector( '.post-content-sidebar-right, .post-content-sidebar-left, .admin-color-pc-sidebar-right, .admin-color-pc-sidebar-left' );
+		$css->add_property( '--global-content-width', 'calc(' . kadence()->sub_option( 'content_width', 'size' ) . kadence()->sub_option( 'content_width', 'unit' ) . ' - 3.5rem - ' . $sidebar_neg . ' )' );
 		// Fullwidth Content Editor Width.
-		$css->set_selector( '.post-content-width-fullwidth' );
-		$css->add_property( '--global-content-width', 'calc( 100% - 16px )' );
-		$css->set_selector( '.post-content-width-fullwidth.post-content-style-boxed' );
-		$css->add_property( '--global-content-width', 'calc( 100% - 4rem )' );
+		$css->set_selector( '.post-content-width-fullwidth, .admin-color-pcw-fullwidth' );
+		$css->add_property( '--global-calc-content-width', '100%' );
+		$css->set_selector( '.post-content-width-fullwidth.post-content-style-boxed, .admin-color-pcw-fullwidth.admin-color-pcs-boxed' );
+		$css->add_property( '--global-calc-content-width', 'calc( 100% - 4rem )' );
 		// Kadence row theme Width.
 		$css->set_selector( '.editor-styles-wrapper .wp-block-kadence-rowlayout > .innerblocks-wrap.kb-theme-content-width' );
 		$css->add_property( 'padding-left', 'var(--global-content-edge-padding)' );
@@ -3264,14 +3329,14 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		// $css->add_property( 'padding-left', 'calc(var(--global-content-edge-padding) + 2rem)' );
 		// $css->add_property( 'padding-right', 'calc(var(--global-content-edge-padding) + 2rem)' );
 		// Align Wide Boxed.
-		$css->set_selector( '.post-content-style-boxed' );
+		$css->set_selector( '.post-content-style-boxed, .admin-color-pcs-boxed' );
 		$css->add_property( '--global-content-wide-width', 'calc(var(--global-content-width) + 4rem )' );
 		$css->add_property( '--global-calc-wide-content-width', 'calc(var(--global-content-width) + 4rem )' );
 		// Align Wide narrow boxed.
 		// $css->set_selector( 'body.block-editor-page.post-content-style-boxed.post-content-width-narrow .block-editor-block-list__layout .wp-block[data-align=wide], body.block-editor-page.post-content-style-boxed.post-content-width-narrow .block-editor-block-list__layout .wp-block.alignwide' );
 		// $css->add_property( 'max-width', 'calc(var(--global-content-narrow-width) - var(--global-content-edge-padding) )' );
 		// Align Wide Sidebar boxed.
-		$css->set_selector( 'body.block-editor-page.post-content-style-boxed.post-content-sidebar-right .block-editor-block-list__layout .wp-block[data-align=wide], body.block-editor-page.post-content-style-boxed.post-content-sidebar-right .block-editor-block-list__layout .wp-block.alignwide, body.block-editor-page.post-content-style-boxed.post-content-sidebar-left .block-editor-block-list__layout .wp-block[data-align=wide], body.block-editor-page.post-content-style-boxed.post-content-sidebar-left .block-editor-block-list__layout .wp-block.alignwide' );
+		$css->set_selector( 'body.block-editor-page.post-content-style-boxed.post-content-sidebar-right .block-editor-block-list__layout .wp-block[data-align=wide], body.block-editor-page.post-content-style-boxed.post-content-sidebar-right .block-editor-block-list__layout .wp-block.alignwide, body.block-editor-page.post-content-style-boxed.post-content-sidebar-left .block-editor-block-list__layout .wp-block[data-align=wide], body.block-editor-page.post-content-style-boxed.post-content-sidebar-left .block-editor-block-list__layout .wp-block.alignwide, .admin-color-pcs-boxed.admin-color-pc-sidebar-right .block-editor-block-list__layout .wp-block[data-align=wide], .admin-color-pcs-boxed.admin-color-pc-sidebar-right .block-editor-block-list__layout .wp-block.alignwide, .admin-color-pcs-boxed.admin-color-pc-sidebar-left .block-editor-block-list__layout .wp-block[data-align=wide], .admin-color-pcs-boxed.admin-color-pc-sidebar-left .block-editor-block-list__layout .wp-block.alignwide' );
 		$css->add_property( 'max-width', 'calc(var(--global-content-width) - ' . $sidebar_neg . ' - 3.5em - var(--global-content-edge-padding) )' );
 		// Full width.
 		$css->set_selector( '.editor-styles-wrapper .wp-block[data-align="full"], .editor-styles-wrapper .wp-block.alignfull' );

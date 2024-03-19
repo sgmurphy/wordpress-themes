@@ -72,6 +72,7 @@ class SocialComponent extends Component {
 				{ value: 'facebook', label: __( 'Facebook', 'kadence' ) },
 				{ value: 'twitter', label: __( 'Twitter', 'kadence' ) },
 				{ value: 'instagram', label: __( 'Instagram', 'kadence' ) },
+				{ value: 'threads', label: __( 'Threads', 'kadence' ) },
 				{ value: 'youtube', label: __( 'YouTube', 'kadence' ) },
 				{ value: 'facebook_group', label: __( 'Facebook Group', 'kadence' ) },
 				{ value: 'vimeo', label: __( 'Vimeo', 'kadence' ) },
