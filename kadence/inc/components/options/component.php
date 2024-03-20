@@ -4204,6 +4204,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					'sfwd-assignment_comments' => true,
 					// MISC
 					'ie11_basic_support' => false,
+					'theme_json_mode'    => false,
 				)
 			);
 		}

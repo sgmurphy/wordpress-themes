@@ -1,3 +1,6 @@
+== 1.2.1 | 19th March 2024 ==
+* Add: Option to enable theme.json mode (changes to group block markup) - disabled by default.
+
 == 1.2.0 | 19th March 2024 ==
 * Add: theme.json file to better support core blocks.
 * Add: Threads to social media options.

@@ -466,7 +466,7 @@ select:focus {
     text-align: var(--kad-editor-title-align, center );
     justify-content: center;
     flex-direction: column;
-    margin: -8px -8px var(--kad-editor-vertical-top-padding, 5rem) -8px;
+    margin: 0px 0px var(--kad-editor-vertical-top-padding, 5rem) 0px;
     background:  var(--kad-editor-title-bg, var(--global-palette7) );
 	position: relative;
 	&::before {
@@ -489,7 +489,7 @@ select:focus {
 	}
 }
 .admin-color-pct-hide .edit-post-visual-editor__post-title-wrapper:not(.specificity) {
-    margin: -8px -8px var(--kad-editor-vertical-top-padding, 5rem) -8px;
+    margin: 0px 0px var(--kad-editor-vertical-top-padding, 5rem) 0px;
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
     background:  var(--kad-editor-body-bg, var(--global-palette8));

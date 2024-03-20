@@ -39,6 +39,167 @@ class Component implements Component_Interface {
 		remove_action( 'admin_head-post-new.php', 'kadence_blocks_admin_editor_width', 100 );
 		add_filter( 'kadence_blocks_editor_width', array( $this, 'kadence_blocks_admin_editor_width_filter' ), 100 );
 		add_action( 'after_setup_theme', array( $this, 'google_font_add_editor_styles' ) );
+		add_filter( 'theme_file_path', array( $this, 'disable_json_optionally' ), 10, 2 );
+		add_filter( 'wp_theme_json_data_theme', array( $this, 'edit_theme_json' ), 10 );
+	}
+	/**
+	 * Edit the theme.json file optionally.
+	 *
+	 * @param object $theme_json the path to the theme.json file.
+	 */
+	public function edit_theme_json( $theme_json ) {
+		if ( ! kadence()->option( 'theme_json_mode' ) ) {
+			$new_data = array(
+				'version'  => 2,
+				"settings" => array(
+					"appearanceTools" => true,
+					"border" => [
+						"color" => true, 
+						"radius" => true, 
+						"style" => true, 
+						"width" => true 
+					], 
+					"color" => [
+						"custom" => true, 
+						"defaultPalette" => false, 
+						"link" => true, 
+						"palette" => [
+							[
+							"name" => "Accent", 
+							"slug" => "theme-palette1", 
+							"color" => "var(--global-palette1)" 
+							], 
+							[
+								"name" => "Accent - alt", 
+								"slug" => "theme-palette2", 
+								"color" => "var(--global-palette2)" 
+							], 
+							[
+								"name" => "Strongest text", 
+								"slug" => "theme-palette3", 
+								"color" => "var(--global-palette3)" 
+							], 
+							[
+								"name" => "Strong Text", 
+								"slug" => "theme-palette4", 
+								"color" => "var(--global-palette4)" 
+							], 
+							[
+								"name" => "Medium text", 
+								"slug" => "theme-palette5", 
+								"color" => "var(--global-palette5)" 
+							], 
+							[
+								"name" => "Subtle Text", 
+								"slug" => "theme-palette6", 
+								"color" => "var(--global-palette6)" 
+							], 
+							[
+								"name" => "Subtle Background", 
+								"slug" => "theme-palette7", 
+								"color" => "var(--global-palette7)" 
+							], 
+							[
+								"name" => "Lighter Background", 
+								"slug" => "theme-palette8", 
+								"color" => "var(--global-palette8)" 
+							], 
+							[
+								"name" => "White or offwhite", 
+								"slug" => "theme-palette9", 
+								"color" => "var(--global-palette9)" 
+								] 
+							] 
+					], 
+					"layout" => [
+						"contentSize" => "var(--global-calc-content-width)", 
+						"wideSize" => "var(--global-calc-wide-content-width)", 
+						"fullSize" => "none" 
+					], 
+					"spacing" => [
+						"blockGap" => null, 
+						"margin" => true, 
+						"padding" => true, 
+						"units" => [
+							"px", 
+							"em", 
+							"rem", 
+							"vh", 
+							"vw", 
+							"%" 
+						] 
+					], 
+					"typography" => [
+					"customFontSize" => true, 
+					"fontSizes" => [
+						[
+							"name" => "Small", 
+							"slug" => "small", 
+							"size" => "var(--global-font-size-small)" 
+						], 
+						[
+							"name" => "Medium", 
+							"slug" => "medium", 
+							"size" => "var(--global-font-size-medium)" 
+						], 
+						[
+						"name" => "Large", 
+						"slug" => "large", 
+						"size" => "var(--global-font-size-large)" 
+						], 
+						[
+							"name" => "Larger", 
+							"slug" => "larger", 
+							"size" => "var(--global-font-size-larger)" 
+						], 
+						[
+							"name" => "XX-Large", 
+							"slug" => "xxlarge", 
+							"size" => "var(--global-font-size-xxlarge)" 
+						] 
+					], 
+					"lineHeight" => true 
+					] 
+				),
+			  	"styles" => [
+					"elements" => [
+						"button" => [
+							"spacing" => [
+								"padding" => false 
+							], 
+							"border" => [
+								"width" => false 
+							],
+							"color" => [
+								"background" => false, 
+								"text" => false 
+							],
+							"typography" => [
+								"fontFamily" => false, 
+								"fontSize" => false, 
+								"lineHeight" => false, 
+								"textDecoration" => false 
+							]
+						]
+					]
+				]
+			);
+
+			return $theme_json->update_with( $new_data );
+		}
+		return $theme_json;
+	}
+	/**
+	 * Disables the theme.json file optionally.
+	 *
+	 * @param string $path the path to the theme.json file.
+	 */
+	public function disable_json_optionally( $path, $file ) {
+		$length = strlen( 'kadence/theme.json' );
+		if ( ! empty( $file ) && 'theme.json' === $file && substr( $path, -$length ) === 'kadence/theme.json' && ! kadence()->option( 'theme_json_mode' ) ) {
+			return false;
+		}
+		return $path;
 	}
 	/**
 	 * Registers an editor stylesheet for the current theme.
@@ -191,6 +352,5 @@ class Component implements Component_Interface {
 		if ( apply_filters( 'kadence-theme-block-templates-support', true ) ) {
 			add_theme_support( 'block-templates' );
 		}
-
 	}
 }
