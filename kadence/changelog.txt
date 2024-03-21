@@ -1,3 +1,9 @@
+== 1.2.3 | 21st March 2024 ==
+* Fix: CSS determining content width.
+
+== 1.2.2 | 20th March 2024 ==
+* Fix: Possible issue where theme settings defaults were not being set.
+
 == 1.2.1 | 19th March 2024 ==
 * Add: Option to enable theme.json mode (changes to group block markup) - disabled by default.
 

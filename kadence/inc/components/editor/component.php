@@ -48,7 +48,8 @@ class Component implements Component_Interface {
 	 * @param object $theme_json the path to the theme.json file.
 	 */
 	public function edit_theme_json( $theme_json ) {
-		if ( ! kadence()->option( 'theme_json_mode' ) ) {
+		$theme_mode = get_theme_mod( 'theme_json_mode', false );
+		if ( ! $theme_mode ) {
 			$new_data = array(
 				'version'  => 2,
 				"settings" => array(
@@ -196,8 +197,15 @@ class Component implements Component_Interface {
 	 */
 	public function disable_json_optionally( $path, $file ) {
 		$length = strlen( 'kadence/theme.json' );
-		if ( ! empty( $file ) && 'theme.json' === $file && substr( $path, -$length ) === 'kadence/theme.json' && ! kadence()->option( 'theme_json_mode' ) ) {
-			return false;
+		if ( ! empty( $file ) && 'theme.json' === $file && substr( $path, -$length ) === 'kadence/theme.json' ) {
+			$theme_mode = get_theme_mod( 'theme_json_mode', false );
+			if ( ! $theme_mode ) {
+				// Set the path to a file that doesn't exist.
+				$new_path = str_replace( 'kadence/theme.json', 'kadence/missing-theme.json', $path );
+				return $new_path;
+			} else {
+				return $path;
+			}
 		}
 		return $path;
 	}

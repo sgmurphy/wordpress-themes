@@ -113,6 +113,16 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		add_filter( 'embed_oembed_html', array( $this, 'classic_embed_wrap' ), 90, 4 );
 		add_filter( 'excerpt_length', array( $this, 'custom_excerpt_length' ) );
 		add_filter( 'the_author_description', 'wpautop' );
+		add_action( 'admin_init', array( $this, 'set_theme_initial_version' ) );
+	}
+	/**
+	 * Set the initial theme version.
+	 */
+	public function set_theme_initial_version() {
+		$initial_version = get_theme_mod( 'initial_version', false );
+		if ( ! $initial_version ) {
+			set_theme_mod( 'initial_version', KADENCE_VERSION );
+		}
 	}
 	/**
 	 * Add Notice for Kadence Starter templates

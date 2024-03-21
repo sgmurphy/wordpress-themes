@@ -1859,7 +1859,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		// Layout.
 		$css->add_property( 'max-width', kadence()->sub_option( 'content_width', 'size' ) . kadence()->sub_option( 'content_width', 'unit' ) );
 		$css->set_selector( '.site-container, .site-header-row-layout-contained, .site-footer-row-layout-contained, .entry-hero-layout-contained, .comments-area, .alignfull > .wp-block-cover__inner-container, .alignwide > .wp-block-cover__inner-container' );
-		$css->add_property( 'max-width', 'var(--global-calc-content-width)' );
+		$css->add_property( 'max-width', 'var(--global-content-width)' );
 		$css->set_selector( '.content-width-narrow .content-container.site-container, .content-width-narrow .hero-container.site-container' );
 		$css->add_property( 'max-width', 'var(--global-content-narrow-width)' );
 		$css->start_media_query( $media_query['alignwide'] );
