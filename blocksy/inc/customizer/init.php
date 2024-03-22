@@ -308,7 +308,7 @@ add_action(
 					'blocksy:gutenberg-metaboxes-data',
 					[]
 				),
-
+				'dashboard_actions_nonce' => wp_create_nonce('ct-dashboard'),
 				'conditions_override' => blocksy_manager()->get_conditions_overrides(),
 			]
 		);

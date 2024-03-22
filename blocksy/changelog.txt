@@ -1,3 +1,7 @@
+2.0.33: 2024-03-21
+- Improvement: Better integration with Cartflows plugin and checkout page
+- Fix: Advanced Posts block doesn't order posts correctly by modified date
+
 2.0.32: 2024-03-15
 - Improvement: General fixes and improvements
 

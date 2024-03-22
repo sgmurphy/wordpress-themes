@@ -164,6 +164,7 @@ add_action(
 					BLOCKSY_DEVELOPMENT_MODE
 				),
 				'nonce' => wp_create_nonce('ct-ajax-nonce'),
+				'dashboard_actions_nonce' => wp_create_nonce('ct-dashboard'),
 				'public_url' => get_template_directory_uri() . '/static/bundle/',
 				'static_public_url' => get_template_directory_uri() . '/static/',
 				'dismissed_google_fonts_notice' => get_option(

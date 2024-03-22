@@ -137,7 +137,7 @@ const PostsInspectorControls = ({
 														},
 
 														{
-															key: 'modified_date',
+															key: 'modified',
 															value: __(
 																'Modified Date',
 																'blocksy'

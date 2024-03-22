@@ -110,10 +110,6 @@ class WooCommerceCheckout {
 		add_action(
 			'woocommerce_before_template_part',
 			function ($template_name, $template_path, $located, $args) {
-				if (! class_exists('Woocommerce_German_Market')) {
-					return;
-				}
-
 				if ($template_name !== 'checkout/form-checkout.php') {
 					return;
 				}
@@ -127,24 +123,40 @@ class WooCommerceCheckout {
 		add_action(
 			'woocommerce_after_template_part',
 			function ($template_name, $template_path, $located, $args) {
-				if (! class_exists('Woocommerce_German_Market')) {
-					return;
-				}
-
 				if ($template_name !== 'checkout/form-checkout.php') {
 					return;
 				}
 
 				$result = ob_get_clean();
 
-				$search = '/' . preg_quote('<h3 id="order_review_heading">', '/') . '/';
+				global $ct_skip_checkout;
 
-				echo preg_replace(
-					$search,
-					'<div class="ct-order-review"><h3 id="order_review_heading">',
-					$result,
-					1
-				);
+				if ($this->has_custom_checkout() && ! $ct_skip_checkout) {
+					$form_reader = new \WP_HTML_Tag_Processor($result);
+
+					if (
+						$form_reader->next_tag([
+							'tag_name' => 'form',
+							'class_name' => 'woocommerce-checkout',
+						])
+					) {
+						$form_reader->add_class('ct-woocommerce-checkout');
+						$result = $form_reader->get_updated_html();
+					}
+				}
+
+				if (class_exists('Woocommerce_German_Market')) {
+					$search = '/' . preg_quote('<h3 id="order_review_heading">', '/') . '/';
+
+					$result = preg_replace(
+						$search,
+						'<div class="ct-order-review"><h3 id="order_review_heading">',
+						$result,
+						1
+					);
+				}
+
+				echo $result;
 			},
 			1,
 			4

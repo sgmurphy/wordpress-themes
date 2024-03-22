@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-03-15 15:13+0000\n"
+"POT-Creation-Date: 2024-03-21 18:39+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
@@ -390,7 +390,6 @@ msgstr ""
 #: inc/options/single-elements/post-nav.php:41,
 #: inc/options/single-elements/related-posts.php:145,
 #: inc/options/woocommerce/card-product-elements.php:417,
-#: inc/options/woocommerce/general-main.php:640,
 #: inc/options/woocommerce/single-product-layers.php:61,
 #: inc/options/woocommerce/single-product-layers.php:106,
 #: inc/options/woocommerce/single-product-layers.php:355,
@@ -403,6 +402,7 @@ msgstr ""
 #: inc/components/blocks/contact-info/options.php:336,
 #: inc/components/blocks/contact-info/options.php:397,
 #: inc/components/blocks/contact-info/options.php:458,
+#: inc/options/woocommerce/general/product-badges.php:90,
 #: inc/panel-builder/footer/middle-row/options.php:435,
 #: inc/panel-builder/footer/middle-row/options.php:628,
 #: inc/panel-builder/footer/middle-row/options.php:669,
@@ -630,16 +630,16 @@ msgstr ""
 #: inc/options/single-elements/related-posts.php:29,
 #: inc/options/woocommerce/archive-main.php:48,
 #: inc/options/woocommerce/card-product-elements.php:159,
-#: inc/options/woocommerce/general-main.php:438,
-#: inc/options/woocommerce/general-main.php:569,
-#: inc/options/woocommerce/general-main.php:819,
-#: inc/options/woocommerce/general-main.php:1155,
 #: inc/options/woocommerce/single-main.php:49,
 #: inc/options/woocommerce/single-product-elements.php:14,
 #: inc/options/woocommerce/single-product-gallery.php:10,
 #: inc/options/woocommerce/single-product-tabs.php:16,
 #: inc/options/integrations/the-events-calendar/archive.php:25,
 #: inc/options/integrations/the-events-calendar/single.php:27,
+#: inc/options/woocommerce/general/account-page.php:19,
+#: inc/options/woocommerce/general/product-badges.php:19,
+#: inc/options/woocommerce/general/quantity-input.php:19,
+#: inc/options/woocommerce/general/store-notice.php:24,
 #: inc/panel-builder/footer/copyright/options.php:5,
 #: inc/panel-builder/footer/menu/options.php:33,
 #: inc/panel-builder/footer/middle-row/options.php:23,
@@ -997,7 +997,6 @@ msgstr ""
 #: inc/options/meta/page.php:111, inc/options/meta/post.php:76,
 #: inc/options/meta/post.php:110,
 #: inc/options/single-elements/post-share-box.php:100,
-#: inc/options/woocommerce/general-main.php:641,
 #: inc/options/woocommerce/single-product-layers.php:41,
 #: inc/options/woocommerce/single-product-layers.php:62,
 #: inc/options/woocommerce/single-product-layers.php:107,
@@ -1014,6 +1013,7 @@ msgstr ""
 #: inc/components/blocks/dynamic-data/options.php:64,
 #: inc/components/blocks/share-box/options.php:129,
 #: inc/components/blocks/socials/options.php:100,
+#: inc/options/woocommerce/general/product-badges.php:91,
 #: inc/panel-builder/footer/socials/options.php:96,
 #: inc/panel-builder/header/socials/options.php:95
 #: static/js/backend/woo-variation.js:39
@@ -1048,9 +1048,9 @@ msgstr ""
 #: inc/options/single-elements/author-box.php:44,
 #: inc/options/single-elements/post-share-box.php:75,
 #: inc/options/woocommerce/archive-main.php:65,
-#: inc/options/woocommerce/general-main.php:468,
-#: inc/options/woocommerce/general-main.php:587,
 #: inc/options/woocommerce/single-product-tabs.php:29,
+#: inc/options/woocommerce/general/product-badges.php:37,
+#: inc/options/woocommerce/general/quantity-input.php:49,
 #: inc/panel-builder/header/cart/options.php:32,
 #: inc/panel-builder/header/menu/options.php:50,
 #: inc/panel-builder/header/mobile-menu/options.php:60,
@@ -1065,9 +1065,9 @@ msgstr ""
 #: inc/options/single-elements/author-box.php:49,
 #: inc/options/single-elements/post-share-box.php:80,
 #: inc/options/woocommerce/archive-main.php:70,
-#: inc/options/woocommerce/general-main.php:469,
-#: inc/options/woocommerce/general-main.php:592,
 #: inc/options/woocommerce/single-product-tabs.php:34,
+#: inc/options/woocommerce/general/product-badges.php:42,
+#: inc/options/woocommerce/general/quantity-input.php:50,
 #: inc/panel-builder/header/cart/options.php:37,
 #: inc/panel-builder/header/menu/options.php:55,
 #: inc/panel-builder/header/mobile-menu/options.php:65,
@@ -1079,8 +1079,8 @@ msgstr ""
 #: inc/options/general/breadcrumbs.php:72,
 #: inc/options/general/content-elements.php:49,
 #: inc/options/general/sidebar.php:40,
-#: inc/options/woocommerce/general-main.php:597,
 #: inc/options/woocommerce/single-product-tabs.php:39,
+#: inc/options/woocommerce/general/product-badges.php:47,
 #: inc/panel-builder/header/cart/options.php:42,
 #: inc/panel-builder/header/menu/options.php:60,
 #: inc/panel-builder/header/mobile-menu/options.php:70,
@@ -1311,16 +1311,16 @@ msgstr ""
 #: inc/options/single-elements/related-posts.php:487,
 #: inc/options/woocommerce/archive-main.php:165,
 #: inc/options/woocommerce/card-product-elements.php:582,
-#: inc/options/woocommerce/general-main.php:480,
-#: inc/options/woocommerce/general-main.php:732,
-#: inc/options/woocommerce/general-main.php:874,
-#: inc/options/woocommerce/general-main.php:1187,
 #: inc/options/woocommerce/single-main.php:61,
 #: inc/options/woocommerce/single-product-elements.php:123,
 #: inc/options/woocommerce/single-product-gallery.php:228,
 #: inc/options/woocommerce/single-product-tabs.php:182,
 #: inc/options/integrations/the-events-calendar/archive.php:36,
 #: inc/options/integrations/the-events-calendar/single.php:38,
+#: inc/options/woocommerce/general/account-page.php:74,
+#: inc/options/woocommerce/general/product-badges.php:182,
+#: inc/options/woocommerce/general/quantity-input.php:61,
+#: inc/options/woocommerce/general/store-notice.php:56,
 #: inc/panel-builder/footer/copyright/options.php:89,
 #: inc/panel-builder/footer/menu/options.php:147,
 #: inc/panel-builder/footer/middle-row/options.php:464,
@@ -1431,26 +1431,6 @@ msgstr ""
 #: inc/options/woocommerce/card-product-elements.php:979,
 #: inc/options/woocommerce/card-product-elements.php:1023,
 #: inc/options/woocommerce/card-product-elements.php:1057,
-#: inc/options/woocommerce/general-main.php:71,
-#: inc/options/woocommerce/general-main.php:96,
-#: inc/options/woocommerce/general-main.php:119,
-#: inc/options/woocommerce/general-main.php:149,
-#: inc/options/woocommerce/general-main.php:185,
-#: inc/options/woocommerce/general-main.php:212,
-#: inc/options/woocommerce/general-main.php:235,
-#: inc/options/woocommerce/general-main.php:265,
-#: inc/options/woocommerce/general-main.php:301,
-#: inc/options/woocommerce/general-main.php:326,
-#: inc/options/woocommerce/general-main.php:349,
-#: inc/options/woocommerce/general-main.php:377,
-#: inc/options/woocommerce/general-main.php:501,
-#: inc/options/woocommerce/general-main.php:536,
-#: inc/options/woocommerce/general-main.php:543,
-#: inc/options/woocommerce/general-main.php:895,
-#: inc/options/woocommerce/general-main.php:925,
-#: inc/options/woocommerce/general-main.php:951,
-#: inc/options/woocommerce/general-main.php:1207,
-#: inc/options/woocommerce/general-main.php:1228,
 #: inc/options/woocommerce/single-product-elements.php:156,
 #: inc/options/woocommerce/single-product-elements.php:197,
 #: inc/options/woocommerce/single-product-elements.php:231,
@@ -1467,6 +1447,26 @@ msgstr ""
 #: inc/options/woocommerce/single-product-gallery.php:345,
 #: inc/options/woocommerce/single-product-tabs.php:219,
 #: inc/options/woocommerce/single-product-tabs.php:256,
+#: inc/options/woocommerce/general/account-page.php:95,
+#: inc/options/woocommerce/general/account-page.php:125,
+#: inc/options/woocommerce/general/account-page.php:151,
+#: inc/options/woocommerce/general/messages.php:41,
+#: inc/options/woocommerce/general/messages.php:66,
+#: inc/options/woocommerce/general/messages.php:89,
+#: inc/options/woocommerce/general/messages.php:119,
+#: inc/options/woocommerce/general/messages.php:155,
+#: inc/options/woocommerce/general/messages.php:182,
+#: inc/options/woocommerce/general/messages.php:205,
+#: inc/options/woocommerce/general/messages.php:235,
+#: inc/options/woocommerce/general/messages.php:271,
+#: inc/options/woocommerce/general/messages.php:296,
+#: inc/options/woocommerce/general/messages.php:319,
+#: inc/options/woocommerce/general/messages.php:347,
+#: inc/options/woocommerce/general/quantity-input.php:82,
+#: inc/options/woocommerce/general/quantity-input.php:117,
+#: inc/options/woocommerce/general/quantity-input.php:124,
+#: inc/options/woocommerce/general/store-notice.php:76,
+#: inc/options/woocommerce/general/store-notice.php:97,
 #: inc/panel-builder/footer/copyright/options.php:127,
 #: inc/panel-builder/footer/menu/options.php:185,
 #: inc/panel-builder/footer/middle-row/options.php:496,
@@ -1602,17 +1602,6 @@ msgstr ""
 #: inc/options/woocommerce/card-product-elements.php:954,
 #: inc/options/woocommerce/card-product-elements.php:985,
 #: inc/options/woocommerce/card-product-elements.php:1028,
-#: inc/options/woocommerce/general-main.php:76,
-#: inc/options/woocommerce/general-main.php:125,
-#: inc/options/woocommerce/general-main.php:155,
-#: inc/options/woocommerce/general-main.php:191,
-#: inc/options/woocommerce/general-main.php:241,
-#: inc/options/woocommerce/general-main.php:271,
-#: inc/options/woocommerce/general-main.php:306,
-#: inc/options/woocommerce/general-main.php:354,
-#: inc/options/woocommerce/general-main.php:382,
-#: inc/options/woocommerce/general-main.php:508,
-#: inc/options/woocommerce/general-main.php:549,
 #: inc/options/woocommerce/single-product-elements.php:237,
 #: inc/options/woocommerce/single-product-elements.php:281,
 #: inc/options/woocommerce/single-product-elements.php:318,
@@ -1624,6 +1613,17 @@ msgstr ""
 #: inc/options/woocommerce/single-product-gallery.php:321,
 #: inc/options/woocommerce/single-product-gallery.php:351,
 #: inc/options/woocommerce/single-product-tabs.php:224,
+#: inc/options/woocommerce/general/messages.php:46,
+#: inc/options/woocommerce/general/messages.php:95,
+#: inc/options/woocommerce/general/messages.php:125,
+#: inc/options/woocommerce/general/messages.php:161,
+#: inc/options/woocommerce/general/messages.php:211,
+#: inc/options/woocommerce/general/messages.php:241,
+#: inc/options/woocommerce/general/messages.php:276,
+#: inc/options/woocommerce/general/messages.php:324,
+#: inc/options/woocommerce/general/messages.php:352,
+#: inc/options/woocommerce/general/quantity-input.php:89,
+#: inc/options/woocommerce/general/quantity-input.php:130,
 #: inc/panel-builder/footer/menu/options.php:190,
 #: inc/panel-builder/footer/socials/options.php:281,
 #: inc/panel-builder/footer/socials/options.php:320,
@@ -1764,9 +1764,9 @@ msgstr ""
 #: inc/options/general/page-title.php:1130,
 #: inc/options/general/posts-listing.php:469,
 #: inc/options/single-elements/author-box.php:305,
-#: inc/options/woocommerce/general-main.php:755,
-#: inc/options/woocommerce/general-main.php:786,
 #: inc/components/blocks/contact-info/options.php:19,
+#: inc/options/woocommerce/general/product-badges.php:205,
+#: inc/options/woocommerce/general/product-badges.php:236,
 #: inc/panel-builder/header/cart/options.php:476,
 #: inc/panel-builder/header/cart/options.php:507,
 #: inc/panel-builder/header/cart/options.php:537
@@ -1916,9 +1916,9 @@ msgstr ""
 #: inc/options/single-elements/author-box.php:439,
 #: inc/options/single-elements/post-share-box.php:625,
 #: inc/options/woocommerce/card-product-elements.php:100,
-#: inc/options/woocommerce/general-main.php:83,
-#: inc/options/woocommerce/general-main.php:199,
-#: inc/options/woocommerce/general-main.php:313,
+#: inc/options/woocommerce/general/messages.php:53,
+#: inc/options/woocommerce/general/messages.php:169,
+#: inc/options/woocommerce/general/messages.php:283,
 #: inc/panel-builder/header/cart/options.php:773,
 #: inc/panel-builder/header/cart/options.php:1029,
 #: inc/panel-builder/header/menu/options.php:417,
@@ -1999,9 +1999,9 @@ msgstr ""
 
 #: inc/options/general/colors.php:586,
 #: inc/options/general/posts-listing.php:459,
-#: inc/options/woocommerce/general-main.php:761,
-#: inc/options/woocommerce/general-main.php:791,
 #: inc/options/woocommerce/single-product-tabs.php:317,
+#: inc/options/woocommerce/general/product-badges.php:211,
+#: inc/options/woocommerce/general/product-badges.php:241,
 #: inc/panel-builder/header/cart/options.php:470,
 #: inc/panel-builder/header/cart/options.php:502,
 #: inc/panel-builder/header/cart/options.php:532,
@@ -2203,14 +2203,14 @@ msgid "The Events Calendar"
 msgstr ""
 
 #: inc/options/general/custom-post-types.php:81,
-#: inc/options/woocommerce/general-main.php:614,
-#: inc/options/woocommerce/general-main.php:694
+#: inc/options/woocommerce/general/product-badges.php:64,
+#: inc/options/woocommerce/general/product-badges.php:144
 msgid "Archive"
 msgstr ""
 
 #: inc/options/general/custom-post-types.php:90,
-#: inc/options/woocommerce/general-main.php:615,
-#: inc/options/woocommerce/general-main.php:695
+#: inc/options/woocommerce/general/product-badges.php:65,
+#: inc/options/woocommerce/general/product-badges.php:145
 msgid "Single"
 msgstr ""
 
@@ -2286,11 +2286,11 @@ msgstr ""
 #: inc/options/general/form-elements.php:224,
 #: inc/options/general/form-elements.php:268,
 #: inc/options/general/form-elements.php:298,
-#: inc/options/woocommerce/general-main.php:415,
-#: inc/options/woocommerce/general-main.php:901,
-#: inc/options/woocommerce/general-main.php:931,
 #: inc/options/woocommerce/single-product-tabs.php:230,
 #: inc/options/woocommerce/single-product-tabs.php:285,
+#: inc/options/woocommerce/general/account-page.php:101,
+#: inc/options/woocommerce/general/account-page.php:131,
+#: inc/options/woocommerce/general/star-rating.php:36,
 #: inc/panel-builder/footer/menu/options.php:196,
 #: inc/panel-builder/header/menu/options.php:262,
 #: inc/panel-builder/header/menu/options.php:275,
@@ -2414,7 +2414,7 @@ msgid "Author Avatar"
 msgstr ""
 
 #: inc/options/general/meta.php:215, inc/options/general/page-title.php:401,
-#: inc/options/woocommerce/general-main.php:839
+#: inc/options/woocommerce/general/account-page.php:39
 msgid "Avatar Size"
 msgstr ""
 
@@ -2702,6 +2702,7 @@ msgstr ""
 #: inc/options/woocommerce/card-product-elements.php:258,
 #: inc/options/woocommerce/single-product-gallery.php:129,
 #: inc/components/blocks/about-me/options.php:81,
+#: inc/options/woocommerce/general/cart-page.php:35,
 #: inc/panel-builder/header/cart/options.php:690
 msgid "Image Size"
 msgstr ""
@@ -2972,6 +2973,7 @@ msgstr ""
 #: inc/options/single-elements/related-posts.php:240,
 #: inc/options/woocommerce/card-product-elements.php:243,
 #: inc/options/woocommerce/single-product-gallery.php:114,
+#: inc/options/woocommerce/general/cart-page.php:24,
 #: inc/panel-builder/header/cart/options.php:682
 msgid "Image Ratio"
 msgstr ""
@@ -3062,11 +3064,11 @@ msgstr ""
 #: inc/options/general/posts-listing.php:993,
 #: inc/options/general/posts-listing.php:1039,
 #: inc/options/general/posts-listing.php:1085,
-#: inc/options/woocommerce/general-main.php:103,
-#: inc/options/woocommerce/general-main.php:219,
-#: inc/options/woocommerce/general-main.php:333,
 #: inc/options/woocommerce/single-product-elements.php:295,
-#: inc/options/woocommerce/single-product-elements.php:368
+#: inc/options/woocommerce/single-product-elements.php:368,
+#: inc/options/woocommerce/general/messages.php:73,
+#: inc/options/woocommerce/general/messages.php:189,
+#: inc/options/woocommerce/general/messages.php:303
 msgid "Button Font Color"
 msgstr ""
 
@@ -3281,7 +3283,7 @@ msgstr ""
 
 #: inc/options/general/sidebar.php:258,
 #: inc/options/single-elements/post-share-box.php:122,
-#: inc/options/woocommerce/general-main.php:1178,
+#: inc/options/woocommerce/general/store-notice.php:47,
 #: inc/panel-builder/header/logo/options.php:286
 #: static/js/options/options/ct-spacing/input.js:109
 msgid "Top"
@@ -3289,7 +3291,7 @@ msgstr ""
 
 #: inc/options/general/sidebar.php:259,
 #: inc/options/single-elements/post-share-box.php:123,
-#: inc/options/woocommerce/general-main.php:1179,
+#: inc/options/woocommerce/general/store-notice.php:48,
 #: inc/panel-builder/header/cart/options.php:125,
 #: inc/panel-builder/header/search/options.php:100,
 #: inc/panel-builder/header/trigger/options.php:126
@@ -3387,7 +3389,7 @@ msgid "Rating Font Color"
 msgstr ""
 
 #: inc/options/integrations/tutorlms-single.php:162,
-#: inc/options/woocommerce/general-main.php:398
+#: inc/options/woocommerce/general/star-rating.php:19
 msgid "Star Rating Color"
 msgstr ""
 
@@ -4097,8 +4099,8 @@ msgid "Price"
 msgstr ""
 
 #: inc/options/woocommerce/card-product-elements.php:389,
-#: inc/options/woocommerce/general-main.php:392,
-#: inc/options/woocommerce/single-product-layers.php:150
+#: inc/options/woocommerce/single-product-layers.php:150,
+#: inc/options/woocommerce/general/star-rating.php:13
 msgid "Star Rating"
 msgstr ""
 
@@ -4156,241 +4158,17 @@ msgid "Button Text Color"
 msgstr ""
 
 #: inc/options/woocommerce/card-product-elements.php:962,
-#: inc/options/woocommerce/general-main.php:133,
-#: inc/options/woocommerce/general-main.php:249,
-#: inc/options/woocommerce/general-main.php:361,
 #: inc/options/woocommerce/single-product-elements.php:326,
-#: inc/options/woocommerce/single-product-elements.php:399
+#: inc/options/woocommerce/single-product-elements.php:399,
+#: inc/options/woocommerce/general/messages.php:103,
+#: inc/options/woocommerce/general/messages.php:219,
+#: inc/options/woocommerce/general/messages.php:331
 #: static/js/editor/blocks/search/Edit.js:311
 msgid "Button Background Color"
 msgstr ""
 
 #: inc/options/woocommerce/card-product-elements.php:1096
 msgid "Card Border Radius"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:23
-msgid "No page set"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:43
-msgid "Messages"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:50
-msgid "Info Messages"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:54,
-#: inc/options/woocommerce/general-main.php:168,
-#: inc/options/woocommerce/general-main.php:284
-#: static/js/editor/blocks/about-me/Edit.js:89
-#: static/js/editor/blocks/breadcrumbs/Edit.js:43
-#: static/js/editor/blocks/contact-info/Edit.js:96
-msgid "Text Color"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:164
-msgid "Success Messages"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:280
-msgid "Error Messages"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:421
-msgid "Inactive"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:432,
-#: inc/panel-builder/header/cart/options.php:671
-msgid "Quantity Input"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:443
-msgid "Custom Quantity Input"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:485
-msgid "Quantity Main Color"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:516,
-#: inc/options/woocommerce/single-product-elements.php:245
-msgid "Quantity Arrows Color"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:563
-msgid "Product Badges"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:575
-msgid "Badge Shape"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:603
-msgid "Show Sale Badge"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:634
-msgid "Sale Badge Value"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:654,
-#: inc/options/woocommerce/general-main.php:668,
-#: inc/options/woocommerce/general-main.php:713
-msgid "Badge Label"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:683
-msgid "Show Stock Badge"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:716,
-#: inc/components/woocommerce/common/stock-badge.php:34
-msgid "SOLD OUT"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:738
-msgid "Sale Badge"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:769
-msgid "Out of Stock Badge"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:813
-msgid "Account Page"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:824
-msgid "User Avatar"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:852
-msgid "User Name"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:862
-msgid "Navigation Quick Links"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:879
-msgid "Navigation Text Color"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:909
-msgid "Navigation Background Color"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:939
-msgid "Navigation Divider Color"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:959
-msgid "Navigation Shadow"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:985
-msgid "Checkout Page"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:992
-msgid "Coupon Form"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1008
-msgid "Highlight Required Fields"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1019
-msgid "Company Name Field"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1026,
-#: inc/options/woocommerce/general-main.php:1044,
-#: inc/options/woocommerce/general-main.php:1062
-msgid "Hidden"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1027,
-#: inc/options/woocommerce/general-main.php:1045,
-#: inc/options/woocommerce/general-main.php:1063
-msgid "Optional"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1028,
-#: inc/options/woocommerce/general-main.php:1046,
-#: inc/options/woocommerce/general-main.php:1064
-msgid "Required"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1037
-msgid "Address Line 2 Field"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1055
-msgid "Phone Field"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1073
-msgid "Privacy Policy Page"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1086
-msgid "Terms And Conditions Page"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1098
-msgid "Privacy policy"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1099
-msgid ""
-"Optionally add some text about your store privacy policy to show during "
-"checkout."
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1101
-msgid ""
-"Your personal data will be used to process your order, support your "
-"experience throughout this website, and for other purposes described in our "
-"[privacy_policy]."
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1114
-msgid "Terms and conditions"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1115
-msgid ""
-"Optionally add some text for the terms checkbox that customers must accept."
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1118
-msgid "I have read and agree to the website %s"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1144
-msgid "Store Notice"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1162
-msgid ""
-"This is a demo store for testing purposes &mdash; no orders shall be "
-"fulfilled."
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1172
-msgid "Notice Position"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1192
-msgid "Notice Font Color"
-msgstr ""
-
-#: inc/options/woocommerce/general-main.php:1214
-msgid "Notice Background Color"
 msgstr ""
 
 #: inc/options/woocommerce/related-upsells.php:5
@@ -4441,6 +4219,11 @@ msgstr ""
 
 #: inc/options/woocommerce/single-product-elements.php:214
 msgid "Quantity Color"
+msgstr ""
+
+#: inc/options/woocommerce/single-product-elements.php:245,
+#: inc/options/woocommerce/general/quantity-input.php:97
+msgid "Quantity Arrows Color"
 msgstr ""
 
 #: inc/options/woocommerce/single-product-elements.php:291
@@ -5087,6 +4870,11 @@ msgstr ""
 msgid "SALE"
 msgstr ""
 
+#: inc/components/woocommerce/common/stock-badge.php:34,
+#: inc/options/woocommerce/general/product-badges.php:166
+msgid "SOLD OUT"
+msgstr ""
+
 #: inc/components/woocommerce/single/additional-actions-layer.php:49
 msgid "Buttons Type"
 msgstr ""
@@ -5110,6 +4898,224 @@ msgstr ""
 
 #: inc/options/integrations/the-events-calendar/single.php:23
 msgid "Events Calendar Single Structure"
+msgstr ""
+
+#: inc/options/woocommerce/general/account-page.php:13
+msgid "Account Page"
+msgstr ""
+
+#: inc/options/woocommerce/general/account-page.php:24
+msgid "User Avatar"
+msgstr ""
+
+#: inc/options/woocommerce/general/account-page.php:52
+msgid "User Name"
+msgstr ""
+
+#: inc/options/woocommerce/general/account-page.php:62
+msgid "Navigation Quick Links"
+msgstr ""
+
+#: inc/options/woocommerce/general/account-page.php:79
+msgid "Navigation Text Color"
+msgstr ""
+
+#: inc/options/woocommerce/general/account-page.php:109
+msgid "Navigation Background Color"
+msgstr ""
+
+#: inc/options/woocommerce/general/account-page.php:139
+msgid "Navigation Divider Color"
+msgstr ""
+
+#: inc/options/woocommerce/general/account-page.php:159
+msgid "Navigation Shadow"
+msgstr ""
+
+#: inc/options/woocommerce/general/cart-page.php:13
+msgid "Cart Page"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:30
+msgid "No page set"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:46
+msgid "Checkout Page"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:53
+msgid "Coupon Form"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:69
+msgid "Highlight Required Fields"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:80
+msgid "Company Name Field"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:87,
+#: inc/options/woocommerce/general/checkout-page.php:105,
+#: inc/options/woocommerce/general/checkout-page.php:123
+msgid "Hidden"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:88,
+#: inc/options/woocommerce/general/checkout-page.php:106,
+#: inc/options/woocommerce/general/checkout-page.php:124
+msgid "Optional"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:89,
+#: inc/options/woocommerce/general/checkout-page.php:107,
+#: inc/options/woocommerce/general/checkout-page.php:125
+msgid "Required"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:98
+msgid "Address Line 2 Field"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:116
+msgid "Phone Field"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:134
+msgid "Privacy Policy Page"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:147
+msgid "Terms And Conditions Page"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:159
+msgid "Privacy policy"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:160
+msgid ""
+"Optionally add some text about your store privacy policy to show during "
+"checkout."
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:162
+msgid ""
+"Your personal data will be used to process your order, support your "
+"experience throughout this website, and for other purposes described in our "
+"[privacy_policy]."
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:175
+msgid "Terms and conditions"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:176
+msgid ""
+"Optionally add some text for the terms checkbox that customers must accept."
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:179
+msgid "I have read and agree to the website %s"
+msgstr ""
+
+#: inc/options/woocommerce/general/messages.php:13
+msgid "Messages"
+msgstr ""
+
+#: inc/options/woocommerce/general/messages.php:20
+msgid "Info Messages"
+msgstr ""
+
+#: inc/options/woocommerce/general/messages.php:24,
+#: inc/options/woocommerce/general/messages.php:138,
+#: inc/options/woocommerce/general/messages.php:254
+#: static/js/editor/blocks/about-me/Edit.js:89
+#: static/js/editor/blocks/breadcrumbs/Edit.js:43
+#: static/js/editor/blocks/contact-info/Edit.js:96
+msgid "Text Color"
+msgstr ""
+
+#: inc/options/woocommerce/general/messages.php:134
+msgid "Success Messages"
+msgstr ""
+
+#: inc/options/woocommerce/general/messages.php:250
+msgid "Error Messages"
+msgstr ""
+
+#: inc/options/woocommerce/general/product-badges.php:13
+msgid "Product Badges"
+msgstr ""
+
+#: inc/options/woocommerce/general/product-badges.php:25
+msgid "Badge Shape"
+msgstr ""
+
+#: inc/options/woocommerce/general/product-badges.php:53
+msgid "Show Sale Badge"
+msgstr ""
+
+#: inc/options/woocommerce/general/product-badges.php:84
+msgid "Sale Badge Value"
+msgstr ""
+
+#: inc/options/woocommerce/general/product-badges.php:104,
+#: inc/options/woocommerce/general/product-badges.php:118,
+#: inc/options/woocommerce/general/product-badges.php:163
+msgid "Badge Label"
+msgstr ""
+
+#: inc/options/woocommerce/general/product-badges.php:133
+msgid "Show Stock Badge"
+msgstr ""
+
+#: inc/options/woocommerce/general/product-badges.php:188
+msgid "Sale Badge"
+msgstr ""
+
+#: inc/options/woocommerce/general/product-badges.php:219
+msgid "Out of Stock Badge"
+msgstr ""
+
+#: inc/options/woocommerce/general/quantity-input.php:13,
+#: inc/panel-builder/header/cart/options.php:671
+msgid "Quantity Input"
+msgstr ""
+
+#: inc/options/woocommerce/general/quantity-input.php:24
+msgid "Custom Quantity Input"
+msgstr ""
+
+#: inc/options/woocommerce/general/quantity-input.php:66
+msgid "Quantity Main Color"
+msgstr ""
+
+#: inc/options/woocommerce/general/star-rating.php:42
+msgid "Inactive"
+msgstr ""
+
+#: inc/options/woocommerce/general/store-notice.php:13
+msgid "Store Notice"
+msgstr ""
+
+#: inc/options/woocommerce/general/store-notice.php:31
+msgid ""
+"This is a demo store for testing purposes &mdash; no orders shall be "
+"fulfilled."
+msgstr ""
+
+#: inc/options/woocommerce/general/store-notice.php:41
+msgid "Notice Position"
+msgstr ""
+
+#: inc/options/woocommerce/general/store-notice.php:61
+msgid "Notice Font Color"
+msgstr ""
+
+#: inc/options/woocommerce/general/store-notice.php:83
+msgid "Notice Background Color"
 msgstr ""
 
 #: inc/panel-builder/footer/bottom-row/config.php:4,
