@@ -1,4 +1,11 @@
 == Changelog ==
+= 3.0.13 - 2024-03-26 =
+* Added  - To change post date type.
+* Fix    - Open sans font issue.
+* Fix    - Primary color issue fix.
+* Fix    - WooCommerce button primary color issue.
+* Fix    - Sale single page issue.
+
 = 3.0.12 - 2024-03-08 =
 * Added - Option to change content area padding.
 * Fix   - Cart table word break issue.

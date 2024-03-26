@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 3.0.12
+Version: 3.0.13
 Tested up to: 6.4
 Requires PHP: 5.6
 Requires at least: 4.7
-Stable tag: 3.0.12
+Stable tag: 3.0.13
 
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -62,6 +62,14 @@ License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+
+= Version 3.0.13 - 2024-03-26 =
+* Added - To change post date type.
+* Fix    - Open sans font issue.
+* Fix    - Primary color issue fix.
+* Fix    - WooCommerce button primary color issue.
+* Fix    - Sale single page issue.
+
 = Version 3.0.12 - 2024-03-08 =
 * Added - Option to change content area padding.
 * Fix   - Cart table word break issue.

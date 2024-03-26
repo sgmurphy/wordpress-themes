@@ -1008,10 +1008,10 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			// Primary menu item color.
 			$primary_menu_item_color_normal     = get_theme_mod( 'zakra_main_menu_color', '' );
 			$primary_menu_item_color_normal_css = array(
-				'.zak-main-nav.zak-primary-nav ul.zak-primary-menu li a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+				'.zak-primary-nav ul li > a, .zak-main-nav.zak-primary-nav ul.zak-primary-menu li a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
 					'color' => esc_html( $primary_menu_item_color_normal ),
 				),
-				'.zak-main-nav.zak-primary-nav ul.zak-primary-menu li .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon' => array(
+				'.zak-primary-nav ul li > a .zak-icon, zak-main-nav.zak-primary-nav ul.zak-primary-menu li .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon' => array(
 					'fill' => esc_html( $primary_menu_item_color_normal ),
 				),
 			);
@@ -1721,7 +1721,8 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 				.woocommerce nav.woocommerce-pagination ul li a,.woocommerce nav.woocommerce-pagination ul li span,
 				.woocommerce div.product p.price,.woocommerce div.product span.price,
 				.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
-				.woocommerce .widget_price_filter .price_slider_amount .button'                                                                                                                                                                                                                                                                                                                                                                                                            => array(
+				.woocommerce .widget_price_filter .price_slider_amount .button,
+				.single-product .product .product_meta > span a'                                                                                                                                                                                                                                                                                                                                                                                                            => array(
 					'color' => esc_html( $base_wc_primary_color ),
 				),
 				'.wc-block-grid__product-onsale,
@@ -1743,6 +1744,20 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 				),
 				'.woocommerce nav.woocommerce-pagination ul li, .woocommerce div.product .woocommerce-tabs ul.tabs li.active, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle, .woocommerce .widget_price_filter .price_slider_amount .button, .woocommerce-info'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             => array(
 					'border-color' => esc_html( $base_wc_primary_color ),
+				),
+				'.wp-block-woocommerce-cart .wp-block-woocommerce-cart-order-summary-block .wc-block-components-totals-coupon__content button.wc-block-components-totals-coupon__button,
+				.wc-block-checkout button.wc-block-components-totals-coupon__button,
+				.woocommerce .woocommerce-pagination .page-numbers li > a, .woocommerce .woocommerce-pagination .page-numbers li > span' => array(
+					'color'        => esc_html( $base_wc_primary_color ),
+					'border-color' => esc_html( $base_wc_primary_color ),
+				),
+				'.wc-block-checkout .wc-block-checkout__actions_row button.wc-block-components-checkout-place-order-button, .wc-block-checkout .wc-block-checkout__actions_row button.wc-block-components-checkout-place-order-button:hover,
+				.wc-block-checkout .wp-block-woocommerce-checkout-actions-block .wc-block-checkout__actions_row .wc-block-components-checkout-return-to-cart-button:hover, .wc-block-checkout .wp-block-woocommerce-checkout-order-summary-block .wc-block-components-order-summary-item__image .wc-block-components-order-summary-item__quantity,
+				.wc-block-components-drawer__content .wc-block-mini-cart__footer .wc-block-mini-cart__footer-actions .wp-element-button.wc-block-mini-cart__footer-checkout,
+				.wc-block-components-drawer__content .wc-block-mini-cart__footer .wc-block-mini-cart__footer-actions .wp-element-button.wc-block-mini-cart__footer-cart:hover,
+				.wc-block-grid__products .wc-block-grid__product .wp-block-button .wp-block-button__link:hover,
+				.woocommerce .woocommerce-pagination .page-numbers .current' => array(
+					'background-color' => esc_html( $base_wc_primary_color ),
 				),
 			);
 			$parse_wc_css              .= zakra_parse_css( '#027abb', $base_wc_primary_color, $base_wc_primary_color_css );

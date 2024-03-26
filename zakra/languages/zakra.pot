@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: team@zakratheme.com\n"
-"POT-Creation-Date: 2024-03-08 11:26+0000\n"
+"POT-Creation-Date: 2024-03-26 10:30+0000\n"
 "Report-Msgid-Bugs-To: team@zakratheme.com\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -669,11 +669,11 @@ msgstr ""
 msgid "Content Area"
 msgstr ""
 
-#: inc/customizer/class-zakra-customizer-register-panels-sections.php:73, inc/customizer/options/content/class-zakra-customize-blog-option.php:129, inc/customizer/options/content/class-zakra-customize-blog-sidebar-option.php:43, inc/customizer/options/content/class-zakra-customize-blog-sidebar-option.php:120, inc/customizer/options/header/class-zakra-customize-breadcrumb-option.php:91, inc/customizer/options/header/class-zakra-customize-page-header-option.php:332, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:331, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:408, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:485, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:114, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:228
+#: inc/customizer/class-zakra-customizer-register-panels-sections.php:73, inc/customizer/options/content/class-zakra-customize-blog-option.php:154, inc/customizer/options/content/class-zakra-customize-blog-sidebar-option.php:43, inc/customizer/options/content/class-zakra-customize-blog-sidebar-option.php:120, inc/customizer/options/header/class-zakra-customize-breadcrumb-option.php:91, inc/customizer/options/header/class-zakra-customize-page-header-option.php:332, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:331, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:408, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:485, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:114, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:228
 msgid "Typography"
 msgstr ""
 
-#: inc/customizer/class-zakra-customizer-register-panels-sections.php:81, inc/customizer/class-zakra-customizer-register-panels-sections.php:152, inc/customizer/options/content/class-zakra-customize-blog-option.php:206, inc/customizer/options/global/class-zakra-customize-button-option.php:35
+#: inc/customizer/class-zakra-customizer-register-panels-sections.php:81, inc/customizer/class-zakra-customizer-register-panels-sections.php:152, inc/customizer/options/content/class-zakra-customize-blog-option.php:231, inc/customizer/options/global/class-zakra-customize-button-option.php:35
 msgid "Button"
 msgstr ""
 
@@ -697,7 +697,7 @@ msgstr ""
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/customizer/class-zakra-customizer-register-panels-sections.php:200, inc/customizer/options/content/class-zakra-customize-blog-option.php:77, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:56
+#: inc/customizer/class-zakra-customizer-register-panels-sections.php:200, inc/customizer/options/content/class-zakra-customize-blog-option.php:102, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:56
 msgid "Content"
 msgstr ""
 
@@ -1190,7 +1190,7 @@ msgstr ""
 msgid "Load Google fonts locally"
 msgstr ""
 
-#: inc/customizer/options/additional/class-zakra-customize-optimization-option.php:52, inc/customizer/options/content/class-zakra-customize-blog-option.php:221, inc/customizer/options/footer/class-zakra-customize-footer-column-option.php:45, inc/customizer/options/footer/class-zakra-customize-footer-column-option.php:387, inc/customizer/options/footer/class-zakra-customize-scroll-to-top-option.php:45, inc/customizer/options/header/class-zakra-customize-breadcrumb-option.php:53, inc/customizer/options/header/class-zakra-customize-header-button-option.php:53, inc/customizer/options/header/class-zakra-customize-header-search-option.php:45, inc/customizer/options/header/class-zakra-customize-page-header-option.php:53, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:56, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:72, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:188, inc/customizer/options/header/class-zakra-customize-top-bar-option.php:55, inc/meta-boxes/class-zakra-meta-box-page-settings.php:225
+#: inc/customizer/options/additional/class-zakra-customize-optimization-option.php:52, inc/customizer/options/content/class-zakra-customize-blog-option.php:246, inc/customizer/options/footer/class-zakra-customize-footer-column-option.php:45, inc/customizer/options/footer/class-zakra-customize-footer-column-option.php:387, inc/customizer/options/footer/class-zakra-customize-scroll-to-top-option.php:45, inc/customizer/options/header/class-zakra-customize-breadcrumb-option.php:53, inc/customizer/options/header/class-zakra-customize-header-button-option.php:53, inc/customizer/options/header/class-zakra-customize-header-search-option.php:45, inc/customizer/options/header/class-zakra-customize-page-header-option.php:53, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:56, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:72, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:188, inc/customizer/options/header/class-zakra-customize-top-bar-option.php:55, inc/meta-boxes/class-zakra-meta-box-page-settings.php:225
 msgid "Enable"
 msgstr ""
 
@@ -1198,11 +1198,11 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-meta-option.php:71, inc/customizer/options/content/class-zakra-customize-blog-option.php:283, inc/customizer/options/content/class-zakra-customize-blog-sidebar-option.php:183, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:104, inc/customizer/options/footer/class-zakra-customize-footer-bar-option.php:478, inc/customizer/options/footer/class-zakra-customize-footer-column-option.php:542, inc/customizer/options/footer/class-zakra-customize-scroll-to-top-option.php:170, inc/customizer/options/global/class-zakra-customize-button-option.php:169, inc/customizer/options/global/class-zakra-customize-colors-option.php:148, inc/customizer/options/global/class-zakra-customize-container-option.php:158, inc/customizer/options/global/class-zakra-customize-content-area-option.php:122, inc/customizer/options/global/class-zakra-customize-sidebar-layout-option.php:257, inc/customizer/options/global/class-zakra-customize-typography-option.php:489, inc/customizer/options/header/class-zakra-customize-breadcrumb-option.php:297, inc/customizer/options/header/class-zakra-customize-header-button-option.php:322, inc/customizer/options/header/class-zakra-customize-header-media-option.php:57, inc/customizer/options/header/class-zakra-customize-header-search-option.php:60, inc/customizer/options/header/class-zakra-customize-main-header-option.php:281, inc/customizer/options/header/class-zakra-customize-page-header-option.php:404, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:554, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:298, inc/customizer/options/header/class-zakra-customize-top-bar-option.php:421
+#: inc/customizer/options/content/class-zakra-customize-blog-meta-option.php:71, inc/customizer/options/content/class-zakra-customize-blog-option.php:308, inc/customizer/options/content/class-zakra-customize-blog-sidebar-option.php:183, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:104, inc/customizer/options/footer/class-zakra-customize-footer-bar-option.php:478, inc/customizer/options/footer/class-zakra-customize-footer-column-option.php:542, inc/customizer/options/footer/class-zakra-customize-scroll-to-top-option.php:170, inc/customizer/options/global/class-zakra-customize-button-option.php:169, inc/customizer/options/global/class-zakra-customize-colors-option.php:148, inc/customizer/options/global/class-zakra-customize-container-option.php:158, inc/customizer/options/global/class-zakra-customize-content-area-option.php:122, inc/customizer/options/global/class-zakra-customize-sidebar-layout-option.php:257, inc/customizer/options/global/class-zakra-customize-typography-option.php:489, inc/customizer/options/header/class-zakra-customize-breadcrumb-option.php:297, inc/customizer/options/header/class-zakra-customize-header-button-option.php:322, inc/customizer/options/header/class-zakra-customize-header-media-option.php:57, inc/customizer/options/header/class-zakra-customize-header-search-option.php:60, inc/customizer/options/header/class-zakra-customize-main-header-option.php:281, inc/customizer/options/header/class-zakra-customize-page-header-option.php:404, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:554, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:298, inc/customizer/options/header/class-zakra-customize-top-bar-option.php:421
 msgid "Learn more"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-meta-option.php:72, inc/customizer/options/content/class-zakra-customize-blog-option.php:284, inc/customizer/options/content/class-zakra-customize-blog-sidebar-option.php:184, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:105, inc/customizer/options/footer/class-zakra-customize-footer-bar-option.php:479, inc/customizer/options/footer/class-zakra-customize-footer-column-option.php:543, inc/customizer/options/footer/class-zakra-customize-scroll-to-top-option.php:171, inc/customizer/options/global/class-zakra-customize-button-option.php:170, inc/customizer/options/global/class-zakra-customize-colors-option.php:149, inc/customizer/options/global/class-zakra-customize-container-option.php:159, inc/customizer/options/global/class-zakra-customize-content-area-option.php:123, inc/customizer/options/global/class-zakra-customize-sidebar-layout-option.php:258, inc/customizer/options/global/class-zakra-customize-typography-option.php:490, inc/customizer/options/header/class-zakra-customize-breadcrumb-option.php:298, inc/customizer/options/header/class-zakra-customize-header-button-option.php:323, inc/customizer/options/header/class-zakra-customize-header-media-option.php:58, inc/customizer/options/header/class-zakra-customize-header-search-option.php:61, inc/customizer/options/header/class-zakra-customize-main-header-option.php:282, inc/customizer/options/header/class-zakra-customize-page-header-option.php:405, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:555, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:299, inc/customizer/options/header/class-zakra-customize-top-bar-option.php:422
+#: inc/customizer/options/content/class-zakra-customize-blog-meta-option.php:72, inc/customizer/options/content/class-zakra-customize-blog-option.php:309, inc/customizer/options/content/class-zakra-customize-blog-sidebar-option.php:184, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:105, inc/customizer/options/footer/class-zakra-customize-footer-bar-option.php:479, inc/customizer/options/footer/class-zakra-customize-footer-column-option.php:543, inc/customizer/options/footer/class-zakra-customize-scroll-to-top-option.php:171, inc/customizer/options/global/class-zakra-customize-button-option.php:170, inc/customizer/options/global/class-zakra-customize-colors-option.php:149, inc/customizer/options/global/class-zakra-customize-container-option.php:159, inc/customizer/options/global/class-zakra-customize-content-area-option.php:123, inc/customizer/options/global/class-zakra-customize-sidebar-layout-option.php:258, inc/customizer/options/global/class-zakra-customize-typography-option.php:490, inc/customizer/options/header/class-zakra-customize-breadcrumb-option.php:298, inc/customizer/options/header/class-zakra-customize-header-button-option.php:323, inc/customizer/options/header/class-zakra-customize-header-media-option.php:58, inc/customizer/options/header/class-zakra-customize-header-search-option.php:61, inc/customizer/options/header/class-zakra-customize-main-header-option.php:282, inc/customizer/options/header/class-zakra-customize-page-header-option.php:405, inc/customizer/options/header/class-zakra-customize-primary-menu-option.php:555, inc/customizer/options/header/class-zakra-customize-site-identity-option.php:299, inc/customizer/options/header/class-zakra-customize-top-bar-option.php:422
 msgid "Unlock more features available in Pro version."
 msgstr ""
 
@@ -1214,67 +1214,79 @@ msgstr ""
 msgid "Page Title Position"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:56, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:35
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:56
+msgid "Post Date Type"
+msgstr ""
+
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:70
+msgid "Published Date"
+msgstr ""
+
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:71
+msgid "Modified Date"
+msgstr ""
+
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:81, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:35
 msgid "Post Elements"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:57, inc/customizer/options/content/class-zakra-customize-blog-option.php:88, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:36, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:66
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:82, inc/customizer/options/content/class-zakra-customize-blog-option.php:113, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:36, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:66
 msgid "Drag & Drop items to re-arrange the order"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:74, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:53
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:99, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:53
 msgid "Featured Image"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:75, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:54, inc/customizer/options/footer/class-zakra-customize-footer-column-option.php:372
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:100, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:54, inc/customizer/options/footer/class-zakra-customize-footer-column-option.php:372
 msgid "Title"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:76, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:55
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:101, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:55
 msgid "Meta Tags"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:87, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:65
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:112, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:65
 msgid "Meta Elements"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:106, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:84
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:131, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:84
 msgid "Comments"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:107, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:85
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:132, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:85
 msgid "Categories"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:108, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:86
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:133, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:86
 msgid "Author"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:109, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:87
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:134, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:87
 msgid "Date"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:110, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:88
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:135, inc/customizer/options/content/class-zakra-customize-single-blog-post-option.php:88
 msgid "Tags"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:120
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:145
 msgid "Post title"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:183, inc/customizer/options/content/class-zakra-customize-blog-option.php:196
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:208, inc/customizer/options/content/class-zakra-customize-blog-option.php:221
 msgid "Excerpt"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:193
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:218
 msgid "Type"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:197
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:222
 msgid "Full Content"
 msgstr ""
 
-#: inc/customizer/options/content/class-zakra-customize-blog-option.php:236
+#: inc/customizer/options/content/class-zakra-customize-blog-option.php:261
 msgid "Alignment"
 msgstr ""
 
@@ -1683,16 +1695,16 @@ msgstr ""
 msgid "Search Results"
 msgstr ""
 
-#: inc/template-functions.php:230, inc/template-functions.php:272, inc/template-tags.php:55
+#: inc/template-functions.php:230, inc/template-functions.php:272, inc/template-tags.php:53
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: inc/template-functions.php:227, inc/template-tags.php:52
+#: inc/template-functions.php:227, inc/template-tags.php:50
 msgid "Page Not Found"
 msgstr ""
 
 #. translators: %1$s: Year prefix, %2$s: Year.
-#: inc/template-functions.php:214, inc/template-functions.php:208, inc/template-functions.php:202, inc/template-functions.php:186, inc/template-tags.php:100, inc/template-tags.php:94, inc/template-tags.php:88, inc/template-tags.php:72
+#: inc/template-functions.php:214, inc/template-functions.php:208, inc/template-functions.php:202, inc/template-functions.php:186, inc/template-tags.php:96, inc/template-tags.php:90, inc/template-tags.php:84, inc/template-tags.php:68
 msgid "%1$s %2$s"
 msgstr ""
 
@@ -1701,39 +1713,39 @@ msgid "Search Results for: %s"
 msgstr ""
 
 #. translators: %s: post date.
-#: inc/template-tags.php:136
+#: inc/template-tags.php:131
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
 #. translators: %s: post author.
-#: inc/template-tags.php:174
+#: inc/template-tags.php:167
 msgctxt "post author"
 msgid "By %s"
 msgstr ""
 
 #. translators: 1: list of categories.
-#: inc/template-tags.php:196
+#: inc/template-tags.php:188
 msgid "Posted in %1$s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:201
+#: inc/template-tags.php:193
 msgid ", "
 msgstr ""
 
 #. translators: %s: post title
-#: inc/template-tags.php:227
+#: inc/template-tags.php:218
 msgid "No Comments<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: 1: list of tags.
-#: inc/template-tags.php:252
+#: inc/template-tags.php:243
 msgid "Tagged %1$s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:257
+#: inc/template-tags.php:248
 msgctxt "list item separator"
 msgid ", "
 msgstr ""

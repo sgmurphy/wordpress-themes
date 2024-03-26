@@ -42,9 +42,7 @@ if ( ! function_exists( 'zakra_page_title' ) ) :
 				} elseif ( is_home() ) {
 
 					echo wp_kses_post( get_the_title( get_option( 'page_for_posts', true ) ) );
-				}
-
-				elseif ( is_404() ) {
+				} elseif ( is_404() ) {
 
 					// Page header.
 					if ( 'page-header' === zakra_page_title_position() ) {
@@ -54,9 +52,7 @@ if ( ! function_exists( 'zakra_page_title' ) ) :
 
 						echo esc_html__( 'Oops! That page can&rsquo;t be found.', 'zakra' );
 					}
-
-				}
-				elseif ( is_archive() ) {
+				} elseif ( is_archive() ) {
 
 					if ( is_author() ) :
 
@@ -77,36 +73,36 @@ if ( ! function_exists( 'zakra_page_title' ) ) :
 						 * we can run the loop properly, in full.
 						 */
 						rewind_posts();
-					elseif ( is_post_type_archive() ) :
+									elseif ( is_post_type_archive() ) :
 
-						$page_title = post_type_archive_title( '', false );
-					elseif ( is_day() ) :
+										$page_title = post_type_archive_title( '', false );
+									elseif ( is_day() ) :
 
-						$day_title = apply_filters( 'zakra_day_title_prefix', 'Day:' );
+										$day_title = apply_filters( 'zakra_day_title_prefix', 'Day:' );
 
-						/* translators: %1$s: Day prefix, %2$s: Day. */
-						$page_title = sprintf( esc_html__( '%1$s %2$s', 'zakra' ), $day_title, '<span>' . get_the_date() . '</span>' );
-					elseif ( is_month() ) :
+										/* translators: %1$s: Day prefix, %2$s: Day. */
+										$page_title = sprintf( esc_html__( '%1$s %2$s', 'zakra' ), $day_title, '<span>' . get_the_date() . '</span>' );
+									elseif ( is_month() ) :
 
-						$month_title = apply_filters( 'zakra_month_title_prefix', 'Month:' );
+										$month_title = apply_filters( 'zakra_month_title_prefix', 'Month:' );
 
-						/* translators: %1$s: Month prefix, %2$s: Month. */
-						$page_title = sprintf( esc_html__( '%1$s %2$s', 'zakra' ), $month_title, '<span>' . get_the_date( 'F Y' ) . '</span>' );
-					elseif ( is_year() ) :
+										/* translators: %1$s: Month prefix, %2$s: Month. */
+										$page_title = sprintf( esc_html__( '%1$s %2$s', 'zakra' ), $month_title, '<span>' . get_the_date( 'F Y' ) . '</span>' );
+									elseif ( is_year() ) :
 
-						$year_title = apply_filters( 'zakra_year_title_prefix', 'Year:' );
+										$year_title = apply_filters( 'zakra_year_title_prefix', 'Year:' );
 
-						/* translators: %1$s: Year prefix, %2$s: Year. */
-						$page_title = sprintf( esc_html__( '%1$s %2$s', 'zakra' ), $year_title, '<span>' . get_the_date( 'Y' ) . '</span>' );
-					elseif ( zakra_is_woocommerce_active() && function_exists( 'is_woocommerce' ) && is_woocommerce() ) :
+										/* translators: %1$s: Year prefix, %2$s: Year. */
+										$page_title = sprintf( esc_html__( '%1$s %2$s', 'zakra' ), $year_title, '<span>' . get_the_date( 'Y' ) . '</span>' );
+									elseif ( zakra_is_woocommerce_active() && function_exists( 'is_woocommerce' ) && is_woocommerce() ) :
 
-						$page_title = woocommerce_page_title( false );
-					else :
+										$page_title = woocommerce_page_title( false );
+									else :
 
-						$page_title = single_cat_title( '', false );
-					endif;
+										$page_title = single_cat_title( '', false );
+									endif;
 
-					echo wp_kses_post( $page_title );
+									echo wp_kses_post( $page_title );
 				}
 				?>
 
@@ -128,17 +124,16 @@ if ( ! function_exists( 'zakra_posted_on' ) ) :
 	 */
 	function zakra_posted_on() {
 
-		$meta_style = get_theme_mod( 'zakra_post_meta_style', 'style-1' );
-		$catgories_icon = ( 'style-2' === $meta_style ) ?  zakra_get_icon( 'calendar', false ) : '';
-
+		$meta_style     = get_theme_mod( 'zakra_post_meta_style', 'style-1' );
+		$catgories_icon = ( 'style-2' === $meta_style ) ? zakra_get_icon( 'calendar', false ) : '';
 
 		/* translators: %s: post date. */
 		$date_text = ( 'style-1' === $meta_style ) ? esc_html_x( 'Posted on %s', 'post date', 'zakra' ) : '%s';
 
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		if ( ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) && 'modified-date' === get_theme_mod( 'zakra_blog_post_date_type', 'published-date' ) ) {
+			$time_string = '<time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
 		$time_string = sprintf(
@@ -155,7 +150,6 @@ if ( ! function_exists( 'zakra_posted_on' ) ) :
 		);
 
 		echo '<span class="zak-posted-on">' . $catgories_icon . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
 	}
 endif;
 
@@ -167,8 +161,7 @@ if ( ! function_exists( 'zakra_posted_by' ) ) :
 
 		$meta_style = get_theme_mod( 'zakra_post_meta_style', 'style-1' );
 
-		$catgories_icon = ( 'style-2' === $meta_style ) ?  zakra_get_icon( 'user', false ) : '';
-
+		$catgories_icon = ( 'style-2' === $meta_style ) ? zakra_get_icon( 'user', false ) : '';
 
 		/* translators: %s: post author. */
 		$author_text = ( 'style-1' === $meta_style ) ? esc_html_x( 'By %s', 'post author', 'zakra' ) : '%s';
@@ -179,7 +172,6 @@ if ( ! function_exists( 'zakra_posted_by' ) ) :
 		);
 
 		echo '<span class="zak-byline"> ' . $catgories_icon . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
 	}
 endif;
 
@@ -189,8 +181,8 @@ if ( ! function_exists( 'zakra_posted_in' ) ) :
 	 */
 	function zakra_posted_in() {
 
-		$meta_style = get_theme_mod( 'zakra_post_meta_style', 'style-1' );
-		$catgories_icon = ( 'style-2' === $meta_style ) ?  zakra_get_icon( 'folder', false ) : '';
+		$meta_style     = get_theme_mod( 'zakra_post_meta_style', 'style-1' );
+		$catgories_icon = ( 'style-2' === $meta_style ) ? zakra_get_icon( 'folder', false ) : '';
 
 		/* translators: 1: list of categories. */
 		$catgories_text = ( 'style-1' === $meta_style ) ? esc_html__( 'Posted in %1$s', 'zakra' ) : '%1$s';
@@ -203,7 +195,6 @@ if ( ! function_exists( 'zakra_posted_in' ) ) :
 				printf( '<span class="zak-cat-links">' . $catgories_icon . $catgories_text . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
-
 	}
 endif;
 
@@ -246,7 +237,7 @@ if ( ! function_exists( 'zakra_post_tags' ) ) :
 	function zakra_post_tags() {
 
 		$meta_style = get_theme_mod( 'zakra_post_meta_style', 'style-1' );
-		$tag_icon = ( 'style-2' === $meta_style ) ?  zakra_get_icon( 'tag', false ) : '';
+		$tag_icon   = ( 'style-2' === $meta_style ) ? zakra_get_icon( 'tag', false ) : '';
 
 		/* translators: 1: list of tags. */
 		$tags_text = ( 'style-1' === $meta_style ) ? esc_html__( 'Tagged %1$s', 'zakra' ) : '%1$s';
@@ -286,7 +277,7 @@ if ( ! function_exists( 'zakra_post_thumbnail' ) ) :
 
 				the_post_thumbnail();
 			else :
-			?>
+				?>
 
 				<a class="zak-entry-thumbnail__link" href="<?php the_permalink(); ?>" aria-hidden="true">
 					<?php

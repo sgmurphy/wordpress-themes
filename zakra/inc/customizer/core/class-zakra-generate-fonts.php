@@ -97,14 +97,9 @@ class Zakra_Generate_Fonts {
 
 		$system_fonts = Zakra_Fonts::get_system_fonts();
 
-		$fonts = 'Open Sans';
-
 		foreach ( $font_list as $name => $font ) {
 
 			if ( ! empty( $name ) && ! isset( $system_fonts[ $name ] ) ) {
-				if ( $fonts == $name ) {
-					continue;
-				}
 
 				// Add font variants.
 				$google_fonts[ $name ] = $font['font-weight'];

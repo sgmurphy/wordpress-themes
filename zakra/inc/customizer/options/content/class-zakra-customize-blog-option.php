@@ -50,76 +50,101 @@ if ( ! class_exists( 'Zakra_Customize_Blog_Option' ) ) :
 				),
 
 				array(
-					'name'     => 'zakra_post_elements_heading',
+					'name'     => 'zakra_blog_post_date_type_heading',
 					'type'     => 'control',
 					'control'  => 'zakra-title',
-					'label'    => esc_html__( 'Post Elements', 'zakra' ),
-					'description' => esc_html__( 'Drag & Drop items to re-arrange the order', 'zakra' ),
+					'label'    => esc_html__( 'Post Date Type', 'zakra' ),
 					'section'  => 'zakra_blog',
-					'priority' => 125,
+					'priority' => 110,
 				),
 
 				array(
-					'name'        => 'zakra_blog_post_elements',
-					'default'     => array(
+					'name'     => 'zakra_blog_post_date_type',
+					'default'  => 'published-date',
+					'type'     => 'control',
+					'control'  => 'select',
+					'section'  => 'zakra_blog',
+					'choices'  => apply_filters(
+						'zakra_blog_post_date_type_choices',
+						array(
+							'published-date'  => esc_html__( 'Published Date', 'zakra' ),
+							'modified-date' => esc_html__( 'Modified Date', 'zakra' ),
+						)
+					),
+					'priority' => 110,
+				),
+
+				array(
+					'name'        => 'zakra_post_elements_heading',
+					'type'        => 'control',
+					'control'     => 'zakra-title',
+					'label'       => esc_html__( 'Post Elements', 'zakra' ),
+					'description' => esc_html__( 'Drag & Drop items to re-arrange the order', 'zakra' ),
+					'section'     => 'zakra_blog',
+					'priority'    => 125,
+				),
+
+				array(
+					'name'       => 'zakra_blog_post_elements',
+					'default'    => array(
 						'featured_image',
 						'title',
 						'meta',
 						'content',
 					),
-					'type'        => 'control',
-					'control'     => 'zakra-sortable',
-					'section'     => 'zakra_blog',
-					'choices'     => array(
+					'type'       => 'control',
+					'control'    => 'zakra-sortable',
+					'section'    => 'zakra_blog',
+					'choices'    => array(
 						'featured_image' => esc_attr__( 'Featured Image', 'zakra' ),
 						'title'          => esc_attr__( 'Title', 'zakra' ),
 						'meta'           => esc_attr__( 'Meta Tags', 'zakra' ),
 						'content'        => esc_attr__( 'Content', 'zakra' ),
 					),
-					'dependency'  => apply_filters( 'zakra_structure_archive_blog_order', false ),
-					'priority'    => 125,
+					'dependency' => apply_filters( 'zakra_structure_archive_blog_order', false ),
+					'priority'   => 125,
 				),
 
 				array(
-					'name'     => 'zakra_post_meta_elements_heading',
-					'type'     => 'control',
-					'control'  => 'zakra-title',
-					'label'    => esc_html__( 'Meta Elements', 'zakra' ),
+					'name'        => 'zakra_post_meta_elements_heading',
+					'type'        => 'control',
+					'control'     => 'zakra-title',
+					'label'       => esc_html__( 'Meta Elements', 'zakra' ),
 					'description' => esc_html__( 'Drag & Drop items to re-arrange the order', 'zakra' ),
-					'section'  => 'zakra_blog',
-					'priority' => 130,
+					'section'     => 'zakra_blog',
+					'priority'    => 130,
 				),
 
 				array(
-					'name'        => 'zakra_blog_meta_elements',
-					'default'     => array(
+					'name'       => 'zakra_blog_meta_elements',
+					'default'    => array(
 						'author',
 						'date',
 						'categories',
 						'tags',
 						'comments',
 					),
-					'type'        => 'control',
-					'control'     => 'zakra-sortable',
-					'section'     => 'zakra_blog',
-					'choices'     => array(
+					'type'       => 'control',
+					'control'    => 'zakra-sortable',
+					'section'    => 'zakra_blog',
+					'choices'    => array(
 						'comments'   => esc_attr__( 'Comments', 'zakra' ),
 						'categories' => esc_attr__( 'Categories', 'zakra' ),
 						'author'     => esc_attr__( 'Author', 'zakra' ),
 						'date'       => esc_attr__( 'Date', 'zakra' ),
 						'tags'       => esc_attr__( 'Tags', 'zakra' ),
 					),
-					'dependency'  => apply_filters( 'zakra_structure_archive_blog_order', false ),
-					'priority'    => 130,
+					'dependency' => apply_filters( 'zakra_structure_archive_blog_order', false ),
+					'priority'   => 130,
 				),
 
 				array(
-					'name'       => 'zakra_blog_post_title_heading',
-					'type'       => 'control',
-					'control'    => 'zakra-title',
-					'label'      => esc_html__( 'Post title', 'zakra' ),
-					'section'    => 'zakra_blog',
-					'priority'   => 150,
+					'name'     => 'zakra_blog_post_title_heading',
+					'type'     => 'control',
+					'control'  => 'zakra-title',
+					'label'    => esc_html__( 'Post title', 'zakra' ),
+					'section'  => 'zakra_blog',
+					'priority' => 150,
 				),
 
 				array(
@@ -240,7 +265,7 @@ if ( ! class_exists( 'Zakra_Customize_Blog_Option' ) ) :
 					'choices'    => apply_filters(
 						'zakra_blog_button_alignment',
 						array(
-							'style-1'  => array(
+							'style-1' => array(
 								'label' => '',
 								'url'   => ZAKRA_PARENT_INC_ICON_URI . '/read-more-left.svg',
 							),
@@ -263,7 +288,7 @@ if ( ! class_exists( 'Zakra_Customize_Blog_Option' ) ) :
 									'zakra_enable_blog_button',
 									'==',
 									true,
-								)
+								),
 							)
 						),
 						'operator'   => 'AND',
@@ -292,7 +317,6 @@ if ( ! class_exists( 'Zakra_Customize_Blog_Option' ) ) :
 
 			return $options;
 		}
-
 	}
 
 	new Zakra_Customize_Blog_Option();

@@ -218,6 +218,10 @@ if ( ! class_exists( 'Zakra_Enqueue_Scripts' ) ) {
 			$primary_menu_dropdown_typography = get_theme_mod( 'zakra_sub_menu_typography', $typography_default_400 );
 			$mobile_menu_typography           = get_theme_mod( 'zakra_mobile_menu_typography', $typography_default_400 );
 			$breadcrumb_typography            = get_theme_mod( 'zakra_breadcrumb_typography', $typography_default_400 );
+			$add_to_cart_typography           = get_theme_mod( 'zakra_shop_product_button_typography', $typography_default_400 );
+			$product_price_typography         = get_theme_mod( 'zakra_shop_product_price_typography', $typography_default_400 );
+			$product_title_typography         = get_theme_mod( 'zakra_shop_product_title_typography', $typography_default_400 );
+			$view_cart_typography        = get_theme_mod( 'zakra_shop_product_view_cart_typography', $typography_default_400 );
 
 			$post_page_title_typography = get_theme_mod( 'zakra_post_page_title_typography', $typography_default_500 );
 			$blog_post_title_typography = get_theme_mod( 'zakra_blog_post_title_typography', $typography_default_500 );
@@ -240,6 +244,10 @@ if ( ! class_exists( 'Zakra_Enqueue_Scripts' ) ) {
 				$primary_menu_dropdown_typography,
 				$mobile_menu_typography,
 				$breadcrumb_typography,
+				$add_to_cart_typography,
+				$product_price_typography,
+				$product_title_typography,
+				$view_cart_typography,
 			);
 
 			// Grouped typography options with default font-wight of 500.
@@ -293,7 +301,6 @@ if ( ! class_exists( 'Zakra_Enqueue_Scripts' ) ) {
 
 			wp_enqueue_style( 'zakra-block-editor-styles', ZAKRA_PARENT_URI . '/style-editor-block.css' );
 		}
-
 	}
 
 }
