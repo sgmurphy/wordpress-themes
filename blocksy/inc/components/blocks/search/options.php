@@ -153,7 +153,7 @@ $options = [
 				'label' => __( 'Filter Visibility', 'blocksy' ),
 				'type' => 'ct-visibility',
 				'design' => 'block',
-				'allow_empty' => true,
+				// 'allow_empty' => true,
 				'setting' => [ 'transport' => 'postMessage' ],
 				'value' => [
 					'desktop' => true,
@@ -169,7 +169,7 @@ $options = [
 			],
 
 			'has_taxonomy_children' => [
-				'label' => __( 'Taxonomy Childrens', 'blocksy' ),
+				'label' => __( 'Taxonomy Children', 'blocksy' ),
 				'type' => 'ct-switch',
 				'value' => 'no',
 				// 'divider' => 'top',

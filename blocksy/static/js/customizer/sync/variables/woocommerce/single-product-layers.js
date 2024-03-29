@@ -458,6 +458,21 @@ export const getWooSingleLayersVariablesFor = () => ({
 		type: 'color',
 	},
 
+
+	entry_summary_container_border: {
+		selector: '.product[class*=top-gallery] .entry-summary',
+		variable: 'container-border',
+		type: 'border',
+	},
+
+	entry_summary_container_border_radius: {
+		selector: '.product[class*=top-gallery] .entry-summary',
+		type: 'spacing',
+		variable: 'container-border-radius',
+		responsive: true,
+	},
+
+
 	// product tabs
 	...typographyOption({
 		id: 'woo_tabs_font',

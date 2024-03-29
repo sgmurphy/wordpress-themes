@@ -50,14 +50,44 @@ export const renderSingleEntryMeta = ({
 
 			if (id === 'author') {
 				let { has_author_avatar, avatar_size } = layer
+				const metaAuthor = el.querySelector('.meta-author')
 
-				if (el.querySelector('.meta-author')) {
+				if (metaAuthor) {
 					const img = el.querySelector('.meta-author img')
 
 					if (img) {
 						img.height = avatar_size || '25'
 						img.width = avatar_size || '25'
 						img.style.height = `${avatar_size || 25}px`
+					}
+
+					if (metaAuthor.querySelector('span')) {
+						el
+							.querySelector('.meta-author')
+							.querySelector('span').innerHTML =
+							label || __('By', 'blocksy')
+					}
+				}
+			}
+
+			if (id === 'post_date') {
+				const metaDate = el.querySelector('.meta-date')
+
+				if (metaDate) {
+					if (metaDate.querySelector('span')) {
+						metaDate.querySelector('span').innerHTML =
+							label || __('On', 'blocksy')
+					}
+				}
+			}
+
+			if (id === 'updated_date') {
+				const metaUpdatedDate = el.querySelector('.meta-updated-date')
+
+				if (metaUpdatedDate) {
+					if (metaUpdatedDate.querySelector('span')) {
+						metaUpdatedDate.querySelector('span').innerHTML =
+							label || __('On', 'blocksy')
 					}
 				}
 			}
@@ -71,7 +101,7 @@ export const renderSingleEntryMeta = ({
 
 				if (taxLayer.querySelector('span')) {
 					taxLayer.querySelector('span').innerHTML =
-						layer.label || __('In', 'blocksy')
+						label || __('In', 'blocksy')
 				}
 			}
 		})

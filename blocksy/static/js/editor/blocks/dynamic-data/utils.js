@@ -19,7 +19,8 @@ export const fieldIsImageLike = (fieldDescriptor) => {
 	if (fieldDescriptor.provider === 'wp') {
 		return (
 			fieldDescriptor.id === 'featured_image' ||
-			fieldDescriptor.id === 'author_avatar'
+			fieldDescriptor.id === 'author_avatar' ||
+			fieldDescriptor.id === 'archive_image'
 		)
 	}
 

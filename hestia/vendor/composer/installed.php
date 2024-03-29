@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'codeinwp/hestia-pro',
-        'pretty_version' => 'v3.1.4',
-        'version' => '3.1.4.0',
-        'reference' => 'b8615c138a6105b4a2fdea3bea50cd8d45fec48f',
+        'pretty_version' => 'v3.1.6',
+        'version' => '3.1.6.0',
+        'reference' => '7772b09b7e6f345dab5ce917c295ab718ec2e369',
         'type' => 'wordpress-theme',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,18 +11,18 @@
     ),
     'versions' => array(
         'codeinwp/hestia-pro' => array(
-            'pretty_version' => 'v3.1.4',
-            'version' => '3.1.4.0',
-            'reference' => 'b8615c138a6105b4a2fdea3bea50cd8d45fec48f',
+            'pretty_version' => 'v3.1.6',
+            'version' => '3.1.6.0',
+            'reference' => '7772b09b7e6f345dab5ce917c295ab718ec2e369',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'codeinwp/themeisle-sdk' => array(
-            'pretty_version' => '3.3.14',
-            'version' => '3.3.14.0',
-            'reference' => '662952078c57b12e4d3af9bc98ef847ea3500206',
+            'pretty_version' => '3.3.16',
+            'version' => '3.3.16.0',
+            'reference' => '94e9274d32bda46fe675be4160be8bfceb034278',
             'type' => 'library',
             'install_path' => __DIR__ . '/../codeinwp/themeisle-sdk',
             'aliases' => array(),

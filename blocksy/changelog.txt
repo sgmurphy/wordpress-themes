@@ -1,3 +1,21 @@
+2.0.37: 2024-03-29
+- Improvement: General fixes and improvements
+
+2.0.36: 2024-03-29
+- Improvement: General fixes and improvements
+
+2.0.35: 2024-03-28
+- Fix: Don't run swatches migration if WooCommerce is absent
+
+2.0.34: 2024-03-28
+- Improvement: Better handle header content blocks with Polylang
+- Improvement: Correctly escape attributes before adding antibot protection
+- Improvement: Menu dropdown with inner reveal effect stacking context improvement
+- Improvement: Single product gallery image border radius option
+- Fix: Advanced Search block - taxonomy filter device visibility options doesn't work as expected
+- Fix: Post meta author element doesn't display label even if set
+- Fix: Revert to built in breadcrumbs module when disabling third party provider
+
 2.0.33: 2024-03-21
 - Improvement: Better integration with Cartflows plugin and checkout page
 - Fix: Advanced Posts block doesn't order posts correctly by modified date

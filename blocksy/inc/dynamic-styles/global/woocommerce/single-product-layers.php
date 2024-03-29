@@ -434,6 +434,39 @@ blocksy_output_colors([
 ]);
 
 
+if (
+	$product_view_type === 'top-gallery'
+	||
+	$product_view_type === 'columns-top-gallery'
+) {
+
+	blocksy_output_border([
+		'css' => $css,
+		'selector' => '.product[class*=top-gallery] .entry-summary',
+		'variableName' => 'container-border',
+		'value' => blocksy_get_theme_mod('entry_summary_container_border'),
+		'default' => [
+			'width' => 1,
+			'style' => 'solid',
+			'color' => [
+				'color' => 'var(--theme-border-color)',
+			],
+		],
+	]);
+
+	blocksy_output_spacing([
+		'css' => $css,
+		'tablet_css' => $tablet_css,
+		'mobile_css' => $mobile_css,
+		'selector' => '.product[class*=top-gallery] .entry-summary',
+		'property' => 'container-border-radius',
+		'value' => blocksy_get_theme_mod('entry_summary_container_border_radius',
+			blocksy_spacing_value()
+		)
+	]);
+}
+
+
 // product tabs
 $tabs_type = blocksy_get_theme_mod( 'woo_tabs_type', 'type-1' );
 

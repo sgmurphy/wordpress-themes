@@ -220,11 +220,11 @@ $overridable_card_options = [
 							'options' => [
 
 								'heading_tag' => [
-									'label' => __('Heading tag', 'blocksy'),
+									'label' => __('Heading Tag', 'blocksy'),
 									'type' => 'ct-select',
 									'value' => 'h2',
 									'view' => 'text',
-									'design' => 'inline',
+									'design' => 'block',
 									'sync' => [
 										'id' => $prefix . 'archive_order_heading_tag',
 									],
@@ -314,7 +314,7 @@ $overridable_card_options = [
 										'type' => 'ct-select',
 										'value' => 'medium_large',
 										'view' => 'text',
-										'design' => 'inline',
+										'design' => 'block',
 										'sync' => [
 											'id' => $prefix . 'archive_order_image',
 										],
@@ -328,7 +328,7 @@ $overridable_card_options = [
 										'type' => 'ct-select',
 										'value' => 'none',
 										'view' => 'text',
-										'design' => 'inline',
+										'design' => 'block',
 										'setting' => [ 'transport' => 'postMessage' ],
 										'choices' => blocksy_ordered_keys(
 											[

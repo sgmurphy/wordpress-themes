@@ -1,18 +1,31 @@
 export const getWooSingleGalleryVariablesFor = () => ({
 
-	// gallery width
 	productGalleryWidth: {
 		selector: '.product-entry-wrapper',
 		variable: 'product-gallery-width',
 		unit: '%',
 	},
 
-	// thumbnails spacing
+	product_image_border_radius: {
+		selector: '.product-entry-wrapper',
+		type: 'spacing',
+		variable: 'border-radius',
+		responsive: true,
+	},
+
+	// thumbnails
 	product_thumbs_spacing: {
 		selector: '.product-entry-wrapper',
 		variable: 'thumbs-spacing',
 		responsive: true,
 		unit: '',
+	},
+
+	product_thumbs_border_radius: {
+		selector: '.woocommerce-product-gallery .flexy-pills',
+		type: 'spacing',
+		variable: 'border-radius',
+		responsive: true,
 	},
 
 	// slider arrows

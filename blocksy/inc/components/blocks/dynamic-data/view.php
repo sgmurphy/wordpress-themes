@@ -15,9 +15,25 @@ if (strpos($field, 'woo:') === 0) {
 }
 
 if (strpos($field, 'wp:') === 0) {
-	if ($field !== 'wp:featured_image' && $field !== 'wp:author_avatar') {
+	if (
+		$field !== 'wp:featured_image'
+		&&
+		$field !== 'wp:author_avatar'
+		&&
+		$field !== 'wp:archive_image'
+	) {
 		echo blocksy_render_view(
 			dirname(__FILE__) . '/views/wp-field.php',
+			[
+				'attributes' => $attributes,
+				'field' => $field
+			]
+		);
+	}
+
+	if ($field === 'wp:archive_image') {
+		echo blocksy_render_view(
+			dirname(__FILE__) . '/views/archive-image-field.php',
 			[
 				'attributes' => $attributes,
 				'field' => $field

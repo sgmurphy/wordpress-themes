@@ -169,10 +169,12 @@ function blocksy_output_product_toolbar() {
 	if (! empty($components)) {
 		return blocksy_html_tag(
 			'div',
-			[
+			array_merge([
 				'class' => 'ct-woo-card-extra',
 				'data-type' => $shop_cards_type === 'type-3' ? 'type-2' : 'type-1'
-			],
+			], $shop_cards_type === 'type-3' ? [
+				'data-add-to-cart' => 'auto-hide'
+			] : []),
 			implode(' ', $components)
 		);
 	}
@@ -369,8 +371,16 @@ add_action($action_to_hook, function () {
 					&&
 					$layout['id'] === 'product_add_to_cart'
 				) {
+					$auto_hide = blocksy_akg('auto_hide_button', $layout, 'yes');
+
+					$html_atts = [];
+
+					if ($auto_hide === 'yes') {
+						$html_atts['data-add-to-cart'] = 'auto-hide';
+					}
+
 					do_action('blocksy:woocommerce:product-card:actions:before');
-					echo '<div class="ct-woo-card-actions">';
+					echo '<div class="ct-woo-card-actions" ' . blocksy_attr_to_html($html_atts) . '>';
 					woocommerce_template_loop_add_to_cart();
 					echo '</div>';
 					do_action('blocksy:woocommerce:product-card:actions:after');
@@ -383,7 +393,7 @@ add_action($action_to_hook, function () {
 					$layout['id'] === 'product_add_to_cart_and_price'
 				) {
 					do_action('blocksy:woocommerce:product-card:actions:before');
-					echo '<div class="ct-woo-card-actions">';
+					echo '<div class="ct-woo-card-actions" data-add-to-cart="auto-hide">';
 					woocommerce_template_loop_price();
 					woocommerce_template_loop_add_to_cart();
 					echo '</div>';

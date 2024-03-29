@@ -20,8 +20,14 @@ const TaxonomyRoot = ({ options, input_name, value, tbody, purpose }) => {
 	const input = useRef()
 
 	useEffect(() => {
-		const cb = () => {
-			setInternalValue(value)
+		const cb = (_, __, { data }) => {
+			if (data) {
+				const urlParams = new URLSearchParams(data)
+
+				if (urlParams.get('action') === 'add-tag') {
+					setInternalValue(value)
+				}
+			}
 		}
 
 		$(document).on('ajaxComplete', cb)

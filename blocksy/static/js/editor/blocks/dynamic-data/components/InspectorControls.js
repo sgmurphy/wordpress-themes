@@ -82,7 +82,8 @@ const DynamicDataInspectorControls = ({
 					/>
 
 					{fieldIsImageLike(fieldDescriptor) &&
-						attributes.field !== 'wp:author_avatar' && (
+						attributes.field !== 'wp:author_avatar' &&
+						attributes.field !== 'wp:archive_image' && (
 							<OptionsPanel
 								purpose="gutenberg"
 								onChange={(optionId, optionValue) => {

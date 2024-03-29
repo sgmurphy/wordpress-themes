@@ -101,7 +101,7 @@ function blocksy_dynamic_styles_should_call($args = []) {
 		throw new Error('$chunk not provided. This is required!');
 	}
 
-	if (!$args['forced_call'] && blocksy_has_css_in_files()) {
+	if (! $args['forced_call'] && blocksy_has_css_in_files()) {
 		if ($args['context'] === 'inline') {
 			if ($args['chunk'] === 'global' || $args['chunk'] === 'woocommerce') {
 				return false;

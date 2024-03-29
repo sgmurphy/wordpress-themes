@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'codeinwp/neve',
-        'pretty_version' => 'v3.8.3',
-        'version' => '3.8.3.0',
-        'reference' => 'bf021627ac1fe24680e06f97e5d14dd97a77492f',
+        'pretty_version' => 'v3.8.4',
+        'version' => '3.8.4.0',
+        'reference' => '4d07430c1d291fe75c5488d9bfb4c779e7168306',
         'type' => 'wordpress-theme',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,18 +11,18 @@
     ),
     'versions' => array(
         'codeinwp/neve' => array(
-            'pretty_version' => 'v3.8.3',
-            'version' => '3.8.3.0',
-            'reference' => 'bf021627ac1fe24680e06f97e5d14dd97a77492f',
+            'pretty_version' => 'v3.8.4',
+            'version' => '3.8.4.0',
+            'reference' => '4d07430c1d291fe75c5488d9bfb4c779e7168306',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'codeinwp/themeisle-sdk' => array(
-            'pretty_version' => '3.3.14',
-            'version' => '3.3.14.0',
-            'reference' => '662952078c57b12e4d3af9bc98ef847ea3500206',
+            'pretty_version' => '3.3.16',
+            'version' => '3.3.16.0',
+            'reference' => '94e9274d32bda46fe675be4160be8bfceb034278',
             'type' => 'library',
             'install_path' => __DIR__ . '/../codeinwp/themeisle-sdk',
             'aliases' => array(),

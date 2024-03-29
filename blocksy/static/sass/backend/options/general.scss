@@ -17,6 +17,8 @@
 			font-weight: 500;
 			letter-spacing: 0.1px;
 			cursor: default;
+			width: initial;
+			margin: 0;
 		}
 	}
 
@@ -36,8 +38,10 @@
 		}
 	}
 
+
 	// block
 	&[data-design*='block'] {
+		
 		> header {
 			&:not(:empty) {
 				margin-bottom: 10px;
@@ -45,6 +49,7 @@
 		}
 	}
 
+	// block right
 	&[data-design='block:right'] {
 		display: flex;
 		flex-direction: column;

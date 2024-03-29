@@ -229,24 +229,38 @@ $options = [
 						'condition' => [ 'meta_type' => 'label' ],
 						'values_source' => 'parent',
 						'options' => [
-							'label' => [
+							'label' => array_merge([
 								'label' => __('Label', 'blocksy'),
 								'type' => 'text',
 								'design' => 'inline',
 								'value' => __('By', 'blocksy')
-							],
+							], $skip_sync_id ? [
+								'sync' => $skip_sync_id
+							] : []),
 						],
 					],
 
 					blocksy_rand_md5() => [
 						'type' => 'ct-condition',
-						'condition' => [ 'meta_type' => 'icons' ],
+						'condition' => [
+							'meta_type' => 'icons',
+						],
 						'values_source' => 'parent',
-						'options' => apply_filters(
-							'blocksy:general:card:options:icon',
-							[],
-							'blc blc-feather'
-						)
+						'options' => [
+
+							blocksy_rand_md5() => [
+								'type' => 'ct-condition',
+								'condition' => [
+									'has_author_avatar' => 'no',
+								],
+								'options' => apply_filters(
+									'blocksy:general:card:options:icon',
+									[],
+									'blc blc-feather'
+								)
+							],
+
+						]
 					],
 
 				],
@@ -269,12 +283,14 @@ $options = [
 							'condition' => [ 'meta_type' => 'label' ],
 							'values_source' => 'parent',
 							'options' => [
-								'label' => [
+								'label' => array_merge([
 									'label' => __('Label', 'blocksy'),
 									'type' => 'text',
 									'design' => 'inline',
 									'value' => __('On', 'blocksy')
-							],
+								], $skip_sync_id ? [
+									'sync' => $skip_sync_id
+								] : [])
 							],
 						],
 
@@ -304,12 +320,14 @@ $options = [
 							'condition' => [ 'meta_type' => 'label' ],
 							'values_source' => 'parent',
 							'options' => [
-								'label' => [
+								'label' => array_merge([
 									'label' => __('Label', 'blocksy'),
 									'type' => 'text',
 									'design' => 'inline',
-									'value' => __('On', 'blocksy')
-							],
+									'value' => __('On', 'blocksy'),	
+								], $skip_sync_id ? [
+									'sync' => $skip_sync_id
+								] : [])
 							],
 						],
 

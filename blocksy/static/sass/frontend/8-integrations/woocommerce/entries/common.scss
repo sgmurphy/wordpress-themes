@@ -54,10 +54,14 @@
 	}
 
 	.ct-woo-card-actions {
+		display: flex;
 		margin-top: auto;
 	}
 
-	.add_to_cart_button.added {
-		display: none;
+	[data-add-to-cart="auto-hide"] {
+
+		.added {
+			display: none;
+		}
 	}
 }

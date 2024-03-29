@@ -8,7 +8,7 @@ add_filter('safe_style_css', function($styles) {
 if (! function_exists('blocksy_render_post_author_avatar')) {
 	function blocksy_render_post_author_avatar($author) {
 		global $blocksy_author_options, $blocksy_meta_args;
-
+		
 		if ($blocksy_author_options['has_author_avatar'] === 'no') {
 			return '';
 		}
@@ -104,6 +104,24 @@ if (! function_exists('blocksy_render_post_author')) {
 		}
 
 		$result = blocksy_render_post_author_avatar($author);
+
+		$meta_label = $blocksy_meta_args['prefix'] ? blocksy_translate_dynamic(
+			$blocksy_author_options['label'],
+			$blocksy_meta_args['prefix'] . '_' . $blocksy_author_options['id'] . '_label'
+		) : $blocksy_author_options['label'];
+	
+		if (
+			! empty($meta_label)
+			&&
+			$blocksy_meta_args['meta_type'] === 'label'
+		) {
+			$result .= blocksy_html_tag(
+				'span',
+				[],
+				esc_html($meta_label)
+			);
+		}
+
 		$result .= blocksy_render_post_author_details($author);
 
 		return $result;

@@ -455,47 +455,83 @@ $options = [
 							],
 						],
 
-					],
-
-					blocksy_rand_md5() => [
-						'type' => 'ct-condition',
-						'condition' => [
-							'woo_single_layout:array-ids:product_payment_methods:enabled' => '!no',
-							'woo_single_layout:array-ids:product_payment_methods:payment_icons_color' => 'custom'
-						],
-						'computed_fields' => [
-							'woo_single_layout'
-						],
-						'options' => [
-
-							'payment_method_icons_color' => [
-								'label' => __('Payment Methods Icons Color', 'blocksy'),
-								'type'  => 'ct-color-picker',
-								'design' => 'inline',
-								'divider' => 'top:full',
-								'setting' => ['transport' => 'postMessage'],
-
-								'value' => [
-									'default' => [
-										'color' => '#4B4F58',
-									],
-								],
-
-								'pickers' => [
-									[
-										'title' => __('Initial', 'blocksy'),
-										'id' => 'default',
-									],
-								],
+						blocksy_rand_md5() => [
+							'type' => 'ct-condition',
+							'condition' => [
+								'woo_single_layout:array-ids:product_payment_methods:enabled' => '!no',
+								'woo_single_layout:array-ids:product_payment_methods:payment_icons_color' => 'custom'
 							],
+							'computed_fields' => [
+								'woo_single_layout'
+							],
+							'options' => [
 
+								'payment_method_icons_color' => [
+									'label' => __('Payment Methods Icons Color', 'blocksy'),
+									'type'  => 'ct-color-picker',
+									'design' => 'inline',
+									'divider' => 'top:full',
+									'setting' => ['transport' => 'postMessage'],
+
+									'value' => [
+										'default' => [
+											'color' => '#4B4F58',
+										],
+									],
+
+									'pickers' => [
+										[
+											'title' => __('Initial', 'blocksy'),
+											'id' => 'default',
+										],
+									],
+								],
+
+							],
 						],
+
 					],
 
 					apply_filters(
 						'blocksy:options:single_product:elements:design_tab:end',
 						[]
 					),
+
+					[
+						blocksy_rand_md5() => [
+							'type' => 'ct-condition',
+							'condition' => [
+								'product_view_type' => 'columns-top-gallery|top-gallery'
+							],
+							'options' => [
+
+								'entry_summary_container_border' => [
+									'label' => __( 'Container Border', 'blocksy' ),
+									'type' => 'ct-border',
+									'sync' => 'live',
+									'design' => 'inline',
+									'divider' => 'top:full',
+									'value' => [
+										'width' => 1,
+										'style' => 'solid',
+										'color' => [
+											'color' => 'var(--theme-border-color)',
+										],
+									]
+								],
+
+								'entry_summary_container_border_radius' => [
+									'label' => __( 'Container Border Radius', 'blocksy' ),
+									'sync' => 'live',
+									'type' => 'ct-spacing',
+									'divider' => 'top',
+									'value' => blocksy_spacing_value(),
+									'responsive' => true
+								],
+
+							],
+						],
+					]
 				],
 			],
 

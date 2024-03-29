@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-03-12T11:04:02+00:00\n"
+"POT-Creation-Date: 2024-03-29T14:51:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: neve\n"
@@ -92,7 +92,7 @@ msgstr ""
 #: neve/header-footer-grid/Core/Builder/Footer.php:51
 #: neve/header-footer-grid/Core/Builder/Header.php:70
 #: neve/header-footer-grid/Core/Components/Button.php:165
-#: neve/inc/admin/dashboard/main.php:372
+#: neve/inc/admin/dashboard/main.php:374
 #: neve/inc/core/admin.php:549
 #: neve/inc/core/front_end.php:534
 #: neve/inc/customizer/controls/simple_upsell.php:83
@@ -457,8 +457,8 @@ msgstr ""
 #: neve/header-footer-grid/Core/Builder/Header.php:557
 #: neve/inc/admin/dashboard/main.php:227
 #: neve/inc/admin/dashboard/main.php:228
-#: neve/inc/admin/dashboard/main.php:401
-#: neve/inc/admin/dashboard/main.php:588
+#: neve/inc/admin/dashboard/main.php:403
+#: neve/inc/admin/dashboard/main.php:590
 #: neve/inc/core/front_end.php:526
 #: neve/assets/apps/dashboard/build/dashboard.js:2
 #: neve/assets/apps/dashboard/build/dashboard.js:3
@@ -1055,7 +1055,7 @@ msgid "Skip to content"
 msgstr ""
 
 #: neve/inc/admin/dashboard/main.php:128
-#: neve/inc/admin/dashboard/main.php:473
+#: neve/inc/admin/dashboard/main.php:475
 #: neve/assets/apps/dashboard/build/dashboard.js:2
 msgid "Upgrade"
 msgstr ""
@@ -1065,233 +1065,233 @@ msgstr ""
 #: neve/inc/admin/dashboard/main.php:193
 #: neve/inc/admin/dashboard/main.php:213
 #: neve/inc/admin/dashboard/main.php:215
-#: neve/inc/admin/dashboard/main.php:350
+#: neve/inc/admin/dashboard/main.php:352
 #: neve/inc/core/front_end.php:537
 #: neve/assets/apps/metabox/build/index.js:2
 msgid "%s Options"
 msgstr ""
 
 #. translators: %s - Theme name
-#: neve/inc/admin/dashboard/main.php:352
+#: neve/inc/admin/dashboard/main.php:354
 #: neve/inc/core/admin.php:538
 msgid "%s now comes with a sites library with various designs to pick from. Visit our collection of demos that are constantly being added."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:353
+#: neve/inc/admin/dashboard/main.php:355
 msgid "Upgrade to the Pro version and get instant access to all Premium Starter Sites — including Expert Sites — and much more."
 msgstr ""
 
 #. translators: %s - Theme name
-#: neve/inc/admin/dashboard/main.php:355
+#: neve/inc/admin/dashboard/main.php:357
 msgid "With %s, you can choose from multiple unique demos, specially designed for you, that can be installed with a single click. You just need to choose your favorite, and we will take care of everything else."
 msgstr ""
 
 #. translators: 1 - Theme name, 2 - Cloud Templates & Patterns Collection
-#: neve/inc/admin/dashboard/main.php:357
+#: neve/inc/admin/dashboard/main.php:359
 msgid "In order to be able to import any starter sites for %1$s you would need to have the %2$s plugin active."
 msgstr ""
 
 #. translators: %s - Theme name
-#: neve/inc/admin/dashboard/main.php:359
+#: neve/inc/admin/dashboard/main.php:361
 msgid "In order to be able to import any starter sites for %1$s you would need to have the %2$s plugin updated to the latest version."
 msgstr ""
 
 #. translators: %s - Theme name
-#: neve/inc/admin/dashboard/main.php:361
+#: neve/inc/admin/dashboard/main.php:363
 msgid "We want to make sure you have the best experience using %1$s, and that is why we have gathered all the necessary information here for you. We hope you will enjoy using %1$s as much as we enjoy creating great products."
 msgstr ""
 
 #. translators: %s - Theme name
-#: neve/inc/admin/dashboard/main.php:363
+#: neve/inc/admin/dashboard/main.php:365
 #: neve/inc/core/admin.php:547
 msgid "Need more details? Please check our full documentation for detailed information on how to use %s."
 msgstr ""
 
 #. translators: %s - "Neve Pro Addon"
-#: neve/inc/admin/dashboard/main.php:365
+#: neve/inc/admin/dashboard/main.php:367
 msgid "%s license"
 msgstr ""
 
 #. translators: %s - "Neve Pro Addon"
-#: neve/inc/admin/dashboard/main.php:367
+#: neve/inc/admin/dashboard/main.php:369
 msgid "Please update %s to the latest version and then refresh this page to have access to the options."
 msgstr ""
 
 #. translators: store name (Themeisle)
-#: neve/inc/admin/dashboard/main.php:371
+#: neve/inc/admin/dashboard/main.php:373
 msgid "Enter your license from %1$s purchase history in order to get plugin updates"
 msgstr ""
 
 #. translators: s - theme name (Neve).
-#: neve/inc/admin/dashboard/main.php:432
+#: neve/inc/admin/dashboard/main.php:434
 msgid "New theme update for %1$s! Please update to %2$s."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:437
-#: neve/inc/admin/dashboard/main.php:458
+#: neve/inc/admin/dashboard/main.php:439
+#: neve/inc/admin/dashboard/main.php:460
 msgid "Update Now"
 msgstr ""
 
 #. translators: s - Pro plugin name (Neve Pro)
-#: neve/inc/admin/dashboard/main.php:449
+#: neve/inc/admin/dashboard/main.php:451
 msgid "New plugin update for %1$s! Please update to %2$s."
 msgstr ""
 
 #. translators: s - Discount Code
-#: neve/inc/admin/dashboard/main.php:468
+#: neve/inc/admin/dashboard/main.php:470
 msgid "From 3.3.0 we decided to remove the copyright component from the free version. You can continue using it if you rollback to 3.2.x or you can upgrade to pro, using a one time 50%% discount: %s"
 msgstr ""
 
 #. translators: 1 - Theme Name (Neve), 2 - Plugin Name (Neve Pro)
-#: neve/inc/admin/dashboard/main.php:480
+#: neve/inc/admin/dashboard/main.php:482
 msgid "We recommend that both %1$s and %2$s are updated to the latest version to ensure optimal intercompatibility."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:510
+#: neve/inc/admin/dashboard/main.php:512
 #: neve/assets/apps/customizer-controls/build/controls.js:5
 msgid "Upload Logo"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:514
+#: neve/inc/admin/dashboard/main.php:516
 msgid "Set Colors"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:518
+#: neve/inc/admin/dashboard/main.php:520
 msgid "Customize Fonts"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:522
+#: neve/inc/admin/dashboard/main.php:524
 msgid "Layout Options"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:526
+#: neve/inc/admin/dashboard/main.php:528
 msgid "Header Options"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:530
+#: neve/inc/admin/dashboard/main.php:532
 msgid "Blog Layouts"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:534
+#: neve/inc/admin/dashboard/main.php:536
 msgid "Footer Options"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:538
+#: neve/inc/admin/dashboard/main.php:540
 #: neve/inc/customizer/options/layout_sidebar.php:87
 msgid "Content / Sidebar"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:564
+#: neve/inc/admin/dashboard/main.php:566
 msgid "Header/Footer builder"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:565
+#: neve/inc/admin/dashboard/main.php:567
 msgid "Easily build your header and footer by dragging and dropping all the important elements in the real-time WordPress Customizer. More advanced options are available in PRO."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:570
+#: neve/inc/admin/dashboard/main.php:572
 msgid "Page Builder Compatibility"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:571
+#: neve/inc/admin/dashboard/main.php:573
 msgid "Neve is fully compatible with Gutenberg, the new WordPress editor and for all of you page builder fans, Neve has full compatibility with Elementor, Beaver Builder, and all the other popular page builders."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:576
+#: neve/inc/admin/dashboard/main.php:578
 #: neve/inc/core/front_end.php:523
 msgid "Header Booster"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:577
+#: neve/inc/admin/dashboard/main.php:579
 msgid "Take the header builder to a new level with new awesome components: socials, contact, breadcrumbs, language switcher, multiple HTML, sticky and transparent menu, page header builder and many more."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:582
+#: neve/inc/admin/dashboard/main.php:584
 msgid "Page Header Builder"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:583
+#: neve/inc/admin/dashboard/main.php:585
 msgid "The Page Header is the horizontal area that sits directly below the header and contains the page/post title. Easily design an attractive Page Header area using our dedicated builder."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:589
+#: neve/inc/admin/dashboard/main.php:591
 msgid "Powerful Custom Layouts builder which allows you to easily create your own header, footer or custom content on any of the hook locations available in the theme."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:594
+#: neve/inc/admin/dashboard/main.php:596
 #: neve/inc/core/front_end.php:524
 msgid "Blog Booster"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:595
+#: neve/inc/admin/dashboard/main.php:597
 msgid "Give a huge boost to your entire blogging experience with features specially designed for increased user experience."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:595
+#: neve/inc/admin/dashboard/main.php:597
 msgid "Sharing, custom article sorting, comments integrations, number of minutes needed to read an article and many more."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:600
+#: neve/inc/admin/dashboard/main.php:602
 #: neve/inc/core/front_end.php:529
 msgid "Elementor Booster"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:601
+#: neve/inc/admin/dashboard/main.php:603
 #: neve/inc/core/front_end.php:532
 msgid "Leverage the true flexibility of Elementor with powerful addons and templates that you can import with just one click."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:606
+#: neve/inc/admin/dashboard/main.php:608
 #: neve/inc/core/front_end.php:525
 #: neve/assets/apps/dashboard/build/dashboard.js:2
 msgid "WooCommerce Booster"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:607
+#: neve/inc/admin/dashboard/main.php:609
 #: neve/assets/apps/dashboard/build/dashboard.js:2
 msgid "Empower your online store with awesome new features, specially designed for a smooth WooCommerce integration."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:607
+#: neve/inc/admin/dashboard/main.php:609
 msgid "Wishlist, quick view, video products, advanced reviews, multiple dedicated layouts and many more."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:612
+#: neve/inc/admin/dashboard/main.php:614
 msgid "LifterLMS Booster"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:613
+#: neve/inc/admin/dashboard/main.php:615
 msgid "Make your LifterLMS pages look stunning with our PRO design options. Specially created to help you set up your online courses with minimum customizations."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:618
+#: neve/inc/admin/dashboard/main.php:620
 msgid "Typekit(Adobe) Fonts"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:619
+#: neve/inc/admin/dashboard/main.php:621
 msgid "The module allows for an easy way of enabling new awesome Adobe (previous Typekit) Fonts in Neve's Typography options."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:624
+#: neve/inc/admin/dashboard/main.php:626
 msgid "White Label"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:625
+#: neve/inc/admin/dashboard/main.php:627
 msgid "For any developer or agency out there building websites for their own clients, we've made it easy to present the theme as your own."
 msgstr ""
 
 #. translators: Module name for the upsell.
-#: neve/inc/admin/dashboard/main.php:630
+#: neve/inc/admin/dashboard/main.php:632
 #: neve/inc/customizer/options/upsells.php:426
 #: neve/inc/customizer/options/upsells.php:459
 msgid "Scroll To Top"
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:631
+#: neve/inc/admin/dashboard/main.php:633
 msgid "Simple but effective module to help you navigate back to the top of the really long pages."
 msgstr ""
 
-#: neve/inc/admin/dashboard/main.php:636
+#: neve/inc/admin/dashboard/main.php:638
 msgid "See all PRO features"
 msgstr ""
 

@@ -258,7 +258,7 @@ $options = [
 															'label' => __('Image Size', 'blocksy'),
 															'type' => 'text',
 															'value' => 500,
-															'design' => 'inline',
+															'design' => 'block',
 															'setting' => [
 																'type' => 'option',
 																'capability' => 'manage_woocommerce',
@@ -278,7 +278,7 @@ $options = [
 													'type' => 'ct-select',
 													'value' => 'none',
 													'view' => 'text',
-													'design' => 'inline',
+													'design' => 'block',
 													'setting' => [ 'transport' => 'postMessage' ],
 													'choices' => blocksy_ordered_keys(
 														[
@@ -332,11 +332,11 @@ $options = [
 										'label' => __('Title', 'blocksy'),
 										'options' => [
 											'heading_tag' => [
-												'label' => __('Heading tag', 'blocksy'),
+												'label' => __('Heading Tag', 'blocksy'),
 												'type' => 'ct-select',
 												'value' => 'h2',
 												'view' => 'text',
-												'design' => 'inline',
+												'design' => 'block',
 												'choices' => blocksy_ordered_keys(
 													[
 														'h1' => 'H1',
@@ -410,7 +410,7 @@ $options = [
 												'label' => __( 'Style', 'blocksy' ),
 												'type' => 'ct-select',
 												'value' => 'simple',
-												'design' => 'inline',
+												'design' => 'block',
 												'view' => 'text',
 												'choices' => blocksy_ordered_keys(
 													[
@@ -471,6 +471,14 @@ $options = [
 											'shop_cards_type' => 'type-1'
 										],
 										'options' => [
+
+											'auto_hide_button' => [
+												'label' => __( 'Auto Hide', 'blocksy' ),
+												'type' => 'ct-switch',
+												'value' => 'yes',
+												'setting' => [ 'transport' => 'postMessage' ],
+												'desc' => __( 'Automatically hide "Add to cart" button after adding the product to cart.', 'blocksy' ),
+											],
 
 											'spacing' => [
 												'label' => __( 'Bottom Spacing', 'blocksy' ),

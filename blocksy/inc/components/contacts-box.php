@@ -81,7 +81,7 @@ if (! function_exists('blc_get_contacts_output')) {
 				<?php if (! $single_layer['enabled']) { continue; }?>
 				<li>
 					<?php
-						$link = blocksy_akg('link', $single_layer, '');
+						$link = esc_attr(blocksy_akg('link', $single_layer, ''));
 
 						$content = do_shortcode(blocksy_akg('content', $single_layer, ''));
 

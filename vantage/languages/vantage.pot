@@ -1114,36 +1114,36 @@ msgstr ""
 msgid "There are a lot of widgets bundled with Page Builder. You can use them to bring your pages to life."
 msgstr ""
 
-#: inc/panels.php:160
+#: inc/panels.php:172
+msgid "Vantage Widgets"
+msgstr ""
+
+#: inc/panels.php:238
 msgid "Wide Grey"
 msgstr ""
 
-#: inc/panels.php:208
+#: inc/panels.php:284
 msgid "Top Border Color"
 msgstr ""
 
-#: inc/panels.php:215
+#: inc/panels.php:291
 msgid "Bottom Border Color"
 msgstr ""
 
-#: inc/panels.php:222
+#: inc/panels.php:298
 msgid "Background Color"
 msgstr ""
 
-#: inc/panels.php:229
+#: inc/panels.php:305
 msgid "Background Image URL"
 msgstr ""
 
-#: inc/panels.php:236
+#: inc/panels.php:312
 msgid "Repeat Background Image"
 msgstr ""
 
-#: inc/panels.php:243
+#: inc/panels.php:319
 msgid "No Bottom Margin"
-msgstr ""
-
-#: inc/panels.php:332
-msgid "Vantage Widgets"
 msgstr ""
 
 #: inc/settings.php:18

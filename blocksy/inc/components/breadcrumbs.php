@@ -644,8 +644,30 @@ class BreadcrumbsBuilder {
 			'style' => ''
 		]);
 
+		$available_sources = [];
+
+		if (function_exists('rank_math_the_breadcrumbs')) {
+			$available_sources[] = 'rankmath';
+		}
+
+		if (function_exists('yoast_breadcrumb')) {
+			$available_sources[] = 'yoast';
+		}
+
+		if (function_exists('seopress_display_breadcrumbs')) {
+			$available_sources[] = 'seopress';
+		}
+
+		if (function_exists('bcn_display')) {
+			$available_sources[] = 'bcnxt';
+		}
+
 		$source = blocksy_get_theme_mod('breadcrumbs_source', 'default');
 
+		if (! in_array($source, $available_sources)) {
+			$source = 'default';
+		}
+		
 		$class = 'ct-breadcrumbs';
 
 		if (! empty($args['class'])) {

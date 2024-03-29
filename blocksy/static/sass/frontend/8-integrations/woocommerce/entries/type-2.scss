@@ -26,9 +26,10 @@
 	}
 
 	.ct-woo-card-actions {
-		display: grid;
-		grid-auto-columns: 1fr;
-		grid-auto-flow: column;
+		// display: flex;
+		// display: grid;
+		// grid-auto-columns: 1fr;
+		// grid-auto-flow: column;
 		align-items: center;
 		border-block: 1px solid rgba(0, 0, 0, 0.05);
 
@@ -42,6 +43,7 @@
 		}
 
 		> * {
+			flex: 1 0 0;
 			padding: 5px;
 			min-height: 55px;
 		}
@@ -67,7 +69,8 @@
 			}
 		}
 
-		.button {
+		.button, 
+		.added_to_cart {
 			border: none;
 			background-color: transparent;
 		}

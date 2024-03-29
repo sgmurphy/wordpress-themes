@@ -1,6 +1,5 @@
 <?php
 
-// gallery width
 $productGalleryWidth = blocksy_get_theme_mod( 'productGalleryWidth', 50 );
 
 if ($productGalleryWidth !== 50) {
@@ -10,8 +9,19 @@ if ($productGalleryWidth !== 50) {
 	);
 }
 
+blocksy_output_spacing([
+	'css' => $css,
+	'tablet_css' => $tablet_css,
+	'mobile_css' => $mobile_css,
+	'selector' => '.product-entry-wrapper',
+	'property' => 'border-radius',
+	'value' => blocksy_get_theme_mod('product_image_border_radius',
+		blocksy_spacing_value()
+	)
+]);
 
-// thumbnails spacing
+
+// thumbnails
 $product_thumbs_spacing = blocksy_get_theme_mod( 'product_thumbs_spacing', '15px' );
 
 if ($product_thumbs_spacing !== '15px') {
@@ -25,6 +35,17 @@ if ($product_thumbs_spacing !== '15px') {
 		'value' => $product_thumbs_spacing
 	]);
 }
+
+blocksy_output_spacing([
+	'css' => $css,
+	'tablet_css' => $tablet_css,
+	'mobile_css' => $mobile_css,
+	'selector' => '.woocommerce-product-gallery .flexy-pills',
+	'property' => 'border-radius',
+	'value' => blocksy_get_theme_mod('product_thumbs_border_radius',
+		blocksy_spacing_value()
+	)
+]);
 
 
 // slider arrows

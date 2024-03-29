@@ -1,4 +1,5 @@
 .product_list_widget {
+
 	li {
 		display: grid;
 		grid-template-columns: 20% 1fr;
@@ -52,14 +53,14 @@
 	}
 
 	.quantity {
-		--quantity-height: 40px;
+		--quantity-height: 35px;
 	}
 
 	.quantity[data-type="type-1"] {
-		--quantity-width: 70px;
+		--quantity-width: 60px;
 	}
 
 	.quantity[data-type="type-2"] {
-		--quantity-width: 100px;
+		--quantity-width: 80px;
 	}
 }

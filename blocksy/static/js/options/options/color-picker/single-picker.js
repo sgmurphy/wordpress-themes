@@ -17,6 +17,35 @@ import { getComputedStyleValue } from './utils'
 
 import OutsideClickHandler from '../react-outside-click-handler'
 
+const computePickerTitle = ({ picker, value, values }) => {
+	if ((value || { color: '' }).color.indexOf('INHERIT') > -1) {
+		return __('Inherited', 'blocksy')
+	}
+
+	if (picker.title !== picker.title.toString()) {
+		return (
+			Object.keys(picker.title).reduce((approvedTitle, currentTitle) => {
+				if (approvedTitle) {
+					return approvedTitle
+				}
+
+				if (
+					matchValuesWithCondition(
+						normalizeCondition(picker.title[currentTitle]),
+						values
+					)
+				) {
+					return currentTitle
+				}
+
+				return approvedTitle
+			}, null) || Object.keys(picker.title)[0]
+		)
+	}
+
+	return picker.title
+}
+
 const resolveInherit = (picker, option, values, device) => {
 	if (typeof picker.inherit === 'string') {
 		if (picker.inherit.indexOf('self') > -1) {
@@ -289,9 +318,7 @@ const SinglePicker = ({
 							  }
 					}>
 					<i className="ct-tooltip">
-						{(value || { color: '' }).color.indexOf('INHERIT') > -1
-							? __('Inherited', 'blocksy')
-							: picker.title}
+						{computePickerTitle({ picker, value, values })}
 					</i>
 
 					{(value || { color: '' }).color.indexOf('INHERIT') > -1 && (

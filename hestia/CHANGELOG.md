@@ -1,3 +1,13 @@
+##### [Version 3.1.6](https://github.com/Codeinwp/hestia-pro/compare/v3.1.5...v3.1.6) (2024-03-29)
+
+### Fixes
+- Updated internal dependencies
+
+##### [Version 3.1.5](https://github.com/Codeinwp/hestia-pro/compare/v3.1.4...v3.1.5) (2024-03-28)
+
+### Improvements
+- Updated internal dependencies
+
 ##### [Version 3.1.4](https://github.com/Codeinwp/hestia-pro/compare/v3.1.3...v3.1.4) (2024-02-27)
 
 ### Bug Fixes

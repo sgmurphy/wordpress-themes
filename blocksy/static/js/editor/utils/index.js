@@ -9,11 +9,11 @@ export const getAttributesFromOptions = (options) => {
 			type = 'number'
 		}
 
-		if (blocksyType === 'ct-image-uploader') {
-			type = 'object'
-		}
-
-		if (blocksyType === 'ct-checkboxes') {
+		if (
+			blocksyType === 'ct-visibility' ||
+			blocksyType === 'ct-checkboxes' ||
+			blocksyType === 'ct-image-uploader'
+		) {
 			type = 'object'
 		}
 

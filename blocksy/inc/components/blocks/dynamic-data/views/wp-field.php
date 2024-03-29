@@ -68,6 +68,9 @@ if ($field === 'wp:title') {
 }
 
 if ($field === 'wp:excerpt') {
+	if (blocksy_akg('tagName', $attributes, 'div') === 'p') {
+		remove_filter('the_excerpt', 'wpautop');
+	}
 	$value = blocksy_entry_excerpt([
 		'length' => intval(blocksy_akg('excerpt_length', $attributes, 40)),
 		'skip_container' => true
@@ -76,6 +79,9 @@ if ($field === 'wp:excerpt') {
 	if (empty($value) && ! empty($value_fallback)) {
 		$has_fallback = true;
 		$value = do_shortcode($value_fallback);
+	}
+	if (blocksy_akg('tagName', $attributes, 'div') === 'p') {
+		add_filter('the_excerpt', 'wpautop');
 	}
 }
 

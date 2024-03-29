@@ -352,6 +352,10 @@ class Blocksy_Screen_Manager {
 			$actual_prefix = 'ct_size_guide_single';
 		}
 
+		if (get_post_type() === 'ct_thank_you_page') {
+			$actual_prefix = 'ct_thank_you_page_single';
+		}
+
 		if (function_exists('is_product_category') && ! is_author()) {
 			$tax_obj = get_queried_object();
 

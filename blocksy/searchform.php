@@ -273,7 +273,7 @@ $button_html_atts = array_merge(
 			echo blocksy_html_tag(
 				'select',
 				[
-					'class' => 'ct-select-taxonomy',
+					'class' => 'ct-select-taxonomy' . (! empty(trim($taxonomy_filter_visibility) ) ? $taxonomy_filter_visibility : ''),
 					'name' => 'ct_tax_query',
 					'aria-label' => __('Search in category', 'blocksy')
 				],

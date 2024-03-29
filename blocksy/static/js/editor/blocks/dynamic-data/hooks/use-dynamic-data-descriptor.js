@@ -66,6 +66,11 @@ const wpFields = () => {
 							id: 'archive_description',
 							label: __('Archive Description', 'blocksy'),
 						},
+
+						{
+							id: 'archive_image',
+							label: __('Archive Image', 'blocksy'),
+						},
 				  ]
 				: []),
 		],

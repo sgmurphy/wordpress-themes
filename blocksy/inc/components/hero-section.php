@@ -53,6 +53,11 @@ if (! function_exists('blocksy_get_page_title_source')) {
 			return $result;
 		}
 
+		if ($prefix === 'ct_thank_you_page_single') {
+			$result = false;
+			return $result;
+		}
+
 		if ($prefix === 'jet-woo-builder_single') {
 			$result = false;
 			return $result;

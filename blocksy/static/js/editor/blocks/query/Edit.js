@@ -178,7 +178,7 @@ const Edit = ({
 										label: __('Limit', 'blocksy'),
 										value: '',
 										min: 1,
-										max: 30,
+										max: 100,
 									},
 
 									has_pagination: {

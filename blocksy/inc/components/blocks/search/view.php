@@ -66,18 +66,6 @@ if (function_exists('blc_get_icon') && isset($atts['icon'])) {
 	]);
 }
 
-$taxonomy_filter_visibility = blocksy_visibility_classes(
-	blocksy_akg(
-		'taxonomy_filter_visibility',
-		$atts,
-		[
-			'desktop' => true,
-			'tablet' => true,
-			'mobile' => false,
-		]
-	)
-);
-
 $colors = [
 	'--theme-form-text-initial-color' => blocksy_default_akg('customInputFontColor', $atts, ''),
 	'--theme-form-text-focus-color' => blocksy_default_akg('customInputFontFocusColor', $atts, ''),
@@ -275,11 +263,15 @@ foreach ($button_colors as $key => $value) {
 				'has_taxonomy_filter' => blocksy_akg('has_taxonomy_filter', $atts, 'no') === 'yes',
 				'has_taxonomy_children' => blocksy_akg('has_taxonomy_children', $atts, 'no') === 'yes',
 				'taxonomy_filter_label' => blocksy_akg('taxonomy_filter_label', $atts, __('Select Category', 'blocksy')),
-				'taxonomy_filter_visibility' => blocksy_akg('taxonomy_filter_visibility', $atts, [
-					'desktop' => true,
-					'tablet' => true,
-					'mobile' => false,
-				]),
+				'taxonomy_filter_visibility' => blocksy_akg(
+					'taxonomy_filter_visibility',
+					$atts,
+					[
+						'desktop' => true,
+						'tablet' => true,
+						'mobile' => false,
+					]
+				),
 				'icon' => $buttonUseText ? blocksy_html_tag(
 					'span',
 					[

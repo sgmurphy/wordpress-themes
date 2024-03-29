@@ -113,6 +113,10 @@ const WpFieldPreview = (props) => {
 		return <AvatarPreview {...props} />
 	}
 
+	if (fieldDescriptor.id === 'archive_image') {
+		return <ImagePreview {...props} />
+	}
+
 	return <TextField {...props} />
 }
 
