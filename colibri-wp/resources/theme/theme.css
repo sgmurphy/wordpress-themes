@@ -7344,12 +7344,69 @@ hr + h2:before {
   min-width: 0 !important;
 }
 
+.wp-block-woocommerce-price-filter {
+  --colibri-primary-color: #03a9f4;
+}
+
+.wp-block-woocommerce-price-filter .wc-block-components-price-slider__range-input-wrapper {
+  background: #ededed;
+}
+
+.wp-block-woocommerce-price-filter .wc-block-components-price-slider__range-input {
+  height: 0px !important;
+  line-height: 1.65em !important;
+}
+
+.wp-block-woocommerce-price-filter .wc-block-components-price-slider__range-input::-webkit-slider-thumb {
+  background: var(--colibri-primary-color) !important;
+  border-color: var(--colibri-primary-color) !important;
+}
+
+.wp-block-woocommerce-price-filter .wc-block-components-price-slider__range-input:focus::-webkit-slider-thumb {
+  background: #1e1e1e !important;
+  border-color: #1e1e1e !important;
+}
+
+.wp-block-woocommerce-price-filter .wc-block-components-price-slider__range-input-progress {
+  color: var(--colibri-primary-color);
+  --track-background: linear-gradient(to right,transparent var(--low),var(--range-color) 0,var(--range-color) var(--high),transparent 0) no-repeat 0 100% /100% 100%;
+  --range-color: currentColor;
+  background: var(--track-background);
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.wp-block-woocommerce-price-filter .wc-block-components-filter-reset-button {
+  color: var(--colibri-primary-color);
+}
+
 .woocommerce-page .content .h-section .widget_price_filter .price_slider_amount button.button {
   padding: 0.35rem 1.2rem !important;
 }
 
 .widget.widget_product_search button[type="submit"] {
   display: none;
+}
+
+.woocommerce .widget_search {
+  border: none !important;
+}
+
+.woocommerce .widget_search .wp-block-search__button-outside .wp-block-search__label {
+  margin-bottom: 10px;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.woocommerce .widget_search .wp-block-search__button-outside .wp-block-search__inside-wrapper .wp-block-search__input {
+  background: white !important;
+}
+
+.woocommerce .widget_search .wp-block-search__button-outside .wp-block-search__inside-wrapper .wp-block-search__button {
+  display: none !important;
 }
 
 @media screen and (max-width: 767px) {
@@ -7486,6 +7543,20 @@ hr + h2:before {
 .h-widget-area .widget_text,
 .shortcode-widget-area .widget_text {
   list-style-position: inside;
+}
+
+.h-widget-area .wc-block-components-price-slider__controls:after,
+.h-widget-area .wc-block-components-price-slider__controls:before,
+.shortcode-widget-area .wc-block-components-price-slider__controls:after,
+.shortcode-widget-area .wc-block-components-price-slider__controls:before {
+  display: none !important;
+}
+
+.h-widget-area .wc-block-components-price-slider__actions:before,
+.h-widget-area .wc-block-components-price-slider__actions:after,
+.shortcode-widget-area .wc-block-components-price-slider__actions:before,
+.shortcode-widget-area .wc-block-components-price-slider__actions:after {
+  display: none;
 }
 
 .colibri_search_input {
