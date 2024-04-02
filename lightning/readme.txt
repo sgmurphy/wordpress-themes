@@ -1,8 +1,8 @@
 === Lightning ===
 Lightning WordPress theme, Copyright (C) 2015-2023 Vektor,Inc.
 Lightning WordPress theme is licensed under the GPL.
-Tested up to: 6.4
-Stable tag: 15.20.2
+Tested up to: 6.5
+Stable tag: 15.21.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,11 @@ https://www.vektor-inc.co.jp/inquiry/
 
 
 == Changelog ==
+
+v15.21.0
+[ G3 ][ 6.5 ] Attend to aspectRatio
+[ G3 ][ 6.5 ] Attend to backgroundSize
+[ G3 / G2 ] Allow using CSS level 4 viewport-relative units
 
 v15.20.2
 [ G3 ][ Design Bug Fix ][ OriginIII ] Fixed margin-bottom of vk_button does not work if vk_button is adjacent within an element of .is-layout-flow or .is-layout-constrained.
