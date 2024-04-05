@@ -53,6 +53,18 @@
 			text-decoration: none;
 		}
 	}
+
+	// product brands
+	.ct-product-brands {
+		display: inline-flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: var(--product-brands-gap, 10px);
+
+		.ct-product-brand {
+			width: var(--product-brand-logo-size, 100px);
+		}
+	}
 }
 
 // dynamic media

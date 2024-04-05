@@ -49,14 +49,14 @@ function blocksy_template_loop_product_thumbnail($attr) {
 			if (! in_array($variation_main_image, $gallery_images)) {
 				$gallery_images[0] = $variation_main_image;
 			}
-	
+
 			$gallery_images = array_merge(
 				[$variation_main_image],
 				array_diff($gallery_images, [$variation_main_image])
 			);
 		}
 	}
-	
+
 	$hover_value = blocksy_akg('product_image_hover', $attr, 'none');
 
 	$has_archive_video_thumbnail = blocksy_akg(
@@ -104,14 +104,18 @@ function blocksy_template_loop_product_thumbnail($attr) {
 		'post_id' => $product->get_id(),
 		'other_images' => $maybe_other_images,
 		'size' => 'woocommerce_archive_thumbnail',
-		'ratio' => blocksy_get_woocommerce_ratio([
-			'key' => 'archive_thumbnail',
-			'cropping' => blocksy_akg(
-				'blocksy_woocommerce_archive_thumbnail_cropping',
-				$attr,
-				'predefined'
-			)
-		]),
+		'ratio' => apply_filters(
+			'blocksy:woocommerce:product-card:thumbnail:ratio',
+			blocksy_get_woocommerce_ratio([
+				'key' => 'archive_thumbnail',
+				'cropping' => blocksy_akg(
+					'blocksy_woocommerce_archive_thumbnail_cropping',
+					$attr,
+					'predefined'
+				)
+			]),
+			$product->get_id()
+		),
 		'tag_name' => 'a',
 		'html_atts' => $html_atts,
 		'display_video' => $has_archive_video_thumbnail === 'yes',
@@ -264,7 +268,7 @@ add_action($action_to_hook, function () {
 				$render_layout_config,
 				$default_product_layout
 			);
-			
+
 			foreach ($render_layout_config as $layout) {
 				if (! $layout['enabled'] ) {
 					continue;
@@ -464,7 +468,7 @@ add_action($action_to_hook, function () {
 							]),
 							'tag_name' => 'a',
 							'html_atts' => [
-								'href' => get_term_link( $category, 'product_cat' ),
+								'href' => get_term_link($category, 'product_cat'),
 							],
 							'lazyload' => $has_lazy_load_shop_card_image === 'yes',
 							'class' => $hover_value !== 'none' ? 'has-hover-effect' : '',

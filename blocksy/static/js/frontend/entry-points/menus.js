@@ -3,41 +3,21 @@ import { getCurrentScreen } from '../helpers/current-screen'
 
 const loadMenuEntry = () => import('../header/menu')
 
+const onlyWithSubmenus = (menu) =>
+	menu.querySelector('.menu-item-has-children') ||
+	menu.querySelector('.page_item_has_children')
+
 export const menuEntryPoints = [
 	{
-		els: () => ['header [data-device="desktop"] [data-id*="menu"] > .menu'],
-		condition: () => getCurrentScreen() === 'desktop',
-		load: loadMenuEntry,
-		onLoad: false,
-		mount: ({ el, mountMenuLevel }) =>
-			mountMenuLevel(el, { startPosition: 'left' }),
-		events: ['ct:general:device-change', 'ct:header:init-popper'],
-	},
-
-	{
-		els: () => ['.ct-header-account > ul'],
-		// TODO: dont load JS if header account doesn't have any menu
-		// condition: () =>
-		load: loadMenuEntry,
-		onLoad: false,
-		mount: ({ el, mountMenuLevel }) =>
-			mountMenuLevel(el, {
-				startPosition: 'left',
-				checkForFirstLevel: false,
-			}),
-		events: ['ct:general:device-change', 'ct:header:init-popper'],
-	},
-
-	{
-		els: () => [
-			'header [data-device="desktop"] [data-id*="menu"] > .menu .menu-item-has-children',
-			'header [data-device="desktop"] [data-id*="menu"] > .menu .page_item_has_children',
-		],
-		load: loadMenuEntry,
-		mount: ({ handleUpdate, el }) => handleUpdate(el),
-		onLoad: false,
-		events: ['ct:general:device-change', 'ct:header:init-popper'],
-		condition: ({ allEls }) => getCurrentScreen() === 'desktop',
+		els: () =>
+			[
+				...document.querySelectorAll(
+					'header [data-device="desktop"] [data-id*="menu"] > .menu'
+				),
+				...document.querySelectorAll('.ct-header-account > ul'),
+			].filter((menu) => onlyWithSubmenus(menu)),
+		load: () => import('../header/sub-menu-open-logic'),
+		events: ['ct:header:refresh-menu-submenus'],
 	},
 
 	{
@@ -46,142 +26,61 @@ export const menuEntryPoints = [
 				'header [data-device="desktop"] [data-id^="menu"][data-responsive]'
 			),
 		],
-		// load: () => new Promise((r) => r({ mount: mountResponsiveHeader })),
 		load: () => import('../header/responsive-desktop-menu'),
-		// onLoad: false,
-		events: ['ct:general:device-change'],
 		condition: () => {
 			if (getCurrentScreen() !== 'desktop') {
 				return false
 			}
 
-			let allResults = [
+			return [
 				...document.querySelectorAll(
 					'header [data-device="desktop"] [data-id^="menu"][data-responsive]'
 				),
-			].map((menu) => {
-				// true - no enough space
-				// false enough space
+			].some((menu) => {
+				const menuRect = menu.firstElementChild.getBoundingClientRect()
 
-				if (
-					window.blocksyResponsiveMenuCache &&
-					window.blocksyResponsiveMenuCache[menu.id] &&
-					window.blocksyResponsiveMenuCache[menu.id].enabled
-				) {
-					return window.blocksyResponsiveMenuCache[menu.id].enabled
-				}
+				const allEls = [
+					...menu
+						.closest('[data-row]')
+						.querySelectorAll('[data-items] > [data-id]'),
+				]
+					.filter((el) => el !== menu)
+					.filter((el) => {
+						const elRect = el.getBoundingClientRect()
 
-				if (!menu.firstElementChild) {
-					if (!window.blocksyResponsiveMenuCache) {
-						window.blocksyResponsiveMenuCache = {}
-					}
+						const intersectsLeftEdge =
+							elRect.left < menuRect.left &&
+							elRect.right > menuRect.left
 
-					window.blocksyResponsiveMenuCache = {
-						...window.blocksyResponsiveMenuCache,
-						[menu.id]: {
-							enabled: false,
-						},
-					}
+						const intersectsRightEdge =
+							elRect.right > menuRect.right &&
+							elRect.left < menuRect.right
 
-					return false
-				}
-
-				let baseContainer = menu.closest('[class*="ct-container"]')
-
-				let hasResponsive =
-					baseContainer.getBoundingClientRect().width -
-						[
-							...baseContainer.querySelectorAll(
-								'[data-items] > [data-id]:not([data-id*="menu"])'
-							),
-						].reduce((t, item) => {
-							let style = window.getComputedStyle(item)
-
-							return (
-								t +
-								item.getBoundingClientRect().width +
-								parseInt(
-									style.getPropertyValue('margin-left')
-								) +
-								parseInt(style.getPropertyValue('margin-right'))
-							)
-						}, 0) <
-					[
-						...baseContainer.querySelectorAll(
-							'[data-id*="menu"] > * > *'
-						),
-					].reduce((t, el) => {
-						let style = window.getComputedStyle(
-							el.closest('[data-id*="menu"]')
-						)
-
-						let extraWidth = 0
-
-						let parentComputedStyle = window.getComputedStyle(
-							el.parentNode,
-							null
-						)
-
-						if (parentComputedStyle.gap !== 'normal') {
-							extraWidth = parseFloat(parentComputedStyle.gap)
-
-							if (
-								el.parentNode.firstElementChild === el ||
-								el === el.parentNode.lastElementChild
-							) {
-								extraWidth = extraWidth / 2
-							}
-						}
+						const isInside =
+							elRect.left > menuRect.left &&
+							elRect.right < menuRect.right
 
 						return (
-							t +
-							el.getBoundingClientRect().width +
-							parseInt(style.getPropertyValue('margin-left')) +
-							parseInt(style.getPropertyValue('margin-right')) +
-							extraWidth
+							intersectsLeftEdge ||
+							intersectsRightEdge ||
+							isInside
 						)
-					}, 0)
+					})
 
-				if (!hasResponsive) {
-					let hadResponsive = menu.dataset.responsive
+				const parentRect = menu.parentElement.getBoundingClientRect()
+
+				const fitsLeftSide = menuRect.left > parentRect.left
+				const fitsRightSide = menuRect.right < parentRect.right
+
+				const fits =
+					fitsLeftSide && fitsRightSide && allEls.length === 0
+
+				if (fits) {
 					menu.dataset.responsive = 'yes'
-
-					if (hadResponsive === 'no') {
-						ctEvents.trigger('ct:header:init-popper')
-					}
 				}
 
-				if (!window.blocksyResponsiveMenuCache) {
-					window.blocksyResponsiveMenuCache = {}
-				}
-
-				window.blocksyResponsiveMenuCache = {
-					...window.blocksyResponsiveMenuCache,
-					[menu.id]: {
-						enabled: hasResponsive,
-					},
-				}
-
-				return hasResponsive
+				return !fits
 			})
-
-			let finalRes = allResults.filter((r) => !!r).length > 0
-			return finalRes
 		},
-	},
-
-	{
-		els: () => [
-			'header [data-device="desktop"] [data-id^="menu"]:not([data-responsive])',
-			'.ct-header-account > ul',
-		],
-		load: () =>
-			new Promise((r) =>
-				r({
-					mount: (el) => {
-						ctEvents.trigger('ct:header:init-popper')
-					},
-				})
-			),
 	},
 ]

@@ -206,7 +206,7 @@ export const mount = (nav) => {
 		}
 
 		resetSubmenus()
-		ctEvents.trigger('ct:header:init-popper')
+		ctEvents.trigger('ct:header:refresh-menu-submenus')
 
 		return
 	}
@@ -255,7 +255,7 @@ export const mount = (nav) => {
 		})
 
 		resetSubmenus()
-		ctEvents.trigger('ct:header:init-popper')
+		ctEvents.trigger('ct:header:refresh-menu-submenus')
 	})
 }
 

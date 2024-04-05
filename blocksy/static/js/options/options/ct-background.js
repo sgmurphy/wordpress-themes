@@ -119,7 +119,7 @@ const Background = ({ option, value, onChange }) => {
 				style={{
 					...(value.backgroundColor.default.color.indexOf(
 						'CT_CSS_SKIP_RULE'
-					) > -1
+					) > -1 || value.background_type === 'gradient'
 						? {}
 						: {
 								backgroundColor:

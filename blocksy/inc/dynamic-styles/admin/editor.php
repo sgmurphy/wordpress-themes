@@ -1,5 +1,6 @@
 <?php
 
+
 if (! isset($only_background)) {
 	$only_background = false;
 }
@@ -21,6 +22,7 @@ $page_structure = blocksy_default_akg(
 	$post_atts,
 	'default'
 );
+
 
 if ($page_structure === 'default') {
 	$page_structure = blocksy_get_theme_mod(
@@ -76,43 +78,12 @@ if (blocksy_default_akg(
 	];
 }
 
+
 $has_boxed = blocksy_akg_or_customizer(
 	'content_style',
 	$source,
 	blocksy_get_content_style_default($prefix)
 );
-
-blocksy_output_responsive([
-	'css' => $css,
-	'tablet_css' => $tablet_css,
-	'mobile_css' => $mobile_css,
-	'selector' => ":root",
-	'variableName' => 'has-boxed',
-	'value' => blocksy_map_values([
-		'value' => $has_boxed,
-		'map' => [
-			'boxed' => 'var(--true)',
-			'wide' => 'var(--false)'
-		]
-	]),
-	'unit' => ''
-]);
-
-blocksy_output_responsive([
-	'css' => $css,
-	'tablet_css' => $tablet_css,
-	'mobile_css' => $mobile_css,
-	'selector' => ":root",
-	'variableName' => 'has-wide',
-	'value' => blocksy_map_values([
-		'value' => $has_boxed,
-		'map' => [
-			'wide' => 'var(--true)',
-			'boxed' => 'var(--false)'
-		]
-	]),
-	'unit' => ''
-]);
 
 if ($post_type === 'ct_content_block') {
 	$template_type = get_post_meta($post_id, 'template_type', true);
@@ -129,7 +100,11 @@ if ($post_type === 'ct_content_block') {
 		$default_content_block_structure
 	);
 
-	if ($has_content_block_structure !== 'yes') {
+	if (
+		$has_content_block_structure !== 'yes'
+		&&
+		$template_type !== 'popup'
+	) {
 		return;
 	}
 }
@@ -208,35 +183,34 @@ if (
 
 $background_source = blocksy_expand_responsive_value($background_source);
 
-blocksy_output_background_css([
-	'selector' => '.edit-post-visual-editor__content-area > .is-desktop-preview',
-	'css' => $css,
-	'value' => $background_source['desktop'],
-	'responsive' => false,
-	'important' => true
-]);
+global $wp_version;
 
-blocksy_output_background_css([
-	'selector' => '.edit-post-visual-editor__content-area > .is-tablet-preview',
-	'css' => $css,
-	'value' => $background_source['tablet'],
-	'responsive' => false,
-	'important' => true
-]);
+$is_65_wordpress = version_compare($wp_version, '6.5', '>=');
 
-blocksy_output_background_css([
-	'selector' => '.edit-post-visual-editor__content-area > .is-mobile-preview',
+$styles_file_path = 'admin/6-5-styles';
+
+if (! $is_65_wordpress) {
+	$styles_file_path = 'admin/6-4-styles';
+}
+
+blocksy_theme_get_dynamic_styles([
+	'name' => $styles_file_path,
 	'css' => $css,
-	'value' => $background_source['mobile'],
-	'responsive' => false,
-	'important' => true
+	'mobile_css' => $mobile_css,
+	'tablet_css' => $tablet_css,
+	'context' => $context,
+	'chunk' => 'admin',
+	'only_background' => $only_background,
+	'background_source' => $background_source,
+	'has_boxed' => $has_boxed,
+	'source' => $source,
 ]);
 
 if ($only_background) {
 	return;
 }
 
-
+// form styles
 $forms_type = blocksy_get_theme_mod('forms_type', 'classic-forms');
 
 if ($forms_type === 'classic-forms') {
@@ -379,135 +353,3 @@ blocksy_output_colors([
 		],
 	],
 ]);
-
-
-
-if (blocksy_some_device($has_boxed, 'boxed')) {
-	blocksy_output_background_css([
-		'selector' => ':root',
-		'css' => $css,
-		'tablet_css' => $tablet_css,
-		'mobile_css' => $mobile_css,
-		'value' => blocksy_akg_or_customizer(
-			'content_background',
-			$source,
-			blocksy_background_default_value([
-				'backgroundColor' => [
-					'default' => [
-						'color' => 'var(--theme-palette-color-8)'
-					],
-				],
-			])
-		),
-		'responsive' => true,
-		'conditional_var' => '--has-boxed'
-	]);
-
-	blocksy_output_spacing([
-		'css' => $css,
-		'tablet_css' => $tablet_css,
-		'mobile_css' => $mobile_css,
-		'selector' => ':root',
-		'property' => 'theme-boxed-content-border-radius',
-		'value' => blocksy_akg_or_customizer(
-			'content_boxed_radius',
-			$source,
-			blocksy_spacing_value([
-				'top' => '3px',
-				'left' => '3px',
-				'right' => '3px',
-				'bottom' => '3px',
-			])
-		)
-	]);
-
-	blocksy_output_border([
-		'css' => $css,
-		'tablet_css' => $tablet_css,
-		'mobile_css' => $mobile_css,
-		'selector' => ':root',
-		'variableName' => 'theme-boxed-content-border',
-		'value' => blocksy_akg_or_customizer(
-			'content_boxed_border',
-			$source,
-			[
-				'width' => 1,
-				'style' => 'none',
-				'color' => [
-					'color' => 'rgba(44,62,80,0.2)',
-				],
-			]
-		),
-		'default' => [
-			'width' => 1,
-			'style' => 'none',
-			'color' => [
-				'color' => 'rgba(44,62,80,0.2)',
-			],
-		],
-		'responsive' => true,
-		'skip_none' => true
-	]);
-
-	blocksy_output_spacing([
-		'css' => $css,
-		'tablet_css' => $tablet_css,
-		'mobile_css' => $mobile_css,
-		'selector' => ':root',
-		'property' => 'theme-boxed-content-spacing',
-		'value' => blocksy_akg_or_customizer(
-			'boxed_content_spacing',
-			$source,
-			[
-				'desktop' => blocksy_spacing_value([
-					'top' => '40px',
-					'left' => '40px',
-					'right' => '40px',
-					'bottom' => '40px',
-				]),
-				'tablet' => blocksy_spacing_value([
-					'top' => '35px',
-					'left' => '35px',
-					'right' => '35px',
-					'bottom' => '35px',
-				]),
-				'mobile'=> blocksy_spacing_value([
-					'top' => '20px',
-					'left' => '20px',
-					'right' => '20px',
-					'bottom' => '20px',
-				]),
-			]
-		)
-	]);
-
-	blocksy_output_box_shadow([
-		'css' => $css,
-		'tablet_css' => $tablet_css,
-		'mobile_css' => $mobile_css,
-		'selector' => ':root',
-		'variableName' => 'theme-boxed-content-box-shadow',
-		'value' => blocksy_akg_or_customizer(
-			'content_boxed_shadow',
-			$source,
-			blocksy_box_shadow_value([
-				'enable' => true,
-				'h_offset' => 0,
-				'v_offset' => 12,
-				'blur' => 18,
-				'spread' => -6,
-				'inset' => false,
-				'color' => [
-					'color' => 'rgba(34, 56, 101, 0.04)',
-				],
-			])
-		),
-		'responsive' => true
-	]);
-} else {
-	$css->put(
-		':root',
-		'background-color: transparent'
-	);
-}
-

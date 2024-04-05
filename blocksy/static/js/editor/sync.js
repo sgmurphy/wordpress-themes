@@ -4,6 +4,8 @@ import { updateVariableInStyleTags } from 'customizer-sync-helpers'
 import { getValueFromInput } from 'blocksy-options'
 import { gutenbergVariables } from './variables'
 
+import { dropIframeBodyTransition, revertIframeBodyTransition } from '../editor'
+
 export const handleMetaboxValueChange = (optionId, optionValue) => {
 	const atts = {
 		...getValueFromInput(
@@ -19,7 +21,10 @@ export const handleMetaboxValueChange = (optionId, optionValue) => {
 		let initialStyleTagsDescriptor = []
 		let cacheId = ''
 
-		if (optionId === 'background') {
+		const isBackground =
+			optionId === 'background' || optionId === 'popup_background'
+
+		if (isBackground) {
 			const maybeStyle = document.querySelector(
 				'#ct-main-editor-styles-inline-css'
 			)
@@ -30,7 +35,7 @@ export const handleMetaboxValueChange = (optionId, optionValue) => {
 			}
 		}
 
-		if (optionId !== 'background') {
+		if (!isBackground) {
 			cacheId = 'non-background'
 			initialStyleTagsDescriptor = [
 				{
@@ -72,6 +77,8 @@ export const handleMetaboxValueChange = (optionId, optionValue) => {
 			]
 		}
 
+		dropIframeBodyTransition()
+
 		updateVariableInStyleTags({
 			variableDescriptor: Array.isArray(gutenbergVariables[optionId])
 				? gutenbergVariables[optionId]
@@ -85,5 +92,7 @@ export const handleMetaboxValueChange = (optionId, optionValue) => {
 			cacheId,
 			initialStyleTagsDescriptor,
 		})
+
+		revertIframeBodyTransition()
 	}
 }

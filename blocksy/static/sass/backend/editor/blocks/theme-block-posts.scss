@@ -2,6 +2,7 @@
 @import '../../../../../static/sass/frontend/1-helpers/functions';
 
 
+@import '../../../../../static/sass/frontend/4-components/ratio.scss';
 @import '../../../../../static/sass/frontend/4-components/entry-meta.scss';
 @import '../../../../../static/sass/frontend/4-components/pagination.scss';
 @import '../../../../../static/sass/frontend/6-layout/entries/main.scss';
@@ -17,13 +18,6 @@
 	}
 
 	.ct-media-container {
-		position: relative;
-
-		img {
-			width: inherit;
-			max-width: 100%;
-			height: auto;
-		}
 
 		.ct-video-indicator {
 			position: absolute;

@@ -17,6 +17,7 @@ import PricePreview from './woo/PricePreview'
 import StockPreview from './woo/StockPreview'
 import RatingPreview from './woo/RatingPreview'
 import SkuPreview from './woo/SkuPreview'
+import BrandsPreview from './woo/BrandsPreview'
 
 const TextField = ({
 	fieldDescriptor,
@@ -48,6 +49,10 @@ const TextField = ({
 
 	if (fieldDescriptor.id === 'stock_status') {
 		Component = StockPreview
+	}
+
+	if (fieldDescriptor.id === 'brands') {
+		Component = BrandsPreview
 	}
 
 	if (fieldDescriptor.id === 'rating') {

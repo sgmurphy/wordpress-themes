@@ -7,7 +7,7 @@ import {
 } from '@wordpress/element'
 import { registerPlugin, withPluginContext } from '@wordpress/plugins'
 import { PluginSidebar, PluginSidebarMoreMenuItem } from '@wordpress/edit-post'
-import { withSelect, withDispatch } from '@wordpress/data'
+import { select, withSelect, withDispatch } from '@wordpress/data'
 import { compose } from '@wordpress/compose'
 import { IconButton, Button } from '@wordpress/components'
 import { handleMetaboxValueChange } from './editor/sync'
@@ -24,6 +24,68 @@ import {
 } from 'blocksy-options'
 
 import { SVG, Path } from '@wordpress/primitives'
+
+export const dropIframeBodyTransition = () => {
+	const maybeIframe = document.querySelector('iframe[name="editor-canvas"]')
+
+	if (maybeIframe) {
+		const maybeBody = maybeIframe.contentDocument.querySelector('body')
+
+		if (maybeBody) {
+			maybeBody.style.transition = 'none'
+		}
+	}
+}
+
+export const revertIframeBodyTransition = () => {
+	const maybeIframe = document.querySelector('iframe[name="editor-canvas"]')
+
+	if (maybeIframe) {
+		const maybeBody = maybeIframe.contentDocument.querySelector('body')
+
+		if (maybeBody) {
+			setTimeout(() => {
+				maybeBody.removeAttribute('style')
+			}, 100)
+		}
+	}
+}
+
+const setResponsiveClass = () => {
+	let device = 'Desktop'
+
+	if (
+		wp.data.select('core/editor') &&
+		wp.data.select('core/editor').getDeviceType
+	) {
+		device = wp.data.select('core/editor').getDeviceType()
+	} else {
+		if (
+			wp.data.select('core/edit-post') &&
+			wp.data
+				.select('core/edit-post')
+				.__experimentalGetPreviewDeviceType()
+		) {
+			device = wp.data
+				.select('core/edit-post')
+				.__experimentalGetPreviewDeviceType()
+		}
+	}
+
+	document.body.classList.remove(
+		'ct-desktop-view',
+		'ct-tablet-view',
+		'ct-mobile-view'
+	)
+
+	document.body.classList.add(`ct-${device.toLowerCase()}-view`)
+}
+
+setResponsiveClass()
+
+wp.data.subscribe(() => {
+	setResponsiveClass()
+})
 
 const closeSmall = (
 	<SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

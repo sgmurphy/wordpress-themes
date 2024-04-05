@@ -770,7 +770,7 @@ export const handleMenuOptions = ({
 
 	if (optionId === 'headerMenuItemsSpacing') {
 		ctEvents.trigger('ct:header:update')
-		ctEvents.trigger('ct:general:device-change')
+		ctEvents.trigger('ct:header:refresh-menu-submenus')
 	}
 
 	if (

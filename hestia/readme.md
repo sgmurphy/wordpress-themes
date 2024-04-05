@@ -18,6 +18,14 @@ Hestia is distributed under the terms of the GNU GPLv2 or later
 
 ## Changelog ##
 
+##### [Version 3.1.8](https://github.com/Codeinwp/hestia-pro/compare/v3.1.7...v3.1.8) (2024-04-05)
+
+### Improvements
+- Updated internal dependencies
+
+
+
+
 ##### [Version 3.1.7](https://github.com/Codeinwp/hestia-pro/compare/v3.1.6...v3.1.7) (2024-04-01)
 
 ### Improvements

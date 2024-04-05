@@ -26,15 +26,30 @@ remove_action(
 	'woocommerce_show_product_sale_flash'
 );
 
-remove_action(
-	'woocommerce_archive_description',
-	'woocommerce_taxonomy_archive_description'
-);
+add_action('wp', function() {
+	$location_documents = [];
+	
+	if (class_exists('\ElementorPro\Modules\ThemeBuilder\Module')) {
+		$location_documents = \ElementorPro\Modules\ThemeBuilder\Module::instance()
+				->get_conditions_manager()
+				->get_documents_for_location(
+					'archive'
+				);
+	}
 
-remove_action(
-	'woocommerce_archive_description',
-	'woocommerce_product_archive_description'
-);
+	if (empty($location_documents)) {
+		remove_action(
+			'woocommerce_archive_description',
+			'woocommerce_taxonomy_archive_description'
+		);
+
+		remove_action(
+			'woocommerce_archive_description',
+			'woocommerce_product_archive_description'
+		);
+	}
+});
+
 
 add_action('woocommerce_before_shop_loop', function () {
 	echo '<div class="woo-listing-top">';

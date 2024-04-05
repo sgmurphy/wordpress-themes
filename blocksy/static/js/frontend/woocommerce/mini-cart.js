@@ -168,6 +168,7 @@ export const mount = () => {
 		) {
 			const div = document.createElement('div')
 			div.innerHTML = arguments[0]
+			this[0].innerHTML = div.firstElementChild.innerHTML
 			;[...div.firstElementChild.attributes].map(({ name, value }) => {
 				this[0].setAttribute(name, value)
 			})

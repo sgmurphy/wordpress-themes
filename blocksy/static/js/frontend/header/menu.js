@@ -194,7 +194,25 @@ const openSubmenu = (e) => {
 		}
 	}
 
-	mouseenterHandler({ target: li })
+	if (!isEligibleForSubmenu(li)) {
+		return
+	}
+
+	const menu = li.querySelector('.sub-menu')
+
+	mountMenuLevel(menu)
+
+	if (menu.closest('[data-interaction="hover"]')) {
+		menu.parentNode.addEventListener(
+			'mouseleave',
+			() => {
+				;[...menu.children]
+					.filter((el) => isEligibleForSubmenu(el))
+					.map((el) => el.removeAttribute('data-submenu'))
+			},
+			{ once: true }
+		)
+	}
 }
 
 const closeSubmenu = (e) => {
@@ -240,294 +258,187 @@ const closeSubmenu = (e) => {
 	}, 30)
 }
 
-export const mountMenuLevel = (menuLevel, args = {}) => {
-	args = {
-		checkForFirstLevel: true,
-		...args,
+const mountMenuForElement = (el, args = {}) => {
+	if (el.classList.contains('ct-mega-menu-custom-width')) {
+		const menu = el.querySelector('.sub-menu')
+
+		const elRect = el.getBoundingClientRect()
+		const menuRect = menu.getBoundingClientRect()
+
+		let centerFits =
+			elRect.left + elRect.width / 2 > menuRect.width / 2 &&
+			innerWidth - (elRect.left + elRect.width / 2) > menuRect.width / 2
+
+		if (!centerFits) {
+			const placement = getPreferedPlacementFor(menu)
+
+			let offset = 0
+
+			let edgeOffset = 15
+
+			if (placement === 'right') {
+				offset = `${
+					Math.round(
+						elRect.left - (innerWidth - menuRect.width) + edgeOffset
+					) * -1
+				}px`
+
+				if (!(elRect.left + elRect.width / 2 > menuRect.width / 2)) {
+					offset = `${Math.round(elRect.left - edgeOffset) * -1}px`
+				}
+			}
+
+			if (placement === 'left') {
+				offset = `${
+					Math.round(innerWidth - elRect.right - edgeOffset) * -1
+				}px`
+			}
+
+			el.dataset.submenu = placement
+
+			menu.style.setProperty('--theme-submenu-inline-offset', offset)
+		}
 	}
+
+	if (isEligibleForSubmenu(el)) {
+		computeItemSubmenuFor(el, args)
+	}
+
+	if (el.hasSubmenuEventListeners) {
+		return
+	}
+
+	el.hasSubmenuEventListeners = true
+
+	let hasClickInteraction = el.matches('[data-interaction*="click"] *')
+
+	el.addEventListener('keydown', function (e) {
+		if (e.keyCode == 27) {
+			closeSubmenu({
+				target: el.firstElementChild,
+				focusOnIndicator: true,
+			})
+		}
+	})
+
+	el.addEventListener('focusout', (evt) => {
+		if (el.contains(evt.relatedTarget)) {
+			return
+		}
+
+		closeSubmenu({
+			target: el.firstElementChild,
+		})
+	})
+
+	if (!hasClickInteraction) {
+		el.addEventListener('mouseenter', (e) => {
+			// So that mouseenter event is catched before the open itself
+			if (isIosDevice()) {
+				openSubmenu({ target: el.firstElementChild })
+			} else {
+				requestAnimationFrame(() => {
+					openSubmenu({ target: el.firstElementChild })
+				})
+			}
+
+			// If first level
+			if (!el.parentNode.classList.contains('.sub-menu')) {
+				;[...el.parentNode.children]
+					.filter((firstLevelEl) => firstLevelEl !== el)
+					.map((firstLevelEl) => {
+						closeSubmenu({
+							target: firstLevelEl.firstElementChild,
+						})
+					})
+			}
+
+			e.target.closest('li').addEventListener(
+				'mouseleave',
+				() => {
+					closeSubmenu({ target: el.firstElementChild })
+				},
+				{ once: true }
+			)
+		})
+
+		// On Android devices, allow only 2nd click to open the link.
+		// First click will ensure the submenu is opened
+		//
+		// iOS has this behaviour out of the box.
+		//
+		// Important: only perform this for touch devices so that keyboard
+		// users are not affected.
+		if (isTouchDevice()) {
+			el.addEventListener('click', (e) => {
+				if (!el.classList.contains('ct-active')) {
+					e.preventDefault()
+				}
+			})
+		}
+	}
+
+	if (hasClickInteraction) {
+		let itemTarget = el.matches('[data-interaction*="item"] *')
+			? el.firstElementChild
+			: el.firstElementChild.querySelector('.ct-toggle-dropdown-desktop')
+
+		itemTarget.addEventListener('click', (e) => {
+			e.preventDefault()
+
+			if (e.target.closest('li').classList.contains('ct-active')) {
+				closeSubmenu(e)
+			} else {
+				openSubmenu(e)
+
+				if (isIosDevice()) {
+					e.target.closest('li').addEventListener(
+						'mouseleave',
+						() => {
+							closeSubmenu({
+								target: el.firstElementChild,
+							})
+						},
+						{ once: true }
+					)
+				}
+
+				if (!e.target.hasDocumentListener) {
+					e.target.hasDocumentListener = true
+					// Add the event a bit later
+					setTimeout(() => {
+						document.addEventListener('click', (evt) => {
+							if (!e.target.closest('li').contains(evt.target)) {
+								closeSubmenu(e)
+							}
+						})
+					})
+				}
+			}
+		})
+	}
+
+	let childIndicator = [...el.children].find((el) =>
+		el.matches('.ct-toggle-dropdown-desktop-ghost')
+	)
+
+	if (childIndicator) {
+		childIndicator.addEventListener('click', (e) => {
+			if (e.target.closest('li').classList.contains('ct-active')) {
+				closeSubmenu(e)
+			} else {
+				openSubmenu(e)
+			}
+		})
+	}
+}
+
+export const mountMenuLevel = (menuLevel, args = {}) => {
 	;[...menuLevel.children]
 		.filter((el) =>
 			el.matches('.menu-item-has-children, .page_item_has_children')
 		)
 		.map((el) => {
-			if (el.classList.contains('ct-mega-menu-custom-width')) {
-				const menu = el.querySelector('.sub-menu')
-
-				const elRect = el.getBoundingClientRect()
-				const menuRect = menu.getBoundingClientRect()
-
-				let centerFits =
-					elRect.left + elRect.width / 2 > menuRect.width / 2 &&
-					innerWidth - (elRect.left + elRect.width / 2) >
-						menuRect.width / 2
-
-				if (!centerFits) {
-					const placement = getPreferedPlacementFor(menu)
-
-					let offset = 0
-
-					let edgeOffset = 15
-
-					if (placement === 'right') {
-						offset = `${
-							Math.round(
-								elRect.left -
-									(innerWidth - menuRect.width) +
-									edgeOffset
-							) * -1
-						}px`
-
-						if (
-							!(
-								elRect.left + elRect.width / 2 >
-								menuRect.width / 2
-							)
-						) {
-							offset = `${
-								Math.round(elRect.left - edgeOffset) * -1
-							}px`
-						}
-					}
-
-					if (placement === 'left') {
-						offset = `${
-							Math.round(innerWidth - elRect.right - edgeOffset) *
-							-1
-						}px`
-					}
-
-					el.dataset.submenu = placement
-
-					menu.style.setProperty(
-						'--theme-submenu-inline-offset',
-						offset
-					)
-				}
-			}
-
-			if (isEligibleForSubmenu(el)) {
-				computeItemSubmenuFor(el, args)
-			}
-
-			let childIndicator = [...el.children].find((el) =>
-				el.matches('.ct-toggle-dropdown-desktop-ghost')
-			)
-
-			let hasClickInteraction = el.matches(
-				'[data-interaction*="click"] *'
-			)
-
-			if (!el.hasFocusEventListener) {
-				el.hasFocusEventListener = true
-
-				el.addEventListener('keydown', function (e) {
-					if (e.keyCode == 27) {
-						closeSubmenu({
-							target: el.firstElementChild,
-							focusOnIndicator: true,
-						})
-					}
-				})
-
-				el.addEventListener('focusout', (evt) => {
-					if (el.contains(evt.relatedTarget)) {
-						return
-					}
-
-					closeSubmenu({
-						target: el.firstElementChild,
-					})
-				})
-			}
-
-			if (!hasClickInteraction) {
-				el.addEventListener('mouseenter', (e) => {
-					// So that mouseenter event is catched before the open itself
-					if (isIosDevice()) {
-						openSubmenu({ target: el.firstElementChild })
-					} else {
-						requestAnimationFrame(() => {
-							openSubmenu({ target: el.firstElementChild })
-						})
-					}
-
-					// If first level
-					if (
-						args.checkForFirstLevel &&
-						!el.parentNode.classList.contains('.sub-menu')
-					) {
-						;[...el.parentNode.children]
-							.filter((firstLevelEl) => firstLevelEl !== el)
-							.map((firstLevelEl) => {
-								closeSubmenu({
-									target: firstLevelEl.firstElementChild,
-								})
-							})
-					}
-
-					e.target.closest('li').addEventListener(
-						'mouseleave',
-						() => {
-							closeSubmenu({ target: el.firstElementChild })
-						},
-						{ once: true }
-					)
-				})
-
-				// On Android devices, allow only 2nd click to open the link.
-				// First click will ensure the submenu is opened
-				//
-				// iOS has this behaviour out of the box.
-				//
-				// Important: only perform this for touch devices so that keyboard
-				// users are not affected.
-				if (isTouchDevice()) {
-					el.addEventListener('click', (e) => {
-						if (!el.classList.contains('ct-active')) {
-							e.preventDefault()
-						}
-					})
-				}
-			}
-
-			if (hasClickInteraction) {
-				let itemTarget = el.matches('[data-interaction*="item"] *')
-					? el.firstElementChild
-					: el.firstElementChild.querySelector(
-							'.ct-toggle-dropdown-desktop'
-					  )
-
-				if (!itemTarget.hasEventListener) {
-					itemTarget.hasEventListener = true
-					itemTarget.addEventListener('click', (e) => {
-						e.preventDefault()
-
-						if (
-							e.target
-								.closest('li')
-								.classList.contains('ct-active')
-						) {
-							closeSubmenu(e)
-						} else {
-							openSubmenu(e)
-
-							if (isIosDevice()) {
-								e.target.closest('li').addEventListener(
-									'mouseleave',
-									() => {
-										closeSubmenu({
-											target: el.firstElementChild,
-										})
-									},
-									{ once: true }
-								)
-							}
-
-							if (!e.target.hasDocumentListener) {
-								e.target.hasDocumentListener = true
-								// Add the event a bit later
-								setTimeout(() => {
-									document.addEventListener(
-										'click',
-										(evt) => {
-											if (
-												!e.target
-													.closest('li')
-													.contains(evt.target)
-											) {
-												closeSubmenu(e)
-											}
-										}
-									)
-								})
-							}
-						}
-					})
-				}
-			}
-
-			if (childIndicator && !childIndicator.hasEventListener) {
-				childIndicator.hasEventListener = true
-
-				childIndicator.addEventListener('click', (e) => {
-					if (
-						e.target.closest('li').classList.contains('ct-active')
-					) {
-						closeSubmenu(e)
-					} else {
-						openSubmenu(e)
-					}
-				})
-			}
+			mountMenuForElement(el, args)
 		})
-}
-
-const mouseenterHandler = ({ target }) => {
-	if (!target.matches('.menu-item-has-children, .page_item_has_children')) {
-		target = target.closest(
-			'.menu-item-has-children, .page_item_has_children'
-		)
-	}
-
-	if (
-		target.parentNode.classList.contains('menu') &&
-		target.className.indexOf('ct-mega-menu') > -1 &&
-		target.className.indexOf('ct-mega-menu-custom-width') === -1 &&
-		window.wp &&
-		wp &&
-		wp.customize &&
-		wp.customize('active_theme')
-	) {
-		const menu = target.querySelector('.sub-menu')
-
-		menu.style.left = `${
-			Math.round(
-				target
-					.closest('[class*="ct-container"]')
-					.firstElementChild.getBoundingClientRect().x
-			) - Math.round(target.closest('nav').getBoundingClientRect().x)
-		}px`
-	}
-
-	if (!isEligibleForSubmenu(target)) {
-		return
-	}
-
-	const menu = target.querySelector('.sub-menu')
-
-	mountMenuLevel(menu)
-
-	if (menu.closest('[data-interaction="hover"]')) {
-		menu.parentNode.addEventListener(
-			'mouseleave',
-			() => {
-				;[...menu.children]
-					.filter((el) => isEligibleForSubmenu(el))
-					.map((el) => el.removeAttribute('data-submenu'))
-			},
-			{ once: true }
-		)
-	}
-}
-
-export const handleUpdate = (menu) => {
-	if (!menu.parentNode) {
-		menu = document.querySelector(`[class="${menu.className}"]`)
-	}
-
-	if (!menu) {
-		return
-	}
-
-	if (
-		!menu.querySelector('.menu-item-has-children') &&
-		!menu.querySelector('.page_item_has_children')
-	) {
-		return
-	}
-
-	if (menu.closest('[data-interaction="hover"]')) {
-		menu.removeEventListener('mouseenter', mouseenterHandler)
-		menu.addEventListener('mouseenter', mouseenterHandler)
-	}
 }

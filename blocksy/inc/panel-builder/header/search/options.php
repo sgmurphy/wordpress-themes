@@ -32,7 +32,7 @@ foreach ($all_cpts as $single_cpt) {
 		$cpt_choices[$single_cpt] = ucfirst($single_cpt);
 	}
 
-	$cpt_options[$single_cpt] = true;
+	$cpt_options[$single_cpt] = false;
 }
 
 $options = [

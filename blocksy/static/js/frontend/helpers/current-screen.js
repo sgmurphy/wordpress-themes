@@ -11,8 +11,6 @@ const setCurrentScreen = () => {
 		: tabletMql.matches
 		? 'tablet'
 		: 'desktop'
-
-	ctEvents.trigger('ct:general:device-change', { currentScreen })
 }
 
 setCurrentScreen()

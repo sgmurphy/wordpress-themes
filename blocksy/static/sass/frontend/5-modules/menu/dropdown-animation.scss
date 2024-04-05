@@ -46,7 +46,7 @@
 // type 3
 [data-dropdown*='type-3'] [class*="animated-submenu"] {
 
-	> .sub-menu > li > a {
+	> .sub-menu > li {
 		opacity: 0;
 		transform: translate3d(0, 5px, 0);
 		transition: opacity 0.5s cubic-bezier(0.35, 0.81, 0.41, 1), transform 0.5s cubic-bezier(0.35, 0.81, 0.41, 1);
@@ -54,7 +54,7 @@
 
 	&.ct-active {
 
-		> .sub-menu > li > a {
+		> .sub-menu > li {
 			opacity: 1;
 			transform: translate3d(0, 0, 0);
 		}

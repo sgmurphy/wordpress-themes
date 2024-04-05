@@ -38,6 +38,12 @@ if ($field === 'woo:rating') {
 	$value = ob_get_clean();
 }
 
+if ($field === 'woo:brands') {
+	ob_start();
+	do_action('blocksy:woocommerce:brands:layer', $attributes);
+	$value = ob_get_clean();
+}
+
 if (empty(trim($value))) {
 	return;
 }

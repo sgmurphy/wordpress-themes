@@ -37,6 +37,7 @@ class ThemeAutoloader {
 			'DbVersioning\\V2031' => 'inc/classes/db-versioning/v2-0-31.php',
 			'DbVersioning\\V2034' => 'inc/classes/db-versioning/v2-0-34.php',
 			'DbVersioning\\V2036' => 'inc/classes/db-versioning/v2-0-36.php',
+			'DbVersioning\\V2038' => 'inc/classes/db-versioning/v2-0-38.php',
 
 			'DbVersioning\\DefaultValuesCleaner' => 'inc/classes/db-versioning/utils/db-default-values-cleaner.php',
 
@@ -55,6 +56,7 @@ class ThemeAutoloader {
 
 			'Sidebar' => 'inc/components/sidebar.php',
 			'WooCommerce' => 'inc/components/woocommerce-integration.php',
+			'WooDefaultPages' => 'inc/components/woocommerce/common/default-pages.php',
 
 			'Blocks' => 'inc/components/blocks/blocks.php',
 			'GutenbergBlock' => 'inc/components/blocks/gutenberg-block.php',

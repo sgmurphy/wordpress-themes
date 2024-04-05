@@ -191,53 +191,87 @@ const DynamicDataInspectorControls = ({
 					</PanelBody>
 				)}
 
-				{!fieldIsImageLike(fieldDescriptor) && (
+				{attributes.field === 'woo:brands' && (
 					<PanelBody>
-						<OptionsPanel
-							purpose="gutenberg"
-							onChange={(optionId, optionValue) => {
+						<RangeControl
+							__nextHasNoMarginBottom
+							__next40pxDefaultSize
+							label={__('Logo Size', 'blocksy')}
+							onChange={(newSize) =>
 								setAttributes({
-									[optionId]: optionValue,
+									brands_size: newSize,
 								})
-							}}
-							options={{
-								before: {
-									type: 'text',
-									label: __('Before', 'blocksy'),
-									value: '',
-								},
-
-								after: {
-									type: 'text',
-									label: __('After', 'blocksy'),
-									value: '',
-								},
-
-								...(fieldDescriptor.provider !== 'wp' ||
-								(fieldDescriptor.provider === 'wp' &&
-									(fieldDescriptor.id === 'excerpt' ||
-										fieldDescriptor.id === 'terms' ||
-										fieldDescriptor.id === 'author'))
-									? {
-											fallback: {
-												type: 'text',
-												label: __(
-													'Fallback',
-													'blocksy'
-												),
-												value: __(
-													'Custom field fallback',
-													'blocksy'
-												),
-											},
-									  }
-									: {}),
-							}}
-							value={attributes}
-							hasRevertButton={false}
+							}
+							min={5}
+							max={500}
+							initialPosition={attributes?.brands_size}
+							value={attributes?.brands_size}
+						/>
+						<RangeControl
+							__nextHasNoMarginBottom
+							__next40pxDefaultSize
+							label={__('Logo Gap', 'blocksy')}
+							onChange={(newGap) =>
+								setAttributes({
+									brands_gap: newGap,
+								})
+							}
+							min={5}
+							max={500}
+							initialPosition={attributes?.brands_gap}
+							value={attributes?.brands_gap}
 						/>
 					</PanelBody>
 				)}
+
+				{!fieldIsImageLike(fieldDescriptor) &&
+					attributes.field !== 'woo:brands' && (
+						<PanelBody>
+							<OptionsPanel
+								purpose="gutenberg"
+								onChange={(optionId, optionValue) => {
+									setAttributes({
+										[optionId]: optionValue,
+									})
+								}}
+								options={{
+									before: {
+										type: 'text',
+										label: __('Before', 'blocksy'),
+										value: '',
+									},
+
+									after: {
+										type: 'text',
+										label: __('After', 'blocksy'),
+										value: '',
+									},
+
+									...(fieldDescriptor.provider !== 'wp' ||
+									(fieldDescriptor.provider === 'wp' &&
+										(fieldDescriptor.id === 'excerpt' ||
+											fieldDescriptor.id === 'terms' ||
+											fieldDescriptor.id === 'author'))
+										? {
+												fallback: {
+													type: 'text',
+													label: __(
+														'Fallback',
+														'blocksy'
+													),
+													value: __(
+														'Custom field fallback',
+														'blocksy'
+													),
+												},
+										  }
+										: {}),
+								}}
+								value={attributes}
+								hasRevertButton={false}
+							/>
+						</PanelBody>
+					)}
 			</InspectorControls>
 
 			{attributes.field === 'wp:terms' && (

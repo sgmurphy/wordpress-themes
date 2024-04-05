@@ -360,10 +360,12 @@ if (! function_exists('blocksy_output_single_background_css')) {
 			] . ', ' . $backgroundColor['default'] . ')';
 		}
 
-		$args['css']->put(
-			$args['selector'],
-			"background-color: {$backgroundColor['default']}"
-		);
+		if ($args['value']['background_type'] !== 'gradient') {
+			$args['css']->put(
+				$args['selector'],
+				"background-color: {$backgroundColor['default']}"
+			);
+		}
 
 		if (
 			strpos($backgroundColor['default'], 'CT_CSS_SKIP_RULE') === false

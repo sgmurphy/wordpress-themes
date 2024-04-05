@@ -116,7 +116,11 @@ if (! function_exists('blocksy_media')) {
 				(
 					$blocksy_is_quick_view
 					||
-					$post->post_type === 'product'
+					(
+						isset($post->post_type)
+						&&
+						$post->post_type === 'product'
+					)
 				)
 				&&
 				wp_get_attachment_image_src($args['attachment_id'])

@@ -91,8 +91,8 @@ if (
 	blocksy_output_border([
 		'css' => $css,
 		'selector' => ':root',
-		'variableName' => 'button-border',
-		'secondColorVariableName' => 'button-border-hover-color',
+		'variableName' => 'theme-button-border',
+		'secondColorVariableName' => 'theme-button-border-hover-color',
 		'value' => get_theme_mod('buttonBorder'),
 		'default' => [
 			'width' => 1,

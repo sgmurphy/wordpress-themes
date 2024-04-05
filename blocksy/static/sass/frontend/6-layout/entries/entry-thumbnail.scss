@@ -2,10 +2,6 @@
 
 	.ct-media-container {
 		border-radius: var(--theme-image-border-radius, var(--theme-border-radius, 0px));
-
-		// img {
-		// 	height: 100%;
-		// }
 	}
 
 	// boundless image
@@ -27,6 +23,10 @@
 
 		&:not(:first-child):not(:last-child) {
 			border-radius: 0;
+		}
+
+		img {
+			height: 100%;
 		}
 	}
 }

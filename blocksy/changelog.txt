@@ -1,3 +1,13 @@
+2.0.38: 2024-04-04
+- Improvement: Archive cards and boundless image height issue in Safari
+- Improvement: Better handle editor background color output in WordPress 6.5
+- Improvement: Correctly check media function presence in related posts
+- Improvement: Don't output the menu drop-down JS if no drop-downs are present in menu
+- Improvement: Mini cart type 1 does not update subtotal upon adding/removing products
+- Improvement: Page title type 2 - don't apply `background-color` if gradient is set
+- Improvement: Show button global border styles in editor
+- Fix: Disabling "coupon form" on cart page also affects the checkout page
+
 2.0.37: 2024-03-29
 - Improvement: General fixes and improvements
 

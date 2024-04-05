@@ -170,6 +170,49 @@ const useDynamicDataDescriptor = ({ postId, postType }) => {
 
 	const taxonomies = useTaxonomies(postType)
 
+	useEffect(() => {
+		if (postType !== 'product') {
+			return
+		}
+
+		const hasBrands = (taxonomies || []).find(
+			({ slug }) => slug === 'product_brands'
+		)
+
+		if (!hasBrands) {
+			return
+		}
+
+		const hasWoocommerce = fieldsDescriptor.fields.find(
+			({ provider }) => provider === 'woo'
+		)
+
+		const brandsFields = (hasWoocommerce?.fields || []).find(
+			({ id }) => id === 'brands'
+		)
+
+		if (!hasWoocommerce || brandsFields) {
+			return
+		}
+
+		setFieldsDescriptor({
+			...fieldsDescriptor,
+			fields: [
+				wpFields(),
+				{
+					provider: 'woo',
+					fields: [
+						...hasWoocommerce.fields,
+						{
+							id: 'brands',
+							label: __('Brands', 'blocksy'),
+						},
+					],
+				},
+			],
+		})
+	}, [taxonomies, fieldsDescriptor])
+
 	return {
 		fieldsDescriptor,
 		options,

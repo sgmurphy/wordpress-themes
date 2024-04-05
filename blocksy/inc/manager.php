@@ -66,9 +66,7 @@ class Blocksy_Manager {
 
 		new \Blocksy\SearchModifications();
 
-		if (class_exists('WooCommerce')) {
-			$this->woocommerce = new \Blocksy\WooCommerce();
-		}
+		$this->boot_woocommerce_integration();
 
 		$this->dynamic_css = new \Blocksy\ThemeDynamicCss();
 
@@ -433,6 +431,14 @@ class Blocksy_Manager {
 		}
 
 		return $this->hooks;
+	}
+
+	public function boot_woocommerce_integration() {
+		if (class_exists('WooCommerce')) {
+			$this->woocommerce = new \Blocksy\WooCommerce();
+		}
+
+		new \Blocksy\WooDefaultPages();
 	}
 }
 

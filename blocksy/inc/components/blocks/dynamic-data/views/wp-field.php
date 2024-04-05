@@ -246,7 +246,11 @@ if ($field === 'wp:terms') {
 	if (! empty($taxonomy)) {
 		$terms = get_the_terms(get_the_ID(), $taxonomy);
 
-		if (! empty($terms)) {
+		if (
+			! empty($terms)
+			&&
+			! is_wp_error($terms)
+		) {
 			$terms = array_map(function ($term) use ($taxonomy, $attributes) {
 				$tagName = 'span';
 

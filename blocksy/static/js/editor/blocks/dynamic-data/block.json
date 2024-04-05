@@ -112,6 +112,16 @@
 		"termAccentColor": {
 			"type": "string",
 			"default": "yes"
+		},
+
+		"brands_size": {
+			"type": "number",
+			"default": 100
+		},
+
+		"brands_gap": {
+			"type": "number",
+			"default": 10
 		}
 	},
 	"supports": {

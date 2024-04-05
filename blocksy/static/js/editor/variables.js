@@ -6,13 +6,20 @@ const isContentBlock = document.body.classList.contains(
 	'post-type-ct_content_block'
 )
 
+let selectors = {
+	desktop:
+		'.ct-desktop-view iframe[name="editor-canvas"], .ct-desktop-view .edit-post-visual-editor, .ct-desktop-view .edit-post-visual-editor__content-area > div',
+	tablet: '.ct-tablet-view iframe[name="editor-canvas"]',
+	mobile: '.ct-mobile-view iframe[name="editor-canvas"]',
+}
+
 export const gutenbergVariables = {
-	background: ['desktop', 'tablet', 'mobile'].reduce(
-		(result, breakpoint) => [
+	background: ['desktop', 'tablet', 'mobile'].reduce((result, breakpoint) => {
+		return [
 			...result,
 			...handleBackgroundOptionFor({
 				id: 'background',
-				selector: `.edit-post-visual-editor__content-area > .is-${breakpoint}-preview`,
+				selector: selectors[breakpoint],
 				responsive: false,
 				addToDescriptors: {
 					fullValue: true,
@@ -38,13 +45,12 @@ export const gutenbergVariables = {
 					]
 				},
 			}).background,
-		],
-		[]
-	),
+		]
+	}, []),
 
 	...handleBackgroundOptionFor({
 		id: 'popup_background',
-		selector: '.edit-post-visual-editor__content-area > div',
+		selector: selectors.desktop,
 		responsive: true,
 		addToDescriptors: {
 			important: true,
@@ -74,7 +80,7 @@ export const gutenbergVariables = {
 		],
 		[
 			{
-				selector: `:root`,
+				selector: '.editor-styles-wrapper',
 				variable: 'theme-block-max-width',
 				extractValue: ({
 					template_subtype,
@@ -127,7 +133,7 @@ export const gutenbergVariables = {
 			},
 
 			{
-				selector: `:root`,
+				selector: '.editor-styles-wrapper',
 				variable: 'theme-block-wide-max-width',
 				extractValue: ({
 					template_subtype,
@@ -165,7 +171,7 @@ export const gutenbergVariables = {
 			},
 
 			{
-				selector: `:root`,
+				selector: '.editor-styles-wrapper',
 				variable: 'has-boxed',
 				responsive: true,
 				extractValue: ({
@@ -217,7 +223,7 @@ export const gutenbergVariables = {
 			},
 
 			{
-				selector: `:root`,
+				selector: '.editor-styles-wrapper',
 				variable: 'has-wide',
 				responsive: true,
 				extractValue: ({
@@ -270,7 +276,7 @@ export const gutenbergVariables = {
 
 			...handleBackgroundOptionFor({
 				id: 'background',
-				selector: ':root',
+				selector: '.editor-styles-wrapper',
 				responsive: true,
 				conditional_var: '--has-boxed',
 				addToDescriptors: {
@@ -319,7 +325,7 @@ export const gutenbergVariables = {
 			}).background,
 
 			{
-				selector: ':root',
+				selector: '.editor-styles-wrapper',
 				type: 'spacing',
 				variable: 'theme-boxed-content-spacing',
 				responsive: true,
@@ -350,7 +356,7 @@ export const gutenbergVariables = {
 			},
 
 			{
-				selector: ':root',
+				selector: '.editor-styles-wrapper',
 				type: 'spacing',
 				variable: 'theme-boxed-content-border-radius',
 				responsive: true,
@@ -381,7 +387,7 @@ export const gutenbergVariables = {
 			},
 
 			{
-				selector: ':root',
+				selector: '.editor-styles-wrapper',
 				type: 'border',
 				variable: 'theme-boxed-content-border',
 				responsive: true,
@@ -412,7 +418,7 @@ export const gutenbergVariables = {
 			},
 
 			{
-				selector: ':root',
+				selector: '.editor-styles-wrapper',
 				type: 'box-shadow',
 				variable: 'theme-boxed-content-box-shadow',
 				responsive: true,
