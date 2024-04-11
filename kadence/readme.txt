@@ -2,9 +2,9 @@
 Contributors: britner
 Tags: translation-ready, two-columns, right-sidebar, left-sidebar, footer-widgets, blog, custom-logo, custom-background, custom-menu, rtl-language-support, editor-style, threaded-comments, custom-colors, featured-images, wide-blocks, full-width-template, theme-options, e-commerce.
 Requires at least: 6.2
-Tested up to: 6.4
+Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 License: GNU General Public License v3.0 (or later)
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -25,6 +25,14 @@ Please report security bugs found in the source code of the Kadence Theme throug
 Please report security bugs found in the Kadence theme's source code through the Patchstack Vulnerability Disclosure Program https://patchstack.com/database/vdp/kadence. The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this theme.
 
 = Changelog =
+
+== 1.2.4 | 10th April 2024 ==
+* Add: Option for transparent header on events archive.
+* Update: Google Font choices.
+* Update: Default icons for social, X and Instagram. 
+* Fix: CSS with with payments on product pages.
+* Fix: CSS with TEC single events.
+* Fix: Editor width in unboxed mode.
 
 == 1.2.3 | 21st March 2024 ==
 * Fix: CSS determining content width.

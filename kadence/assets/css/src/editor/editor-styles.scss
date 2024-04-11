@@ -492,7 +492,7 @@ select:focus {
     margin: 0px 0px var(--kad-editor-vertical-top-padding, 5rem) 0px;
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
-    background:  var(--kad-editor-body-bg, var(--global-palette8));
+    background:  var(--kad-editor-content-bg, var(--global-palette9) );
 	position: relative;
 	&::before {
 		content: '';
@@ -504,13 +504,27 @@ select:focus {
 		right:0;
 		width:auto;
 		z-index: 0;
+		opacity: .8;
 		background: repeating-linear-gradient(
 			45deg,
-			var(--kad-editor-body-bg, var(--global-palette8)),
-			var(--kad-editor-body-bg, var(--global-palette8)) 10px,
+			var(--global-palette8),
+			var(--global-palette8) 10px,
 			var(--kad-editor-content-bg, var(--global-palette9)) 10px,
 			var(--kad-editor-content-bg, var(--global-palette9)) 20px
 		);
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		height: auto;
+		top: 0;
+		bottom:0;
+		left:0;
+		right:0;
+		width:auto;
+		z-index: 0;
+		opacity: 0.6;
+		background: var(--kad-editor-content-bg, var(--global-palette9));
 	}
 	h1.wp-block-post-title {
 		position: relative;

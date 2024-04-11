@@ -100,7 +100,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 *
 	 * @var values of the allowed alt urls.
 	 */
-	protected static $allowed_urls = array( 'https://www.kadencewp.com/kadence-theme/hostinger/' );
+	protected static $allowed_urls = array( 'https://www.kadencewp.com/kadence-theme/hostinger/', 'https://www.kadencewp.com/kadence-theme/instawp/' );
 
 	/**
 	 * Gets the unique identifier for the theme component.
@@ -1254,8 +1254,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								'url'     => '',
 								'imageid' => '',
 								'width'   => 24,
-								'icon'    => 'twitter',
-								'label'   => 'Twitter',
+								'icon'    => 'twitterAlt2',
+								'label'   => 'X',
 							),
 							array(
 								'id'      => 'instagram',
@@ -1264,7 +1264,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								'url'     => '',
 								'imageid' => '',
 								'width'   => 24,
-								'icon'    => 'instagram',
+								'icon'    => 'instagramAlt',
 								'label'   => 'Instagram',
 							),
 						),
@@ -1338,8 +1338,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								'url'     => '',
 								'imageid' => '',
 								'width'   => 24,
-								'icon'    => 'twitter',
-								'label'   => 'Twitter',
+								'icon'    => 'twitterAlt2',
+								'label'   => 'X',
 							),
 							array(
 								'id'      => 'instagram',
@@ -1348,7 +1348,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								'url'     => '',
 								'imageid' => '',
 								'width'   => 24,
-								'icon'    => 'instagram',
+								'icon'    => 'instagramAlt',
 								'label'   => 'Instagram',
 							),
 						),
@@ -2128,8 +2128,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								'url'     => '',
 								'imageid' => '',
 								'width'   => 24,
-								'icon'    => 'twitter',
-								'label'   => 'Twitter',
+								'icon'    => 'twitterAlt2',
+								'label'   => 'X',
 							),
 							array(
 								'id'      => 'instagram',
@@ -2138,7 +2138,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								'url'     => '',
 								'imageid' => '',
 								'width'   => 24,
-								'icon'    => 'instagram',
+								'icon'    => 'instagramAlt',
 								'label'   => 'Instagram',
 							),
 						),

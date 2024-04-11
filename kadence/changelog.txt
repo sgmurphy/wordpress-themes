@@ -1,3 +1,11 @@
+== 1.2.4 | 10th April 2024 ==
+* Add: Option for transparent header on events archive.
+* Update: Google Font choices.
+* Update: Default icons for social, X and Instagram. 
+* Fix: CSS with with payments on product pages.
+* Fix: CSS with TEC single events.
+* Fix: Editor width in unboxed mode.
+
 == 1.2.3 | 21st March 2024 ==
 * Fix: CSS determining content width.
 

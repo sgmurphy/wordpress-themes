@@ -3306,7 +3306,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$css->add_property( 'max-width', 'var(--global-calc-content-width)' );
 		$css->set_selector( '.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper > [data-align="wide"], .editor-styles-wrapper .block-editor-block-list__layout.is-root-container > [data-align="wide"]' );
 		$css->add_property( 'max-width', 'var(--global-content-wide-width)' );
-		
+		$css->set_selector( '.post-content-style-unboxed, .admin-color-pcs-unboxed' );
+		$css->add_property( '--global-calc-content-width', 'var(--global-content-width)' );
 		// Boxed Content Editor Width.
 		$css->set_selector( '.post-content-style-boxed, .admin-color-pcs-boxed' );
 		$css->add_property( '--global-calc-content-width', 'calc(var(--global-content-width) - var(--global-content-edge-padding) - var(--global-content-edge-padding) - 4rem )' );
