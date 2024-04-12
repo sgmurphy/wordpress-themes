@@ -73,7 +73,17 @@ const loadSingleEntryPoint = ({
 				el.hasLazyLoadClickListener = true
 
 				el.addEventListener('click', (event) => {
+					// stopPropagation(). is here because on touch devices the
+					// click event gets triggered for every child in the
+					// actual el.
+					//
+					// In result, mount is triggered a couple times.
+					//
+					// Context: https://github.com/sergiu-radu/blocksy/issues/3374
+					event.stopPropagation()
+
 					event.preventDefault()
+
 					load().then((arg) => mount({ ...arg, event, el }))
 				})
 			})
@@ -174,6 +184,7 @@ const loadSingleEntryPoint = ({
 							})
 						)
 					}, 10)
+
 					return
 				}
 
@@ -186,15 +197,21 @@ const loadSingleEntryPoint = ({
 						el.addEventListener(
 							eventToRegister,
 							(event) => {
-								load().then((arg) =>
-									mount({
-										...arg,
-										...(event.type === 'touchstart'
-											? { event }
-											: {}),
-										el,
-									})
-								)
+								if (event.type === 'touchstart') {
+									document.addEventListener(
+										'touchmove',
+										() => {
+											el.forcedMount({
+												event,
+											})
+										},
+										{
+											once: true,
+										}
+									)
+								} else {
+									el.forcedMount()
+								}
 							},
 							{ once: true, passive: true }
 						)

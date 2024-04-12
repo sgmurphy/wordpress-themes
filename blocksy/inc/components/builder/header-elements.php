@@ -277,6 +277,8 @@ class Blocksy_Header_Builder_Elements {
 			$search_form_args['ct_product_status'] = blocksy_akg(
 				'searchHeaderProductStatus', $atts, 'no'
 			) === 'yes';
+
+			$search_form_args['search_through_taxonomy'] = blocksy_akg('search_through_taxonomy', $atts, 'no');
 		}
 
 

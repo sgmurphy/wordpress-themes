@@ -142,10 +142,20 @@ add_action(
 			);
 		}
 
-		$gradients = get_theme_support('editor-gradient-presets')[0];
+		$gradients = [];
+
+		if (
+			get_theme_support('editor-gradient-presets')
+			&&
+			isset(get_theme_support('editor-gradient-presets')[0])
+		) {
+			$gradients = get_theme_support('editor-gradient-presets')[0];
+		}
 
 		if (function_exists('wp_get_global_settings')) {
-			$gradients = wp_get_global_settings()['color']['gradients']['theme'];
+			if (isset(wp_get_global_settings()['color']['gradients']['theme'])) {
+				$gradients = wp_get_global_settings()['color']['gradients']['theme'];
+			}			
 		}
 
 		wp_localize_script(

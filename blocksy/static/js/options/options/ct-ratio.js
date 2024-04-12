@@ -130,7 +130,7 @@ const Ratio = ({ option, value, onChange, onChangeFor, values }) => {
 							</ul>
 
 							<button
-								data-tooltip="top"
+								data-tooltip-reveal="top"
 								onClick={(e) => {
 									e.preventDefault()
 

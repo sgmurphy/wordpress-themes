@@ -52,16 +52,16 @@ const computeAvailableSpaceFor = (nav) => {
 	if (navSide === 'side' && !hasMiddle) {
 		let allNavs = baseContainer.querySelectorAll('[data-id*="menu"]')
 
-		const totalItemsWidthFromAllNavs = [...allNavs].reduce(
-			(total, nav) => total + getTotalItemsWidthFor(nav),
-			0
-		)
-
-		const totalItemsWidth = getTotalItemsWidthFor(nav)
-
 		let containerWidth = baseWidth - getItemWidthsFrom(baseContainer)
 
 		if (allNavs.length > 1) {
+			const totalItemsWidth = getTotalItemsWidthFor(nav)
+
+			const totalItemsWidthFromAllNavs = [...allNavs].reduce(
+				(total, nav) => total + getTotalItemsWidthFor(nav),
+				0
+			)
+
 			containerWidth *=
 				(100 * totalItemsWidth) / totalItemsWidthFromAllNavs / 100
 		}
@@ -120,28 +120,45 @@ export const getItemsDistribution = (nav) => {
 
 	let allNavs = baseContainer.querySelectorAll('[data-id*="menu"]')
 
-	return getCacheFor(nav.__id).children.reduce(
-		({ fit, notFit }, currentEl, currentIndex) => ({
-			...(getCacheFor(nav.__id)
-				.itemsWidth.slice(0, currentIndex + 1)
-				.reduce((sum, n) => sum + n, 0) <
-			containerWidth -
-				100 / allNavs.length -
-				(parseInt(navStyle.getPropertyValue('margin-left')) +
-					parseInt(navStyle.getPropertyValue('margin-right')))
-				? {
-						fit: [...fit, currentEl],
-						notFit,
-				  }
-				: {
-						notFit: [...notFit, currentEl],
-						fit,
-				  }),
-		}),
+	const itemsWidth = getCacheFor(nav.__id).itemsWidth
 
-		{
-			fit: [],
-			notFit: [],
-		}
-	)
+	const navSideMargins =
+		parseInt(navStyle.getPropertyValue('margin-left')) +
+		parseInt(navStyle.getPropertyValue('margin-right'))
+
+	const availableSpaceForItems = containerWidth - navSideMargins
+
+	const moreItemWidth = getCacheFor(nav.__id).moreItemWidth
+
+	const itemsThatFit = getCacheFor(nav.__id)
+		.children.map((el, index) => {
+			return {
+				el,
+				width: itemsWidth[index],
+			}
+		})
+		.reduce((result, item) => {
+			if (result.length === 0) {
+				return [item]
+			}
+
+			return [
+				...result,
+				{
+					...item,
+					width: item.width + result[result.length - 1].width,
+				},
+			]
+		}, [])
+		.filter((itemWithWidth) => {
+			return itemWithWidth.width + moreItemWidth < availableSpaceForItems
+		})
+		.map(({ el }) => el)
+
+	return {
+		fit: itemsThatFit,
+		notFit: getCacheFor(nav.__id).children.filter((el) => {
+			return !itemsThatFit.includes(el)
+		}),
+	}
 }

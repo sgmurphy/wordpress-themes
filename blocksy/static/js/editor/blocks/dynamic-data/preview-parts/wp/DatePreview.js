@@ -34,6 +34,10 @@ const DatePreview = ({
 
 	let content = <span>{format(dateFormat, date)}</span>
 
+	if (!postId) {
+		return 'Date'
+	}
+
 	if (has_field_link) {
 		content = <a href="#">{content}</a>
 	}

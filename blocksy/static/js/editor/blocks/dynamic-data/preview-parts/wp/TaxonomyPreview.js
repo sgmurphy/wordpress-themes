@@ -14,6 +14,8 @@ const TaxonomyPreview = ({
 
 	attributes,
 	attributes: { has_field_link, taxonomy: req_taxonomy, separator },
+
+	fieldsDescriptor,
 }) => {
 	const taxonomies = useTaxonomies(postType)
 
@@ -34,6 +36,10 @@ const TaxonomyPreview = ({
 				) || [],
 		}
 	})
+
+	if (!postId) {
+		return `Taxonomy: ${fieldsDescriptor.label}`
+	}
 
 	if (terms.length === 0) {
 		return fallback

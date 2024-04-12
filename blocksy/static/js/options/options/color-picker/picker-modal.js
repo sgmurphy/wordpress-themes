@@ -181,7 +181,7 @@ const PickerModal = ({
 								className={classnames({
 									active: valueToCheck === `var(--${color})`,
 								})}
-								data-tooltip="top"
+								data-tooltip-reveal="top"
 								onClick={() =>
 									onChange({
 										...value,

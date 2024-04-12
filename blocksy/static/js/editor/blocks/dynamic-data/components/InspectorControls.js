@@ -44,6 +44,11 @@ const DynamicDataInspectorControls = ({
 								type: 'ct-select',
 								label: __('Content Source', 'blocksy'),
 								value: '',
+								search: true,
+								searchPlaceholder: __(
+									'Search for field',
+									'blocksy'
+								),
 								defaultToFirstItem: false,
 								choices: fieldsChoices,
 								purpose: 'default',

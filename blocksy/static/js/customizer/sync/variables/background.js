@@ -45,7 +45,7 @@ export const handleBackgroundOptionFor = ({
 					responsive,
 					cb: (value) => {
 						if (value.background_type === 'gradient') {
-							return 'CT_CSS_SKIP_RULE'
+							return 'initial'
 						}
 
 						if (conditional_var) {

@@ -20,7 +20,7 @@ const getNavRootEl = (nav) => {
 
 const maybeCreateMoreItemsFor = (nav, onDone) => {
 	if (nav.querySelector('.more-items-container')) {
-		onDone()
+		onDone(nav.querySelector('.more-items-container'))
 		return
 	}
 
@@ -47,7 +47,60 @@ const maybeCreateMoreItemsFor = (nav, onDone) => {
 	)
 
 	getNavRootEl(nav).appendChild(moreContainer)
-	onDone && onDone()
+	onDone && onDone(moreContainer)
+}
+
+const countElWidth = (el) => {
+	if (el.firstElementChild.matches('a') && !el.querySelector('svg')) {
+		const a = el.firstElementChild
+		a.innerHTML = `<span>${a.innerHTML}</span>`
+
+		const props = window.getComputedStyle(a, null)
+
+		let extraWidth = 0
+
+		let parentComputedStyle = window.getComputedStyle(el.parentNode, null)
+
+		if (parentComputedStyle.gap !== 'normal') {
+			extraWidth = parseFloat(parentComputedStyle.gap)
+
+			if (
+				el.parentNode.firstElementChild === el ||
+				el === el.parentNode.lastElementChild
+			) {
+				extraWidth = extraWidth / 2
+			}
+		}
+
+		let actualWidth =
+			a.firstElementChild.getBoundingClientRect().width +
+			parseInt(props.getPropertyValue('padding-left'), 10) +
+			parseInt(props.getPropertyValue('padding-right'), 10) +
+			(a.querySelector('.ct-toggle-dropdown-desktop') ? 13 : 0) +
+			extraWidth
+
+		a.innerHTML = a.firstElementChild.innerHTML
+
+		return actualWidth
+	}
+
+	return el.firstElementChild.getBoundingClientRect().width
+}
+
+const computeMoreItemWidth = (nav) => {
+	let data = null
+
+	let hadMoreItems = !!nav.querySelector('.more-items-container')
+
+	maybeCreateMoreItemsFor(nav, (el) => {
+		data = countElWidth(el)
+
+		if (!hadMoreItems) {
+			el.remove()
+		}
+	})
+
+	return data
 }
 
 const computeItemsWidth = (nav) => {
@@ -57,45 +110,7 @@ const computeItemsWidth = (nav) => {
 				!el.classList.contains('.more-items-container') &&
 				el.firstElementChild
 		)
-		.map((el, index) => {
-			if (el.firstElementChild.matches('a') && !el.querySelector('svg')) {
-				const a = el.firstElementChild
-				a.innerHTML = `<span>${a.innerHTML}</span>`
-
-				const props = window.getComputedStyle(a, null)
-
-				let extraWidth = 0
-
-				let parentComputedStyle = window.getComputedStyle(
-					el.parentNode,
-					null
-				)
-
-				if (parentComputedStyle.gap !== 'normal') {
-					extraWidth = parseFloat(parentComputedStyle.gap)
-
-					if (
-						el.parentNode.firstElementChild === el ||
-						el === el.parentNode.lastElementChild
-					) {
-						extraWidth = extraWidth / 2
-					}
-				}
-
-				let actualWidth =
-					a.firstElementChild.getBoundingClientRect().width +
-					parseInt(props.getPropertyValue('padding-left'), 10) +
-					parseInt(props.getPropertyValue('padding-right'), 10) +
-					(a.querySelector('.ct-toggle-dropdown-desktop') ? 13 : 0) +
-					extraWidth
-
-				a.innerHTML = a.firstElementChild.innerHTML
-
-				return actualWidth
-			}
-
-			return el.firstElementChild.getBoundingClientRect().width
-		})
+		.map((el) => countElWidth(el))
 }
 
 const maybeMakeCacheForAllNavs = (nav) => {
@@ -133,6 +148,7 @@ const maybeMakeCacheForAllNavs = (nav) => {
 					: []),
 			],
 			itemsWidth: computeItemsWidth(nav),
+			moreItemWidth: computeMoreItemWidth(nav),
 		}
 
 		nav.dataset.responsive = 'yes'

@@ -67,6 +67,9 @@ const loadGoogleFonts = (font_family, variation) => {
 		return
 	}
 
+	let italVars = []
+	let wghtVars = []
+
 	if (loadedFonts[font_family]) {
 		if (loadedFonts[font_family].indexOf(variation) > -1) return
 		loadedFonts[font_family] = [...loadedFonts[font_family], variation]
@@ -74,10 +77,51 @@ const loadGoogleFonts = (font_family, variation) => {
 		loadedFonts[font_family] = [variation]
 	}
 
+	for (let variation of loadedFonts[font_family]) {
+		let varToPush = parseInt(variation[1]) * 100
+
+		varToPush += variation[0] === 'i' ? 'i' : ''
+
+		if (variation[0] === 'i') {
+			italVars.push(parseInt(variation[1]) * 100)
+		} else {
+			wghtVars.push(parseInt(variation[1]) * 100)
+		}
+	}
+
+	italVars.sort((a, b) => a - b)
+	wghtVars.sort((a, b) => a - b)
+
+	let axisTagList = []
+
+	if (italVars.length > 0) {
+		axisTagList.push('ital')
+	}
+
+	axisTagList.push('wght')
+
+	let toPush = axisTagList.join(',') + '@'
+
+	let allVars = []
+
+	for (let wghtVar of wghtVars) {
+		if (axisTagList.length > 1) {
+			allVars.push('0,' + wghtVar)
+		} else {
+			allVars.push(wghtVar)
+		}
+	}
+
+	for (let italVar of italVars) {
+		allVars.push('1,' + italVar)
+	}
+
+	toPush += allVars.join(';')
+
 	WebFontLoader.load({
 		google: {
 			api: 'https://fonts.googleapis.com/css2',
-			families: [font_family],
+			families: [`${font_family}:${toPush}`],
 		},
 		classes: false,
 		text: 'abcdefghijklmnopqrstuvwxyz',
@@ -122,7 +166,7 @@ export const typographyOption = ({
 
 				let { variation } = extractValue(value)
 
-				loadGoogleFonts(extractedValue, variation)
+				loadGoogleFonts(extractedValue.replace(/\'/g, ''), variation)
 			},
 		},
 

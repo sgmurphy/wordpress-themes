@@ -33,7 +33,7 @@ const CustomPalettes = ({ setIsEditingPalettes, option, onChange }) => {
 									)}
 
 									<span
-										data-tooltip="top"
+										data-tooltip-reveal="top"
 										onClick={(e) => {
 											e.preventDefault()
 											e.stopPropagation()

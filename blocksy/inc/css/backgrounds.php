@@ -365,6 +365,11 @@ if (! function_exists('blocksy_output_single_background_css')) {
 				$args['selector'],
 				"background-color: {$backgroundColor['default']}"
 			);
+		} else {
+			$args['css']->put(
+				$args['selector'],
+				"background-color: initial"
+			);
 		}
 
 		if (

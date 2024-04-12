@@ -3,9 +3,12 @@ import {
 	handlePlayClasses,
 	pauseVideo,
 	playVideo,
+	muteVideo,
 	maybePlayAutoplayedVideo,
 	subscribeForStateChanges,
 } from '../helpers/video'
+
+import { isIosDevice } from '../helpers/is-ios-device'
 
 import { loadStyle } from '../../helpers'
 
@@ -97,6 +100,10 @@ const loadVideoOrIframeViaAjax = (el) => {
 		el.insertAdjacentElement('beforeend', insertVideo)
 
 		const videoOrIframe = el.querySelector('video,iframe')
+		const flexyContainer = videoOrIframe.closest(
+			'.flexy-container[data-autoplay]'
+		)
+		const flexyInstance = flexyContainer?.flexy
 
 		listenForStateChanges(videoOrIframe, {
 			onPlay: () => {
@@ -105,9 +112,36 @@ const loadVideoOrIframeViaAjax = (el) => {
 						'loading'
 					)
 				}, 120)
+
+				if (flexyInstance) {
+					flexyInstance.options = {
+						...flexyInstance.options,
+						autoplay: false,
+						_autoplay: false,
+					}
+				}
+			},
+
+			onPause: () => {
+				if (flexyInstance) {
+					flexyInstance.options = {
+						...flexyInstance.options,
+						autoplay: parseInt(flexyContainer.dataset.autoplay),
+						_autoplay: parseInt(flexyContainer.dataset.autoplay),
+					}
+
+					flexyInstance.state = {
+						...flexyInstance.state,
+						lastTimeAnimated: new Date().getTime(),
+					}
+				}
 			},
 
 			onReady: () => {
+				if (isIosDevice()) {
+					muteVideo(videoOrIframe)
+				}
+
 				playVideo(videoOrIframe)
 			},
 		})

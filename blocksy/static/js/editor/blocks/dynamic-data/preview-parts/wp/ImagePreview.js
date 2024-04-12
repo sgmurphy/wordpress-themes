@@ -94,7 +94,7 @@ const ImagePreview = ({
 		objectFit: !!(height || aspectRatio) && 'cover',
 	}
 
-	if (!maybeUrl) {
+	if (!maybeUrl || !postId) {
 		return (
 			<figure {...blockProps}>
 				<div

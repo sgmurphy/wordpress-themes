@@ -167,9 +167,9 @@ $gallery_actions = [];
 if (
 	(
 		(
-			blocksy_get_theme_mod('has_product_single_lightbox', 'no') === 'yes'
+			current_theme_supports('wc-product-gallery-lightbox')
 			&&
-			blocksy_get_theme_mod('has_product_single_zoom', 'yes') === 'yes'
+			current_theme_supports('wc-product-gallery-zoom')
 		)
 		||
 		(
@@ -177,7 +177,7 @@ if (
 			&&
 			blocksy_get_theme_mod('woo_single_affiliate_image_link', 'no') === 'yes'
 			&&
-			blocksy_get_theme_mod('has_product_single_lightbox', 'no') === 'yes'
+			current_theme_supports('wc-product-gallery-lightbox')
 		)
 	)
 	&&
@@ -195,6 +195,7 @@ if (
 ) {
 	$gallery_actions[] = '<a href="#" class="woocommerce-product-gallery__trigger">🔍</a>';
 }
+
 
 if (! empty($gallery_actions)) {
 	// echo '<div class="ct-gallery-actions">';

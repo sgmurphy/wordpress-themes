@@ -68,6 +68,10 @@ if (! function_exists('blc_get_ext')) {
 	return;
 }
 
+if (! blc_get_ext('post-types-extra')->dynamic_data) {
+	return;
+}
+
 $field_descriptor = explode(':', $field);
 
 $field_render = blc_get_ext('post-types-extra')

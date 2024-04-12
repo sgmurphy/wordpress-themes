@@ -112,7 +112,27 @@ export const mount = (el, { event: mountEvent }) => {
 				.forEach((videoOrIframe) => pauseVideo(videoOrIframe))
 		}
 
-		photoswipe.listen('close', () => pauseAllVideos())
+		photoswipe.listen('close', () => {
+			const flexyContainer = el
+				.closest('.woocommerce-product-gallery')
+				.querySelector('.flexy-container')
+			const flexyInstance = flexyContainer?.flexy
+
+			if (flexyInstance && flexyContainer.dataset.autoplay) {
+				flexyInstance.options = {
+					...flexyInstance.options,
+					autoplay: parseInt(flexyContainer.dataset.autoplay),
+					_autoplay: parseInt(flexyContainer.dataset.autoplay),
+				}
+
+				flexyInstance.state = {
+					...flexyInstance.state,
+					lastTimeAnimated: new Date().getTime(),
+				}
+			}
+
+			pauseAllVideos()
+		})
 
 		const loadVideoForCurrentSlide = () => {
 			const videoContainer =
@@ -322,6 +342,25 @@ export const mount = (el, { event: mountEvent }) => {
 				const galleryWrapper = maybeTrigger.closest(
 					'.woocommerce-product-gallery'
 				)
+
+				const flexyContainer =
+					galleryWrapper.querySelector('.flexy-container')
+
+				const flexyInstance = flexyContainer?.flexy
+
+				galleryWrapper
+					.querySelectorAll('video,iframe')
+					.forEach((videoOrIframe) => pauseVideo(videoOrIframe))
+
+				if (flexyInstance && flexyContainer.dataset.autoplay) {
+					setTimeout(() => {
+						flexyInstance.options = {
+							...flexyInstance.options,
+							autoplay: false,
+							_autoplay: false,
+						}
+					}, 50)
+				}
 
 				if (
 					galleryWrapper.querySelector('.ct-media-container') &&

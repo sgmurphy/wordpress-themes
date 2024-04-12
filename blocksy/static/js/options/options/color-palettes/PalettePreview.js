@@ -143,7 +143,7 @@ const PalettePreview = ({
 															picker.variableName,
 													}
 												)}
-												data-tooltip="top">
+												data-tooltip-reveal="top">
 												<svg
 													width="12"
 													height="12"

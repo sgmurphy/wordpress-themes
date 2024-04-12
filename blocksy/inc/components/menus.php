@@ -317,14 +317,14 @@ add_filter(
 			&&
 			$args['blocksy_always_inline']
 		) {
-			$classes[] = 'animated-submenu-inline';
+			$css_class[] = 'animated-submenu-inline';
 		} else {
 			if ($depth === 0) {
-				$classes[] = 'animated-submenu-block';
+				$css_class[] = 'animated-submenu-block';
 			}
 
 			if ($depth > 0) {
-				$classes[] = 'animated-submenu-inline';
+				$css_class[] = 'animated-submenu-inline';
 			}
 		}
 

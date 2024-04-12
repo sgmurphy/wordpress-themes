@@ -1,5 +1,7 @@
 <?php
 
+$is_pro = function_exists('blc_fs') && blc_fs()->can_use_premium_code();
+
 $cpt_choices = [
 	'post' => __('Posts', 'blocksy'),
 	'page' => __('Pages', 'blocksy')
@@ -414,76 +416,88 @@ $options = [
 		'type' => 'tab',
 		'options' => [
 
-			'header_search_placeholder' => [
-				'label' => __( 'Placeholder Text', 'blocksy' ),
-				'type' => 'text',
-				'design' => 'block',
-				'value' => __( 'Search', 'blocksy' ),
-				'sync' => 'live'
-			],
+			[
+				'header_search_placeholder' => [
+					'label' => __( 'Placeholder Text', 'blocksy' ),
+					'type' => 'text',
+					'design' => 'block',
+					'value' => __( 'Search', 'blocksy' ),
+					'sync' => 'live'
+				],
 
-			'enable_live_results' => [
-				'label' => __( 'Live Results', 'blocksy' ),
-				'type' => 'ct-switch',
-				'value' => 'yes',
-			],
+				'enable_live_results' => [
+					'label' => __( 'Live Results', 'blocksy' ),
+					'type' => 'ct-switch',
+					'value' => 'yes',
+				],
 
-			blocksy_rand_md5() => [
-				'type' => 'ct-condition',
-				'condition' => [ 'enable_live_results' => 'yes' ],
-				'options' => [
+				blocksy_rand_md5() => [
+					'type' => 'ct-condition',
+					'condition' => [ 'enable_live_results' => 'yes' ],
+					'options' => [
 
-					'searchHeaderImages' => [
-						'label' => __( 'Live Results Images', 'blocksy' ),
-						'type' => 'ct-switch',
-						'value' => 'yes',
-						'divider' => 'top',
-						'setting' => [ 'transport' => 'postMessage' ],
+						'searchHeaderImages' => [
+							'label' => __( 'Live Results Images', 'blocksy' ),
+							'type' => 'ct-switch',
+							'value' => 'yes',
+							'divider' => 'top',
+							'setting' => [ 'transport' => 'postMessage' ],
+						],
+
+						blocksy_rand_md5() => [
+							'type' => 'ct-condition',
+							'condition' => [ 'search_through/product' => true ],
+							'options' => [
+								'searchHeaderProductPrice' => [
+									'label' => __( 'Live Results Product Price', 'blocksy' ),
+									'type' => 'ct-switch',
+									'value' => 'no',
+									'divider' => 'top',
+									'setting' => [ 'transport' => 'postMessage' ],
+								],
+
+								'searchHeaderProductStatus' => [
+									'label' => __( 'Live Results Product Status', 'blocksy' ),
+									'type' => 'ct-switch',
+									'value' => 'no',
+									'divider' => 'top',
+									'setting' => [ 'transport' => 'postMessage' ],
+								],
+							]
+						],
+
 					],
+				],
 
-					blocksy_rand_md5() => [
-						'type' => 'ct-condition',
-						'condition' => [ 'search_through/product' => true ],
-						'options' => [
-							'searchHeaderProductPrice' => [
-								'label' => __( 'Live Results Product Price', 'blocksy' ),
-								'type' => 'ct-switch',
-								'value' => 'no',
-								'divider' => 'top',
-								'setting' => [ 'transport' => 'postMessage' ],
-							],
 
-							'searchHeaderProductStatus' => [
-								'label' => __( 'Live Results Product Status', 'blocksy' ),
-								'type' => 'ct-switch',
-								'value' => 'no',
-								'divider' => 'top',
-								'setting' => [ 'transport' => 'postMessage' ],
-							],
-						]
-					],
+				blocksy_rand_md5() => [
+					'type' => 'ct-title',
+					'label' => __('Search Through Criteria', 'blocksy'),
+					'desc' => __(
+						'Chose in which post types do you want to perform searches.',
+						'blocksy'
+					)
+				],
 
+				'search_through' => [
+					'label' => false,
+					'type' => 'ct-checkboxes',
+					'attr' => ['data-columns' => '2'],
+					'disableRevertButton' => true,
+					'choices' => blocksy_ordered_keys($cpt_choices),
+					'value' => $cpt_options
 				],
 			],
 
-
-			blocksy_rand_md5() => [
-				'type' => 'ct-title',
-				'label' => __('Search Through Criteria', 'blocksy'),
-				'desc' => __(
-					'Chose in which post types do you want to perform searches.',
-					'blocksy'
-				)
-			],
-
-			'search_through' => [
-				'label' => false,
-				'type' => 'ct-checkboxes',
-				'attr' => ['data-columns' => '2'],
-				'disableRevertButton' => true,
-				'choices' => blocksy_ordered_keys($cpt_choices),
-				'value' => $cpt_options
-			],
+			$is_pro ? [
+				'search_through_taxonomy' => [
+					'label' => __('Search Through Taxonomies', 'blocksy'),
+					'type' => 'ct-switch',
+					'value' => 'no',
+					'divider' => 'top',
+					'desc' => __('Search through taxonomies from selected custom post types.', 'blocksy'),
+				]
+			] : []
 
 		],
 	],

@@ -4,6 +4,35 @@ export const handlePlayClasses = (videoOrIframe) => {
 	).dataset.state = 'playing'
 }
 
+export const muteVideo = (videoOrIframe) => {
+	if (!videoOrIframe) {
+		return
+	}
+
+	if (videoOrIframe.matches('iframe[src*="youtu"]')) {
+		videoOrIframe.contentWindow.postMessage(
+			JSON.stringify({
+				event: 'command',
+				func: 'mute',
+			}),
+			'*'
+		)
+
+		return
+	}
+
+	if (videoOrIframe.matches('iframe[src*="vimeo"]')) {
+		videoOrIframe.contentWindow.postMessage(
+			JSON.stringify({
+				method: 'setMuted',
+				value: true,
+			}),
+			'*'
+		)
+		return
+	}
+}
+
 export const playVideo = (videoOrIframe) => {
 	if (!videoOrIframe) {
 		return
@@ -107,14 +136,12 @@ export const subscribeForStateChanges = (videoOrIframe, cb = () => {}) => {
 	}
 
 	if (videoOrIframe.matches('video')) {
-		videoOrIframe.addEventListener('loadeddata', () => {
-			cb('ready')
+		cb('ready')
 
-			videoOrIframe.addEventListener('play', () => cb('play'))
-			videoOrIframe.addEventListener('pause', () => cb('pause'))
+		videoOrIframe.addEventListener('play', () => cb('play'))
+		videoOrIframe.addEventListener('pause', () => cb('pause'))
 
-			return
-		})
+		return
 	}
 
 	if (videoOrIframe.matches('iframe[src*="youtu"]')) {

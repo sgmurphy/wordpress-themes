@@ -6,29 +6,21 @@ const collectVariablesForLayers = (v) => {
 	v.map((layer) => {
 		let selectorsMap = {
 			product_title: '.entry-summary-items > .entry-title',
-			product_rating:
-				'.entry-summary-items > .woocommerce-product-rating',
+			product_rating: '.entry-summary-items > .woocommerce-product-rating',
 			product_price: '.entry-summary-items > .price',
-			product_desc:
-				'.entry-summary-items > .woocommerce-product-details__short-description',
-			product_add_to_cart:
-				'.entry-summary-items > .ct-product-add-to-cart',
+			product_desc: '.entry-summary-items > .woocommerce-product-details__short-description',
+			product_add_to_cart: '.entry-summary-items > .ct-product-add-to-cart',
 			product_meta: '.entry-summary-items > .product_meta',
-			product_payment_methods:
-				'.entry-summary-items > .ct-payment-methods',
-			additional_info:
-				'.entry-summary-items > .ct-product-additional-info',
+			product_payment_methods: '.entry-summary-items > .ct-payment-methods',
+			additional_info: '.entry-summary-items > .ct-product-additional-info',
 			product_tabs: '.entry-summary-items > .woocommerce-tabs',
 
 			// companion
 			product_brands: '.entry-summary-items > .ct-product-brands-single',
 			product_sharebox: '.entry-summary-items > .ct-share-box',
-			free_shipping:
-				'.entry-summary-items > .ct-shipping-progress-single',
-			product_actions:
-				'.entry-summary-items > .ct-product-additional-actions',
-			product_countdown:
-				'.entry-summary-items > .ct-product-sale-countdown',
+			free_shipping: '.entry-summary-items > .ct-shipping-progress-single',
+			product_actions: '.entry-summary-items > .ct-product-additional-actions',
+			product_countdown: '.entry-summary-items > .ct-product-sale-countdown',
 		}
 
 		if (selectorsMap[layer.id]) {
@@ -470,65 +462,5 @@ export const getWooSingleLayersVariablesFor = () => ({
 		type: 'spacing',
 		variable: 'container-border-radius',
 		responsive: true,
-	},
-
-
-	// product tabs
-	...typographyOption({
-		id: 'woo_tabs_font',
-		selector: '.woocommerce-tabs .tabs, .woocommerce-tabs .ct-accordion-heading',
-	}),
-
-	woo_tabs_font_color: [
-		{
-			selector: '.woocommerce-tabs .tabs, .woocommerce-tabs .ct-accordion-heading',
-			variable: 'theme-link-initial-color',
-			type: 'color:default',
-		},
-
-		{
-			selector: '.woocommerce-tabs .tabs, .woocommerce-tabs .ct-accordion-heading',
-			variable: 'theme-link-hover-color',
-			type: 'color:hover',
-		},
-
-		{
-			selector: '.woocommerce-tabs .tabs, .woocommerce-tabs .ct-accordion-heading',
-			variable: 'theme-link-active-color',
-			type: 'color:active',
-		},
-	],
-
-	woo_tabs_border_color: {
-		selector: '.woocommerce-tabs[data-type] .tabs, .woocommerce-tabs .ct-accordion-heading',
-		variable: 'tab-border-color',
-		type: 'color',
-	},
-
-	woo_actibe_tab_border: {
-		selector: '.woocommerce-tabs[data-type] .tabs',
-		variable: 'tab-background',
-		type: 'color',
-	},
-
-	woo_actibe_tab_background: [
-		{
-			selector: '.woocommerce-tabs[data-type*="type-2"] .tabs',
-			variable: 'tab-background',
-			type: 'color:default',
-		},
-
-		{
-			selector: '.woocommerce-tabs[data-type*="type-2"] .tabs li.active',
-			variable: 'tab-border-color',
-			type: 'color:border',
-		},
-	],
-
-	woo_separated_tabs_spacing: {
-		selector: '.woocommerce-tabs[data-type*="type-4"]',
-		variable: 'woo-separated-tabs-spacing',
-		responsive: true,
-		unit: 'px',
 	},
 })

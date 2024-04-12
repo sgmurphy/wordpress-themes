@@ -313,7 +313,13 @@ class BreadcrumbsBuilder {
 
 			global $sitepress, $woocommerce_wpml;
 
-			if ($sitepress && $woocommerce_wpml) {
+			if (
+				$sitepress
+				&&
+				$woocommerce_wpml
+				&&
+				method_exists($woocommerce_wpml, 'url_translation')
+			) {
 				$product_base = $woocommerce_wpml->url_translation->get_woocommerce_product_base();
 
 				$shop_page_for_matching = get_post(

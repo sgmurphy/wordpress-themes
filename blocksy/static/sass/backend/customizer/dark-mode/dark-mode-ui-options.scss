@@ -347,14 +347,14 @@
 		background: $accent;
 	}
 
-	[data-tooltip="top"] .ct-tooltip {
+	[data-tooltip-reveal="top"] .ct-tooltip {
 		
 		&:after {
 			border-top-color: $accent;
 		}
 	}
 
-	[data-tooltip="left"] .ct-tooltip {
+	[data-tooltip-reveal="left"] .ct-tooltip {
 		
 		&:after {
 			border-inline-start-color: $accent;

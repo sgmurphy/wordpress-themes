@@ -92,6 +92,7 @@ const TextField = ({
 					postId={postId}
 					postType={postType}
 					fallback={fallback}
+					fieldsDescriptor={fieldsDescriptor}
 				/>
 
 				{after}

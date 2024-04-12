@@ -56,7 +56,7 @@ const ColorPickerIris = ({
 						className={classnames('ct-copy-color', {
 							copied,
 						})}
-						data-tooltip="top">
+						data-tooltip-reveal="top">
 						<svg
 							width="12"
 							height="12"

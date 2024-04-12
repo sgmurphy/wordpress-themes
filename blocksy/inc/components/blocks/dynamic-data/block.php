@@ -69,6 +69,42 @@ class DynamicData {
 
 				$data = json_decode(file_get_contents('php://input'), true);
 
+				// TODO: remove tmp override
+				if (! isset($data['post_id'])) {
+					// blocksy_manager()->post_types->get_supported_post_types();
+					$potential_post_types = array_keys(get_post_types([
+						'public'   => true,
+					]));
+					
+					$fields = [];
+
+					foreach ($potential_post_types as $single_cpt) {
+						$fields = array_merge(
+							$fields,
+							$this->get_custom_fields($single_cpt)
+						);
+					}
+
+					wp_send_json_success(apply_filters(
+						'blocksy:general:blocks:dynamic-data:data',
+						[
+							'post_id' => null,
+							'post_type' => 'post',
+							'fields' => array_map(
+								"unserialize",
+								array_unique(
+									array_map(
+										"serialize",
+										$fields
+									)
+								)
+							),
+							'dynamic_styles' => $this->get_dynamic_styles_for(),
+							'$potential_post_types' => $potential_post_types
+						]
+					));
+				}
+
 				if (! $data || ! isset($data['post_id'])) {
 					wp_send_json_error();
 				}
@@ -79,85 +115,7 @@ class DynamicData {
 
 				$post_type = get_post_type($data['post_id']);
 
-				$providers = [];
-
-				if (
-					function_exists('blc_get_ext')
-					&&
-					blc_get_ext('post-types-extra')
-					&&
-					blc_get_ext('post-types-extra')->dynamic_data
-				) {
-					$providers = [
-						'acf',
-						'metabox',
-						'custom',
-						'toolset',
-						'jetengine',
-						'pods'
-					];
-				}
-
-				$fields = [];
-
-				foreach ($providers as $provider) {
-					$maybe_fields = blc_get_ext('post-types-extra')
-						->dynamic_data
-						->retrieve_dynamic_data_fields([
-							'post_type' => $post_type,
-							'provider' => $provider,
-							'allow_images' => true
-						]);
-
-					if (empty($maybe_fields)) {
-						continue;
-					}
-
-					$result = [];
-
-					foreach ($maybe_fields as $field => $label) {
-						$field_render = blc_get_ext('post-types-extra')
-							->dynamic_data
-							->get_field_to_render(
-								[
-									'id' => $provider . '_field',
-									'field' => $field,
-								],
-								[
-									'post_type' => $post_type,
-									'post_id' => $data['post_id'],
-									'allow_images' => true
-								]
-							);
-
-						if (! $field_render) {
-							continue;
-						}
-
-						$field_type = 'text';
-
-						if (
-							is_array($field_render['value'])
-							&&
-							isset($field_render['value']['type'])
-						) {
-							if ($field_render['value']['type'] === 'image') {
-								$field_type = 'image';
-							}
-						}
-
-						$result[] = [
-							'id' => $field,
-							'label' => $label,
-							'type' => $field_type
-						];
-					}
-
-					$fields[] = [
-						'provider' => $provider,
-						'fields' => $result
-					];
-				}
+				$fields = $this->get_custom_fields($post_type, $data['post_id']);
 
 				wp_send_json_success(apply_filters(
 					'blocksy:general:blocks:dynamic-data:data',
@@ -294,6 +252,90 @@ class DynamicData {
 		}
 
 		return $final_css;
+	}
+
+	public function get_custom_fields($post_type, $post_id = null) {
+		$providers = [];
+
+		if (
+			function_exists('blc_get_ext')
+			&&
+			blc_get_ext('post-types-extra')
+			&&
+			blc_get_ext('post-types-extra')->dynamic_data
+		) {
+			$providers = [
+				'acf',
+				'metabox',
+				'custom',
+				'toolset',
+				'jetengine',
+				'pods'
+			];
+		}
+
+		$fields = [];
+
+		foreach ($providers as $provider) {
+			$maybe_fields = blc_get_ext('post-types-extra')
+				->dynamic_data
+				->retrieve_dynamic_data_fields([
+					'post_type' => $post_type,
+					'provider' => $provider,
+					'allow_images' => true
+				]);
+
+			if (empty($maybe_fields)) {
+				continue;
+			}
+
+			$result = [];
+
+			foreach ($maybe_fields as $field => $label) {
+				$field_render = blc_get_ext('post-types-extra')
+					->dynamic_data
+					->get_field_to_render(
+						[
+							'id' => $provider . '_field',
+							'field' => $field,
+						],
+						[
+							'post_type' => $post_type,
+							'post_id' => $post_id,
+							'allow_images' => true
+						]
+					);
+
+				if (! $field_render) {
+					continue;
+				}
+
+				$field_type = 'text';
+
+				if (
+					is_array($field_render['value'])
+					&&
+					isset($field_render['value']['type'])
+				) {
+					if ($field_render['value']['type'] === 'image') {
+						$field_type = 'image';
+					}
+				}
+
+				$result[] = [
+					'id' => $field,
+					'label' => $label,
+					'type' => $field_type
+				];
+			}
+
+			$fields[] = [
+				'provider' => $provider,
+				'fields' => $result
+			];
+		}
+
+		return $fields;
 	}
 }
 

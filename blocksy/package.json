@@ -1,6 +1,6 @@
 {
 	"name": "small-ct",
-	"version": "2.0.38",
+	"version": "2.0.39",
 	"title": "Blocksy",
 	"browserslist": "> 1%, not opera > 0, not op_mini all",
 	"devDependencies": {
@@ -28,7 +28,7 @@
 		"make-nightly": "scripts/make-nightly.sh",
 		"make-release": "scripts/make-release.sh",
 		"create-github-release": "env-cmd --silent node scripts/create-github-release.js",
-		"sync-google-fonts": "node scripts/sync-google-fonts.js",
+		"sync-google-fonts": "env-cmd --silent node scripts/sync-google-fonts.js",
 		"make-pr": "env-cmd --silent node scripts/make-pr.js",
 		"test": "NODE_ENV=test jest"
 	},
@@ -48,7 +48,7 @@
 		"cross-env": "^7.0.3",
 		"ct-log": "^1.0.0",
 		"ct-wp-js-log": "^1.0.4",
-		"customizer-sync-helpers": "^2.0.4",
+		"customizer-sync-helpers": "^2.0.5",
 		"deep-equal": "^1.0.1",
 		"dom-chef": "^3.3.0",
 		"downshift": "^6.0.6",

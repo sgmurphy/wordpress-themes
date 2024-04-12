@@ -98,7 +98,7 @@ const LayerControls = ({
 					<button
 						type="button"
 						className="ct-clone"
-						data-tooltip="top"
+						data-tooltip-reveal="top"
 						onClick={() => addForId(value.id, value)}>
 						<svg
 							width="10px"

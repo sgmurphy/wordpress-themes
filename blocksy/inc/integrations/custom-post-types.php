@@ -82,6 +82,9 @@ class CustomPostTypes {
 				'pafe-form-booking',
 				'pafe-fonts',
 
+				// give
+				'give_forms',
+
 				// complianz
 				'cmplz-processing',
 				'cmplz-dataleak',

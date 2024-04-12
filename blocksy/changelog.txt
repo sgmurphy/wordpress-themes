@@ -1,3 +1,11 @@
+2.0.39: 2024-04-11
+- Improvement: Better compatibility with WooCommerce Multilingual & Multicurrency plugin
+- Improvement: Better fit "More" item in responsive menu
+- Improvement: Better support for Google variable fonts
+- Improvement: Smarter check for lightbox initialization on single product page
+- Improvement: Transparent header - don't apply regular background if gradient is applied
+- Fix: Better handling of menu dropdown assets for default menus
+
 2.0.38: 2024-04-04
 - Improvement: Archive cards and boundless image height issue in Safari
 - Improvement: Better handle editor background color output in WordPress 6.5

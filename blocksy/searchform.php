@@ -19,6 +19,12 @@ if (isset($args['ct_product_price'])) {
 	$show_product_price = blocksy_get_theme_mod('searchProductPrice', 'no') === 'yes';
 }
 
+if (isset($args['search_through_taxonomy'])) {
+	$search_through_taxonomy = $args['search_through_taxonomy'] === 'yes';
+} else {
+	$search_through_taxonomy = false;
+}
+
 if (isset($args['ct_product_status'])) {
 	$show_product_status = $args['ct_product_status'];
 } else {
@@ -318,6 +324,11 @@ $button_html_atts = array_merge(
 		<?php if (count($allowed_post_types) > 1) { ?>
 			<input type="hidden" name="ct_post_type" value="<?php echo esc_attr(implode(':', $allowed_post_types)) ?>">
 		<?php } ?>
+
+		<?php if ($search_through_taxonomy) { ?>
+			<input type="hidden" name="ct_search_taxonomies" value="yes">
+		<?php } ?>
+
 
 		<?php
 			if ($has_live_results === 'yes') {

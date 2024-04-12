@@ -12,16 +12,13 @@ const CustomFieldPreview = ({
 }) => {
 	const { fieldData } = useCustomFieldData({ postId, fieldDescriptor })
 
-	if (!fieldData) {
-		return null
-	}
-
 	if (fieldDescriptor.type === 'image') {
 		return (
 			<CustomImageField
 				fieldData={fieldData}
 				fieldDescriptor={fieldDescriptor}
 				attributes={attributes}
+				postId={postId}
 			/>
 		)
 	}
@@ -31,6 +28,7 @@ const CustomFieldPreview = ({
 			fieldData={fieldData}
 			fieldDescriptor={fieldDescriptor}
 			attributes={attributes}
+			postId={postId}
 		/>
 	)
 }

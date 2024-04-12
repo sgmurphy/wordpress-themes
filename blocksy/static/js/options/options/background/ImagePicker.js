@@ -53,7 +53,7 @@ const ImagePicker = ({ option, value, onChange, setOutsideClickFreezed }) => {
 					view: 'text',
 					design: 'block',
 					attr: { 'data-type': 'repeat' },
-					choice_attr: {'data-tooltip': 'top'},
+					choice_attr: {'data-tooltip-reveal': 'top'},
 					value: option.value['background_repeat'],
 					choices: {
 						repeat: `<svg viewBox="0 0 16 16"><path d="M0,0h4v4H0V0z M6,0h4v4H6V0z M12,0h4v4h-4V0z M0,6h4v4H0V6z M6,6h4v4H6V6z M12,6h4v4h-4V6z M0,12h4v4H0V12z M6,12h4v4H6V12zM12,12h4v4h-4V12z"/></svg>

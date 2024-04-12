@@ -21,6 +21,8 @@ const CustomImageField = ({
 		image_hover_effect,
 		sizeSlug,
 	},
+
+	postId,
 }) => {
 	const blockProps = useBlockProps({
 		className: classnames('ct-dynamic-media wp-block-image', {
@@ -54,7 +56,7 @@ const CustomImageField = ({
 		objectFit: !!(height || aspectRatio) && 'cover',
 	}
 
-	if (!maybeUrl) {
+	if (!maybeUrl || !postId) {
 		return (
 			<figure {...blockProps}>
 				<div

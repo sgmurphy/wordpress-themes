@@ -132,7 +132,7 @@ $options = [
 							'design' => 'block',
 							'divider' => 'top:full',
 							'attr' => [ 'data-type' => 'content-spacing' ],
-							'choice_attr' => [ 'data-tooltip' => 'top' ],
+							'choice_attr' => [ 'data-tooltip-reveal' => 'top' ],
 							'sync' => "live",
 							'choices' => [
 								'both'   => '<span></span>

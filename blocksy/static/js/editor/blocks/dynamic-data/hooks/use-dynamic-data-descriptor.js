@@ -77,12 +77,16 @@ const wpFields = () => {
 	}
 }
 
-const wooFields = () => {
+const wooFields = (taxonomies = []) => {
 	const hasWoo = typeof window.wc !== 'undefined'
 
 	if (!hasWoo) {
 		return []
 	}
+
+	const hasBrands = (taxonomies || []).find(
+		({ slug }) => slug === 'product_brands'
+	)
 
 	return [
 		{
@@ -104,6 +108,14 @@ const wooFields = () => {
 					id: 'sku',
 					label: __('SKU', 'blocksy'),
 				},
+				...(hasBrands
+					? [
+							{
+								id: 'brands',
+								label: __('Brands', 'blocksy'),
+							},
+					  ]
+					: []),
 			],
 		},
 	]
@@ -113,7 +125,7 @@ let callbacks = {}
 
 const cache = {}
 
-const fetchDataFor = (postId, postType, cb) => {
+const fetchDataFor = (postId, postType, taxonomies, cb) => {
 	if (cache[postId]) {
 		cb(cache[postId])
 		return
@@ -141,7 +153,9 @@ const fetchDataFor = (postId, postType, cb) => {
 					...data,
 					fields: [
 						wpFields(),
-						...(postType === 'product' ? wooFields() : []),
+						...(postType === 'product'
+							? wooFields(taxonomies)
+							: []),
 						...data.fields,
 					],
 				}
@@ -158,60 +172,22 @@ const fetchDataFor = (postId, postType, cb) => {
 }
 
 const useDynamicDataDescriptor = ({ postId, postType }) => {
+	const taxonomies = useTaxonomies(postType)
+
 	const [fieldsDescriptor, setFieldsDescriptor] = useState({
-		fields: [wpFields(), ...(postType === 'product' ? wooFields() : [])],
+		fields: [
+			wpFields(),
+			...(postType === 'product' ? wooFields(taxonomies) : []),
+		],
 	})
 
 	useEffect(() => {
-		fetchDataFor(postId, postType, (data) => {
-			setFieldsDescriptor(data)
-		})
-	}, [postId, postType])
-
-	const taxonomies = useTaxonomies(postType)
-
-	useEffect(() => {
-		if (postType !== 'product') {
-			return
+		if (taxonomies) {
+			fetchDataFor(postId, postType, taxonomies, (data) => {
+				setFieldsDescriptor(data)
+			})
 		}
-
-		const hasBrands = (taxonomies || []).find(
-			({ slug }) => slug === 'product_brands'
-		)
-
-		if (!hasBrands) {
-			return
-		}
-
-		const hasWoocommerce = fieldsDescriptor.fields.find(
-			({ provider }) => provider === 'woo'
-		)
-
-		const brandsFields = (hasWoocommerce?.fields || []).find(
-			({ id }) => id === 'brands'
-		)
-
-		if (!hasWoocommerce || brandsFields) {
-			return
-		}
-
-		setFieldsDescriptor({
-			...fieldsDescriptor,
-			fields: [
-				wpFields(),
-				{
-					provider: 'woo',
-					fields: [
-						...hasWoocommerce.fields,
-						{
-							id: 'brands',
-							label: __('Brands', 'blocksy'),
-						},
-					],
-				},
-			],
-		})
-	}, [taxonomies, fieldsDescriptor])
+	}, [postId, postType, taxonomies])
 
 	return {
 		fieldsDescriptor,

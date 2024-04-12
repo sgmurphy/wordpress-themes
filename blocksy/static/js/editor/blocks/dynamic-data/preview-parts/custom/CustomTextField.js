@@ -23,11 +23,12 @@ const CustomTextField = ({
 
 	let isFallback = false
 
-	let valueToRender = fieldData.value || ''
+	let valueToRender = fieldData?.value || ''
 
 	if (!valueToRender) {
 		isFallback = true
-		valueToRender = fallback || ''
+		valueToRender =
+			fallback || `Custom Text Field: ${fieldDescriptor?.label}`
 	}
 
 	if (!isFallback && valueToRender && typeof valueToRender === 'string') {

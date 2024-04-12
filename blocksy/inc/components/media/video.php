@@ -183,7 +183,7 @@ function blocksy_get_image_video_component($media_id, $args = []) {
 	}
 
 	preg_match(
-		'#^(http|https)://.+\.(mp4|MP4|mpeg4)(?=\?|$)#i',
+		'#^(http|https)://.+\.(mp4|MP4|mpeg4|mov)(?=\?|$)#i',
 		$video_data['url'],
 		$matches
 	);
@@ -240,18 +240,19 @@ function blocksy_get_image_video_component($media_id, $args = []) {
 			$additional_parmas['playlist'] = $id;
 		}
 
-		$additional_parmas = array_merge(
-			$additional_parmas,
-			[
-				'enablejsapi' => 1,
-				'version' => 3,
-				'playerapiid' => 'ytplayer',
-				'mute' => $use_autoplay ? 1 : 0
-			]
-		);
+		$additional_parmas = array_merge( $additional_parmas, [
+			'enablejsapi' => 1,
+			'version' => 3,
+			'playerapiid' => 'ytplayer',
+			'mute' => $use_autoplay ? 1 : 0
+		]);
 
 		if ($nocookies_mode) {
-			$embed = str_replace( 'youtube.com/embed', 'youtube-nocookie.com/embed', $embed );
+			$embed = str_replace(
+				'youtube.com/embed',
+				'youtube-nocookie.com/embed',
+				$embed
+			);
 		}
 	}
 

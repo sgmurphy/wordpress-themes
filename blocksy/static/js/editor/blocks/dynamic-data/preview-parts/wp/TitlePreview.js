@@ -13,6 +13,10 @@ const TitlePreview = ({ attributes: { has_field_link }, postId, postType }) => {
 		postId
 	)
 
+	if (!postId) {
+		return 'Title'
+	}
+
 	if (!rawTitle) {
 		return null
 	}

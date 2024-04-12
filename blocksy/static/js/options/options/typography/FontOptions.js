@@ -191,7 +191,7 @@ const FontOptions = ({ option, value, sizeRef, onChange, props }) => {
 								active: variant === value['text-transform'],
 							})}
 							data-variant={variant}
-							data-tooltip="top">
+							data-tooltip-reveal="top">
 							<i className="ct-tooltip">
 								{
 									{
@@ -221,7 +221,7 @@ const FontOptions = ({ option, value, sizeRef, onChange, props }) => {
 								active: variant === value['text-decoration'],
 							})}
 							data-variant={variant}
-							data-tooltip="top">
+							data-tooltip-reveal="top">
 							<i className="ct-tooltip">
 								{
 									{

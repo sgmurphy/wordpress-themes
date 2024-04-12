@@ -98,7 +98,7 @@ $options = [
 			'design' => $has_v_spacing ? 'block' : 'inline',
 			'divider' => 'top',
 			'attr' => [ 'data-type' => 'content-spacing' ],
-			'choice_attr' => [ 'data-tooltip' => 'top' ],
+			'choice_attr' => [ 'data-tooltip-reveal' => 'top' ],
 			'sync' => "live",
 			'choices' => [
 				'both'   => '<span></span>

@@ -294,7 +294,7 @@ const SinglePicker = ({
 
 						onPickingChange(futureIsPicking)
 					}}
-					data-tooltip="top"
+					data-tooltip-reveal="top"
 					style={
 						((value || {}).color || '').indexOf(
 							getNoColorPropFor(option)

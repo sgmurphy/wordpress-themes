@@ -162,6 +162,9 @@ export const mount = (formEl, args = {}) => {
 		options.postType.replace('ct_forced_', '')
 	}
 
+	options.ctSearchTaxonomies =
+		formEl.querySelector('[name="ct_search_taxonomies"]')?.value || ''
+
 	options.productPrice = !!formEl.closest(
 		'[data-live-results*="product_price"]'
 	)
@@ -212,6 +215,10 @@ export const mount = (formEl, args = {}) => {
 
 		if (options.queryCategory) {
 			params.append('ct_tax_query', options.queryCategory)
+		}
+
+		if (options.ctSearchTaxonomies) {
+			params.append('ct_search_taxonomies', options.ctSearchTaxonomies)
 		}
 
 		if (ct_localizations.lang) {

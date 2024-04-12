@@ -90,7 +90,7 @@ const Background = ({ option, value, onChange }) => {
 					'ct-color-inherit': isInherit,
 					'ct-no-color': isNoColor,
 				})}
-				data-tooltip="top"
+				data-tooltip-reveal="top"
 				onClick={(e) => {
 					e.preventDefault()
 					setIsOpen(!isOpen)
@@ -119,7 +119,7 @@ const Background = ({ option, value, onChange }) => {
 				style={{
 					...(value.backgroundColor.default.color.indexOf(
 						'CT_CSS_SKIP_RULE'
-					) > -1 || value.background_type === 'gradient'
+					) > -1
 						? {}
 						: {
 								backgroundColor:

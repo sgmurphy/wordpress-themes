@@ -263,6 +263,7 @@ foreach ($button_colors as $key => $value) {
 				'has_taxonomy_filter' => blocksy_akg('has_taxonomy_filter', $atts, 'no') === 'yes',
 				'has_taxonomy_children' => blocksy_akg('has_taxonomy_children', $atts, 'no') === 'yes',
 				'taxonomy_filter_label' => blocksy_akg('taxonomy_filter_label', $atts, __('Select Category', 'blocksy')),
+				'search_through_taxonomy' => blocksy_akg('search_through_taxonomy', $atts, 'no'),
 				'taxonomy_filter_visibility' => blocksy_akg(
 					'taxonomy_filter_visibility',
 					$atts,

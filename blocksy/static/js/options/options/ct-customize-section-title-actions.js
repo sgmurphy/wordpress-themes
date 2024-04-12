@@ -95,7 +95,7 @@ const OptionsActions = ({ option, option: { areas, prefix }, onChangeFor }) => {
 
 	return createPortal(
 		<Fragment>
-			<span className="ct-more-options-trigger" data-tooltip="left">
+			<span className="ct-more-options-trigger" data-tooltip-reveal="left">
 				<button
 					className="components-button components-dropdown-menu__toggle is-small has-icon"
 					onClick={(e) => {

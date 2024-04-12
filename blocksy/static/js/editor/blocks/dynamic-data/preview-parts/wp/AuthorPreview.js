@@ -29,6 +29,8 @@ const AuthorPreview = ({
 	postType,
 	attributes: { has_field_link, author_field },
 	fallback,
+
+	fieldsDescriptor,
 }) => {
 	const { authorId, authorDetails } = useSelect(
 		(select) => {
@@ -48,6 +50,10 @@ const AuthorPreview = ({
 		},
 		[postType, postId]
 	)
+
+	if (!postId) {
+		return `Author: ${author_field}`
+	}
 
 	if (!authorDetails) {
 		return null

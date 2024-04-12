@@ -54,7 +54,7 @@ let allFrontendEntryPoints = [
 
 	{
 		els: '.ct-media-container[data-media-id], .ct-dynamic-media[data-media-id]',
-		load: () => import('./frontend/lazy/video-on-click.js'),
+		load: () => import('./frontend/lazy/video-on-click'),
 		trigger: ['click', 'slight-mousemove'],
 	},
 

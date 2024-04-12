@@ -9,7 +9,7 @@ import classnames from 'classnames'
 import { addQueryArgs, removeQueryArgs } from '@wordpress/url'
 import { useUserAvatar } from '../../hooks/use-user-avatar'
 
-const ImagePreview = ({
+const AvatarPreview = ({
 	postId,
 	postType,
 
@@ -65,4 +65,4 @@ const ImagePreview = ({
 	return <figure {...blockProps}>{content}</figure>
 }
 
-export default ImagePreview
+export default AvatarPreview

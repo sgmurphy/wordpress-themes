@@ -36,7 +36,7 @@
 	}
 }
 
-[data-tooltip] {
+[data-tooltip-reveal] {
 	position: relative;
 
 	&:hover .ct-tooltip {
@@ -46,7 +46,7 @@
 }
 
 // reaveal top 
-[data-tooltip="top"] {
+[data-tooltip-reveal="top"] {
 
 	.ct-tooltip {
 		top: 0;
@@ -77,7 +77,7 @@
 }
 
 // reaveal left
-[data-tooltip="left"] {
+[data-tooltip-reveal="left"] {
 
 	.ct-tooltip {
 		inset-inline-start: 0;

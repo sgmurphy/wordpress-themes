@@ -42,6 +42,10 @@ const ExcerptPreview = ({
 
 	const maybeMore = trimmedExcerpt !== rawOrRenderedExcerpt ? '...' : ''
 
+	if (!postId) {
+		return 'Excerpt'
+	}
+
 	if (!trimmedExcerpt) {
 		return fallback
 	}

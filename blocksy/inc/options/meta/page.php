@@ -126,7 +126,7 @@ $options = [
 							'design' => 'block',
 							'disableRevertButton' => true,
 							'attr' => [ 'data-type' => 'content-spacing' ],
-							'choice_attr' => [ 'data-tooltip' => 'top' ],
+							'choice_attr' => [ 'data-tooltip-reveal' => 'top' ],
 							'setting' => [ 'transport' => 'postMessage' ],
 							'choices' => [
 								'both'   => '<span></span>

@@ -71,7 +71,7 @@ const LayerControls = SortableHandle(({ items, onChange, value }) => {
 			<button
 				type="button"
 				className="ct-clone"
-				data-tooltip="top"
+				data-tooltip-reveal="top"
 				onClick={() => addForId(value)}>
 				<svg
 					width="10px"

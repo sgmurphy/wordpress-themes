@@ -178,7 +178,7 @@ ColorPalettes.LabelToolbar = ({ option, value, onChange }) => {
 				renderToggle={({ isOpen, onToggle }) => (
 					<span
 						className="ct-more-options-trigger"
-						data-tooltip="top">
+						data-tooltip-reveal="top">
 						<button
 							className="components-button components-dropdown-menu__toggle is-small has-icon"
 							onClick={(e) => {
