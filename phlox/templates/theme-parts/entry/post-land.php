@@ -68,8 +68,8 @@
                                         echo '<a href="'. esc_url( $the_link ) .'" class="link-format-excerpt">' . $the_link . '</a>';
 
                                     } else {
-                                        $content_listing_type   = is_category() || is_tag() ? auxin_get_option( 'post_taxonomy_archive_content_on_listing' ) : auxin_get_option( 'blog_content_on_listing' );
-                                        $content_listing_length = is_category() || is_tag() ? auxin_get_option( 'post_taxonomy_archive_on_listing_length', 255 ) : auxin_get_option( 'excerpt_len', 255 );
+                                        $content_listing_type   = is_category() || is_tag() || is_author() ? auxin_get_option( 'post_taxonomy_archive_content_on_listing' ) : auxin_get_option( 'blog_content_on_listing' );
+                                        $content_listing_length = is_category() || is_tag() || is_author() ? auxin_get_option( 'post_taxonomy_archive_on_listing_length', 255 ) : auxin_get_option( 'excerpt_len', 255 );
 
                                         if( has_excerpt() ){
                                             the_excerpt();

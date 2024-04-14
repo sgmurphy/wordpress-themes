@@ -8,7 +8,7 @@
         $show_post_author     = auxin_get_option( 'display_post_info_author', true );
         $show_post_categories = auxin_get_option( 'display_post_info_categories', true );
         $display_comments     = auxin_get_option( 'display_post_info_comments', true );
-    } elseif ( is_tag() || is_category() ) {
+    } elseif ( is_tag() || is_category() || is_author() ) {
         $show_post_info       = auxin_get_option( 'display_post_taxonomy_info', true );
         $show_post_date       = auxin_get_option( 'display_post_taxonomy_info_date', true );
         $show_post_author     = auxin_get_option( 'display_post_taxonomy_info_author', true );
@@ -104,8 +104,8 @@
                                 <?php } ?>
 
                                 <?php if( 'quote' !== $post_format ) {
-                                    $content_listing_type   = is_category() || is_tag() ? auxin_get_option( 'post_taxonomy_archive_content_on_listing' ) : auxin_get_option( 'blog_content_on_listing' );
-                                    $content_listing_length = is_category() || is_tag() ? auxin_get_option( 'post_taxonomy_archive_on_listing_length', 255 ) :
+                                    $content_listing_type   = is_category() || is_tag() || is_author() ? auxin_get_option( 'post_taxonomy_archive_content_on_listing' ) : auxin_get_option( 'blog_content_on_listing' );
+                                    $content_listing_length = is_category() || is_tag() || is_author() ? auxin_get_option( 'post_taxonomy_archive_on_listing_length', 255 ) :
                                                             auxin_get_option( 'blog_content_on_listing_length', 255 );
 
                                 if ( $content_listing_type !== 'none') {

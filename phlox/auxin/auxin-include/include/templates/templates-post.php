@@ -381,7 +381,7 @@ function auxin_content_main_class( $class = '' ){
         } elseif( is_archive() ){
 
 
-            if( is_category() || is_tag() ){ // for category.php
+            if( is_category() || is_tag() || is_author() ){ // for category.php
                 $classes['template_type'] = 'aux-template-type-' . auxin_get_option( 'post_taxonomy_archive_template_type', 'default' );
 
             } elseif( $post ) { // for archive.php

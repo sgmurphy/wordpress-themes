@@ -16,7 +16,7 @@ $template_type_id   = auxin_get_option( 'post_index_template_type', 'default' );
 $post_loadmore_type = auxin_get_option( 'post_index_loadmore_type', '' );
 
 // Use taxonomy template option if is category or tag archive page
-if( is_category() || is_tag() ){
+if( is_category() || is_tag() || is_author() ){
 	$template_type_id   = auxin_get_option( 'post_taxonomy_archive_template_type', 'default' );
 	$post_loadmore_type = auxin_get_option( 'post_taxonomy_loadmore_type', '' );
 }

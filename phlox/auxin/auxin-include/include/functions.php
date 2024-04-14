@@ -477,7 +477,7 @@ function auxin_get_page_sidebar_pos( $page_id ){
             }
         }
 
-    } elseif( is_category() || is_tag() ) {
+    } elseif( is_category() || is_tag() || is_author() ) {
 
         $layout = auxin_get_option( 'post_taxonomy_archive_sidebar_position', 'right-sidebar');
     } elseif( is_search() ){

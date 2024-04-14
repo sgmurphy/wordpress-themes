@@ -7856,8 +7856,8 @@ function auxin_define_options_info( $fields_sections_list ){
     $sections[] = array(
         'id'          => 'blog-section-taxonomy',
         'parent'      => 'blog-section', // section parent's id
-        'title'       => __( 'Blog Category & tag', 'phlox' ),
-        'description' => __( 'Blog Category & tag page Setting', 'phlox' )
+        'title'       => __( 'Blog Category, tag & author', 'phlox' ),
+        'description' => __( 'Blog Category, tag & author page Setting', 'phlox' )
     );
 
     $options[] = array(
