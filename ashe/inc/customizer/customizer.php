@@ -361,7 +361,7 @@ function ashe_customize_register( $wp_customize ) {
 		protected function render_template() {
 			?>
 			<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand control-section-default">
-				<h3 class="accordion-section-title"><a href="{{{ data.feature_url }}}" target="_blank"><?php echo esc_html__('Request a New Feature') ?></a></h3>
+				<h3 class="accordion-section-title"><a href="{{{ data.feature_url }}}" target="_blank"><?php echo esc_html__('Request a New Feature', 'ashe') ?></a></h3>
 			</li>
 			<?php
 		}
