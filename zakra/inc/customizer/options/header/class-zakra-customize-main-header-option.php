@@ -216,7 +216,6 @@ if ( ! class_exists( 'Zakra_Customize_Main_Header_Option' ) ) :
 					'control'     => 'zakra-slider',
 					'label'       => esc_html__( 'Width', 'zakra' ),
 					'section'     => 'zakra_main_header',
-					'transport'   => 'postMessage',
 					'priority'    => 95,
 					'input_attrs' => array(
 						'px' => array(
@@ -243,7 +242,6 @@ if ( ! class_exists( 'Zakra_Customize_Main_Header_Option' ) ) :
 					'control'   => 'zakra-color',
 					'parent'    => 'zakra_main_header_border_bottom_color_group',
 					'section'   => 'zakra_main_header',
-					'transport' => 'postMessage',
 					'priority'  => 100,
 				),
 

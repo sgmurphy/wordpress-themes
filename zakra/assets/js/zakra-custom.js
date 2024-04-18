@@ -53,11 +53,14 @@ document.addEventListener(
 	function() {
 		function mobileNavigation() {
 			var menu           = document.getElementById( 'zak-mobile-nav' ),
+				secondaryMenu  = document.getElementById( 'secondary-menu' ),
 				toggleButton   = document.querySelector( '.zak-menu-toggle' ),
 				overlayWrapper = document.querySelector( '.zak-overlay-wrapper' ),
 				adminBar       = document.getElementById( 'wpadminbar' ),
 				adminBarHeight,
 				listItems,
+				secondaryMenuListItems,
+				secondaryMenuListItem,
 				listItem,
 				subMenuToggle,
 				closeButton,
@@ -79,10 +82,19 @@ document.addEventListener(
 				}
 			)
 
-
-
 			if ( menu ) {
 				listItems = menu.querySelectorAll(
+					'li.page_item_has_children, li.menu-item-has-children'
+				);
+
+				if ( document.body.contains( adminBar ) ) {
+
+					adminBarHeight = adminBar.getBoundingClientRect().height;
+				}
+			}
+
+			if ( secondaryMenu ) {
+				secondaryMenuListItems = secondaryMenu.querySelectorAll(
 					'li.page_item_has_children, li.menu-item-has-children'
 				);
 
@@ -174,6 +186,47 @@ document.addEventListener(
 					if ( null !== listItem.querySelector( 'a' ) ) {
 						var link          = listItem.querySelector( 'a' ).getAttribute( 'href' );
 						var listItem_link = listItem.querySelector( 'a' );
+
+						if ( ! link || '#' === link ) {
+							listItem_link.addEventListener(
+								'click',
+								function( e ) {
+									// menu.classList.toggle( 'zak-mobile-nav--opened' );
+									this.parentNode.classList.toggle( 'submenu--show' );
+								}
+							);
+						}
+					}
+				}
+			}
+
+			/* Secondary Sub Menu toggle */
+			if ( secondaryMenuListItems ) {
+
+				let submenuCount = secondaryMenuListItems.length;
+
+				for ( i = 0; i < submenuCount; i++ ) {
+
+					secondaryMenuListItem = secondaryMenuListItems[i];
+
+					subMenuToggle = secondaryMenuListItem.querySelector( '.zak-submenu-toggle' );
+
+					if ( null !== subMenuToggle ) {
+
+						subMenuToggle.addEventListener(
+							'click',
+							function( e ) {
+
+								e.preventDefault();
+
+								this.parentNode.classList.toggle( 'zak-submenu--show' );
+							}
+						);
+					}
+
+					if ( null !== secondaryMenuListItem.querySelector( 'a' ) ) {
+						var link          = secondaryMenuListItem.querySelector( 'a' ).getAttribute( 'href' );
+						var listItem_link = secondaryMenuListItem.querySelector( 'a' );
 
 						if ( ! link || '#' === link ) {
 							listItem_link.addEventListener(

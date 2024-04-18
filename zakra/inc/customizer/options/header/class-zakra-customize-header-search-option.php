@@ -47,6 +47,16 @@ if ( ! class_exists( 'Zakra_Customize_Header_Search_Option' ) ) :
 					'priority' => 10,
 				),
 
+				array(
+					'name'     => 'zakra_enable_product_search_search',
+					'default'  => false,
+					'type'     => 'control',
+					'control'  => 'zakra-toggle',
+					'label'    => esc_html__( 'Product Search', 'zakra' ),
+					'section'  => 'zakra_header_search',
+					'priority' => 10,
+				),
+
 			);
 
 			$options = array_merge( $options, $configs );

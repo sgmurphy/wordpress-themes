@@ -4,8 +4,8 @@ Theme URI: https://zakratheme.com/
 Author: ThemeGrill
 Author URI: https://themegrill.com
 Description: Zakra is a powerful and versatile multipurpose theme that makes it easy to create beautiful and professional websites. With over free 40 pre-designed starter demo sites to choose from, you can quickly build a unique and functional site that fits your specific needs. Whether you're launching a blog, news site, e-commerce store, showcasing your portfolio, building a business site, LMS, or niche-specific site (such as a cafe, spa, charity, yoga studio, wedding venue, dental practice, photography, restaurant, or educational institution), Zakra has everything you need to succeed. The theme integrates seamlessly with popular page builders like Elementor, Brizy, BlockArt, and the Gutenberg editor, giving you complete freedom to create any layout you can imagine. Importantly, Zakra is optimized for speed, features a mobile-first responsive design, is built with block-based technology, and is optimized for search engines. It is also compatible with a wide range of popular WordPress plugins, allowing you to extend its functionality as needed. Build your next project with Zakra today and see the difference for yourself. Check out all the starter sites at https://zakratheme.com/demos!
-Version: 3.0.13
-Tested up to: 6.4
+Version: 3.0.14
+Tested up to: 6.5
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -1922,8 +1922,11 @@ hr,
 	-ms-flex-align: center;
 	align-items: center;
 	gap: 16px;
-	width: 100%;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
 	margin-bottom: 0;
+	position: relative;
 }
 
 .zak-search-form .zak-search-field {
@@ -3122,8 +3125,8 @@ textarea {
 	-ms-flex-item-align: stretch;
 	align-self: stretch;
 	width: auto;
-	margin-right: calc(50% - 50vw);
-	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 49.5vw);
+	margin-left: calc(50% - 49.5vw);
 	padding-top: 10px;
 	padding-bottom: 10px;
 	background: #F4F4F5;
@@ -3932,4 +3935,24 @@ body.has-transparent-header {
 
 body.has-transparent-header.elementor-editor-active .zak-header {
 	z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+	.ehf-header #masthead {
+		-ms-flex-preferred-size: 100%;
+		flex-basis: 100%;
+	}
+	.ehf-header .hfeed.site {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.ehf-header .hfeed.site .zak-primary {
+		width: 100%;
+	}
+	.ehf-header .hfeed.site:has(.zak-secondary) .zak-primary {
+		width: 70%;
+	}
 }

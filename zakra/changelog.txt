@@ -1,4 +1,9 @@
 == Changelog ==
+= 3.0.14 - 2024-04-18 =
+* Feature     - To change normal search as product search.
+* Enhancement - Elementor header and footer plugin compatibility.
+* Fix         - WooCommerce shortcode issue.
+
 = 3.0.13 - 2024-03-26 =
 * Added  - To change post date type.
 * Fix    - Open sans font issue.

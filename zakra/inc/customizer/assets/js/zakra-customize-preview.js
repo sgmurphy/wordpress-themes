@@ -10,7 +10,7 @@ zakraGenerateSliderCSS( 'zakra_content_area_padding', '.zak-primary, .zak-second
 zakraGenerateCSS( 'zakra_site_identity_color', '.site-title', 'color' );
 zakraGenerateCSS( 'zakra_site_tagline_color', '.site-description', 'color' );
 zakraGenerateSliderCSS( 'zakra_container_width', '.zak-container, .zak-container--boxed .zak-site', 'max-width');
-zakraGenerateSliderCSS( 'zakra_button_border_radius', 'button, input[type="button"], input[type="reset"], input[type="submit"], #infinite-handle span, .wp-block-button .wp-block-button__link,.woocommerce a.button, .woocommerce a.button.alt, .woocommerce button.button, .woocommerce button.button.alt, .woocommerce ul.products a.button, .woocommerce div.product form.cart .button, .wp-block-button .wp-block-button__link, .tg-sticky-panel .tg-checkout-btn a', 'border-radius' );
+zakraGenerateSliderCSS( 'zakra_button_border_radius', 'button, input[type="button"], input[type="reset"], input[type="submit"], #infinite-handle span, .wp-block-button .wp-block-button__link, .woocommerce a.button.alt, .woocommerce button.button, .woocommerce button.button.alt, .woocommerce ul.products a.button, .woocommerce div.product form.cart .button, .wp-block-button .wp-block-button__link, .tg-sticky-panel .tg-checkout-btn a', 'border-radius' );
 zakraGenerateSliderWidthCss( 'zakra_sidebar_width', '.zak-secondary', '.zak-primary', 'width');
 zakraGenerateDimensionCSS( 'zakra_header_button_padding', '.zak-header-buttons .zak-header-button--1 .zak-button, .zak-header-buttons .zak-button', 'padding' );
 zakraGenerateCSS( 'zakra_header_button_color', '.zak-header-buttons .zak-header-button--1 .zak-button, .zak-header-buttons .zak-button', 'color' );

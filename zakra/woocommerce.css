@@ -403,6 +403,18 @@ p.demo_store {
 	.products.columns-5 {
 		--products-column: 5;
 	}
+	.products.columns-6 {
+		--products-column: 6;
+	}
+	.products.columns-7 {
+		--products-column: 7;
+	}
+	.products.columns-8 {
+		--products-column: 8;
+	}
+	.products.columns-9 {
+		--products-column: 9;
+	}
 }
 
 @media screen and (min-width: 992px) {
@@ -1331,6 +1343,7 @@ p.stars.selected a:not(.active)::before {
 }
 
 .wc-block-grid__products .wc-block-grid__product .wc-block-grid__product-link {
+	width: 100%;
 	text-decoration: none;
 }
 

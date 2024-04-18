@@ -11,6 +11,7 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+$product_search = get_theme_mod( 'zakra_enable_product_search_search', true );
 ?>
 
 <div class="zak-search-container">
@@ -25,16 +26,20 @@ defined( 'ABSPATH' ) || exit;
 		<span class="screen-reader-text"><?php echo esc_attr_x( 'Search for:', 'label', 'zakra' ); ?></span>
 
 		<input type="search"
-		       class="zak-search-field"
-		       placeholder="<?php echo esc_attr_x( 'Type & hit Enter &hellip;', 'placeholder', 'zakra' ); ?>"
-		       value="<?php echo esc_attr( get_search_query() ); ?>"
-		       name="s"
-		       title="<?php echo esc_attr_x( 'Search for:', 'label', 'zakra' ); ?>"
+				class="zak-search-field"
+				placeholder="<?php echo esc_attr_x( 'Type & hit Enter &hellip;', 'placeholder', 'zakra' ); ?>"
+				value="<?php echo esc_attr( get_search_query() ); ?>"
+				name="s"
+				title="<?php echo esc_attr_x( 'Search for:', 'label', 'zakra' ); ?>"
 		>
 	</label>
 
 	<input type="submit" class="zak-search-submit"
-	       value="<?php echo esc_attr_x( 'Search', 'submit button', 'zakra' ); ?>" />
+			value="<?php echo esc_attr_x( 'Search', 'submit button', 'zakra' ); ?>" />
+
+	<?php if ( $product_search ) : ?>
+	<input type="hidden" name="post_type" value="product" />
+	<?php endif; ?>
 </form>
 <button class="zak-icon--close" role="button">
 </button>

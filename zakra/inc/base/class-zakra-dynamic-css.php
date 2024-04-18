@@ -865,11 +865,11 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 				'background-repeat'     => 'repeat',
 			);
 			$header_main_background         = get_theme_mod( 'zakra_main_header_background_color', $header_main_background_default );
-			$parse_css                      .= zakra_parse_background_css( $header_main_background_default, $header_main_background, '.zak-main-header' );
+			$parse_css                      .= zakra_parse_background_css( $header_main_background_default, $header_main_background, '.zak-header .zak-main-header' );
 
 			// Header main border bottom.
 			$is_header_transparent                  = zakra_is_header_transparent_enabled();
-			$header_main_border_bottom_css_selector = $is_header_transparent ? '.zak-header.zak-layout-1-transparent .zak-header-transparent-wrapper' : '.zak-header';
+			$header_main_border_bottom_css_selector = $is_header_transparent ? '.zak-header.zak-layout-1-transparent .zak-header-transparent-wrapper' : '.zak-header, .zak-header-sticky-wrapper .sticky-header';
 
 			/**
 			 * Header main border bottom width.
@@ -1020,7 +1020,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			// Primary menu item hover color.
 			$primary_menu_item_color_hover     = get_theme_mod( 'zakra_main_menu_hover_color', '' );
 			$primary_menu_item_color_hover_css = array(
-				'.zak-primary-nav ul li:hover > a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+				'.zak-primary-nav ul li:hover > a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-primary-nav ul li > a, .zak-main-nav.zak-primary-nav ul.zak-primary-menu li:hover > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
 					'color' => esc_html( $primary_menu_item_color_hover ),
 				),
 				'.zak-primary-nav ul li:hover > .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon' => array(
@@ -1728,7 +1728,6 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 				'.wc-block-grid__product-onsale,
 				.woocommerce ul.products a.button,
 				.wp-block-button .wp-block-button__link,
-				.woocommerce a.button,
 				.woocommerce a.button.alt,
 				.woocommerce button.button,
 				.woocommerce button.button.alt,
@@ -1788,7 +1787,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 
 			$button_wc_bg_color     = get_theme_mod( 'zakra_button_background_color', '#027abb' );
 			$button_wc_bg_color_css = array(
-				'.woocommerce a.button, .woocommerce a.button.alt, .woocommerce button.button, .woocommerce button.button.alt, .woocommerce ul.products a.button, .woocommerce div.product form.cart .button, .wp-block-button .wp-block-button__link, .tg-sticky-panel .tg-checkout-btn a' => array(
+				'.woocommerce a.button.alt, .woocommerce button.button, .woocommerce button.button.alt, .woocommerce ul.products a.button, .woocommerce div.product form.cart .button, .wp-block-button .wp-block-button__link, .tg-sticky-panel .tg-checkout-btn a' => array(
 					'background-color' => esc_html( $button_wc_bg_color ),
 				),
 			);
@@ -1796,7 +1795,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 
 			$button_wc_bg_hover_color     = get_theme_mod( 'zakra_button_background_hover_color', '#027ABB' );
 			$button_wc_bg_hover_color_css = array(
-				'.woocommerce a.button:hover, .woocommerce a.button.alt:hover, .woocommerce button.button:hover, .woocommerce button.button.alt:hover, .woocommerce ul.products a.button:hover, .woocommerce div.product form.cart .button:hover, .product .wc-block-grid__product-add-to-cart .wp-block-button__link:hover, .tg-sticky-panel .tg-checkout-btn a:hover' => array(
+				'.woocommerce a.button.alt:hover, .woocommerce button.button:hover, .woocommerce button.button.alt:hover, .woocommerce ul.products a.button:hover, .woocommerce div.product form.cart .button:hover, .product .wc-block-grid__product-add-to-cart .wp-block-button__link:hover, .tg-sticky-panel .tg-checkout-btn a:hover' => array(
 					'background-color' => esc_html( $button_wc_bg_hover_color ),
 				),
 			);

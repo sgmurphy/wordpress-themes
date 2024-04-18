@@ -134,7 +134,7 @@ class Zakra_Slider_Control extends Zakra_Customize_Base_Additional_Control
                                    min="{{{ data.input_attrs.attributes['min'] }}}"
                                    max="{{{ data.input_attrs.attributes['max'] }}}"
                                    step="{{{ data.input_attrs.attributes['step'] }}}"
-                            <# if ( data.value['size'] ) { #>
+                            <# if ( data.value['size'] || 0 === data.value['size'] ) { #>
                             value="{{ data.value['size'] }}"
                             <# } else { #>
                             value="{{ data.default['size'] }}"

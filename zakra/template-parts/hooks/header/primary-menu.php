@@ -108,7 +108,7 @@ if ( ! function_exists( 'zakra_add_submenu_icon' ) ) :
 	 */
 	function zakra_add_submenu_icon( $item_output, $item, $depth, $args ) {
 
-		$theme_location =array('menu-primary', 'menu-mobile', 'menu-header-top-1', 'menu-header-top-2', 'menu-right', 'menu-left');
+		$theme_location =array('menu-primary', 'menu-mobile', 'menu-header-top-1', 'menu-header-top-2', 'menu-right', 'menu-left','secondary-menu');
 
 		if ( in_array($args->theme_location, $theme_location, true) ) {
 
@@ -123,7 +123,7 @@ if ( ! function_exists( 'zakra_add_submenu_icon' ) ) :
 
 				$item_output = str_replace(
 					$args->link_after . '</a>',
-					'zak-mobile-menu' === $args->menu_id ? $args->link_after . '</a>' . $submenu_toggle_markup : $args->link_after . $submenu_toggle_markup . '</a>',
+					'zak-mobile-menu' === $args->menu_id || 'secondary-menu' === $args->menu_id ? $args->link_after . '</a>' . $submenu_toggle_markup : $args->link_after . $submenu_toggle_markup . '</a>',
 					$item_output
 				);
 			}

@@ -233,6 +233,7 @@ if ( ! class_exists( 'Zakra_Enqueue_Scripts' ) ) {
 			$h6_typography              = get_theme_mod( 'zakra_h6_typography', $typography_default_500 );
 			$widget_heading_typography  = get_theme_mod( 'zakra_widget_title_typography', $typography_default_500 );
 			$widget_content_typography  = get_theme_mod( 'zakra_widget_content_typography', $typography_default_500 );
+			$drawer_menu_typography       = get_theme_mod( 'zakra_header_drawer_menu_typography', $typography_default_500 );
 
 			// Grouped typography options with default font-wight of 400.
 			$zakra_typography_options_one = array(
@@ -262,6 +263,7 @@ if ( ! class_exists( 'Zakra_Enqueue_Scripts' ) ) {
 				$h6_typography,
 				$widget_heading_typography,
 				$widget_content_typography,
+				$drawer_menu_typography,
 			);
 
 			// TODO: Optimize these.
