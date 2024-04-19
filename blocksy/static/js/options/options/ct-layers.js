@@ -168,7 +168,10 @@ const Layers = ({ value, option, onChange, values }) => {
 			<Droppable droppableId={option.id}>
 				{(provided, snapshot) => (
 					<ul
-						className="ct-layers"
+						className={classnames(
+							'ct-layers',
+							(option.attr || {}).class
+						)}
 						{...provided.droppableProps}
 						ref={provided.innerRef}>
 						{computedValue.map((value, index) => {

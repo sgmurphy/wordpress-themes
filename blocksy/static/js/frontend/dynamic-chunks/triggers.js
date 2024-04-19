@@ -11,11 +11,11 @@ const triggersList = {
 
 	input: (trigger, chunk, loadChunkWithPayload) => {
 		;[...document.querySelectorAll(trigger.selector)].map((el) => {
-			if (el.hasLazyLoadChangeListener) {
+			if (el.hasLazyLoadInputListener) {
 				return
 			}
 
-			el.hasLazyLoadChangeListener = true
+			el.hasLazyLoadInputListener = true
 
 			el.addEventListener('input', (event) => {
 				event.preventDefault()

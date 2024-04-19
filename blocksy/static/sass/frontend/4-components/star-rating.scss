@@ -6,7 +6,12 @@
 	font-display: swap;
 }
 
-.star-rating {
+$star_rating_selectors:
+	'.star-rating',
+	'.has-rating .wc-block-components-review-list-item__rating > .wc-block-components-review-list-item__rating__stars',
+;
+
+:is(#{$star_rating_selectors}){
 	overflow: hidden;
 	position: relative;
 	width: 7em;

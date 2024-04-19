@@ -3,7 +3,6 @@
 	overflow: hidden;
 	isolation: isolate;
 	vertical-align: middle;
-	// -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .ct-media-container {
@@ -11,15 +10,10 @@
 	width: 100%;
 
 	img,
-	video,
 	picture {
 		width: inherit;
 		border-radius: inherit;
 		object-fit: var(--theme-object-fit, cover);
-	}
-
-	iframe {
-		height: auto;
 	}
 
 	picture {

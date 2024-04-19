@@ -114,11 +114,7 @@ const getPreferedPlacementFor = (el) => {
 
 	const farmostRect = farmost.getBoundingClientRect()
 
-	if (isRtl()) {
-		let willItFitToTheLeft = allSubmenusAlignedWidth < farmostRect.right
-
-		return willItFitToTheLeft ? 'left' : 'right'
-	}
+	let willItFitToTheLeft = allSubmenusAlignedWidth < farmostRect.right
 
 	let willItFitToTheRight =
 		innerWidth - farmostRect.left > allSubmenusAlignedWidth
@@ -127,6 +123,18 @@ const getPreferedPlacementFor = (el) => {
 		willItFitToTheRight =
 			innerWidth - farmostRect.left - farmostRect.width >
 			allSubmenusAlignedWidth
+	}
+
+	if (isRtl()) {
+		if (!willItFitToTheLeft && !willItFitToTheRight) {
+			return 'left'
+		}
+
+		return willItFitToTheLeft ? 'left' : 'right'
+	}
+
+	if (!willItFitToTheLeft && !willItFitToTheRight) {
+		return 'right'
 	}
 
 	return willItFitToTheRight ? 'right' : 'left'
@@ -173,6 +181,11 @@ const computeItemSubmenuFor = (
 
 const openSubmenu = (e) => {
 	const li = e.target.closest('li')
+
+	if (li.__closeSubmenuTimer__) {
+		clearTimeout(li.__closeSubmenuTimer__)
+		li.__closeSubmenuTimer__ = null
+	}
 
 	li.classList.add('ct-active')
 
@@ -248,7 +261,8 @@ const closeSubmenu = (e) => {
 		}
 	}
 
-	setTimeout(() => {
+	li.__closeSubmenuTimer__ = setTimeout(() => {
+		li.__closeSubmenuTimer__ = null
 		;[...li.querySelectorAll('[data-submenu]')].map((el) => {
 			el.removeAttribute('data-submenu')
 		})

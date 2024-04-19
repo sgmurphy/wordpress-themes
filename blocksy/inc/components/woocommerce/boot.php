@@ -4,18 +4,6 @@ namespace Blocksy;
 
 class WooCommerceBoot {
 	public function __construct() {
-		add_filter('blocksy:general:ct-scripts-localizations', function ($data) {
-			if (
-				blocksy_get_theme_mod('has_product_single_lightbox', 'no') === 'yes'
-				||
-				is_customize_preview()
-			) {
-				$data['has_product_single_lightbox'] = true;
-			}
-
-			return $data;
-		});
-
 		add_action('after_setup_theme', function () {
 			add_theme_support(
 				'woocommerce',

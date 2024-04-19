@@ -5,6 +5,7 @@ if (! function_exists('blc_get_contacts_output')) {
 		$args = wp_parse_args($args, [
 			'data' => [],
 			'link_target' => 'no',
+			'link_nofollow' => 'no',
 			'link_icons' => 'no',
 			'type' => 'rounded',
 			'fill' => 'outline',
@@ -24,11 +25,22 @@ if (! function_exists('blc_get_contacts_output')) {
 			return '';
 		}
 
-		$data_target = '';
+		$link_attr = [];
 
 		if ($args['link_target'] !== 'no') {
-			$data_target = 'target="_blank"';
+			$link_attr['target'] = '_blank';
+			$link_attr['rel'] = 'noopener noreferrer';
 		}
+
+		if ($args['link_nofollow'] !== 'no') {
+			if (! isset($link_attr['rel'])) {
+				$link_attr['rel'] = '';
+			}
+
+			$link_attr['rel'] = trim($link_attr['rel'] . ' nofollow');
+		}
+
+		$link_attr = blocksy_attr_to_html($link_attr);
 
 		$custom_icon_defaults = [
 			'address' => 'blc blc-map-pin',
@@ -134,18 +146,28 @@ if (! function_exists('blc_get_contacts_output')) {
 						}
 
 						if ($with_link) {
+							$icon_link_attr = [
+								'href' => $link,
+								'class' => 'ct-icon-container',
+								'aria-label' => blocksy_akg('title', $single_layer, '') . ' ' . $content
+							];
+
+							if ($args['link_target'] === 'yes') {
+								$icon_link_attr['target'] = '_blank';
+								$icon_link_attr['rel'] = 'noopener noreferrer';
+							}
+
+							if ($args['link_nofollow'] === 'yes') {
+								if (! isset($icon_link_attr['rel'])) {
+									$icon_link_attr['rel'] = '';
+								}
+
+								$icon_link_attr['rel'] = trim($icon_link_attr['rel'] . ' nofollow');
+							}
+
 							$icon = blocksy_html_tag(
 								'a',
-								array_merge(
-									[
-										'href' => $link,
-										'class' => 'ct-icon-container',
-										'aria-label' => blocksy_akg('title', $single_layer, '') . ' ' . $content
-									],
-									$args['link_target'] === 'yes' ? [
-										'target' => '_blank'
-									] : []
-								),
+								$icon_link_attr,
 								$icon
 							);
 						}
@@ -168,7 +190,7 @@ if (! function_exists('blc_get_contacts_output')) {
 							<?php if (! empty($content)) { ?>
 								<span class="contact-text">
 									<?php if (! empty($link)) { ?>
-										<a href="<?php echo do_shortcode($link) ?>" <?php echo $data_target ?>>
+										<a href="<?php echo do_shortcode($link) ?>" <?php echo $link_attr ?>>
 									<?php } ?>
 
 									<?php echo $content; ?>
@@ -187,5 +209,4 @@ if (! function_exists('blc_get_contacts_output')) {
 		<?php
 		return ob_get_clean();
 	}
-
 }

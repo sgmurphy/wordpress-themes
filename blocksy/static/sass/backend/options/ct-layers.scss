@@ -75,7 +75,9 @@
 
 	// hidden state
 	&.ct-hidden {
-		display: none;
+		margin: 0;
+		height: 0;
+		visibility: hidden;
 	}
 }
 
@@ -180,4 +182,8 @@
 			fill: currentColor;
 		}
 	}
+}
+
+.ct-layers-split-layout {
+	min-height: 50px;
 }

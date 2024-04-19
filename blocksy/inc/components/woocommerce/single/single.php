@@ -419,4 +419,10 @@ class WooCommerceSingle {
 
 		echo $out;
 	}
+
+	public function product_breadcrumbs($layer) {
+		$breadcrumbs_builder = new \Blocksy\BreadcrumbsBuilder();
+
+		echo $breadcrumbs_builder->render([]);
+	}
 }

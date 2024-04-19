@@ -1,5 +1,4 @@
 import $ from 'jquery'
-import ctEvents from 'ct-events'
 
 import { isTouchDevice } from '../helpers/is-touch-device'
 
@@ -7,7 +6,8 @@ import { pauseVideo } from '../helpers/video'
 
 export const mount = (el, { event: mountEvent }) => {
 	const isGalleryEnabled =
-		window.PhotoSwipe && !!ct_localizations.has_product_single_lightbox
+		window.PhotoSwipe &&
+		document.querySelector('.woocommerce-product-gallery__trigger')
 
 	const openPhotoswipeFor = (el, index = null) => {
 		if (el.closest('.elementor-section-wrap')) {
@@ -264,9 +264,7 @@ export const mount = (el, { event: mountEvent }) => {
 
 						if (
 							parseFloat(el.getAttribute('data-width')) >
-							el
-								.closest('.woocommerce-product-gallery')
-								.getBoundingClientRect().width
+							el.getBoundingClientRect().width
 						) {
 							$(el).zoom({
 								url: el.dataset.src,
@@ -368,7 +366,14 @@ export const mount = (el, { event: mountEvent }) => {
 				) {
 					isGalleryEnabled &&
 						openPhotoswipeFor(
-							galleryWrapper.querySelector('.ct-media-container')
+							maybeTrigger.closest('.ct-media-container'),
+
+							[
+								...maybeTrigger.closest('.ct-media-container')
+									.parentNode.children,
+							].indexOf(
+								maybeTrigger.closest('.ct-media-container')
+							)
 						)
 
 					return

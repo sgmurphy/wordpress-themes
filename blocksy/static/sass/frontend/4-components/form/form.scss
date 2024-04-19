@@ -14,8 +14,8 @@ input[type='password'],
 fieldset .wc-stripe-elements-field,
 .ff-inherit-theme-style select.ff-el-form-control:not([size]):not([multiple]) {
 	appearance: none;
-	width: var(--theme-form-field-width, 100%);
-	height: var(--theme-form-field-height, 40px);
+	width: var(--has-width, var(--theme-form-field-width, 100%));
+	height: var(--has-height, var(--theme-form-field-height, 40px));
 	font-family: inherit;
 	font-size: var(--theme-form-font-size, 16px);
 	color: var(--theme-form-text-initial-color, var(--theme-text-color));

@@ -373,6 +373,12 @@ foreach ($hero_elements as $index => $single_hero_element) {
 					'link_target',
 					$single_hero_element,
 					'no'
+				) === 'yes',
+
+				'nofollow' => blocksy_akg(
+					'link_nofollow',
+					$single_hero_element,
+					'no'
 				) === 'yes'
 			]);
 		}

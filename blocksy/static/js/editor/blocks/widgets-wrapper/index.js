@@ -7,6 +7,34 @@ import { InnerBlocks } from '@wordpress/block-editor'
 
 import Edit from './Edit'
 
+import { addFilter } from '@wordpress/hooks'
+
+addFilter(
+	'blockEditor.__unstableCanInsertBlockType',
+	'blocksy/widgets-wrapper',
+	(canInsert, blockType, rootClientId, { getBlock }) => {
+		if (blockType.name.indexOf('blocksy/') !== 0) {
+			return canInsert
+		}
+
+		if (
+			!blockType.parent ||
+			!blockType.parent.includes('blocksy/widgets-wrapper')
+		) {
+			return canInsert
+		}
+
+		const parent = getBlock(rootClientId)
+
+		if (parent && parent.name === 'blocksy/widgets-wrapper') {
+			return false
+		}
+
+		return canInsert
+	},
+	500
+)
+
 registerBlockType('blocksy/widgets-wrapper', {
 	apiVersion: 3,
 	title: __('Widgets Wrapper', 'blocksy'),

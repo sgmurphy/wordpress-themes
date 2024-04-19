@@ -488,6 +488,12 @@ $options = [
 		'divider' => 'top:full'
 	],
 
+	'link_nofollow' => [
+		'type'  => 'ct-switch',
+		'label' => __( 'Set links to nofollow', 'blocksy' ),
+		'value' => 'no',
+	],
+
 	'link_icons' => [
 		'type'  => 'ct-switch',
 		'label' => __( 'Link Icons', 'blocksy' ),

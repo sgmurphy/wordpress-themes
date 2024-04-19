@@ -25,7 +25,6 @@ registerBlockType('blocksy/share-box', {
 	},
 	supports: {
 		html: false,
-		multiple: false,
 		inserter: false,
 		lock: false,
 	},

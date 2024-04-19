@@ -12,20 +12,22 @@ $size = blocksy_default_akg('social_icons_size', $atts, 20);
 $color = blocksy_default_akg('social_icons_color', $atts, 'default');
 $type = blocksy_default_akg('social_type', $atts, 'simple');
 $fill = blocksy_default_akg('social_icons_fill', $atts, 'outline');
+
+$link_rel = '';
+
 $link_target = blocksy_default_akg('link_target', $atts, 'no');
 
 if ($link_target === 'yes') {
 	$link_target = '_blank';
+	$link_rel = 'noopener noreferrer';
 } else {
 	$link_target = false;
 }
 
-$link_rel = blocksy_default_akg('link_nofollow', $atts, 'no');
+$link_nofollow = blocksy_default_akg('link_nofollow', $atts, 'no');
 
-if ($link_rel === 'yes') {
-	$link_rel = 'noopener noreferrer nofollow';
-} else {
-	$link_rel = 'noopener';
+if ($link_nofollow === 'yes') {
+	$link_rel .= ' nofollow';
 }
 
 $colors = [
@@ -81,30 +83,36 @@ if (isset($atts['hoverColor'])) {
 	$colors['--theme-icon-hover-color'] = "var(--wp--preset--color--$var)";
 }
 
-$colors_css = '';
+$wrapper_attr = [
+	'class' => trim('ct-socials-block ' . $classes),
+	'style' => ''
+];
 
 foreach ($colors as $key => $value) {
 	if (empty($value)) {
 		continue;
 	}
-	$colors_css .= $key . ':' . $value . ';';
-}
 
-$style = '';
+	$wrapper_attr['style'] .= $key . ':' . $value . ';';
+}
 
 $icons_size = blocksy_akg('social_icons_size', $atts, '');
 
 if (! empty($icons_size)) {
-	$style .= '--theme-icon-size:' . $icons_size . 'px;';
+	$wrapper_attr['style'] .= '--theme-icon-size:' . $icons_size . 'px;';
 }
 
 $items_spacing = blocksy_akg('items_spacing', $atts, '');
 
 if (! empty($items_spacing)) {
-	$style .= '--items-spacing:' . $items_spacing . 'px;';
+	$wrapper_attr['style'] .= '--items-spacing:' . $items_spacing . 'px;';
 }
 
-echo '<div class="ct-socials-block ' . $classes . '" style="' . $colors_css . $style . '">';
+if (empty($wrapper_attr['style'])) {
+	unset($wrapper_attr['style']);
+}
+
+echo '<div ' . blocksy_attr_to_html($wrapper_attr) . '>';
 
 /**
  * blocksy_social_icons() function is already properly escaped.

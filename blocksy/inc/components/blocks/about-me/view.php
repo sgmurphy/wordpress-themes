@@ -11,7 +11,7 @@ $about_source = blocksy_default_akg('about_source', $atts, 'from_wp');
 $alignment = blocksy_default_akg('about_alignment', $atts, 'center');
 $avatar_size = blocksy_default_akg('about_avatar_size', $atts, 'small');
 $avatar_shape = blocksy_default_akg('avatar_shape', $atts, 'rounded');
-$classes = blocksy_default_akg('className', $atts, '');
+$className = blocksy_default_akg('className', $atts, '');
 
 $sizes = [
 	'small' => 90,
@@ -70,6 +70,23 @@ if ($about_source === 'from_wp') {
 
 	$about_name = blocksy_get_the_author_meta('display_name', $user_id);
 	$about_text = blocksy_get_the_author_meta('description', $user_id);
+}
+
+$link_rel = '';
+
+$link_target = blocksy_default_akg('link_target', $atts, 'no');
+
+if ($link_target === 'yes') {
+	$link_target = '_blank';
+	$link_rel = 'noopener noreferrer';
+} else {
+	$link_target = false;
+}
+
+$link_nofollow = blocksy_default_akg('link_nofollow', $atts, 'no');
+
+if ($link_nofollow === 'yes') {
+	$link_rel .= ' nofollow';
 }
 
 $size = blocksy_default_akg('about_social_icons_size', $atts, 'small');
@@ -141,37 +158,35 @@ if (isset($atts['iconsHoverColor'])) {
 	$colors['--theme-icon-hover-color'] = "var(--wp--preset--color--$var)";
 }
 
-$colors_css = '';
+$attr = [
+	'class' => 'ct-about-me-block ' . $className,
+	'data-alignment' => $alignment,
+	'style' => ''
+];
 
 foreach ($colors as $key => $value) {
 	if (empty($value)) {
 		continue;
 	}
 
-	$colors_css .= $key . ':' . $value . ';';
+	$attr['style'] .= $key . ':' . $value . ';';
 }
-
-$style = '';
 
 $icons_size = blocksy_akg('about_social_icons_size', $atts, '');
 
 if (! empty($icons_size)) {
-	$style .= '--theme-icon-size:' . $icons_size . 'px;';
+	$attr['style'] .= '--theme-icon-size:' . $icons_size . 'px;';
 }
 
 $items_spacing = blocksy_akg('about_items_spacing', $atts, '');
 
 if (! empty($items_spacing)) {
-	$style .= '--items-spacing:' . $items_spacing . 'px;';
+	$attr['style'] .= '--items-spacing:' . $items_spacing . 'px;';
 }
 
 ?>
 
-<div
-	class="ct-about-me-block <?php echo $classes; ?>"
-	data-alignment="<?php echo esc_attr($alignment); ?>"
-	style="<?php echo $colors_css . $style ?>">
-
+<div <?php echo blocksy_attr_to_html($attr) ?>>
 	<?php echo $image_output; ?>
 
 	<div class="ct-about-me-name">
@@ -210,6 +225,8 @@ if (! empty($items_spacing)) {
 				'type' => $type,
 				'fill' => $fill,
 				'icons-color' => blocksy_default_akg('about_social_icons_color', $atts, 'default'),
+				'links_target' => $link_target,
+				'links_rel' => $link_rel,
 			]
 		);
 	?>

@@ -29,7 +29,6 @@ registerBlockType('blocksy/contact-info', {
 	},
 	supports: {
 		html: false,
-		multiple: false,
 		inserter: false,
 		lock: false,
 		typography: {

@@ -50,6 +50,7 @@ foreach ($woo_single_layout as $layer) {
 		'product_payment_methods' => '.entry-summary-items > .ct-payment-methods',
 		'additional_info' => '.entry-summary-items > .ct-product-additional-info',
 		'product_tabs' => '.entry-summary-items > .woocommerce-tabs',
+		'product_breadcrumbs' => '.entry-summary-items > .ct-breadcrumbs',
 
 		// companion
 		'product_brands' => '.entry-summary-items > .ct-product-brands-single',
@@ -212,6 +213,46 @@ foreach ($woo_single_layout as $layer) {
 		]);
 	}
 }
+
+
+// breadcrumbs
+blocksy_output_font_css([
+	'font_value' => blocksy_get_theme_mod(
+		'singleProductBreadcrumbsFont',
+		blocksy_typography_default_values([])
+	),
+	'css' => $css,
+	'tablet_css' => $tablet_css,
+	'mobile_css' => $mobile_css,
+	'selector' => '.entry-summary .ct-breadcrumbs'
+]);
+
+blocksy_output_colors([
+	'value' => blocksy_get_theme_mod('singleProductBreadcrumbsFontColor'),
+	'default' => [
+		'default' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+		'initial' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+		'hover' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+	],
+	'css' => $css,
+	'variables' => [
+		'default' => [
+			'selector' => '.entry-summary .ct-breadcrumbs',
+			'variable' => 'theme-text-color'
+		],
+
+		'initial' => [
+			'selector' => '.entry-summary .ct-breadcrumbs',
+			'variable' => 'theme-link-initial-color'
+		],
+
+		'hover' => [
+			'selector' => '.entry-summary .ct-breadcrumbs',
+			'variable' => 'theme-link-hover-color'
+		],
+	],
+]);
+
 
 // product title
 blocksy_output_font_css([

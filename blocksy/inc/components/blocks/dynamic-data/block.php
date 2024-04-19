@@ -187,10 +187,21 @@ class DynamicData {
 			isset($attributes['lightbox'])
 			&&
 			$attributes['lightbox'] === 'yes'
-			&&
-			wp_script_is('wp-block-image-view', 'registered')
 		) {
-			wp_enqueue_script('wp-block-image-view');
+			if (wp_script_is('wp-block-image-view', 'registered')) {
+				wp_enqueue_script('wp-block-image-view');
+			}
+
+			if (function_exists('wp_scripts_get_suffix')) {
+				wp_register_script_module(
+					'@wordpress/block-library/image',
+					includes_url("blocks/image/view.min.js"),
+					array('@wordpress/interactivity'),
+					defined('GUTENBERG_VERSION') ? GUTENBERG_VERSION : get_bloginfo('version')
+				);
+
+				wp_enqueue_script_module('@wordpress/block-library/image');
+			}
 		}
 
 		return blocksy_render_view(

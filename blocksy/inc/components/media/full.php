@@ -190,13 +190,13 @@ if (! function_exists('blocksy_media')) {
 				unset($args['html_atts']['aria-label']);
 				unset($args['html_atts']['tabindex']);
 
-				if ( $args['display_video'] !== 'pill' ) {
+				if ($args['display_video'] !== 'pill') {
 					$args['html_atts']['data-media-id'] = $args['attachment_id'];
 				}
 
 				$image_result .= $maybe_video_result['icon'];
 
-				if ( blocksy_akg('media_video_player', $maybe_video_result, 'no') === 'yes' ) {
+				if (blocksy_akg('media_video_player', $maybe_video_result, 'no') === 'yes') {
 					$args['html_atts']['class'] .= ' ct-simplified-player';
 				}
 

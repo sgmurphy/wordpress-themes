@@ -25,7 +25,6 @@ registerBlockType('blocksy/about-me', {
 	},
 	supports: {
 		html: false,
-		multiple: false,
 		inserter: false,
 		lock: false,
 	},

@@ -418,6 +418,13 @@ var options = {
 		},
 
 		{
+			input: 'static/sass/frontend/8-integrations/woocommerce/blocks/main-cart-checkout-blocks.scss',
+			output: 'static/bundle',
+			filename: 'woocommerce-cart-checkout-blocks.min',
+			// header: buildProcess.headerFor(false, data),
+		},
+
+		{
 			input: 'static/sass/frontend/8-integrations/page-scroll-to-id.scss',
 			output: 'static/bundle',
 			filename: 'page-scroll-to-id.min',

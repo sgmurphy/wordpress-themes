@@ -139,7 +139,8 @@ if (! function_exists('blocksy_author_social_channels')) {
 		$args = wp_parse_args(
 			$args,
 			[
-				'new_tab' => true
+				'new_tab' => true,
+				'nofollow' => false
 			]
 		);
 
@@ -266,11 +267,17 @@ if (! function_exists('blocksy_author_social_channels')) {
 				'aria-label' => $descriptor[$network_id]['label']
 			];
 
-			$attr['rel'] = 'noopener';
-
 			if ($args['new_tab']) {
-				$attr['rel'] = 'noopener noreferrer nofollow';
+				$attr['rel'] = 'noopener noreferrer';
 				$attr['target'] = '_blank';
+			}
+
+			if ($args['nofollow']) {
+				if (! isset($attr['rel'])) {
+					$attr['rel'] = '';
+				}
+
+				$attr['rel'] = trim($attr['rel'] . ' nofollow');
 			}
 
 			$outputs[] = blocksy_html_tag(
@@ -469,7 +476,12 @@ function blocksy_author_box() {
 						'new_tab' => blocksy_get_theme_mod(
 							$prefix . '_single_author_box_social_link_target',
 							'no'
-						) === 'yes'
+						) === 'yes',
+
+						'nofollow' => blocksy_get_theme_mod(
+							$prefix . '_single_author_box_social_link_nofollow',
+							'no'
+						) === 'yes',
 					]);
 				}
 			?>

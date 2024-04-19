@@ -25,6 +25,8 @@ import {
 
 import { SVG, Path } from '@wordpress/primitives'
 
+import { getCurrentDevice } from './customizer/components/useDeviceManager'
+
 export const dropIframeBodyTransition = () => {
 	const maybeIframe = document.querySelector('iframe[name="editor-canvas"]')
 
@@ -51,26 +53,16 @@ export const revertIframeBodyTransition = () => {
 	}
 }
 
-const setResponsiveClass = () => {
-	let device = 'Desktop'
+let previousDevice = null
 
-	if (
-		wp.data.select('core/editor') &&
-		wp.data.select('core/editor').getDeviceType
-	) {
-		device = wp.data.select('core/editor').getDeviceType()
-	} else {
-		if (
-			wp.data.select('core/edit-post') &&
-			wp.data
-				.select('core/edit-post')
-				.__experimentalGetPreviewDeviceType()
-		) {
-			device = wp.data
-				.select('core/edit-post')
-				.__experimentalGetPreviewDeviceType()
-		}
+const setResponsiveClass = () => {
+	let device = getCurrentDevice()
+
+	if (previousDevice === device) {
+		return
 	}
+
+	previousDevice = device
 
 	document.body.classList.remove(
 		'ct-desktop-view',
@@ -78,7 +70,7 @@ const setResponsiveClass = () => {
 		'ct-mobile-view'
 	)
 
-	document.body.classList.add(`ct-${device.toLowerCase()}-view`)
+	document.body.classList.add(`ct-${device}-view`)
 }
 
 setResponsiveClass()

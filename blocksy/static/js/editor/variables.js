@@ -8,46 +8,21 @@ const isContentBlock = document.body.classList.contains(
 
 let selectors = {
 	desktop:
-		'.ct-desktop-view iframe[name="editor-canvas"], .ct-desktop-view .edit-post-visual-editor, .ct-desktop-view .edit-post-visual-editor__content-area > div',
+		'.ct-desktop-view iframe[name="editor-canvas"], .ct-desktop-view .edit-post-visual-editor',
 	tablet: '.ct-tablet-view iframe[name="editor-canvas"]',
 	mobile: '.ct-mobile-view iframe[name="editor-canvas"]',
 }
 
+if (document.body.className.indexOf('version-6-4') > -1) {
+	let selectors = {
+		desktop:
+			'.ct-desktop-view iframe[name="editor-canvas"], .ct-desktop-view .edit-post-visual-editor, .ct-desktop-view .edit-post-visual-editor__content-area > div',
+		tablet: '.ct-tablet-view iframe[name="editor-canvas"]',
+		mobile: '.ct-mobile-view iframe[name="editor-canvas"]',
+	}
+}
+
 export const gutenbergVariables = {
-	background: ['desktop', 'tablet', 'mobile'].reduce((result, breakpoint) => {
-		return [
-			...result,
-			...handleBackgroundOptionFor({
-				id: 'background',
-				selector: selectors[breakpoint],
-				responsive: false,
-				addToDescriptors: {
-					fullValue: true,
-					important: true,
-				},
-				valueExtractor: ({ background }) => {
-					let valueToUse = background
-
-					if (
-						!background.desktop &&
-						!isContentBlock &&
-						background.background_type === 'color' &&
-						background.backgroundColor.default.color &&
-						background.backgroundColor.default.color.indexOf(
-							'CT_CSS_SKIP_RULE'
-						) > -1
-					) {
-						valueToUse = ct_editor_localizations.default_background
-					}
-
-					return maybePromoteScalarValueIntoResponsive(valueToUse)[
-						breakpoint
-					]
-				},
-			}).background,
-		]
-	}, []),
-
 	...handleBackgroundOptionFor({
 		id: 'popup_background',
 		selector: selectors.desktop,
@@ -68,6 +43,8 @@ export const gutenbergVariables = {
 			'content_boxed_border',
 			'page_structure_type',
 
+			'background',
+
 			...(isContentBlock
 				? [
 						'has_content_block_structure',
@@ -79,6 +56,66 @@ export const gutenbergVariables = {
 				: []),
 		],
 		[
+			...['desktop', 'tablet', 'mobile'].reduce((result, breakpoint) => {
+				return [
+					...result,
+					...handleBackgroundOptionFor({
+						id: 'background',
+						selector: selectors[breakpoint],
+						responsive: false,
+						addToDescriptors: {
+							fullValue: true,
+							important: true,
+						},
+						valueExtractor: (props) => {
+							const {
+								background,
+
+								template_subtype,
+
+								has_content_block_structure,
+								content_block_structure,
+							} = props
+
+							let valueToUse = background
+
+							if (
+								!background.desktop &&
+								!isContentBlock &&
+								background.background_type === 'color' &&
+								background.backgroundColor.default.color &&
+								background.backgroundColor.default.color.indexOf(
+									'CT_CSS_SKIP_RULE'
+								) > -1
+							) {
+								valueToUse =
+									ct_editor_localizations.default_background
+							}
+
+							if (
+								isContentBlock &&
+								((has_content_block_structure &&
+									has_content_block_structure !== 'yes') ||
+									template_subtype === 'card')
+							) {
+								valueToUse = {
+									background_type: 'color',
+									backgroundColor: {
+										default: {
+											color: 'CT_CSS_SKIP_RULE',
+										},
+									},
+								}
+							}
+
+							return maybePromoteScalarValueIntoResponsive(
+								valueToUse
+							)[breakpoint]
+						},
+					}).background,
+				]
+			}, []),
+
 			{
 				selector: '.editor-styles-wrapper',
 				variable: 'theme-block-max-width',
@@ -129,6 +166,7 @@ export const gutenbergVariables = {
 					return 'var(--theme-narrow-container-max-width)'
 				},
 				fullValue: true,
+				important: true,
 				unit: '',
 			},
 

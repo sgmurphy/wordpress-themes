@@ -35,7 +35,7 @@ function blocksy_get_woo_archive_layout_defaults() {
 			[
 				'id' => 'product_add_to_cart_and_price',
 				'enabled' => true
-			]
+			],
 		]
 	);
 }
@@ -60,6 +60,10 @@ function blocksy_get_woo_single_layout_defaults($layout = 'main') {
 		return apply_filters(
 			'blocksy_woo_single_left_options_layers:defaults',
 			[
+				[
+					'id' => 'product_breadcrumbs',
+					'enabled' => false,
+				],
 				[
 					'id' => 'product_title',
 					'enabled' => true,
@@ -127,6 +131,10 @@ function blocksy_get_woo_single_layout_defaults($layout = 'main') {
 		'blocksy_woo_single_options_layers:defaults',
 		array_merge(
 			[
+				[
+					'id' => 'product_breadcrumbs',
+					'enabled' => false,
+				],
 				[
 					'id' => 'product_title',
 					'enabled' => true,

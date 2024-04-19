@@ -144,8 +144,44 @@ function blocksy_get_via_request_image_video_component() {
 		wp_send_json_error();
 	}
 
+	$video_data = blocksy_get_video_data($_GET['media']);
+
+	$wrapper_attr = [
+		'class' => 'ct-video-container',
+
+		'data-video-source' => blocksy_akg(
+			'media_video_source',
+			$video_data,
+			'upload'
+		),
+
+		'data-video-size' => 'contain'
+	];
+
+	if (blocksy_akg('media_video_player', $video_data, 'no') === 'yes') {
+		$wrapper_attr['data-video-size'] = blocksy_akg(
+			'media_video_size',
+			$video_data,
+			'contain'
+		);
+	}
+
+	if (
+		isset($video_data['url'])
+		&&
+		! empty($video_data['url'])
+		&&
+		strpos($video_data['url'], 'youtube.com/shorts/') !== false
+	) {
+		$wrapper_attr['data-video-source'] = 'youtube-shorts';
+	}
+
 	wp_send_json_success([
-		'html' => $result
+		'html' => blocksy_html_tag(
+			'div',
+			$wrapper_attr,
+			$result
+		)
 	]);
 
 	return;
@@ -175,7 +211,6 @@ function blocksy_get_image_video_component($media_id, $args = []) {
 
 	$use_simple_player = blocksy_akg('media_video_player', $video_data, 'no') === 'yes';
 	$use_autoplay = blocksy_akg('media_video_autoplay', $video_data, 'no') === 'yes';
-	$nocookies_mode = blocksy_akg('media_video_youtube_nocookies', $video_data, 'no') === 'yes';
 
 	if ($args['ignore_video_options']) {
 		$use_autoplay = false;
@@ -240,23 +275,15 @@ function blocksy_get_image_video_component($media_id, $args = []) {
 			$additional_parmas['playlist'] = $id;
 		}
 
-		$additional_parmas = array_merge( $additional_parmas, [
+		$additional_parmas = array_merge($additional_parmas, [
 			'enablejsapi' => 1,
 			'version' => 3,
 			'playerapiid' => 'ytplayer',
 			'mute' => $use_autoplay ? 1 : 0
 		]);
-
-		if ($nocookies_mode) {
-			$embed = str_replace(
-				'youtube.com/embed',
-				'youtube-nocookie.com/embed',
-				$embed
-			);
-		}
 	}
 
-	if ( strpos($video_data['url'], 'vimeo') !== false ) {
+	if (strpos($video_data['url'], 'vimeo') !== false) {
 		$additional_parmas = array_merge(
 			$additional_parmas,
 			[

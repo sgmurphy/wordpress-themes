@@ -47,6 +47,11 @@ $content = blc_get_contacts_output(
 			$atts,
 			'no'
 		),
+		'link_nofollow' => blocksy_default_akg(
+			'link_nofollow',
+			$atts,
+			'no'
+		),
 		'type' => $type,
 		'fill' => $fill,
 		'link_icons' => blocksy_akg('link_icons', $atts, 'no'),

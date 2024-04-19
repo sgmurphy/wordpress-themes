@@ -34,20 +34,21 @@ $socials = blocksy_default_akg(
 	]
 );
 
+$link_rel = '';
+
 $link_target = blocksy_default_akg('link_target', $atts, 'no');
 
 if ($link_target === 'yes') {
 	$link_target = '_blank';
+	$link_rel = 'noopener noreferrer';
 } else {
 	$link_target = false;
 }
 
-$link_rel = blocksy_default_akg('link_nofollow', $atts, 'no');
+$link_nofollow = blocksy_default_akg('link_nofollow', $atts, 'no');
 
-if ($link_rel === 'yes') {
-	$link_rel = 'noopener noreferrer nofollow';
-} else {
-	$link_rel = 'noopener';
+if ($link_nofollow === 'yes') {
+	$link_rel .= ' nofollow';
 }
 
 ?>

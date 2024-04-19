@@ -129,6 +129,23 @@ if ($is_pro) {
 $options = apply_filters(
 	'blocksy_woo_single_options_layers:extra',
 	[
+		'product_breadcrumbs' => [
+			'label' => __('Breadcrumbs', 'blocksy'),
+			'options' => [
+				'spacing' => [
+					'label' => __( 'Bottom Spacing', 'blocksy' ),
+					'type' => 'ct-slider',
+					'min' => 0,
+					'max' => 100,
+					'value' => 10,
+					'responsive' => true,
+					'sync' => [
+						'id' => 'woo_single_layout_skip'
+					],
+				],
+			],
+		],
+
 		'product_title' => [
 			'label' => __('Title', 'blocksy'),
 			'options' => [

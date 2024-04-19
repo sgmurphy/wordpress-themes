@@ -17,27 +17,65 @@ export const handleMetaboxValueChange = (optionId, optionValue) => {
 		[optionId]: optionValue,
 	}
 
-	if (gutenbergVariables[optionId]) {
-		let initialStyleTagsDescriptor = []
-		let cacheId = ''
+	if (!gutenbergVariables[optionId]) {
+		return
+	}
 
-		const isBackground =
-			optionId === 'background' || optionId === 'popup_background'
+	const groupedVariables = (
+		Array.isArray(gutenbergVariables[optionId])
+			? gutenbergVariables[optionId]
+			: [gutenbergVariables[optionId]]
+	).reduce(
+		(acc, item) => {
+			const key = item.selector.includes(`iframe[name="editor-canvas"]`)
+				? 'backgroundVariables'
+				: 'nonBackgroundVariables'
 
-		if (isBackground) {
-			const maybeStyle = document.querySelector(
-				'#ct-main-editor-styles-inline-css'
-			)
+			return {
+				...acc,
 
-			if (maybeStyle) {
-				cacheId = 'background'
-				initialStyleTagsDescriptor = [{ style: maybeStyle }]
+				[key]: [...acc[key], item],
 			}
+		},
+		{
+			backgroundVariables: [],
+			nonBackgroundVariables: [],
 		}
+	)
 
-		if (!isBackground) {
-			cacheId = 'non-background'
-			initialStyleTagsDescriptor = [
+	dropIframeBodyTransition()
+
+	if (groupedVariables.backgroundVariables.length > 0) {
+		const maybeStyle = document.querySelector(
+			'#ct-main-editor-styles-inline-css'
+		)
+
+		if (maybeStyle) {
+			updateVariableInStyleTags({
+				variableDescriptor: groupedVariables.backgroundVariables,
+
+				value: optionValue,
+				fullValue: atts,
+				tabletMQ: '(max-width: 800px)',
+				mobileMQ: '(max-width: 370px)',
+
+				cacheId: 'background',
+				initialStyleTagsDescriptor: [{ style: maybeStyle }],
+			})
+		}
+	}
+
+	if (groupedVariables.nonBackgroundVariables.length > 0) {
+		updateVariableInStyleTags({
+			variableDescriptor: groupedVariables.nonBackgroundVariables,
+
+			value: optionValue,
+			fullValue: atts,
+			tabletMQ: '(max-width: 800px)',
+			mobileMQ: '(max-width: 370px)',
+
+			cacheId: 'non-background',
+			initialStyleTagsDescriptor: [
 				{
 					readStyles: () => {
 						const settings = window.wp.data
@@ -74,25 +112,9 @@ export const handleMetaboxValueChange = (optionId, optionValue) => {
 						})
 					},
 				},
-			]
-		}
-
-		dropIframeBodyTransition()
-
-		updateVariableInStyleTags({
-			variableDescriptor: Array.isArray(gutenbergVariables[optionId])
-				? gutenbergVariables[optionId]
-				: [gutenbergVariables[optionId]],
-
-			value: optionValue,
-			fullValue: atts,
-			tabletMQ: '(max-width: 800px)',
-			mobileMQ: '(max-width: 370px)',
-
-			cacheId,
-			initialStyleTagsDescriptor,
+			],
 		})
-
-		revertIframeBodyTransition()
 	}
+
+	revertIframeBodyTransition()
 }

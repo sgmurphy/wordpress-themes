@@ -21,6 +21,42 @@ export const useDeviceManagerActions = () => {
 	return context || {}
 }
 
+export const getCurrentDevice = (select = null) => {
+	if (wp.customize && wp.customize.previewedDevice) {
+		return wp.customize.previewedDevice()
+	}
+
+	let maybeSelect = select
+
+	if (wp.data && wp.data.select) {
+		maybeSelect = wp.data.select
+	}
+
+	let device = 'desktop'
+
+	if (maybeSelect) {
+		if (
+			maybeSelect('core/editor') &&
+			maybeSelect('core/editor').getDeviceType
+		) {
+			device = maybeSelect('core/editor').getDeviceType().toLowerCase()
+		} else {
+			if (
+				maybeSelect('core/edit-post') &&
+				maybeSelect(
+					'core/edit-post'
+				).__experimentalGetPreviewDeviceType()
+			) {
+				device = maybeSelect('core/edit-post')
+					.__experimentalGetPreviewDeviceType()
+					.toLowerCase()
+			}
+		}
+	}
+
+	return device
+}
+
 export const useDeviceManager = (args = {}) => {
 	const { withTablet = true } = args
 

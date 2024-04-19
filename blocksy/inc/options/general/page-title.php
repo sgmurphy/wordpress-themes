@@ -613,6 +613,12 @@ $when_enabled_general_settings = [
 							'label' => __( 'Open links in new tab', 'blocksy' ),
 							'value' => 'no',
 						],
+
+						'link_nofollow' => [
+							'type'  => 'ct-switch',
+							'label' => __( 'Set links to nofollow', 'blocksy' ),
+							'value' => 'no',
+						],
 					],
 				],
 			]

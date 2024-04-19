@@ -151,6 +151,19 @@ $options = [
 		),
 	],
 
+	'link_target' => [
+		'type' => 'ct-switch',
+		'label' => __('Open links in new tab', 'blocksy'),
+		'value' => 'no',
+		'divider' => 'top:full',
+	],
+
+	'link_nofollow' => [
+		'type' => 'ct-switch',
+		'label' => __('Set links to nofollow', 'blocksy'),
+		'value' => 'no',
+	],
+
 	'about_social_icons_size' => [
 		'label' => __( 'Icons Size', 'blocksy' ),
 		'type' => 'ct-slider',

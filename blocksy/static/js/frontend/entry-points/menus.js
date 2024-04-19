@@ -37,6 +37,10 @@ export const menuEntryPoints = [
 					'header [data-device="desktop"] [data-id^="menu"][data-responsive]'
 				),
 			].some((menu) => {
+				if (!menu.firstElementChild) {
+					return false
+				}
+
 				const menuRect = menu.firstElementChild.getBoundingClientRect()
 
 				const allEls = [

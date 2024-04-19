@@ -1,9 +1,13 @@
 <?php
 
-
-if (! isset($only_background)) {
-	$only_background = false;
-}
+blocksy_theme_get_dynamic_styles([
+	'name' => 'admin/editor-background',
+	'css' => $css,
+	'mobile_css' => $mobile_css,
+	'tablet_css' => $tablet_css,
+	'context' => $context,
+	'chunk' => 'admin'
+]);
 
 $post_type = get_current_screen()->post_type;
 
@@ -23,7 +27,6 @@ $page_structure = blocksy_default_akg(
 	'default'
 );
 
-
 if ($page_structure === 'default') {
 	$page_structure = blocksy_get_theme_mod(
 		$prefix . '_structure',
@@ -39,28 +42,26 @@ if ($post_type === 'ct_content_block') {
 	);
 }
 
-if (! $only_background) {
-	if ($page_structure === 'type-4') {
-		$css->put(
-			':root',
-			'--theme-block-max-width: var(--theme-normal-container-max-width)'
-		);
+if ($page_structure === 'type-4') {
+	$css->put(
+		':root',
+		'--theme-block-max-width: var(--theme-normal-container-max-width)'
+	);
 
-		$css->put(
-			':root',
-			'--theme-block-wide-max-width: calc(var(--theme-normal-container-max-width) + var(--theme-wide-offset) * 2)'
-		);
-	} else {
-		$css->put(
-			':root',
-			'--theme-block-max-width: var(--theme-narrow-container-max-width)'
-		);
+	$css->put(
+		':root',
+		'--theme-block-wide-max-width: calc(var(--theme-normal-container-max-width) + var(--theme-wide-offset) * 2)'
+	);
+} else {
+	$css->put(
+		':root',
+		'--theme-block-max-width: var(--theme-narrow-container-max-width)'
+	);
 
-		$css->put(
-			':root',
-			'--theme-block-wide-max-width: calc(var(--theme-narrow-container-max-width) + var(--theme-wide-offset) * 2)'
-		);
-	}
+	$css->put(
+		':root',
+		'--theme-block-wide-max-width: calc(var(--theme-narrow-container-max-width) + var(--theme-wide-offset) * 2)'
+	);
 }
 
 $source = [
@@ -78,7 +79,6 @@ if (blocksy_default_akg(
 	];
 }
 
-
 $has_boxed = blocksy_akg_or_customizer(
 	'content_style',
 	$source,
@@ -87,6 +87,7 @@ $has_boxed = blocksy_akg_or_customizer(
 
 if ($post_type === 'ct_content_block') {
 	$template_type = get_post_meta($post_id, 'template_type', true);
+	$template_subtype = blocksy_akg('template_subtype', $post_atts, 'card');
 
 	$default_content_block_structure = 'yes';
 
@@ -102,112 +103,30 @@ if ($post_type === 'ct_content_block') {
 
 	if (
 		$has_content_block_structure !== 'yes'
-		&&
-		$template_type !== 'popup'
+		||
+		$template_type === 'archive' && $template_subtype === 'card'
 	) {
-		return;
+		$has_boxed = blocksy_get_content_style_default($prefix);
 	}
 }
-
-$background_source = blocksy_default_akg(
-	'background',
-	$post_atts,
-	blocksy_background_default_value([
-		'backgroundColor' => [
-			'default' => [
-				'color' => Blocksy_Css_Injector::get_skip_rule_keyword()
-			],
-		],
-	])
-);
-
-if ($post_type === 'ct_content_block') {
-	$template_type = get_post_meta($post_id, 'template_type', true);
-
-	if ($template_type === 'popup') {
-		$background_source = blocksy_default_akg(
-			'popup_background',
-			$post_atts,
-			blocksy_background_default_value([
-				'backgroundColor' => [
-					'default' => [
-						'color' => '#ffffff'
-					],
-				],
-			])
-		);
-	}
-}
-
-if (
-	isset($background_source['background_type'])
-	&&
-	$background_source['background_type'] === 'color'
-	&&
-	isset($background_source['backgroundColor']['default']['color'])
-	&&
-	$background_source['backgroundColor']['default']['color'] === Blocksy_Css_Injector::get_skip_rule_keyword()
-) {
-	$background_source = blocksy_get_theme_mod(
-		$prefix . '_background',
-		blocksy_background_default_value([
-			'backgroundColor' => [
-				'default' => [
-					'color' => Blocksy_Css_Injector::get_skip_rule_keyword()
-				],
-			],
-		])
-	);
-
-	if (
-		isset($background_source['background_type'])
-		&&
-		$background_source['background_type'] === 'color'
-		&&
-		isset($background_source['backgroundColor']['default']['color'])
-		&&
-		$background_source['backgroundColor']['default']['color'] === Blocksy_Css_Injector::get_skip_rule_keyword()
-	) {
-		$background_source = blocksy_get_theme_mod(
-			'site_background',
-			blocksy_background_default_value([
-				'backgroundColor' => [
-					'default' => [
-						'color' => 'var(--theme-palette-color-7)'
-					],
-				],
-			])
-		);
-	}
-}
-
-$background_source = blocksy_expand_responsive_value($background_source);
 
 global $wp_version;
 
 $is_65_wordpress = version_compare($wp_version, '6.5', '>=');
 
-$styles_file_path = 'admin/6-5-styles';
-
-if (! $is_65_wordpress) {
-	$styles_file_path = 'admin/6-4-styles';
-}
-
-blocksy_theme_get_dynamic_styles([
-	'name' => $styles_file_path,
-	'css' => $css,
-	'mobile_css' => $mobile_css,
-	'tablet_css' => $tablet_css,
-	'context' => $context,
-	'chunk' => 'admin',
-	'only_background' => $only_background,
-	'background_source' => $background_source,
-	'has_boxed' => $has_boxed,
-	'source' => $source,
-]);
-
-if ($only_background) {
-	return;
+// We don't support boxed styles for 6.4 and less. For that version of WP
+// we will only support the main page background.
+if ($is_65_wordpress) {
+	blocksy_theme_get_dynamic_styles([
+		'name' => 'admin/6-5-styles',
+		'css' => $css,
+		'mobile_css' => $mobile_css,
+		'tablet_css' => $tablet_css,
+		'context' => $context,
+		'chunk' => 'admin',
+		'has_boxed' => $has_boxed,
+		'source' => $source,
+	]);
 }
 
 // form styles

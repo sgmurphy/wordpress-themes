@@ -175,8 +175,6 @@ if (
 	&&
 	$has_field_link !== 'yes'
 	&&
-	wp_script_is('wp-block-image-view', 'enqueued')
-	&&
 	$video_thumbnail !== 'yes'
 	&&
 	!$maybe_video

@@ -172,6 +172,23 @@ $options = [
 								],
 							],
 
+							$prefix . 'single_author_box_social_link_nofollow' => [
+								'type'  => 'ct-switch',
+								'label' => __( 'Set links to nofollow', 'blocksy' ),
+								'value' => 'no',
+								'sync' => [
+									'prefix' => $prefix,
+									'selector' => '.author-box',
+									'render' => function () {
+										if (have_posts()) {
+											the_post();
+										}
+
+										blocksy_author_box();
+									}
+								],
+							],
+
 						],
 					],
 

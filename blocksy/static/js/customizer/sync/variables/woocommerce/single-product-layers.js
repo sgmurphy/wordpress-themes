@@ -14,6 +14,7 @@ const collectVariablesForLayers = (v) => {
 			product_payment_methods: '.entry-summary-items > .ct-payment-methods',
 			additional_info: '.entry-summary-items > .ct-product-additional-info',
 			product_tabs: '.entry-summary-items > .woocommerce-tabs',
+			product_breadcrumbs: '.entry-summary-items > .ct-breadcrumbs',
 
 			// companion
 			product_brands: '.entry-summary-items > .ct-product-brands-single',
@@ -35,6 +36,9 @@ const collectVariablesForLayers = (v) => {
 						let defaultValue = 10
 
 						switch (layer.id) {
+							case 'product_breadcrumbs':
+								defaultValue = 10
+								break
 							case 'product_title':
 								defaultValue = 10
 								break
@@ -320,6 +324,32 @@ export const getWooSingleLayersVariablesFor = () => ({
 		]
 	},
 
+	// breadcrumbs
+	...typographyOption({
+		id: 'singleProductBreadcrumbsFont',
+		selector: '.entry-summary .ct-breadcrumbs',
+	}),
+
+	singleProductBreadcrumbsFontColor: [
+		{
+			selector: '.entry-summary .ct-breadcrumbs',
+			variable: 'theme-text-color',
+			type: 'color:default',
+		},
+
+		{
+			selector: '.entry-summary .ct-breadcrumbs',
+			variable: 'theme-link-initial-color',
+			type: 'color:initial',
+		},
+
+		{
+			selector: '.entry-summary .ct-breadcrumbs',
+			variable: 'theme-link-hover-color',
+			type: 'color:hover',
+		},
+	],
+
 	// product title
 	...typographyOption({
 		id: 'singleProductTitleFont',
@@ -449,7 +479,6 @@ export const getWooSingleLayersVariablesFor = () => ({
 		variable: 'theme-icon-color',
 		type: 'color',
 	},
-
 
 	entry_summary_container_border: {
 		selector: '.product[class*=top-gallery] .entry-summary',

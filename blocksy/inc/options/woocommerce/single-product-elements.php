@@ -70,7 +70,7 @@ $options = [
 									],
 									'inner-options' => [
 										'left' => [
-											'label' => __('Left', 'blocksy'),
+											'label' => __('Left Column', 'blocksy'),
 											'type' => 'ct-layers',
 											'manageable' => false,
 											'grouped' => true,
@@ -78,10 +78,13 @@ $options = [
 											'settings' => blocksy_get_options(
 												'woocommerce/single-product-layers'
 											),
+											'attr' => [
+												'class' => 'ct-layers-split-layout'
+											]
 										],
 
 										'right' => [
-											'label' => __('Right', 'blocksy'),
+											'label' => __('Right Column', 'blocksy'),
 											'type' => 'ct-layers',
 											'manageable' => false,
 											'grouped' => true,
@@ -89,6 +92,9 @@ $options = [
 											'settings' => blocksy_get_options(
 												'woocommerce/single-product-layers'
 											),
+											'attr' => [
+												'class' => 'ct-layers-split-layout'
+											]
 										],
 									]
 								],
@@ -197,6 +203,65 @@ $options = [
 											'title' => __('Initial', 'blocksy'),
 											'id' => 'default',
 											'inherit' => 'var(--theme-text-color)'
+										],
+									],
+								],
+
+							],
+						],
+
+						blocksy_rand_md5() => [
+							'type' => 'ct-condition',
+							'condition' => ['woo_single_layout:array-ids:product_breadcrumbs:enabled' => '!no'],
+							'computed_fields' => ['woo_single_layout'],
+							'options' => [
+
+								'singleProductBreadcrumbsFont' => [
+									'type' => 'ct-typography',
+									'label' => __( 'Breadcrumbs Font', 'blocksy' ),
+									'value' => blocksy_typography_default_values([]),
+									'design' => 'block',
+									'sync' => 'live',
+									'divider' => 'top:full',
+								],
+
+								'singleProductBreadcrumbsFontColor' => [
+									'label' => __( 'Breadcrumbs Font Color', 'blocksy' ),
+									'type'  => 'ct-color-picker',
+									'design' => 'inline',
+									'sync' => 'live',
+
+									'value' => [
+										'default' => [
+											'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+										],
+
+										'initial' => [
+											'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+										],
+
+										'hover' => [
+											'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+										],
+									],
+
+									'pickers' => [
+										[
+											'title' => __( 'Text', 'blocksy' ),
+											'id' => 'default',
+											'inherit' => 'var(--theme-text-color)'
+										],
+
+										[
+											'title' => __( 'Link Initial', 'blocksy' ),
+											'id' => 'initial',
+											'inherit' => 'var(--theme-link-initial-color)'
+										],
+
+										[
+											'title' => __( 'Link Hover', 'blocksy' ),
+											'id' => 'hover',
+											'inherit' => 'var(--theme-link-hover-color)'
 										],
 									],
 								],

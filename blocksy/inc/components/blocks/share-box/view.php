@@ -15,7 +15,11 @@ $icons_size = blocksy_akg('share_icons_size', $atts, '');
 $items_spacing = blocksy_akg('items_spacing', $atts, '');
 
 $colors = [];
-$colors_css = '';
+
+$wrapper_attr = [
+	'class' => trim('ct-shares-block ' . $classes),
+	'style' => ''
+];
 
 if ($color !== 'official') {
 	$colors['--theme-icon-color'] = blocksy_default_akg('customInitialColor', $atts, '');
@@ -24,32 +28,32 @@ if ($color !== 'official') {
 	if ($type !== 'simple') {
 		$base_color = blocksy_default_akg('customBorderColor', $atts, 'rgba(218, 222, 228, 0.5)');
 		$hover_color = blocksy_default_akg('customBorderHoverColor', $atts, 'rgba(218, 222, 228, 0.7)');
-	
+
 		if (isset($atts['borderColor'])) {
 			$var = $atts['borderColor'];
 			$base_color = "var(--wp--preset--color--$var)";
 		}
-	
+
 		if (isset($atts['borderHoverColor'])) {
 			$var = $atts['borderHoverColor'];
 			$hover_color = "var(--wp--preset--color--$var)";
 		}
-	
+
 		if ($fill === 'solid') {
 			$base_color = blocksy_default_akg('customBackgroundColor', $atts, 'rgba(218, 222, 228, 0.5)');
 			$hover_color = blocksy_default_akg('customBackgroundHoverColor', $atts, 'rgba(218, 222, 228, 0.7)');
-	
+
 			if (isset($atts['backgroundColor'])) {
 				$var = $atts['backgroundColor'];
 				$base_color = "var(--wp--preset--color--$var)";
 			}
-	
+
 			if (isset($atts['backgroundHoverColor'])) {
 				$var = $atts['backgroundHoverColor'];
 				$hover_color = "var(--wp--preset--color--$var)";
 			}
 		}
-	
+
 		$colors = array_merge(
 			$colors,
 			[
@@ -58,36 +62,39 @@ if ($color !== 'official') {
 			]
 		);
 	}
-	
+
 	if (isset($atts['initialColor'])) {
 		$var = $atts['initialColor'];
 		$colors['--theme-icon-color'] = "var(--wp--preset--color--$var)";
 	}
-	
+
 	if (isset($atts['hoverColor'])) {
 		$var = $atts['hoverColor'];
 		$colors['--theme-icon-hover-color'] = "var(--wp--preset--color--$var)";
 	}
-		
+
 	foreach ($colors as $key => $value) {
 		if (empty($value)) {
 			continue;
 		}
-		$colors_css .= $key . ':' . $value . ';';
+
+		$wrapper_attr['style'] .= $key . ':' . $value . ';';
 	}
 }
 
-$style = '';
-
 if (! empty($icons_size)) {
-	$style .= '--theme-icon-size:' . $icons_size . 'px;';
+	$wrapper_attr['style'] .= '--theme-icon-size:' . $icons_size . 'px;';
 }
 
 if (! empty($items_spacing)) {
-	$style .= '--items-spacing:' . $items_spacing . 'px;';
+	$wrapper_attr['style'] .= '--items-spacing:' . $items_spacing . 'px;';
 }
 
-echo '<div class="ct-shares-block ' . $classes . '" ' . (! empty($colors_css) || ! empty($style) ? ('style="' . $colors_css . $style . '"') : "") . '>';
+if (empty($wrapper_attr['style'])) {
+	unset($wrapper_attr['style']);
+}
+
+echo '<div ' . blocksy_attr_to_html($wrapper_attr) . '>';
 
 /**
  * blocksy_share_icons() function is already properly escaped.

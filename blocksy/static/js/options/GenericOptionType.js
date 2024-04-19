@@ -21,6 +21,8 @@ import { __ } from 'ct-i18n'
 import { getOptionLabelFor } from './helpers/get-label'
 import ctEvents from 'ct-events'
 
+import { getCurrentDevice } from '../customizer/components/useDeviceManager'
+
 import { mutateResponsiveValueWithScalar } from './helpers/mutate-responsive-value'
 
 const CORE_OPTIONS_CONTEXT = require.context('./options/', false, /\.js$/)
@@ -83,28 +85,12 @@ const GenericOptionType = ({
 				return null
 			}
 
-			return select('core/edit-post').__experimentalGetPreviewDeviceType()
+			return getCurrentDevice(select)
 		})
 	}
 
 	const getInitialDevice = () => {
-		if (wp.customize && wp.customize.previewedDevice) {
-			return wp.customize.previewedDevice()
-		}
-
-		if (
-			wp.data &&
-			wp.data.select &&
-			wp.data.select('core/edit-post') &&
-			wp.data.select('core/edit-post').__experimentalGetPreviewDeviceType
-		) {
-			return wp.data
-				.select('core/edit-post')
-				.__experimentalGetPreviewDeviceType()
-				.toLowerCase()
-		}
-
-		return 'desktop'
+		return getCurrentDevice()
 	}
 
 	const [device, setInnerDevice] = useState(getInitialDevice())
