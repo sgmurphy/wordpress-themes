@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Themes - Phlox\n"
 "Report-Msgid-Bugs-To: http://averta.net/phlox/wordpress-theme/\n"
-"POT-Creation-Date: 2024-04-14 08:31:50+00:00\n"
+"POT-Creation-Date: 2024-04-21 09:04:29+00:00\n"
 "PO-Revision-Date: 2018-07-23 17:10+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -187,8 +187,8 @@ msgid "The description"
 msgstr "Описание"
 
 #: auxin/auxin-include/classes/class-auxin-customize-control.php:176
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:659
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:693
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:660
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:694
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:179
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:662
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:696
@@ -200,8 +200,8 @@ msgstr "Описание"
 msgid "Submit"
 msgstr "Отправить"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:504
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:331
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:505
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:336
 #: auxin-content/admin/metaboxes/metabox-fields-general-slider-setting.php:13
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:507
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:334
@@ -212,20 +212,20 @@ msgstr "Отправить"
 msgid "Choose .."
 msgstr "Выбор..."
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:863
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:864
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:866
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:866
 msgid "Add File"
 msgstr "Добавить файл"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:864
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:865
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:867
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:867
 msgid "Change File"
 msgstr "Изменить файл"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:865
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:867
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:866
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:868
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:868
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:870
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:868
@@ -233,7 +233,7 @@ msgstr "Изменить файл"
 msgid "Select File"
 msgstr "Выбрать файл"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:866
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:867
 #: auxin/auxin-include/classes/class-auxin-customizer.php:513
 #: auxin-content/admin/metaboxes/exclude/metabox-fields-product-image.php:36
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:869
@@ -243,37 +243,37 @@ msgstr "Выбрать файл"
 msgid "Remove"
 msgstr "Удалить"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:868
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:869
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:871
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:871
 msgid "Choose File"
 msgstr "Выбрать файл"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1245
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1246
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1248
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1248
 #, fuzzy
 msgid "Family"
 msgstr "Семейство шрифтов"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1260
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1261
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1263
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1263
 #, fuzzy
 msgid "Size"
 msgstr "Размер:"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1276
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1277
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1279
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1279
 #, fuzzy
 msgid "Weight"
 msgstr "Светлый"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1280
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1297
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1309
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1320
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1281
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1298
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1310
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1321
 #: auxin/auxin-include/classes/class-auxin-customizer.php:514
 #: auxin-content/admin/metaboxes/metabox-fields-general-title-setting.php:49
 #: auxin-content/admin/metaboxes/metabox-fields-general-title-setting.php:318
@@ -318,9 +318,9 @@ msgstr "Светлый"
 msgid "Default"
 msgstr "По умолчанию"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1288
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1301
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1310
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1289
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1302
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1311
 #: auxin-content/admin/metaboxes/exclude/metabox-fields-portfolio-display.php:66
 #: auxin-content/options/auxin-options.php:2001
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1291
@@ -334,7 +334,7 @@ msgstr "По умолчанию"
 msgid "Normal"
 msgstr "Обычный"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1289
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1290
 #: auxin/auxin-include/compatibility/go-pricing.php:469
 #: auxin/auxin-include/compatibility/go-pricing.php:552
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1292
@@ -346,38 +346,38 @@ msgstr "Обычный"
 msgid "Bold"
 msgstr "Жирный"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1293
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1294
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1296
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1296
 msgid "Transform"
 msgstr ""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1298
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1299
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1301
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1301
 msgid "Uppercase"
 msgstr ""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1299
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1300
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1302
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1302
 msgid "Lowercase"
 msgstr ""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1300
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1301
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1303
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1303
 msgid "Capitalize"
 msgstr ""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1305
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1306
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1308
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1308
 #, fuzzy
 msgid "Style"
 msgstr "Стиль:"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1311
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1312
 #: auxin/auxin-include/compatibility/go-pricing.php:469
 #: auxin/auxin-include/compatibility/go-pricing.php:552
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1314
@@ -389,41 +389,41 @@ msgstr "Стиль:"
 msgid "Italic"
 msgstr "Курсивный"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1312
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1313
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1315
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1315
 msgid "Oblique"
 msgstr ""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1316
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1317
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1319
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1319
 #, fuzzy
 msgid "Decoration"
 msgstr "Документация"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1321
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1322
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1324
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1324
 msgid "Underline"
 msgstr ""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1322
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1323
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1325
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1325
 #, fuzzy
 msgid "Overline"
 msgstr "График"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1323
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1324
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1326
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1326
 #, fuzzy
 msgid "Line Through"
 msgstr "Зачёркнутый"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1324
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:856
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1325
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:861
 #: auxin-content/admin/metaboxes/metabox-fields-general-title-setting.php:361
 #: auxin-content/admin/metaboxes/metabox-fields-general-title-setting.php:691
 #: auxin-content/options/auxin-options.php:696
@@ -473,39 +473,39 @@ msgstr "Зачёркнутый"
 msgid "None"
 msgstr "Ничего"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1329
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1330
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1332
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1332
 #, fuzzy
 msgid "Line Height"
 msgstr "Высота заголовка"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1346
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1347
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1349
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1349
 msgid "Letter Spacing"
 msgstr ""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1404
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1405
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1407
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1407
 msgid "GLOBAL COLORS"
 msgstr ""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1425
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1426
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1428
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1428
 msgid "Please set global colors in elementor"
 msgstr ""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1428
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1429
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1431
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1431
 #, fuzzy
 msgid "Install Elementor"
 msgstr "Elementor"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1439
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1440
 #: auxin-content/options/auxin-options.php:556
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1442
 #: build/phlox/auxin-content/options/auxin-options.php:493
@@ -514,7 +514,7 @@ msgstr "Elementor"
 msgid "Primary"
 msgstr ""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1444
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1445
 #: auxin-content/options/auxin-options.php:561
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1447
 #: build/phlox/auxin-content/options/auxin-options.php:498
@@ -524,7 +524,7 @@ msgstr ""
 msgid "Secondary"
 msgstr "Текст \"Читать далее\""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1449
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1450
 #: auxin-content/options/auxin-options.php:566
 #: auxin-content/options/auxin-options.php:4822
 #: auxin-content/options/auxin-options.php:5089
@@ -539,7 +539,7 @@ msgstr "Текст \"Читать далее\""
 msgid "Text"
 msgstr ""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1454
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1455
 #: auxin-content/options/auxin-options.php:571
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1457
 #: build/phlox/auxin-content/options/auxin-options.php:508
@@ -548,14 +548,14 @@ msgstr ""
 msgid "Accent"
 msgstr ""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1474
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1475
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1477
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1477
 #, fuzzy
 msgid "Setup Global Colors"
 msgstr "Шаблон центра"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1474
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1475
 #: auxin/auxin-include/include/templates/templates-header.php:551
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1477
 #: build/phlox/auxin/auxin-include/include/templates/templates-header.php:511
@@ -583,7 +583,7 @@ msgstr "Шаблон центра"
 msgid "Edit"
 msgstr "Редактировать"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1768
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1769
 #: auxin/auxin-include/classes/class-auxin-master-nav-menu.php:69
 #: auxin-content/admin/metaboxes/metabox-fields-general-title-setting.php:319
 #: auxin-content/options/auxin-options.php:476
@@ -604,7 +604,7 @@ msgstr "Редактировать"
 msgid "Top"
 msgstr "Сверху"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1769
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1770
 #: auxin/auxin-include/classes/class-auxin-master-nav-menu.php:68
 #: auxin-content/admin/metaboxes/metabox-fields-general-layout.php:158
 #: auxin-content/admin/metaboxes/metabox-fields-general-title-setting.php:634
@@ -631,7 +631,7 @@ msgstr "Сверху"
 msgid "Right"
 msgstr "Справа"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1770
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1771
 #: auxin/auxin-include/classes/class-auxin-master-nav-menu.php:70
 #: auxin-content/admin/metaboxes/metabox-fields-general-title-setting.php:321
 #: auxin-content/options/auxin-options.php:477
@@ -652,7 +652,7 @@ msgstr "Справа"
 msgid "Bottom"
 msgstr "Снизу"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1771
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1772
 #: auxin/auxin-include/classes/class-auxin-master-nav-menu.php:67
 #: auxin-content/admin/metaboxes/metabox-fields-general-layout.php:156
 #: auxin-content/admin/metaboxes/metabox-fields-general-title-setting.php:626
@@ -688,8 +688,8 @@ msgstr "Снизу"
 msgid "Left"
 msgstr "Слева"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1845
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:193
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1846
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:198
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1848
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:196
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1848
@@ -698,8 +698,8 @@ msgstr "Слева"
 msgid "Install Elementor Now"
 msgstr "Elementor"
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:1971
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:214
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:1972
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:219
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:1974
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:217
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:1974
@@ -707,7 +707,7 @@ msgstr "Elementor"
 msgid "Edit with %s Builder"
 msgstr ""
 
-#: auxin/auxin-include/classes/class-auxin-customize-control.php:2097
+#: auxin/auxin-include/classes/class-auxin-customize-control.php:2098
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customize-control.php:2106
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customize-control.php:2106
 #, fuzzy
@@ -753,8 +753,8 @@ msgstr "Перейти на PRO версию"
 
 #: auxin/auxin-include/classes/class-auxin-customizer.php:485
 #: auxin/auxin-include/classes/class-auxin-customizer.php:500
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:607
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:637
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:612
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:642
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customizer.php:486
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customizer.php:501
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:610
@@ -786,8 +786,8 @@ msgstr "Отправить изображение"
 
 #: auxin/auxin-include/classes/class-auxin-customizer.php:488
 #: auxin/auxin-include/classes/class-auxin-customizer.php:503
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:607
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:637
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:612
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:642
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customizer.php:489
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customizer.php:504
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:610
@@ -836,7 +836,7 @@ msgid "Choose image"
 msgstr "Выбрать изображение"
 
 #: auxin/auxin-include/classes/class-auxin-customizer.php:528
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:668
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:673
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customizer.php:529
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:671
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customizer.php:522
@@ -857,7 +857,7 @@ msgid "Submit Audio"
 msgstr "Отправить аудио"
 
 #: auxin/auxin-include/classes/class-auxin-customizer.php:531
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:668
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:673
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customizer.php:532
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:671
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customizer.php:525
@@ -872,7 +872,7 @@ msgid "Choose Audio"
 msgstr "Выбрать аудио"
 
 #: auxin/auxin-include/classes/class-auxin-customizer.php:543
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:699
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:704
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customizer.php:544
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:702
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customizer.php:537
@@ -893,7 +893,7 @@ msgid "Submit Video"
 msgstr "Отправить видео"
 
 #: auxin/auxin-include/classes/class-auxin-customizer.php:546
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:699
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:704
 #: build/phlox/auxin/auxin-include/classes/class-auxin-customizer.php:547
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:702
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-customizer.php:540
@@ -944,7 +944,7 @@ msgid "Icon Alignment"
 msgstr "Выравнивание иконки"
 
 #: auxin/auxin-include/classes/class-auxin-master-nav-menu.php:66
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:837
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:842
 #: auxin-content/options/auxin-options.php:759
 #: auxin-content/options/auxin-options.php:6405
 #: auxin-content/options/auxin-options.php:9853
@@ -1038,8 +1038,8 @@ msgstr ""
 msgid "Loading options.."
 msgstr "Параметры загрузки .."
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:262
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:301
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:267
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:306
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:265
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:304
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:265
@@ -1047,13 +1047,13 @@ msgstr "Параметры загрузки .."
 msgid "Remove image"
 msgstr "Удалить изображение"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:637
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:642
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:640
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:640
 msgid "Add Image(s)"
 msgstr "Добавить изображение(я)"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:737
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:742
 #: auxin-content/options/auxin-options.php:673
 #: auxin-content/options/auxin-options.php:3832
 #: auxin-content/options/auxin-options.php:6334
@@ -1080,25 +1080,25 @@ msgstr "Добавить изображение(я)"
 msgid "Background Color"
 msgstr "Цвет фона"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:738
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:743
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:741
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:741
 msgid "Specifies the color of website background"
 msgstr "Определяет цвет фона веб-сайта"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:744
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:749
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:747
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:747
 msgid "Background repeat"
 msgstr "Повтор фона"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:745
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:750
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:748
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:748
 msgid "Specifies how background image repeats"
 msgstr "Указывает, как повторяется фоновое изображение"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:749
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:754
 #: auxin-content/options/auxin-options.php:803
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:752
 #: build/phlox/auxin-content/options/auxin-options.php:740
@@ -1107,7 +1107,7 @@ msgstr "Указывает, как повторяется фоновое изо�
 msgid "No repeat"
 msgstr "Не повторять"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:753
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:758
 #: auxin-content/options/auxin-options.php:807
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:756
 #: build/phlox/auxin-content/options/auxin-options.php:744
@@ -1116,7 +1116,7 @@ msgstr "Не повторять"
 msgid "Repeat horizontally and vertically"
 msgstr "Повторять горизонтально и вертикально"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:757
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:762
 #: auxin-content/options/auxin-options.php:811
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:760
 #: build/phlox/auxin-content/options/auxin-options.php:748
@@ -1125,7 +1125,7 @@ msgstr "Повторять горизонтально и вертикально"
 msgid "Repeat horizontally"
 msgstr "Повторить горизонтально"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:761
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:766
 #: auxin-content/options/auxin-options.php:815
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:764
 #: build/phlox/auxin-content/options/auxin-options.php:752
@@ -1134,13 +1134,13 @@ msgstr "Повторить горизонтально"
 msgid "Repeat vertically"
 msgstr "Повторить вертикально"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:769
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:774
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:772
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:772
 msgid "Background attachment"
 msgstr "Привязка фона"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:770
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:775
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:773
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:773
 msgid ""
@@ -1149,7 +1149,7 @@ msgstr ""
 "Указывает, что фон фиксирован или прокручивается, когда пользователь "
 "прокручивает документ"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:773
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:778
 #: auxin-content/options/auxin-options.php:921
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:776
 #: build/phlox/auxin-content/options/auxin-options.php:858
@@ -1158,7 +1158,7 @@ msgstr ""
 msgid "Scroll"
 msgstr "Прокрутка"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:777
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:782
 #: auxin-content/options/auxin-options.php:925
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:780
 #: build/phlox/auxin-content/options/auxin-options.php:862
@@ -1167,19 +1167,19 @@ msgstr "Прокрутка"
 msgid "Fixed"
 msgstr "Зафиксировано"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:786
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:791
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:789
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:789
 msgid "Background position"
 msgstr "Позиция фона"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:787
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:792
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:790
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:790
 msgid "Specifies background image alignment"
 msgstr "Определяет выравнивание изображения фона."
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:790
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:795
 #: auxin-content/options/auxin-options.php:851
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:793
 #: build/phlox/auxin-content/options/auxin-options.php:788
@@ -1188,7 +1188,7 @@ msgstr "Определяет выравнивание изображения ф�
 msgid "Left top"
 msgstr "Слева по центру"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:794
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:799
 #: auxin-content/options/auxin-options.php:855
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:797
 #: build/phlox/auxin-content/options/auxin-options.php:792
@@ -1197,7 +1197,7 @@ msgstr "Слева по центру"
 msgid "Center top"
 msgstr "По центру сверху"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:798
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:803
 #: auxin-content/options/auxin-options.php:859
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:801
 #: build/phlox/auxin-content/options/auxin-options.php:796
@@ -1206,7 +1206,7 @@ msgstr "По центру сверху"
 msgid "Right top"
 msgstr "Справа сверху"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:803
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:808
 #: auxin-content/options/auxin-options.php:864
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:806
 #: build/phlox/auxin-content/options/auxin-options.php:801
@@ -1215,7 +1215,7 @@ msgstr "Справа сверху"
 msgid "Left center"
 msgstr "Слева по центру"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:807
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:812
 #: auxin-content/options/auxin-options.php:868
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:810
 #: build/phlox/auxin-content/options/auxin-options.php:805
@@ -1224,7 +1224,7 @@ msgstr "Слева по центру"
 msgid "Center center"
 msgstr "В центре по центру"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:811
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:816
 #: auxin-content/options/auxin-options.php:872
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:814
 #: build/phlox/auxin-content/options/auxin-options.php:809
@@ -1233,7 +1233,7 @@ msgstr "В центре по центру"
 msgid "Right center"
 msgstr "Справа по центру"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:816
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:821
 #: auxin-content/options/auxin-options.php:877
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:819
 #: build/phlox/auxin-content/options/auxin-options.php:814
@@ -1242,7 +1242,7 @@ msgstr "Справа по центру"
 msgid "Left bottom"
 msgstr "Слева внизу"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:820
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:825
 #: auxin-content/options/auxin-options.php:881
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:823
 #: build/phlox/auxin-content/options/auxin-options.php:818
@@ -1251,7 +1251,7 @@ msgstr "Слева внизу"
 msgid "Center bottom"
 msgstr "По центру внизу"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:824
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:829
 #: auxin-content/options/auxin-options.php:885
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:827
 #: build/phlox/auxin-content/options/auxin-options.php:822
@@ -1260,13 +1260,13 @@ msgstr "По центру внизу"
 msgid "Right bottom"
 msgstr "Справа внизу"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:833
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:838
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:836
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:836
 msgid "Background size"
 msgstr "Размер фона"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:834
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:839
 #: auxin-content/options/auxin-options.php:753
 #: auxin-content/options/auxin-options.php:6372
 #: auxin-content/options/auxin-options.php:9820
@@ -1281,7 +1281,7 @@ msgstr "Размер фона"
 msgid "Specifies the background size."
 msgstr "Определяет размер фона."
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:841
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:846
 #: auxin-content/options/auxin-options.php:763
 #: auxin-content/options/auxin-options.php:6409
 #: auxin-content/options/auxin-options.php:9857
@@ -1299,7 +1299,7 @@ msgstr "Определяет размер фона."
 msgid "Contain"
 msgstr "Содержит"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:845
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:850
 #: auxin-content/options/auxin-options.php:375
 #: auxin-content/options/auxin-options.php:767
 #: auxin-content/options/auxin-options.php:6413
@@ -1320,20 +1320,20 @@ msgstr "Содержит"
 msgid "Cover"
 msgstr "Обложка"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:854
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:859
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:857
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:857
 msgid "Background pattern"
 msgstr "Шаблон фона"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:855
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:860
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:858
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:858
 msgid "Here you can select one of these patterns as site image background."
 msgstr ""
 "Здесь вы можете выбрать один из шаблонов в качестве фона изображения сайта."
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:862
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:867
 #: auxin-content/options/auxin-options.php:7876
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:865
 #: build/phlox/auxin-content/options/auxin-options.php:7603
@@ -1342,16 +1342,16 @@ msgstr ""
 msgid "Background image"
 msgstr "Фоновое изображение"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:863
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:868
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:866
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:866
 msgid "You can upload custom image for site background"
 msgstr "Вы можете загрузить свое изображение для фона"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:864
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:872
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:880
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:888
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:869
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:877
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:885
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:893
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:867
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:875
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:883
@@ -1366,15 +1366,15 @@ msgstr ""
 "Примечание. Если вы настроили пользовательское изображение, фоновые "
 "изображения по умолчанию будут проигнорированы."
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:870
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:875
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:873
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:873
 msgid "Background video MP4"
 msgstr "Фоновое видео MP4"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:871
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:879
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:887
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:876
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:884
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:892
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:874
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:882
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:890
@@ -1384,13 +1384,13 @@ msgstr "Фоновое видео MP4"
 msgid "You can upload custom video for title background"
 msgstr "Загрузите ваше видео для фона заголовка"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:878
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:883
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:881
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:881
 msgid "Background video Ogg"
 msgstr "Фоновое видео Ogg"
 
-#: auxin/auxin-include/classes/class-auxin-metabox-view.php:886
+#: auxin/auxin-include/classes/class-auxin-metabox-view.php:891
 #: build/phlox/auxin/auxin-include/classes/class-auxin-metabox-view.php:889
 #: build/phlox-pro/auxin/auxin-include/classes/class-auxin-metabox-view.php:889
 msgid "Background video WebM"
@@ -2982,7 +2982,7 @@ msgstr "Установите необходимые плагины"
 #: build/phlox/auxin/auxin-include/modules/lib/class-tgm-plugin-activation.php:328
 #: build/phlox/auxin-content/include/hooks-admin.php:272
 #: build/phlox-pro/auxin/auxin-include/modules/lib/class-tgm-plugin-activation.php:328
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:406
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:409
 msgid "Install Plugins"
 msgstr "Установить плагины"
 
@@ -3182,7 +3182,7 @@ msgstr "Обязательный"
 #: build/phlox/auxin/auxin-include/modules/lib/class-tgm-plugin-activation.php:2274
 #: build/phlox/auxin-content/include/hooks-admin.php:283
 #: build/phlox-pro/auxin/auxin-include/modules/lib/class-tgm-plugin-activation.php:2274
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:417
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:420
 msgid "Recommended"
 msgstr "Рекомендуемый"
 
@@ -5922,25 +5922,26 @@ msgstr "Элементы ядра Phlox"
 #: auxin-content/include/hooks-admin.php:193
 #: auxin-content/include/hooks-admin.php:212
 #: build/phlox/auxin-content/include/hooks-admin.php:35
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:66
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:77
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:88
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:106
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:125
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:60
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:69
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:80
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:91
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:109
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:128
 msgid "Exclusive"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:93
 #: auxin-content/include/hooks-admin.php:150
 #: build/phlox/auxin-content/include/hooks-admin.php:41
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:63
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:66
 msgid "Phlox Portfolio"
 msgstr "Phlox Портфолио"
 
 #: auxin-content/include/hooks-admin.php:107
 #: auxin-content/include/hooks-admin.php:181
 #: build/phlox/auxin-content/include/hooks-admin.php:55
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:94
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:97
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
@@ -5956,37 +5957,37 @@ msgid "Elementor Element Pack"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:159
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:72
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:75
 #, fuzzy
 msgid "Phlox Pro Features"
 msgstr "Phlox Pro"
 
 #: auxin-content/include/hooks-admin.php:170
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:83
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:86
 #, fuzzy
 msgid "Phlox News"
 msgstr "Тема Phlox"
 
 #: auxin-content/include/hooks-admin.php:188
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:101
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:104
 #, fuzzy
 msgid "Phlox Shop"
 msgstr "Phlox Pro"
 
 #: auxin-content/include/hooks-admin.php:199
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:112
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:115
 #, fuzzy
 msgid "TI Woocommerce Wishlist"
 msgstr "WooCommerce"
 
 #: auxin-content/include/hooks-admin.php:207
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:120
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:123
 #, fuzzy
 msgid "Master Slider Pro"
 msgstr "Master Slider"
 
 #: auxin-content/include/hooks-admin.php:218
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:131
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:134
 #, fuzzy
 msgid "Visual Composer Page Builder"
 msgstr "Визуальный конструктор"
@@ -5994,148 +5995,148 @@ msgstr "Визуальный конструктор"
 #: auxin-content/include/hooks-admin.php:228
 #: auxin-content/include/hooks-admin.php:332
 #: build/phlox/auxin-content/include/hooks-admin.php:70
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:141
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:144
 msgid "HubSpot"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:235
 #: auxin-content/include/hooks-admin.php:339
 #: build/phlox/auxin-content/include/hooks-admin.php:77
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:148
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:151
 msgid "SellKit"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:243
 #: auxin-content/include/hooks-admin.php:347
 #: build/phlox/auxin-content/include/hooks-admin.php:85
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:156
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:159
 msgid "WP SMS"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:250
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:163
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:166
 msgid "Ultimate VC Addons"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:260
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:173
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:176
 #, fuzzy
 msgid "Visual CSS Style Editor: Yellow Pencil"
 msgstr "Визуальный редактор CSS стилей"
 
 #: auxin-content/include/hooks-admin.php:270
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:183
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:186
 #, fuzzy
 msgid "Revolution Slider"
 msgstr "Слайдер блога"
 
 #: auxin-content/include/hooks-admin.php:280
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:193
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:196
 #, fuzzy
 msgid "LayerSlider"
 msgstr "MasterSlider"
 
 #: auxin-content/include/hooks-admin.php:290
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:203
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:206
 msgid "Go Pricing Tables"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:300
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:213
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:216
 msgid "Convert Plus"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:310
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:223
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:226
 msgid "ZoomSounds - Audio Player"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:320
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:233
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:236
 msgid "Auto Theme Updater"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:355
 #: build/phlox/auxin-content/include/hooks-admin.php:92
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:244
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:247
 msgid "Instagram Feed"
 msgstr "Лента Instagram"
 
 #: auxin-content/include/hooks-admin.php:362
 #: build/phlox/auxin-content/include/hooks-admin.php:99
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:251
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:254
 msgid "WordPress SEO"
 msgstr "WordPress SEO"
 
 #: auxin-content/include/hooks-admin.php:369
 #: build/phlox/auxin-content/include/hooks-admin.php:106
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:258
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:261
 msgid "Recent Tweets Widget"
 msgstr "Последние твиты виджет"
 
 #: auxin-content/include/hooks-admin.php:376
 #: build/phlox/auxin-content/include/hooks-admin.php:113
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:265
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:268
 msgid "Contact Form 7"
 msgstr "Contact Form 7"
 
 #: auxin-content/include/hooks-admin.php:383
 #: build/phlox/auxin-content/include/hooks-admin.php:120
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:272
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:275
 msgid "Variation Swatches for WooCommerce"
 msgstr ""
 
 #: auxin-content/include/hooks-admin.php:390
 #: build/phlox/auxin-content/include/hooks-admin.php:127
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:279
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:282
 msgid "WordPress Importer"
 msgstr "WordPress Importer"
 
 #: auxin-content/include/hooks-admin.php:398
 #: build/phlox/auxin-content/include/hooks-admin.php:135
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:287
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:290
 msgid "Related Posts for WordPress"
 msgstr "Related Posts for WordPress"
 
 #: auxin-content/include/hooks-admin.php:405
 #: build/phlox/auxin-content/include/hooks-admin.php:142
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:294
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:297
 msgid "WP ULike"
 msgstr "WP ULike"
 
 #: auxin-content/include/hooks-admin.php:412
 #: build/phlox/auxin-content/include/hooks-admin.php:149
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:301
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:304
 msgid "Autoptimize"
 msgstr "Autoptimize"
 
 #: auxin-content/include/hooks-admin.php:419
 #: build/phlox/auxin-content/include/hooks-admin.php:156
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:308
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:311
 msgid "Custom Facebook Feed"
 msgstr "Custom Facebook Feed"
 
 #: auxin-content/include/hooks-admin.php:427
 #: build/phlox/auxin-content/include/hooks-admin.php:164
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:316
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:319
 msgid "Flickr Justified Gallery"
 msgstr "Flickr Justified Gallery"
 
 #: auxin-content/include/hooks-admin.php:435
 #: build/phlox/auxin-content/include/hooks-admin.php:172
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:324
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:327
 msgid "Image Optimization"
 msgstr "Оптимизация изображений"
 
 #: auxin-content/include/hooks-admin.php:443
 #: build/phlox/auxin-content/include/hooks-admin.php:180
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:332
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:335
 msgid "Export/Import Theme Options"
 msgstr "Экспорт/Импорт настроек темы"
 
 #: auxin-content/include/hooks-admin.php:451
 #: build/phlox/auxin-content/include/hooks-admin.php:188
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:340
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:343
 msgid "Popular Posts"
 msgstr "Популярные записи"
 
@@ -6146,31 +6147,31 @@ msgstr "Визуальный редактор CSS стилей"
 
 #: auxin-content/include/hooks-admin.php:467
 #: build/phlox/auxin-content/include/hooks-admin.php:202
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:348
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:351
 msgid "EU Cookie Notce"
 msgstr "Уведомление о куках ЕС"
 
 #: auxin-content/include/hooks-admin.php:474
 #: build/phlox/auxin-content/include/hooks-admin.php:209
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:355
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:358
 msgid "MailChimp for WordPress"
 msgstr "MailChimp для WordPress"
 
 #: auxin-content/include/hooks-admin.php:481
 #: build/phlox/auxin-content/include/hooks-admin.php:216
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:362
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:365
 msgid "Real-time Bitcoin Converter"
 msgstr "Конвертер биткойнов в реальном времени"
 
 #: auxin-content/include/hooks-admin.php:488
 #: build/phlox/auxin-content/include/hooks-admin.php:223
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:369
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:372
 msgid "Custom Sidebars"
 msgstr "Пользовательская боковая панель"
 
 #: auxin-content/include/hooks-admin.php:495
 #: build/phlox/auxin-content/include/hooks-admin.php:230
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:376
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:379
 msgid "Simple Taxonomy Ordering"
 msgstr ""
 
@@ -6181,31 +6182,31 @@ msgstr "MasterSlider от averta"
 
 #: auxin-content/include/hooks-admin.php:538
 #: build/phlox/auxin-content/include/hooks-admin.php:271
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:405
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:408
 msgid "Install Recommended Plugins"
 msgstr "Установка рекомендуемых плагинов"
 
 #: auxin-content/include/hooks-admin.php:551
 #: build/phlox/auxin-content/include/hooks-admin.php:284
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:418
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:421
 msgid "Essentials"
 msgstr "Вещи первой необходимости"
 
 #: auxin-content/include/hooks-admin.php:552
 #: build/phlox/auxin-content/include/hooks-admin.php:285
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:419
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:422
 msgid "Bundled"
 msgstr "В комплекте"
 
 #: auxin-content/include/hooks-admin.php:553
 #: build/phlox/auxin-content/include/hooks-admin.php:286
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:420
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:423
 msgid "Visual Builder"
 msgstr "Визуальный конструктор"
 
 #: auxin-content/include/hooks-admin.php:554
 #: build/phlox/auxin-content/include/hooks-admin.php:287
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:421
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:424
 msgid "E-Commerce"
 msgstr "Магазин"
 
@@ -6213,75 +6214,75 @@ msgstr "Магазин"
 #: auxin-content/options/auxin-options.php:4472
 #: build/phlox/auxin-content/include/hooks-admin.php:288
 #: build/phlox/auxin-content/options/auxin-options.php:4199
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:422
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:425
 #: build/phlox-pro/auxin-content/options/auxin-options.php:4199
 msgid "Blog"
 msgstr "Блог"
 
 #: auxin-content/include/hooks-admin.php:556
 #: build/phlox/auxin-content/include/hooks-admin.php:289
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:423
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:426
 msgid "Social"
 msgstr "Соц.сети"
 
 #: auxin-content/include/hooks-admin.php:557
 #: build/phlox/auxin-content/include/hooks-admin.php:290
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:424
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:427
 msgid "Optimization"
 msgstr "Оптимизация"
 
 #: auxin-content/include/hooks-admin.php:574
 #: build/phlox/auxin-content/include/hooks-admin.php:307
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:441
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:444
 msgid "Import Demo"
 msgstr "Импорт Demo-данных"
 
 #: auxin-content/include/hooks-admin.php:575
 #: build/phlox/auxin-content/include/hooks-admin.php:308
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:442
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:445
 msgid "Clone a demo site in few clicks"
 msgstr "Клонируйте демо сайт за пару кликов"
 
 #: auxin-content/include/hooks-admin.php:576
 #: build/phlox/auxin-content/include/hooks-admin.php:309
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:443
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:446
 msgid "Run Importer"
 msgstr "Запустить импортер"
 
 #: auxin-content/include/hooks-admin.php:581
 #: build/phlox/auxin-content/include/hooks-admin.php:314
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:448
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:451
 #, fuzzy
 msgid "Customize %s"
 msgstr "Изменить"
 
 #: auxin-content/include/hooks-admin.php:582
 #: build/phlox/auxin-content/include/hooks-admin.php:315
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:449
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:452
 msgid "Customize any part of your website."
 msgstr "Измените любую часть вашего сайта."
 
 #: auxin-content/include/hooks-admin.php:583
 #: build/phlox/auxin-content/include/hooks-admin.php:316
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:450
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:453
 msgid "Customize"
 msgstr "Изменить"
 
 #: auxin-content/include/hooks-admin.php:597
 #: build/phlox/auxin-content/include/hooks-admin.php:330
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:464
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:467
 msgid "Need Some Help?"
 msgstr "Нужна помощь?"
 
 #: auxin-content/include/hooks-admin.php:598
 #: build/phlox/auxin-content/include/hooks-admin.php:331
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:465
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:468
 msgid "We would love to be of any assistance."
 msgstr "Мы с радостью окажем любую помощь."
 
 #: auxin-content/include/hooks-admin.php:599
 #: build/phlox/auxin-content/include/hooks-admin.php:332
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:466
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:469
 msgid "Send Ticket"
 msgstr "Отправить запрос"
 
@@ -6289,69 +6290,69 @@ msgstr "Отправить запрос"
 #: auxin-content/include/hooks-admin.php:742
 #: build/phlox/auxin-content/include/hooks-admin.php:338
 #: build/phlox/auxin-content/include/hooks-admin.php:475
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:472
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:609
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:475
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:612
 msgid "Documentation"
 msgstr "Документация"
 
 #: auxin-content/include/hooks-admin.php:606
 #: build/phlox/auxin-content/include/hooks-admin.php:339
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:473
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:476
 #, fuzzy
 msgid "Learn about any aspect of %s Theme."
 msgstr "Узнайте о любом аспекте темы Phlox."
 
 #: auxin-content/include/hooks-admin.php:607
 #: build/phlox/auxin-content/include/hooks-admin.php:340
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:474
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:477
 msgid "Start Reading"
 msgstr "Начать читать"
 
 #: auxin-content/include/hooks-admin.php:613
 #: build/phlox/auxin-content/include/hooks-admin.php:346
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:480
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:483
 msgid "Subscription"
 msgstr "Подписка"
 
 #: auxin-content/include/hooks-admin.php:614
 #: build/phlox/auxin-content/include/hooks-admin.php:347
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:481
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:484
 msgid "Get the latest changes in your inbox."
 msgstr "Получите последние изменения на ваш почтовый ящик."
 
 #: auxin-content/include/hooks-admin.php:615
 #: build/phlox/auxin-content/include/hooks-admin.php:348
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:482
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:485
 msgid "Coming soon"
 msgstr "Ожидается"
 
 #: auxin-content/include/hooks-admin.php:625
 #: build/phlox/auxin-content/include/hooks-admin.php:358
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:492
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:495
 msgid "Dashboard"
 msgstr "Консоль"
 
 #: auxin-content/include/hooks-admin.php:643
 #: build/phlox/auxin-content/include/hooks-admin.php:376
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:510
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:513
 msgid "Customization"
 msgstr "Настройка"
 
 #: auxin-content/include/hooks-admin.php:735
 #: build/phlox/auxin-content/include/hooks-admin.php:468
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:602
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:605
 msgid "Play all video tutorials"
 msgstr "Показать все видео уроки"
 
 #: auxin-content/include/hooks-admin.php:737
 #: build/phlox/auxin-content/include/hooks-admin.php:470
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:604
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:607
 msgid "Video Tutorials"
 msgstr "Видеоруководства"
 
 #: auxin-content/include/hooks-admin.php:738
 #: build/phlox/auxin-content/include/hooks-admin.php:471
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:605
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:608
 msgid "Take your skills with %s to the next level!"
 msgstr "Улучшите свои навыки с %s на следующий уровень!"
 
@@ -6359,27 +6360,27 @@ msgstr "Улучшите свои навыки с %s на следующий у�
 #: auxin-content/include/hooks-admin.php:748
 #: build/phlox/auxin-content/include/hooks-admin.php:476
 #: build/phlox/auxin-content/include/hooks-admin.php:481
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:610
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:615
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:613
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:618
 #, fuzzy
 msgid "Check out"
 msgstr "Оформление заказа"
 
 #: auxin-content/include/hooks-admin.php:747
 #: build/phlox/auxin-content/include/hooks-admin.php:480
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:614
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:617
 msgid "Support Center"
 msgstr "Центр поддержки"
 
 #: auxin-content/include/hooks-admin.php:758
 #: build/phlox/auxin-content/include/hooks-admin.php:491
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:625
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:628
 msgid "Tutorials"
 msgstr "Руководства"
 
 #: auxin-content/include/hooks-admin.php:777
 #: build/phlox/auxin-content/include/hooks-admin.php:510
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:644
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:647
 msgid "Please install \"Phlox Core Elements\" plugin to enable this feature."
 msgstr ""
 "Пожалуйста, установите плагин \"Phlox Core Elements\" для включения этой "
@@ -6387,13 +6388,13 @@ msgstr ""
 
 #: auxin-content/include/hooks-admin.php:786
 #: build/phlox/auxin-content/include/hooks-admin.php:519
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:653
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:656
 msgid "Demo Importer"
 msgstr "Импортер демоданных"
 
 #: auxin-content/include/hooks-admin.php:815
 #: build/phlox/auxin-content/include/hooks-admin.php:548
-#: build/phlox-pro/auxin-content/include/hooks-admin.php:682
+#: build/phlox-pro/auxin-content/include/hooks-admin.php:685
 #, fuzzy
 msgid ""
 "This theme requires at least WordPress version 4.7 and PHP 5.4. You are "
@@ -10463,12 +10464,14 @@ msgstr "Задержка слайд-шоу в секундах"
 
 #: auxin-content/options/auxin-options.php:8132
 #: build/phlox/auxin-content/options/auxin-options.php:7859
+#: build/phlox-pro/auxin-content/options/auxin-options.php:7859
 #, fuzzy
 msgid "Blog Category, tag & author"
 msgstr "Рубрика и метка блога"
 
 #: auxin-content/options/auxin-options.php:8133
 #: build/phlox/auxin-content/options/auxin-options.php:7860
+#: build/phlox-pro/auxin-content/options/auxin-options.php:7860
 #, fuzzy
 msgid "Blog Category, tag & author page Setting"
 msgstr "Настройки рубрики и метки блога"
@@ -11933,14 +11936,6 @@ msgstr "Поделиться"
 msgid "Tags: No tags"
 msgstr "Метки: нет меток"
 
-#: build/phlox-pro/auxin-content/options/auxin-options.php:7859
-msgid "Blog Category & tag"
-msgstr "Рубрика и метка блога"
-
-#: build/phlox-pro/auxin-content/options/auxin-options.php:7860
-msgid "Blog Category & tag page Setting"
-msgstr "Настройки рубрики и метки блога"
-
 #: templates/theme-parts/entry/exclude/news.php:41
 #, fuzzy
 msgid "Continue reading .."
@@ -12396,6 +12391,12 @@ msgstr[2] "Все <span class=\"count\">(%s)</span>"
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr "неизвестна"
+
+#~ msgid "Blog Category & tag"
+#~ msgstr "Рубрика и метка блога"
+
+#~ msgid "Blog Category & tag page Setting"
+#~ msgstr "Настройки рубрики и метки блога"
 
 #, fuzzy
 #~ msgid "Seconadary Text"

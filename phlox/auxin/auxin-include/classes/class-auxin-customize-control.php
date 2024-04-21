@@ -470,6 +470,7 @@ class Auxin_Customize_Template_Library_Control extends Auxin_Customize_Radio_Ima
         }
 
         echo "<div class='aux-template-container aux-template-type' data-template-type='". esc_attr( $this->template_type )."'>";
+        wp_nonce_field( 'customizer-template-library-' .  $this->template_type, '_' . $this->template_type . '_template_library_nonce');
         parent::render_content();
         echo "</div>";
     }

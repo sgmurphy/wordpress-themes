@@ -1,4 +1,4 @@
-/*! Auxin WordPress Framework - v2.15.8 - 2024-04-14
+/*! Auxin WordPress Framework - v2.15.9 - 2024-04-21
  *  Scripts for initializing admin plugins 
 
  *  http://averta.net
@@ -1132,7 +1132,7 @@
 
                         $selectedVisual.addClass('aux-fetching');
                         $loadingText.insertAfter( $selectedVisual );
-
+                        var $template_type = control.picker.parents('.aux-template-type').data('template-type');
                         $.ajax({
                             url : auxin.ajaxurl,
                             type: 'POST',
@@ -1140,7 +1140,8 @@
                             data: {
                                 action: 'auxin_template_control_importer',
                                 id: control.picker.val(),
-                                template_type: control.picker.parents('.aux-template-type').data('template-type')
+                                template_type: $template_type,
+                                nonce: $('#_' + $template_type + '_template_library_nonce').val()
                             },
                             complete: function( data ) {
                                 $selectedVisual.removeClass('aux-fetching');

@@ -108,6 +108,11 @@ class Auxin_Metabox_View extends Auxin_Metabox_Model{
 
 
     public function get_field_output( $field ){
+            if ( !empty( $field['required_capability'] ) ) {
+                if ( ! user_can( wp_get_current_user(), $field['required_capability'] ) ) {
+                    return;
+                }
+            }
 
             // dependency manager needs id for all elements, so if sep element doesn't have id, generate a unique id
             if( in_array( $field['type'], array('sep') ) ){
