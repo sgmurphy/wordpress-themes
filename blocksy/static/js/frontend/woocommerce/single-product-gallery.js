@@ -364,17 +364,27 @@ export const mount = (el, { event: mountEvent }) => {
 					galleryWrapper.querySelector('.ct-media-container') &&
 					!galleryWrapper.querySelector('.flexy-items')
 				) {
-					isGalleryEnabled &&
-						openPhotoswipeFor(
-							maybeTrigger.closest('.ct-media-container'),
+					if (isGalleryEnabled) {
+						if (maybeTrigger.closest('.ct-media-container')) {
+							openPhotoswipeFor(
+								maybeTrigger.closest('.ct-media-container'),
 
-							[
-								...maybeTrigger.closest('.ct-media-container')
-									.parentNode.children,
-							].indexOf(
-								maybeTrigger.closest('.ct-media-container')
+								[
+									...maybeTrigger.closest(
+										'.ct-media-container'
+									).parentNode.children,
+								].indexOf(
+									maybeTrigger.closest('.ct-media-container')
+								)
 							)
-						)
+						} else {
+							openPhotoswipeFor(
+								galleryWrapper.querySelector(
+									'.ct-media-container'
+								)
+							)
+						}
+					}
 
 					return
 				}

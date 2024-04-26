@@ -12,9 +12,11 @@ function blocksy_get_avatar_url($args = []) {
 		$args['avatar_entity'] = blocksy_get_author_id();
 	}
 
+	$user_id = $args['avatar_entity'];
+	$avatar_id = null;
+	
 	// user registration plugin
 	if (function_exists('ur_replace_gravatar_image')) {
-		$user_id = $args['avatar_entity'];
 
 		if ($args['avatar_entity'] instanceof WP_Comment) {
 			$user_id = $args['avatar_entity']->user_id;
@@ -25,10 +27,15 @@ function blocksy_get_avatar_url($args = []) {
 			'user_registration_profile_pic_url',
 			true
 		);
+	}
 
-		if ($avatar_id) {
-			return wp_get_attachment_url($avatar_id);
-		}
+	if (class_exists('\YITH_WCMAP_Avatar')) {
+		$yith_custom_avatar = new \YITH_WCMAP_Avatar();
+		$avatar_id = $yith_custom_avatar->get_user_avatar_id($user_id);
+	}
+
+	if ($avatar_id) {
+		return wp_get_attachment_url($avatar_id);
 	}
 
 	return get_avatar_url(

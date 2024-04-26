@@ -1,3 +1,9 @@
+2.0.42: 2024-04-25
+- Improvement: Advanced Posts block shows "sticky" items in wrong order on the back end if query parameters are added
+- Improvement: Cart and checkout blocks - better inherit theme form styles
+- Fix: Featured image aspect ratio controls permanently disappear from the Gutenberg layout if "Grid + Cover" is previously selected
+- Fix: Single product lightbox does not work when product has only one image
+
 2.0.41: 2024-04-19
 - Improvement: Better calculate menu dropdown position on small desktop screens
 - Improvement: Correctly display star rating in "All Reviews" WooCommerce block

@@ -8,16 +8,20 @@
 .wc-block-components-text-input input:is([type=email], [type=number], [type=tel], [type=text], [type=url]) {
 	--has-height: var(--false);
 
+	padding-inline: 15px !important;
 	color: var(--theme-form-text-initial-color, var(--theme-text-color)) !important;
 	border: var(--theme-form-field-border-width, 1px) solid var(--theme-form-field-border-initial-color) !important;
 	border-radius: var(--theme-form-field-border-radius, 3px) !important;
-	padding-inline: 15px !important;
-	transition: background-color 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	background-color: var(--theme-form-field-background-initial-color) !important;
+	transition: color 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+				border-color 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+				background-color 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
 	&:focus {
 		box-shadow: none !important;
 		color: var(--theme-form-text-focus-color, var(--theme-text-color)) !important;
 		border-color: var(--theme-form-field-border-focus-color) !important;
+		background-color: var(--theme-form-field-background-focus-color) !important;
 	}
 }
 
@@ -32,6 +36,7 @@
 	input.components-combobox-control__input[aria-expanded=true] {
 		border-bottom-left-radius: 0 !important;
     	border-bottom-right-radius: 0 !important;
+    	transition: none;
 	}
 
 	.components-form-token-field__suggestions-list {
@@ -39,9 +44,19 @@
 		border: var(--theme-form-field-border-width, 1px) solid var(--theme-form-field-border-focus-color) !important;
 		border-top: 0 !important;
 		border-radius: 0 0 var(--theme-form-field-border-radius, 3px) var(--theme-form-field-border-radius, 3px) !important;
+		background-color: var(--theme-form-field-background-focus-color, #fff) !important;
 
-		.components-form-token-field__suggestion:hover {
-			background-color: var(--theme-form-select-background-active-color, var(--theme-palette-color-1)) !important;
+		.components-form-token-field__suggestion {
+			color: var(--form-field-select-initial-color, var(--theme-text-color)) !important;
+
+			&.is-selected {
+				background-color: rgba(0,0,0,0.05) !important;
+			}
+
+			&:hover {
+				color: var(--form-field-select-active-color, #fff) !important;
+				background-color: var(--theme-form-select-background-active-color, var(--theme-palette-color-1)) !important;	
+			}
 		}
 	}
 }
@@ -50,7 +65,9 @@
 // form input label
 .wc-block-components-text-input label,
 .wc-block-components-combobox label {
+	opacity: 0.6;
 	inset-inline-start: 17px !important;
+	color: var(--theme-form-text-initial-color, var(--theme-text-color)) !important;
 }
 
 

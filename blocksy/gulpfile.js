@@ -333,6 +333,13 @@ var options = {
 			// header: buildProcess.headerFor(false, data),
 		},
 
+		// {
+		// 	input: 'static/sass/frontend/8-integrations/fluent-form.scss',
+		// 	output: 'static/bundle',
+		// 	filename: 'fluent-form.min',
+		// 	// header: buildProcess.headerFor(false, data),
+		// },
+
 		{
 			input: 'static/sass/frontend/8-integrations/stackable.scss',
 			output: 'static/bundle',

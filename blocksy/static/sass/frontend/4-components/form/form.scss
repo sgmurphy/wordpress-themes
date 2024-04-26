@@ -3,16 +3,16 @@ textarea,
 input[type='url'],
 input[type='tel'],
 input[type='text'],
-input[type='time'], // added on Dec 10th
+input[type='time'],
 input[type='date'],
-input[type='datetime'], // added on Dec 10th
+input[type='datetime'],
 input[type='datetime-local'],
 input[type='email'],
 input[type='number'],
 input[type='search'],
 input[type='password'],
 fieldset .wc-stripe-elements-field,
-.ff-inherit-theme-style select.ff-el-form-control:not([size]):not([multiple]) {
+.ff-inherit-theme-style .ff-el-form-control:not([size]):not([multiple]) {
 	appearance: none;
 	width: var(--has-width, var(--theme-form-field-width, 100%));
 	height: var(--has-height, var(--theme-form-field-height, 40px));
@@ -36,7 +36,7 @@ fieldset .wc-stripe-elements-field,
 		background-color: var(--has-classic-forms, var(--theme-form-field-background-focus-color));
 	}
 
-	@include input-placeholder {
+	&::placeholder {
 		opacity: 0.6;
 		color: inherit;
 	}

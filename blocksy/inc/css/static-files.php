@@ -282,12 +282,12 @@ class Blocksy_Static_Css_Files {
 				'enabled' => defined('WPCF7_VERSION')
 			],
 
-			[
-				'id' => 'ct-cf-7-styles',
-				'url' => '/static/bundle/cf-7.min.css',
-				'deps' => ['ct-main-styles'],
-				'enabled' => defined('WPCF7_VERSION')
-			],
+			// [
+			// 	'id' => 'ct-fluent-form-styles',
+			// 	'url' => '/static/bundle/fluent-form.min.css',
+			// 	'deps' => ['ct-main-styles'],
+			// 	'enabled' => defined('FLUENTFORM')
+			// ],
 
 			[
 				'id' => 'ct-stackable-styles',

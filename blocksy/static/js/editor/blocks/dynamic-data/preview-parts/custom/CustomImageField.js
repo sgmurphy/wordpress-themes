@@ -42,10 +42,14 @@ const CustomImageField = ({
 
 	const borderProps = useBorderProps(attributes)
 
-	let maybeUrl = fieldData.value.value.url
+	let maybeUrl = fieldData?.value?.value?.url
 
-	if (fieldData.value.value.sizes[sizeSlug]) {
-		maybeUrl = fieldData.value.value.sizes[sizeSlug].url
+	if (fieldData?.value?.value?.sizes[sizeSlug]) {
+		if (typeof fieldData.value.value.sizes[sizeSlug] === 'string') {
+			maybeUrl = fieldData.value.value.sizes[sizeSlug]
+		} else {
+			maybeUrl = fieldData.value.value.sizes[sizeSlug].url
+		}
 	}
 
 	const imageStyles = {

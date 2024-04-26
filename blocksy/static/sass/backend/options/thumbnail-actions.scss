@@ -1,5 +1,6 @@
 [class*="ct-attachment"],
 .editor-post-featured-image__container,
+[class*="acf-admin"] #set-post-thumbnail,
 .woocommerce-admin-page #set-post-thumbnail,
 .woocommerce-admin-page #product_images_container {
 
@@ -108,6 +109,7 @@
 
 [class*="ct-attachment"] .thumbnail,
 .editor-post-featured-image__container,
+[class*="acf-admin"] #set-post-thumbnail,
 .woocommerce-admin-page #set-post-thumbnail,
 .woocommerce-admin-page #product_images_container ul li {
 
@@ -119,6 +121,7 @@
 	}
 }
 
+[class*="acf-admin"] #set-post-thumbnail,
 .woocommerce-admin-page #set-post-thumbnail {
 	position: relative;
 }

@@ -603,11 +603,7 @@ class Query {
 
 		$q = new \WP_Query();
 
-		if (
-			empty($query_args['tax_query'])
-			&&
-			$attributes['sticky_posts'] === 'include'
-		) {
+		if ($attributes['sticky_posts'] === 'include') {
 			add_action('pre_get_posts', [$this, 'pre_get_posts']);
 		}
 
@@ -617,11 +613,7 @@ class Query {
 			$attributes
 		));
 
-		if (
-			empty($query_args['tax_query'])
-			&&
-			$attributes['sticky_posts'] === 'include'
-		) {
+		if ($attributes['sticky_posts'] === 'include') {
 			remove_action('pre_get_posts', [$this, 'pre_get_posts']);
 		}
 

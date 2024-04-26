@@ -267,7 +267,7 @@ $overridable_card_options = [
 											'condition' => $has_card_matching_template ? [
 												$prefix . 'structure' => '!__never__'
 											] : [
-												$prefix . 'structure' => 'simple'
+												$prefix . 'structure' => 'simple|gutenberg'
 											],
 											'key' => $prefix . 'card_type',
 											'from' => 'cover',
