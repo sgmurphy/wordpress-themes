@@ -601,23 +601,33 @@ class Query {
 
 		$query_args['tax_query'] = $tax_query;
 
-		$q = new \WP_Query();
 
 		if ($attributes['sticky_posts'] === 'include') {
 			add_action('pre_get_posts', [$this, 'pre_get_posts']);
 		}
 
-		$q->query(apply_filters(
-			'blocksy:general:blocks:query:args',
+		$query = apply_filters(
+			'blocksy:general:blocks:query:custom',
+			null,
 			$query_args,
 			$attributes
-		));
+		);
+
+		if (! $query) {
+			$query = new \WP_Query();
+
+			$query->query(apply_filters(
+				'blocksy:general:blocks:query:args',
+				$query_args,
+				$attributes
+			));
+		}
 
 		if ($attributes['sticky_posts'] === 'include') {
 			remove_action('pre_get_posts', [$this, 'pre_get_posts']);
 		}
 
-		return $q;
+		return $query;
 	}
 
 	public function pre_get_posts($q) {

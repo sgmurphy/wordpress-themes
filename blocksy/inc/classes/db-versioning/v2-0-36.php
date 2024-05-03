@@ -17,6 +17,10 @@ class V2036 {
 			return;
 		}
 
+		if (! class_exists('\Blocksy\Extensions\WoocommerceExtra\Storage')) {
+			return;
+		}
+
 		$storage = new \Blocksy\Extensions\WoocommerceExtra\Storage();
 		$settings = $storage->get_settings();
 

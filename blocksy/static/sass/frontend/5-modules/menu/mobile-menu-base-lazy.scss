@@ -1,9 +1,12 @@
 .mobile-menu {
+
 	li {
+
 		&:hover > .ct-sub-menu-parent,
 		&.dropdown-active > .ct-sub-menu-parent,
 		&[class*='current-menu-'] > .ct-sub-menu-parent {
-			.ct-menu-link,
+
+			.ct-menu-link:not(.ct-disabled-link),
 			.ct-toggle-dropdown-mobile {
 				color: inherit;
 			}

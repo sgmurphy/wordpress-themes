@@ -1,3 +1,16 @@
+2.0.45: 2024-05-03
+- Improvement: General fixes and improvements
+
+2.0.44: 2024-05-03
+- Improvement: General fixes and improvements
+
+2.0.43: 2024-05-02
+- Improvement: Better compatibility with Acowebs Product Labels For WooCommerce plugin
+- Improvement: Better integration with The Plus Elementor add-on and Single Product Quantity Input
+- Improvement: Don't apply hover color to mobile menu item if link is disabled
+- Improvement: Ignore attributes provided in tag name in blocksy_html_tag helper
+- Improvement: Ignore language packs fetching during Companion installation
+
 2.0.42: 2024-04-25
 - Improvement: Advanced Posts block shows "sticky" items in wrong order on the back end if query parameters are added
 - Improvement: Cart and checkout blocks - better inherit theme form styles

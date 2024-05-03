@@ -112,7 +112,7 @@ class CustomPostTypes {
 				// blockslider
 				'blockslider',
 
-				// funelfit
+				// funelkit
 				'wffn_landing',
 				'wffn_ty',
 				'wffn_optin',

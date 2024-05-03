@@ -56,7 +56,7 @@ if (! function_exists('blocksy_get_jed_locale_data')) {
 		}
 
 		foreach ($translations->entries as $msgid => $entry) {
-			$locale[$domain][$msgid] = $entry->translations;
+			$locale[$domain][$entry->key()] = $entry->translations;
 		}
 
 		foreach (blocksy_get_json_translation_files('blocksy') as $file_path) {

@@ -50,7 +50,7 @@
 	will-change: transform, max-height;
 
 	> * {
-		cursor: pointer;
+		cursor: grab;
 	}
 
 	&[data-height='dynamic'] {

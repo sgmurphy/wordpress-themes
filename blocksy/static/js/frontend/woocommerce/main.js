@@ -42,7 +42,7 @@ export const wooEntryPoints = [
 	},
 
 	{
-		els: '.quantity > *',
+		els: '.quantity .ct-increase, .quantity .ct-decrease',
 		load: () => import('./quantity-input'),
 		trigger: ['click'],
 	},

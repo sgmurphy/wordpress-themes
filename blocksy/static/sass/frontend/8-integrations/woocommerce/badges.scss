@@ -37,6 +37,8 @@
 
 // product gallery badge position
 .product-entry-wrapper {
+	position: relative;
+	
 	--badge-top: 20px;
 	--badge-left: 20px;
 }

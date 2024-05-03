@@ -16,6 +16,12 @@ add_action('wp_ajax_blocksy_notice_button_click', function () {
 		wp_send_json_error();
 	}
 
+	remove_action(
+		'upgrader_process_complete',
+		['Language_Pack_Upgrader', 'async_upgrade'],
+		20
+	);
+
 	$manager = new Blocksy_Plugin_Manager();
 	$status_descriptor = $manager->get_companion_status();
 

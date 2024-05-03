@@ -1,4 +1,5 @@
 import { loadStyle } from '../helpers'
+import { isTouchDevice } from './helpers/is-touch-device'
 
 const mountPopper = (reference) => {
 	if (!reference.nextElementSibling) {
@@ -10,6 +11,14 @@ const mountPopper = (reference) => {
 	}
 
 	reference.nextElementSibling.popperMounted = true
+
+	// Prevent focus on click for non-touch devices when element is tabbable
+	// but not clickable.
+	if (!isTouchDevice() && reference.tabIndex === 0) {
+		reference.addEventListener('mousedown', (e) => {
+			e.preventDefault()
+		})
+	}
 
 	const target = reference.nextElementSibling
 
