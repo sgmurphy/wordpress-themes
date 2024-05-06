@@ -29,6 +29,36 @@ if ( ! class_exists( 'Zakra_Customize_Typography_Option' ) ) :
 			$configs = array(
 
 				array(
+					'name'     => 'zakra_root_font_size_heading',
+					'type'     => 'control',
+					'control'  => 'zakra-title',
+					'section'  => 'zakra_typography',
+					'label'    => esc_html__( 'Root Font Size', 'zakra' ),
+					'priority' => 4,
+				),
+
+				array(
+					'name'        => 'zakra_root_font_size',
+					'default'     => array(
+						'size' => 10,
+						'unit' => 'px',
+					),
+					'suffix'      => array( 'px' ),
+					'type'        => 'control',
+					'control'     => 'zakra-slider',
+					'label'       => esc_html__( 'Root Font Size', 'zakra' ),
+					'section'     => 'zakra_typography',
+					'priority'    => 4,
+					'input_attrs' => array(
+						'px' => array(
+							'min'  => 10,
+							'max'  => 16,
+							'step' => 1,
+						),
+					),
+				),
+
+				array(
 					'name'     => 'zakra_body_typography_heading',
 					'type'     => 'control',
 					'control'  => 'zakra-title',
@@ -498,7 +528,6 @@ if ( ! class_exists( 'Zakra_Customize_Typography_Option' ) ) :
 
 			return $options;
 		}
-
 	}
 
 	new Zakra_Customize_Typography_Option();

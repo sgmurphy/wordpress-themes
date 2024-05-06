@@ -117,10 +117,10 @@ jQuery(
 					$customizer_val = $( this ).parents( '.options-group' ).data( 'customizer' );
 
 					// If Button in meta or customizer.
-					if ( 'button' === $meta_val || ( 'customizer' === $meta_val && 'button' === $customizer_val ) ) {
+					if ( 'layout-2' === $meta_val || ( 'customizer' === $meta_val && 'layout-2' === $customizer_val ) ) {
 						$( this ).parents( '.options-group' ).siblings( '.show-default' ).fadeIn( 100 ).fadeOut( 100 );
 						$( this ).parents( '.options-group' ).siblings( '.show-button' ).fadeOut( 100 ).fadeIn( 100 );
-					} else if ( 'default' === $meta_val || ( 'customizer' === $meta_val && 'default' === $customizer_val ) ) { // If Default in meta or customizer.
+					} else if ( 'layout-1' === $meta_val || ( 'customizer' === $meta_val && 'layout-1' === $customizer_val ) ) { // If Default in meta or customizer.
 						$( this ).parents( '.options-group' ).siblings( '.show-default' ).fadeOut( 100 ).fadeIn( 100 );
 						$( this ).parents( '.options-group' ).siblings( '.show-button' ).fadeIn( 100 ).fadeOut( 100 );
 					}

@@ -49,9 +49,27 @@ if ( ! class_exists( 'Zakra_After_Setup_Theme' ) ) {
 		 *
 		 * @return void
 		 */
-		public function setup_hooks(  ) {
+		public function setup_hooks() {
 
 			add_action( 'after_setup_theme', array( $this, 'setup_theme' ) );
+			add_action( 'init', array( $this, 'version_check' ) );
+		}
+
+		/**
+		 * Checks the current theme version against the stored version.
+		 * If the current version is greater, it updates the stored version and triggers an action.
+		 *
+		 * @return void
+		 */
+		public function version_check() {
+			$old_version = get_option( 'zakra_version' );
+
+			if ( empty( $old_version ) || version_compare( $old_version, ZAKRA_THEME_VERSION, '<' ) ) {
+				// Update the version number.
+				update_option( 'zakra_version', ZAKRA_THEME_VERSION );
+
+				do_action( 'zakra_version_update', ZAKRA_THEME_VERSION, $old_version );
+			}
 		}
 
 		/**

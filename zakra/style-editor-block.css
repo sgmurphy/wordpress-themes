@@ -424,8 +424,8 @@ ul.wp-block-post-template {
 }
 
 html {
-	font-size: 62.5%;
-	/* Sets base font size to 10px */
+	font-size: var(--zak-root-font-size, 62.5%);
+	/* Sets base font size to 10px editor */
 }
 
 /* Basic Block Editor CSS */

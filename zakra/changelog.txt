@@ -1,4 +1,9 @@
 == Changelog ==
+= 3.0.15 - 2024-05-06 =
+* Add    - Compatibility with Elementor header footer plugin.
+* Update - Compatibility with WPML plugin.
+* Fix    - Page setting menu color issue.
+
 = 3.0.14 - 2024-04-18 =
 * Feature     - To change normal search as product search.
 * Enhancement - Elementor header and footer plugin compatibility.

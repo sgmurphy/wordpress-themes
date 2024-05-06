@@ -133,6 +133,9 @@ if ( class_exists( 'WooCommerce' ) ) {
 // Elementor Pro.
 require_once ZAKRA_PARENT_INC_DIR . '/compatibility/elementor/class-zakra-elementor-pro.php';
 
+// Elementor Header Footer.
+require_once ZAKRA_PARENT_INC_DIR . '/compatibility/elementor-header-footer/class-zakra-elementor-header-footer.php';
+
 // Breadcrumbs class.
 require_once ZAKRA_PARENT_INC_DIR . '/class-breadcrumb-trail.php';
 

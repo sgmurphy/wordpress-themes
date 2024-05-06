@@ -1392,7 +1392,6 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 
 			// Set flag not to repeat the migration process, run it only once.
 			update_option( 'zakra_customizer_migration_v3', true );
-
 		}
 
 		/**
@@ -1460,7 +1459,7 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 			$result     = false;
 			$theme_mods = get_theme_mods();
 
-			update_option('zakra_customizer_old_data', $theme_mods);
+			update_option( 'zakra_customizer_old_data', $theme_mods );
 
 			foreach ( $theme_mods as $key => $_ ) {
 
@@ -1473,7 +1472,6 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 
 			return $result;
 		}
-
 	}
 
 	new Zakra_Migration();

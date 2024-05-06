@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 3.0.14
+Version: 3.0.15
 Tested up to: 6.5
 Requires PHP: 5.6
 Requires at least: 4.7
-Stable tag: 3.0.14
+Stable tag: 3.0.15
 
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -62,6 +62,11 @@ License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+= Version 3.0.15 - 2024-05-06 =
+* Add    - Compatibility with Elementor header footer plugin.
+* Update - Compatibility with WPML plugin.
+* Fix    - Page setting menu color issue.
+
 = Version 3.0.14 - 2024-04-18 =
 * Feature     - To change normal search as product search.
 * Enhancement - Elementor header and footer plugin compatibility.

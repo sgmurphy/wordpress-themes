@@ -144,7 +144,7 @@ if ( ! class_exists( 'Zakra_Customize_Button_Option' ) ) :
 					'suffix'      => array( 'px' ),
 					'type'        => 'control',
 					'control'     => 'zakra-slider',
-					'label'         => esc_html__( 'Radius', 'zakra' ),
+					'label'       => esc_html__( 'Radius', 'zakra' ),
 					'section'     => 'zakra_button',
 					'transport'   => 'postMessage',
 					'priority'    => 50,
@@ -178,7 +178,6 @@ if ( ! class_exists( 'Zakra_Customize_Button_Option' ) ) :
 
 			return $options;
 		}
-
 	}
 
 	new Zakra_Customize_Button_Option();

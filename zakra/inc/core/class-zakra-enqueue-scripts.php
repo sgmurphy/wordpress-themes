@@ -117,7 +117,7 @@ if ( ! class_exists( 'Zakra_Enqueue_Scripts' ) ) {
 				'zakra-style',
 				get_stylesheet_uri(),
 				array(),
-				ZAKRA_THEME_VERSION
+
 			);
 
 			wp_enqueue_style( 'zakra-style' );
