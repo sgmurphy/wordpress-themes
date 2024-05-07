@@ -98,8 +98,6 @@ if ( ! class_exists( 'Zakra_Elementor_Pro' ) ) :
 
 			$did_location = $this->elementor_location_manager->do_location( 'header' );
 
-			error_log( print_r( $did_location, true ) );
-
 			if ( $did_location ) {
 				remove_action( 'zakra_action_before_header', 'zakra_transparent_header_start', 20 );
 				remove_action( 'zakra_action_header_top', 'zakra_header_top', 10 );

@@ -312,7 +312,7 @@ if ( ! class_exists( 'Zakra_Customize_Register_Section_Panels' ) ) :
 					'name'             => 'zakra_customize_upsell_section',
 					'type'             => 'section',
 					'title'            => esc_html__( 'View Pro Version', 'zakra' ),
-					'url'              => 'https://zakratheme.com/pricing/?utm_source=zakra-customizer&utm_medium=view-pro-link&utm_campaign=zakra-pricing',
+					'url'              => 'https://zakratheme.com/pricing/?utm_source=zakra-customizer&utm_medium=view-pro-link&utm_campaign=pricing',
 					'priority'         => 1,
 					'section_callback' => 'Zakra_Upsell_Section',
 				);

@@ -103,7 +103,7 @@ if ( ! class_exists( 'Zakra_Customize_Single_Blog_Post_Option' ) ) :
 					'control'     => 'zakra-upgrade',
 					'label'       => esc_html__( 'Learn more', 'zakra' ),
 					'description' => esc_html__( 'Unlock more features available in Pro version.', 'zakra' ),
-					'url'         => esc_url( 'https://zakratheme.com/colormag-pricing/?utm_source=zakra-theme&utm_medium=customizer-option-name&utm_campaign=zakra-customizer+&utm_content=Learn+More ' ),
+					'url'         => esc_url( 'https://zakratheme.com/pricing/?utm_source=zakra-theme&utm_medium=customizer-option-name&utm_campaign=zakra-customizer+&utm_content=Learn+More ' ),
 					'section'     => 'zakra_single_blog_post',
 					'priority'    => 200,
 				);
