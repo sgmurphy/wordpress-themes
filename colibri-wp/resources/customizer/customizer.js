@@ -76706,6 +76706,7 @@ function activateBuilder() {
     prepareCall(function () {
         wp.ajax.post('colibriwp_activate_plugin', {
             slug: 'colibri-page-builder',
+            source: 'customizer',
             _wpnonce: colibriwp_plugin_status.colibri_plugin_install_activate_nonce
         }).done(function () {
             window.location = colibriwp_plugin_status.admin_url;

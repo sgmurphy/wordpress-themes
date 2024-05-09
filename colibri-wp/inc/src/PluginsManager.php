@@ -118,6 +118,14 @@ class PluginsManager {
             if( !$path = $this->getPluginData( "{$slug}.plugin_path") ){
                 $path =  $this->getPluginData( "{$slug}-pro.plugin_path" );
             }
+        
+        	$colibriwp_builder_slug = Hooks::colibri_apply_filters('plugin_slug', 'colibri-page-builder');
+            if ($slug === $colibriwp_builder_slug) {
+                $source = isset($_REQUEST['source']) ? wp_unslash($_REQUEST['source']) : 'other';
+                $theme = get_template();
+                $option = "${theme}_start-source";
+                update_option($option, $source);
+            }
 
             if ( $slug && $path ) {
                 $ac   = get_option( 'active_plugins' );

@@ -149,6 +149,7 @@ __webpack_require__(365);
 
         wp.ajax.post('colibriwp_activate_plugin', {
             slug: colibriwp_builder_status.slug,
+            source: 'notice-' + selectedFrontPage,
             _wpnonce: colibriwp_builder_status.colibri_plugin_install_activate_nonce
         }).done(function () {
             $(window).off('beforeunload.colibri-admin-big-notice');
