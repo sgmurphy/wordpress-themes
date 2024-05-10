@@ -110,6 +110,7 @@ class BlockWrapper {
 
 									$p->add_class('ct-expandable-trigger');
 									$p->set_attribute('aria-expanded', $attributes['defaultExpanded'] ? 'true' : 'false');
+									$p->set_attribute('data-icon', 'arrow');
 
 									break;
 								}

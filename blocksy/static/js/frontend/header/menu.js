@@ -346,7 +346,7 @@ const mountMenuForElement = (el, args = {}) => {
 	})
 
 	if (!hasClickInteraction) {
-		el.addEventListener('mouseenter', (e) => {
+		const handleMouseEnter = () => {
 			// So that mouseenter event is catched before the open itself
 			if (isIosDevice()) {
 				openSubmenu({ target: el.firstElementChild })
@@ -367,14 +367,20 @@ const mountMenuForElement = (el, args = {}) => {
 					})
 			}
 
-			e.target.closest('li').addEventListener(
+			el.addEventListener(
 				'mouseleave',
 				() => {
 					closeSubmenu({ target: el.firstElementChild })
 				},
 				{ once: true }
 			)
-		})
+		}
+
+		el.addEventListener('mouseenter', handleMouseEnter)
+
+		if (el.matches(':hover')) {
+			handleMouseEnter()
+		}
 
 		// On Android devices, allow only 2nd click to open the link.
 		// First click will ensure the submenu is opened

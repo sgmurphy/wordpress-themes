@@ -2,7 +2,10 @@
 
 $config = [
 	'name' => __('Mobile Menu', 'blocksy'),
-	'typography_keys' => ['mobileMenuFont'],
+	'typography_keys' => [
+		'mobileMenuFont',
+		'inline_mobile_menu_font'
+	],
 	'devices' => ['mobile'],
 	'allowed_in' => ['offcanvas'],
 	'selective_refresh' => [

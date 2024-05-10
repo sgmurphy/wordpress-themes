@@ -474,6 +474,8 @@ wp.customize.bind('preview-ready', () => {
 	wp.customize.preview.bind(
 		'ct:sync:refresh_partial',
 		({ id, shouldSkip = false }) => {
+			id = Array.isArray(id) ? id : [id]
+
 			if (shouldSkip) {
 				skipNextRefresh = true
 				setTimeout(() => (skipNextRefresh = false), 100)
@@ -489,21 +491,23 @@ wp.customize.bind('preview-ready', () => {
 				return
 			}
 
-			let partial = wp.customize.selectiveRefresh.partial(id)
+			id.map((id) => {
+				let partial = wp.customize.selectiveRefresh.partial(id)
 
-			if (partial && !skipNextRefresh) {
-				if (partial.params.loader_selector === 'skip') {
-					skipNextRefresh = true
-					setTimeout(() => (skipNextRefresh = false), 300)
-					return
+				if (partial && !skipNextRefresh) {
+					if (partial.params.loader_selector === 'skip') {
+						skipNextRefresh = true
+						setTimeout(() => (skipNextRefresh = false), 300)
+						return
+					}
+
+					if (!document.querySelector(partial.params.selector)) {
+						return
+					}
+
+					partial.refresh()
 				}
-
-				if (!document.querySelector(partial.params.selector)) {
-					return
-				}
-
-				partial.refresh()
-			}
+			})
 		}
 	)
 })

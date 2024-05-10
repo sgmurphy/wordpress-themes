@@ -130,6 +130,8 @@ export default class Slider extends Component {
 		is_open: false,
 		is_empty_input: false,
 		forced_current_unit: '__DEFAULT__',
+
+		localValue: '__DEFAULT__',
 	}
 
 	el = createRef()
@@ -292,6 +294,20 @@ export default class Slider extends Component {
 
 	handleBlur = () => {
 		this.setState({ is_empty_input: false })
+
+		if (this.state.localValue !== '__DEFAULT__') {
+			this.props.onChange(
+				`${clamp(
+					parseFloat(this.getMin(), 10),
+					parseFloat(this.getMax(), 10),
+					parseFloat(this.state.localValue, 10)
+				)}${this.getCurrentUnit()}`
+			)
+
+			this.setState({ localValue: '__DEFAULT__' })
+
+			return
+		}
 
 		if (this.props.option.value === 'CT_CSS_SKIP_RULE') {
 			if (this.props.value === 'CT_CSS_SKIP_RULE') {
@@ -462,11 +478,14 @@ export default class Slider extends Component {
 							tabIndex="0"
 							{...getNumericKeyboardEvents({
 								handleHorizontal: true,
-								value: this.state.is_empty_input
-									? 0
-									: this.getNumericValue({
-											forPosition: true,
-									  }),
+								value:
+									this.state.localValue !== '__DEFAULT__'
+										? this.state.localValue
+										: this.state.is_empty_input
+										? 0
+										: this.getNumericValue({
+												forPosition: true,
+										  }),
 								onChange: (value) => {
 									this.props.onChange(
 										`${clamp(
@@ -508,23 +527,54 @@ export default class Slider extends Component {
 									: {})}
 								step={1}
 								value={
-									this.state.is_empty_input
+									this.state.localValue !== '__DEFAULT__'
+										? this.state.localValue
+										: this.state.is_empty_input
 										? ''
 										: this.getNumericValue()
 								}
 								onFocus={() => this.handleFocus()}
 								onBlur={() => this.handleBlur()}
 								onChange={({ target: { value } }) => {
-									this.handleChange(value, false)
+									// If the value is within valid bounds,
+									// Just update the value and reset the localValue, if needed.
+									if (
+										parseFloat(value, 10) ===
+										clamp(
+											parseFloat(this.getMin(), 10),
+											parseFloat(this.getMax(), 10),
+											parseFloat(value, 10)
+										)
+									) {
+										this.handleChange(value)
+
+										if (
+											this.state.localValue !==
+											'__DEFAULT__'
+										) {
+											this.setState({
+												localValue: '__DEFAULT__',
+											})
+										}
+									} else {
+										this.setState({ localValue: value })
+									}
 								}}
 								{...getNumericKeyboardEvents({
-									value: this.state.is_empty_input
-										? 0
-										: this.getNumericValue({
-												forPosition: true,
-										  }),
+									value:
+										this.state.localValue !== '__DEFAULT__'
+											? this.state.localValue
+											: this.state.is_empty_input
+											? 0
+											: this.getNumericValue({
+													forPosition: true,
+											  }),
 									onChange: (value) => {
 										this.handleChange(value)
+
+										this.setState({
+											localValue: '__DEFAULT__',
+										})
 									},
 								})}
 							/>

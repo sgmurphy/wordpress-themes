@@ -102,6 +102,32 @@ export const getWooArchiveVariablesFor = () => ({
 					},
 				]
 			}
+
+			if (
+				[
+					'acf_field',
+					'metabox_field',
+					'toolset_field',
+					'jetengine_field',
+					'custom_field',
+					'pods_field',
+				].includes(layer.id)
+			) {
+				variables = [
+					...variables,
+					{
+						selector: `[data-products] .product .ct-dynamic-data-layer[data-field*=":${(
+							layer?.__id || 'default'
+						).slice(0, 6)}"]`,
+						variable: 'product-element-spacing',
+						responsive: true,
+						unit: 'px',
+						extractValue: () => {
+							return layer.spacing || 10
+						},
+					},
+				]
+			}
 		})
 
 		return variables

@@ -198,6 +198,16 @@ class Sidebar {
 			return 'sidebar-woocommerce';
 		}
 
+		if (
+			is_search()
+			&&
+			isset($_GET['post_type'])
+			&&
+			$_GET['post_type'] === 'product'
+		) {
+			return 'sidebar-woocommerce';
+		}
+
 		return 'sidebar-1';
 	}
 }

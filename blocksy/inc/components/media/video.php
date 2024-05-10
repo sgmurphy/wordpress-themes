@@ -15,12 +15,22 @@ if (! function_exists('blocksy_get_video_data')) {
 			$maybe_video = $maybe_new_video;
 
 			if ($source === 'upload') {
-				$video_url = wp_get_attachment_url(
-					blocksy_akg('media_video_upload', $maybe_new_video, '')
-				);
+				$maybeVideoIdOrUrl = blocksy_akg('media_video_upload', $maybe_video, '');
 
-				if (! empty($video_url)) {
-					$maybe_video['url'] = $video_url;
+				if (empty($maybeVideoIdOrUrl)) {
+					return [];
+				}
+
+				if (is_numeric($maybeVideoIdOrUrl)) {
+					$video_url = wp_get_attachment_url(
+						$maybeVideoIdOrUrl
+					);
+
+					if (! empty($video_url)) {
+						$maybe_video['url'] = $video_url;
+					}
+				} else {
+					$maybe_video['url'] = $maybeVideoIdOrUrl;
 				}
 			}
 

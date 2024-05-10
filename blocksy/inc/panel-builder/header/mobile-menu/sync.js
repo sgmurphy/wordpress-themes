@@ -130,7 +130,13 @@ const handleMenuVariables = ({ itemId, panelType }) => ({
 
 	...typographyOption({
 		id: 'inline_mobile_menu_font',
-		selector: assembleSelector(getRootSelectorFor({ itemId })),
+		selector: assembleSelector(
+			mutateSelector({
+				selector: getRootSelectorFor({ itemId }),
+				operation: 'suffix',
+				to_add: 'ul',
+			})
+		),
 	}),
 
 	// default state

@@ -21,16 +21,10 @@ if ( !function_exists('blocksy_custom_accordion_tabs') ) {
 							>
 							<?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', esc_html( $tab['title'] ), $key ); ?>
 
-							<?php
-								echo blocksy_html_tag(
-									'span',
-									[],
-									'<svg width="12" height="12" viewBox="0 0 20 20">
-										<path fill="currentColor" class="plus-line" d="M10,20c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1s1,0.4,1,1v18C11,19.6,10.6,20,10,20z"/>
-										<path fill="currentColor" d="M19,11H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h18c0.6,0,1,0.4,1,1S19.6,11,19,11z"/>
-									</svg>'
-								);
-							?>
+							<svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor">
+								<path d="M10,20c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1s1,0.4,1,1v18C11,19.6,10.6,20,10,20z"/>
+								<path d="M19,11H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h18c0.6,0,1,0.4,1,1S19.6,11,19,11z"/>
+							</svg>
 						</button>
 
 						<article id="tab-<?php echo esc_attr( $key ); ?>" aria-hidden="<?php echo $is_open && !$index ? "false" : "true" ?>" data-behaviour="drop-down">

@@ -175,6 +175,25 @@ const Layers = ({ value, option, onChange, values }) => {
 						{...provided.droppableProps}
 						ref={provided.innerRef}>
 						{computedValue.map((value, index) => {
+							const { condition, values_source } =
+								option.settings[value.id]
+
+							let valueForCondition = values
+
+							if (values_source === 'global') {
+								valueForCondition = Object.keys(
+									condition
+								).reduce(
+									(current, key) => ({
+										...current,
+										[key.split(':')[0]]: wp.customize(
+											key.split(':')[0]
+										)(),
+									}),
+									{}
+								)
+							}
+
 							return (
 								<Draggable
 									key={value.__id}
@@ -189,15 +208,12 @@ const Layers = ({ value, option, onChange, values }) => {
 											provided={provided}
 											snapshot={snapshot}
 											className={
-												option.settings[value.id]
-													.condition &&
+												condition &&
 												!matchValuesWithCondition(
 													normalizeCondition(
-														option.settings[
-															value.id
-														].condition
+														condition
 													),
-													values
+													valueForCondition
 												)
 													? 'ct-hidden'
 													: ''

@@ -276,14 +276,8 @@ if (! function_exists('blocksy_get_current_language')) {
 			return pll_current_language('locale');
 		}
 
-		if (
-			function_exists('icl_get_languages')
-			&&
-			defined('ICL_LANGUAGE_CODE')
-			&&
-			isset(icl_get_languages()[ICL_LANGUAGE_CODE])
-		) {
-			return icl_get_languages()[ICL_LANGUAGE_CODE]['default_locale'];
+		if (class_exists('Sitepress')) {
+			return apply_filters('wpml_current_language', null);
 		}
 
 		global $TRP_LANGUAGE;

@@ -197,8 +197,12 @@ const GenericOptionType = ({
 			wp.customize &&
 			wp.customize.previewer
 		) {
+			const ids = (
+				Array.isArray(option.sync) ? option.sync : [option.sync]
+			).map((sync) => sync.id || option.id)
+
 			wp.customize.previewer.send('ct:sync:refresh_partial', {
-				id: option.sync.id || option.id,
+				id: ids,
 				option,
 				shouldSkip: !!option.sync.shouldSkip,
 			})

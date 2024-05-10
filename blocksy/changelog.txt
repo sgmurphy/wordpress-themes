@@ -1,3 +1,16 @@
+2.0.47: 2024-05-10
+- Improvement: "Simple" mobile menu element does not live update font proprieties in the Customizer
+- Improvement: Abort ongoing requests as the user is typing in the search live results module
+- Improvement: Let WP core load translations using just in time translation loading
+- Improvement: Responsive desktop menu take container padding into consideration for available space
+- Improvement: Slider option don't send out of bounds values to the customizer preview
+
+2.0.46: 2024-05-09
+- Improvement: Account modal correctly localize all Dokan i18n data
+- Improvement: Correctly open submenu when cursor is placed on the item on first page load
+- Improvement: Correctly retrieve current language for WPML
+- Fix: Issue with editing theme blocks with shop manager role
+
 2.0.45: 2024-05-03
 - Improvement: General fixes and improvements
 

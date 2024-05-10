@@ -33,7 +33,13 @@ const getTotalItemsWidthFor = (nav) => {
  */
 const computeAvailableSpaceFor = (nav) => {
 	let baseContainer = nav.closest('[class*="ct-container"]')
+	const baseContainerStyle = window.getComputedStyle(baseContainer)
+
 	let baseWidth = baseContainer.getBoundingClientRect().width
+
+	baseWidth -=
+		parseInt(baseContainerStyle.getPropertyValue('padding-left')) +
+		parseInt(baseContainerStyle.getPropertyValue('padding-right'))
 
 	// side | middle | secondary
 	// TODO: compute sides

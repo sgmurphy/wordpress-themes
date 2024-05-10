@@ -70,7 +70,7 @@ class Blocks {
 
 		add_action('wp_ajax_blocksy_get_dynamic_block_view', function () {
 			if (
-				! current_user_can('manage_options')
+				! current_user_can('edit_posts')
 				||
 				! isset($this->blocks[$_POST['block']])
 			) {

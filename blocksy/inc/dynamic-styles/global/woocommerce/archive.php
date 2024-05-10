@@ -69,9 +69,13 @@ foreach ($woo_card_layout as $layer) {
 		$spacing = blocksy_akg('spacing', $layer, $spacing_default);
 
 		if (
-			intval($spacing) !== $spacing_default
-			||
-			$spacing_default === 25
+			isset($selectors_map[$layer['id']])
+			&&
+			(
+				intval($spacing) !== $spacing_default
+				||
+				$spacing_default === 25
+			)
 		) {
 			blocksy_output_responsive([
 				'css' => $css,
@@ -123,6 +127,31 @@ foreach ($woo_card_layout as $layer) {
 				'value' => $spacing,
 				'unit' => 'px'
 			]);
+		}
+
+		if (in_array(
+			$layer['id'],
+			[
+				'acf_field',
+				'metabox_field',
+				'toolset_field',
+				'jetengine_field',
+				'custom_field',
+				'pods_field',
+			]
+		)) {
+			$id = substr(isset($layer["__id"]) ? $layer["__id"] : 'default', 0, 6);
+	
+			blocksy_output_responsive([
+				'css' => $css,
+				'tablet_css' => $tablet_css,
+				'mobile_css' => $mobile_css,
+				'selector' => '[data-products] .product .ct-dynamic-data-layer[data-field*=":' . $id . '"]',
+				'variableName' => 'product-element-spacing',
+				'value' => $spacing,
+				'unit' => 'px'
+			]);
+		
 		}
 	}
 }

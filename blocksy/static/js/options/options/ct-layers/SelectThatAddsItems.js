@@ -1,15 +1,13 @@
-import { createElement, Fragment, useContext } from '@wordpress/element'
+import { createElement, useContext } from '@wordpress/element'
 import { itemsThatAreNotAdded, LayersContext } from '../ct-layers'
+import { normalizeCondition, matchValuesWithCondition } from 'match-conditions'
 import Select from '../ct-select'
 
 const SelectThatAddsItems = ({ value, option }) => {
 	const notAddedItems = itemsThatAreNotAdded(value, option)
 
-	const {
-		currentlyPickedItem,
-		setCurrentItem,
-		addCurrentlySelectedItem,
-	} = useContext(LayersContext)
+	const { currentlyPickedItem, setCurrentItem, addCurrentlySelectedItem } =
+		useContext(LayersContext)
 
 	if (notAddedItems.length <= 0) {
 		return null
@@ -23,19 +21,48 @@ const SelectThatAddsItems = ({ value, option }) => {
 				}
 				option={{
 					search: true,
-					choices: notAddedItems.map((key) => ({
-						key,
+					choices: notAddedItems
+						.filter((item) => {
+							const { condition, values_source } =
+								option.settings[item]
 
-						value: window._.template(
-							(
-								option.settings[key] || {
-									label: key,
-								}
-							).label
-						)({
-							label: '',
-						}),
-					})),
+							let valueForCondition = value
+
+							if (values_source === 'global') {
+								valueForCondition = Object.keys(
+									condition
+								).reduce(
+									(current, key) => ({
+										...current,
+										[key.split(':')[0]]: wp.customize(
+											key.split(':')[0]
+										)(),
+									}),
+									{}
+								)
+							}
+
+							return (
+								!condition ||
+								matchValuesWithCondition(
+									normalizeCondition(condition),
+									valueForCondition
+								)
+							)
+						})
+						.map((key) => ({
+							key,
+
+							value: window._.template(
+								(
+									option.settings[key] || {
+										label: key,
+									}
+								).label
+							)({
+								label: '',
+							}),
+						})),
 					...(option.selectOption || {}),
 				}}
 				value={currentlyPickedItem || notAddedItems[0]}

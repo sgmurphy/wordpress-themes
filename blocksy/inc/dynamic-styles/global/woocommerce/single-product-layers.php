@@ -212,6 +212,31 @@ foreach ($woo_single_layout as $layer) {
 			'unit' => 'px'
 		]);
 	}
+
+	if (in_array(
+		$layer['id'],
+		[
+			'acf_field',
+			'metabox_field',
+			'toolset_field',
+			'jetengine_field',
+			'custom_field',
+			'pods_field',
+		]
+	)) {
+		$id = substr(isset($layer["__id"]) ? $layer["__id"] : 'default', 0, 6);
+
+		blocksy_output_responsive([
+			'css' => $css,
+			'tablet_css' => $tablet_css,
+			'mobile_css' => $mobile_css,
+			'selector' => '.entry-summary-items > .ct-dynamic-data-layer[data-field*=":' . $id . '"]',
+			'variableName' => 'product-element-spacing',
+			'value' => $spacing,
+			'unit' => 'px'
+		]);
+	
+	}
 }
 
 

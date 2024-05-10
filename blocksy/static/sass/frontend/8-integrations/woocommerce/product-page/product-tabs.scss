@@ -3,6 +3,7 @@
 	clear: both;
 }
 
+
 // default tabs & type 1
 .woocommerce div.product div.woocommerce-tabs {
 	
@@ -64,12 +65,14 @@
 	}
 }
 
+
 // tabs type 1
 .woocommerce-tabs[data-type*='type-1'] {
 	.tabs {
 		border-bottom: 1px solid var(--tab-border-color, var(--theme-border-color));
 	}
 }
+
 
 // tabs type 2
 .woocommerce-tabs[data-type*='type-2'] {
@@ -128,6 +131,7 @@
 	}
 }
 
+
 // tabs type 3
 .woocommerce-tabs[data-type*='type-3'] {
 
@@ -146,13 +150,13 @@
 		&:hover {
 			color: var(--theme-link-hover-color);
 		}
+	}
 
-		&[aria-expanded='true'] {
-			color: var(--theme-link-active-color, var(--theme-link-hover-color));
+	[aria-expanded='true'] {
+		color: var(--theme-link-active-color, var(--theme-link-hover-color));
 
-			.plus-line {
-				display: none;
-			}
+		path:first-child {
+			display: none;
 		}
 	}
 
@@ -160,6 +164,7 @@
 		padding-block: 15px 35px;
 	}
 }
+
 
 // tabs type 4
 .woocommerce-tabs[data-type*='type-4'] {
@@ -171,6 +176,7 @@
 		}
 	}
 }
+
 
 // tabs alignment
 .woocommerce-tabs[data-type*='left'] {
