@@ -2,7 +2,7 @@
 Lightning WordPress theme, Copyright (C) 2015-2024 Vektor,Inc.
 Lightning WordPress theme is licensed under the GPL.
 Tested up to: 6.5
-Stable tag: 15.21.1
+Stable tag: 15.22.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,10 @@ https://www.vektor-inc.co.jp/inquiry/
 
 
 == Changelog ==
+
+v15.22.0
+[ G3 / G2 ][ Specification Change ] Support navigation operations using the Tab key.
+[ G3 ][ Design Bug Fix ][ OriginIII ] Fixed text-decoration-color color for parent elements with `has-black-background-color` class or elements with `has-text-color` class.
 
 v15.21.1
 [ G3 with theme.json ] Fixed the alignment issue of the title in the post editing screen.
