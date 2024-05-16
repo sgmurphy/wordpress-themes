@@ -12,15 +12,14 @@
 		--theme-link-initial-color: var(--theme-text-color);
 	}
 
+	.entry-divider {
+		border-bottom: var(--entry-divider);
+	}
+
 	.ct-ghost {
 		margin: 0 !important;
 		flex: 1 0 auto;
 	}
-}
-
-.entry-divider {
-	margin-inline: calc(var(--card-inner-spacing, 30px) * -1);
-	border-bottom: var(--entry-divider);
 }
 
 // elements spacing

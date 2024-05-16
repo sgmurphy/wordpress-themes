@@ -62,7 +62,7 @@ add_filter(
 
 		return str_replace(
 			'class="products',
-			$attr . 'class="products',
+			$attr . ' class="products',
 			$content
 		);
 	}

@@ -49,21 +49,23 @@ if ($field === 'wp:title') {
 	$value = get_the_title();
 
 	if (blocksy_akg('has_field_link', $attributes, 'no') === 'yes') {
-		$value = blocksy_safe_sprintf(
-			'<a href="%s" %s %s>%s</a>',
+		$link_attr = [
+			'href' => get_permalink()
+		];
 
-			get_permalink(),
+		if (blocksy_akg('has_field_link_new_tab', $attributes, 'no') === 'yes') {
+			$link_attr['target'] = '_blank';
+		}
 
-			blocksy_akg('has_field_link_new_tab', $attributes, 'no') === 'yes'
-			? 'target="_blank"'
-			: '',
+		if (! empty(blocksy_akg('has_field_link_rel', $attributes, ''))) {
+			$link_attr['rel'] = blocksy_akg(
+				'has_field_link_rel',
+				$attributes,
+				''
+			);
+		}
 
-			! empty(blocksy_akg('has_field_link_rel', $attributes, ''))
-			? 'rel="' . blocksy_akg('has_field_link_rel', $attributes, '') . '"'
-			: '',
-
-			$value
-		);
+		$value = blocksy_html_tag('a', $link_attr, $value);
 	}
 }
 
@@ -103,21 +105,23 @@ if ($field === 'wp:date') {
 	}
 
 	if (blocksy_akg('has_field_link', $attributes, 'no') === 'yes') {
-		$value = blocksy_safe_sprintf(
-			'<a href="%s" %s %s>%s</a>',
+		$link_attr = [
+			'href' => get_permalink()
+		];
 
-			get_permalink(),
+		if (blocksy_akg('has_field_link_new_tab', $attributes, 'no') === 'yes') {
+			$link_attr['target'] = '_blank';
+		}
 
-			blocksy_akg('has_field_link_new_tab', $attributes, 'no') === 'yes'
-			? 'target="_blank"'
-			: '',
+		if (! empty(blocksy_akg('has_field_link_rel', $attributes, ''))) {
+			$link_attr['rel'] = blocksy_akg(
+				'has_field_link_rel',
+				$attributes,
+				''
+			);
+		}
 
-			! empty(blocksy_akg('has_field_link_rel', $attributes, ''))
-			? 'rel="' . blocksy_akg('has_field_link_rel', $attributes, '') . '"'
-			: '',
-
-			$value
-		);
+		$value = blocksy_html_tag('a', $link_attr, $value);
 	}
 }
 

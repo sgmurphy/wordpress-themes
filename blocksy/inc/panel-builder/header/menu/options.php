@@ -91,37 +91,20 @@ $options = [
 				],
 			],
 
-			blocksy_rand_md5() => [
-				'type' => 'ct-condition',
-				'condition' => [ 'header_menu_type' => '!type-1' ],
-				'options' => [
-
-					'headerMenuItemsGap' => [
-						'label' => __( 'Items Spacing', 'blocksy' ),
-						'type' => 'ct-slider',
-						'value' => 0,
-						'min' => 0,
-						'max' => 100,
-						'setting' => [ 'transport' => 'postMessage' ],
-					],
-
-				]
+			'headerMenuItemsGap' => [
+				'label' => __( 'Items Spacing', 'blocksy' ),
+				'type' => 'ct-slider',
+				'value' => 0,
+				'min' => 0,
+				'max' => 100,
+				'setting' => [ 'transport' => 'postMessage' ],
 			],
 
 			'headerMenuItemsSpacing' => [
-				// 'label' => __( 'Items Spacing', 'blocksy' ),
-				'label' => [
-					__('Items Spacing', 'blocksy') => [
-						'header_menu_type' => 'type-1'
-					],
-
-					__('Items Inner Spacing', 'blocksy') => [
-						'header_menu_type' => '!type-1'
-					]
-				],
+				'label' => __('Items Inner Spacing', 'blocksy'),
 				'type' => 'ct-slider',
 				'value' => 25,
-				'min' => 5,
+				'min' => 0,
 				'max' => 100,
 				// 'divider' => 'top',
 				'setting' => [ 'transport' => 'postMessage' ],

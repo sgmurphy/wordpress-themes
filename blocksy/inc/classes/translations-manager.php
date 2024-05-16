@@ -269,6 +269,10 @@ if (! function_exists('blocksy_get_current_language')) {
 				return pll_current_language();
 			}
 
+			if (class_exists('Sitepress')) {
+				return apply_filters('wpml_current_language', null);
+			}
+
 			return '__NOT_KNOWN__';
 		}
 
@@ -276,8 +280,17 @@ if (! function_exists('blocksy_get_current_language')) {
 			return pll_current_language('locale');
 		}
 
-		if (class_exists('Sitepress')) {
-			return apply_filters('wpml_current_language', null);
+		if (
+			function_exists('icl_get_languages')
+			&&
+			class_exists('Sitepress')
+		) {
+			$all_languages = icl_get_languages();
+			$current_language = apply_filters('wpml_current_language', null);
+
+			if (isset($all_languages[$current_language])) {
+				return $all_languages[$current_language]['default_locale'];
+			}
 		}
 
 		global $TRP_LANGUAGE;

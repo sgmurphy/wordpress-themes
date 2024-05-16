@@ -1,6 +1,11 @@
 <?php
 
-function blocksy_has_product_share_box() {
+function blocksy_has_product_specific_layer($layer_id = '') {
+
+	if (empty($layer_id)) {
+		return false;
+	}
+
 	$prefix = blocksy_manager()->screen->get_prefix();
 
 	$post_type = get_post_type();
@@ -42,18 +47,18 @@ function blocksy_has_product_share_box() {
 		);
 	}
 
-	$product_sharebox = array_values(array_filter($layout, function($k) {
-		return $k['id'] === 'product_sharebox';
+	$layer_to_find = array_values(array_filter($layout, function($k) use ($layer_id) {
+		return $k['id'] === $layer_id;
 	}));
 
-	if (empty($product_sharebox)) {
+	if (empty($layer_to_find)) {
 		return false;
 	}
 
 	if (
-		isset($product_sharebox[0]['enabled'])
+		isset($layer_to_find[0]['enabled'])
 		&&
-		$product_sharebox[0]['enabled']
+		$layer_to_find[0]['enabled']
 	) {
 		return true;
 	}

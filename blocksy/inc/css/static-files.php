@@ -32,9 +32,9 @@ class Blocksy_Static_Css_Files {
 				)
 				||
 				(
-					function_exists('blocksy_has_product_share_box')
+					function_exists('blocksy_has_product_specific_layer')
 					&&
-					blocksy_has_product_share_box()
+					blocksy_has_product_specific_layer('product_sharebox')
 				)
 				||
 				(
@@ -150,6 +150,18 @@ class Blocksy_Static_Css_Files {
 						function_exists('is_woocommerce')
 						&&
 						is_woocommerce()
+						&&
+						(
+							is_shop()
+							||
+							is_product_category()
+							||
+							is_product_tag()
+							||
+							is_product_taxonomy()
+							||
+							is_search()
+						)
 						&&
 						blocksy_get_theme_mod('has_woo_offcanvas_filter', 'no') === 'yes'
 					)

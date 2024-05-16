@@ -1,3 +1,15 @@
+2.0.48: 2024-05-16
+- Improvement: Better integration with BuddyBoss User Blog plugin and Post Navigation module
+- Improvement: Correctly escape output in dynamic data block links
+- Improvement: Correctly retrieve current language for WPML
+- Improvement: Header menu type 1 - add option to set spacing between `li` elements
+- Improvement: Make sure all single product elements strings are translatable with WPML
+- Improvement: Menu items - better handle focus outline inline padding on first and last menu items
+- Improvement: Retrieve list of custom post types from centralized place
+- Improvement: Schema.org for logo element is reported as incorrect
+- Fix: Filter by rating widget doesn't displays star icons
+- Fix: Setting "Shop base" as WooCommerce permalinks structure doubles the "Shop" item in Breadcrumbs
+
 2.0.47: 2024-05-10
 - Improvement: "Simple" mobile menu element does not live update font proprieties in the Customizer
 - Improvement: Abort ongoing requests as the user is typing in the search live results module

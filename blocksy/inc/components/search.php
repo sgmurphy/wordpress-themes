@@ -33,10 +33,7 @@ class SearchModifications {
 			);
 
 			if ($post_type[0] === 'any') {
-				$post_type = array_diff(
-					get_post_types(['public' => true]),
-					['ct_content_block']
-				);
+				$post_type = blocksy_manager()->post_types->get_all();
 			}
 
 			$args = [
@@ -54,10 +51,9 @@ class SearchModifications {
 		) {
 			$next_args = [
 				'posts_per_page' => $args['posts_per_page'],
-				'post_type' => array_diff(
-					get_post_types(['public' => true]),
-					['post', 'page', 'attachment', 'ct_content_block']
-				),
+				'post_type' => blocksy_manager()->post_types->get_all([
+					'exclude_built_in' => true,
+				]),
 				'paged' => 1
 			];
 

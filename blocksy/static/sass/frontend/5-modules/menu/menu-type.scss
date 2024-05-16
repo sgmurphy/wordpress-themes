@@ -34,16 +34,22 @@
 }
 
 // type 1
-[data-menu*="type-1"] > ul > li {
+[data-column="start"] [data-items="primary"] [data-menu*="type-1"]:first-child > ul > li:first-child {
 
-	&:first-child > a {
+	> a {
 		padding-inline-start: 0;
 	}
+}
 
-	&:last-child > a {
+[data-column="end"] [data-items="primary"] [data-menu*="type-1"]:last-child > ul > li:last-child {
+
+	> a {
 		padding-inline-end: 0;
 	}
+
+	--toggle-ghost-inset-end: 13px;
 }
+
 
 // type 2
 [data-menu*="type-2"] > ul > li {

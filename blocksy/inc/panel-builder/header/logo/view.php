@@ -123,7 +123,7 @@ if ($custom_logo_id) {
 				($will_use_transparent_logo ? $logo_type_classes['transparent_state_logo'] : $logo_type_classes['default_logo'])
 			])
 		),
-		'itemprop' => 'logo'
+		// 'itemprop' => 'logo'
 	];
 
 	if ($panel_type === 'header') {

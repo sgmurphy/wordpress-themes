@@ -294,7 +294,13 @@ class BreadcrumbsBuilder {
 			}
 		}
 
-		if (function_exists('is_woocommerce') && is_woocommerce()) {
+		if (
+			function_exists('is_woocommerce')
+			&&
+			is_woocommerce()
+			&&
+			blocksy_get_theme_mod('breadcrumb_shop_item', 'no') === 'yes'
+		) {
 			$permalinks = wc_get_permalink_structure();
 			$shop_page_id = apply_filters(
 				'wpml_object_id',
@@ -338,20 +344,38 @@ class BreadcrumbsBuilder {
 				&&
 				$shop_page
 				&&
-				$permalinks['product_base']
-				&&
-				strstr($product_base, $shop_page_for_matching->post_name)
-				&&
 				intval(get_option('page_on_front')) !== $shop_page_id
 				&&
 				intval($shop_page_id) !== intval(blocksy_is_page())
 			) {
-				array_splice($return, 1, 0, [
-					[
-						'url' => get_permalink($shop_page),
-						'name' => get_the_title($shop_page)
-					]
-				]);
+				$shop_name = __('Shop', 'blocksy');
+
+				if ($shop_page_id) {
+					$shop_name = get_the_title($shop_page_id);
+				}
+
+				if (
+					$permalinks['product_base']
+					&&
+					strstr($product_base, $shop_page_for_matching->post_name)
+				) {
+					array_splice($return, 1, 0, [
+						[
+							'url' => get_permalink($shop_page),
+							'name' => $shop_name
+						]
+					]);
+				} else {
+					$shop_page_url = esc_url(get_permalink(wc_get_page_id('shop')));
+
+					array_splice($return, 1, 0, [
+						[
+							'url' => $shop_page_url,
+							'name' => $shop_name
+						]
+					]);
+				}
+					
 			}
 		}
 
@@ -362,36 +386,6 @@ class BreadcrumbsBuilder {
 		$post_type = blocksy_manager()->post_types->is_supported_post_type([
 			'allow_built_in' => true
 		]);
-
-		if (
-			blocksy_get_theme_mod('breadcrumb_shop_item', 'no') === 'yes'
-			&&
-			function_exists('wc_get_page_id')
-			&&
-			(
-				is_tax()
-				||
-				is_single()
-			)
-			&&
-			$post_type === 'product'
-		) {
-			$shop_page_id = wc_get_page_id('shop');
-			$shop_page_url = esc_url(get_permalink(wc_get_page_id('shop')));
-
-			$shop_name = __('Shop', 'blocksy');
-
-			if ($shop_page_id) {
-				$shop_name = get_the_title($shop_page_id);
-			}
-
-			array_splice($items, 1, 0, [
-				[
-					'url' => $shop_page_url,
-					'name' => $shop_name
-				]
-			]);
-		}
 
 		if (
 			(

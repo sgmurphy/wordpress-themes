@@ -71,11 +71,8 @@ class DynamicData {
 
 				// TODO: remove tmp override
 				if (! isset($data['post_id'])) {
-					// blocksy_manager()->post_types->get_supported_post_types();
-					$potential_post_types = array_keys(get_post_types([
-						'public'   => true,
-					]));
-					
+					$potential_post_types = blocksy_manager()->post_types->get_all();
+
 					$fields = [];
 
 					foreach ($potential_post_types as $single_cpt) {

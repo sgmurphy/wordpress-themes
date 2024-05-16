@@ -272,7 +272,7 @@ function blocksy_post_navigation() {
 	if ($next_post) {
 		$next_title = '';
 
-		$next_title = get_the_title($next_post);
+		$next_title = $next_post->post_title;
 
 		if (get_post_thumbnail_id($next_post)) {
 			$next_post_image_output = blocksy_media(
@@ -292,7 +292,7 @@ function blocksy_post_navigation() {
 	if ($previous_post) {
 		$previous_title = '';
 
-		$previous_title = get_the_title($previous_post);
+		$previous_title = $previous_post->post_title;
 
 		if (get_post_thumbnail_id($previous_post)) {
 			$previous_post_image_output = blocksy_media(

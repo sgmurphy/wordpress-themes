@@ -55,8 +55,6 @@ class WooCommerceSingle {
 
 		$items = blocksy_akg('additional_info_items', $additional_info_layer[0], []);
 
-		// blocksy_print($additional_info_layer[0]);
-
 		add_filter(
 			'blocksy:translations-manager:all-translation-keys',
 			function ($all_keys) use ($additional_info_layer) {
@@ -227,7 +225,15 @@ class WooCommerceSingle {
 		}
 
 		$data_color = blocksy_akg('payment_icons_color', $layer, 'default');
-		$section_title = blocksy_akg('payment_methods_title', $layer, __('Guaranteed Safe Checkout', 'blocksy'));
+
+		$section_title = blocksy_translate_dynamic(
+			blocksy_akg(
+				'payment_methods_title',
+				$layer,
+				__('Guaranteed Safe Checkout', 'blocksy')
+			),
+			'single_product:payment_methods:title'
+		);
 
 		$out = '<fieldset class="ct-payment-methods" data-color="' . $data_color . '">';
 		$out .= '<legend>' . $section_title . '</legend>';
@@ -352,11 +358,14 @@ class WooCommerceSingle {
 			return;
 		}
 
-		$section_title = __('Extra Features', 'blocksy');
-
-		if (isset($layer['product_additional_info_title'])) {
-			$section_title = $layer['product_additional_info_title'];
-		}
+		$section_title = blocksy_translate_dynamic(
+			blocksy_akg(
+				'product_additional_info_title',
+				$layer,
+				__('Extra Features', 'blocksy')
+			),
+			'single_product:additional_info:title'
+		);
 
 		$out = '<div class="ct-product-additional-info">';
 		$out .= '<span class="ct-module-title">' . $section_title . '</span>';

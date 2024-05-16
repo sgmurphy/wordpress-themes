@@ -433,12 +433,10 @@ function blocksy_author_box() {
 			echo blocksy_simple_image(
 				apply_filters(
 					'blocksy:single:author_box:author-avatar-url',
-					get_avatar_url(
-						blocksy_get_author_id(),
-						[
+					blocksy_get_avatar_url([
+							'avatar_entity' => blocksy_get_author_id(),
 							'size' => 120
-						]
-					)
+					])
 				),
 				[
 					'tag_name' => $with_link ? 'a' : 'span',

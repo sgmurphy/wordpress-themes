@@ -8,6 +8,7 @@
 
 $star_rating_selectors:
 	'.star-rating',
+	'.wc-block-rating-filter .wc-block-components-product-rating__stars',
 	'.has-rating .wc-block-components-review-list-item__rating > .wc-block-components-review-list-item__rating__stars',
 ;
 
@@ -28,6 +29,7 @@ $star_rating_selectors:
 		top: 0;
 		inset-inline-start: 0;
 		position: absolute;
+		line-height: inherit;
 	}
 
 	span {
@@ -36,6 +38,7 @@ $star_rating_selectors:
 		inset-inline-start: 0;
 		position: absolute;
 		padding-top: 1em;
+		line-height: inherit;
 
 		&:before {
 			content: '\53\53\53\53\53';
@@ -43,6 +46,7 @@ $star_rating_selectors:
 			inset-inline-start: 0;
 			position: absolute;
 			color: var(--star-rating-initial-color, #FDA256);
+			line-height: inherit;
 		}
 	}
 }
