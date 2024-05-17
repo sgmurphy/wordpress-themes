@@ -11,7 +11,7 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-$product_search = get_theme_mod( 'zakra_enable_product_search_search', true );
+$product_search = get_theme_mod( 'zakra_enable_product_search_search', false );
 ?>
 
 <div class="zak-search-container">

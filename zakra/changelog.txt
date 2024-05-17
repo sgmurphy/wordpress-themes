@@ -1,4 +1,7 @@
 == Changelog ==
+= 3.0.16 - 2024-05-17 =
+* Fix - Search issue.
+
 = 3.0.16 - 2024-05-07 =
 * Fix - Compatibility with Elementor header footer plugin.
 
