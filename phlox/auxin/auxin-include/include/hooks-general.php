@@ -738,10 +738,6 @@ function auxin_allow_img_srcset_shortcode( $allowedposttags, $context ) {
             'type' => [],
             'media' => []
         ];
-        $allowedposttags['script'] = [
-            'type' => [],
-            'src'  => []
-        ];
         $allowedposttags['lineargradient'] = [
             'id'  => [],
             'href'=> [],
