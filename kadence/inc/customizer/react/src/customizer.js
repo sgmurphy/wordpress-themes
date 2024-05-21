@@ -289,9 +289,13 @@
 			var $footer = $( '.control-section.kadence-footer-builder-active' );
 			if ( $body.hasClass( 'kadence-builder-is-active' ) || $body.hasClass( 'kadence-footer-builder-is-active' ) ) {
 				if ( $body.hasClass( 'kadence-footer-builder-is-active' ) && 0 < $footer.length && ! $footer.hasClass( 'kadence-builder-hide' ) ) {
-					wp.customize.previewer.container.css( 'bottom', $footer.outerHeight() + 'px' );
+					setTimeout(function() {
+						wp.customize.previewer.container.css( 'bottom', $footer.outerHeight() + 'px' );
+					}, 250);
 				} else if ( $body.hasClass( 'kadence-builder-is-active' ) && 0 < $section.length && ! $section.hasClass( 'kadence-builder-hide' ) ) {
-					wp.customize.previewer.container.css({ "bottom" : $section.outerHeight() + 'px' });
+					setTimeout(function() {
+						wp.customize.previewer.container.css({ "bottom" : $section.outerHeight() + 'px' });
+					}, 250);
 				} else {
 					wp.customize.previewer.container.css( 'bottom', '');
 				}

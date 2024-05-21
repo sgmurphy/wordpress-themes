@@ -1261,9 +1261,18 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			$css->add_property( 'color', $css->render_color( kadence()->sub_option( 'primary_navigation_color', 'hover' ) ) );
 			$css->add_property( 'background', $css->render_color( kadence()->sub_option( 'primary_navigation_background', 'hover' ) ) );
 			if ( kadence()->option( 'primary_navigation_parent_active' ) ) {
-				$css->set_selector( '.header-navigation[class*="header-navigation-style-underline"] .header-menu-container.primary-menu-container>ul>li.current-menu-ancestor>a:after' );
+				$css->set_selector( '
+					.header-navigation[class*="header-navigation-style-underline"] .header-menu-container.primary-menu-container>ul>li.current-menu-ancestor>a:after,
+					.header-navigation[class*="header-navigation-style-underline"] .header-menu-container.primary-menu-container>ul>li.current-page-parent>a:after,
+					.header-navigation[class*="header-navigation-style-underline"] .header-menu-container.primary-menu-container>ul>li.current-product-ancestor>a:after
+				' );
 				$css->add_property( 'transform', 'scale(1, 1) translate(50%, 0)' );
-				$css->set_selector( '.main-navigation .primary-menu-container > ul > li.menu-item.current-menu-item > a, .main-navigation .primary-menu-container > ul > li.menu-item.current-menu-ancestor > a, .main-navigation .primary-menu-container > ul > li.menu-item.current-menu-ancestor > a' );
+				$css->set_selector( '
+					.main-navigation .primary-menu-container > ul > li.menu-item.current-menu-item > a, 
+					.main-navigation .primary-menu-container > ul > li.menu-item.current-menu-ancestor > a, 
+					.main-navigation .primary-menu-container > ul > li.menu-item.current-page-parent > a,
+					.main-navigation .primary-menu-container > ul > li.menu-item.current-product-ancestor > a
+				' );
 			} else {
 				$css->set_selector( '.main-navigation .primary-menu-container > ul > li.menu-item.current-menu-item > a' );
 			}

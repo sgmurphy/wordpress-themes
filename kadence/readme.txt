@@ -4,7 +4,7 @@ Tags: translation-ready, two-columns, right-sidebar, left-sidebar, footer-widget
 Requires at least: 6.2
 Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GNU General Public License v3.0 (or later)
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -26,11 +26,18 @@ Please report security bugs found in the Kadence theme's source code through the
 
 = Changelog =
 
+== 1.2.5 | 20th May 2024 ==
+* Add: Support for AVIF images in theme gallery.
+* Fix: Issue with footer builder covering footer.
+* Fix: Issue with content width and page title top margin in editor.
+* Fix: Typo in customizer settings
+* Fix: Issue with post title alignment on tablet.
+
 == 1.2.4 | 10th April 2024 ==
 * Add: Option for transparent header on events archive.
 * Update: Google Font choices.
 * Update: Default icons for social, X and Instagram. 
-* Fix: CSS with with payments on product pages.
+* Fix: CSS with payments on product pages.
 * Fix: CSS with TEC single events.
 * Fix: Editor width in unboxed mode.
 

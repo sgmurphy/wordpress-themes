@@ -52,7 +52,7 @@ html :where(.wp-block) {
     max-width: none;
 }
 .edit-post-visual-editor__post-title-wrapper:not(.specificity) {
-    margin-top: 0px;
+    margin-top: 0px !important;
 	padding-top: var(--global-md-spacing);
     margin-bottom: var(--global-md-spacing);
 	position: relative;
@@ -468,6 +468,8 @@ select:focus {
     flex-direction: column;
     margin: 0px 0px var(--kad-editor-vertical-top-padding, 5rem) 0px;
     background:  var(--kad-editor-title-bg, var(--global-palette7) );
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 	position: relative;
 	&::before {
 		content: '';

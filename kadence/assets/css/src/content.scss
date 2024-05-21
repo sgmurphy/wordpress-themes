@@ -566,6 +566,9 @@ a.post-more-link {
 @media screen and (max-width: $tablet-minus-query) {
 .title-tablet-align-left {
 	text-align: left;
+	.entry-meta {
+		justify-content: flex-start;
+	}
 }
 .title-tablet-align-center {
 	text-align: center;
@@ -597,6 +600,9 @@ a.post-more-link {
 @media screen and (max-width: $phone-minus-query) {
 .title-mobile-align-left {
 	text-align: left;
+	.entry-meta {
+		justify-content: flex-start;
+	}
 }
 .title-mobile-align-center {
 	text-align: center;

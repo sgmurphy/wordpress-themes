@@ -464,3 +464,7 @@ li.product a .secondary-product-image, .wc-block-grid__product a .secondary-prod
 		top: 0;
 	}
 }
+
+.wc-block-product-category .product-details .wc-block-grid__product-add-to-cart.wp-block-button .ajax_add_to_cart:after {
+	display: none;
+}
