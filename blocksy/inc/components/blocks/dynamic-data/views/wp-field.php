@@ -19,6 +19,14 @@ if ($field === 'wp:archive_title') {
 
 	$value = get_the_archive_title();
 
+	if (is_home() && !is_front_page()) {
+		$post_id = get_option('page_for_posts');
+
+		if ($post_id) {
+			$value = get_the_title($post_id);
+		}
+	}
+
 	remove_filter(
 		'get_the_archive_title',
 		[$archive_title_renderer, 'render_title'],

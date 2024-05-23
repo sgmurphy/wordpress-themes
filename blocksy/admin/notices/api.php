@@ -5,6 +5,14 @@ add_action('wp_ajax_blocksy_dismissed_notice_handler', function () {
 	wp_die();
 });
 
+add_action(
+	'wp_ajax_blocksy_dismissed_blocks_move_notice_handler',
+	function () {
+		update_option('dismissed-blocksy_blocks_drop_notice', true);
+		wp_die();
+	}
+);
+
 add_action('wp_ajax_blocksy_notice_button_click', function () {
 	if (
 		! current_user_can('activate_plugins')
@@ -53,3 +61,4 @@ add_action('wp_ajax_blocksy_notice_button_click', function () {
 
 	wp_die();
 });
+

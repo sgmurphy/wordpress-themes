@@ -279,10 +279,6 @@ const collectVariablesForLayers = (v) => {
 			]
 		}
 
-		console.log({
-			id: layer.id,
-			layer: layer,
-		})
 		if (
 			[
 				'acf_field',

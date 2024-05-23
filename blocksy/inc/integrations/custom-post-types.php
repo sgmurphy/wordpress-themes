@@ -82,6 +82,11 @@ class CustomPostTypes {
 				'pafe-form-booking',
 				'pafe-fonts',
 
+				// BeRocket
+				'br_labels',
+				'br_product_filter',
+				'br_filters_group',
+
 				// give
 				'give_forms',
 
@@ -141,7 +146,6 @@ class CustomPostTypes {
 				'atbdp_orders',
 				'at_biz_dir',
 				'gspbstylebook',
-				'br_labels',
 				'testimonial',
 				'frm_display',
 				'e-landing-page',

@@ -1,8 +1,33 @@
 import { createElement, render } from '@wordpress/element'
 import Notification from './Notification'
+import NotificationBlocksDrop from './NotificationBlocksDrop'
 import $ from 'jquery'
 
 export const mount = (el) => {
+	if (el.querySelector('.notice-blocksy-blocks-move-root')) {
+		render(
+			<NotificationBlocksDrop
+				initialStatus={
+					el.querySelector('.notice-blocksy-blocks-move-root').dataset
+						.pluginStatus
+				}
+				url={
+					el.querySelector('.notice-blocksy-blocks-move-root').dataset
+						.url
+				}
+				pluginUrl={
+					el.querySelector('.notice-blocksy-blocks-move-root').dataset
+						.pluginUrl
+				}
+				pluginLink={
+					el.querySelector('.notice-blocksy-blocks-move-root').dataset
+						.link
+				}
+			/>,
+			el.querySelector('.notice-blocksy-blocks-move-root')
+		)
+	}
+
 	if (el.querySelector('.notice-blocksy-plugin-root')) {
 		render(
 			<Notification

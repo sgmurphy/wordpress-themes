@@ -151,7 +151,7 @@ if ($horizontal_alignment !== 'initial') {
 	$text_horizontal_alignment = blocksy_map_values([
 		'value' => $horizontal_alignment,
 		'map' => [
-			'initial' => 'CT_CSS_SKIP_RULE',
+			// 'initial' => 'CT_CSS_SKIP_RULE',
 			'flex-end' => 'right'
 		]
 	]);

@@ -38,14 +38,18 @@
 }
 
 // outlined button
-.wp-block-button.is-style-outline .wp-element-button {
-	padding: var(--theme-button-padding);
-	color: var(--theme-button-background-initial-color);
-	border-color: var(--theme-button-background-initial-color);
+.wp-block-button.is-style-outline {
 
-	&:hover {
-		color: var(--theme-button-text-hover-color);
-		border-color: var(--theme-button-background-hover-color);
-		background-color: var(--theme-button-background-hover-color);
+	.wp-element-button {
+		padding: var(--theme-button-padding);
+		color: var(--theme-button-background-initial-color);
+		border: 2px solid;
+		border-color: var(--theme-button-background-initial-color);
+
+		&:hover {
+			color: var(--theme-button-text-hover-color);
+			border-color: var(--theme-button-background-hover-color);
+			background-color: var(--theme-button-background-hover-color);
+		}
 	}
 }

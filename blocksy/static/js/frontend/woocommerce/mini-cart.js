@@ -1,12 +1,24 @@
 import $ from 'jquery'
 import ctEvents from 'ct-events'
+import { isTouchDevice } from '../helpers/is-touch-device'
 
 let mounted = false
 
 let addedToCart = false
 
-export const mount = () => {
+export const mount = (el) => {
 	if (!$) return
+
+	const maybeCartLink = el.querySelector('.ct-cart-item')
+
+	if (
+		maybeCartLink &&
+		!maybeCartLink.classList.contains('ct-offcanvas-trigger') &&
+		isTouchDevice()
+	) {
+		location.href = maybeCartLink.getAttribute('href')
+		return
+	}
 
 	const selector = '.ct-header-cart, .ct-shortcuts-bar [data-id="cart"]'
 

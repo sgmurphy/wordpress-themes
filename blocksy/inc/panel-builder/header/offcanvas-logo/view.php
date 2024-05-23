@@ -35,8 +35,8 @@ if ($custom_logo_id) {
 				$logo_type_classes['offcanvas_logo']
 			])
 		),
-		'itemprop' => 'logo',
-		'loading' => false
+		'loading' => false,
+		// 'itemprop' => 'logo',
 	];
 
 	/**

@@ -205,6 +205,16 @@ onDocumentLoaded(() => {
 			loadStyle(ct_localizations.dynamic_styles.lazy_load)
 			preloadClickHandlers()
 			import('./frontend/handle-3rd-party-events.js')
+
+			const maybeModalSearch = document.querySelector(
+				'#search-modal .ct-search-form input'
+			)
+
+			if (maybeModalSearch && maybeModalSearch.value.trim().length > 0) {
+				maybeModalSearch.dispatchEvent(
+					new Event('input', { bubbles: true })
+				)
+			}
 		},
 		{ once: true, passive: true }
 	)
@@ -273,6 +283,14 @@ ctEvents.on('blocksy:frontend:init', () => {
 
 		import('./frontend/integration/greenshift.js').then(
 			({ mountGreenshiftIntegration }) => mountGreenshiftIntegration()
+		)
+
+		import('./frontend/integration/cf7.js').then(
+			({ mountCF7Integration }) => mountCF7Integration()
+		)
+
+		import('./frontend/integration/turnstile.js').then(
+			({ mountTurnstileIntegration }) => mountTurnstileIntegration()
 		)
 	}
 })

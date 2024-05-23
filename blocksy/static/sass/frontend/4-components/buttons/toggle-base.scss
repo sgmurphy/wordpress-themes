@@ -8,6 +8,7 @@
 	appearance: none;
 	width: var(--toggle-button-size);
 	height: var(--toggle-button-size);
+	flex: 0 0 var(--toggle-button-size);
 	margin-inline-start: var(--toggle-button-margin-start, auto);
 	margin-inline-end: var(--toggle-button-margin-end, initial);
 	transition: border-color 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955), background 0.12s cubic-bezier(0.455, 0.03, 0.515, 0.955);

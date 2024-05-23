@@ -6,6 +6,42 @@ class Blocks {
 	private $blocks = [];
 
 	public function __construct() {
+		// Mount at `after_setup_theme` to make sure the theme is loaded
+		add_action(
+			'after_setup_theme',
+			[$this, 'mount'],
+
+			// Companion will mount with priority 50.
+			// need to skip if the blocks are already mounted
+			100
+		);
+	}
+
+	public function mount() {
+		$mount_allowed = apply_filters(
+			'blocksy:general:blocks:mount-allowed',
+			true
+		);
+
+		if (! $mount_allowed) {
+			return;
+		}
+
+		register_block_pattern_category(
+			'blocksy',
+			[
+				'label' => _x(
+					'Blocksy',
+					'Block pattern category',
+					'blocksy'
+				),
+				'description' => __(
+					'Patterns that contain buttons and call to actions.',
+					'blocksy'
+				),
+			]
+		);
+
 		add_action('enqueue_block_editor_assets', function () {
 			$deps = [
 				'wp-blocks',

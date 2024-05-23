@@ -148,7 +148,10 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 export { default as Overlay } from './components/Overlay'
-export { getValueFromInput } from '../options/helpers/get-value-from-input'
+export {
+	getValueFromInput,
+	getFirstLevelOptions,
+} from '../options/helpers/get-value-from-input'
 export { default as OptionsPanel } from '../options/OptionsPanel'
 export { default as Panel, PanelMetaWrapper } from '../options/options/ct-panel'
 export { DeviceManagerProvider } from './components/useDeviceManager'
@@ -171,6 +174,7 @@ export {
 } from '../editor/utils'
 
 export { getColorsDefaults } from '../editor/utils/colors'
+export { getStableJsonKey } from '../options/helpers/get-stable-json-key'
 
 /**
  * Expose builder values

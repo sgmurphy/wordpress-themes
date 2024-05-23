@@ -24,4 +24,9 @@
 		border: initial;
 		transform: initial;
 	}
+
+	// quantity input
+	.wcf-qty {
+		--has-height: var(--false);
+	}
 }

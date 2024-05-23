@@ -1,5 +1,6 @@
 [data-archive="default"][data-layout="simple"] {
 	article {
+		display: flex;
 		gap: var(--card-inner-spacing, 30px);
 
 		&:not(:last-child) {
@@ -23,8 +24,6 @@
 		}
 
 		.card-content {
-			display: flex;
-			flex-direction: column;
 			flex: 1;
 			
 			@include media-breakpoint-up (md) {

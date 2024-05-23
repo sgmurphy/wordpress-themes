@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initTaxonomies()
 	;[
 		...document.querySelectorAll('.notice-blocksy-plugin'),
+		...document.querySelectorAll('.notice-blocksy-blocks-move'),
 		...document.querySelectorAll('[data-dismiss]'),
 	].map((el) => import('./notification/main').then(({ mount }) => mount(el)))
 
@@ -51,7 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 export { default as Overlay } from './customizer/components/Overlay'
-export { getValueFromInput } from './options/helpers/get-value-from-input'
+export {
+	getValueFromInput,
+	getFirstLevelOptions,
+} from './options/helpers/get-value-from-input'
 export { default as OptionsPanel } from './options/OptionsPanel'
 export { default as Panel, PanelMetaWrapper } from './options/options/ct-panel'
 export { DeviceManagerProvider } from './customizer/components/useDeviceManager'
@@ -80,6 +84,7 @@ export {
 } from './editor/utils'
 
 export { getColorsDefaults } from './editor/utils/colors'
+export { getStableJsonKey } from './options/helpers/get-stable-json-key'
 
 export const onDocumentLoaded = (cb) => {
 	if (/comp|inter|loaded/.test(document.readyState)) {

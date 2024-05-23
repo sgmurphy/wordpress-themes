@@ -41,8 +41,14 @@ const showOffcanvas = (initialSettings) => {
 
 	if (settings.focus) {
 		setTimeout(() => {
-			settings.container.querySelector('input') &&
-				settings.container.querySelector('input').focus()
+			const maybeInput = settings.container.querySelector('input')
+
+			if (maybeInput) {
+				const end = maybeInput.value.length
+
+				maybeInput.setSelectionRange(end, end)
+				maybeInput.focus()
+			}
 		}, 200)
 	}
 

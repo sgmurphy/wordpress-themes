@@ -4,13 +4,6 @@ export const getColorsDefaults = (colors) =>
 			type: 'string',
 			default: colors[key],
 		}
+
 		return acc
 	}, {})
-
-export const getColorsContexts = (colors) =>
-	Object.keys(colors)
-		.filter((key) => key.includes('custom'))
-		.reduce((acc, key) => {
-			acc[key] = key
-			return acc
-		}, {})

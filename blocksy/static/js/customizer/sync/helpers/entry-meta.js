@@ -61,7 +61,10 @@ export const renderSingleEntryMeta = ({
 						img.style.height = `${avatar_size || 25}px`
 					}
 
-					if (metaAuthor.querySelector('span')) {
+					if (
+						metaAuthor.querySelector('span') &&
+						meta_type === 'label'
+					) {
 						el
 							.querySelector('.meta-author')
 							.querySelector('span').innerHTML =

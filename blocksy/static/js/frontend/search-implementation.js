@@ -443,8 +443,12 @@ export const mount = (formEl, args = {}) => {
 	}
 
 	maybeEl.addEventListener('input', listener)
-	;({ mode: 'inline', ...args }).mode === 'modal' &&
-		maybeEl.addEventListener('blur', (e) => setTimeout(() => listener(e)))
+
+	maybeEl.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') {
+			e.preventDefault()
+		}
+	})
 
 	maybeEl.addEventListener('focus', (e) => {
 		listener(e)

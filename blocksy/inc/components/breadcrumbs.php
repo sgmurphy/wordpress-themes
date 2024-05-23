@@ -735,15 +735,15 @@ class BreadcrumbsBuilder {
 		$items = $this->get_breadcrumbs();
 
 		$separators = [
-			'type-1' => '<svg class="separator" fill="currentColor" width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" focusable="false">
+			'type-1' => '<svg class="ct-separator" fill="currentColor" width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" focusable="false">
 				<path d="M2,6.9L4.8,4L2,1.1L2.6,0l4,4l-4,4L2,6.9z"/>
 			</svg>',
 
-			'type-2' => '<svg class="separator" fill="currentColor" width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" focusable="false">
+			'type-2' => '<svg class="ct-separator" fill="currentColor" width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" focusable="false">
 				<polygon points="2.5,0 6.9,4 2.5,8 "/>
 			</svg>',
 
-			'type-3' => '<span class="separator">/</span>'
+			'type-3' => '<span class="ct-separator">/</span>'
 		];
 
 		$separator = $separators[

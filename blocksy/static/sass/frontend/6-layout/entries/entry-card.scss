@@ -1,9 +1,7 @@
 [data-archive="default"] .entry-card {
-	display: flex;
 	text-align: var(--text-horizontal-alignment);
 
 	.entry-title {
-		margin: initial;
 		--theme-link-initial-color: initial;
 	}
 
@@ -17,38 +15,24 @@
 	}
 
 	.ct-ghost {
-		margin: 0 !important;
+		margin: 0;
 		flex: 1 0 auto;
 	}
 }
 
 // elements spacing
-[data-archive="default"] {
+[data-archive="default"] .card-content {
+	display: flex;
+	flex-direction: column;
 
-	&[data-layout*="grid"] .entry-card,
-	&[data-layout="classic"] .entry-card,
-	&[data-layout="simple"] .card-content {
+	> * {
+		margin-bottom: var(--card-element-spacing, 20px);
 
-		> *:not(:last-child) {
-			margin-bottom: 20px;
-
-			&.entry-meta {
-				// because the meta li ads margin-bottom 5px
-				margin-bottom: 15px;
-			}
-		}
-	}
-
-	&[data-layout*="grid"] .entry-card,
-	&[data-layout="classic"] .entry-card {
-		flex-direction: column;
-
-		> .ct-media-container + * {
-			margin-top: 10px;
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 }
-
 
 // Boxed & Cover card
 [data-cards="boxed"],

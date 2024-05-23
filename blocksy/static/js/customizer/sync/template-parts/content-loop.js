@@ -311,6 +311,128 @@ export const getPostListingVariables = () => ({
 					},
 				]
 			}
+
+			// bottom spacing
+			let selectorsMap = {
+				title: '[data-archive="default"] .card-content .entry-title',
+				featured_image: '[data-archive="default"] .card-content .ct-media-container',
+				excerpt: '[data-archive="default"] .card-content .entry-excerpt',
+				read_more: '[data-archive="default"] .card-content .entry-button',
+				overall_score: '[data-archive="default"] .card-content .ct-overall-score-layer',
+			}
+
+			if (selectorsMap[layer.id]) {
+				variables = [
+					...variables,
+					{
+						selector: applyPrefixFor(
+							selectorsMap[layer.id],
+							prefix
+						),
+						variable: 'card-element-spacing',
+						responsive: true,
+						unit: 'px',
+						extractValue: () => {
+							let defaultValue = 20
+
+							if (layer.id === 'featured_image') {
+								defaultValue = 30
+							}
+
+							return layer.spacing || defaultValue
+						},
+					},
+				]
+			}
+
+			if (layer.id === 'divider') {
+				variables = [
+					...variables,
+					{
+						selector: applyPrefixFor(
+							`[data-archive="default"] .card-content .entry-divider[data-id="${(
+								layer?.__id || 'default'
+							).slice(0, 6)}"]`,
+							prefix
+						),
+						variable: 'card-element-spacing',
+						responsive: true,
+						unit: 'px',
+						extractValue: () => {
+							return layer.spacing || 20
+						},
+					},
+				]
+			}
+
+			if (layer.id === 'post_meta') {
+				variables = [
+					...variables,
+					{
+						selector: applyPrefixFor(
+							`[data-archive="default"] .card-content .entry-meta[data-id="${(
+								layer?.__id || 'default'
+							).slice(0, 6)}"]`,
+							prefix
+						),
+						variable: 'card-element-spacing',
+						responsive: true,
+						unit: 'px',
+						extractValue: () => {
+							return layer.spacing || 15
+						},
+					},
+				]
+			}
+
+			if (layer.id === 'content-block') {
+				variables = [
+					...variables,
+					{
+						selector: applyPrefixFor(
+							`[data-archive="default"] .card-content .ct-entry-content-block[data-id="${
+								layer?.__id || 'default'
+							}"]`,
+							prefix
+						),
+						variable: 'card-element-spacing',
+						responsive: true,
+						unit: 'px',
+						extractValue: () => {
+							return layer.spacing || 20
+						},
+					},
+				]
+			}
+
+			if (
+				[
+					'acf_field',
+					'metabox_field',
+					'toolset_field',
+					'jetengine_field',
+					'custom_field',
+					'pods_field',
+				].includes(layer.id)
+			) {
+				variables = [
+					...variables,
+					{
+						selector: applyPrefixFor(
+							`[data-archive="default"] .card-content .ct-dynamic-data-layer[data-field*=":${(
+								layer?.__id || 'default'
+							).slice(0, 6)}"]`,
+							prefix
+						),
+						variable: 'card-element-spacing',
+						responsive: true,
+						unit: 'px',
+						extractValue: () => {
+							return layer.spacing || 20
+						},
+					},
+				]
+			}
 		})
 
 		return [...variables, ...imageBorderVariables]

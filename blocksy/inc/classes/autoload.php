@@ -60,6 +60,7 @@ class ThemeAutoloader {
 
 			'Blocks' => 'inc/components/blocks/blocks.php',
 			'GutenbergBlock' => 'inc/components/blocks/gutenberg-block.php',
+
 			'LegacyWidgetsTransformer' => 'inc/components/blocks/legacy-widgets-transformer.php',
 			'LegacyWidgetsPostsTransformer' => 'inc/components/blocks/legacy/legacy-posts-transformer.php',
 			'LegacyWidgetsAboutMeTransformer' => 'inc/components/blocks/legacy/legacy-about-me-transformer.php',
