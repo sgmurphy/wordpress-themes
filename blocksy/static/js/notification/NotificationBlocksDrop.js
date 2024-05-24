@@ -69,7 +69,7 @@ const NotificationBlocksDrop = ({
 			<div className="ct-notification-content">
 				<h2>
 					{__(
-						'Heads up - soon theme blocks are going to be moved to the Blocksy Companion plugin',
+						'Heads up - theme blocks are going to be moved into the Blocksy Companion plugin soon',
 						'blocksy'
 					)}
 				</h2>
@@ -78,12 +78,12 @@ const NotificationBlocksDrop = ({
 					dangerouslySetInnerHTML={{
 						__html:
 							__(
-								'By some enforced requirements, we have to move the theme blocks in to the companion plugin.',
+								'Due to developer guidelines, all blocks are required to be moved to the Blocksy Companion plugin.',
 								'blocksy'
 							) +
 							'<br>' +
 							__(
-								'If you where using the theme blocks before, there is no need to worry, just activate the Blocksy Companion plugin and you will have access to those blocks as before.',
+								'No need to worry, as if you were using any of our theme (Gutenberg) blocks you just need to activate the Blocksy Companion plugin to restore them.',
 								'blocksy'
 							),
 					}}

@@ -56,7 +56,10 @@ if (! function_exists('blocksy_get_author_id')) {
 
 		if (! $author_id) {
 			$author = get_user_by('slug', get_query_var('author_name'));
-			$author_id = $author->ID;
+			
+			if ($author) {
+				$author_id = $author->ID;
+			}
 		}
 
 		return $author_id;

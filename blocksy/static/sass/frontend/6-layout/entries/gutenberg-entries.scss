@@ -12,26 +12,14 @@
 			&:not(.entry-button) {
 				width: 100%;
 			}
-			
-			&:not(:last-child) {
-				margin-bottom: 15px;
-			}
 
 			&:not(.ct-media-container) {
 				max-width: var(--theme-narrow-container-max-width);
-			}
-
-			+ .ct-media-container {
-				margin-top: 15px;
 			}
 		}
 
 		> .ct-media-container {
 			max-width: calc(var(--theme-narrow-container-max-width) + var(--theme-wide-offset) * 2);
-
-			+ * {
-				margin-top: 15px;
-			}	
 		}
 
 

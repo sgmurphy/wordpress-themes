@@ -42,11 +42,11 @@ function blocksy_output_blocks_drop_notice() {
 		</span>
 
 		<div class="ct-notification-content">
-			<h2><?php esc_html_e( 'Heads up - soon theme blocks are going to be moved to the Blocksy Companion plugin', 'blocksy' ); ?></h2>
+			<h2><?php esc_html_e( 'Heads up - theme blocks are going to be moved into the Blocksy Companion plugin soon', 'blocksy' ); ?></h2>
 			<p>
-				<?php esc_html_e( 'By some enforced requirements, we have to move the theme blocks in to the companion plugin.', 'blocksy' ); ?>
+				<?php esc_html_e( 'Due to developer guidelines, all blocks are required to be moved to the Blocksy Companion plugin.', 'blocksy' ); ?>
 				<br>
-				<?php esc_html_e( 'If you where using the theme blocks before, there is no need to worry, just activate the Blocksy Companion plugin and you will have access to those blocks as before.', 'blocksy' ); ?>
+				<?php esc_html_e( 'No need to worry, as if you were using any of our theme (Gutenberg) blocks you just need to activate the Blocksy Companion plugin to restore them.', 'blocksy' ); ?>
 			</p>
 		</div>
 	</div>

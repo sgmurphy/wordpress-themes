@@ -44,6 +44,7 @@ small,
 label,
 table,
 figure,
+button,
 legend,
 strike,
 address,
@@ -54,14 +55,14 @@ blockquote {
 	padding: 0;
 	border: none;
 	
-	font-size: inherit;
-	text-align: inherit;
-	line-height: inherit;
+	font: inherit;
+	// font-size: inherit;
+	// text-align: inherit; // causes problems on buttons without type
+	// line-height: inherit;
 }
 
 
 input,
-button,
 select,
 textarea {
 	margin: 0;

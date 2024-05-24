@@ -1,3 +1,7 @@
+2.0.50: 2024-05-24
+- Improvement: Better check author avatar presence in WooCommerce account page
+- Fix: Post cards spacing issue on title element
+
 2.0.49: 2024-05-23
 - Improvement: Add bottom spacing option for archive post layers
 - Improvement: Better accessibility for header menu dropdown trigger
