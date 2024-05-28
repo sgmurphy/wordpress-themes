@@ -3,8 +3,8 @@
 Contributors: elemntor, KingYes, ariel.k, bainternet
 Requires at least: 6.0
 Tested up to: 6.4
-Stable tag: 3.0.1
-Version: 3.0.1
+Stable tag: 3.0.2
+Version: 3.0.2
 Requires PHP: 7.3
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -35,6 +35,9 @@ License: CC0 1.0 Universal (CC0 1.0)
 Source: https://stocksnap.io/photo/4B83RD7BV9
 
 == Changelog ==
+
+= 3.0.2 - 2024-05-28 =
+* Internal: Version bump release to refresh WordPress repository
 
 = 3.0.1 - 2024-01-24 =
 * Fix: Harden security for admin notice dismiss button

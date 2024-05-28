@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 222:
+/***/ 696:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -39,25 +39,25 @@ exports.ActionLinks = ActionLinks;
 
 /***/ }),
 
-/***/ 3:
+/***/ 19:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(836);
+var _interopRequireDefault = __webpack_require__(994);
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 exports.SettingsPage = void 0;
-var _react = __webpack_require__(196);
-var _notices = __webpack_require__(961);
-var _data = __webpack_require__(818);
-var _i18n = __webpack_require__(736);
-var _api = _interopRequireDefault(__webpack_require__(101));
-var _components = __webpack_require__(609);
-var _settingsPanel = __webpack_require__(230);
-var _actionLinksPanel = __webpack_require__(995);
+var _react = __webpack_require__(609);
+var _notices = __webpack_require__(692);
+var _data = __webpack_require__(143);
+var _i18n = __webpack_require__(723);
+var _api = _interopRequireDefault(__webpack_require__(863));
+var _components = __webpack_require__(427);
+var _settingsPanel = __webpack_require__(425);
+var _actionLinksPanel = __webpack_require__(442);
 const Notices = () => {
   const notices = (0, _data.useSelect)(select => select(_notices.store).getNotices().filter(notice => 'snackbar' === notice.type), []);
   const {
@@ -154,7 +154,7 @@ exports.SettingsPage = SettingsPage;
 
 /***/ }),
 
-/***/ 995:
+/***/ 442:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -164,8 +164,8 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 exports.ActionLinksPanel = void 0;
-var _i18n = __webpack_require__(736);
-var _actionLinks = __webpack_require__(222);
+var _i18n = __webpack_require__(723);
+var _actionLinks = __webpack_require__(696);
 const actionLinks = {
   'install-elementor': {
     image: helloAdminData.templateDirectoryURI + '/assets/images/elementor.svg',
@@ -210,7 +210,7 @@ exports.ActionLinksPanel = ActionLinksPanel;
 
 /***/ }),
 
-/***/ 230:
+/***/ 425:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -220,8 +220,8 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 exports.SettingsPanel = void 0;
-var _i18n = __webpack_require__(736);
-var _components = __webpack_require__(609);
+var _i18n = __webpack_require__(723);
+var _components = __webpack_require__(427);
 const SettingsPanel = ({
   SETTINGS,
   settingsData,
@@ -287,7 +287,7 @@ exports.SettingsPanel = SettingsPanel;
 
 /***/ }),
 
-/***/ 100:
+/***/ 374:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -297,7 +297,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 196:
+/***/ 609:
 /***/ ((module) => {
 
 "use strict";
@@ -305,7 +305,7 @@ module.exports = window["React"];
 
 /***/ }),
 
-/***/ 101:
+/***/ 863:
 /***/ ((module) => {
 
 "use strict";
@@ -313,7 +313,7 @@ module.exports = window["wp"]["api"];
 
 /***/ }),
 
-/***/ 609:
+/***/ 427:
 /***/ ((module) => {
 
 "use strict";
@@ -321,7 +321,7 @@ module.exports = window["wp"]["components"];
 
 /***/ }),
 
-/***/ 818:
+/***/ 143:
 /***/ ((module) => {
 
 "use strict";
@@ -329,7 +329,7 @@ module.exports = window["wp"]["data"];
 
 /***/ }),
 
-/***/ 307:
+/***/ 87:
 /***/ ((module) => {
 
 "use strict";
@@ -337,7 +337,7 @@ module.exports = window["wp"]["element"];
 
 /***/ }),
 
-/***/ 736:
+/***/ 723:
 /***/ ((module) => {
 
 "use strict";
@@ -345,7 +345,7 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ 961:
+/***/ 692:
 /***/ ((module) => {
 
 "use strict";
@@ -353,12 +353,12 @@ module.exports = window["wp"]["notices"];
 
 /***/ }),
 
-/***/ 836:
+/***/ 994:
 /***/ ((module) => {
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
+function _interopRequireDefault(e) {
+  return e && e.__esModule ? e : {
+    "default": e
   };
 }
 module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
@@ -410,9 +410,9 @@ var __webpack_exports__ = {};
 "use strict";
 
 
-__webpack_require__(100);
-var _element = __webpack_require__(307);
-var _settingsPage = __webpack_require__(3);
+__webpack_require__(374);
+var _element = __webpack_require__(87);
+var _settingsPage = __webpack_require__(19);
 const App = () => {
   return /*#__PURE__*/React.createElement(_settingsPage.SettingsPage, null);
 };

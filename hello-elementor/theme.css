@@ -134,7 +134,8 @@
 .post .wp-post-image {
   width: 100%;
   max-height: 500px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 991px) {
   .post .wp-post-image {
