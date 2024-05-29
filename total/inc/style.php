@@ -187,8 +187,9 @@ function total_dymanic_styles() {
         $custom_css .= "@media screen and (max-width:{$container_width}px){
             .ht-container,
             .elementor-section.elementor-section-boxed.elementor-section-stretched>.elementor-container,
-            .elementor-template-full-width .elementor-section.elementor-section-boxed>.elementor-container{
-                width: auto !important;
+            .elementor-template-full-width .elementor-section.elementor-section-boxed>.elementor-container,
+            .e-con.e-parent>.e-con-inner{
+                width: 100% !important;
                 padding-left: 30px !important;
                 padding-right: 30px !important;
             }

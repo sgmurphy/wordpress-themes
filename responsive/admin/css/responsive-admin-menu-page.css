@@ -1,0 +1,42 @@
+/**
+ * CSS code for Responsive Theme admin Menu screens
+ *
+ * @package Responsive
+ * @since 4.8.4
+ */
+
+/* RST Promo notice starts */
+.postbox.responsive-sites-active {
+	display: flex;
+	justify-content: left;
+	align-items: start;
+	padding: 0 20px;
+	margin: 5px 20px 15px 0px;
+}
+
+.postbox.responsive-sites-active .responsive-starter-sites-img {
+	margin-left: 5px;
+}
+
+.responsive-notice-content {
+	margin-left: 15px;
+	margin-top: 1em;
+}
+
+.responsive-notice-content p, .responsive-notice-content h2 {
+	margin: 0.5em 0;
+}
+
+.responsive-notice-image {
+	margin-top: 2em;
+}
+
+.rateus-ready-site {
+	display: none;
+}
+/* RST Promo notice ends */
+
+.responsive-theme-builder-icon {
+	transform: scaleX(-1);
+    color: #c3c4c7;
+}

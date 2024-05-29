@@ -63,8 +63,9 @@ jQuery(document).ready(function ($) {
             type: 'post',
             dataType: 'html',
             data: {
-                'action': 'total_order_sections',
-                'sections': sec_ordered,
+                action: 'total_order_sections',
+                sections: sec_ordered,
+                secure: total_ajax_data.nonce
             }
         }).done(function (data) {
             $.each(sec_ordered, function (key, value) {

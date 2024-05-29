@@ -1,0 +1,1784 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Bravada\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-26 11:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.4.2; wp-5.5.3"
+
+#: admin/options.php:649
+msgid " - No sliders defined - "
+msgstr ""
+
+#: admin/options.php:649
+msgid " - Please install, activate or update Serious Slider plugin - "
+msgstr ""
+
+#: comments.php:25 includes/comments.php:99 includes/comments.php:119
+#, php-format
+msgid "%1$s Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/comments.php:45
+#, php-format
+msgctxt "%s = human-readable time difference"
+msgid "%1$s ago"
+msgstr ""
+
+#: admin/options.php:1949
+msgid "'Comments Are Closed' Text"
+msgstr ""
+
+#: includes/comments.php:24 includes/comments.php:50
+msgid "(Edit)"
+msgstr ""
+
+#: admin/options.php:387
+msgid "1 Column"
+msgstr ""
+
+#: includes/comments.php:98
+msgid "1 Comment"
+msgstr ""
+
+#: admin/options.php:1211 admin/options.php:1269 admin/options.php:1311
+#: admin/options.php:1350 admin/options.php:1406 admin/options.php:1451
+#: admin/options.php:1493 admin/options.php:1535 admin/options.php:1584
+#: admin/options.php:1626
+msgid "100 thin"
+msgstr ""
+
+#: admin/options.php:388
+msgid "2 Columns"
+msgstr ""
+
+#: admin/options.php:1211 admin/options.php:1269 admin/options.php:1311
+#: admin/options.php:1350 admin/options.php:1406 admin/options.php:1451
+#: admin/options.php:1493 admin/options.php:1535 admin/options.php:1584
+#: admin/options.php:1626
+msgid "200 extra-light"
+msgstr ""
+
+#: admin/options.php:389
+msgid "3 Columns"
+msgstr ""
+
+#: admin/options.php:1211 admin/options.php:1269 admin/options.php:1311
+#: admin/options.php:1350 admin/options.php:1406 admin/options.php:1451
+#: admin/options.php:1493 admin/options.php:1535 admin/options.php:1584
+#: admin/options.php:1626
+msgid "300 lighter"
+msgstr ""
+
+#: admin/options.php:390
+msgid "4 Columns"
+msgstr ""
+
+#: admin/options.php:1211 admin/options.php:1269 admin/options.php:1311
+#: admin/options.php:1350 admin/options.php:1406 admin/options.php:1451
+#: admin/options.php:1493 admin/options.php:1535 admin/options.php:1584
+#: admin/options.php:1626
+msgid "400 regular"
+msgstr ""
+
+#: admin/options.php:1211 admin/options.php:1269 admin/options.php:1311
+#: admin/options.php:1350 admin/options.php:1406 admin/options.php:1451
+#: admin/options.php:1493 admin/options.php:1535 admin/options.php:1584
+#: admin/options.php:1626
+msgid "500 medium"
+msgstr ""
+
+#: admin/options.php:1211 admin/options.php:1269 admin/options.php:1311
+#: admin/options.php:1350 admin/options.php:1406 admin/options.php:1451
+#: admin/options.php:1493 admin/options.php:1535 admin/options.php:1584
+#: admin/options.php:1626
+msgid "600 semi-bold"
+msgstr ""
+
+#: admin/options.php:1211 admin/options.php:1269 admin/options.php:1311
+#: admin/options.php:1350 admin/options.php:1406 admin/options.php:1451
+#: admin/options.php:1493 admin/options.php:1535 admin/options.php:1584
+#: admin/options.php:1626
+msgid "700 bold"
+msgstr ""
+
+#: admin/options.php:1211 admin/options.php:1269 admin/options.php:1311
+#: admin/options.php:1350 admin/options.php:1406 admin/options.php:1451
+#: admin/options.php:1493 admin/options.php:1535 admin/options.php:1584
+#: admin/options.php:1626
+msgid "800 extra-bold"
+msgstr ""
+
+#: admin/options.php:1211 admin/options.php:1269 admin/options.php:1311
+#: admin/options.php:1350 admin/options.php:1406 admin/options.php:1451
+#: admin/options.php:1493 admin/options.php:1535 admin/options.php:1584
+#: admin/options.php:1626
+msgid "900 black"
+msgstr ""
+
+#: admin/options.php:2164
+msgid "<br>Only use these options to troubleshoot issues."
+msgstr ""
+
+#: admin/options.php:2026
+msgid ""
+"<strong>Contained</strong> will scale depending on the viewed resolution<br>"
+"<strong>Cropped</strong> will try to keep the configured height."
+msgstr ""
+
+#: admin/options.php:1697
+msgid "Absolute"
+msgstr ""
+
+#: includes/setup.php:134
+msgid "Accent #1"
+msgstr ""
+
+#: includes/setup.php:139
+msgid "Accent #2"
+msgstr ""
+
+#: admin/options.php:1078
+msgid "Active Item"
+msgstr ""
+
+#: admin/options.php:1761
+msgid "Add Search to Footer Menu"
+msgstr ""
+
+#: admin/options.php:1755
+msgid "Add Search to Main Menu"
+msgstr ""
+
+#: admin/options.php:851 admin/options.php:852
+msgid "All Categories"
+msgstr ""
+
+#: admin/options.php:386
+msgid "All in a row"
+msgstr ""
+
+#: admin/options.php:512
+msgid "Always"
+msgstr ""
+
+#: admin/options.php:1705
+msgid "Always Hidden"
+msgstr ""
+
+#: admin/options.php:1705
+msgid "Always Visible"
+msgstr ""
+
+#: admin/options.php:1137
+msgid "Angle"
+msgstr ""
+
+#: admin/options.php:921 admin/options.php:2145
+msgid "Animated"
+msgstr ""
+
+#: admin/options.php:912
+msgid "Apart"
+msgstr ""
+
+#: 404.php:16
+msgid ""
+"Apologies, but the page you requested could not be found. Perhaps searching "
+"will help."
+msgstr ""
+
+#. $text_home
+#: includes/core.php:495
+#, php-format
+msgid "Archive for category \"%s\""
+msgstr ""
+
+#: admin/options.php:1744
+msgid "Article Animation on Scroll"
+msgstr ""
+
+#. $text_tag
+#: includes/core.php:498
+msgid "Articles posted by"
+msgstr ""
+
+#. 1: date, 2: time
+#: includes/comments.php:42
+msgid "at"
+msgstr ""
+
+#: includes/loop.php:111
+msgid "Author"
+msgstr ""
+
+#: admin/options.php:1998
+msgid "Auto Select Image From Content"
+msgstr ""
+
+#: admin/options.php:2111
+msgid "Autoscroll"
+msgstr ""
+
+#: includes/core.php:344
+msgid "Back to Top"
+msgstr ""
+
+#: admin/options.php:1711
+msgid "Back to Top Button"
+msgstr ""
+
+#: admin/options.php:1101 admin/options.php:1117
+#, php-format
+msgid "Background %s"
+msgstr ""
+
+#: admin/options.php:1111 admin/options.php:1127
+#, php-format
+msgid "Background %s Position"
+msgstr ""
+
+#: admin/options.php:617 admin/options.php:626
+msgid "Banner Image"
+msgstr ""
+
+#: admin/options.php:753 admin/options.php:772 admin/options.php:791
+#: admin/options.php:810
+#, php-format
+msgid "Block %d"
+msgstr ""
+
+#: admin/options.php:1168
+msgid "Blocks"
+msgstr ""
+
+#: admin/options.php:725
+msgid "Blocks Content"
+msgstr ""
+
+#: admin/options.php:264
+msgid "Blog Metas"
+msgstr ""
+
+#: admin/options.php:1478
+msgid "Blog Post metas"
+msgstr ""
+
+#: admin/options.php:1436
+msgid "Blog Post Titles"
+msgstr ""
+
+#: admin/options.php:1721
+msgid "Bordered"
+msgstr ""
+
+#: admin/options.php:1713
+msgid "Bottom of page"
+msgstr ""
+
+#: admin/options.php:919
+msgid "Box Appearance"
+msgstr ""
+
+#: admin/options.php:889
+msgid "Box Height"
+msgstr ""
+
+#: admin/options.php:901
+msgid "Box Layout"
+msgstr ""
+
+#: admin/options.php:910
+msgid "Box Stacking"
+msgstr ""
+
+#: admin/options.php:323 admin/options.php:454 admin/options.php:903
+msgid "Boxed"
+msgstr ""
+
+#: admin/options.php:1174
+msgid "Boxes"
+msgstr ""
+
+#: admin/options.php:850
+msgid "Boxes Content"
+msgstr ""
+
+#: admin/options.php:873
+msgid "Boxes Per Row"
+msgstr ""
+
+#. Name of the theme
+msgid "Bravada"
+msgstr ""
+
+#: admin/main.php:106
+msgid "Bravada Homepage"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Bravada looks amazing, behaves flawlessly and scales to any screen. It goes "
+"anywhere, it's for everyone and everything. It's clear, clean and simply "
+"gorgeous. It has CSS powered animations that will bring users to their knees."
+" Being designed as mobile-first, it's as responsive as you'll ever get. "
+"Being highly customizable, it comes with a plethora of options that will "
+"truly make it your own while still being extremely easy to use. Google fonts "
+"are supported, but you can also use your own fonts if GPPR is giving you "
+"trouble. You can dynamically change every aspect of your fonts for many site "
+"elements (size, line height, font styles, etc.) Colors are also editable and,"
+" if you want, you'll have a great time making your own color schemes. You "
+"have multiple layouts to choose from, the site, content and sidebar widths "
+"are also customizable, magazine layouts with masonry are enabled by default, "
+"but you can also edit those. Metas like author, date, tags, categories and "
+"comments are toggleable, you can decide which ones to show on blog pages and "
+"which ones to show on single pages. Widget areas galore, place your widgets "
+"almost anywhere you want, the theme doesn't discriminate. And then there's a "
+"fully customizable landing page with icon blocks, featured boxes, text areas "
+"and a slider (you can use our own or paste in a shortcut from any other "
+"slider). We also thought about socials and you can choose from a seemingly "
+"countless number of socials to populate your site with. Gutenberg blocks? "
+"They feel right at home in our theme! Of course it's also translation ready "
+"and Right To Left (RTL) languages are fully supported out of the box. "
+"WooCommerce feels right at home with our theme, we've taken all measures to "
+"seamlessly integrate it. Oh, and just like with our other themes, the "
+"updates will keep on coming, constantly improving and keeping it relevant "
+"for years to come. Bravada is a theme for all types of sites out there: "
+"blogs, businesses, presentation or photography sites, news or portfolio "
+"sites. There are no limits - there is only Bravada."
+msgstr ""
+
+#: admin/main.php:90
+msgid "Bravada settings have been reset successfully."
+msgstr ""
+
+#: admin/main.php:69
+msgid "Bravada Theme"
+msgstr ""
+
+#: admin/main.php:97
+#, php-format
+msgid "Bravada Theme v%1$s by %2$s"
+msgstr ""
+
+#: admin/options.php:1681
+msgid "Breadcrumbs"
+msgstr ""
+
+#: admin/options.php:1219 admin/options.php:1277 admin/options.php:1319
+#: admin/options.php:1358 admin/options.php:1414 admin/options.php:1459
+#: admin/options.php:1501 admin/options.php:1543 admin/options.php:1592
+#: admin/options.php:1634
+msgid "Capitalize"
+msgstr ""
+
+#: admin/options.php:656
+msgid "Caption"
+msgstr ""
+
+#: includes/loop.php:92
+msgid "Categories"
+msgstr ""
+
+#: admin/options.php:398 admin/options.php:462 admin/options.php:562
+#: admin/options.php:1665
+msgid "Center"
+msgstr ""
+
+#: admin/options.php:2033
+msgid "Center Bottom"
+msgstr ""
+
+#: admin/options.php:2033
+msgid "Center Center"
+msgstr ""
+
+#: admin/options.php:2033
+msgid "Center Top"
+msgstr ""
+
+#: admin/options.php:1968
+msgid "Change to labels for better compatibility with comment-related plugins."
+msgstr ""
+
+#: admin/options.php:535 admin/options.php:2017 admin/options.php:2042
+msgid "Changing this value may require to recreate your thumbnails."
+msgstr ""
+
+#: admin/options.php:1852
+msgid "Choose meta information to show on post lists."
+msgstr ""
+
+#: admin/options.php:1895
+msgid "Choose meta information to show on single posts."
+msgstr ""
+
+#: admin/options.php:1721
+msgid "Clean"
+msgstr ""
+
+#: admin/options.php:220
+msgid "Colors"
+msgstr ""
+
+#: admin/options.php:1957
+msgid "Comment Date Format"
+msgstr ""
+
+#: admin/options.php:1965
+msgid "Comment Field Label"
+msgstr ""
+
+#: admin/options.php:1983
+msgid "Comment Form Width"
+msgstr ""
+
+#: admin/options.php:267 includes/comments.php:95 includes/comments.php:115
+msgid "Comments"
+msgstr ""
+
+#: comments.php:50
+msgid "Comments are closed."
+msgstr ""
+
+#: includes/comments.php:95
+#, php-format
+msgid "Comments on \"%s\""
+msgstr ""
+
+#: admin/options.php:735
+msgid "Configure the 'Read More' link text."
+msgstr ""
+
+#: admin/options.php:417
+#, php-format
+msgid ""
+"Configure the image currently visible on the homepage from the theme's "
+"options under %s"
+msgstr ""
+
+#: admin/options.php:542 admin/options.php:2024
+msgid "Contained"
+msgstr ""
+
+#: admin/options.php:236 admin/options.php:258
+msgid "Content"
+msgstr ""
+
+#: admin/options.php:2891
+msgid "Content After"
+msgstr ""
+
+#: admin/options.php:1019 includes/setup.php:154
+msgid "Content Background"
+msgstr ""
+
+#: admin/options.php:2884
+msgid "Content Before"
+msgstr ""
+
+#: admin/options.php:248
+msgid "Content Fonts"
+msgstr ""
+
+#: admin/options.php:1013 includes/setup.php:144
+msgid "Content Headings"
+msgstr ""
+
+#: admin/options.php:254
+msgid "Content Images"
+msgstr ""
+
+#: admin/options.php:943
+msgid "Content Length (words)"
+msgstr ""
+
+#: admin/options.php:1007
+msgid "Content Titles"
+msgstr ""
+
+#: admin/options.php:1941
+msgid "Continue Reading Label"
+msgstr ""
+
+#: admin/options.php:542 admin/options.php:2024
+msgid "Cropped"
+msgstr ""
+
+#. Author of the theme
+msgid "Cryout Creations"
+msgstr ""
+
+#: admin/options.php:672 admin/options.php:688
+msgid "CTA Button"
+msgstr ""
+
+#: admin/options.php:1735
+msgid "Custom Footer Text"
+msgstr ""
+
+#: admin/main.php:121
+msgid "Customize"
+msgstr ""
+
+#: includes/loop.php:169
+msgid "Date"
+msgstr ""
+
+#: admin/options.php:253
+msgid "Decorations"
+msgstr ""
+
+#: admin/options.php:398 admin/options.php:1665
+msgid "Default"
+msgstr ""
+
+#: admin/options.php:2086
+msgid "Default Pages Menu"
+msgstr ""
+
+#: includes/meta.php:49
+msgid "Default Theme Layout"
+msgstr ""
+
+#: admin/options.php:1697 admin/options.php:2154 admin/options.php:2163
+msgid "Disable"
+msgstr ""
+
+#: admin/options.php:512 admin/options.php:588 admin/options.php:619
+#: admin/options.php:727 admin/options.php:763 admin/options.php:764
+#: admin/options.php:782 admin/options.php:783 admin/options.php:801
+#: admin/options.php:802 admin/options.php:820 admin/options.php:821
+#: admin/options.php:851 admin/options.php:852 admin/options.php:953
+#: admin/options.php:954 admin/options.php:961 admin/options.php:962
+#: admin/options.php:969 admin/options.php:970 admin/options.php:977
+#: admin/options.php:978 admin/options.php:1713 admin/options.php:1851
+msgid "Disabled"
+msgstr ""
+
+#: admin/options.php:572
+msgid "Disabled (use WordPress homepage)"
+msgstr ""
+
+#: admin/options.php:1814 admin/options.php:1859
+msgid "Display Author"
+msgstr ""
+
+#: admin/options.php:1851
+msgid "Display Before Content"
+msgstr ""
+
+#: admin/options.php:1849 admin/options.php:1894
+msgid "Display Byline"
+msgstr ""
+
+#: admin/options.php:1832 admin/options.php:1877
+msgid "Display Category"
+msgstr ""
+
+#: admin/options.php:1844
+msgid "Display Comments"
+msgstr ""
+
+#: admin/options.php:1820 admin/options.php:1865
+msgid "Display Date"
+msgstr ""
+
+#: admin/options.php:2065
+msgid "Display in Footer"
+msgstr ""
+
+#: admin/options.php:1851
+msgid "Display in Header"
+msgstr ""
+
+#: admin/options.php:2071
+msgid "Display in Left Sidebar"
+msgstr ""
+
+#: admin/options.php:2059
+msgid "Display in Main Menu"
+msgstr ""
+
+#: admin/options.php:2077
+msgid "Display in Right Sidebar"
+msgstr ""
+
+#: admin/options.php:1838 admin/options.php:1883
+msgid "Display Tags"
+msgstr ""
+
+#: admin/options.php:1826 admin/options.php:1871
+msgid "Display Time"
+msgstr ""
+
+#: includes/loop.php:209
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: admin/options.php:485
+#, php-format
+msgid "Edit the site's title, tagline and logo from the %s panel"
+msgstr ""
+
+#: admin/options.php:2135
+msgid "Editor Styles"
+msgstr ""
+
+#: includes/comments.php:151 includes/comments.php:152
+msgid "Email"
+msgstr ""
+
+#: admin/options.php:471
+msgid "Empty"
+msgstr ""
+
+#: admin/options.php:2154 admin/options.php:2163
+msgid "Enable"
+msgstr ""
+
+#: admin/options.php:2154
+msgid "Enable on mobiles"
+msgstr ""
+
+#: admin/options.php:572
+msgid "Enabled"
+msgstr ""
+
+#: admin/options.php:641
+msgid ""
+"Enter shortcode provided by slider plugin. The plugin will be responsible "
+"for the slider's appearance."
+msgstr ""
+
+#: admin/options.php:727 admin/options.php:1904 admin/options.php:1920
+msgid "Excerpt"
+msgstr ""
+
+#: admin/options.php:1929
+msgid "Excerpt Length (words)"
+msgstr ""
+
+#: admin/options.php:1935
+msgid "Excerpt Suffix"
+msgstr ""
+
+#: admin/options.php:266
+msgid "Excerpts"
+msgstr ""
+
+#: admin/options.php:1746
+msgid "Fade"
+msgstr ""
+
+#: includes/loop.php:235
+msgid "Featured"
+msgstr ""
+
+#: admin/options.php:241
+msgid "Featured Boxes"
+msgstr ""
+
+#: admin/options.php:242
+msgid "Featured Boxes 2"
+msgstr ""
+
+#: admin/options.php:244 admin/options.php:586 admin/options.php:1186
+msgid "Featured Content"
+msgstr ""
+
+#: admin/options.php:240
+msgid "Featured Icon Blocks"
+msgstr ""
+
+#: admin/options.php:263
+msgid "Featured Image"
+msgstr ""
+
+#: admin/options.php:2025
+msgid "Featured Image Behaviour"
+msgstr ""
+
+#: admin/options.php:2031
+msgid "Featured Image Crop Position"
+msgstr ""
+
+#: admin/options.php:2009
+msgid "Featured Image Height"
+msgstr ""
+
+#: admin/options.php:1991
+msgid "Featured Images"
+msgstr ""
+
+#: admin/main.php:136
+#, php-format
+msgid ""
+"Find out what features you're missing out on and how the Plus version of "
+"%1$s can improve your site."
+msgstr ""
+
+#: admin/options.php:408
+#, php-format
+msgid "Fine tune the visibility of these elements from the theme's %s"
+msgstr ""
+
+#: admin/options.php:2152
+msgid "FitVids"
+msgstr ""
+
+#: admin/options.php:429
+msgid "Fixed Menu"
+msgstr ""
+
+#: admin/options.php:1746
+msgid "Flip Down"
+msgstr ""
+
+#: admin/options.php:1746
+msgid "Flip Up"
+msgstr ""
+
+#: admin/options.php:260 admin/options.php:2876
+msgid "Footer"
+msgstr ""
+
+#: admin/options.php:1155
+msgid "Footer Background"
+msgstr ""
+
+#: includes/setup.php:59
+msgid "Footer Navigation"
+msgstr ""
+
+#: admin/options.php:1161
+msgid "Footer Text"
+msgstr ""
+
+#: admin/options.php:399
+msgid "Footer Widgets Alignment"
+msgstr ""
+
+#: admin/options.php:383
+msgid "Footer Widgets Columns"
+msgstr ""
+
+#: admin/options.php:2127
+msgid "Force mobile menu on iOS mobile devices"
+msgstr ""
+
+#: admin/options.php:250
+msgid "Formatting"
+msgstr ""
+
+#: admin/options.php:2163
+msgid "Front Page Only"
+msgstr ""
+
+#: admin/options.php:727
+msgid "Full Content"
+msgstr ""
+
+#: admin/options.php:1904 admin/options.php:1912 admin/options.php:1920
+msgid "Full Post"
+msgstr ""
+
+#: admin/options.php:903
+msgid "Full width"
+msgstr ""
+
+#: admin/options.php:510
+msgid "Fullscreen header image"
+msgstr ""
+
+#: admin/options.php:219
+msgid "General"
+msgstr ""
+
+#: admin/options.php:246 admin/options.php:1195
+msgid "General Font"
+msgstr ""
+
+#: admin/options.php:231
+msgid "General Layout"
+msgstr ""
+
+#: admin/options.php:1227 admin/options.php:1285 admin/options.php:1327
+#: admin/options.php:1366 admin/options.php:1422 admin/options.php:1467
+#: admin/options.php:1509 admin/options.php:1551 admin/options.php:1600
+#: admin/options.php:1642
+msgid "Google/Custom Font Override"
+msgstr ""
+
+#: admin/options.php:217 admin/options.php:259 admin/options.php:2898
+msgid "Header"
+msgstr ""
+
+#: admin/options.php:1054
+msgid "Header Background"
+msgstr ""
+
+#: admin/options.php:247
+msgid "Header Fonts"
+msgstr ""
+
+#: admin/options.php:618
+msgid "Header Image"
+msgstr ""
+
+#: admin/options.php:543
+msgid "Header Image Behaviour"
+msgstr ""
+
+#: admin/options.php:527
+msgid "Header Image Height"
+msgstr ""
+
+#: admin/options.php:2119
+msgid "Header image size requirements"
+msgstr ""
+
+#: includes/setup.php:57
+msgid "Header Navigation"
+msgstr ""
+
+#: admin/options.php:408
+msgid "Header options"
+msgstr ""
+
+#: admin/options.php:1060
+msgid "Header Text"
+msgstr ""
+
+#: admin/options.php:503
+msgid "Header title animation"
+msgstr ""
+
+#: admin/options.php:1520
+msgid "Header Titles"
+msgstr ""
+
+#: admin/options.php:560
+msgid "Header Widget Alignment"
+msgstr ""
+
+#: admin/options.php:553
+msgid "Header Widget Width"
+msgstr ""
+
+#: admin/options.php:1611
+msgid "Headings"
+msgstr ""
+
+#: admin/options.php:1951
+msgid "Hide everywhere"
+msgstr ""
+
+#: admin/options.php:1951
+msgid "Hide in pages"
+msgstr ""
+
+#: admin/options.php:1951
+msgid "Hide in posts"
+msgstr ""
+
+#: admin/options.php:1705
+msgid "Hide on Categories"
+msgstr ""
+
+#: admin/options.php:1705
+msgid "Hide on Pages"
+msgstr ""
+
+#. $layout_class
+#: includes/core.php:494
+msgid "Home"
+msgstr ""
+
+#: admin/options.php:512
+msgid "Homepage only"
+msgstr ""
+
+#: admin/options.php:597
+msgid "Homepage Settings"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://www.cryoutcreations.eu"
+msgstr ""
+
+#. URI of the theme
+msgid "http://www.cryoutcreations.eu/wordpress-themes/bravada"
+msgstr ""
+
+#: admin/options.php:1713
+msgid "In footer"
+msgstr ""
+
+#: admin/options.php:1912
+msgid "Inherit"
+msgstr ""
+
+#: admin/options.php:1736
+msgid ""
+"Insert custom text or basic HTML code that will appear in your footer. <br />"
+" You can use HTML to insert links, images and special characters."
+msgstr ""
+
+#: admin/options.php:912
+msgid "Joined"
+msgstr ""
+
+#: admin/options.php:2102
+msgid "JS Defer loading"
+msgstr ""
+
+#: includes/comments.php:114
+msgid "Jump to comments"
+msgstr ""
+
+#: admin/options.php:1665
+msgid "Justify"
+msgstr ""
+
+#: admin/options.php:1967
+msgid "Labels"
+msgstr ""
+
+#: admin/options.php:218 admin/options.php:261 admin/options.php:570
+msgid "Landing Page"
+msgstr ""
+
+#: admin/options.php:417
+msgid "Landing Page > Slider > Banner Image"
+msgstr ""
+
+#: admin/options.php:216
+msgid "Layout"
+msgstr ""
+
+#: admin/options.php:2143
+msgid "Lazy load images"
+msgstr ""
+
+#: includes/comments.php:97 includes/comments.php:117
+msgid "Leave a comment"
+msgstr ""
+
+#: admin/options.php:462 admin/options.php:562 admin/options.php:1665
+msgid "Left"
+msgstr ""
+
+#: admin/options.php:2033
+msgid "Left Bottom"
+msgstr ""
+
+#: admin/options.php:2033
+msgid "Left Center"
+msgstr ""
+
+#: sidebar-left.php:18 includes/setup.php:58
+msgid "Left Sidebar"
+msgstr ""
+
+#: admin/options.php:1025
+msgid "Left Sidebar Background"
+msgstr ""
+
+#: admin/options.php:336
+msgid "Left Sidebar Width"
+msgstr ""
+
+#: admin/options.php:2033
+msgid "Left Top"
+msgstr ""
+
+#: admin/options.php:1232 admin/options.php:1371 admin/options.php:1427
+#: admin/options.php:1556 admin/options.php:1647
+msgid "Line Height"
+msgstr ""
+
+#: admin/options.php:682 admin/options.php:698
+msgid "Link"
+msgstr ""
+
+#: admin/options.php:471
+msgid "Logo"
+msgstr ""
+
+#: admin/options.php:471
+msgid "Logo & Site Title"
+msgstr ""
+
+#: admin/options.php:1219 admin/options.php:1277 admin/options.php:1319
+#: admin/options.php:1358 admin/options.php:1414 admin/options.php:1459
+#: admin/options.php:1501 admin/options.php:1543 admin/options.php:1592
+#: admin/options.php:1634
+msgid "Lowercase"
+msgstr ""
+
+#: admin/options.php:289
+msgid "Main Layout"
+msgstr ""
+
+#: admin/options.php:1296
+msgid "Main Menu"
+msgstr ""
+
+#: header.php:64
+msgid "Main menu"
+msgstr ""
+
+#: admin/options.php:741
+msgid "Make icons clickable (linking to their respective pages)."
+msgstr ""
+
+#: admin/options.php:2094
+msgid "Masonry"
+msgstr ""
+
+#: admin/options.php:235
+msgid "Menu"
+msgstr ""
+
+#: admin/options.php:463
+msgid "Menu Alignment"
+msgstr ""
+
+#: admin/options.php:439
+msgid "Menu Height"
+msgstr ""
+
+#: admin/options.php:455
+msgid "Menu Layout"
+msgstr ""
+
+#: admin/options.php:447
+msgid "Menu Position"
+msgstr ""
+
+#: includes/setup.php:124
+msgid "Mirror lake"
+msgstr ""
+
+#: admin/options.php:269
+msgid "Miscellaneous"
+msgstr ""
+
+#: admin/options.php:603
+msgid "More Posts Label"
+msgstr ""
+
+#: includes/comments.php:147 includes/comments.php:148
+msgid "Name"
+msgstr ""
+
+#: includes/loop.php:306
+msgid "Newer posts"
+msgstr ""
+
+#: single.php:84
+msgid "Next"
+msgstr ""
+
+#: image.php:66
+msgid "Next image"
+msgstr ""
+
+#: admin/options.php:1721
+msgid "No border"
+msgstr ""
+
+#: admin/options.php:2033
+msgid "No Crop"
+msgstr ""
+
+#: content/content-notfound.php:12
+#, php-format
+msgid "No search results for: <em>%s</em>"
+msgstr ""
+
+#: admin/options.php:1773
+msgid "No Styling"
+msgstr ""
+
+#: admin/options.php:727
+msgid "No Text"
+msgstr ""
+
+#: admin/options.php:1219 admin/options.php:1277 admin/options.php:1319
+#: admin/options.php:1358 admin/options.php:1414 admin/options.php:1459
+#: admin/options.php:1501 admin/options.php:1543 admin/options.php:1592
+#: admin/options.php:1634 admin/options.php:1746
+msgid "None"
+msgstr ""
+
+#: admin/options.php:446
+msgid "Normal"
+msgstr ""
+
+#. $text_author
+#: 404.php:15 includes/core.php:245 includes/core.php:499
+msgid "Not Found"
+msgstr ""
+
+#: content/content-notfound.php:10
+msgid "Nothing Found"
+msgstr ""
+
+#: includes/comments.php:169 includes/comments.php:170
+msgctxt "noun"
+msgid "Comment"
+msgstr ""
+
+#: admin/options.php:866
+msgid "Number of Boxes"
+msgstr ""
+
+#: admin/options.php:1688
+msgid "Numbered Pagination"
+msgstr ""
+
+#: admin/options.php:493
+msgid "Offset position for the background rectangle"
+msgstr ""
+
+#: includes/loop.php:302
+msgid "Older posts"
+msgstr ""
+
+#: admin/options.php:355
+msgid "One column"
+msgstr ""
+
+#: admin/options.php:292
+msgid "One column (no sidebars)"
+msgstr ""
+
+#: comments.php:23 includes/comments.php:118
+msgid "One comment"
+msgstr ""
+
+#: admin/options.php:1148
+msgid "Opacity"
+msgstr ""
+
+#: admin/options.php:1967
+msgid "Optimized Labels"
+msgstr ""
+
+#: admin/options.php:232
+msgid "Other Layouts"
+msgstr ""
+
+#: admin/options.php:446
+msgid "Over header image"
+msgstr ""
+
+#: admin/options.php:1089
+msgid "Overlay"
+msgstr ""
+
+#. $text_format
+#: includes/core.php:501
+msgid "Page"
+msgstr ""
+
+#: admin/options.php:986
+msgid ""
+"Page properties that will be used:<br>- page title as text title<br>- page "
+"content as text content<br>- page featured image as text area background "
+"image"
+msgstr ""
+
+#: admin/options.php:1703
+msgid "Page/Category Titles"
+msgstr ""
+
+#: single.php:38 content/content-page.php:29 content/content.php:40
+msgid "Pages:"
+msgstr ""
+
+#: admin/options.php:1671
+msgid "Paragraph Indentation"
+msgstr ""
+
+#: includes/comments.php:24
+msgid "Pingback: "
+msgstr ""
+
+#: image.php:31
+msgid "pixels"
+msgstr ""
+
+#: admin/options.php:1967
+msgid "Placeholders"
+msgstr ""
+
+#: admin/options.php:1804
+msgid "Plain"
+msgstr ""
+
+#: admin/options.php:1802
+msgid "Post Captions"
+msgstr ""
+
+#. $text_404
+#: includes/core.php:500
+msgid "Post format"
+msgstr ""
+
+#: admin/options.php:1905
+msgid "Post formats always display full posts."
+msgstr ""
+
+#: admin/options.php:1770
+msgid "Post Images"
+msgstr ""
+
+#: admin/options.php:222
+msgid "Post Information"
+msgstr ""
+
+#: admin/options.php:372
+msgid "Post/page padding"
+msgstr ""
+
+#: admin/options.php:588
+msgid "Posts"
+msgstr ""
+
+#: admin/options.php:352
+msgid "Posts Layout"
+msgstr ""
+
+#. $text_search
+#: includes/core.php:497
+msgid "Posts tagged"
+msgstr ""
+
+#: includes/core.php:405
+msgid "Powered by"
+msgstr ""
+
+#: admin/options.php:2161
+msgid "Preloader"
+msgstr ""
+
+#: single.php:80
+msgid "Previous"
+msgstr ""
+
+#: image.php:65
+msgid "Previous image"
+msgstr ""
+
+#: admin/options.php:1041
+msgid "Primary Accent"
+msgstr ""
+
+#: includes/setup.php:56
+msgid "Primary/Side Navigation"
+msgstr ""
+
+#: image.php:38
+msgid "Published in"
+msgstr ""
+
+#: includes/loop.php:246
+msgid "Read more"
+msgstr ""
+
+#: admin/options.php:734 admin/options.php:933
+msgid "Read More Button"
+msgstr ""
+
+#: admin/options.php:1959
+msgid "Relative"
+msgstr ""
+
+#: includes/comments.php:73
+msgid "Reply"
+msgstr ""
+
+#: admin/main.php:61
+msgid "Reset Bravada Settings to Defaults?"
+msgstr ""
+
+#: admin/main.php:124
+msgid "Reset to Defaults"
+msgstr ""
+
+#: admin/options.php:462 admin/options.php:562 admin/options.php:1665
+msgid "Right"
+msgstr ""
+
+#: admin/options.php:2033
+msgid "Right Bottom"
+msgstr ""
+
+#: admin/options.php:2033
+msgid "Right Center"
+msgstr ""
+
+#: sidebar-right.php:18
+msgid "Right Sidebar"
+msgstr ""
+
+#: admin/options.php:1031
+msgid "Right Sidebar Background"
+msgstr ""
+
+#: admin/options.php:343
+msgid "Right Sidebar Width"
+msgstr ""
+
+#: admin/options.php:2033
+msgid "Right Top"
+msgstr ""
+
+#: includes/comments.php:160
+msgid ""
+"Save my name, email, and site URL in my browser for next time I post a "
+"comment."
+msgstr ""
+
+#: searchform.php:12 searchform.php:14
+msgid "Search"
+msgstr ""
+
+#: admin/options.php:255
+msgid "Search Box Locations"
+msgstr ""
+
+#: searchform.php:11
+msgid "Search for:"
+msgstr ""
+
+#. $text_archive
+#: includes/core.php:496
+#, php-format
+msgid "Search results for \"%s\""
+msgstr ""
+
+#: search.php:18 includes/core.php:242
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: admin/options.php:1047
+msgid "Secondary Accent"
+msgstr ""
+
+#: admin/options.php:713 admin/options.php:838
+msgid "Section Description"
+msgstr ""
+
+#: admin/options.php:706 admin/options.php:831
+msgid "Section Title"
+msgstr ""
+
+#: admin/options.php:650
+msgid ""
+"Select the desired slider from the list. Sliders can be administered in the "
+"dashboard."
+msgstr ""
+
+#: admin/options.php:597
+#, php-format
+msgid "Select the front (static) page in WordPress' %s"
+msgstr ""
+
+#: admin/options.php:2078
+#, php-format
+msgid ""
+"Select where social icons should be displayed.<br><br><strong>Social Icons "
+"are defined using the <a href=\"%1$s\" target=\"_blank\">socials menu</a>"
+"</strong>. Read the <a href=\"%2$s\" target=\"_blank\">theme "
+"documentation</a> for detailed information."
+msgstr ""
+
+#: includes/core.php:408
+msgid "Semantic Personal Publishing Platform"
+msgstr ""
+
+#: admin/options.php:615 admin/options.php:647
+msgid "Serious Slider"
+msgstr ""
+
+#: admin/options.php:2010
+msgid "Set to 0 to disable image processing"
+msgstr ""
+
+#: admin/options.php:238
+msgid "Settings"
+msgstr ""
+
+#: admin/options.php:640
+msgid "Shortcode"
+msgstr ""
+
+#: admin/options.php:1951
+msgid "Show"
+msgstr ""
+
+#: admin/options.php:1973
+msgid "Show Icons in Comment Fields"
+msgstr ""
+
+#: admin/options.php:477
+msgid "Show Tagline"
+msgstr ""
+
+#: admin/options.php:1072
+msgid "Side Menu Background"
+msgstr ""
+
+#: admin/options.php:1066
+msgid "Side Menu Text"
+msgstr ""
+
+#: admin/options.php:2906
+msgid "Side Section"
+msgstr ""
+
+#: admin/options.php:2862
+msgid "Sidebar Left"
+msgstr ""
+
+#: admin/options.php:2869
+msgid "Sidebar Right"
+msgstr ""
+
+#: admin/options.php:265
+msgid "Single Metas"
+msgstr ""
+
+#: admin/options.php:1569
+msgid "Single Post Metas"
+msgstr ""
+
+#: admin/options.php:1695
+msgid "Single Post Prev/Next Navigation"
+msgstr ""
+
+#: admin/options.php:995
+msgid "Site Background"
+msgstr ""
+
+#: admin/options.php:469
+msgid "Site Header Content"
+msgstr ""
+
+#: admin/options.php:215 admin/options.php:485
+msgid "Site Identity"
+msgstr ""
+
+#: admin/options.php:1001 includes/setup.php:149
+msgid "Site Text"
+msgstr ""
+
+#: admin/options.php:471 admin/options.php:1254
+msgid "Site Title"
+msgstr ""
+
+#: admin/options.php:329
+msgid "Site Width"
+msgstr ""
+
+#: admin/options.php:1729
+msgid "Size Emphasis"
+msgstr ""
+
+#: admin/options.php:1746
+msgid "Slide"
+msgstr ""
+
+#: admin/options.php:239 admin/options.php:612
+msgid "Slider"
+msgstr ""
+
+#: admin/options.php:633
+msgid "Slider Link"
+msgstr ""
+
+#: admin/options.php:256 includes/setup.php:60
+msgid "Social Icons"
+msgstr ""
+
+#: admin/main.php:78
+msgid "Sorry, but you do not have sufficient permissions to access this page."
+msgstr ""
+
+#: admin/options.php:1239 admin/options.php:1378 admin/options.php:1654
+msgid "Spacing"
+msgstr ""
+
+#: admin/options.php:1959
+msgid "Specific"
+msgstr ""
+
+#: admin/options.php:1918
+msgid "Standard Posts in Categories/Archives"
+msgstr ""
+
+#: admin/options.php:1902
+msgid "Standard Posts On Homepage"
+msgstr ""
+
+#: admin/options.php:921 admin/options.php:1697 admin/options.php:2145
+msgid "Static"
+msgstr ""
+
+#: admin/options.php:588
+msgid "Static Page"
+msgstr ""
+
+#: includes/meta.php:18
+msgid "Static Page Layout"
+msgstr ""
+
+#: admin/options.php:1910
+msgid "Sticky Posts on Homepage"
+msgstr ""
+
+#: admin/options.php:1721
+msgid "Striped"
+msgstr ""
+
+#: admin/options.php:252
+msgid "Structure"
+msgstr ""
+
+#: admin/options.php:1777 admin/options.php:1781 admin/options.php:1785
+#: admin/options.php:1789 admin/options.php:1793
+#, php-format
+msgid "Style %d"
+msgstr ""
+
+#: admin/options.php:1719
+msgid "Tables Style"
+msgstr ""
+
+#: includes/loop.php:197
+msgid "Tagged"
+msgstr ""
+
+#: admin/options.php:1727
+msgid "Tags Cloud Appearance"
+msgstr ""
+
+#: admin/options.php:666 admin/options.php:674 admin/options.php:690
+#: admin/options.php:1095
+msgid "Text"
+msgstr ""
+
+#: admin/options.php:1663
+msgid "Text Alignment"
+msgstr ""
+
+#: admin/options.php:952 admin/options.php:960 admin/options.php:968
+#: admin/options.php:976
+#, php-format
+msgid "Text Area %d"
+msgstr ""
+
+#: admin/options.php:243 admin/options.php:1180
+msgid "Text Areas"
+msgstr ""
+
+#: admin/options.php:627
+msgid "The default image can be replaced by setting a new banner image."
+msgstr ""
+
+#: admin/options.php:1247
+msgid ""
+"The fonts under the <em>Preferred Theme Fonts</em> list are recommended "
+"because they have all the font weights used throughout the theme."
+msgstr ""
+
+#: admin/options.php:890
+msgid ""
+"The width is a percentage dependent on total site width and number of "
+"columns per row."
+msgstr ""
+
+#: admin/options.php:321
+msgid "Theme alignment"
+msgstr ""
+
+#: admin/main.php:107
+msgid "Theme Support"
+msgstr ""
+
+#: admin/options.php:2899
+msgid ""
+"This widget area is displayed over the header image and requires an image to "
+"be set."
+msgstr ""
+
+#: admin/options.php:2907
+msgid "This widget area is included below the main/side menu."
+msgstr ""
+
+#: admin/options.php:363
+msgid "Three columns"
+msgstr ""
+
+#: admin/options.php:312
+msgid "Three columns, one sidebar on each side"
+msgstr ""
+
+#: admin/options.php:308
+msgid "Three columns, sidebars on the left"
+msgstr ""
+
+#: admin/options.php:304
+msgid "Three columns, sidebars on the right"
+msgstr ""
+
+#: admin/options.php:658
+msgid "Title"
+msgstr ""
+
+#: admin/options.php:492
+msgid "Title Accent Position"
+msgstr ""
+
+#: admin/options.php:580
+#, php-format
+msgid ""
+"To activate the Landing Page, make sure to set the WordPress <strong>Front "
+"Page displays</strong> option to %s"
+msgstr ""
+
+#: admin/options.php:621
+#, php-format
+msgid ""
+"To create an advanced slider, use our <a href='%s' target='_blank'>Serious "
+"Slider</a> plugin or any other slider plugin."
+msgstr ""
+
+#: sidebar-right.php:22 sidebar-left.php:22
+#, php-format
+msgid ""
+"To hide this sidebar, switch to a different Layout via the <a href=\"%s\">"
+"Theme Customizations</a>."
+msgstr ""
+
+#: header.php:73
+msgid "Top Menu"
+msgstr ""
+
+#: admin/options.php:359
+msgid "Two columns"
+msgstr ""
+
+#: admin/options.php:300
+msgid "Two columns, sidebar on the left"
+msgstr ""
+
+#: admin/options.php:296
+msgid "Two columns, sidebar on the right"
+msgstr ""
+
+#: admin/options.php:221
+msgid "Typography"
+msgstr ""
+
+#: admin/options.php:1729
+msgid "Uniform Boxes"
+msgstr ""
+
+#: admin/main.php:108 admin/main.php:134 admin/main.php:138
+msgid "Upgrade to Plus"
+msgstr ""
+
+#: admin/options.php:1219 admin/options.php:1277 admin/options.php:1319
+#: admin/options.php:1358 admin/options.php:1414 admin/options.php:1459
+#: admin/options.php:1501 admin/options.php:1543 admin/options.php:1592
+#: admin/options.php:1634
+msgid "Uppercase"
+msgstr ""
+
+#: admin/options.php:580
+msgid "use a static page"
+msgstr ""
+
+#: admin/options.php:2049
+msgid "Use Featured Images in Header"
+msgstr ""
+
+#: admin/options.php:616
+msgid "Use Shortcode"
+msgstr ""
+
+#: image.php:27
+msgctxt "Used before full size attachment link."
+msgid "Full size"
+msgstr ""
+
+#: content/user-bio.php:30
+msgid "View all posts by "
+msgstr ""
+
+#: includes/loop.php:115 includes/loop.php:140
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: includes/comments.php:155 includes/comments.php:156
+msgid "Website"
+msgstr ""
+
+#: admin/options.php:323 admin/options.php:454
+msgid "Wide"
+msgstr ""
+
+#: admin/options.php:1391
+msgid "Widget Content"
+msgstr ""
+
+#: admin/options.php:249
+msgid "Widget Fonts"
+msgstr ""
+
+#: admin/options.php:1335
+msgid "Widget Title"
+msgstr ""
+
+#: admin/options.php:1804
+msgid "With Background"
+msgstr ""
+
+#: admin/options.php:1804
+msgid "With Border"
+msgstr ""
+
+#: admin/options.php:2877
+msgid ""
+"You can configure how many columns the footer displays from the theme options"
+msgstr ""
+
+#: sidebar-right.php:21 sidebar-left.php:21
+#, php-format
+msgid ""
+"You currently have no widgets set in this sidebar. You can add widgets via "
+"the <a href=\"%s\">Dashboard</a>."
+msgstr ""
+
+#: includes/comments.php:57
+msgid "Your comment is awaiting moderation."
+msgstr ""

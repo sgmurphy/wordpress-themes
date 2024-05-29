@@ -1,0 +1,2970 @@
+# <!=Copyright (C) 2020 CyberChimps
+# This file is distributed under the GNU General Public License v3 or later.=!>
+msgid ""
+msgstr ""
+"Project-Id-Version: Responsive 4.2.2\n"
+"Report-Msgid-Bugs-To: https://cyberchimps.com/forum/free/responsive/\n"
+"POT-Creation-Date: 2020-03-27 09:33:45+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-03-27 15:52+0530\n"
+"Language-Team: CyberChimps Translate <support@cyberchimps.com>\n"
+"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"Last-Translator: \n"
+"Language: id_ID\n"
+
+#: admin/templates/free-vs-pro.php:50
+msgid "17"
+msgstr "17"
+
+#: admin/admin-functions.php:21
+#: admin/class-responsive-plugin-install-helper.php:157
+msgid "Activating "
+msgstr "Mengaktifkan"
+
+#: admin/admin-functions.php:22
+#, fuzzy
+msgid "Not connect. Verify Network."
+msgstr "Tidak terhubung. Verifikasi jaringan."
+
+#: admin/admin-functions.php:23
+#, fuzzy
+msgid "Requested page not found. [404]"
+msgstr "Halaman yang diminta tidak ditemukan. [404]"
+
+#: admin/admin-functions.php:24
+#, fuzzy
+msgid "Internal Server Error [500]"
+msgstr "Galat internal Server [500]"
+
+#: admin/admin-functions.php:25
+#, fuzzy
+msgid "Requested JSON parse failed"
+msgstr "Diminta parsing JSON gagal"
+
+#: admin/admin-functions.php:26
+#, fuzzy
+msgid "Time out error"
+msgstr "Galat waktu habis"
+
+#: admin/admin-functions.php:27
+#, fuzzy
+msgid "Ajax request aborted"
+msgstr "Permintaan Ajax dibatalkan"
+
+#: admin/admin-functions.php:28
+#, fuzzy
+msgid "Uncaught Error"
+msgstr "Kesalahan uncaught"
+
+#: admin/class-responsive-plugin-install-helper.php:93
+#, fuzzy
+msgid "Install and activate &raquo;"
+msgstr "Menginstal dan mengaktifkan &raquo;"
+
+#: admin/class-responsive-plugin-install-helper.php:97
+#: admin/class-responsive-plugin-install-helper.php:117
+msgid "Activate"
+msgstr "Aktifkan"
+
+#: admin/class-responsive-plugin-install-helper.php:112
+msgid "Deactivate"
+msgstr "Nonaktifkan"
+
+#: admin/class-responsive-plugin-install-helper.php:117
+#, fuzzy
+msgid "Jetpack Portfolio"
+msgstr "Portofolio Jetpack"
+
+#: admin/templates/free-vs-pro.php:15
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:389
+#: partials/custom-home/featured-area.php:131
+msgid "Features"
+msgstr "Fitur"
+
+#: admin/templates/free-vs-pro.php:16
+msgid "Free"
+msgstr "Gratis"
+
+#: admin/templates/free-vs-pro.php:17 admin/templates/free-vs-pro.php:50
+#: admin/templates/free-vs-pro.php:51
+#, fuzzy
+msgid "Pro"
+msgstr "PRO"
+
+#: admin/templates/free-vs-pro.php:23
+#, fuzzy
+msgid "Mobile Friendly"
+msgstr "Handphone ramah"
+
+#: admin/templates/free-vs-pro.php:24 admin/templates/free-vs-pro.php:56
+#, fuzzy
+msgid "Slider, portfolio, pricing tables, WooCommerce widgets etc"
+msgstr "Slider, portofolio, tabel harga, widget WooCommerce dll"
+
+#: admin/templates/free-vs-pro.php:31
+#, fuzzy
+msgid "Blazing Fast Speed"
+msgstr "Blazing cepat kecepatan"
+
+#: admin/templates/free-vs-pro.php:32
+#, fuzzy
+msgid "Optimized for speed, loads in under 2 seconds"
+msgstr "Dioptimalkan untuk kecepatan, beban di bawah 2 detik"
+
+#: admin/templates/free-vs-pro.php:39
+#, fuzzy
+msgid "Fully Customizable"
+msgstr "Sepenuhnya dapat disesuaikan"
+
+#: admin/templates/free-vs-pro.php:40
+#, fuzzy
+msgid "Using the customizer options for layout, fonts & colors"
+msgstr "Menggunakan pilihan penyesuai untuk tata letak, font & warna"
+
+#: admin/templates/free-vs-pro.php:42
+#, fuzzy
+msgid "Limited Options"
+msgstr "Pilihan terbatas"
+
+#: admin/templates/free-vs-pro.php:47
+#, fuzzy
+msgid "Ready-to-use Website Templates"
+msgstr "Template situs web siap pakai"
+
+#: admin/templates/free-vs-pro.php:48
+#, fuzzy
+msgid "Ready-to-use Elementor page builder and Gutenberg website templates"
+msgstr "Pembangun halaman Elementor siap pakai dan template website Gutenberg"
+
+#: admin/templates/free-vs-pro.php:51
+#, fuzzy
+msgid "30+"
+msgstr "lebih dari 30"
+
+#: admin/templates/free-vs-pro.php:55
+#, fuzzy
+msgid "Exclusive Widgets"
+msgstr "Widget eksklusif"
+
+#: admin/templates/free-vs-pro.php:63
+#, fuzzy
+msgid "Exclusive Content, Deals & Offers"
+msgstr "Konten eksklusif, Penawaran & penawaran"
+
+#: admin/templates/free-vs-pro.php:64
+#, fuzzy
+msgid "Get access to exclusive WordPress content, deals & offers"
+msgstr "Dapatkan akses ke konten WordPress eksklusif, Penawaran & menawarkan"
+
+#: admin/templates/free-vs-pro.php:71
+#, fuzzy
+msgid "Private Priority Email Support"
+msgstr "Dukungan email prioritas pribadi"
+
+#: admin/templates/free-vs-pro.php:72
+#, fuzzy
+msgid "Need help? Just raise a support ticket to get priority email support"
+msgstr ""
+"Butuh bantuan? Hanya menaikkan tiket dukungan untuk mendapatkan dukungan "
+"email prioritas"
+
+#. Theme Name of the plugin/theme
+msgid "Responsive"
+msgstr "Responsive"
+
+#: comments.php:27
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Tulisan ini dilindungi kata sandi. Masukkan password untuk melihat komentar."
+
+#. translators: 1: title.
+#: comments.php:42
+#, fuzzy
+msgid "One Comment on &ldquo;%1$s&rdquo;"
+msgstr "Satu Komentar pada \"%1$s\""
+
+#: comments.php:58 comments.php:71
+#, fuzzy
+msgid "&#8249; Older comments"
+msgstr "& #8249; komentar lama"
+
+#: comments.php:60 comments.php:73
+#, fuzzy
+msgid "Newer comments &#8250;"
+msgstr "Komentar yang lebih baru & #8250;"
+
+#: comments.php:85
+#, fuzzy
+msgid "Pings&#47;Trackbacks"
+msgstr "Ping & #47; Trackbacks"
+
+#. translators: 1 : Count, 2 : Pings 3 : Post title
+#: comments.php:102
+msgid "Name"
+msgstr "Nama"
+
+#: comments.php:104
+msgid "E-mail"
+msgstr "E-mail"
+
+#: comments.php:106
+msgid "Website"
+msgstr "Website"
+
+#: core/gutenberg/gutenberg-support.php:31
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:58
+msgid "Button Color"
+msgstr "Warna Tombol"
+
+#: core/gutenberg/gutenberg-support.php:36
+msgid "Button Hover Color"
+msgstr "Button Hover Color"
+
+#: core/gutenberg/gutenberg-support.php:41
+#, fuzzy
+msgid "Button Hover Text Color"
+msgstr "Tombol warna hover teks"
+
+#: core/gutenberg/gutenberg-support.php:46
+msgid "Button Text Color"
+msgstr "Warna Teks Tombol"
+
+#: core/gutenberg/gutenberg-support.php:53
+msgid "Text color"
+msgstr "Warna teks"
+
+#: core/gutenberg/gutenberg-support.php:60
+#, fuzzy
+msgid "Container Background Color"
+msgstr "Kontainer warna latar belakang"
+
+#: core/includes/classes/class-responsive-admin-settings.php:91
+#, fuzzy
+msgid "Responsive Options"
+msgstr "Pilihan responsif"
+
+#: core/includes/classes/class-responsive-admin-settings.php:194
+msgid "Get Started"
+msgstr "Mulai yuk!"
+
+#: core/includes/classes/class-responsive-admin-settings.php:196
+#, fuzzy
+msgid "Free Vs Pro "
+msgstr "Gratis vs Pro"
+
+#: core/includes/classes/class-responsive-admin-settings.php:231
+#, fuzzy
+msgid "Import a website template(FREE)"
+msgstr "Impor template situs web (gratis)"
+
+#: core/includes/classes/class-responsive-admin-settings.php:237
+#, fuzzy
+msgid ""
+"Install Responsive Add-ons to get ready-to-use website templates that can be "
+"imported with one click."
+msgstr ""
+"Instal add-on yang responsif untuk mendapatkan template situs web siap pakai "
+"yang dapat diimpor dengan sekali klik."
+
+#: core/includes/classes/class-responsive-admin-settings.php:242
+#, fuzzy
+msgid "Learn More &raquo;"
+msgstr "Pelajari lebih lanjut &raquo;"
+
+#: core/includes/classes/class-responsive-admin-settings.php:269
+msgid "Support"
+msgstr "Dukungan"
+
+#: core/includes/classes/class-responsive-admin-settings.php:273
+#, fuzzy
+msgid "Have questions? Get in touch with us. We'll be happy to help"
+msgstr ""
+"Ada pertanyaan? Dapatkan berhubungan dengan kami. Kami akan dengan senang "
+"hati membantu"
+
+#: core/includes/classes/class-responsive-admin-settings.php:277
+#, fuzzy
+msgid "Request Support &raquo;"
+msgstr "Meminta dukungan &raquo;"
+
+#. translators: %1$s: Responsive Support link.
+#: core/includes/classes/class-responsive-admin-settings.php:303
+#, fuzzy
+msgid "Change site layout"
+msgstr "Ubah tata letak situs"
+
+#: core/includes/classes/class-responsive-admin-settings.php:308
+#, fuzzy
+msgid "Customize fonts/typography"
+msgstr "Menyesuaikan font/tipografi"
+
+#: core/includes/classes/class-responsive-admin-settings.php:313
+#, fuzzy
+msgid "Upload logo & site icon"
+msgstr "Upload logo & situs ikon"
+
+#: core/includes/classes/class-responsive-admin-settings.php:318
+#, fuzzy
+msgid "Add/edit navigation menu"
+msgstr "Tambah/Edit menu navigasi"
+
+#: core/includes/classes/class-responsive-admin-settings.php:323
+#, fuzzy
+msgid "Customize header options"
+msgstr "Menyesuaikan opsi header"
+
+#: core/includes/classes/class-responsive-admin-settings.php:328
+#, fuzzy
+msgid "Customize footer options"
+msgstr "Menyesuaikan opsi footer"
+
+#: core/includes/classes/class-responsive-admin-settings.php:333
+#, fuzzy
+msgid "Update blog layout"
+msgstr "Perbarui tata letak blog"
+
+#: core/includes/classes/class-responsive-admin-settings.php:338
+#, fuzzy
+msgid "Update page layout"
+msgstr "Tata letak halaman pembaruan"
+
+#: core/includes/classes/class-responsive-admin-settings.php:346
+#, fuzzy
+msgid "Quick Start:"
+msgstr "Mulai cepat:"
+
+#: core/includes/classes/class-responsive-admin-settings.php:365
+msgid "Community"
+msgstr "Komunitas"
+
+#: core/includes/classes/class-responsive-admin-settings.php:369
+#, fuzzy
+msgid ""
+"Meet the Responsive Power-users. Say hello, ask questions, give feedback, "
+"and help each other"
+msgstr ""
+"Memenuhi responsif Power-pengguna. Menyapa, mengajukan pertanyaan, "
+"memberikan umpan balik, dan saling membantu"
+
+#: core/includes/classes/class-responsive-admin-settings.php:373
+#, fuzzy
+msgid "Join Facebook Group &raquo;"
+msgstr "Bergabung dengan grup Facebook &raquo;"
+
+#: core/includes/classes/class-responsive-admin-settings.php:387
+msgid "Feedback"
+msgstr "Umpan balik"
+
+#: core/includes/classes/class-responsive-admin-settings.php:391
+#, fuzzy
+msgid ""
+"Hi! Thanks for using the Responsive theme. Can you please do us a favor and "
+"give us a 5-star rating? Your feedback keeps us motivated and helps us grow "
+"the Responsive community."
+msgstr ""
+"Hai! Terima kasih untuk menggunakan tema responsif. Bisakah Anda tolong "
+"bantu kami dan memberi kami rating 5-bintang? Umpan balik Anda membuat kami "
+"termotivasi dan membantu kami menumbuhkan komunitas responsif."
+
+#: core/includes/classes/class-responsive-admin-settings.php:395
+#, fuzzy
+msgid "Submit Review &raquo;"
+msgstr "Kirim ulasan &raquo;"
+
+#: core/includes/classes/class-responsive-admin-settings.php:421
+#, fuzzy
+msgid "Blazing Fast, mobile-friendly, fully-customizable WordPress theme."
+msgstr "Blazing Fast, Mobile-ramah, sepenuhnya disesuaikan WordPress tema."
+
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:265
+msgid "Sale!"
+msgstr "Obral!"
+
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:354
+msgid "WooCommerce Sidebar"
+msgstr "WooCommerce Sidebar"
+
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:356
+msgid ""
+"This sidebar will be used on Product archive, Cart, Checkout and My Account "
+"pages."
+msgstr ""
+"Sidebar ini akan digunakan pada halaman Arsip produk, Keranjang, Checkout, "
+"dan Halaman Akun Saya."
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:39
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-content-header-colors-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-footer-colors-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:44
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:44
+msgid "Colors"
+msgstr "Warna"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:46
+#, fuzzy
+msgid "Cart Buttons"
+msgstr "Tombol troli"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:50
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:70
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:222
+msgid "Button"
+msgstr "Tombol"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:54
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:74
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:62
+msgid "Button Text"
+msgstr "Teks Tombol"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:58
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:78
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:66
+#, fuzzy
+msgid "Button Hover"
+msgstr "Button Hover Color"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:62
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:82
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:70
+#, fuzzy
+msgid "Button Hover Text"
+msgstr "Tombol hover teks"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:66
+#, fuzzy
+msgid "Checkout Button"
+msgstr "Tombol checkout"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:47
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:46
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:39
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:46
+msgid "Layouts"
+msgstr "Layout"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:54
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-checkout-customizer.php:46
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:50
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:50
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:49
+#: core/includes/customizer/settings/class-responsive-page-layout-customizer.php:50
+#: core/includes/customizer/settings/class-responsive-single-blog-layout-customizer.php:50
+#, fuzzy
+msgid "Main Content Width (%)"
+msgstr "Lebar konten utama (%)"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:57
+#, fuzzy
+msgid "Enable Cross-sells"
+msgstr "Aktifkan Cross-sells"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:71
+#, fuzzy
+msgid "Cart Icon Visibility"
+msgstr "Ikon keranjang visibilitas"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:76
+#, fuzzy
+msgid "Display On All Devices"
+msgstr "Tampilan pada semua perangkat"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:77
+#, fuzzy
+msgid "Disabled On All Devices"
+msgstr "Dinonaktifkan pada semua perangkat"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-panel.php:40
+#, fuzzy
+msgid "Product Catalog Options"
+msgstr "Pilihan Katalog Produk"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-panel.php:41
+#, fuzzy
+msgid "Shop Options"
+msgstr "Pilihan toko"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-panel.php:49
+msgid "Product Options"
+msgstr "Pengaturan Produk"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-panel.php:50
+#, fuzzy
+msgid "Single Product Options"
+msgstr "Pilihan produk tunggal"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-panel.php:58
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-panel.php:59
+#, fuzzy
+msgid "Cart Options"
+msgstr "Keranjang pilihan"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:46
+#, fuzzy
+msgid "Rating Color"
+msgstr "Rating warna"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:50
+msgid "Price Color"
+msgstr "Warna Harga"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:54
+#, fuzzy
+msgid "Add To Cart Buttons"
+msgstr "Tombol Tambahkan ke keranjang"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:43
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:115
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:44
+#: core/includes/customizer/settings/class-responsive-page-layout-customizer.php:43
+#: core/includes/customizer/settings/class-responsive-single-blog-layout-customizer.php:43
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:44
+#: core/includes/post-custom-meta.php:163
+msgid "Layout"
+msgstr "Layout"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:54
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:54
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:60
+#: core/includes/customizer/settings/class-responsive-page-layout-customizer.php:54
+#: core/includes/customizer/settings/class-responsive-single-blog-layout-customizer.php:54
+msgid "Sidebar Position"
+msgstr "Posisi Sidebar"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:56
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:56
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:62
+#: core/includes/customizer/settings/class-responsive-page-layout-customizer.php:56
+#: core/includes/customizer/settings/class-responsive-single-blog-layout-customizer.php:56
+msgid "Right Sidebar"
+msgstr "Right Sidebar"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:57
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:57
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:63
+#: core/includes/customizer/settings/class-responsive-page-layout-customizer.php:57
+#: core/includes/customizer/settings/class-responsive-single-blog-layout-customizer.php:57
+msgid "Left Sidebar"
+msgstr "Sidebar Kiri"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:58
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:58
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:64
+#: core/includes/customizer/settings/class-responsive-page-layout-customizer.php:58
+#: core/includes/customizer/settings/class-responsive-single-blog-layout-customizer.php:58
+msgid "No Sidebar"
+msgstr "Tidak Ada Bilah Samping"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:63
+#, fuzzy
+msgid "Shop Product"
+msgstr "Toko Produk"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:67
+#, fuzzy
+msgid "Catalog View"
+msgstr "Lihat Katalog"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:69
+msgid "Grid View"
+msgstr "Grid View"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:70
+msgid "List View"
+msgstr "Tampilan Daftar"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:75
+#, fuzzy
+msgid "Content Aligmnment"
+msgstr "Konten Aligmnment"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:77
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:75
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:91
+msgid "Center"
+msgstr "Tengah"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:78
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:194
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:198
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:202
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:97
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:112
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:181
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:204
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:76
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:92
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:156
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:74
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:96
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:111
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:126
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:97
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:112
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:181
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:196
+msgid "Left"
+msgstr "Kiri"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:79
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:192
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:196
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:200
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:98
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:113
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:182
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:205
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:77
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:93
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:157
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:75
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:97
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:112
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:127
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:98
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:113
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:182
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:197
+msgid "Right"
+msgstr "Kanan"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:98
+#, fuzzy
+msgid "Shop Elements"
+msgstr "Elemen Toko"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:107
+#, fuzzy
+msgid "Sale Notification"
+msgstr "Pemberitahuan penjualan"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:109
+msgid "None"
+msgstr "Nihil"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:110
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:64
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:90
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:88
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:89
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:372
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:404
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:410
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:484
+#: core/includes/post-custom-meta.php:136
+msgid "Default"
+msgstr "Default"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:111
+#, fuzzy
+msgid "Custom String"
+msgstr "Kustom string"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:116
+#, fuzzy
+msgid "Sale % Value"
+msgstr "Penjualan% nilai"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:120
+#, fuzzy
+msgid "Sale Bubble Style"
+msgstr "Dijual Bubble Style"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:122
+msgid "Circle"
+msgstr "Lingkaran"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:123
+#, fuzzy
+msgid "Circle Outline"
+msgstr "Garis besar lingkaran"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:124
+msgid "Square"
+msgstr "Persegi"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:125
+#, fuzzy
+msgid "Square Outline"
+msgstr "Garis besar persegi"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:63
+#, fuzzy
+msgid "Product Elements"
+msgstr "Elemen produk"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:67
+msgid "Gallery Layout"
+msgstr "Tata letak Galeri"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:69
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:118
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:84
+msgid "Vertical"
+msgstr "Vertikal"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:70
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:117
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:83
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:88
+#, fuzzy
+msgid "Single Product Structure"
+msgstr "Struktur produk tunggal"
+
+#: core/includes/compatibility/woocommerce/woocommerce-helper.php:150
+msgid "Cart"
+msgstr "Keranjang"
+
+#: core/includes/compatibility/woocommerce/woocommerce-helper.php:155
+#, fuzzy
+msgid " / "
+msgstr "/"
+
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:66
+#, fuzzy
+msgid "Link values together"
+msgstr "Nilai link bersama-sama"
+
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:191
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:195
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:199
+#: footer.php:90
+msgid "Top"
+msgstr "Atas"
+
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:193
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:197
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:201
+msgid "Bottom"
+msgstr "Bawah"
+
+#: core/includes/customizer/controls/text/class-responsive-customizer-text-control.php:122
+#: core/includes/customizer/controls/text/class-responsive-customizer-text-control.php:127
+#: core/includes/customizer/controls/text/class-responsive-customizer-text-control.php:133
+#, fuzzy
+msgid "px - em - rem"
+msgstr "px-em-rem"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:62
+msgid "Inherit"
+msgstr "Mewarisi"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:65
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:411
+#, fuzzy
+msgid "Thin: 100"
+msgstr "Tipis: 100"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:66
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:412
+#, fuzzy
+msgid "Light: 200"
+msgstr "Cahaya: 200"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:67
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:413
+#, fuzzy
+msgid "Book: 300"
+msgstr "Buku: 300"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:68
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:414
+#, fuzzy
+msgid "Normal: 400"
+msgstr "Normal: 400"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:69
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:415
+#, fuzzy
+msgid "Medium: 500"
+msgstr "Medium: 500"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:70
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:416
+#, fuzzy
+msgid "Semibold: 600"
+msgstr "Semibold: 600"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:71
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:417
+#, fuzzy
+msgid "Bold: 700"
+msgstr "Tebal: 700"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:72
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:418
+#, fuzzy
+msgid "Extra Bold: 800"
+msgstr "Tebal tambahan: 800"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:73
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:419
+#, fuzzy
+msgid "Black: 900"
+msgstr "Hitam: 900"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:212
+#, fuzzy
+msgid "Arial, Helvetica, sans-serif"
+msgstr "Arial, Helvetica, sans-serif"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:219
+msgid "Custom Fonts"
+msgstr "Custom Font"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:236
+msgid "Standard Fonts"
+msgstr "Huruf Standar"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:250
+msgid "Google Fonts"
+msgstr "Google Fonts"
+
+#: core/includes/customizer/controls/upsell/class-responsive-control-upsell.php:72
+#: core/includes/customizer/controls/upsell/class-responsive-section-upsell.php:88
+msgid "PRO"
+msgstr "PRO"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:44
+#, fuzzy
+msgid "View PRO Features"
+msgstr "Lihat fitur PRO"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:60
+#, fuzzy
+msgid "Pro Ready Sites"
+msgstr "Pro siap situs"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:61
+msgid "Form Builder"
+msgstr "Form Builder"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:62
+#, fuzzy
+msgid "Interactive Sliders and Carousels"
+msgstr "Slider interaktif dan komidi putar"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:63
+msgid "Pricing Tables"
+msgstr "Pricing Tables"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:64
+#, fuzzy
+msgid "Portfolio and Post Layouts"
+msgstr "Portofolio dan layout Post"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:65
+#, fuzzy
+msgid "Private, Priority Support"
+msgstr "Swasta, dukungan prioritas"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:68
+#, fuzzy
+msgid "Get the PRO version!"
+msgstr "Dapatkan versi PRO!"
+
+#: core/includes/customizer/customizer.php:29
+#, fuzzy
+msgid "CSS Styles"
+msgstr "Gaya CSS"
+
+#: core/includes/customizer/customizer.php:43
+#, fuzzy
+msgid "Custom CSS Styles"
+msgstr "Gaya CSS kustom"
+
+#: core/includes/customizer/customizer.php:64
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:231
+msgid "Gradient"
+msgstr "Gradien"
+
+#: core/includes/customizer/customizer.php:65
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:232
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:73
+msgid "Flat"
+msgstr "Flat"
+
+#: core/includes/customizer/customizer.php:98
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:63
+#, fuzzy
+msgid "Choose Post"
+msgstr "Pilih posting"
+
+#: core/includes/customizer/helper.php:35
+#: core/includes/customizer/helper.php:118
+#: core/includes/customizer/helper.php:224
+#: core/includes/customizer/helper.php:247
+#: core/includes/customizer/helper.php:274
+#: core/includes/customizer/settings/class-responsive-content-header-typography-customizer.php:48
+msgid "Title"
+msgstr "Judul"
+
+#: core/includes/customizer/helper.php:36
+#: core/includes/customizer/helper.php:119
+#: core/includes/customizer/helper.php:225
+msgid "Featured Image"
+msgstr "Gambar Unggulan"
+
+#: core/includes/customizer/helper.php:37
+#: core/includes/customizer/helper.php:120
+#: core/includes/customizer/helper.php:252
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:79
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:139
+msgid "Meta"
+msgstr "Meta"
+
+#: core/includes/customizer/helper.php:38
+#: core/includes/customizer/helper.php:121
+#: core/includes/customizer/helper.php:226
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:43
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:196
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:43
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:43
+msgid "Content"
+msgstr "Konten"
+
+#: core/includes/customizer/helper.php:173
+#, fuzzy
+msgid "Site Branding"
+msgstr "Situs branding"
+
+#: core/includes/customizer/helper.php:174 functions.php:472
+#: partials/header/main-navigation.php:15
+msgid "Main Navigation"
+msgstr "Navigasi"
+
+#: core/includes/customizer/helper.php:248
+msgid "Rating"
+msgstr "Penilaian"
+
+#: core/includes/customizer/helper.php:249
+#: core/includes/customizer/helper.php:276
+msgid "Price"
+msgstr "Harga"
+
+#: core/includes/customizer/helper.php:250
+#: core/includes/customizer/helper.php:278
+msgid "Short Description"
+msgstr "Deskripsi Singkat"
+
+#: core/includes/customizer/helper.php:251
+#: core/includes/customizer/helper.php:279
+msgid "Add to Cart"
+msgstr "Tambahkan ke Troli"
+
+#: core/includes/customizer/helper.php:275
+msgid "Category"
+msgstr "Kategori"
+
+#: core/includes/customizer/helper.php:277
+msgid "Ratings"
+msgstr "Penilaian"
+
+#: core/includes/customizer/helper.php:766
+#, fuzzy
+msgid "Read more &raquo;"
+msgstr "Baca Selengkapnya &raquo;"
+
+#: core/includes/customizer/helper.php:806
+#: core/includes/customizer/helper.php:827 partials/entry/content.php:17
+msgid "Read More &raquo;"
+msgstr "Baca Selengkapnya &raquo;"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:52
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:72
+#, fuzzy
+msgid "Entry Elements"
+msgstr "Elemen masuk"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:84
+#, fuzzy
+msgid "Entry Featured Image"
+msgstr "Entry Featured gambar"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:88
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:63
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:86
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:87
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:69
+msgid "Style"
+msgstr "Style"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:91
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:89
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:90
+#, fuzzy
+msgid "Stretched"
+msgstr "Membentang"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:95
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:110
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:73
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:94
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:109
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:95
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:110
+msgid "Alignment"
+msgstr "Alignment"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:99
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:114
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:183
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:206
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:158
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:98
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:113
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:128
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:99
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:114
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:183
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:198
+msgid "center"
+msgstr "tengah"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:106
+#, fuzzy
+msgid "Entry Title"
+msgstr "Judul entri"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:121
+#, fuzzy
+msgid "Entry Meta"
+msgstr "Entri meta"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:141
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:141
+#, fuzzy
+msgid "Meta Elements"
+msgstr "Meta Elements"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:148
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:148
+msgid "Author"
+msgstr "Penulis"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:149
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:149
+msgid "Date"
+msgstr "Tanggal"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:150
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:150
+msgid "Categories"
+msgstr "Kategori"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:151
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:151
+msgid "Comments"
+msgstr "Komentar"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:170
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:170
+#, fuzzy
+msgid "Meta Separator"
+msgstr "Pemisah meta"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:179
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:179
+#, fuzzy
+msgid "Meta Alignment"
+msgstr "Meta Alignment"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:190
+#, fuzzy
+msgid "Entry Content"
+msgstr "Konten entri"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:194
+msgid "Content Type"
+msgstr "Tipe Konten"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:197
+msgid "Excerpt"
+msgstr "Kutipan"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:202
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:124
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:194
+#, fuzzy
+msgid "Content Alignment"
+msgstr "Keselarasan konten"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:211
+msgid "Excerpt Length"
+msgstr "Panjang Kutipan"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:215
+msgid "Read More Text"
+msgstr "Baca Lebih Banyak Teks"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:219
+#, fuzzy
+msgid "Read More Type"
+msgstr "Baca lebih banyak jenis"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:221
+msgid "Link"
+msgstr "Tautan"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-header-customizer.php:43
+#: core/includes/customizer/settings/class-responsive-panel.php:85
+#: core/includes/customizer/settings/class-responsive-panel.php:86
+#, fuzzy
+msgid "Content Header"
+msgstr "Header konten"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-header-customizer.php:59
+#, fuzzy
+msgid "Enable Blog Page Title"
+msgstr "Aktifkan halaman blog judul"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-header-customizer.php:78
+#, fuzzy
+msgid "Blog Page Title"
+msgstr "Judul halaman blog"
+
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:52
+#, fuzzy
+msgid "Entry Columns"
+msgstr "Kolom entri"
+
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:56
+#, fuzzy
+msgid "Enable Masonry Layout"
+msgstr "Aktifkan tata letak Masonry"
+
+#: core/includes/customizer/settings/class-responsive-content-header-colors-customizer.php:46
+msgid "Title Color"
+msgstr "Warna Judul"
+
+#: core/includes/customizer/settings/class-responsive-content-header-colors-customizer.php:50
+msgid "Description Color"
+msgstr "Warna Deskripsi"
+
+#: core/includes/customizer/settings/class-responsive-content-header-colors-customizer.php:54
+#, fuzzy
+msgid "Breadcrumb Color"
+msgstr "Breadcrumb warna"
+
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:56
+#, fuzzy
+msgid "Disable breadcrumb list?"
+msgstr "Nonaktifkan daftar breadcrumb?"
+
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:65
+msgid "Breadcrumb Position"
+msgstr "Posisi Breadcrumb"
+
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:67
+#, fuzzy
+msgid "Before Heading"
+msgstr "Sebelum menuju"
+
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:68
+#, fuzzy
+msgid "After Heading"
+msgstr "Setelah menuju"
+
+#: core/includes/customizer/settings/class-responsive-content-header-typography-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-header-typography-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:44
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:197
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:209
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:219
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:230
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:241
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:252
+msgid "Typography"
+msgstr "Typography"
+
+#: core/includes/customizer/settings/class-responsive-content-header-typography-customizer.php:53
+msgid "Description"
+msgstr "Deskripsi"
+
+#: core/includes/customizer/settings/class-responsive-content-header-typography-customizer.php:59
+msgid "Breadcrumb"
+msgstr "Breadcrumb"
+
+#: core/includes/customizer/settings/class-responsive-customizer-notices.php:79
+msgid "Documentation"
+msgstr "Dokumentasi"
+
+#. translators: %1$s is Plugin Name
+#: core/includes/customizer/settings/class-responsive-customizer-notices.php:113
+#, fuzzy
+msgid "To have access to a shop section please install and configure %1$s."
+msgstr ""
+"Untuk memiliki akses ke bagian toko silahkan install dan mengkonfigurasi "
+"%1$s."
+
+#: core/includes/customizer/settings/class-responsive-customizer-notices.php:114
+#, fuzzy
+msgid "WooCommerce plugin"
+msgstr "Plugin WooCommerce"
+
+#: core/includes/customizer/settings/class-responsive-customizer-notices.php:158
+#, fuzzy
+msgid "Recommended Plugins"
+msgstr "Direkomendasikan plugin"
+
+#. translators: Orbit Fox Companion
+#: core/includes/customizer/settings/class-responsive-customizer-notices.php:163
+#, fuzzy
+msgid ""
+"Get access to even more powerful features that will help you build a "
+"beautiful fast and responsive website in no time at all."
+msgstr ""
+"Dapatkan akses ke fitur yang lebih canggih yang akan membantu Anda membangun "
+"situs web yang cepat dan responsif yang indah dalam waktu singkat."
+
+#: core/includes/customizer/settings/class-responsive-footer-colors-customizer.php:46
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:46
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:72
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:51
+msgid "Background Color"
+msgstr "Warna Latar"
+
+#: core/includes/customizer/settings/class-responsive-footer-colors-customizer.php:50
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:68
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:131
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:155
+msgid "Text Color"
+msgstr "Warna Teks"
+
+#: core/includes/customizer/settings/class-responsive-footer-colors-customizer.php:54
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:80
+msgid "Links Color"
+msgstr "Warna Tautan"
+
+#: core/includes/customizer/settings/class-responsive-footer-colors-customizer.php:58
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:84
+msgid "Links Hover Color"
+msgstr "Warna Hover Tautan"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:47
+#, fuzzy
+msgid "Full Width Footer"
+msgstr "Lebar penuh footer"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:53
+msgid "Footer Widgets"
+msgstr "Widget Footer"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:57
+msgid "Number of Columns"
+msgstr "Jumlah Kolom"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:66
+msgid "Footer Bar"
+msgstr "Footer Bar"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:87
+#, fuzzy
+msgid "Copyright text"
+msgstr "Teks hak cipta"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:106
+#, fuzzy
+msgid "Hide Powered By Responsive Theme"
+msgstr "Sembunyikan didukung oleh tema responsif"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:128
+msgid "Social Links"
+msgstr "Tautan Sosial"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:144
+#: core/includes/functions-extensions.php:357
+msgid "Twitter"
+msgstr "Twitter"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:165
+#: core/includes/functions-extensions.php:358
+msgid "Facebook"
+msgstr "Facebook"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:186
+#: core/includes/functions-extensions.php:359
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:207
+#: core/includes/functions-extensions.php:360
+msgid "YouTube"
+msgstr "YouTube"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:228
+#: core/includes/functions-extensions.php:362
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:249
+#: core/includes/functions-extensions.php:363
+msgid "Instagram"
+msgstr "Instagram"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:270
+#: core/includes/functions-extensions.php:364
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:291
+#: core/includes/functions-extensions.php:361
+#, fuzzy
+msgid "StumbleUpon"
+msgstr "Stumbleupon"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:312
+#: core/includes/functions-extensions.php:366
+msgid "Vimeo"
+msgstr "Vimeo"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:333
+#, fuzzy
+msgid "Yelp"
+msgstr "Yelp"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:354
+#, fuzzy
+msgid "Foursquare"
+msgstr "Kokoh"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:373
+msgid "Email Address"
+msgstr "Alamat Email"
+
+#: core/includes/customizer/settings/class-responsive-footer-scripts-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-header-scripts-customizer.php:39
+msgid "Scripts"
+msgstr "Skrip"
+
+#: core/includes/customizer/settings/class-responsive-footer-scripts-customizer.php:57
+#, fuzzy
+msgid "Embeds to footer.php"
+msgstr "Komprehensif untuk footer. php"
+
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:49
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:76
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:55
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:139
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:159
+msgid "Border Color"
+msgstr "Warna Batas"
+
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:52
+msgid "Site Title Color"
+msgstr "Warna Judul Situs"
+
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:55
+msgid "Site Title Hover Color"
+msgstr "Warna Judul Situs Hover"
+
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:58
+msgid "Site Tagline Color"
+msgstr "Warna Tagline Situs"
+
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:64
+#, fuzzy
+msgid "Header Widget"
+msgstr "Widget header"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:47
+#, fuzzy
+msgid "Full Width Header"
+msgstr "Header lebar penuh"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:51
+#, fuzzy
+msgid "Inline logo & Site Title"
+msgstr "Inline logo & judul situs"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:71
+#, fuzzy
+msgid "Header Elements"
+msgstr "Elemen header"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:81
+msgid "Header Layout"
+msgstr "Layout Header"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:89
+#, fuzzy
+msgid "Header Alignment"
+msgstr "Keselarasan header"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:98
+#, fuzzy
+msgid "Logo Padding (px)"
+msgstr "Logo padding (px)"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:104
+msgid "Transparent Header"
+msgstr "Header Transparan"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:108
+msgid "Enable on Complete Website"
+msgstr "Aktifkan di Situs Web Lengkap"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:112
+#, fuzzy
+msgid "Site Content Padding (px)"
+msgstr "Konten situs padding (px)"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:115
+msgid "Disable on 404, Search & Archives?"
+msgstr "Nonaktifkan pada 404, Cari & Arsip?"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:118
+msgid "Disable on Blog page?"
+msgstr "Nonaktifkan di halaman Blog?"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:121
+msgid "Disable on Latest Posts Page?"
+msgstr "Nonaktifkan pada Halaman Posting Terbaru?"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:124
+msgid "Disable on Pages?"
+msgstr "Nonaktifkan pada Halaman?"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:127
+msgid "Disable on Posts?"
+msgstr "Nonaktifkan pada Posting?"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:130
+msgid "Disable on WooCommerce Product Pages?"
+msgstr "Nonaktifkan pada Halaman Produk WooCommerce?"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:136
+#: core/includes/functions-sidebar.php:100
+#, fuzzy
+msgid "Header Widgets"
+msgstr "Widget header"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:140
+#, fuzzy
+msgid "Enable Header Widgets"
+msgstr "Aktifkan widget header"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:144
+#, fuzzy
+msgid "Widgets Position"
+msgstr "Widget posisi"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:146
+msgid "Above Header"
+msgstr "Diatas Header"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:147
+#, fuzzy
+msgid "In Header"
+msgstr "Header"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:148
+msgid "Below Header"
+msgstr "Dibawah Header"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:153
+#, fuzzy
+msgid "Widgets Alignment"
+msgstr "Widget penyelarasan"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:155
+msgid "Spread"
+msgstr "Spread"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:159
+#, fuzzy
+msgid "Space Around"
+msgstr "Ruang sekitar"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:59
+#, fuzzy
+msgid "Active Menu Background Color"
+msgstr "Warna latar belakang menu aktif"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:63
+#, fuzzy
+msgid "Menu Item Link Color"
+msgstr "Item menu link warna"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:67
+#, fuzzy
+msgid "Menu Item Link Hover Color"
+msgstr "Item menu link hover warna"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:71
+#, fuzzy
+msgid "Sub Menu Background Color"
+msgstr "Warna latar belakang sub menu"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:75
+#, fuzzy
+msgid "Sub Menu Item Link Color"
+msgstr "Sub Menu item link warna"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:79
+#, fuzzy
+msgid "Sub Menu Item Link Hover Color"
+msgstr "Sub Menu item link hover warna"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:83
+#, fuzzy
+msgid "Menu Toggle Background Color"
+msgstr "Menu Toggle warna latar belakang"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:87
+#, fuzzy
+msgid "Menu Toggle Color"
+msgstr "Menu Toggle Color"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:51
+#, fuzzy
+msgid "Full Width Main Navigation"
+msgstr "Navigasi utama lebar penuh"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:55
+#, fuzzy
+msgid "Enable Mobile Menu"
+msgstr "Mengaktifkan menu seluler"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:59
+#, fuzzy
+msgid "Breakpoint"
+msgstr "Breakpoint"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:65
+msgid "Dropdown"
+msgstr "Dropdown"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:66
+#, fuzzy
+msgid "FullScreen"
+msgstr "Fullscreen"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:67
+#: core/includes/customizer/settings/class-responsive-panel.php:67
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:72
+#, fuzzy
+msgid "Sidebar Menu Alignment"
+msgstr "Bilah sisi keselarasan menu"
+
+#: core/includes/customizer/settings/class-responsive-header-scripts-customizer.php:54
+#, fuzzy
+msgid "Embeds to header.php"
+msgstr "Komprehensif untuk header. php"
+
+#: core/includes/customizer/settings/class-responsive-header-typography-customizer.php:48
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:173
+msgid "Site Title"
+msgstr "Judul Situs"
+
+#: core/includes/customizer/settings/class-responsive-header-typography-customizer.php:54
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:185
+msgid "Site Tagline"
+msgstr "Tagline Situs"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:50
+#: core/includes/customizer/settings/class-responsive-theme-options-customizer.php:47
+msgid "Choose Category"
+msgstr "Pilih Kategori"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:69
+#, fuzzy
+msgid "Custom Home Page"
+msgstr "Halaman rumah kustom"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:83
+#, fuzzy
+msgid "Enable Custom Front Page"
+msgstr "Aktifkan halaman depan kustom"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:88
+#, fuzzy
+msgid "Overrides the WordPress front page option"
+msgstr "Menimpa halaman depan WordPress pilihan"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:93
+#, fuzzy
+msgid "Hero Area"
+msgstr "Area Hero"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:101
+#: core/includes/functions.php:58 functions.php:527
+#, fuzzy
+msgid "HAPPINESS"
+msgstr "Kebahagiaan"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:108
+msgid "Headline"
+msgstr "Berita Utama"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:120
+#: core/includes/functions.php:59 functions.php:530
+#, fuzzy
+msgid "IS A WARM CUP"
+msgstr "ADALAH PIALA HANGAT"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:127
+#, fuzzy
+msgid "Subheadline"
+msgstr "Subjudul"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:138
+#: core/includes/functions.php:60 functions.php:533
+#, fuzzy
+msgid ""
+"Your title, subtitle and this very content is editable from Theme Option. "
+"Call to Action button and its destination link as well. Image on your right "
+"can be an image or even YouTube video if you like."
+msgstr ""
+"Judul Anda, Subtitle dan konten ini sangat dapat diedit dari Theme option. "
+"Tombol Call to Action dan link tujuannya juga. Gambar di sebelah kanan Anda "
+"bisa menjadi gambar atau bahkan video YouTube jika Anda suka."
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:146
+msgid "Content Area"
+msgstr "Area Konten"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:163
+#, fuzzy
+msgid "Disable Call to Action Button?"
+msgstr "Nonaktifkan tombol ajakan bertindak?"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:182
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:351
+#, fuzzy
+msgid "Call to Action (URL)"
+msgstr "Ajakan untuk bertindak (URL)"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:202
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:331
+#, fuzzy
+msgid "Call to Action (Text)"
+msgstr "Ajakan untuk bertindak (teks)"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:224
+#, fuzzy
+msgid "Call to Action Button Style"
+msgstr "Gaya tombol ajakan bertindak"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:248
+#, fuzzy
+msgid "Featured Content"
+msgstr "Menampilkan konten"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:252
+#, fuzzy
+msgid "Paste your shortcode, video or image source"
+msgstr "Tempel shortcode, video, atau sumber gambar Anda"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:259
+#, fuzzy
+msgid "About Section"
+msgstr "Tentang bagian"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:272
+#, fuzzy
+msgid "Enable About Section"
+msgstr "Aktifkan bagian tentang"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:285
+#: partials/custom-home/featured-area.php:105
+#, fuzzy
+msgid "About Box Title"
+msgstr "Tentang judul kotak"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:292
+#, fuzzy
+msgid "About Title"
+msgstr "Tentang judul"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:311
+#, fuzzy
+msgid "About Text"
+msgstr "Tentang teks"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:353
+#, fuzzy
+msgid "Enter url as http://www.example.com"
+msgstr "Masukkan URL sebagai http://www.example.com"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:369
+#, fuzzy
+msgid "Feature Section"
+msgstr "Bagian fitur"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:375
+#, fuzzy
+msgid "Enable Feature Section"
+msgstr "Aktifkan bagian fitur"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:396
+#, fuzzy
+msgid "Feature Title"
+msgstr "Judul fitur"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:414
+#, fuzzy
+msgid "Select post for feature 1"
+msgstr "Pilih posting untuk fitur 1"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:417
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:437
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:457
+#, fuzzy
+msgid ""
+"The featured image, title and content from the posts will be used to display "
+"the feature. Recommended image size for the featured images: 130 x 130px"
+msgstr ""
+"Gambar unggulan, judul dan konten dari posting akan digunakan untuk "
+"menampilkan fitur. Ukuran gambar yang direkomendasikan untuk gambar "
+"unggulan: 130 x 130px"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:434
+#, fuzzy
+msgid "Select post for feature 2"
+msgstr "Pilih posting untuk fitur 2"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:454
+#, fuzzy
+msgid "Select post for feature 3"
+msgstr "Pilih posting untuk fitur 3"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:466
+msgid "Testimonial Section"
+msgstr "بخش مشتریان راضی"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:479
+#, fuzzy
+msgid "Enable Testimonial Section"
+msgstr "Aktifkan bagian testimonial"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:492
+#: partials/custom-home/featured-area.php:217
+msgid "Testimonial"
+msgstr "Testimonial"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:499
+msgid "Testimonial Title"
+msgstr "Judul Kesaksian"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:517
+msgid "Select Post"
+msgstr "Pilih Posting"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:520
+#, fuzzy
+msgid ""
+"The featured image, title and content from the posts will be used to display "
+"the client testimonials. Recommended image size for the featured images: 178 "
+"x 178px"
+msgstr ""
+"Gambar fitur, judul dan konten dari posting akan digunakan untuk menampilkan "
+"testimonial klien. Ukuran gambar yang direkomendasikan untuk gambar "
+"unggulan: 178 x 178px"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:528
+msgid "Team Section"
+msgstr "بخش اعضای تیم"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:541
+#, fuzzy
+msgid "Enable Team Section"
+msgstr "Aktifkan bagian tim"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:554
+#, fuzzy
+msgid "team"
+msgstr "Tim"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:561
+#, fuzzy
+msgid "Team Title"
+msgstr "Judul tim"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:579
+#, fuzzy
+msgid "Select post for team member1"
+msgstr "Pilih posting untuk tim member1"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:582
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:602
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:622
+#, fuzzy
+msgid ""
+"The featured image, title and content from the posts will be used to display "
+"the team member. Recommended image size for the featured images: 178 x 178px"
+msgstr ""
+"Gambar fitur, judul dan konten dari posting akan digunakan untuk menampilkan "
+"anggota tim. Ukuran gambar yang direkomendasikan untuk gambar unggulan: 178 "
+"x 178px"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:599
+#, fuzzy
+msgid "Select post for team member2"
+msgstr "Pilih posting untuk tim member2"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:619
+#, fuzzy
+msgid "Select post for team member3"
+msgstr "Pilih posting untuk tim member3"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:639
+#, fuzzy
+msgid "Click to disable home page widgets"
+msgstr "Klik untuk menonaktifkan widget Home Page"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:648
+#, fuzzy
+msgid "Contact Section"
+msgstr "Bagian kontak"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:661
+#, fuzzy
+msgid "Enable Contact Section"
+msgstr "Aktifkan bagian kontak"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:674
+msgid "Contact Us"
+msgstr "Hubungi Kami"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:681
+#, fuzzy
+msgid "Contact section Title"
+msgstr "Judul bagian kontak"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:694
+#, fuzzy
+msgid "Contact subtitle"
+msgstr "Kontak Subtitle"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:701
+#, fuzzy
+msgid "Contact section Subtitle"
+msgstr "Bagian kontak Subtitle"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:720
+msgid "Address"
+msgstr "Alamat"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:739
+#: core/includes/functions-extensions.php:368
+msgid "Email"
+msgstr "Email"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:758
+#, fuzzy
+msgid "Phone no"
+msgstr "Nomor telepon"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:777
+#, fuzzy
+msgid "Contact form shortcode"
+msgstr "Bentuk kontak shortcode"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:780
+#, fuzzy
+msgid "You can put Contact Form 7 shortcode here."
+msgstr "Anda dapat menempatkan shortcode Contact Form 7 di sini."
+
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:51
+#, fuzzy
+msgid "Page Elements"
+msgstr "Elemen halaman"
+
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:70
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:51
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:71
+#, fuzzy
+msgid "Post Elements"
+msgstr "Elemen Post"
+
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:82
+#, fuzzy
+msgid "Page Featured Image"
+msgstr "Gambar pilihan Halaman"
+
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:105
+msgid "Page Title"
+msgstr "Judul Halaman"
+
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:120
+msgid "Page Content"
+msgstr "Konten Halaman"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:40
+msgid "Theme Options"
+msgstr "Pilihan Tema"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:41
+#: core/includes/customizer/settings/class-responsive-panel.php:50
+msgid "Header Options"
+msgstr "Opsi Header"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:49
+msgid "Header"
+msgstr "Header"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:58
+#: functions.php:471 partials/header/main-navigation.php:14
+msgid "Main Menu"
+msgstr "Menu Utama"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:59
+#, fuzzy
+msgid "Header Menu Options"
+msgstr "Pilihan menu header"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:68
+msgid "Sidebar Options"
+msgstr "Opsi Sidebar"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:76
+msgid "Footer"
+msgstr "Footer"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:77
+#, fuzzy
+msgid "Footer Options"
+msgstr "Footer pilihan"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:94
+msgid "Blog / Archive"
+msgstr "Arsip / Blog"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:95
+msgid "Blog Options"
+msgstr "Blog Options"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:103
+msgid "Blog Post"
+msgstr "Pos Blog"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:104
+#, fuzzy
+msgid "Single Blog Post"
+msgstr "Tunggal blog post"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:112
+msgid "Page"
+msgstr "Halaman"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:113
+msgid "Page Options"
+msgstr "Pengaturan Halaman"
+
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:83
+#, fuzzy
+msgid "Post Featured Image"
+msgstr "Post Feature gambar"
+
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:106
+msgid "Post Title"
+msgstr "Judul Artikel"
+
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:121
+#, fuzzy
+msgid "Post Meta"
+msgstr "Pasang Meta"
+
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:190
+msgid "Post Content"
+msgstr "Posting Konten"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:59
+#, fuzzy
+msgid "Backgrounds"
+msgstr "Latar belakang"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:63
+#, fuzzy
+msgid "Box Background Color"
+msgstr "Kotak warna latar belakang"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:67
+#, fuzzy
+msgid "Alternate Background Color"
+msgstr "Warna latar belakang alternatif"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:71
+#, fuzzy
+msgid "General Text"
+msgstr "Teks Umum"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:75
+msgid "Body Text Color"
+msgstr "Warna teks body"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:79
+#, fuzzy
+msgid "Heading 1 (H1) Color"
+msgstr "Kepala 1 (H1) warna"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:83
+#, fuzzy
+msgid "Heading 2 (H2) Color"
+msgstr "Kepala 2 (H2) warna"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:87
+#, fuzzy
+msgid "Heading 3 (H3) Color"
+msgstr "Kepala 3 (H3) warna"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:91
+#, fuzzy
+msgid "Heading 4 (H4) Color"
+msgstr "Kepala 4 (H4) warna"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:95
+#, fuzzy
+msgid "Heading 5 (H5) Color"
+msgstr "Kepala 5 (H5) warna"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:99
+#, fuzzy
+msgid "Heading 6 (H6) Color"
+msgstr "Kepala 6 (h6) warna"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:103
+#, fuzzy
+msgid "Meta Text Color"
+msgstr "Warna meta text"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:107
+msgid "Links"
+msgstr "Tautan"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:111
+msgid "Link Color"
+msgstr "Warna Link"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:115
+msgid "Link Hover Color"
+msgstr "Warna Hover Tautan"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:119
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:86
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:83
+msgid "Buttons"
+msgstr "Tombol"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:123
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:151
+msgid "Color"
+msgstr "Warna"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:127
+msgid "Hover Color"
+msgstr "Warna Hover"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:135
+msgid "Hover Text Color"
+msgstr "Arahkan Warna Teks"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:143
+#, fuzzy
+msgid "Hover Border Color"
+msgstr "Warna Border hover"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:147
+msgid "Inputs"
+msgstr "Input"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:163
+msgid "Labels"
+msgstr "Label"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:167
+#, fuzzy
+msgid "Label Color"
+msgstr "Warna label"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:50
+#, fuzzy
+msgid "Hide Site Title"
+msgstr "Sembunyikan judul situs"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:53
+#, fuzzy
+msgid "Hide Tagline"
+msgstr "Sembunyikan tagline"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:57
+msgid "Width"
+msgstr "Lebar"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:59
+#, fuzzy
+msgid "Contained"
+msgstr "Terkandung"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:60
+msgid "Full Width"
+msgstr "Lebar Penuh"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:65
+#, fuzzy
+msgid "Container Width (px)"
+msgstr "Kontainer lebar (px)"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:71
+msgid "Boxed"
+msgstr "Kotak"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:72
+msgid "Content Boxed"
+msgstr "Kotak Konten"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:78
+#, fuzzy
+msgid "Box Padding (px)"
+msgstr "Kotak padding (px)"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:82
+#, fuzzy
+msgid "Box Radius (px)"
+msgstr "Kotak radius (px)"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:90
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:106
+#, fuzzy
+msgid "Padding (px)"
+msgstr "Padding (px)"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:94
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:110
+#, fuzzy
+msgid "Radius (px)"
+msgstr "Radius (px)"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:98
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:114
+#, fuzzy
+msgid "Border Width (px)"
+msgstr "Border Width (px)"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:102
+#, fuzzy
+msgid "Form Inputs"
+msgstr "Input formulir"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:51
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:54
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:151
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:162
+msgid "Body"
+msgstr "Body"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:55
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:68
+msgid "Heading 1 (H1)"
+msgstr "Heading 1 (H1)"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:59
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:80
+msgid "Heading 2 (H2)"
+msgstr "Heading 2 (H2)"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:63
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:92
+msgid "Heading 3 (H3)"
+msgstr "Heading 3 (H3)"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:67
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:104
+msgid "Heading 4 (H4)"
+msgstr "Heading 4 (H4)"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:71
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:116
+msgid "Heading 5 (H5)"
+msgstr "Heading 5 (H5)"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:75
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:128
+msgid "Heading 6 (H6)"
+msgstr "Heading 6 (H6)"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:87
+#, fuzzy
+msgid "Input Fields"
+msgstr "Input kolom"
+
+#: core/includes/customizer/settings/class-responsive-theme-options-customizer.php:65
+#, fuzzy
+msgid "Exclude Categories from Blog page"
+msgstr "Kecualikan kategori dari halaman blog"
+
+#: core/includes/customizer/settings/class-responsive-theme-options-customizer.php:66
+#, fuzzy
+msgid ""
+"Please choose the post categories that should not be displayed on the blog "
+"page"
+msgstr ""
+"Silakan pilih kategori posting yang tidak boleh ditampilkan pada halaman blog"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:285
+#, fuzzy
+msgid "General Typography"
+msgstr "Tipografi Umum"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:366
+msgid "Font Family"
+msgstr "Jenis Font"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:400
+msgid "Font Weight"
+msgstr "Bobot Huruf"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:401
+#, fuzzy
+msgid "Important: Not all fonts support every font-weight."
+msgstr "Penting: tidak semua font mendukung setiap font-Weight."
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:444
+#, fuzzy
+msgid "Font Style"
+msgstr "Gaya font"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:451
+msgid "Normal"
+msgstr "Biasa"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:452
+msgid "Italic"
+msgstr "Miring"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:477
+msgid "Text Transform"
+msgstr "Teks Transform"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:485
+msgid "Capitalize"
+msgstr "Huruf Kapital"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:486
+msgid "Lowercase"
+msgstr "Huruf Kecil"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:487
+msgid "Uppercase"
+msgstr "Huruf Besar"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:531
+msgid "Font Size"
+msgstr "Ukuran Font"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:532
+#, fuzzy
+msgid "You can add: px-em-%"
+msgstr "Anda dapat menambahkan: px-em-%"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:585
+msgid "Line Height"
+msgstr "Tinggi garis"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:621
+#, fuzzy
+msgid "Letter Spacing (px)"
+msgstr "Jarak Surat (px)"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:659
+msgid "Font Color"
+msgstr "Warna Font Utama"
+
+#: core/includes/functions-admin.php:59
+#, fuzzy
+msgid "Hi! Thanks for using the Responsive theme."
+msgstr "Hai! Terima kasih untuk menggunakan tema responsif."
+
+#: core/includes/functions-admin.php:60
+#, fuzzy
+msgid ""
+"Can you please do us a favor and give us a 5-star rating? Your feedback "
+"keeps us motivated and helps us grow the Responsive community."
+msgstr ""
+"Bisakah Anda tolong bantu kami dan memberi kami rating 5-bintang? Umpan "
+"balik Anda membuat kami termotivasi dan membantu kami menumbuhkan komunitas "
+"responsif."
+
+#: core/includes/functions-admin.php:61
+msgid "Ok, you deserve it"
+msgstr "Ok, Anda layak mendapatkannya"
+
+#: core/includes/functions-admin.php:62
+msgid "Nope, maybe later"
+msgstr "Tidak, mungkiin nanti"
+
+#: core/includes/functions-admin.php:63
+msgid "I already did"
+msgstr "Sudah"
+
+#. translators: %s: link
+#: core/includes/functions-extensions.php:58 loop-no-posts.php:42
+msgid "Home"
+msgstr "Beranda"
+
+#. translators: %s: Categories
+#: core/includes/functions-extensions.php:60
+msgid "Archive for %s"
+msgstr "Arsip utk %s"
+
+#. translators: %s: Search result page
+#. translators: %s is for search query.
+#: core/includes/functions-extensions.php:62 loop-header.php:33
+msgid "Search results for: %s"
+msgstr "Hasil Pencarian: %s"
+
+#. translators: %s: Post Pages
+#: core/includes/functions-extensions.php:64
+#, fuzzy
+msgid "Posts tagged %s"
+msgstr "Posts Tagged %s"
+
+#. translators: %s: Author pages
+#. translators: %s: view post by
+#. translators: view all posts by author
+#. translators: %s view posts by
+#: core/includes/functions-extensions.php:66 core/includes/functions.php:685
+#: partials/entry/meta.php:54 partials/single/meta.php:49
+msgid "View all posts by %s"
+msgstr "Lihat semua posting oleh %s"
+
+#: core/includes/functions-extensions.php:67
+msgid "Error 404"
+msgstr "Kesalahan 404"
+
+#. translators: %s: Page Number
+#. translators: %s: author
+#: core/includes/functions-extensions.php:211
+#: core/includes/functions-extras.php:190
+msgid "Page %s"
+msgstr "Halaman %s"
+
+#: core/includes/functions-extensions.php:365
+#, fuzzy
+msgid "Yelp!"
+msgstr "Yelp!"
+
+#: core/includes/functions-extensions.php:367
+#, fuzzy
+msgid "foursquare"
+msgstr "Kokoh"
+
+#: core/includes/functions-extras.php:107 gutenberg-fullwidth.php:42
+#: image.php:59 index.php:56 partials/page/content.php:15
+#, fuzzy
+msgid "Read more &#8250;"
+msgstr "Baca lebih lanjut & #8250;"
+
+#: core/includes/functions-sidebar.php:28
+msgid "Main Sidebar"
+msgstr "Main Navigation"
+
+#: core/includes/functions-sidebar.php:29
+#, fuzzy
+msgid ""
+"Area 1 - sidebar.php - Displays on Default, Blog, Blog Excerpt page templates"
+msgstr ""
+"Area 1-sidebar. php-menampilkan pada default, blog, blog kutipan halaman "
+"template"
+
+#: core/includes/functions-sidebar.php:40
+#, fuzzy
+msgid "Home Widget 1"
+msgstr "Widget rumah 1"
+
+#: core/includes/functions-sidebar.php:41
+#, fuzzy
+msgid "Area 6 - sidebar-home.php - Displays on the Home Page"
+msgstr "Area 6-sidebar-Home. php-menampilkan pada Home Page"
+
+#: core/includes/functions-sidebar.php:52
+#, fuzzy
+msgid "Home Widget 2"
+msgstr "Widget rumah 2"
+
+#: core/includes/functions-sidebar.php:53
+#, fuzzy
+msgid "Area 7 - sidebar-home.php - Displays on the Home Page"
+msgstr "Area 7-sidebar-Home. php-menampilkan pada Home Page"
+
+#: core/includes/functions-sidebar.php:64
+#, fuzzy
+msgid "Home Widget 3"
+msgstr "Widget rumah 3"
+
+#: core/includes/functions-sidebar.php:65
+#, fuzzy
+msgid "Area 8 - sidebar-home.php - Displays on the Home Page"
+msgstr "Area 8-sidebar-Home. php-menampilkan pada Home Page"
+
+#: core/includes/functions-sidebar.php:76
+#, fuzzy
+msgid "Gallery Sidebar"
+msgstr "Galeri sidebar"
+
+#: core/includes/functions-sidebar.php:77
+#, fuzzy
+msgid ""
+"Area 9 - sidebar-gallery.php - Displays on the page after an image has been "
+"clicked in a Gallery"
+msgstr ""
+"Area 9-sidebar-Gallery. php-menampilkan pada halaman setelah gambar telah "
+"diklik dalam Galeri"
+
+#: core/includes/functions-sidebar.php:88
+#, fuzzy
+msgid "Colophon Widget"
+msgstr "Widget Colophon"
+
+#: core/includes/functions-sidebar.php:89
+#, fuzzy
+msgid "Area 10 - sidebar-colophon.php, 100% width Footer widgets"
+msgstr "Area 10-sidebar-Colophon. php, 100% lebar Widget footer"
+
+#: core/includes/functions-sidebar.php:101
+#, fuzzy
+msgid "Area 11 - sidebar-top.php - Displays on the right of the header"
+msgstr "Area 11-sidebar-Top. php-menampilkan di sebelah kanan header"
+
+#: core/includes/functions-sidebar.php:112
+#, fuzzy
+msgid "Footer Widgets 1"
+msgstr "Widget footer 1"
+
+#: core/includes/functions-sidebar.php:113
+#, fuzzy
+msgid "Area 12 - sidebar-footer.php"
+msgstr "Area 12-sidebar-footer. php"
+
+#: core/includes/functions-sidebar.php:123
+#, fuzzy
+msgid "Footer Widgets 2"
+msgstr "Widget footer 2"
+
+#: core/includes/functions-sidebar.php:124
+#, fuzzy
+msgid "Area 13 - sidebar-footer.php"
+msgstr "Area 13-sidebar-footer. php"
+
+#: core/includes/functions-sidebar.php:134
+#, fuzzy
+msgid "Footer Widgets 3"
+msgstr "Widget footer 3"
+
+#: core/includes/functions-sidebar.php:135
+#, fuzzy
+msgid "Area 14 - sidebar-footer.php"
+msgstr "Luas 14-sidebar-footer. php"
+
+#: core/includes/functions-sidebar.php:145
+#, fuzzy
+msgid "Footer Widgets 4"
+msgstr "Widget footer 4"
+
+#: core/includes/functions-sidebar.php:146
+#, fuzzy
+msgid "Area 15 - sidebar-footer.php"
+msgstr "Luas 15-sidebar-footer. php"
+
+#: core/includes/functions.php:61 functions.php:536
+msgid "Call to Action"
+msgstr "Call to Action"
+
+#: core/includes/functions.php:216
+msgid "Header Menu"
+msgstr "Choose header layout"
+
+#: core/includes/functions.php:217 partials/footer/footer-menu.php:10
+#: partials/footer/footer-menu.php:11
+msgid "Footer Menu"
+msgstr "Menu Footer"
+
+#: core/includes/functions.php:377
+#, fuzzy
+msgid "Team Section Options"
+msgstr "Pilihan bagian tim"
+
+#: core/includes/functions.php:391
+#, fuzzy
+msgid ""
+"To use this post for front page's team section, please enter below details:"
+msgstr ""
+"Untuk menggunakan posting ini untuk bagian tim halaman depan, silakan "
+"masukkan rincian di bawah ini:"
+
+#: core/includes/functions.php:394
+#, fuzzy
+msgid "Member designation"
+msgstr "Penunjukan anggota"
+
+#: core/includes/functions.php:398
+#, fuzzy
+msgid "Facebook Link"
+msgstr "Tautan Facebook"
+
+#: core/includes/functions.php:402
+#, fuzzy
+msgid "Twitter Link"
+msgstr "Tautan Twitter"
+
+#: core/includes/functions.php:406
+#, fuzzy
+msgid "GooglePlus Link"
+msgstr "GooglePlus tautan"
+
+#: core/includes/functions.php:410
+#, fuzzy
+msgid "LinkedIn Link"
+msgstr "Tautan LinkedIn"
+
+#: core/includes/functions.php:666
+msgid "Posted on"
+msgstr "Ditulis pada"
+
+#: core/includes/functions.php:666
+msgid "By"
+msgstr "Oleh"
+
+#. translators: %s: category list
+#. translators: %s posted in categories
+#. translators: %s: category list
+#: core/includes/functions.php:696 image.php:82 partials/entry/meta.php:104
+#: partials/single/meta.php:96
+#, fuzzy
+msgid "Posted in %s"
+msgstr "Posted in %s"
+
+#: core/includes/functions.php:696 partials/entry/meta.php:104
+#: partials/single/meta.php:96
+msgid ", "
+msgstr ", "
+
+#: core/includes/functions.php:719
+#, fuzzy
+msgid "Upgrade To Pro"
+msgstr "Tingkatkan ke Pro"
+
+#: core/includes/post-custom-meta.php:137
+#, fuzzy
+msgid "Content/Sidebar"
+msgstr "Konten/sidebar"
+
+#: core/includes/post-custom-meta.php:138
+#, fuzzy
+msgid "Sidebar/Content"
+msgstr "Sidebar/konten"
+
+#. Template Name of the plugin/theme
+#, fuzzy
+msgid "Full Width Page (no sidebar)"
+msgstr "Lebar penuh halaman (tidak ada sidebar)"
+
+#: core/includes/post-custom-meta.php:140
+#, fuzzy
+msgid "Blog 2 Column"
+msgstr "Blog 2 kolom"
+
+#: core/includes/post-custom-meta.php:141
+#, fuzzy
+msgid "Blog 3 Column"
+msgstr "Blog 3 kolom"
+
+#: core/includes/post-custom-meta.php:142
+#, fuzzy
+msgid "Blog 4 Column"
+msgstr "Blog 4 kolom"
+
+#: footer.php:90
+#, fuzzy
+msgid "Scroll to Top"
+msgstr "Gulir ke atas"
+
+#: functions.php:392
+msgid "Permalink to %s"
+msgstr "Permalink ke %s"
+
+#. translators: %s Link to 5 star rating
+#: functions.php:453
+#, fuzzy
+msgid ""
+"If you like <strong>Responsive Theme</strong> please leave us a %s rating. "
+"It takes a minute and helps a lot. Thanks in advance!"
+msgstr ""
+"Jika Anda menyukai <strong>tema responsif</strong> silakan tinggalkan kami "
+"%s rating. Dibutuhkan satu menit dan membantu banyak. Terima kasih "
+"sebelumnya!"
+
+#: functions.php:454
+msgid "Thanks :)"
+msgstr "Terimakasih :)"
+
+#: functions.php:539
+msgid "#"
+msgstr "#"
+
+#: gutenberg-fullwidth.php:46 image.php:63 index.php:60
+#: partials/entry/layout.php:53 partials/page/layout.php:45
+#: partials/single/content.php:38 partials/single/layout.php:59
+msgid "Pages:"
+msgstr "Halaman:"
+
+#: header.php:35
+#, fuzzy
+msgid "&darr; Skip to Main Content"
+msgstr "&darr; Loncat ke konten utama"
+
+#: home.php:81
+msgid "Previous"
+msgstr "Sebelumnya"
+
+#: home.php:82
+msgid "Next"
+msgstr "Berikutnya"
+
+#: image.php:37
+#, fuzzy
+msgid "&#8249; Return to"
+msgstr "& #8249; kembali ke"
+
+#: image.php:46 partials/entry/meta.php:90 partials/single/meta.php:84
+#: post-meta-3-col.php:29 post-meta-page.php:36 post-meta.php:40
+msgid "No Comments"
+msgstr "Tidak Ada Komentar"
+
+#: image.php:46 partials/entry/meta.php:90
+#: partials/entry/thumbnail-style/comments.php:16 partials/single/meta.php:84
+#: post-meta-3-col.php:29 post-meta-page.php:36 post-meta.php:40
+msgid "1 Comment"
+msgstr "1 Komentar"
+
+#: image.php:46 partials/entry/meta.php:90
+#: partials/entry/thumbnail-style/comments.php:16 partials/single/meta.php:84
+#: post-meta-3-col.php:29 post-meta-page.php:36 post-meta.php:40
+msgid "% Comments"
+msgstr "% Komentar"
+
+#: image.php:79 post-data.php:25
+#, fuzzy
+msgid "Tagged with:"
+msgstr "Tagged with:"
+
+#: image.php:87 post-data.php:29
+#, fuzzy
+msgid "<span class=\"post-edit\">Edit</span>"
+msgstr "<span class=\"post-edit\">Mengedit</span>"
+
+#: loop-nav.php:28
+#, fuzzy
+msgid "&#8249; Older posts"
+msgstr "& #8249; posting lama"
+
+#: loop-nav.php:29
+#, fuzzy
+msgid "Newer posts &#8250;"
+msgstr "Posting baru & #8250;"
+
+#. translators: %s search term
+#: loop-no-posts.php:26
+#, fuzzy
+msgid "Your search for %s did not match any entries."
+msgstr "Pencarian Anda untuk %s tidak cocok dengan entri apapun."
+
+#: loop-no-posts.php:26
+#, fuzzy
+msgid "404 &#8212; Fancy meeting you here!"
+msgstr "404 & #8212; pertemuan Fancy Anda di sini!"
+
+#: loop-no-posts.php:32
+#, fuzzy
+msgid ""
+"Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our "
+"options here."
+msgstr ""
+"Don & #39; t panik, kami & #39; LL melewati ini bersama-sama. Biarkan & #39; "
+"s mengeksplorasi pilihan kami di sini."
+
+#: loop-no-posts.php:43
+#, fuzzy
+msgid "&larr; Home"
+msgstr "&larr; Home"
+
+#: partials/custom-home/featured-area.php:255
+msgid "Team"
+msgstr "Tim"
+
+#. translators: 1: byline, 2: author
+#: partials/entry/meta.php:35
+msgid "By "
+msgstr "Oleh"
+
+#. translators: 1: class, 2: date
+#: partials/entry/meta.php:69 partials/single/meta.php:63
+msgid "Posted on "
+msgstr "Diposting di"
+
+#: partials/entry/thumbnail-style/comments.php:16
+msgid "0 Comments"
+msgstr "0 Komentar"
+
+#: partials/footer/copy-right.php:17
+#, fuzzy
+msgid " &copy; "
+msgstr "&copy;"
+
+#: partials/footer/copy-right.php:21
+#, fuzzy
+msgid "&copy; "
+msgstr "&copy;"
+
+#: partials/footer/copy-right.php:29
+#, fuzzy
+msgid " | Powered by Responsive Theme"
+msgstr "| Didukung oleh tema responsif"
+
+#: partials/header/main-navigation.php:17
+msgid "Menu"
+msgstr "Menu"
+
+#. translators: %s Name of current post. Only visible to screen readers
+#: partials/single/content.php:22
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Lanjutkan membaca<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: partials/single/layout.php:50
+msgid "About"
+msgstr "Tentang"
+
+#: partials/single/layout.php:73
+#, fuzzy
+msgid "Previous Post is "
+msgstr "Previous post adalah"
+
+#: partials/single/layout.php:74
+#, fuzzy
+msgid "Next Post is"
+msgstr "Posting berikutnya adalah"
+
+#: searchform.php:22
+msgid "Search for:"
+msgstr "Pencarian untuk:"
+
+#: searchform.php:23
+#, fuzzy
+msgid "Search here &hellip;"
+msgstr "Cari di sini &hellip;"
+
+#: searchform.php:24
+msgid "Go"
+msgstr "OK"
+
+#: sidebar-gallery.php:26
+#, fuzzy
+msgid "Image Information"
+msgstr "Informasi gambar"
+
+#: sidebar-gallery.php:33
+#, fuzzy
+msgid "Full Size:"
+msgstr "Ukuran penuh:"
+
+#: sidebar-gallery.php:39
+#, fuzzy
+msgid "Aperture: f&#47;"
+msgstr "Aperture: f & #47;"
+
+#: sidebar-gallery.php:44
+msgid "Focal Length:"
+msgstr "Panjang Fokus:"
+
+#: sidebar-gallery.php:44
+msgid "mm"
+msgstr "mm"
+
+#: sidebar-gallery.php:48
+#, fuzzy
+msgid "ISO:"
+msgstr "Iso:"
+
+#: sidebar-gallery.php:52
+#, fuzzy
+msgid "Shutter:"
+msgstr "Rana:"
+
+#: sidebar-gallery.php:57 sidebar-gallery.php:59 sidebar-gallery.php:62
+msgid "sec"
+msgstr "dtk"
+
+#: sidebar-gallery.php:69
+#, fuzzy
+msgid "Camera:"
+msgstr "Kamera:"
+
+#: sidebar-home.php:34
+#, fuzzy
+msgid "Fermentum"
+msgstr "Lactobacillus"
+
+#: sidebar-home.php:40
+#, fuzzy
+msgid ""
+"This is your first home widget box. To edit please go to Appearance > "
+"Widgets and choose 6th widget from the top in area 6 called Home Widget 1. "
+"Title is also manageable from widgets as well."
+msgstr ""
+"Ini adalah pertama Anda rumah widget kotak. Untuk mengedit silakan pergi ke "
+"penampilan > widget dan memilih widget 6 dari atas di daerah 6 disebut Home "
+"widget 1. Judul juga dikelola dari widget serta."
+
+#: sidebar-home.php:54
+#, fuzzy
+msgid "Elementum"
+msgstr "Elementum"
+
+#: sidebar-home.php:60
+#, fuzzy
+msgid ""
+"This is your second home widget box. To edit please go to Appearance > "
+"Widgets and choose 7th widget from the top in area 7 called Home Widget 2. "
+"Title is also manageable from widgets as well."
+msgstr ""
+"Ini adalah kedua Anda rumah widget kotak. Untuk mengedit silakan pergi ke "
+"penampilan > widget dan memilih 7 widget dari atas di daerah 7 disebut Home "
+"widget 2. Judul juga dikelola dari widget serta."
+
+#: sidebar-home.php:74
+#, fuzzy
+msgid "Interdum"
+msgstr "Pesawat interdum"
+
+#: sidebar-home.php:78
+#, fuzzy
+msgid ""
+"This is your third home widget box. To edit please go to Appearance > "
+"Widgets and choose 8th widget from the top in area 8 called Home Widget 3. "
+"Title is also manageable from widgets as well."
+msgstr ""
+"Ini adalah rumah ketiga widget kotak. Untuk mengedit silakan pergi ke "
+"penampilan > widget dan memilih widget 8 dari atas di daerah 8 disebut Home "
+"widget 3. Judul juga dikelola dari widget serta."
+
+#. Theme URI of the plugin/theme
+#, fuzzy
+msgid "https://cyberchimps.com/repsonsive/"
+msgstr "https://cyberchimps.com/repsonsive/"
+
+#. Description of the plugin/theme
+#, fuzzy
+msgid ""
+"Responsive is a fully customizable, search engine optimized & mobile-"
+"friendly WordPress theme. Compatible with the Gutenberg block editor, it is "
+"a perfect choice for your blog, business website, or WooCommerce store. With "
+"almost unlimited customizer options, you can customize every feature of your "
+"website. Responsive comes with minified scripts to improve website speed. It "
+"also comes with other features including - nine layout options for pages and "
+"blog, WooCommerce design options, and compatibility with the Elementor page "
+"builder. It works great on a mobile, tablet, desktop, and across all "
+"browsers. Responsive is also available in 45 languages and is search engine "
+"friendly. See Responsive in action: https://cyberchimps.com/responsive-ready-"
+"websites/. Learn more about its features: https://cyberchimps.com/responsive-"
+"features/."
+msgstr ""
+"Responsif adalah sepenuhnya disesuaikan, mesin pencari dioptimalkan & mobile-"
+"friendly WordPress Theme. Kompatibel dengan blok editor Gutenberg, itu "
+"adalah pilihan yang sempurna untuk blog Anda, situs bisnis, atau toko "
+"WooCommerce. Dengan pilihan penyesuai hampir tak terbatas, Anda dapat "
+"menyesuaikan setiap fitur situs web Anda. Responsive hadir dengan skrip yang "
+"minified untuk meningkatkan kecepatan situs web. Ini juga dilengkapi dengan "
+"fitur lain termasuk-sembilan pilihan tata letak untuk halaman dan blog, "
+"pilihan desain WooCommerce, dan kompatibilitas dengan Page Builder "
+"Elementor. Ia bekerja besar pada ponsel, tablet, desktop, dan di semua "
+"browser. Responsif juga tersedia dalam bahasa 45 dan mesin pencari ramah. "
+"Lihat responsif dalam tindakan: https://cyberchimps.com/responsive-ready-"
+"websites/. Pelajari lebih lanjut tentang fitur-fiturnya: https://cyberchimps."
+"com/responsive-features/."
+
+#. Author of the plugin/theme
+#, fuzzy
+msgid "CyberChimps"
+msgstr "Di CyberChimps"
+
+#. Author URI of the plugin/theme
+#, fuzzy
+msgid "https://cyberchimps.com"
+msgstr "https://cyberchimps.com"
+
+#. Template Name of the plugin/theme
+#, fuzzy
+msgid "Gutenberg Fullwidth No title"
+msgstr "Gutenberg Fullwidth tidak ada judul"
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:48
+#, fuzzy
+msgctxt "comments title"
+msgid "%1$s Comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Comments on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s komentar pada \"%2$s\""
+
+#: functions.php:126
+msgctxt "Name of the small font size in the block editor"
+msgid "Small"
+msgstr "Kecil"
+
+#: functions.php:127
+msgctxt "Short name of the small font size in the block editor."
+msgid "S"
+msgstr "Sa"
+
+#: functions.php:132
+msgctxt "Name of the regular font size in the block editor"
+msgid "Regular"
+msgstr "Biasa"
+
+#: functions.php:133
+msgctxt "Short name of the regular font size in the block editor."
+msgid "M"
+msgstr "M"
+
+#: functions.php:138
+msgctxt "Name of the large font size in the block editor"
+msgid "Large"
+msgstr "Besar"
+
+#: functions.php:139
+msgctxt "Short name of the large font size in the block editor."
+msgid "L"
+msgstr "L"
+
+#: functions.php:144
+#, fuzzy
+msgctxt "Name of the larger font size in the block editor"
+msgid "Larger"
+msgstr "Besar"
+
+#: functions.php:145
+#, fuzzy
+msgctxt "Short name of the larger font size in the block editor."
+msgid "XL"
+msgstr "Xl"

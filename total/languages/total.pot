@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Total 1.0.0\n"
 "Report-Msgid-Bugs-To: http://hashthemes.com\n"
-"POT-Creation-Date: 2023-11-21 11:33+0000\n"
+"POT-Creation-Date: 2024-03-10 15:08+0000\n"
 "POT-Revision-Date: Wed Jul 20 2016 15:08:32 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hash Themes <hashthemes@gmail.com>\n"
@@ -56,7 +56,7 @@ msgstr ""
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: welcome/welcome.php:112
+#: welcome/welcome.php:118
 #, php-format
 msgid ""
 "%1$s is now installed and ready to use. You can start either by importing "
@@ -68,7 +68,7 @@ msgstr ""
 msgid "%s Demo"
 msgstr ""
 
-#: welcome/welcome.php:144
+#: welcome/welcome.php:150
 #, php-format
 msgid "%s Settings"
 msgstr ""
@@ -176,6 +176,10 @@ msgstr ""
 msgid "19) Front Page Slider"
 msgstr ""
 
+#: welcome/sections/free_vs_pro.php:43
+msgid "2) GDPR Compliance & Cookies Consent"
+msgstr ""
+
 #: welcome/sections/free_vs_pro.php:201
 msgid "20) Top Header Bar"
 msgstr ""
@@ -242,35 +246,35 @@ msgstr ""
 msgid "31) Hide Header and Footer for Each Post and Page"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:304
+#: welcome/sections/free_vs_pro.php:303
 msgid "32) Advanced Footer Setting"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:312
+#: welcome/sections/free_vs_pro.php:311
 msgid "33) Remove Footer Credit Text"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:320
+#: welcome/sections/free_vs_pro.php:319
 msgid "34) Google Map Option"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:328
+#: welcome/sections/free_vs_pro.php:327
 msgid "35) Icon Picker"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:342
+#: welcome/sections/free_vs_pro.php:341
 msgid "36) WooCommerce Compatible"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:350
+#: welcome/sections/free_vs_pro.php:349
 msgid "37) RTL Ready"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:358
+#: welcome/sections/free_vs_pro.php:357
 msgid "38) Multilingual Ready"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:366
+#: welcome/sections/free_vs_pro.php:365
 msgid "39) Translation Ready"
 msgstr ""
 
@@ -311,7 +315,11 @@ msgstr ""
 msgid "4 testiminial block layouts"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:374
+#: welcome/sections/free_vs_pro.php:59
+msgid "4) Elementor Compatible"
+msgstr ""
+
+#: welcome/sections/free_vs_pro.php:373
 msgid "40) Search Engine Optimization"
 msgstr ""
 
@@ -327,15 +335,15 @@ msgstr ""
 msgid "404 Not Found"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:382
+#: welcome/sections/free_vs_pro.php:381
 msgid "41) Major Browser Compatible"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:390
+#: welcome/sections/free_vs_pro.php:389
 msgid "42) Responsive - Mobile Friendly"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:398
+#: welcome/sections/free_vs_pro.php:397
 msgid "43) Fast and Friendly Support"
 msgstr ""
 
@@ -442,11 +450,11 @@ msgstr ""
 msgid "Activate %2$s"
 msgstr ""
 
-#: welcome/welcome.php:273
+#: welcome/welcome.php:279
 msgid "Activate Demo Importer Plugin"
 msgstr ""
 
-#: welcome/welcome.php:176
+#: welcome/welcome.php:182
 msgid "Activating Demo Importer Plugin"
 msgstr ""
 
@@ -454,7 +462,7 @@ msgstr ""
 msgid "Active"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:391
+#: welcome/sections/free_vs_pro.php:390
 msgid "Adapts to any screen size and displays beautifully."
 msgstr ""
 
@@ -480,8 +488,8 @@ msgstr ""
 
 #: welcome/sections/free_vs_pro.php:63 welcome/sections/free_vs_pro.php:119
 #: welcome/sections/free_vs_pro.php:197 welcome/sections/free_vs_pro.php:237
-#: welcome/sections/free_vs_pro.php:245 welcome/sections/free_vs_pro.php:338
-#: welcome/sections/free_vs_pro.php:346
+#: welcome/sections/free_vs_pro.php:245 welcome/sections/free_vs_pro.php:337
+#: welcome/sections/free_vs_pro.php:345
 msgid "Advanced"
 msgstr ""
 
@@ -564,8 +572,8 @@ msgstr ""
 
 #: welcome/sections/free_vs_pro.php:62 welcome/sections/free_vs_pro.php:118
 #: welcome/sections/free_vs_pro.php:196 welcome/sections/free_vs_pro.php:236
-#: welcome/sections/free_vs_pro.php:244 welcome/sections/free_vs_pro.php:337
-#: welcome/sections/free_vs_pro.php:345
+#: welcome/sections/free_vs_pro.php:244 welcome/sections/free_vs_pro.php:336
+#: welcome/sections/free_vs_pro.php:344
 msgid "Basic"
 msgstr ""
 
@@ -658,7 +666,7 @@ msgstr ""
 msgid "Border Type"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:367
+#: welcome/sections/free_vs_pro.php:366
 msgid "Both the free and pro versions are fully translation ready."
 msgstr ""
 
@@ -720,7 +728,7 @@ msgstr ""
 msgid "Button 2 Text"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:25 welcome/sections/free_vs_pro.php:410
+#: welcome/sections/free_vs_pro.php:25 welcome/sections/free_vs_pro.php:409
 msgid "Buy Now ($65 only)"
 msgstr ""
 
@@ -777,7 +785,7 @@ msgstr ""
 msgid "Choose from multiple go to top icons"
 msgstr ""
 
-#: welcome/welcome.php:124
+#: welcome/welcome.php:130
 msgid "Click below to install and active HashThemes Demo Importer Plugin."
 msgstr ""
 
@@ -869,7 +877,7 @@ msgstr ""
 msgid "Configure no of column to display in a row"
 msgstr ""
 
-#: welcome/welcome.php:111
+#: welcome/welcome.php:117
 msgid "Congratulations!"
 msgstr ""
 
@@ -982,7 +990,7 @@ msgstr ""
 msgid "Custom Angle Spread"
 msgstr ""
 
-#: inc/hooks/general.php:315
+#: inc/hooks/general.php:320
 msgid "Custom Fonts"
 msgstr ""
 
@@ -1035,7 +1043,7 @@ msgstr ""
 #: welcome/sections/free_vs_pro.php:225 welcome/sections/free_vs_pro.php:233
 #: welcome/sections/free_vs_pro.php:241 welcome/sections/free_vs_pro.php:263
 #: welcome/sections/free_vs_pro.php:279 welcome/sections/free_vs_pro.php:287
-#: welcome/sections/free_vs_pro.php:295 welcome/sections/free_vs_pro.php:304
+#: welcome/sections/free_vs_pro.php:295 welcome/sections/free_vs_pro.php:303
 msgid "Detail"
 msgstr ""
 
@@ -1057,7 +1065,7 @@ msgstr ""
 msgid "Dismiss this notice"
 msgstr ""
 
-#: welcome/welcome.php:322
+#: welcome/welcome.php:328
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -1186,7 +1194,7 @@ msgstr ""
 msgid "Enable/Disable gap between portfolio images"
 msgstr ""
 
-#: welcome/welcome.php:179
+#: welcome/welcome.php:185
 msgid "Error! Reload the page and try again."
 msgstr ""
 
@@ -1200,6 +1208,13 @@ msgstr ""
 
 #: inc/customizer/customizer-panel/home-sections.php:704
 msgid "Facebook Url"
+msgstr ""
+
+#: welcome/sections/free_vs_pro.php:60
+msgid ""
+"Fan of Pagebuilder? No problem, with premium version you can create your "
+"website with Elementor. Elementor provides you with unlimited possibilities "
+"to create the website of your imagination."
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:158
@@ -1238,7 +1253,7 @@ msgstr ""
 msgid "Fluid"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:375
+#: welcome/sections/free_vs_pro.php:374
 msgid ""
 "Follows best SEO practices so that your website always ranks higher in "
 "Search Engines."
@@ -1353,7 +1368,7 @@ msgstr ""
 msgid "For more settings,"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:399
+#: welcome/sections/free_vs_pro.php:398
 msgid "For the Premium theme, the user will get a reply in 10 hours or less."
 msgstr ""
 
@@ -1389,7 +1404,7 @@ msgstr ""
 msgid "Front page sections with full window height"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:362
+#: welcome/sections/free_vs_pro.php:361
 msgid "Fully"
 msgstr ""
 
@@ -1409,7 +1424,7 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: welcome/welcome.php:132
+#: welcome/welcome.php:138
 msgid "Get Started"
 msgstr ""
 
@@ -1421,11 +1436,11 @@ msgstr ""
 msgid "Go to Appearance > Customize"
 msgstr ""
 
-#: welcome/welcome.php:177 welcome/welcome.php:276
+#: welcome/welcome.php:183 welcome/welcome.php:282
 msgid "Go to Demo Importer Page"
 msgstr ""
 
-#: welcome/welcome.php:134
+#: welcome/welcome.php:140
 msgid "Go to Setting Page"
 msgstr ""
 
@@ -1443,7 +1458,7 @@ msgid "Gradient Preview"
 msgstr ""
 
 #. %1$s is link start tag, %2$s is link end tag.
-#: welcome/welcome.php:373
+#: welcome/welcome.php:379
 #, php-format
 msgid ""
 "Great to see that you have been using Total Theme for some time. We hope you "
@@ -1483,7 +1498,7 @@ msgstr ""
 msgid "here"
 msgstr ""
 
-#: welcome/welcome.php:133
+#: welcome/welcome.php:139
 #, php-format
 msgid ""
 "Here you will find all the necessary links and information on how to use %s."
@@ -1561,11 +1576,11 @@ msgstr ""
 msgid "https://hashthemes.com/wordpress-theme/total/"
 msgstr ""
 
-#: welcome/welcome.php:378
+#: welcome/welcome.php:384
 msgid "I have already rated"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:331
+#: welcome/sections/free_vs_pro.php:330
 msgid "i) Ico Font"
 msgstr ""
 
@@ -1576,11 +1591,11 @@ msgid ""
 "upgrade to premium version."
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:332
+#: welcome/sections/free_vs_pro.php:331
 msgid "ii) FontAwesome"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:333
+#: welcome/sections/free_vs_pro.php:332
 msgid "iii) Essential Icon"
 msgstr ""
 
@@ -1592,7 +1607,7 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
-#: welcome/welcome.php:123
+#: welcome/welcome.php:129
 msgid "Import Demo"
 msgstr ""
 
@@ -1632,7 +1647,7 @@ msgstr ""
 msgid "Install %2$s"
 msgstr ""
 
-#: welcome/welcome.php:280
+#: welcome/welcome.php:286
 msgid "Install Demo Importer Plugin"
 msgstr ""
 
@@ -1673,7 +1688,7 @@ msgstr ""
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: welcome/welcome.php:175
+#: welcome/welcome.php:181
 msgid "Installing Demo Importer Plugin"
 msgstr ""
 
@@ -1703,7 +1718,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:334
+#: welcome/sections/free_vs_pro.php:333
 msgid "iv) Material Icon"
 msgstr ""
 
@@ -2117,7 +2132,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:361
+#: welcome/sections/free_vs_pro.php:360
 msgid "Partially"
 msgstr ""
 
@@ -2146,7 +2161,7 @@ msgid ""
 "more features to the theme."
 msgstr ""
 
-#: welcome/welcome.php:260
+#: welcome/welcome.php:266
 #, php-format
 msgid ""
 "Please leave us a %s rating if you like our theme . A huge thank you from "
@@ -2560,7 +2575,7 @@ msgstr ""
 msgid "Show/Hide Posted Date, Author, Comment, Category & Tag"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:321
+#: welcome/sections/free_vs_pro.php:320
 msgid "Shows the physical location with an interactive contact form."
 msgstr ""
 
@@ -2826,7 +2841,7 @@ msgid ""
 "work as a slider caption. <br/> Recommended Image Size: 1900X600"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:329
+#: welcome/sections/free_vs_pro.php:328
 msgid ""
 "The premium theme has 4 icon packs with more than 5000+ icons. They can be "
 "used on the various sections of the Front Page, WordPress Widget Blocks, and "
@@ -2850,7 +2865,7 @@ msgid ""
 "or post you like."
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:313
+#: welcome/sections/free_vs_pro.php:312
 msgid ""
 "The premium version easily allows you to remove or change the footer credit "
 "text or replace it with the widget."
@@ -2907,7 +2922,7 @@ msgid ""
 "and Single Banner Image with advanced customization options."
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:343
+#: welcome/sections/free_vs_pro.php:342
 msgid ""
 "The premium version has enhanced WooCommerce options like adding a cart icon "
 "in the menu, product page settings, sidebar layout settings, and more."
@@ -2927,23 +2942,30 @@ msgid ""
 "choosing the sidebar widgets for individual posts/pages."
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:305
+#: welcome/sections/free_vs_pro.php:304
 msgid ""
 "The premium version has the option to choose from 5 different footer styles. "
 "Apart from that, you can set the number of footer columns and resize them as "
 "you want with dragging column resizer."
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:351
+#: welcome/sections/free_vs_pro.php:350
 msgid ""
 "The Premium Version is fully compatible with RTL (Right to left) languages "
 "like Arabic"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:359
+#: welcome/sections/free_vs_pro.php:358
 msgid ""
 "The Premium Version is fully compatible with WPML and Poylang. Create the "
 "website in multiple languages."
+msgstr ""
+
+#: welcome/sections/free_vs_pro.php:44
+msgid ""
+"The Premium version is fully GDPR compliance. Means no data is collected if "
+"you use the theme alone. Also the premium version has option to add GDPR "
+"Compliance & Cookies Consent text with buttons."
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:904
@@ -2964,7 +2986,7 @@ msgid ""
 "transition effect between sections"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:383
+#: welcome/sections/free_vs_pro.php:382
 msgid "The website runs smoothly in all major browsers."
 msgstr ""
 
@@ -3103,7 +3125,7 @@ msgid ""
 "//hashthemes.com/wordpress-theme/total/"
 msgstr ""
 
-#: welcome/welcome.php:116
+#: welcome/welcome.php:122
 msgid "Total Demo"
 msgstr ""
 
@@ -3250,7 +3272,7 @@ msgstr ""
 msgid "UPGRADE TO PRO"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:21 welcome/sections/free_vs_pro.php:406
+#: welcome/sections/free_vs_pro.php:21 welcome/sections/free_vs_pro.php:405
 #: inc/customizer/customizer-panel/general-settings.php:157
 #: inc/customizer/customizer-panel/general-settings.php:191
 #: inc/customizer/customizer-panel/home-sections.php:98
@@ -3276,7 +3298,7 @@ msgstr ""
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:22 welcome/sections/free_vs_pro.php:407
+#: welcome/sections/free_vs_pro.php:22 welcome/sections/free_vs_pro.php:406
 msgid "Upgrade to the pro version for additional features and better support."
 msgstr ""
 
@@ -3364,7 +3386,7 @@ msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
 
-#: welcome/welcome.php:144
+#: welcome/welcome.php:150
 msgid "Welcome"
 msgstr ""
 
@@ -3448,7 +3470,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: welcome/welcome.php:377
+#: welcome/welcome.php:383
 msgid "Yes, of course"
 msgstr ""
 

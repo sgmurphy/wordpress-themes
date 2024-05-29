@@ -1,0 +1,20 @@
+{
+    "name": "mapsteps/aura",
+    "description": "PHP tooling for Aura Theme",
+    "type": "project",
+    "license": "GPL-3.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Mapsteps\\Wpbf\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "David Vongries"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+      "ext-json": "*"
+    }
+}

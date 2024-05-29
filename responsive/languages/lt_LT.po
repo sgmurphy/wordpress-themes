@@ -1,0 +1,2997 @@
+# <!=Copyright (C) 2020 CyberChimps
+# This file is distributed under the GNU General Public License v3 or later.=!>
+msgid ""
+msgstr ""
+"Project-Id-Version: Responsive 4.2.2\n"
+"Report-Msgid-Bugs-To: https://cyberchimps.com/forum/free/responsive/\n"
+"POT-Creation-Date: 2020-03-27 09:33:45+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-03-27 16:06+0530\n"
+"Language-Team: CyberChimps Translate <support@cyberchimps.com>\n"
+"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && (n%100<11 || n%100>19) ? 0 : n"
+"%10>=2 && n%10<=9 && (n%100<11 || n%100>19) ? 1 : 2);\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"Last-Translator: \n"
+"Language: lt_LT\n"
+
+#: admin/templates/free-vs-pro.php:50
+msgid "17"
+msgstr "17"
+
+#: admin/admin-functions.php:21
+#: admin/class-responsive-plugin-install-helper.php:157
+msgid "Activating "
+msgstr "Aktyvinama"
+
+#: admin/admin-functions.php:22
+#, fuzzy
+msgid "Not connect. Verify Network."
+msgstr "Neprisijungti. Patikrinkite tinklas."
+
+#: admin/admin-functions.php:23
+#, fuzzy
+msgid "Requested page not found. [404]"
+msgstr "Pareikalautas puslapis nerastas. [404]"
+
+#: admin/admin-functions.php:24
+#, fuzzy
+msgid "Internal Server Error [500]"
+msgstr "Vidinė serverio klaida [500]"
+
+#: admin/admin-functions.php:25
+#, fuzzy
+msgid "Requested JSON parse failed"
+msgstr "Pareikalauta JSON išanalizuoti nepavyko"
+
+#: admin/admin-functions.php:26
+#, fuzzy
+msgid "Time out error"
+msgstr "Skirtojo laiko klaida"
+
+#: admin/admin-functions.php:27
+#, fuzzy
+msgid "Ajax request aborted"
+msgstr "Ajax prašymas nutrauktas"
+
+#: admin/admin-functions.php:28
+#, fuzzy
+msgid "Uncaught Error"
+msgstr "Negauta klaida"
+
+#: admin/class-responsive-plugin-install-helper.php:93
+#, fuzzy
+msgid "Install and activate &raquo;"
+msgstr "Įdiegti ir aktyvuoti » raquo;"
+
+#: admin/class-responsive-plugin-install-helper.php:97
+#: admin/class-responsive-plugin-install-helper.php:117
+msgid "Activate"
+msgstr "Aktyvuoti"
+
+#: admin/class-responsive-plugin-install-helper.php:112
+msgid "Deactivate"
+msgstr "Išjungti"
+
+#: admin/class-responsive-plugin-install-helper.php:117
+#, fuzzy
+msgid "Jetpack Portfolio"
+msgstr "Jetpack darbai"
+
+#: admin/templates/free-vs-pro.php:15
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:389
+#: partials/custom-home/featured-area.php:131
+msgid "Features"
+msgstr "Funkcijos"
+
+#: admin/templates/free-vs-pro.php:16
+msgid "Free"
+msgstr "Nemokamas"
+
+#: admin/templates/free-vs-pro.php:17 admin/templates/free-vs-pro.php:50
+#: admin/templates/free-vs-pro.php:51
+msgid "Pro"
+msgstr "Pro"
+
+#: admin/templates/free-vs-pro.php:23
+#, fuzzy
+msgid "Mobile Friendly"
+msgstr "Mobiliesiems draugiškas"
+
+#: admin/templates/free-vs-pro.php:24 admin/templates/free-vs-pro.php:56
+#, fuzzy
+msgid "Slider, portfolio, pricing tables, WooCommerce widgets etc"
+msgstr "Slider, portfelis, kainodaros lenteles, WooCommerce raštai ir tt"
+
+#: admin/templates/free-vs-pro.php:31
+#, fuzzy
+msgid "Blazing Fast Speed"
+msgstr "Stulbinantis greitas greitis"
+
+#: admin/templates/free-vs-pro.php:32
+#, fuzzy
+msgid "Optimized for speed, loads in under 2 seconds"
+msgstr "Optimizuota greičiui, apkrovoms per 2 sekundes"
+
+#: admin/templates/free-vs-pro.php:39
+#, fuzzy
+msgid "Fully Customizable"
+msgstr "Pilnai pritaikoma"
+
+#: admin/templates/free-vs-pro.php:40
+#, fuzzy
+msgid "Using the customizer options for layout, fonts & colors"
+msgstr "Naudojant pritaikymo parinktis maketui, šriftams ir spalvoms"
+
+#: admin/templates/free-vs-pro.php:42
+#, fuzzy
+msgid "Limited Options"
+msgstr "Ribotos parinktys"
+
+#: admin/templates/free-vs-pro.php:47
+#, fuzzy
+msgid "Ready-to-use Website Templates"
+msgstr "Paruošti naudoti svetainių šablonai"
+
+#: admin/templates/free-vs-pro.php:48
+#, fuzzy
+msgid "Ready-to-use Elementor page builder and Gutenberg website templates"
+msgstr ""
+"Paruošta naudoti Elementor puslapių kūrimo priemonė ir Gutenbergo svetainių "
+"šablonai"
+
+#: admin/templates/free-vs-pro.php:51
+#, fuzzy
+msgid "30+"
+msgstr "30 metų ir vyresnių nei 40 metų"
+
+#: admin/templates/free-vs-pro.php:55
+#, fuzzy
+msgid "Exclusive Widgets"
+msgstr "Išskirtiniai valdikliai"
+
+#: admin/templates/free-vs-pro.php:63
+#, fuzzy
+msgid "Exclusive Content, Deals & Offers"
+msgstr "Išskirtinis turinys, pasiūlymai &amp; Pasiūlymai"
+
+#: admin/templates/free-vs-pro.php:64
+#, fuzzy
+msgid "Get access to exclusive WordPress content, deals & offers"
+msgstr ""
+"Gaukite prieigą prie išskirtinio \"WordPress\" turinio, pasiūlymų ir "
+"pasiūlymų"
+
+#: admin/templates/free-vs-pro.php:71
+#, fuzzy
+msgid "Private Priority Email Support"
+msgstr "Privataus prioriteto el. pašto palaikymas"
+
+#: admin/templates/free-vs-pro.php:72
+#, fuzzy
+msgid "Need help? Just raise a support ticket to get priority email support"
+msgstr ""
+"Reikia pagalbos? Tiesiog pakelkite palaikymo bilietą, kad gautumėte "
+"prioritetinę el. pašto paramą"
+
+#. Theme Name of the plugin/theme
+msgid "Responsive"
+msgstr "Prisitaikantis"
+
+#: comments.php:27
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Šis įrašas yra apsaugotas slaptažodžiu. Jei norite peržiūrėti komentarus, "
+"įveskite slaptažodį."
+
+#. translators: 1: title.
+#: comments.php:42
+#, fuzzy
+msgid "One Comment on &ldquo;%1$s&rdquo;"
+msgstr "Vienas komentaras apie \"%1$s \""
+
+#: comments.php:58 comments.php:71
+#, fuzzy
+msgid "&#8249; Older comments"
+msgstr "&#8249; Senesni komentarai"
+
+#: comments.php:60 comments.php:73
+#, fuzzy
+msgid "Newer comments &#8250;"
+msgstr "Naujesni komentarai &#8250;"
+
+#: comments.php:85
+#, fuzzy
+msgid "Pings&#47;Trackbacks"
+msgstr "Ping&#47;Trackbacks"
+
+#. translators: 1 : Count, 2 : Pings 3 : Post title
+#: comments.php:102
+msgid "Name"
+msgstr "Vardas"
+
+#: comments.php:104
+msgid "E-mail"
+msgstr "El. paštas"
+
+#: comments.php:106
+msgid "Website"
+msgstr "Interneto svetainė"
+
+#: core/gutenberg/gutenberg-support.php:31
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:58
+#, fuzzy
+msgid "Button Color"
+msgstr "Mygtuko spalva"
+
+#: core/gutenberg/gutenberg-support.php:36
+#, fuzzy
+msgid "Button Hover Color"
+msgstr "Mygtuko užvalo spalva"
+
+#: core/gutenberg/gutenberg-support.php:41
+#, fuzzy
+msgid "Button Hover Text Color"
+msgstr "Mygtuko užvalo teksto spalva"
+
+#: core/gutenberg/gutenberg-support.php:46
+msgid "Button Text Color"
+msgstr "Mygtuko Teksto Spalva"
+
+#: core/gutenberg/gutenberg-support.php:53
+msgid "Text color"
+msgstr "Teksto spalva"
+
+#: core/gutenberg/gutenberg-support.php:60
+#, fuzzy
+msgid "Container Background Color"
+msgstr "Konteinerio fono spalva"
+
+#: core/includes/classes/class-responsive-admin-settings.php:91
+msgid "Responsive Options"
+msgstr "Prisitaikymo nustatymai"
+
+#: core/includes/classes/class-responsive-admin-settings.php:194
+msgid "Get Started"
+msgstr "Pradėkime"
+
+#: core/includes/classes/class-responsive-admin-settings.php:196
+#, fuzzy
+msgid "Free Vs Pro "
+msgstr "Nemokama vs Pro"
+
+#: core/includes/classes/class-responsive-admin-settings.php:231
+#, fuzzy
+msgid "Import a website template(FREE)"
+msgstr "Importuoti svetainės šabloną (NEMOKAMAI)"
+
+#: core/includes/classes/class-responsive-admin-settings.php:237
+#, fuzzy
+msgid ""
+"Install Responsive Add-ons to get ready-to-use website templates that can be "
+"imported with one click."
+msgstr ""
+"Įdiekite interaktyvius išorinius priedus, kad gautumėte paruoštus naudoti "
+"svetainių šablonus, kuriuos galima importuoti vienu spustelėjimu."
+
+#: core/includes/classes/class-responsive-admin-settings.php:242
+#, fuzzy
+msgid "Learn More &raquo;"
+msgstr "Sužinokite daugiau » raquo;"
+
+#: core/includes/classes/class-responsive-admin-settings.php:269
+msgid "Support"
+msgstr "Palaikymas"
+
+#: core/includes/classes/class-responsive-admin-settings.php:273
+#, fuzzy
+msgid "Have questions? Get in touch with us. We'll be happy to help"
+msgstr "Turite klausimų? Susisiekite su mumis. Mielai padėsime"
+
+#: core/includes/classes/class-responsive-admin-settings.php:277
+#, fuzzy
+msgid "Request Support &raquo;"
+msgstr "Prašyti paramos » raquo;"
+
+#. translators: %1$s: Responsive Support link.
+#: core/includes/classes/class-responsive-admin-settings.php:303
+#, fuzzy
+msgid "Change site layout"
+msgstr "Svetainės maketo keitimas"
+
+#: core/includes/classes/class-responsive-admin-settings.php:308
+#, fuzzy
+msgid "Customize fonts/typography"
+msgstr "Tinkinti šriftus / spausdinimą"
+
+#: core/includes/classes/class-responsive-admin-settings.php:313
+#, fuzzy
+msgid "Upload logo & site icon"
+msgstr "Įkelti logotipą ir svetainės piktogramą"
+
+#: core/includes/classes/class-responsive-admin-settings.php:318
+#, fuzzy
+msgid "Add/edit navigation menu"
+msgstr "Naršymo meniu pridėjimas / redagavimas"
+
+#: core/includes/classes/class-responsive-admin-settings.php:323
+#, fuzzy
+msgid "Customize header options"
+msgstr "Tinkinti antraštės parinktis"
+
+#: core/includes/classes/class-responsive-admin-settings.php:328
+#, fuzzy
+msgid "Customize footer options"
+msgstr "Poraštės parinkčių tinkinimas"
+
+#: core/includes/classes/class-responsive-admin-settings.php:333
+#, fuzzy
+msgid "Update blog layout"
+msgstr "Naujinti internetinio dienoraščio maketą"
+
+#: core/includes/classes/class-responsive-admin-settings.php:338
+#, fuzzy
+msgid "Update page layout"
+msgstr "Atnaujinti puslapio maketą"
+
+#: core/includes/classes/class-responsive-admin-settings.php:346
+#, fuzzy
+msgid "Quick Start:"
+msgstr "Greita pradžia:"
+
+#: core/includes/classes/class-responsive-admin-settings.php:365
+msgid "Community"
+msgstr "Bendruomenė"
+
+#: core/includes/classes/class-responsive-admin-settings.php:369
+#, fuzzy
+msgid ""
+"Meet the Responsive Power-users. Say hello, ask questions, give feedback, "
+"and help each other"
+msgstr ""
+"Susipažinkite su reaguojančių energijos vartotojams. Pasisveikink, užduokite "
+"klausimus, pateikite atsiliepimą ir padėkite vieni kitiems"
+
+#: core/includes/classes/class-responsive-admin-settings.php:373
+#, fuzzy
+msgid "Join Facebook Group &raquo;"
+msgstr "Prisijunk prie \"Facebook Group \" raquo;"
+
+#: core/includes/classes/class-responsive-admin-settings.php:387
+msgid "Feedback"
+msgstr "Atsiliepimas"
+
+#: core/includes/classes/class-responsive-admin-settings.php:391
+#, fuzzy
+msgid ""
+"Hi! Thanks for using the Responsive theme. Can you please do us a favor and "
+"give us a 5-star rating? Your feedback keeps us motivated and helps us grow "
+"the Responsive community."
+msgstr ""
+"sveikas! Dėkojame, kad naudojate Reaguoja tema. Ar galite padaryti mums "
+"paslaugą ir suteikti mums 5 žvaigždučių įvertinimas? Jūsų atsiliepimai saugo "
+"mus motyvuotus ir padeda mums augti Reaguoja bendruomenė."
+
+#: core/includes/classes/class-responsive-admin-settings.php:395
+#, fuzzy
+msgid "Submit Review &raquo;"
+msgstr "Pateikti apžvalga raquo;"
+
+#: core/includes/classes/class-responsive-admin-settings.php:421
+#, fuzzy
+msgid "Blazing Fast, mobile-friendly, fully-customizable WordPress theme."
+msgstr ""
+"Blazing Greitas, mobiliesiems draugiškas, visiškai pritaikoma WordPress tema."
+
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:265
+msgid "Sale!"
+msgstr "Akcija!"
+
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:354
+#, fuzzy
+msgid "WooCommerce Sidebar"
+msgstr "WooCommerce šoninė juosta"
+
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:356
+#, fuzzy
+msgid ""
+"This sidebar will be used on Product archive, Cart, Checkout and My Account "
+"pages."
+msgstr ""
+"Ši šoninė juosta bus naudojama produktų archyvo, krepšelio, kasos ir mano "
+"paskyros puslapiuose."
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:39
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-content-header-colors-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-footer-colors-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:44
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:44
+msgid "Colors"
+msgstr "Spalvos"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:46
+#, fuzzy
+msgid "Cart Buttons"
+msgstr "Krepšelio mygtukai"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:50
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:70
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:222
+msgid "Button"
+msgstr "Mygtukas"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:54
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:74
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:62
+msgid "Button Text"
+msgstr "Mygtuko tekstas"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:58
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:78
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:66
+#, fuzzy
+msgid "Button Hover"
+msgstr "Mygtuko užvalė"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:62
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:82
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:70
+#, fuzzy
+msgid "Button Hover Text"
+msgstr "Mygtuko užvalotekstą"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-colors-customizer.php:66
+#, fuzzy
+msgid "Checkout Button"
+msgstr "Kasos mygtukas"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:47
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:46
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:39
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:46
+msgid "Layouts"
+msgstr "Išdėstymai"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:54
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-checkout-customizer.php:46
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:50
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:50
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:49
+#: core/includes/customizer/settings/class-responsive-page-layout-customizer.php:50
+#: core/includes/customizer/settings/class-responsive-single-blog-layout-customizer.php:50
+#, fuzzy
+msgid "Main Content Width (%)"
+msgstr "Pagrindinio turinio plotis (%)"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:57
+#, fuzzy
+msgid "Enable Cross-sells"
+msgstr "Įgalinti kryžminius pardavimus"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:71
+#, fuzzy
+msgid "Cart Icon Visibility"
+msgstr "Krepšelio piktogramos matomumas"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:76
+#, fuzzy
+msgid "Display On All Devices"
+msgstr "Rodyti visuose įrenginiuose"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:77
+#, fuzzy
+msgid "Disabled On All Devices"
+msgstr "Išjungta visuose įrenginiuose"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-panel.php:40
+#, fuzzy
+msgid "Product Catalog Options"
+msgstr "Produktų katalogo parinktys"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-panel.php:41
+#, fuzzy
+msgid "Shop Options"
+msgstr "Parduotuvės parinktys"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-panel.php:49
+msgid "Product Options"
+msgstr "Prekės nustatymai"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-panel.php:50
+#, fuzzy
+msgid "Single Product Options"
+msgstr "Vieno produkto parinktys"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-panel.php:58
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-panel.php:59
+#, fuzzy
+msgid "Cart Options"
+msgstr "Krepšelio parinktys"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:46
+#, fuzzy
+msgid "Rating Color"
+msgstr "Įvertinimo spalva"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:50
+msgid "Price Color"
+msgstr "Kainos Spalva"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-colors-customizer.php:54
+#, fuzzy
+msgid "Add To Cart Buttons"
+msgstr "Pridėti į krepšelio mygtukus"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:43
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:115
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:44
+#: core/includes/customizer/settings/class-responsive-page-layout-customizer.php:43
+#: core/includes/customizer/settings/class-responsive-single-blog-layout-customizer.php:43
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:44
+#: core/includes/post-custom-meta.php:163
+msgid "Layout"
+msgstr "Išdėstymas"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:54
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:54
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:60
+#: core/includes/customizer/settings/class-responsive-page-layout-customizer.php:54
+#: core/includes/customizer/settings/class-responsive-single-blog-layout-customizer.php:54
+msgid "Sidebar Position"
+msgstr "Šoninės juostos pozicija"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:56
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:56
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:62
+#: core/includes/customizer/settings/class-responsive-page-layout-customizer.php:56
+#: core/includes/customizer/settings/class-responsive-single-blog-layout-customizer.php:56
+msgid "Right Sidebar"
+msgstr "Dešininė Juosta"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:57
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:57
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:63
+#: core/includes/customizer/settings/class-responsive-page-layout-customizer.php:57
+#: core/includes/customizer/settings/class-responsive-single-blog-layout-customizer.php:57
+msgid "Left Sidebar"
+msgstr "Kairinė Juosta"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:58
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:58
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:64
+#: core/includes/customizer/settings/class-responsive-page-layout-customizer.php:58
+#: core/includes/customizer/settings/class-responsive-single-blog-layout-customizer.php:58
+msgid "No Sidebar"
+msgstr "Nėra valdiklių"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:63
+#, fuzzy
+msgid "Shop Product"
+msgstr "Parduotuvė Produktas"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:67
+#, fuzzy
+msgid "Catalog View"
+msgstr "Katalogo rodinys"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:69
+msgid "Grid View"
+msgstr "Tinklelis"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:70
+msgid "List View"
+msgstr "Sąrašo rodinys"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:75
+#, fuzzy
+msgid "Content Aligmnment"
+msgstr "Turinys Lignment"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:77
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:75
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:91
+msgid "Center"
+msgstr "Centras"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:78
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:194
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:198
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:202
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:97
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:112
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:181
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:204
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:76
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:92
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:156
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:74
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:96
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:111
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:126
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:97
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:112
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:181
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:196
+msgid "Left"
+msgstr "Kairė"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:79
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:192
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:196
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:200
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:98
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:113
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:182
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:205
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:77
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:93
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:157
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:75
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:97
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:112
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:127
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:98
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:113
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:182
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:197
+msgid "Right"
+msgstr "Dešinė"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:98
+#, fuzzy
+msgid "Shop Elements"
+msgstr "Parduotuvė elementai"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:107
+#, fuzzy
+msgid "Sale Notification"
+msgstr "Pranešimas apie pardavimą"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:109
+msgid "None"
+msgstr "Nėra"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:110
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:64
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:90
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:88
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:89
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:372
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:404
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:410
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:484
+#: core/includes/post-custom-meta.php:136
+msgid "Default"
+msgstr "Numatytas"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:111
+#, fuzzy
+msgid "Custom String"
+msgstr "Pasirinktinė eilutė"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:116
+#, fuzzy
+msgid "Sale % Value"
+msgstr "Pardavimo % vertė"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:120
+msgid "Sale Bubble Style"
+msgstr "Išpardavimo etiketės stilius"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:122
+msgid "Circle"
+msgstr "Apskritimas"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:123
+#, fuzzy
+msgid "Circle Outline"
+msgstr "Apskritimo kontūras"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:124
+msgid "Square"
+msgstr "Kvadratas"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-shop-layout-customizer.php:125
+#, fuzzy
+msgid "Square Outline"
+msgstr "Kvadratinis kontūras"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:63
+#, fuzzy
+msgid "Product Elements"
+msgstr "Produkto elementai"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:67
+#, fuzzy
+msgid "Gallery Layout"
+msgstr "Galerijos maketas"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:69
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:118
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:84
+msgid "Vertical"
+msgstr "Vertikaliai"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:70
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:117
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:83
+msgid "Horizontal"
+msgstr "Horizontaliai"
+
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-single-product-layout-customizer.php:88
+#, fuzzy
+msgid "Single Product Structure"
+msgstr "Vieno produkto struktūra"
+
+#: core/includes/compatibility/woocommerce/woocommerce-helper.php:150
+msgid "Cart"
+msgstr "Krepšelis"
+
+#: core/includes/compatibility/woocommerce/woocommerce-helper.php:155
+#, fuzzy
+msgid " / "
+msgstr "/"
+
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:66
+#, fuzzy
+msgid "Link values together"
+msgstr "Reikšmių susiejimas kartu"
+
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:191
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:195
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:199
+#: footer.php:90
+msgid "Top"
+msgstr "Viršus"
+
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:193
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:197
+#: core/includes/customizer/controls/dimensions/class-responsive-customizer-dimensions-control.php:201
+msgid "Bottom"
+msgstr "Apačia"
+
+#: core/includes/customizer/controls/text/class-responsive-customizer-text-control.php:122
+#: core/includes/customizer/controls/text/class-responsive-customizer-text-control.php:127
+#: core/includes/customizer/controls/text/class-responsive-customizer-text-control.php:133
+#, fuzzy
+msgid "px - em - rem"
+msgstr "px - em - rem (-s)"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:62
+msgid "Inherit"
+msgstr "Paveldėti"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:65
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:411
+#, fuzzy
+msgid "Thin: 100"
+msgstr "Plonas: 100"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:66
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:412
+#, fuzzy
+msgid "Light: 200"
+msgstr "Šviesa: 200"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:67
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:413
+#, fuzzy
+msgid "Book: 300"
+msgstr "Knyga: 300"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:68
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:414
+#, fuzzy
+msgid "Normal: 400"
+msgstr "Normalus: 400"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:69
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:415
+#, fuzzy
+msgid "Medium: 500"
+msgstr "Vidutinis: 500"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:70
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:416
+#, fuzzy
+msgid "Semibold: 600"
+msgstr "Pusboldas: 600"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:71
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:417
+#, fuzzy
+msgid "Bold: 700"
+msgstr "Paryškintas: 700"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:72
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:418
+#, fuzzy
+msgid "Extra Bold: 800"
+msgstr "Papildomas paryškinimas: 800"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:73
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:419
+#, fuzzy
+msgid "Black: 900"
+msgstr "Juoda: 900"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:212
+#, fuzzy
+msgid "Arial, Helvetica, sans-serif"
+msgstr "Arial, Helvetica, sans-serif (Arial, Helvetica, sans-serif)"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:219
+msgid "Custom Fonts"
+msgstr "Tinkinti Šriftai"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:236
+msgid "Standard Fonts"
+msgstr "Standartiniai šriftai"
+
+#: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:250
+msgid "Google Fonts"
+msgstr "Google Šriftai"
+
+#: core/includes/customizer/controls/upsell/class-responsive-control-upsell.php:72
+#: core/includes/customizer/controls/upsell/class-responsive-section-upsell.php:88
+msgid "PRO"
+msgstr "UŽ"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:44
+#, fuzzy
+msgid "View PRO Features"
+msgstr "Peržiūrėti PRO funkcijas"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:60
+#, fuzzy
+msgid "Pro Ready Sites"
+msgstr "Pro Ready Sklypai"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:61
+#, fuzzy
+msgid "Form Builder"
+msgstr "Formų daryklė"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:62
+#, fuzzy
+msgid "Interactive Sliders and Carousels"
+msgstr "Interaktyvūs slankmačiai ir karuseliai"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:63
+#, fuzzy
+msgid "Pricing Tables"
+msgstr "Kainodaros lentelės"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:64
+#, fuzzy
+msgid "Portfolio and Post Layouts"
+msgstr "Portfelio ir skelbimo maketai"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:65
+#, fuzzy
+msgid "Private, Priority Support"
+msgstr "Privatus, prioritetinis palaikymas"
+
+#: core/includes/customizer/controls/upsell/class-responsive-upsell-manager.php:68
+#, fuzzy
+msgid "Get the PRO version!"
+msgstr "Gaukite PRO versiją!"
+
+#: core/includes/customizer/customizer.php:29
+#, fuzzy
+msgid "CSS Styles"
+msgstr "CSS stiliai"
+
+#: core/includes/customizer/customizer.php:43
+msgid "Custom CSS Styles"
+msgstr "Pasirinktiniai CSS Stiliai"
+
+#: core/includes/customizer/customizer.php:64
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:231
+msgid "Gradient"
+msgstr "Nuolydis"
+
+#: core/includes/customizer/customizer.php:65
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:232
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:73
+msgid "Flat"
+msgstr "Lygus"
+
+#: core/includes/customizer/customizer.php:98
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:63
+#, fuzzy
+msgid "Choose Post"
+msgstr "Pasirinkite Skelbti"
+
+#: core/includes/customizer/helper.php:35
+#: core/includes/customizer/helper.php:118
+#: core/includes/customizer/helper.php:224
+#: core/includes/customizer/helper.php:247
+#: core/includes/customizer/helper.php:274
+#: core/includes/customizer/settings/class-responsive-content-header-typography-customizer.php:48
+msgid "Title"
+msgstr "Pavadinimas"
+
+#: core/includes/customizer/helper.php:36
+#: core/includes/customizer/helper.php:119
+#: core/includes/customizer/helper.php:225
+msgid "Featured Image"
+msgstr "Pagrindinė nuotrauka"
+
+#: core/includes/customizer/helper.php:37
+#: core/includes/customizer/helper.php:120
+#: core/includes/customizer/helper.php:252
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:79
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:139
+msgid "Meta"
+msgstr "Pagrindas"
+
+#: core/includes/customizer/helper.php:38
+#: core/includes/customizer/helper.php:121
+#: core/includes/customizer/helper.php:226
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:43
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:196
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:43
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:43
+msgid "Content"
+msgstr "Turinys"
+
+#: core/includes/customizer/helper.php:173
+#, fuzzy
+msgid "Site Branding"
+msgstr "Svetainės prekės ženklo"
+
+#: core/includes/customizer/helper.php:174 functions.php:472
+#: partials/header/main-navigation.php:15
+#, fuzzy
+msgid "Main Navigation"
+msgstr "Pagrindinė navigacija"
+
+#: core/includes/customizer/helper.php:248
+msgid "Rating"
+msgstr "Įvertinimas"
+
+#: core/includes/customizer/helper.php:249
+#: core/includes/customizer/helper.php:276
+msgid "Price"
+msgstr "Kaina"
+
+#: core/includes/customizer/helper.php:250
+#: core/includes/customizer/helper.php:278
+msgid "Short Description"
+msgstr "Trumpas aprašymas"
+
+#: core/includes/customizer/helper.php:251
+#: core/includes/customizer/helper.php:279
+msgid "Add to Cart"
+msgstr "Į krepšelį"
+
+#: core/includes/customizer/helper.php:275
+msgid "Category"
+msgstr "Kategorija"
+
+#: core/includes/customizer/helper.php:277
+msgid "Ratings"
+msgstr "Reitingai"
+
+#: core/includes/customizer/helper.php:766
+msgid "Read more &raquo;"
+msgstr "Skaityti daugiau&raquo;"
+
+#: core/includes/customizer/helper.php:806
+#: core/includes/customizer/helper.php:827 partials/entry/content.php:17
+#, fuzzy
+msgid "Read More &raquo;"
+msgstr "Skaityti daugiau&raquo;"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:52
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:72
+#, fuzzy
+msgid "Entry Elements"
+msgstr "Įrašo elementai"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:84
+#, fuzzy
+msgid "Entry Featured Image"
+msgstr "Įrašas Teminiai Vaizdas"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:88
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:63
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:86
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:87
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:69
+msgid "Style"
+msgstr "Stilius"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:91
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:89
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:90
+#, fuzzy
+msgid "Stretched"
+msgstr "Ištemptas"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:95
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:110
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:73
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:94
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:109
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:95
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:110
+msgid "Alignment"
+msgstr "Lygiavimas"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:99
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:114
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:183
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:206
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:158
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:98
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:113
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:128
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:99
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:114
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:183
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:198
+msgid "center"
+msgstr "Centre"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:106
+msgid "Entry Title"
+msgstr "Įrašo Pavadinimas"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:121
+#, fuzzy
+msgid "Entry Meta"
+msgstr "Įrašas meta"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:141
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:141
+#, fuzzy
+msgid "Meta Elements"
+msgstr "Meta elementai"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:148
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:148
+msgid "Author"
+msgstr "Autorius"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:149
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:149
+msgid "Date"
+msgstr "Data"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:150
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:150
+msgid "Categories"
+msgstr "Kategorijos"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:151
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:151
+msgid "Comments"
+msgstr "Komentarai"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:170
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:170
+#, fuzzy
+msgid "Meta Separator"
+msgstr "Meta separatorius"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:179
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:179
+#, fuzzy
+msgid "Meta Alignment"
+msgstr "Meta derinimas"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:190
+#, fuzzy
+msgid "Entry Content"
+msgstr "Įrašo turinys"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:194
+#, fuzzy
+msgid "Content Type"
+msgstr "Turinio tipas"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:197
+msgid "Excerpt"
+msgstr "Ištrauka"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:202
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:124
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:194
+msgid "Content Alignment"
+msgstr "Turinio išlyginimas"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:211
+msgid "Excerpt Length"
+msgstr "Ištraukos ilgis"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:215
+msgid "Read More Text"
+msgstr "Skaityti daugiau tekstas"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:219
+#, fuzzy
+msgid "Read More Type"
+msgstr "Skaityti daugiau tipo"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:221
+msgid "Link"
+msgstr "Nuoroda"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-header-customizer.php:43
+#: core/includes/customizer/settings/class-responsive-panel.php:85
+#: core/includes/customizer/settings/class-responsive-panel.php:86
+#, fuzzy
+msgid "Content Header"
+msgstr "Turinio antraštė"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-header-customizer.php:59
+#, fuzzy
+msgid "Enable Blog Page Title"
+msgstr "Įgalinti internetinio dienoraščio puslapio pavadinimą"
+
+#: core/includes/customizer/settings/class-responsive-blog-content-header-customizer.php:78
+msgid "Blog Page Title"
+msgstr "blogo puslapio pavadinimas"
+
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:52
+#, fuzzy
+msgid "Entry Columns"
+msgstr "Įrašo stulpeliai"
+
+#: core/includes/customizer/settings/class-responsive-blog-layout-customizer.php:56
+#, fuzzy
+msgid "Enable Masonry Layout"
+msgstr "Įgalinti mūro maketą"
+
+#: core/includes/customizer/settings/class-responsive-content-header-colors-customizer.php:46
+msgid "Title Color"
+msgstr "Pavadinimo Spalva"
+
+#: core/includes/customizer/settings/class-responsive-content-header-colors-customizer.php:50
+msgid "Description Color"
+msgstr "Aprašymo Spalva"
+
+#: core/includes/customizer/settings/class-responsive-content-header-colors-customizer.php:54
+#, fuzzy
+msgid "Breadcrumb Color"
+msgstr "Džiūvėsėlių spalva"
+
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:56
+#, fuzzy
+msgid "Disable breadcrumb list?"
+msgstr "Išjungti džiūvėsėlių sąrašą?"
+
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:65
+#, fuzzy
+msgid "Breadcrumb Position"
+msgstr "Džiūvėsėlių padėtis"
+
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:67
+#, fuzzy
+msgid "Before Heading"
+msgstr "Prieš antraštę"
+
+#: core/includes/customizer/settings/class-responsive-content-header-layout-customizer.php:68
+#, fuzzy
+msgid "After Heading"
+msgstr "Po antraštės"
+
+#: core/includes/customizer/settings/class-responsive-content-header-typography-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-header-typography-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:44
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:197
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:209
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:219
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:230
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:241
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:252
+msgid "Typography"
+msgstr "Tipografija"
+
+#: core/includes/customizer/settings/class-responsive-content-header-typography-customizer.php:53
+msgid "Description"
+msgstr "Aprašymas"
+
+#: core/includes/customizer/settings/class-responsive-content-header-typography-customizer.php:59
+msgid "Breadcrumb"
+msgstr "Navigacija"
+
+#: core/includes/customizer/settings/class-responsive-customizer-notices.php:79
+msgid "Documentation"
+msgstr "Dokumentacija"
+
+#. translators: %1$s is Plugin Name
+#: core/includes/customizer/settings/class-responsive-customizer-notices.php:113
+#, fuzzy
+msgid "To have access to a shop section please install and configure %1$s."
+msgstr ""
+"Norėdami turėti prieigą prie parduotuvės skyriaus, įdiekite ir "
+"sukonfigūruokite %1$s."
+
+#: core/includes/customizer/settings/class-responsive-customizer-notices.php:114
+#, fuzzy
+msgid "WooCommerce plugin"
+msgstr "WooCommerce įskiepis"
+
+#: core/includes/customizer/settings/class-responsive-customizer-notices.php:158
+msgid "Recommended Plugins"
+msgstr "Rekomenduojami įskiepiai"
+
+#. translators: Orbit Fox Companion
+#: core/includes/customizer/settings/class-responsive-customizer-notices.php:163
+#, fuzzy
+msgid ""
+"Get access to even more powerful features that will help you build a "
+"beautiful fast and responsive website in no time at all."
+msgstr ""
+"Gaukite prieigą prie dar galingesnių funkcijų, kurios padės jums sukurti "
+"gražią greitą ir reaguojančią svetainę ne visą laiką."
+
+#: core/includes/customizer/settings/class-responsive-footer-colors-customizer.php:46
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:46
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:72
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:51
+msgid "Background Color"
+msgstr "Fono Spalva"
+
+#: core/includes/customizer/settings/class-responsive-footer-colors-customizer.php:50
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:68
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:131
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:155
+msgid "Text Color"
+msgstr "Teksto Spalva"
+
+#: core/includes/customizer/settings/class-responsive-footer-colors-customizer.php:54
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:80
+#, fuzzy
+msgid "Links Color"
+msgstr "Saitų spalva"
+
+#: core/includes/customizer/settings/class-responsive-footer-colors-customizer.php:58
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:84
+#, fuzzy
+msgid "Links Hover Color"
+msgstr "Nuorodos uždeda spalvą"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:47
+#, fuzzy
+msgid "Full Width Footer"
+msgstr "Viso pločio poraštė"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:53
+msgid "Footer Widgets"
+msgstr "Poraštės valdikliai"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:57
+msgid "Number of Columns"
+msgstr "Stulpelių skaičius"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:66
+#, fuzzy
+msgid "Footer Bar"
+msgstr "Poraštės juosta"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:87
+#, fuzzy
+msgid "Copyright text"
+msgstr "Autorių teisių tekstas"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:106
+#, fuzzy
+msgid "Hide Powered By Responsive Theme"
+msgstr "Slėpti Powered Pagal Reaguoja tema"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:128
+msgid "Social Links"
+msgstr "Socialinių tinklų nuorodos"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:144
+#: core/includes/functions-extensions.php:357
+msgid "Twitter"
+msgstr "Twitter"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:165
+#: core/includes/functions-extensions.php:358
+msgid "Facebook"
+msgstr "Facebook"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:186
+#: core/includes/functions-extensions.php:359
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:207
+#: core/includes/functions-extensions.php:360
+msgid "YouTube"
+msgstr "YouTube"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:228
+#: core/includes/functions-extensions.php:362
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:249
+#: core/includes/functions-extensions.php:363
+msgid "Instagram"
+msgstr "Instagram"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:270
+#: core/includes/functions-extensions.php:364
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:291
+#: core/includes/functions-extensions.php:361
+#, fuzzy
+msgid "StumbleUpon"
+msgstr "Stumbleupon"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:312
+#: core/includes/functions-extensions.php:366
+msgid "Vimeo"
+msgstr "Vimeo"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:333
+msgid "Yelp"
+msgstr "Yelp"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:354
+msgid "Foursquare"
+msgstr "Foursquare"
+
+#: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:373
+msgid "Email Address"
+msgstr "El. pašto adresas"
+
+#: core/includes/customizer/settings/class-responsive-footer-scripts-customizer.php:39
+#: core/includes/customizer/settings/class-responsive-header-scripts-customizer.php:39
+msgid "Scripts"
+msgstr "Skriptai"
+
+#: core/includes/customizer/settings/class-responsive-footer-scripts-customizer.php:57
+#, fuzzy
+msgid "Embeds to footer.php"
+msgstr "Įdeda į footer.php"
+
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:49
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:76
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:55
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:139
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:159
+msgid "Border Color"
+msgstr "Rėmelio Spalva"
+
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:52
+#, fuzzy
+msgid "Site Title Color"
+msgstr "Svetainės pavadinimo spalva"
+
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:55
+#, fuzzy
+msgid "Site Title Hover Color"
+msgstr "Svetainės pavadinimo užvalo spalva"
+
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:58
+#, fuzzy
+msgid "Site Tagline Color"
+msgstr "Svetainės tagline spalva"
+
+#: core/includes/customizer/settings/class-responsive-header-colors-customizer.php:64
+#, fuzzy
+msgid "Header Widget"
+msgstr "Antraštės valdiklis"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:47
+#, fuzzy
+msgid "Full Width Header"
+msgstr "Viso pločio antraštė"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:51
+#, fuzzy
+msgid "Inline logo & Site Title"
+msgstr "Įdėtasis logotipas &amp; Svetainės pavadinimas"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:71
+#, fuzzy
+msgid "Header Elements"
+msgstr "Antraštės elementai"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:81
+msgid "Header Layout"
+msgstr "Antraštės išdėstymas"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:89
+#, fuzzy
+msgid "Header Alignment"
+msgstr "Antraštės lygiuotė"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:98
+#, fuzzy
+msgid "Logo Padding (px)"
+msgstr "Logotipo kamšalu (px)"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:104
+msgid "Transparent Header"
+msgstr "Skaidri antraštė"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:108
+#, fuzzy
+msgid "Enable on Complete Website"
+msgstr "Įgalinti visą svetainę"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:112
+#, fuzzy
+msgid "Site Content Padding (px)"
+msgstr "Svetainės turinio užpildymas (px)"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:115
+#, fuzzy
+msgid "Disable on 404, Search & Archives?"
+msgstr "Išjungti 404, Paieška &amp; Archyvas?"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:118
+#, fuzzy
+msgid "Disable on Blog page?"
+msgstr "Išjungti internetinio dienoraščio puslapyje?"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:121
+#, fuzzy
+msgid "Disable on Latest Posts Page?"
+msgstr "Išjungti Naujausių Pranešimų puslapis?"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:124
+#, fuzzy
+msgid "Disable on Pages?"
+msgstr "Išjungti puslapiuose?"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:127
+#, fuzzy
+msgid "Disable on Posts?"
+msgstr "Išjungti Žinutės?"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:130
+#, fuzzy
+msgid "Disable on WooCommerce Product Pages?"
+msgstr "Išjungti WooCommerce produktų puslapiuose?"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:136
+#: core/includes/functions-sidebar.php:100
+#, fuzzy
+msgid "Header Widgets"
+msgstr "Antraštės valdikliai"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:140
+#, fuzzy
+msgid "Enable Header Widgets"
+msgstr "Įgalinti antraščių valdiklius"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:144
+#, fuzzy
+msgid "Widgets Position"
+msgstr "Valdiklių pozicija"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:146
+#, fuzzy
+msgid "Above Header"
+msgstr "Virš antraštės"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:147
+#, fuzzy
+msgid "In Header"
+msgstr "Antraštė"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:148
+#, fuzzy
+msgid "Below Header"
+msgstr "Žemiau antraštė"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:153
+#, fuzzy
+msgid "Widgets Alignment"
+msgstr "Valdikliai Lygiuotė"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:155
+msgid "Spread"
+msgstr "Plitimas"
+
+#: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:159
+#, fuzzy
+msgid "Space Around"
+msgstr "Erdvė Aplink"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:59
+#, fuzzy
+msgid "Active Menu Background Color"
+msgstr "Aktyvaus meniu fono spalva"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:63
+#, fuzzy
+msgid "Menu Item Link Color"
+msgstr "Meniu elemento saito spalva"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:67
+#, fuzzy
+msgid "Menu Item Link Hover Color"
+msgstr "Meniu elemento saito užvalo spalvos"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:71
+#, fuzzy
+msgid "Sub Menu Background Color"
+msgstr "Submeniu Fono spalva"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:75
+#, fuzzy
+msgid "Sub Menu Item Link Color"
+msgstr "Sub meniu elemento saito spalva"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:79
+#, fuzzy
+msgid "Sub Menu Item Link Hover Color"
+msgstr "Sub meniu elemento saito uždeda pelės žymeklį ant spalvos"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:83
+#, fuzzy
+msgid "Menu Toggle Background Color"
+msgstr "Meniu Perjungti fono spalvą"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-colors-customizer.php:87
+#, fuzzy
+msgid "Menu Toggle Color"
+msgstr "Meniu kaitalioti spalvą"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:51
+#, fuzzy
+msgid "Full Width Main Navigation"
+msgstr "Viso pločio pagrindinė navigacija"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:55
+#, fuzzy
+msgid "Enable Mobile Menu"
+msgstr "Įgalinti mobilųjį meniu"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:59
+msgid "Breakpoint"
+msgstr "Stabdos taškas"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:65
+msgid "Dropdown"
+msgstr "Išskleidžiamas"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:66
+#, fuzzy
+msgid "FullScreen"
+msgstr "Fullscreen"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:67
+#: core/includes/customizer/settings/class-responsive-panel.php:67
+msgid "Sidebar"
+msgstr "Šoninė Juosta"
+
+#: core/includes/customizer/settings/class-responsive-header-menu-layouts-customizer.php:72
+#, fuzzy
+msgid "Sidebar Menu Alignment"
+msgstr "Šoninės juostos meniu lygiuotė"
+
+#: core/includes/customizer/settings/class-responsive-header-scripts-customizer.php:54
+#, fuzzy
+msgid "Embeds to header.php"
+msgstr "Įdeda į header.php"
+
+#: core/includes/customizer/settings/class-responsive-header-typography-customizer.php:48
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:173
+msgid "Site Title"
+msgstr "Svetainės pavadinimas"
+
+#: core/includes/customizer/settings/class-responsive-header-typography-customizer.php:54
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:185
+#, fuzzy
+msgid "Site Tagline"
+msgstr "Svetainės žymėjiklis"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:50
+#: core/includes/customizer/settings/class-responsive-theme-options-customizer.php:47
+msgid "Choose Category"
+msgstr "Išsirinkti kategorija"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:69
+#, fuzzy
+msgid "Custom Home Page"
+msgstr "Pasirinktinis pagrindinis puslapis"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:83
+#, fuzzy
+msgid "Enable Custom Front Page"
+msgstr "Įgalinti pasirinktinį priekinį puslapį"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:88
+#, fuzzy
+msgid "Overrides the WordPress front page option"
+msgstr "Perrašo WordPress tituliniame puslapyje galimybė"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:93
+#, fuzzy
+msgid "Hero Area"
+msgstr "Hero plotas"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:101
+#: core/includes/functions.php:58 functions.php:527
+#, fuzzy
+msgid "HAPPINESS"
+msgstr "Laimės"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:108
+msgid "Headline"
+msgstr "Antraštė"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:120
+#: core/includes/functions.php:59 functions.php:530
+#, fuzzy
+msgid "IS A WARM CUP"
+msgstr "YRA ŠILTAS PUODELIS"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:127
+#, fuzzy
+msgid "Subheadline"
+msgstr "Antrinė antraštė"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:138
+#: core/includes/functions.php:60 functions.php:533
+#, fuzzy
+msgid ""
+"Your title, subtitle and this very content is editable from Theme Option. "
+"Call to Action button and its destination link as well. Image on your right "
+"can be an image or even YouTube video if you like."
+msgstr ""
+"Jūsų pavadinimas, subtitrai ir šis turinys yra redaguojamas iš temos "
+"parinktis. Raginimo veiksmo mygtukas ir jo paskirties nuoroda taip pat. "
+"Vaizdas dešinėje gali būti vaizdas ar net \"YouTube\" vaizdo įrašas, jei "
+"norite."
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:146
+msgid "Content Area"
+msgstr "Turinio sritis"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:163
+#, fuzzy
+msgid "Disable Call to Action Button?"
+msgstr "Išjungti raginimo veikti mygtuką?"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:182
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:351
+#, fuzzy
+msgid "Call to Action (URL)"
+msgstr "Raginimas veikti (URL)"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:202
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:331
+#, fuzzy
+msgid "Call to Action (Text)"
+msgstr "Raginimas veikti (tekstas)"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:224
+#, fuzzy
+msgid "Call to Action Button Style"
+msgstr "Mygtuko Iškviesti veiksmą stilius"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:248
+msgid "Featured Content"
+msgstr "Siūlomas Turinys"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:252
+#, fuzzy
+msgid "Paste your shortcode, video or image source"
+msgstr "Įklijuoti trumpojo kodo, vaizdo ar vaizdo šaltinį"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:259
+#, fuzzy
+msgid "About Section"
+msgstr "Apie skyrių"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:272
+#, fuzzy
+msgid "Enable About Section"
+msgstr "Įgalinti apie sekciją"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:285
+#: partials/custom-home/featured-area.php:105
+#, fuzzy
+msgid "About Box Title"
+msgstr "Apie lauko pavadinimą"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:292
+#, fuzzy
+msgid "About Title"
+msgstr "Apie pavadinimą"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:311
+#, fuzzy
+msgid "About Text"
+msgstr "Apie tekstą"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:353
+#, fuzzy
+msgid "Enter url as http://www.example.com"
+msgstr "Įveskite URL kaip http://www.example.com"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:369
+#, fuzzy
+msgid "Feature Section"
+msgstr "Funkcijų sekcija"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:375
+#, fuzzy
+msgid "Enable Feature Section"
+msgstr "Įgalinti funkcijų sekciją"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:396
+#, fuzzy
+msgid "Feature Title"
+msgstr "Priemonės pavadinimas"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:414
+#, fuzzy
+msgid "Select post for feature 1"
+msgstr "Pasirinkite 1 funkcijos įrašą"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:417
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:437
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:457
+#, fuzzy
+msgid ""
+"The featured image, title and content from the posts will be used to display "
+"the feature. Recommended image size for the featured images: 130 x 130px"
+msgstr ""
+"Funkcijai rodyti bus naudojamas matomas vaizdas, pavadinimas ir turinys iš "
+"įrašų. Rekomenduojamas vaizdo dydis teminiai vaizdai: 130 x 130px"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:434
+#, fuzzy
+msgid "Select post for feature 2"
+msgstr "Pasirinkite 2 funkcijos įrašą"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:454
+#, fuzzy
+msgid "Select post for feature 3"
+msgstr "Pasirinkite 3 funkcijos įrašą"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:466
+#, fuzzy
+msgid "Testimonial Section"
+msgstr "Atsiliepimų skyrius"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:479
+#, fuzzy
+msgid "Enable Testimonial Section"
+msgstr "Įgalinti atsiliepimų skyrių"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:492
+#: partials/custom-home/featured-area.php:217
+msgid "Testimonial"
+msgstr "Atsiliepimas"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:499
+#, fuzzy
+msgid "Testimonial Title"
+msgstr "Atsiliepimas Pavadinimas"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:517
+#, fuzzy
+msgid "Select Post"
+msgstr "Pasirinkite Skelbti"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:520
+#, fuzzy
+msgid ""
+"The featured image, title and content from the posts will be used to display "
+"the client testimonials. Recommended image size for the featured images: 178 "
+"x 178px"
+msgstr ""
+"Teminiai vaizdas, pavadinimas ir turinys iš pranešimų bus naudojami rodyti "
+"kliento atsiliepimai. Rekomenduojamas vaizdo dydis teminiai vaizdai: 178 x "
+"178px"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:528
+#, fuzzy
+msgid "Team Section"
+msgstr "Komandos skyrius"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:541
+#, fuzzy
+msgid "Enable Team Section"
+msgstr "Įgalinti komandos sekciją"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:554
+msgid "team"
+msgstr "komanda"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:561
+#, fuzzy
+msgid "Team Title"
+msgstr "Komandos pavadinimas"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:579
+#, fuzzy
+msgid "Select post for team member1"
+msgstr "Pasirinkti komandos nario skelbimą1"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:582
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:602
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:622
+#, fuzzy
+msgid ""
+"The featured image, title and content from the posts will be used to display "
+"the team member. Recommended image size for the featured images: 178 x 178px"
+msgstr ""
+"Komandos nariui rodyti bus naudojamas matomas vaizdas, pavadinimas ir "
+"turinys iš įrašų. Rekomenduojamas vaizdo dydis teminiai vaizdai: 178 x 178px"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:599
+#, fuzzy
+msgid "Select post for team member2"
+msgstr "Pasirinkti komandos nario skelbimą2"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:619
+#, fuzzy
+msgid "Select post for team member3"
+msgstr "Pasirinkti komandos nario įrašą3"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:639
+#, fuzzy
+msgid "Click to disable home page widgets"
+msgstr "Spustelėkite, jei norite išjungti pagrindinio puslapio valdiklius"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:648
+#, fuzzy
+msgid "Contact Section"
+msgstr "Kontaktų sekcija"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:661
+#, fuzzy
+msgid "Enable Contact Section"
+msgstr "Įgalinti kontakto sekciją"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:674
+msgid "Contact Us"
+msgstr "Susisiekite su mumis"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:681
+#, fuzzy
+msgid "Contact section Title"
+msgstr "Kontakto sekcijos pavadinimas"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:694
+#, fuzzy
+msgid "Contact subtitle"
+msgstr "Kontaktų subtitrai"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:701
+#, fuzzy
+msgid "Contact section Subtitle"
+msgstr "Kontaktų sekcija Subtitrai"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:720
+msgid "Address"
+msgstr "Adresas"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:739
+#: core/includes/functions-extensions.php:368
+msgid "Email"
+msgstr "El. paštas"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:758
+#, fuzzy
+msgid "Phone no"
+msgstr "Telefono nr."
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:777
+#, fuzzy
+msgid "Contact form shortcode"
+msgstr "Kontaktinė strumpuoju kodu"
+
+#: core/includes/customizer/settings/class-responsive-home-page-customizer.php:780
+#, fuzzy
+msgid "You can put Contact Form 7 shortcode here."
+msgstr "Jūs galite įdėti Kontaktinė forma 7 trumpas is čia."
+
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:51
+#, fuzzy
+msgid "Page Elements"
+msgstr "Puslapio elementai"
+
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:70
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:51
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:71
+#, fuzzy
+msgid "Post Elements"
+msgstr "Skelbimo elementai"
+
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:82
+#, fuzzy
+msgid "Page Featured Image"
+msgstr "Puslapis Teminiai Vaizdas"
+
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:105
+msgid "Page Title"
+msgstr "Puslapio Pavadinimas"
+
+#: core/includes/customizer/settings/class-responsive-page-content-customizer.php:120
+#, fuzzy
+msgid "Page Content"
+msgstr "Puslapio turinys"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:40
+msgid "Theme Options"
+msgstr "Temos nustatymai"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:41
+#: core/includes/customizer/settings/class-responsive-panel.php:50
+#, fuzzy
+msgid "Header Options"
+msgstr "Antraštės parinktys"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:49
+msgid "Header"
+msgstr "Antraštė"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:58
+#: functions.php:471 partials/header/main-navigation.php:14
+msgid "Main Menu"
+msgstr "Pagrindinis Meniu"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:59
+#, fuzzy
+msgid "Header Menu Options"
+msgstr "Antraštės meniu parinktys"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:68
+msgid "Sidebar Options"
+msgstr "Šoninės juostos nustatymai"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:76
+msgid "Footer"
+msgstr "Poraštė"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:77
+msgid "Footer Options"
+msgstr "Poraštės nustatymai"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:94
+#, fuzzy
+msgid "Blog / Archive"
+msgstr "Dienoraštis / Archyvas"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:95
+msgid "Blog Options"
+msgstr "Tinklaraščio parinktys"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:103
+#, fuzzy
+msgid "Blog Post"
+msgstr "Dienoraštyje"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:104
+#, fuzzy
+msgid "Single Blog Post"
+msgstr "Single Blog Post"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:112
+msgid "Page"
+msgstr "Puslapis"
+
+#: core/includes/customizer/settings/class-responsive-panel.php:113
+msgid "Page Options"
+msgstr "Lapo parametrai"
+
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:83
+#, fuzzy
+msgid "Post Featured Image"
+msgstr "Rašyti Teminiai Vaizdas"
+
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:106
+msgid "Post Title"
+msgstr "Įrašo pavadinimas"
+
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:121
+msgid "Post Meta"
+msgstr "Įrašo meta"
+
+#: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:190
+#, fuzzy
+msgid "Post Content"
+msgstr "Skelbti turinį"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:59
+#, fuzzy
+msgid "Backgrounds"
+msgstr "Fonai"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:63
+#, fuzzy
+msgid "Box Background Color"
+msgstr "Lauko fono spalva"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:67
+#, fuzzy
+msgid "Alternate Background Color"
+msgstr "Alternatyvi fono spalva"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:71
+#, fuzzy
+msgid "General Text"
+msgstr "Bendrastekstas"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:75
+msgid "Body Text Color"
+msgstr "Paryškinti tekstą"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:79
+#, fuzzy
+msgid "Heading 1 (H1) Color"
+msgstr "1 pozicijos (H1) spalva"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:83
+#, fuzzy
+msgid "Heading 2 (H2) Color"
+msgstr "2 pozicijos (H2) spalva"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:87
+#, fuzzy
+msgid "Heading 3 (H3) Color"
+msgstr "3 pozicijos (H3) spalva"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:91
+#, fuzzy
+msgid "Heading 4 (H4) Color"
+msgstr "4 pozicijos (H4) spalva"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:95
+#, fuzzy
+msgid "Heading 5 (H5) Color"
+msgstr "5 pozicijos (H5) spalva"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:99
+#, fuzzy
+msgid "Heading 6 (H6) Color"
+msgstr "6 pozicijos (H6) spalva"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:103
+#, fuzzy
+msgid "Meta Text Color"
+msgstr "Meta teksto spalva"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:107
+msgid "Links"
+msgstr "Nuorodos"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:111
+msgid "Link Color"
+msgstr "Nuorodos Spalva"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:115
+msgid "Link Hover Color"
+msgstr "Nuorodos Spalva Užvedus"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:119
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:86
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:83
+msgid "Buttons"
+msgstr "Mygtukai"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:123
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:151
+msgid "Color"
+msgstr "Spalva"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:127
+msgid "Hover Color"
+msgstr "Spalva Užvedus"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:135
+#, fuzzy
+msgid "Hover Text Color"
+msgstr "Uždekite teksto spalvą"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:143
+#, fuzzy
+msgid "Hover Border Color"
+msgstr "Užvalo kraštinių spalva"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:147
+msgid "Inputs"
+msgstr "Ateinantis mokėjimas"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:163
+msgid "Labels"
+msgstr "Etiketės"
+
+#: core/includes/customizer/settings/class-responsive-site-colors-customizer.php:167
+#, fuzzy
+msgid "Label Color"
+msgstr "Etiketės spalva"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:50
+#, fuzzy
+msgid "Hide Site Title"
+msgstr "Slėpti svetainės pavadinimą"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:53
+#, fuzzy
+msgid "Hide Tagline"
+msgstr "Slėpti žymėtą"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:57
+msgid "Width"
+msgstr "Plotis"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:59
+#, fuzzy
+msgid "Contained"
+msgstr "Yra"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:60
+msgid "Full Width"
+msgstr "Viso pločio"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:65
+#, fuzzy
+msgid "Container Width (px)"
+msgstr "Konteinerio plotis (px)"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:71
+msgid "Boxed"
+msgstr "Dėžutėje"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:72
+#, fuzzy
+msgid "Content Boxed"
+msgstr "Turinys supakuotas į dėžutę"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:78
+#, fuzzy
+msgid "Box Padding (px)"
+msgstr "Dėžės užpildymas (px)"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:82
+#, fuzzy
+msgid "Box Radius (px)"
+msgstr "Langelio spindulys (px)"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:90
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:106
+#, fuzzy
+msgid "Padding (px)"
+msgstr "Kamšalu (px)"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:94
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:110
+msgid "Radius (px)"
+msgstr "Spindulys (px)"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:98
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:114
+#, fuzzy
+msgid "Border Width (px)"
+msgstr "Kraštinės plotis (px)"
+
+#: core/includes/customizer/settings/class-responsive-site-layouts-customizer.php:102
+#, fuzzy
+msgid "Form Inputs"
+msgstr "Formos įvestys"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:51
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:54
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:151
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:162
+msgid "Body"
+msgstr "Turinys"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:55
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:68
+#, fuzzy
+msgid "Heading 1 (H1)"
+msgstr "1 išlaidų kategorija (H1)"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:59
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:80
+#, fuzzy
+msgid "Heading 2 (H2)"
+msgstr "2 išlaidų kategorija (H2)"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:63
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:92
+#, fuzzy
+msgid "Heading 3 (H3)"
+msgstr "3 išlaidų kategorija (H3)"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:67
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:104
+#, fuzzy
+msgid "Heading 4 (H4)"
+msgstr "4 išlaidų kategorija (H4)"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:71
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:116
+#, fuzzy
+msgid "Heading 5 (H5)"
+msgstr "5 išlaidų kategorija (H5)"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:75
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:128
+#, fuzzy
+msgid "Heading 6 (H6)"
+msgstr "6 išlaidų kategorija (H6)"
+
+#: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:87
+#, fuzzy
+msgid "Input Fields"
+msgstr "Įvesties laukai"
+
+#: core/includes/customizer/settings/class-responsive-theme-options-customizer.php:65
+#, fuzzy
+msgid "Exclude Categories from Blog page"
+msgstr "Neįtraukti kategorijų iš internetinio dienoraščio puslapio"
+
+#: core/includes/customizer/settings/class-responsive-theme-options-customizer.php:66
+#, fuzzy
+msgid ""
+"Please choose the post categories that should not be displayed on the blog "
+"page"
+msgstr ""
+"Pasirinkite skelbimo kategorijas, kurios neturėtų būti rodomos internetinio "
+"dienoraščio puslapyje"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:285
+#, fuzzy
+msgid "General Typography"
+msgstr "Bendra tipografija"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:366
+msgid "Font Family"
+msgstr "Šrifto šeima"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:400
+msgid "Font Weight"
+msgstr "Šrifto Storis"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:401
+#, fuzzy
+msgid "Important: Not all fonts support every font-weight."
+msgstr "Svarbu: ne visi šriftai palaiko kiekvieną šrifto svorį."
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:444
+msgid "Font Style"
+msgstr "Šrifto Stilius"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:451
+msgid "Normal"
+msgstr "Normalus"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:452
+msgid "Italic"
+msgstr "Pasvyrasis"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:477
+msgid "Text Transform"
+msgstr "Teksto Transformavimas"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:485
+msgid "Capitalize"
+msgstr "Kapitalizuoti"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:486
+msgid "Lowercase"
+msgstr "Mažosios raidės"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:487
+msgid "Uppercase"
+msgstr "Didžiosios raidės"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:531
+msgid "Font Size"
+msgstr "Šrifto Dydis"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:532
+#, fuzzy
+msgid "You can add: px-em-%"
+msgstr "Galite pridėti: px-em-%"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:585
+msgid "Line Height"
+msgstr "Linijos aukštis"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:621
+#, fuzzy
+msgid "Letter Spacing (px)"
+msgstr "Tarpai tarp raidžių (px)"
+
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:659
+msgid "Font Color"
+msgstr "Šrifto spalva"
+
+#: core/includes/functions-admin.php:59
+#, fuzzy
+msgid "Hi! Thanks for using the Responsive theme."
+msgstr "sveikas! Dėkojame, kad naudojate Reaguoja tema."
+
+#: core/includes/functions-admin.php:60
+#, fuzzy
+msgid ""
+"Can you please do us a favor and give us a 5-star rating? Your feedback "
+"keeps us motivated and helps us grow the Responsive community."
+msgstr ""
+"Ar galite padaryti mums paslaugą ir suteikti mums 5 žvaigždučių įvertinimas? "
+"Jūsų atsiliepimai saugo mus motyvuotus ir padeda mums augti Reaguoja "
+"bendruomenė."
+
+#: core/includes/functions-admin.php:61
+msgid "Ok, you deserve it"
+msgstr "Gerai, tu to nusipelnei"
+
+#: core/includes/functions-admin.php:62
+msgid "Nope, maybe later"
+msgstr "Ne, gal vėliau"
+
+#: core/includes/functions-admin.php:63
+msgid "I already did"
+msgstr "Aš jau padariau"
+
+#. translators: %s: link
+#: core/includes/functions-extensions.php:58 loop-no-posts.php:42
+msgid "Home"
+msgstr "Pradžia"
+
+#. translators: %s: Categories
+#: core/includes/functions-extensions.php:60
+msgid "Archive for %s"
+msgstr "\"%s\" archyvas"
+
+#. translators: %s: Search result page
+#. translators: %s is for search query.
+#: core/includes/functions-extensions.php:62 loop-header.php:33
+msgid "Search results for: %s"
+msgstr "Rezultatai Ieškant: %s"
+
+#. translators: %s: Post Pages
+#: core/includes/functions-extensions.php:64
+#, fuzzy
+msgid "Posts tagged %s"
+msgstr "Posts tagged %s"
+
+#. translators: %s: Author pages
+#. translators: %s: view post by
+#. translators: view all posts by author
+#. translators: %s view posts by
+#: core/includes/functions-extensions.php:66 core/includes/functions.php:685
+#: partials/entry/meta.php:54 partials/single/meta.php:49
+msgid "View all posts by %s"
+msgstr "Peržiūrėti visus įrašus %s"
+
+#: core/includes/functions-extensions.php:67
+msgid "Error 404"
+msgstr "Klaida 404"
+
+#. translators: %s: Page Number
+#. translators: %s: author
+#: core/includes/functions-extensions.php:211
+#: core/includes/functions-extras.php:190
+msgid "Page %s"
+msgstr "Puslapis %s"
+
+#: core/includes/functions-extensions.php:365
+#, fuzzy
+msgid "Yelp!"
+msgstr "Yelp"
+
+#: core/includes/functions-extensions.php:367
+msgid "foursquare"
+msgstr "kvadratas"
+
+#: core/includes/functions-extras.php:107 gutenberg-fullwidth.php:42
+#: image.php:59 index.php:56 partials/page/content.php:15
+#, fuzzy
+msgid "Read more &#8250;"
+msgstr "Skaityti daugiau &#8250;"
+
+#: core/includes/functions-sidebar.php:28
+msgid "Main Sidebar"
+msgstr "Pagrindinė šoninė juosta"
+
+#: core/includes/functions-sidebar.php:29
+#, fuzzy
+msgid ""
+"Area 1 - sidebar.php - Displays on Default, Blog, Blog Excerpt page templates"
+msgstr ""
+"Plotas 1 - sidebar.php - Rodo pagal nutylėjimą, blog, Blog'as ištrauka "
+"puslapio šablonus"
+
+#: core/includes/functions-sidebar.php:40
+#, fuzzy
+msgid "Home Widget 1"
+msgstr "Pagrindinis valdiklis 1"
+
+#: core/includes/functions-sidebar.php:41
+#, fuzzy
+msgid "Area 6 - sidebar-home.php - Displays on the Home Page"
+msgstr "Plotas 6 - sidebar-home.php - Rodo pagrindiniame puslapyje"
+
+#: core/includes/functions-sidebar.php:52
+#, fuzzy
+msgid "Home Widget 2"
+msgstr "Pradžia Widget 2"
+
+#: core/includes/functions-sidebar.php:53
+#, fuzzy
+msgid "Area 7 - sidebar-home.php - Displays on the Home Page"
+msgstr "Plotas 7 - sidebar-home.php - Rodo pagrindiniame puslapyje"
+
+#: core/includes/functions-sidebar.php:64
+#, fuzzy
+msgid "Home Widget 3"
+msgstr "Pradžia Widget 3"
+
+#: core/includes/functions-sidebar.php:65
+#, fuzzy
+msgid "Area 8 - sidebar-home.php - Displays on the Home Page"
+msgstr "Plotas 8 - sidebar-home.php - Rodo pagrindiniame puslapyje"
+
+#: core/includes/functions-sidebar.php:76
+#, fuzzy
+msgid "Gallery Sidebar"
+msgstr "Galerijos šoninė juosta"
+
+#: core/includes/functions-sidebar.php:77
+#, fuzzy
+msgid ""
+"Area 9 - sidebar-gallery.php - Displays on the page after an image has been "
+"clicked in a Gallery"
+msgstr ""
+"Plotas 9 - sidebar-gallery.php - Rodo puslapyje po to, kai vaizdas buvo "
+"paspaustas galerija"
+
+#: core/includes/functions-sidebar.php:88
+#, fuzzy
+msgid "Colophon Widget"
+msgstr "Colophon valdiklis"
+
+#: core/includes/functions-sidebar.php:89
+#, fuzzy
+msgid "Area 10 - sidebar-colophon.php, 100% width Footer widgets"
+msgstr "Plotas 10 - sidebar-colophon.php, 100% pločio Poraštės raštai"
+
+#: core/includes/functions-sidebar.php:101
+#, fuzzy
+msgid "Area 11 - sidebar-top.php - Displays on the right of the header"
+msgstr "Plotas 11 - šoninės juostos top.php - Rodo antraštės dešinėje"
+
+#: core/includes/functions-sidebar.php:112
+#, fuzzy
+msgid "Footer Widgets 1"
+msgstr "1 poraštės valdikliai"
+
+#: core/includes/functions-sidebar.php:113
+#, fuzzy
+msgid "Area 12 - sidebar-footer.php"
+msgstr "Plotas 12 - sidebar-footer.php"
+
+#: core/includes/functions-sidebar.php:123
+#, fuzzy
+msgid "Footer Widgets 2"
+msgstr "Poraštės valdikliai 2"
+
+#: core/includes/functions-sidebar.php:124
+#, fuzzy
+msgid "Area 13 - sidebar-footer.php"
+msgstr "Plotas 13 - sidebar-footer.php"
+
+#: core/includes/functions-sidebar.php:134
+#, fuzzy
+msgid "Footer Widgets 3"
+msgstr "Poraštės valdikliai 3"
+
+#: core/includes/functions-sidebar.php:135
+#, fuzzy
+msgid "Area 14 - sidebar-footer.php"
+msgstr "Plotas 14 - sidebar-footer.php"
+
+#: core/includes/functions-sidebar.php:145
+#, fuzzy
+msgid "Footer Widgets 4"
+msgstr "Poraštės valdikliai 4"
+
+#: core/includes/functions-sidebar.php:146
+#, fuzzy
+msgid "Area 15 - sidebar-footer.php"
+msgstr "Plotas 15 - sidebar-footer.php"
+
+#: core/includes/functions.php:61 functions.php:536
+#, fuzzy
+msgid "Call to Action"
+msgstr "Raginimas veikti"
+
+#: core/includes/functions.php:216
+msgid "Header Menu"
+msgstr "Viršutinės antraštės meniu"
+
+#: core/includes/functions.php:217 partials/footer/footer-menu.php:10
+#: partials/footer/footer-menu.php:11
+msgid "Footer Menu"
+msgstr "Apatinis menu"
+
+#: core/includes/functions.php:377
+#, fuzzy
+msgid "Team Section Options"
+msgstr "Komandos sekcijos parinktys"
+
+#: core/includes/functions.php:391
+#, fuzzy
+msgid ""
+"To use this post for front page's team section, please enter below details:"
+msgstr ""
+"Norėdami naudoti šį pranešimą pirmame puslapyje komanda skyriuje, įveskite "
+"žemiau informaciją:"
+
+#: core/includes/functions.php:394
+#, fuzzy
+msgid "Member designation"
+msgstr "Nario paskyrimas"
+
+#: core/includes/functions.php:398
+#, fuzzy
+msgid "Facebook Link"
+msgstr "Facebook Nuoroda"
+
+#: core/includes/functions.php:402
+#, fuzzy
+msgid "Twitter Link"
+msgstr "Twitter Nuoroda"
+
+#: core/includes/functions.php:406
+#, fuzzy
+msgid "GooglePlus Link"
+msgstr "GooglePlus Nuoroda"
+
+#: core/includes/functions.php:410
+#, fuzzy
+msgid "LinkedIn Link"
+msgstr "\"LinkedIn\" saitas"
+
+#: core/includes/functions.php:666
+msgid "Posted on"
+msgstr "Publikuota"
+
+#: core/includes/functions.php:666
+msgid "By"
+msgstr "Autorius"
+
+#. translators: %s: category list
+#. translators: %s posted in categories
+#. translators: %s: category list
+#: core/includes/functions.php:696 image.php:82 partials/entry/meta.php:104
+#: partials/single/meta.php:96
+msgid "Posted in %s"
+msgstr "Paskelbta % s"
+
+#: core/includes/functions.php:696 partials/entry/meta.php:104
+#: partials/single/meta.php:96
+msgid ", "
+msgstr ", "
+
+#: core/includes/functions.php:719
+#, fuzzy
+msgid "Upgrade To Pro"
+msgstr "Atnaujinti į pro"
+
+#: core/includes/post-custom-meta.php:137
+#, fuzzy
+msgid "Content/Sidebar"
+msgstr "Turinys / šoninė juosta"
+
+#: core/includes/post-custom-meta.php:138
+#, fuzzy
+msgid "Sidebar/Content"
+msgstr "Šoninė juosta / turinys"
+
+#. Template Name of the plugin/theme
+#, fuzzy
+msgid "Full Width Page (no sidebar)"
+msgstr "Viso pločio puslapis (be šoninės juostos)"
+
+#: core/includes/post-custom-meta.php:140
+#, fuzzy
+msgid "Blog 2 Column"
+msgstr "Dienoraštis 2 skiltis"
+
+#: core/includes/post-custom-meta.php:141
+#, fuzzy
+msgid "Blog 3 Column"
+msgstr "Dienoraštis 3 skiltyje"
+
+#: core/includes/post-custom-meta.php:142
+#, fuzzy
+msgid "Blog 4 Column"
+msgstr "Dienoraštis 4 skiltyje"
+
+#: footer.php:90
+#, fuzzy
+msgid "Scroll to Top"
+msgstr "Pa3/4ymìkite Viršus"
+
+#: functions.php:392
+#, fuzzy
+msgid "Permalink to %s"
+msgstr "Nuolatinė nuoroda į %s"
+
+#. translators: %s Link to 5 star rating
+#: functions.php:453
+#, fuzzy
+msgid ""
+"If you like <strong>Responsive Theme</strong> please leave us a %s rating. "
+"It takes a minute and helps a lot. Thanks in advance!"
+msgstr ""
+"Jei jums patinka <strong>Interaktyvi tema,</strong> palikite mums %s "
+"įvertinimą. Tai užtrunka minutę ir padeda daug. Ačiū iš anksto!"
+
+#: functions.php:454
+#, fuzzy
+msgid "Thanks :)"
+msgstr "Ačiū:)"
+
+#: functions.php:539
+msgid "#"
+msgstr "#"
+
+#: gutenberg-fullwidth.php:46 image.php:63 index.php:60
+#: partials/entry/layout.php:53 partials/page/layout.php:45
+#: partials/single/content.php:38 partials/single/layout.php:59
+msgid "Pages:"
+msgstr "Puslapiai:"
+
+#: header.php:35
+#, fuzzy
+msgid "&darr; Skip to Main Content"
+msgstr "&darr; Pereiti prie pagrindinio turinio"
+
+#: home.php:81
+msgid "Previous"
+msgstr "Ankstesnis"
+
+#: home.php:82
+msgid "Next"
+msgstr "Kitas"
+
+#: image.php:37
+#, fuzzy
+msgid "&#8249; Return to"
+msgstr "&#8249; Grįžti į"
+
+#: image.php:46 partials/entry/meta.php:90 partials/single/meta.php:84
+#: post-meta-3-col.php:29 post-meta-page.php:36 post-meta.php:40
+msgid "No Comments"
+msgstr "Komentarų nėra"
+
+#: image.php:46 partials/entry/meta.php:90
+#: partials/entry/thumbnail-style/comments.php:16 partials/single/meta.php:84
+#: post-meta-3-col.php:29 post-meta-page.php:36 post-meta.php:40
+msgid "1 Comment"
+msgstr "1 Komentaras"
+
+#: image.php:46 partials/entry/meta.php:90
+#: partials/entry/thumbnail-style/comments.php:16 partials/single/meta.php:84
+#: post-meta-3-col.php:29 post-meta-page.php:36 post-meta.php:40
+msgid "% Comments"
+msgstr "% Komentarai"
+
+#: image.php:79 post-data.php:25
+#, fuzzy
+msgid "Tagged with:"
+msgstr "Otagowane:"
+
+#: image.php:87 post-data.php:29
+#, fuzzy
+msgid "<span class=\"post-edit\">Edit</span>"
+msgstr "<span class=\"post-edit\">Redaguoti</span>"
+
+#: loop-nav.php:28
+#, fuzzy
+msgid "&#8249; Older posts"
+msgstr "&#8249; Senesni įrašai"
+
+#: loop-nav.php:29
+#, fuzzy
+msgid "Newer posts &#8250;"
+msgstr "Naujesni žinutės &#8250;"
+
+#. translators: %s search term
+#: loop-no-posts.php:26
+#, fuzzy
+msgid "Your search for %s did not match any entries."
+msgstr "Jūsų %s ieška neatitiko jokių įrašų."
+
+#: loop-no-posts.php:26
+#, fuzzy
+msgid "404 &#8212; Fancy meeting you here!"
+msgstr "404 &#8212; Išgalvotas susitikti su jumis čia!"
+
+#: loop-no-posts.php:32
+#, fuzzy
+msgid ""
+"Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our "
+"options here."
+msgstr "Don&#39; t paniką, mes&#39; Leiskite &#39;ištirti mūsų galimybes čia."
+
+#: loop-no-posts.php:43
+#, fuzzy
+msgid "&larr; Home"
+msgstr "&gt; Pradžia"
+
+#: partials/custom-home/featured-area.php:255
+msgid "Team"
+msgstr "Komanda"
+
+#. translators: 1: byline, 2: author
+#: partials/entry/meta.php:35
+msgid "By "
+msgstr "Autorius "
+
+#. translators: 1: class, 2: date
+#: partials/entry/meta.php:69 partials/single/meta.php:63
+msgid "Posted on "
+msgstr "Paskelbtas "
+
+#: partials/entry/thumbnail-style/comments.php:16
+msgid "0 Comments"
+msgstr "0 Komentarų"
+
+#: partials/footer/copy-right.php:17
+#, fuzzy
+msgid " &copy; "
+msgstr "&kopija;"
+
+#: partials/footer/copy-right.php:21
+#, fuzzy
+msgid "&copy; "
+msgstr "&kopija;"
+
+#: partials/footer/copy-right.php:29
+#, fuzzy
+msgid " | Powered by Responsive Theme"
+msgstr "| Parengta pagal reaguoja tema"
+
+#: partials/header/main-navigation.php:17
+msgid "Menu"
+msgstr "Meniu"
+
+#. translators: %s Name of current post. Only visible to screen readers
+#: partials/single/content.php:22
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Skaityti daugiau <span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: partials/single/layout.php:50
+msgid "About"
+msgstr "Apie"
+
+#: partials/single/layout.php:73
+#, fuzzy
+msgid "Previous Post is "
+msgstr "Ankstesnis Post yra"
+
+#: partials/single/layout.php:74
+#, fuzzy
+msgid "Next Post is"
+msgstr "Kitas Post yra"
+
+#: searchform.php:22
+msgid "Search for:"
+msgstr "Ieškoti:"
+
+#: searchform.php:23
+#, fuzzy
+msgid "Search here &hellip;"
+msgstr "Paieška čia &kaip pragaras;"
+
+#: searchform.php:24
+msgid "Go"
+msgstr "Vykdyti"
+
+#: sidebar-gallery.php:26
+msgid "Image Information"
+msgstr "Atvaizdo informacija"
+
+#: sidebar-gallery.php:33
+#, fuzzy
+msgid "Full Size:"
+msgstr "Visas dydis:"
+
+#: sidebar-gallery.php:39
+#, fuzzy
+msgid "Aperture: f&#47;"
+msgstr "Diafragma: f&#47;"
+
+#: sidebar-gallery.php:44
+msgid "Focal Length:"
+msgstr "Židinio nuotolis:"
+
+#: sidebar-gallery.php:44
+msgid "mm"
+msgstr "mm"
+
+#: sidebar-gallery.php:48
+msgid "ISO:"
+msgstr "ISO :"
+
+#: sidebar-gallery.php:52
+#, fuzzy
+msgid "Shutter:"
+msgstr "Užrakto:"
+
+#: sidebar-gallery.php:57 sidebar-gallery.php:59 sidebar-gallery.php:62
+msgid "sec"
+msgstr "s"
+
+#: sidebar-gallery.php:69
+msgid "Camera:"
+msgstr "Fotoaparatas: Length in millimeters"
+
+#: sidebar-home.php:34
+#, fuzzy
+msgid "Fermentum"
+msgstr "Fermentum (Fermentum)"
+
+#: sidebar-home.php:40
+#, fuzzy
+msgid ""
+"This is your first home widget box. To edit please go to Appearance > "
+"Widgets and choose 6th widget from the top in area 6 called Home Widget 1. "
+"Title is also manageable from widgets as well."
+msgstr ""
+"Tai jūsų pirmasis namų valdiklių dėžutė. Norėdami redaguoti, eikite į "
+"Išvaizda ... Raštai ir pasirinkti 6 valdikliui iš viršaus srityje 6 "
+"vadinamas Home Widget 1. Pavadinimas taip pat valdomas iš raštai taip pat."
+
+#: sidebar-home.php:54
+#, fuzzy
+msgid "Elementum"
+msgstr "Elementm (Elementm)"
+
+#: sidebar-home.php:60
+#, fuzzy
+msgid ""
+"This is your second home widget box. To edit please go to Appearance > "
+"Widgets and choose 7th widget from the top in area 7 called Home Widget 2. "
+"Title is also manageable from widgets as well."
+msgstr ""
+"Tai jūsų antrasis namų valdiklių dėžutė. Norėdami redaguoti, eikite į "
+"Išvaizda ... Raštai ir pasirinkti 7 valdikliui iš viršaus srityje 7 "
+"vadinamas Home Widget 2. Pavadinimas taip pat valdomas iš raštai taip pat."
+
+#: sidebar-home.php:74
+#, fuzzy
+msgid "Interdum"
+msgstr "Interdum (Interdum)"
+
+#: sidebar-home.php:78
+#, fuzzy
+msgid ""
+"This is your third home widget box. To edit please go to Appearance > "
+"Widgets and choose 8th widget from the top in area 8 called Home Widget 3. "
+"Title is also manageable from widgets as well."
+msgstr ""
+"Tai jūsų trečiasis namų valdiklių laukas. Norėdami redaguoti, eikite į "
+"Išvaizda ... Raštai ir pasirinkti 8 valdikliui iš viršaus srityje 8 "
+"vadinamas Home Widget 3. Pavadinimas taip pat valdomas iš raštai taip pat."
+
+#. Theme URI of the plugin/theme
+#, fuzzy
+msgid "https://cyberchimps.com/repsonsive/"
+msgstr "https://cyberchimps.com/repsonsive/"
+
+#. Description of the plugin/theme
+#, fuzzy
+msgid ""
+"Responsive is a fully customizable, search engine optimized & mobile-"
+"friendly WordPress theme. Compatible with the Gutenberg block editor, it is "
+"a perfect choice for your blog, business website, or WooCommerce store. With "
+"almost unlimited customizer options, you can customize every feature of your "
+"website. Responsive comes with minified scripts to improve website speed. It "
+"also comes with other features including - nine layout options for pages and "
+"blog, WooCommerce design options, and compatibility with the Elementor page "
+"builder. It works great on a mobile, tablet, desktop, and across all "
+"browsers. Responsive is also available in 45 languages and is search engine "
+"friendly. See Responsive in action: https://cyberchimps.com/responsive-ready-"
+"websites/. Learn more about its features: https://cyberchimps.com/responsive-"
+"features/."
+msgstr ""
+"Reaguoja yra visiškai pritaikoma, paieškos optimizuotas ir mobiliesiems "
+"draugiškas WordPress tema. Suderinamas su Gutenbergo bloko redaktoriumi, tai "
+"puikus pasirinkimas jūsų tinklaraščiui, verslo svetainei arba \"WooCommerce"
+"\" parduotuvei. Su beveik neribota customizer galimybes, galite pritaikyti "
+"kiekvieną savo svetainės funkciją. Reaguoja ateina su minified scenarijus, "
+"siekiant pagerinti svetainės greitį. Jis taip pat ateina su kitomis "
+"funkcijomis, įskaitant - devynis išdėstymo parinktis puslapių ir "
+"dienoraščio, WooCommerce dizaino parinktis, ir suderinamumą su Elementor "
+"puslapių statybininkas. Jis puikiai veikia mobiliuosiuose, planšetiniuose "
+"kompiuteriuose, staliniuose kompiuteriuose ir visose naršyklėse. Reaguoja "
+"taip pat prieinama 45 kalbomis ir yra paieškos draugiškas. Žiūrėkite "
+"\"Responsive in action\": https://cyberchimps.com/responsive-ready-"
+"websites/. Sužinokite daugiau apie jo funkcijas: https://cyberchimps.com/"
+"responsive-features/."
+
+#. Author of the plugin/theme
+#, fuzzy
+msgid "CyberChimps"
+msgstr "CyberChimps (Elektroniniaišimkai)"
+
+#. Author URI of the plugin/theme
+#, fuzzy
+msgid "https://cyberchimps.com"
+msgstr "https://cyberchimps.com"
+
+#. Template Name of the plugin/theme
+#, fuzzy
+msgid "Gutenberg Fullwidth No title"
+msgstr "Gutenbergo plotis Be pavadinimo"
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:48
+#, fuzzy
+msgctxt "comments title"
+msgid "%1$s Comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Comments on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s Komentaras \"%2$s\""
+msgstr[1] ""
+msgstr[2] ""
+
+#: functions.php:126
+msgctxt "Name of the small font size in the block editor"
+msgid "Small"
+msgstr "Mažas"
+
+#: functions.php:127
+msgctxt "Short name of the small font size in the block editor."
+msgid "S"
+msgstr "P"
+
+#: functions.php:132
+msgctxt "Name of the regular font size in the block editor"
+msgid "Regular"
+msgstr "Įprastas"
+
+#: functions.php:133
+msgctxt "Short name of the regular font size in the block editor."
+msgid "M"
+msgstr "M"
+
+#: functions.php:138
+msgctxt "Name of the large font size in the block editor"
+msgid "Large"
+msgstr "Didelis"
+
+#: functions.php:139
+msgctxt "Short name of the large font size in the block editor."
+msgid "L"
+msgstr "P"
+
+#: functions.php:144
+msgctxt "Name of the larger font size in the block editor"
+msgid "Larger"
+msgstr "_Didesnis tekstas"
+
+#: functions.php:145
+msgctxt "Short name of the larger font size in the block editor."
+msgid "XL"
+msgstr "XL"

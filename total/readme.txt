@@ -1,8 +1,8 @@
 === Total ===
 Contributors: hashthemes
 Requires at least: 5.0
-Tested up to: 6.4
-Stable tag: 2.1.58
+Tested up to: 6.5
+Stable tag: 2.1.64
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,25 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.64 - May 26, 2024 =
+* CSS update for Elementor Container
+
+= 2.1.63 - May 6, 2024 =
+* welcome.css RTL version added
+
+= 2.1.62 - Apr 8, 2024 =
+* CSS fixes
+* Translation fixed
+
+= 2.1.61 - Mar 25, 2024 =
+* Comparison page link fixed
+
+= 2.1.60 - Feb 27, 2024 =
+* Security Fixes
+
+= 2.1.59 - Feb 08, 2024 =
+* Minor CSS fixes
+
 = 2.1.58 - Jan 10, 2024 =
 * Christmas sales banner removed on welcome screen
 

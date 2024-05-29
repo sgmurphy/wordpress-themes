@@ -32,7 +32,7 @@ $total_pro_features = '<ul>
 	<li>' . esc_html__("Fully Multilingual and Translation ready", "total") . '</li>
 	<li>' . esc_html__("Fully RTL(Right to left) languages compatible", "total") . '</li>
 	</ul>
-	<a class="ht-implink" href="https://hashthemes.com/wordpress-theme/total/#theme-comparision" target="_blank">' . esc_html__("Comparision - Free Vs Pro", "total") . '</a>';
+	<a class="ht-implink" href="http://localhost:8888/total/wp-admin/admin.php?page=total-welcome&section=free_vs_pro" target="_blank">' . esc_html__("Comparision - Free Vs Pro", "total") . '</a>';
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-pro-section', array(
     'priority' => 0,

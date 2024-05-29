@@ -8,7 +8,7 @@ $wp_customize->add_panel('total_home_panel', array(
 ));
 
 $wp_customize->add_section(new Total_Upgrade_Section($wp_customize, 'total-frontpage-notice', array(
-    'title' => sprintf(esc_html('Important! Home Page Sections are not enabled. Enable it %1shere%2s.', 'total'), '<a href="javascript:wp.customize.section( \'static_front_page\' ).focus()">', '</a>'),
+    'title' => sprintf(esc_html__('Important! Home Page Sections are not enabled. Enable it %1shere%2s.', 'total'), '<a href="javascript:wp.customize.section( \'static_front_page\' ).focus()">', '</a>'),
     'priority' => -1,
     'class' => 'ht--single-row',
     'panel' => 'total_home_panel',

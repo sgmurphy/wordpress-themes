@@ -112,6 +112,12 @@ add_action('customize_controls_print_footer_scripts', 'total_icon_choices');
 add_action('wp_ajax_total_order_sections', 'total_order_sections');
 
 function total_order_sections() {
+    if (!current_user_can('manage_options')) {
+        return;
+    }
+
+    check_ajax_referer('total-order-sections', 'secure');
+
     if (isset($_POST['sections'])) {
         set_theme_mod('total_frontpage_sections', $_POST['sections']);
     }

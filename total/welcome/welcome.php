@@ -185,9 +185,14 @@ if (!class_exists('Total_Welcome')) :
                     'error' => esc_html__('Error! Reload the page and try again.', 'total'),
                     'ajax_nonce' => wp_create_nonce('total_activate_hdi_plugin')
                 );
-                wp_enqueue_style('total-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array(), TOTAL_VERSION);
                 wp_enqueue_script('total-welcome', get_template_directory_uri() . '/welcome/js/welcome.js', array('plugin-install', 'updates'), TOTAL_VERSION, true);
                 wp_localize_script('total-welcome', 'importer_params', $importer_params);
+            }
+
+            if (is_rtl()) {
+                wp_enqueue_style('total-welcome', get_template_directory_uri() . '/welcome/css/welcome.rtl.css', array(), TOTAL_VERSION);
+            } else {
+                wp_enqueue_style('total-welcome', get_template_directory_uri() . '/welcome/css/welcome.css', array(), TOTAL_VERSION);
             }
         }
 
