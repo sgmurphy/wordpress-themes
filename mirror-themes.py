@@ -72,7 +72,7 @@ def download_file(url, filepath):
             print(f'Could not extract zip {filepath}')
 
 if __name__ == '__main__':
-    themes = [theme for theme in get_themes() if theme['active_installs'] >= 50000]
+    themes = [theme for theme in get_themes() if theme['active_installs'] >= 15000]
 
     with ThreadPoolExecutor(max_workers=20) as executor:
         running_tasks = [executor.submit(download_file(theme['download_link'], f'{theme["slug"]}.{theme["version"]}.zip')) for theme in themes]
