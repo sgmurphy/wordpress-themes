@@ -94,7 +94,6 @@ if ( ! class_exists( 'Zakra_Customize_Single_Blog_Post_Option' ) ) :
 
 			$options = array_merge( $options, $configs );
 
-
 			if ( ! zakra_is_zakra_pro_active() ) {
 
 				$configs[] = array(
@@ -113,9 +112,6 @@ if ( ! class_exists( 'Zakra_Customize_Single_Blog_Post_Option' ) ) :
 
 			return $options;
 		}
-
-
-
 	}
 
 	new Zakra_Customize_Single_Blog_Post_Option();

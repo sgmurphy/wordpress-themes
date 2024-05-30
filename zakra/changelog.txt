@@ -1,5 +1,10 @@
 == Changelog ==
-= 3.0.16 - 2024-05-17 =
+= 3.0.18 - 2024-05-29 =
+* Add         - Option to set search page post limit.
+* Fix         - WooCommerce css notice.
+* Enhancement - Welcome notice and get start button.
+
+= 3.0.17 - 2024-05-17 =
 * Fix - Search issue.
 
 = 3.0.16 - 2024-05-07 =

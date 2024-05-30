@@ -67,8 +67,8 @@ if ( ! class_exists( 'Zakra_Customize_Blog_Option' ) ) :
 					'choices'  => apply_filters(
 						'zakra_blog_post_date_type_choices',
 						array(
-							'published-date'  => esc_html__( 'Published Date', 'zakra' ),
-							'modified-date' => esc_html__( 'Modified Date', 'zakra' ),
+							'published-date' => esc_html__( 'Published Date', 'zakra' ),
+							'modified-date'  => esc_html__( 'Modified Date', 'zakra' ),
 						)
 					),
 					'priority' => 110,
@@ -292,6 +292,37 @@ if ( ! class_exists( 'Zakra_Customize_Blog_Option' ) ) :
 							)
 						),
 						'operator'   => 'AND',
+					),
+				),
+
+				array(
+					'name'        => 'zakra_search_results_posts_per_page_heading',
+					'type'        => 'control',
+					'control'     => 'zakra-title',
+					'label'       => esc_html__( 'Search Bar', 'zakra' ),
+					'description' => esc_html__( 'Configure Search result', 'zakra' ),
+					'section'     => 'zakra_blog',
+					'priority'    => 220,
+				),
+
+				array(
+					'name'        => 'zakra_search_results_posts_per_page',
+					'default'     => array(
+						'size' => 3,
+					),
+					'suffix'      => array( 'posts' ),
+					'type'        => 'control',
+					'control'     => 'zakra-slider',
+					'label'       => esc_html__( 'Post Per Page', 'zakra' ),
+					'section'     => 'zakra_blog',
+					'transport'   => 'refresh',
+					'priority'    => 225,
+					'input_attrs' => array(
+						'px' => array(
+							'min'  => 1,
+							'max'  => 99,
+							'step' => 1,
+						),
 					),
 				),
 

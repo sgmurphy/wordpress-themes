@@ -83,9 +83,9 @@ class Zakra_Welcome_Notice {
 						<p class="zakra-message__subheading">
 							<?php
 							sprintf(
-							    /* translators: %s: welcome page link starting username */
+								/* translators: %s: welcome page link starting username */
 								esc_html__( 'Welcome %s!', 'zakra' ),
-                                $username
+								$username
 							);
 							?>
 						</p>
@@ -146,9 +146,9 @@ class Zakra_Welcome_Notice {
 						<p class="zakra-message__subheading">
 							<?php
 							sprintf(
-							    /* translators: %s: welcome page link starting username */
+								/* translators: %s: welcome page link starting username */
 								esc_html__( 'Welcome %s!', 'zakra' ),
-                                $username
+								$username
 							);
 							?>
 						</p>
@@ -170,7 +170,7 @@ class Zakra_Welcome_Notice {
 					</div>
 					<div class="zakra-message__cta">
 						<?php echo $this->import_button_html(); ?>
-						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking this button will install and activate the ThemeGrill Demo Importer plugin allowing you to import the theme’s demos.', 'zakra' ); ?></span>
+						<span class="plugin-install-notice"><?php esc_html_e( 'Clicking this button will install and activate the ThemeGrill Demo Importer and BlockArt Blocks plugins allowing you to import the theme demos.', 'zakra' ); ?></span>
 					</div>
 				</div>
 				<div class="zakra-message__image">
@@ -213,72 +213,93 @@ class Zakra_Welcome_Notice {
 	public function welcome_notice_import_handler() {
 		check_ajax_referer( 'zakra_demo_import_nonce', 'security' );
 
-		$state = '';
+		$plugins = array(
+			'themegrill-demo-importer' => 'themegrill-demo-importer/themegrill-demo-importer.php',
+			'blockart-blocks'          => 'blockart-blocks/blockart.php',
+		);
 
-		if ( class_exists( 'themegrill_demo_importer' ) ) {
-			$state = 'activated';
-		} elseif ( file_exists( WP_PLUGIN_DIR . '/themegrill-demo-importer/themegrill-demo-importer.php' ) ) {
-			$state = 'installed';
+		foreach ( $plugins as $slug => $basename ) {
+			$state = $this->install_plugin( $slug, $basename );
 		}
 
-		if ( 'activated' === $state ) {
-			$response['redirect'] = admin_url( '/themes.php?page=zakra&tab=starter-templates' );
-		} elseif ( 'installed' === $state ) {
-			$response['redirect'] = admin_url( '/themes.php?page=zakra&tab=starter-templates' );
-			if ( current_user_can( 'activate_plugin' ) ) {
-				$result = activate_plugin( 'themegrill-demo-importer/themegrill-demo-importer.php' );
-
-				if ( is_wp_error( $result ) ) {
-					$response['errorCode']    = $result->get_error_code();
-					$response['errorMessage'] = $result->get_error_message();
-				}
-			}
+		if ( is_wp_error( $state ) ) {
+			$response['errorCode']    = $state->get_error_code();
+			$response['errorMessage'] = $state->get_error_message();
 		} else {
-			wp_enqueue_style( 'plugin-install' );
-			wp_enqueue_script( 'plugin-install' );
-
 			$response['redirect'] = admin_url( '/themes.php?page=zakra&tab=starter-templates' );
-
-			/**
-			 * Install Plugin.
-			 */
-			include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-			include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
-
-			$api = plugins_api(
-				'plugin_information',
-				array(
-					'slug'   => sanitize_key( wp_unslash( 'themegrill-demo-importer' ) ),
-					'fields' => array(
-						'sections' => false,
-					),
-				)
-			);
-
-			$skin     = new WP_Ajax_Upgrader_Skin();
-			$upgrader = new Plugin_Upgrader( $skin );
-			$result   = $upgrader->install( $api->download_link );
-
-			if ( $result ) {
-				$response['installed'] = 'succeed';
-			} else {
-				$response['installed'] = 'failed';
-			}
-
-			// Activate plugin.
-			if ( current_user_can( 'activate_plugin' ) ) {
-				$result = activate_plugin( 'themegrill-demo-importer/themegrill-demo-importer.php' );
-
-				if ( is_wp_error( $result ) ) {
-					$response['errorCode']    = $result->get_error_code();
-					$response['errorMessage'] = $result->get_error_message();
-				}
-			}
 		}
 
 		wp_send_json( $response );
 
 		exit();
+	}
+
+	public function install_plugin( $slug, $basename ) {
+
+		$state                  = '';
+		$installed_plugin_slugs = array_keys( get_plugins() );
+
+		if ( in_array( $basename, $installed_plugin_slugs, true ) ) {
+			$state = is_plugin_active( $basename ) ? 'activated' : 'installed';
+		}
+
+		if ( 'activated' === $state ) {
+			return true;
+		}
+
+		if ( 'installed' === $state && current_user_can( 'activate_plugin' ) ) {
+				$result = activate_plugin( $basename );
+
+			if ( is_wp_error( $result ) ) {
+				return $result;
+			}
+
+			return true;
+		}
+
+		wp_enqueue_style( 'plugin-install' );
+		wp_enqueue_script( 'plugin-install' );
+
+		/**
+		 * Install Plugin.
+		 */
+		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+
+		$api = plugins_api(
+			'plugin_information',
+			array(
+				'slug'   => sanitize_key( wp_unslash( $slug ) ),
+				'fields' => array(
+					'sections' => false,
+				),
+			)
+		);
+
+		$skin     = new WP_Ajax_Upgrader_Skin();
+		$upgrader = new Plugin_Upgrader( $skin );
+		$result   = $upgrader->install( $api->download_link );
+
+		if ( is_wp_error( $result ) ) {
+			return $result;
+		}
+
+		if ( ! $result ) {
+			return new WP_Error( 'install_failed', __( 'Plugin installation failed.', 'zakra' ) );
+		}
+
+		// Activate plugin.
+		if ( current_user_can( 'activate_plugin' ) ) {
+			$result = activate_plugin( $basename );
+
+			if ( is_wp_error( $result ) ) {
+				return $result;
+			}
+
+			return true;
+		}
+
+		return true;
 	}
 }
 

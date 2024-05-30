@@ -666,22 +666,22 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			);
 
 			// Button color.
-			$button_color     = get_theme_mod( 'zakra_button_color', '#ffffff' );
+			$button_color     = get_theme_mod( 'zakra_button_color', '' );
 			$button_color_css = array(
 				'button, input[type="button"], input[type="reset"], input[type="submit"], #infinite-handle span, .wp-block-button .wp-block-button__link' => array(
 					'color' => esc_html( $button_color ),
 				),
 			);
-			$parse_css        .= zakra_parse_css( '#ffffff', $button_color, $button_color_css );
+			$parse_css        .= zakra_parse_css( '', $button_color, $button_color_css );
 
 			// Button hover color.
-			$button_hover_color     = get_theme_mod( 'zakra_button_hover_color', '#ffffff' );
+			$button_hover_color     = get_theme_mod( 'zakra_button_hover_color', '' );
 			$button_hover_color_css = array(
 				'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, #infinite-handle span:hover, .wp-block-button .wp-block-button__link:hover' => array(
 					'color' => esc_html( $button_hover_color ),
 				),
 			);
-			$parse_css              .= zakra_parse_css( '#ffffff', $button_hover_color, $button_hover_color_css );
+			$parse_css              .= zakra_parse_css( '', $button_hover_color, $button_hover_color_css );
 
 			// Button background color.
 			$button_background_color     = get_theme_mod( 'zakra_button_background_color', '#027abb' );
@@ -1786,21 +1786,21 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			);
 			$parse_wc_css           .= zakra_parse_css( '#3F3F46', $base_wc_text_color, $base_wc_text_color_css );
 
-			$button_wc_text_color     = get_theme_mod( 'zakra_button_color', '#ffffff' );
+			$button_wc_text_color     = get_theme_mod( 'zakra_button_color', '' );
 			$button_wc_text_color_css = array(
 				'.woocommerce a.button, .woocommerce a.button.alt, .woocommerce button.button, .woocommerce button.button.alt, .woocommerce ul.products a.button, .woocommerce div.product form.cart .button, .wp-block-button .wp-block-button__link, .woocommerce button.button:disabled[disabled], .tg-sticky-panel .tg-checkout-btn a' => array(
 					'color' => esc_html( $button_wc_text_color ),
 				),
 			);
-			$parse_wc_css             .= zakra_parse_css( '#ffffff', $button_wc_text_color, $button_wc_text_color_css );
+			$parse_wc_css             .= zakra_parse_css( '', $button_wc_text_color, $button_wc_text_color_css );
 
-			$button_wc_hover_text_color     = get_theme_mod( 'zakra_button_hover_color', '#ffffff' );
+			$button_wc_hover_text_color     = get_theme_mod( 'zakra_button_hover_color', '' );
 			$button_wc_hover_text_color_css = array(
 				'.woocommerce a.button:hover, .woocommerce a.button.alt:hover, .woocommerce button.button:hover, .woocommerce button.button.alt:hover, .woocommerce ul.products a.button:hover, .woocommerce div.product form.cart .button:hover, .tg-sticky-panel .tg-checkout-btn a:hover' => array(
 					'color' => esc_html( $button_wc_hover_text_color ),
 				),
 			);
-			$parse_wc_css                   .= zakra_parse_css( '#ffffff', $button_wc_hover_text_color, $button_wc_hover_text_color_css );
+			$parse_wc_css                   .= zakra_parse_css( '', $button_wc_hover_text_color, $button_wc_hover_text_color_css );
 
 			$button_wc_bg_color     = get_theme_mod( 'zakra_button_background_color', '#027abb' );
 			$button_wc_bg_color_css = array(

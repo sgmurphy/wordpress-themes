@@ -37,12 +37,27 @@ if ( ! function_exists( 'zakra_get_sidebar' ) ) {
 
 		if ( $sidebar_meta ) {
 			return $sidebar_meta;
-		} else {
+		} else { //phpcs:ignore Universal.ControlStructures.DisallowLonelyIf.Found
 			if ( 'zak-site-layout--left' === $current_layout ) {
 				return 'sidebar-left';
 			}
 		}
 
 		return $sidebar;
+	}
+}
+
+if ( ! function_exists( 'zakra_set_posts_per_page' ) ) {
+
+	function zakra_set_posts_per_page( $query ) {
+
+		if ( $query->is_search() && ! is_admin() ) {
+			$posts_per_page = get_theme_mod( 'zakra_search_results_posts_per_page', array( 'size' => 10 ) );
+			if ( is_array( $posts_per_page ) && isset( $posts_per_page['size'] ) ) {
+				$query->set( 'posts_per_page', $posts_per_page['size'] );
+			} else {
+				$query->set( 'posts_per_page', 10 );
+			}
+		}
 	}
 }

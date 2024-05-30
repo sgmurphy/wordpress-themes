@@ -3150,12 +3150,6 @@ table.shop_table_responsive tr td.download-actions .button {
 	color: #027ABB;
 }
 
-.woocommerce-lost-password .woocommerce-ResetPassword {
-	width: 288px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 .woocommerce-lost-password .woocommerce-ResetPassword p {
 	margin-bottom: 16px;
 }
@@ -3163,6 +3157,64 @@ table.shop_table_responsive tr td.download-actions .button {
 .woocommerce-lost-password .woocommerce-ResetPassword input[type="text"] {
 	background-color: #FFF;
 	margin-bottom: 16px;
+}
+
+.woocommerce-checkout .woocommerce-form-coupon-toggle {
+	background: transparent;
+	padding: 0;
+}
+
+.woocommerce-error {
+	margin-left: 0;
+}
+
+.woocommerce-error li {
+	font-size: 14px;
+	list-style: none;
+	background-color: #fff0f0;
+	border: 1px solid #cc1818;
+	border-radius: 4px;
+	padding: 8px 16px 8px 29px;
+	color: #2f2f2f;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	position: relative;
+}
+
+.woocommerce-error li::before {
+	content: '\f057';
+	font-family: 'FontAwesome';
+	position: absolute;
+	top: 8px;
+	left: 10px;
+	width: 16px;
+	height: 16PX;
+	color: #cc1818;
+}
+
+.woocommerce-info, .woocommerce-message {
+	padding: 10px 10px 10px 30px !important;
+	background-color: #f7f7f7;
+	color: #515151;
+	border-top: 2px ridge #027ABB;
+	width: auto;
+	border-radius: 10px;
+	position: relative;
+}
+
+.woocommerce-info::before, .woocommerce-message::before {
+	content: '\f05a';
+	font-family: 'FontAwesome';
+	position: absolute;
+	color: #027ABB;
+	top: 10px;
+	left: 10px;
+	width: 16px;
+	height: 16PX;
+}
+
+.woocommerce-lost-password.woocommerce-page .woocommerce {
+	display: block;
 }
 
 .woocommerce-form-register {
@@ -3219,12 +3271,6 @@ table.shop_table_responsive tr td.download-actions .button {
 	margin-bottom: 4px;
 	font-weight: 600;
 	line-height: 1.8;
-}
-
-@media screen and (min-width: 768px) {
-	.woocommerce-lost-password .woocommerce-ResetPassword {
-		width: 570px;
-	}
 }
 
 .wishlist-title-container {

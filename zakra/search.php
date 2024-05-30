@@ -22,7 +22,7 @@ get_header();
 		do_action( 'zakra_content_search' );
 		?>
 
-		<?php echo apply_filters( 'zakra_after_primary_end_filter', false ); // // WPCS: XSS OK. ?>
+		<?php echo apply_filters( 'zakra_after_primary_end_filter', false ); // WPCS: XSS OK. ?>
 	</main> <!-- /.zak-primary -->
 
 <?php

@@ -48,7 +48,7 @@ if ( ! class_exists( 'Zakra_Customize_Button_Option' ) ) :
 
 				array(
 					'name'     => 'zakra_button_color',
-					'default'  => '#ffffff',
+					'default'  => '',
 					'type'     => 'sub-control',
 					'control'  => 'zakra-color',
 					'parent'   => 'zakra_button_color_group',
@@ -59,7 +59,7 @@ if ( ! class_exists( 'Zakra_Customize_Button_Option' ) ) :
 
 				array(
 					'name'     => 'zakra_button_hover_color',
-					'default'  => '#ffffff',
+					'default'  => '',
 					'type'     => 'sub-control',
 					'control'  => 'zakra-color',
 					'parent'   => 'zakra_button_color_group',

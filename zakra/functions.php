@@ -211,7 +211,6 @@ function zakra_content_width_rdr() {
 
 		$content_width = $container_width - $content_padding;
 	}
-
 }
 
 add_action( 'template_redirect', 'zakra_content_width_rdr' );
