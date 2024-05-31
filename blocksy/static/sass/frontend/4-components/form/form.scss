@@ -19,7 +19,7 @@ fieldset .wc-stripe-elements-field,
 	font-family: inherit;
 	font-size: var(--theme-form-font-size, 16px);
 	color: var(--theme-form-text-initial-color, var(--theme-text-color));
-	padding: var(--has-classic-forms, var(--theme-form-field-padding, 0 12px));
+	padding: var(--has-classic-forms, var(--theme-form-field-padding, 0 15px));
 	border-width: var(--theme-form-field-border-width, 1px);
 	border-style: var(--theme-form-field-border-style, solid);
 	border-color: var(--theme-form-field-border-initial-color);
@@ -65,5 +65,5 @@ select {
 textarea {
 	line-height: 1.5;
 	resize: vertical;
-	--theme-form-field-padding: 12px;
+	--theme-form-field-padding: 12px 15px;
 }

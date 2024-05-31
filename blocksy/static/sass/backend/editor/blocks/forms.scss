@@ -7,7 +7,7 @@
 	max-width: 100%;
 	box-sizing: border-box;
 	height: var(--theme-form-field-height, 40px);
-	padding: var(--has-classic-forms, var(--theme-form-field-padding, 0 12px));
+	padding: var(--has-classic-forms, var(--theme-form-field-padding, 0 15px));
 
 	font-size: var(--theme-form-font-size, 16px);
 	color: var(--theme-form-text-initial-color, var(--theme-text-color));
@@ -37,7 +37,7 @@
 // textarea
 .ff-inherit-theme-style textarea {
 	--theme-form-field-height: auto;
-	--theme-form-field-padding: 12px;
+	--theme-form-field-padding: 15px;
 }
 
 // checkbox & radiobox

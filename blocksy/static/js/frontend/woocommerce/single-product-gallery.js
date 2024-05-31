@@ -45,17 +45,17 @@ export const mount = (el, { event: mountEvent }) => {
 			return {
 				mediaContainer,
 				img,
-				src: img.closest('[data-src]')
-					? img.closest('[data-src]').dataset.src ||
-					  img.closest('[data-src]').href ||
+				src: img.parentNode.closest('[data-src]')
+					? img.parentNode.closest('[data-src]').dataset.src ||
+					  img.parentNode.closest('[data-src]').href ||
 					  img.src
 					: img.src,
 				w:
-					(img.closest('[data-width]')
-						? img.closest('[data-width]').dataset.width
+					(img.parentNode.closest('[data-width]')
+						? img.parentNode.closest('[data-width]').dataset.width
 						: img.width) || img.width,
 				h:
-					(img.closest('[data-height]')
+					(img.parentNode.closest('[data-height]')
 						? img.closest('[data-height]').dataset.height
 						: img.width) || img.width,
 				title: img.getAttribute('data-caption'),

@@ -56,7 +56,6 @@ if (! function_exists('blocksy_social_icons')) {
  */
 if (! function_exists('blocksy_get_social_share_box')) {
 	function blocksy_get_social_share_box($args = []) {
-
 		$args = wp_parse_args(
 			$args,
 			[
@@ -79,8 +78,16 @@ if (! function_exists('blocksy_get_social_share_box')) {
 		$before_content = '';
 		$after_content = '';
 
-		$module_title = blocksy_akg_or_customizer('share_box_title', $args['strategy'], __('Share your love', 'blocksy'));
-		$module_title_tag = blocksy_akg_or_customizer('share_box_title_tag', $args['strategy'], 'span');
+		$module_title = blocksy_akg_or_customizer(
+			'share_box_title',
+			$args['strategy'],
+			__('Share your love', 'blocksy')
+		);
+		$module_title_tag = blocksy_akg_or_customizer(
+			'share_box_title_tag',
+			$args['strategy'],
+			'span'
+		);
 
 		if (!empty($module_title) || is_customize_preview()) {
 			$before_content = blocksy_html_tag(
@@ -91,7 +98,6 @@ if (! function_exists('blocksy_get_social_share_box')) {
 				$module_title
 			);
 		}
-		
 
 		if ($args['type'] === 'type-1') {
 			$args['links_wrapper_attr']['data-icons-type'] = 'simple';
@@ -151,7 +157,6 @@ if (! function_exists('blocksy_get_dynamic_social_networks')) {
 
 if (! function_exists('blocksy_get_social_metadata')) {
 	function blocksy_get_social_metadata($args = []) {
-
 		$args = wp_parse_args(
 			$args,
 			[
@@ -1287,7 +1292,7 @@ function blocksy_get_social_box($args = []) {
 	];
 
 	ob_start();
-	
+
 	?>
 
 		<div <?php echo blocksy_attr_to_html($old_attr) ?> <?php echo $args['enable_shortcut'] ? blocksy_generic_get_deep_link($deep_link_args) : ''; ?>>
@@ -1344,9 +1349,18 @@ function blocksy_get_social_box($args = []) {
 
 					$url_source = blocksy_default_akg('url_source', $single_social, 'default');
 
-					if ( $url_source === 'custom' ) {
-						$url = blocksy_default_akg('custom_url', $single_social, '');
-						$attr['href'] = sanitize_text_field($url);
+					if ($url_source === 'custom') {
+						$url = blocksy_default_akg(
+							'custom_url',
+							$single_social,
+							''
+						);
+
+						$attr['href'] = esc_url($url);
+					}
+
+					if (empty($attr['href'])) {
+						$attr['href'] = '#';
 					}
 
 					if (

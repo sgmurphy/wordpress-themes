@@ -1,3 +1,9 @@
+2.0.51: 2024-05-30
+- Improvement: Advanced Search live results dropdown - `z-index` issue with various core Gutenberg blocks
+- Improvement: Correctly escape custom URLs in the social box
+- Improvement: Litespeed's lazy loading mechanism causes wrong image to be placed in the lightbox
+- Improvement: Page title correctly apply "woocommerce_page_title" filter
+
 2.0.50: 2024-05-24
 - Improvement: Better check author avatar presence in WooCommerce account page
 - Fix: Post cards spacing issue on title element

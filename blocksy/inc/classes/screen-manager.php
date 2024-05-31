@@ -531,7 +531,7 @@ if (! function_exists('blocksy_is_page')) {
 		if ($result) {
 			$post_id = strval(get_the_ID());
 
-			if (is_home() && !is_front_page()) {
+			if (is_home() && ! is_front_page()) {
 				$post_id = get_option('page_for_posts');
 			}
 

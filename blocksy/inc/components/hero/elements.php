@@ -214,6 +214,12 @@ foreach ($hero_elements as $index => $single_hero_element) {
 			), $prefix . '_hero_custom_title');
 		}
 
+		// woocommerce_page_title gives plain text title, without any html tags.
+		// Thus, we need to call it before we wrap the title in a tag.
+		if (function_exists('is_woocommerce') && is_woocommerce()) {
+			$title = apply_filters('woocommerce_page_title', $title);
+		}
+
 		if (! empty($title)) {
 			$title = blocksy_html_tag(
 				blocksy_akg('heading_tag', $single_hero_element, 'h1'),
@@ -257,10 +263,6 @@ foreach ($hero_elements as $index => $single_hero_element) {
 					],
 				]
 			) . $title;
-		}
-
-		if (function_exists('is_woocommerce') && is_woocommerce()) {
-			$title = apply_filters('woocommerce_page_title', $title);
 		}
 
 		do_action('blocksy:hero:title:before');

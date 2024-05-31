@@ -30,3 +30,12 @@
 		}
 	}
 }
+
+#offcanvas {
+
+	.ct-cart-content,
+	.ct-header-account > ul,
+	.ct-language-switcher[data-type='dropdown'] > ul {
+		display: none;
+	}
+}

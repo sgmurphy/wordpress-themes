@@ -241,7 +241,7 @@
 
 		&[class*='textarea'] label {
 			height: 40px;
-			top: var(--has-classic-forms, 7px);
+			top: var(--has-classic-forms, 5px);
 		}
 
 		&:focus-within,
