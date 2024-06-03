@@ -1,42 +1,41 @@
+import { makeNumberUnitPair } from "../../Generic/src/number-util";
 import { parseJsonOrUndefined } from "../../Generic/src/string-util";
-import {
-	MarginPaddingDimension,
-	MarginPaddingSingleValueObject,
-	MarginPaddingValue,
-} from "./interface";
+import { MarginPaddingDimension, MarginPaddingValue } from "./interface";
 
-export function parseSingleValueAsObject(
-	value: string | number | null,
-): MarginPaddingSingleValueObject {
-	if (value === "" || value === null) {
-		return {
-			unit: "",
-			number: "",
-		};
+/**
+ * Make a value for an input number field in margin/padding control.
+ *
+ * It shouldn't contain unit because it's a number field.
+ *
+ * @export
+ *
+ * @param {string | number} value - The value to convert.
+ * @return {string|number} The value for the input field.
+ */
+export function makeMarginPaddingFieldValue(
+	value: string | number,
+): string | number {
+	let strValue = String(value).trim();
+
+	if (strValue === "") {
+		return "";
 	}
 
-	let unit = "";
-	let number: number = 0;
+	const startTypingNegative = strValue === "-";
+	if (startTypingNegative) return "-";
 
-	value = "string" !== typeof value ? value.toString() : value;
-	value = value.trim();
-	const negativeSign = -1 < value.indexOf("-") ? "-" : "";
-	value = value.replace(negativeSign, "");
+	const startTypingDecimal = strValue.endsWith(".");
+	strValue = startTypingDecimal ? strValue.replace(".", "") : strValue;
 
-	let numeric = "";
+	const valueObject = makeNumberUnitPair(value);
 
-	if ("" !== value) {
-		unit = value.replace(/\d+/g, "");
-		numeric = value.replace(unit, "");
-		numeric = negativeSign + numeric.trim();
-
-		number = parseFloat(numeric);
+	if ("" === valueObject.number) {
+		return startTypingDecimal ? "0." : "";
 	}
 
-	return {
-		unit: unit,
-		number: number,
-	};
+	let numeric = String(valueObject.number);
+
+	return startTypingDecimal ? numeric + "." : numeric;
 }
 
 /**
@@ -71,8 +70,7 @@ export function makeObjValueWithoutUnit(
 		const positionValue = value[position];
 
 		if ("" !== positionValue) {
-			const singleValue = parseSingleValueAsObject(positionValue);
-			newValue[position] = singleValue.number;
+			newValue[position] = makeMarginPaddingFieldValue(positionValue);
 		}
 	}
 
@@ -112,8 +110,8 @@ export function makeObjValueWithUnit(
 		const positionValue = value[position as MarginPaddingDimension];
 
 		if ("" !== positionValue) {
-			const singleValue = parseSingleValueAsObject(positionValue);
-			newValue[position] = singleValue.number + unit;
+			const singleValue = makeMarginPaddingFieldValue(positionValue);
+			newValue[position] = singleValue + unit;
 		}
 	}
 

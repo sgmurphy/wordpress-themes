@@ -4,8 +4,8 @@ Author: Themeansar
 Requires PHP: 7.0
 Requires at least: 5.4
 Tested up to: 6.5.3
-Stable tag: 1.0.0.95
-Version: 1.0.0.95
+Stable tag: 1.0.0.96
+Version: 1.0.0.96
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -410,3 +410,8 @@ License: CC0 Public Domain
 
 = Version 1.0.0.95
 1. Fixed Archive Page and Pages Title Issue.
+
+= Version 1.0.0.96
+1. Fixed Translating Issue Issue.
+2. Add functionality code in hook in search and footer template. 
+3. remove unused code and files.

@@ -9,8 +9,7 @@
  *
  * @package Blogus
  */
-get_header(); 
-?>
+get_header(); ?>
 <main id="content" class="archive-class">
     <div class="container">
         <?php do_action('blogus_action_archive_page_title'); ?>

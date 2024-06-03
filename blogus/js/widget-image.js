@@ -6,8 +6,6 @@ jQuery(document).ready( function($) {
 
         _orig_send_attachment = wp.media.editor.send.attachment;
 
-
-
         $('body').on('click', button_class, function(e) {
 
             var button_id ='#'+$(this).attr('id');
@@ -42,7 +40,7 @@ jQuery(document).ready( function($) {
 
             wp.media.editor.open(button);
 
-                return false;
+            return false;
 
         });
 

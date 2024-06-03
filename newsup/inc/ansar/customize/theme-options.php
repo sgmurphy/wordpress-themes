@@ -341,6 +341,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting('header_search_enable',
     array(
         'default' => true,
+        'transport' => 'postMessage',
         'sanitize_callback' => 'newsup_sanitize_checkbox',
     )
 );
@@ -370,6 +371,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting('header_subsc_enable',
     array(
         'default' => true,
+        'transport' => 'postMessage',
         'sanitize_callback' => 'newsup_sanitize_checkbox',
     )
 );
@@ -385,6 +387,7 @@ $wp_customize->add_setting(
     'newsup_subsc_link',
     array(
         'sanitize_callback' => 'esc_url_raw',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(
@@ -399,6 +402,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting('newsup_subsc_link_target',
     array(
         'default' => true,
+        'transport' => 'postMessage',
         'sanitize_callback' => 'newsup_sanitize_checkbox',
     )
 );

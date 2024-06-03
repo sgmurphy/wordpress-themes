@@ -9,8 +9,6 @@ function blogus_author_widget_scripts() {
 }
 class blogus_author_info extends WP_Widget {  
 
-
-
     public function __construct() {
         parent::__construct(
             'blogus-author-widget',

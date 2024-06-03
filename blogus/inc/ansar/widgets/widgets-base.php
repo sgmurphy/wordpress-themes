@@ -206,7 +206,7 @@ class Blogus_Widget_Base extends WP_Widget
                     $remove_button_style = 'display:inline-block;';
                 }
                 ?>
-                <input type="button" value="<?php echo esc_html('X', 'Remove', 'blogus'); ?>"
+                <input type="button" value="<?php esc_attr_e('X', 'Remove', 'blogus'); ?>"
                        class="button button-secondary btn-image-remove"
                        style="<?php echo esc_attr($remove_button_style); ?>"/>
 

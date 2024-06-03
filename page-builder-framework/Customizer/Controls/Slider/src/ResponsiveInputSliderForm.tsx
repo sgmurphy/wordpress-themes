@@ -4,12 +4,12 @@ import { WpbfCustomizeResponsiveInputSliderControl } from "./interface";
 import DeviceButtons from "../../Responsive/src/DeviceButtons";
 import {
 	makeDevicesValue,
-	makeNumberUnitPair,
 	makeValueForInput,
 	makeValueForSlider,
 } from "./slider-util";
 import { DevicesValue } from "../../Responsive/src/interface";
 import { encodeJsonOrDefault } from "../../Generic/src/string-util";
+import { makeLimitedNumberUnitPair } from "../../Generic/src/number-util";
 
 export default function ResponsiveInputSliderForm(props: {
 	control: WpbfCustomizeResponsiveInputSliderControl;
@@ -54,9 +54,11 @@ export default function ResponsiveInputSliderForm(props: {
 	};
 
 	function saveToCustomizerSetting(val: DevicesValue) {
-		props.customizerSetting?.set(
-			props.saveAsJson ? encodeJsonOrDefault<DevicesValue>(val) : val,
-		);
+		const valueToSave = props.saveAsJson
+			? encodeJsonOrDefault<DevicesValue>(val)
+			: val;
+
+		props.customizerSetting?.set(valueToSave);
 	}
 
 	function handleInputChange(e: ChangeEvent<HTMLInputElement>, device: string) {
@@ -89,7 +91,8 @@ export default function ResponsiveInputSliderForm(props: {
 			return;
 		}
 
-		const numberUnitPair = makeNumberUnitPair(
+		// Since range field doesn't have unit, we're going to get the unit from the input field.
+		const numberUnitPair = makeLimitedNumberUnitPair(
 			existingValue,
 			props.min,
 			props.max,

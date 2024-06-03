@@ -394,21 +394,15 @@ endif;
 
 //SCROLL TO TOP //
 if ( ! function_exists( 'blogus_scrolltoup' ) ) :
-
 function blogus_scrolltoup() {
 $scrollup_layout = get_theme_mod('scrollup_layout','fa fa-angle-up');
 $blogus_scrollup_enable = get_theme_mod('blogus_scrollup_enable','true');
-if($blogus_scrollup_enable == true)
-{ ?>
+if($blogus_scrollup_enable == true) { ?>
   <a href="#" class="bs_upscr bounceInup animated"><i class="<?php echo esc_attr($scrollup_layout);?>"></i></a> 
 <?php } } endif; 
 
-function blogus_dropcap()
-{
-$blogus_drop_caps_enable = get_theme_mod('blogus_drop_caps_enable','false');
-if($blogus_drop_caps_enable == 'true')
-{
-?>
+function blogus_dropcap() { $blogus_drop_caps_enable = get_theme_mod('blogus_drop_caps_enable','false');
+if($blogus_drop_caps_enable == 'true'){ ?>
 <style>
   .bs-blog-post p:nth-of-type(1)::first-letter {
     font-size: 60px;

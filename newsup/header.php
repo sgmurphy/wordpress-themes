@@ -64,84 +64,41 @@
       <nav class="navbar navbar-expand-lg navbar-wp">
         <div class="container-fluid">
           <!-- Right nav -->
-                    <div class="m-header align-items-center">
-                        <?php $home_url = home_url(); ?>
-                        <a class="mobilehomebtn" href="<?php echo esc_url($home_url); ?>"><span class="fa-solid fa-house-chimney"></span></a>
-                        <!-- navbar-toggle -->
-                        <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbar-wp" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation','newsup'); ?>">
-                          <span class="burger">
-                            <span class="burger-line"></span>
-                            <span class="burger-line"></span>
-                            <span class="burger-line"></span>
-                          </span>
-                        </button>
-                        <!-- /navbar-toggle -->
-                        <?php $header_search_enable = get_theme_mod('header_search_enable','true');
-                        if($header_search_enable == true) {
-                        ?>
-                        <div class="dropdown show mg-search-box pr-2">
-                            <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                               <i class="fas fa-search"></i>
-                            </a> 
-                            <div class="dropdown-menu searchinner" aria-labelledby="dropdownMenuLink">
-                                <?php get_search_form(); ?>
-                            </div>
-                        </div>
-                      <?php } 
-                      $header_subsc_enable = get_theme_mod('header_subsc_enable','true');
-                      $subsc_target = get_theme_mod('newsup_subsc_link_target','true');
-                      $newsup_subsc_link = get_theme_mod('newsup_subsc_link','#');
-                      if($header_subsc_enable == true) {
-                      ?>
-                        <a href="<?php echo esc_url($newsup_subsc_link); ?>" <?php if($subsc_target) { ?> target="_blank" <?php } ?>  class="btn-bell btn-theme mx-2"><i class="fa fa-bell"></i></a>
-                    <?php } ?>
-                        
-                    </div>
-                    <!-- /Right nav -->
-         
-          
-                  <div class="collapse navbar-collapse" id="navbar-wp">
-                    <div class="d-md-block">
-                      <?php  
-                        wp_nav_menu( array(
-                          'theme_location' => 'primary',
-                          'container'  => 'nav-collapse collapse',
-                          'menu_class' => 'nav navbar-nav mr-auto '.(is_rtl() ? 'sm-rtl' : ''),
-                          'fallback_cb' => 'newsup_fallback_page_menu',
-                          'walker' => new newsup_nav_walker()
-                        ) ); 
-                      ?>
-                    </div>      
-                  </div>
-
-                    <!-- Right nav -->
-                    <div class="desk-header d-lg-flex pl-3 ml-auto my-2 my-lg-0 position-relative align-items-center">
-                        <!-- /navbar-toggle -->
-                        <?php $header_search_enable = get_theme_mod('header_search_enable','true');
-                        if($header_search_enable == true) {
-                        ?>
-                        <div class="dropdown show mg-search-box pr-2">
-                            
-
-                            <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                               <i class="fas fa-search"></i>
-                            </a>
-
-                            <div class="dropdown-menu searchinner" aria-labelledby="dropdownMenuLink">
-                                <?php get_search_form(); ?>
-                            </div>
-                        </div>
-                      <?php } 
-                      $header_subsc_enable = get_theme_mod('header_subsc_enable','true');
-                      $subsc_target = get_theme_mod('newsup_subsc_link_target','true');
-                      $newsup_subsc_link = get_theme_mod('newsup_subsc_link','#');
-                      if($header_subsc_enable == true) {
-                      ?>
-                        <a href="<?php echo esc_url($newsup_subsc_link); ?>" <?php if($subsc_target) { ?> target="_blank" <?php } ?>  class="btn-bell btn-theme mx-2"><i class="fa fa-bell"></i></a>
-                    <?php }  ?>
-                    </div>
-                    <!-- /Right nav -->
+          <div class="m-header align-items-center">
+              <?php $home_url = home_url(); ?>
+              <a class="mobilehomebtn" href="<?php echo esc_url($home_url); ?>"><span class="fa-solid fa-house-chimney"></span></a>
+              <!-- navbar-toggle -->
+              <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbar-wp" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation','newsup'); ?>">
+                <span class="burger">
+                  <span class="burger-line"></span>
+                  <span class="burger-line"></span>
+                  <span class="burger-line"></span>
+                </span>
+              </button>
+              <!-- /navbar-toggle -->
+              <?php do_action('newsup_action_header_search'); do_action('newsup_action_header_subscribe'); ?>
+              
           </div>
+          <!-- /Right nav --> 
+          <div class="collapse navbar-collapse" id="navbar-wp">
+            <div class="d-md-block">
+              <?php  
+                wp_nav_menu( array(
+                  'theme_location' => 'primary',
+                  'container'  => 'nav-collapse collapse',
+                  'menu_class' => 'nav navbar-nav mr-auto '.(is_rtl() ? 'sm-rtl' : ''),
+                  'fallback_cb' => 'newsup_fallback_page_menu',
+                  'walker' => new newsup_nav_walker()
+                ) ); 
+              ?>
+            </div>      
+          </div>
+          <!-- Right nav -->
+          <div class="desk-header d-lg-flex pl-3 ml-auto my-2 my-lg-0 position-relative align-items-center">
+            <?php do_action('newsup_action_header_search'); do_action('newsup_action_header_subscribe'); ?>
+          </div>
+          <!-- /Right nav -->
+      </div>
       </nav> <!-- /Navigation -->
     </div>
 </header>

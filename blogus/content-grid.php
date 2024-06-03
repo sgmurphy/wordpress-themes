@@ -9,14 +9,12 @@ $layout = esc_attr(get_theme_mod('blogus_content_layout','grid-right-sidebar')) 
     <?php while(have_posts()){ the_post(); ?>
     <div class="<?php echo $layout?>">
         <div id="post-<?php the_ID(); ?>" <?php post_class('bs-blog-post'); ?>> 
-            <?php $url = blogus_get_freatured_image_url($post->ID, 'blogus-medium');
-            blogus_post_image_display_type($post); ?>
+            <?php blogus_post_image_display_type($post); ?>
             <article class="small">
                 <?php $blogus_global_category_enable = get_theme_mod('blogus_global_category_enable','true');
                 if($blogus_global_category_enable == 'true') { blogus_post_categories(); } ?>
                 <h4 class="title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
-                <?php blogus_post_meta();  
-                blogus_posted_content(); ?>
+                <?php blogus_post_meta(); blogus_posted_content(); ?>
             </article>
         </div> 
     </div> 
