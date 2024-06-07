@@ -110,8 +110,8 @@ function blocksy_get_taxonomy_options($term_id = null) {
 		'blocksy_taxonomy_meta_options'
 	);
 
-	if ( empty( $values ) ) {
-		$values = [ [] ];
+	if (empty($values)) {
+		$values = [[]];
 	}
 
 	$taxonomy_opts[$term_id] = $values[0];

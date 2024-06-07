@@ -1,12 +1,15 @@
 .single-product article {
 
-	> .related, 
-	> .up-sells {
+	> :where(.related, .up-sells) {
 		margin-top: 50px;
 
 		> h2 {
 			margin-bottom: 30px;	
 		}
+	}
+
+
+	:where(.related, .up-sells) {
 
 		// slider type
 		.flexy-container [data-products] {

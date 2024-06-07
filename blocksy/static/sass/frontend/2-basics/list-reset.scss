@@ -4,8 +4,8 @@
 .ct-language-switcher ul,
 [class*=ct-contact-info] ul,
 .products,
-.commentlist,
-.ct-comments ol,
+.woocommerce-Reviews :where(ol, ul),
+.ct-comments :where(ol, ul),
 .ct-comments ul,
 .mobile-menu ul,
 .woocommerce-tabs > ul,
@@ -19,9 +19,10 @@
 .wp-block-latest-comments,
 .ct-filter-widget,
 .ct-compare-bar ul,
-.ct-product-hero ul {
+.ct-product-hero ul,
+.ct-widget ul {
 	margin-bottom: 0;
+	list-style-type: none;
 
 	--theme-list-indent: 0;
-	--theme-list-style-type: none;
 }

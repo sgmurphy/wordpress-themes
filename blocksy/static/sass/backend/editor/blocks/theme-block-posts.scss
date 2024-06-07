@@ -63,3 +63,13 @@
 		}
 	}
 }
+
+
+// query responsive grid
+.is-mobile-preview .ct-query-template-grid {
+	--ct-grid-columns: var(--ct-grid-columns-mobile);
+}
+
+.is-tablet-preview .ct-query-template-grid {
+	--ct-grid-columns: var(--ct-grid-columns-tablet);
+}

@@ -47,6 +47,22 @@ const cachedFetch = (url, nonce = '') => {
 	})
 }
 
+const debounce = (fn, wait) => {
+	var timeout
+	return function () {
+		if (!wait) {
+			return fn.apply(this, arguments)
+		}
+		var context = this
+		var args = arguments
+		clearTimeout(timeout)
+		timeout = setTimeout(function () {
+			timeout = null
+			return fn.apply(context, args)
+		}, wait)
+	}
+}
+
 const getPreviewElFor = ({
 	hasThumbs,
 	post: {
@@ -190,7 +206,7 @@ export const mount = (formEl, args = {}) => {
 
 	if (!window.fetch) return
 
-	let listener = (e) => {
+	let listener = debounce((e) => {
 		document.removeEventListener('click', clickOutsideHandler)
 		document.addEventListener('click', clickOutsideHandler)
 
@@ -440,7 +456,7 @@ export const mount = (formEl, args = {}) => {
 				)
 			})
 			.catch((error) => {})
-	}
+	}, 300)
 
 	maybeEl.addEventListener('input', listener)
 

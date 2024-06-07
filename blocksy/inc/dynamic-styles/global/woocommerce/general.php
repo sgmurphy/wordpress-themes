@@ -424,3 +424,125 @@ blocksy_output_box_shadow([
 		],
 	])),
 ]);
+
+
+// cart page
+blocksy_output_border([
+	'css' => $css,
+	'tablet_css' => $tablet_css,
+	'mobile_css' => $mobile_css,
+	'selector' => '.ct-woocommerce-cart-form .cart_totals',
+	'variableName' => 'cart-totals-border',
+	'value' => blocksy_get_theme_mod('cart_totals_border'),
+	'default' => [
+		'width' => 2,
+		'style' => 'solid',
+		'color' => [
+			'color' => 'var(--theme-border-color)',
+		],
+	],
+	'responsive' => true,
+]);
+
+blocksy_output_spacing([
+	'css' => $css,
+	'tablet_css' => $tablet_css,
+	'mobile_css' => $mobile_css,
+	'selector' => '.ct-woocommerce-cart-form .cart_totals',
+	'property' => 'cart-totals-border-radius',
+	'value' => blocksy_get_theme_mod( 'cart_totals_border_radius',
+		blocksy_spacing_value()
+	)
+]);
+
+blocksy_output_spacing([
+	'css' => $css,
+	'tablet_css' => $tablet_css,
+	'mobile_css' => $mobile_css,
+	'selector' => '.ct-woocommerce-cart-form .cart_totals',
+	'property' => 'cart-totals-padding',
+	'value' => blocksy_get_theme_mod(
+		'cart_totals_padding',
+		[
+			'desktop' => blocksy_spacing_value([
+				'top' => '30px',
+				'left' => '30px',
+				'right' => '30px',
+				'bottom' => '30px',
+			]),
+			'tablet' => blocksy_spacing_value([
+				'top' => '25px',
+				'left' => '25px',
+				'right' => '25px',
+				'bottom' => '25px',
+			]),
+			'mobile'=> blocksy_spacing_value([
+				'top' => '25px',
+				'left' => '25px',
+				'right' => '25px',
+				'bottom' => '25px',
+			]),
+		]
+	)
+]);
+
+
+// checkout page
+blocksy_output_border([
+	'css' => $css,
+	'tablet_css' => $tablet_css,
+	'mobile_css' => $mobile_css,
+	'selector' => '.ct-order-review',
+	'variableName' => 'order-review-border',
+	'value' => blocksy_get_theme_mod('checkout_order_border'),
+	'default' => [
+		'width' => 2,
+		'style' => 'solid',
+		'color' => [
+			'color' => 'var(--theme-border-color)',
+		],
+	],
+	'responsive' => true,
+]);
+
+blocksy_output_spacing([
+	'css' => $css,
+	'tablet_css' => $tablet_css,
+	'mobile_css' => $mobile_css,
+	'selector' => '.ct-order-review',
+	'property' => 'order-review-border-radius',
+	'value' => blocksy_get_theme_mod( 'checkout_order_border_radius',
+		blocksy_spacing_value()
+	)
+]);
+
+blocksy_output_spacing([
+	'css' => $css,
+	'tablet_css' => $tablet_css,
+	'mobile_css' => $mobile_css,
+	'selector' => '.ct-order-review',
+	'property' => 'order-review-padding',
+	'value' => blocksy_get_theme_mod(
+		'checkout_order_padding',
+		[
+			'desktop' => blocksy_spacing_value([
+				'top' => '35px',
+				'left' => '35px',
+				'right' => '35px',
+				'bottom' => '35px',
+			]),
+			'tablet' => blocksy_spacing_value([
+				'top' => '30px',
+				'left' => '30px',
+				'right' => '30px',
+				'bottom' => '30px',
+			]),
+			'mobile'=> blocksy_spacing_value([
+				'top' => '25px',
+				'left' => '25px',
+				'right' => '25px',
+				'bottom' => '25px',
+			]),
+		]
+	)
+]);

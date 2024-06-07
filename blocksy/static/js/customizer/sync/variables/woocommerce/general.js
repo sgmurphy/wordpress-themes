@@ -269,4 +269,51 @@ export const getWooGeneralVariablesFor = () => ({
 		variable: 'theme-box-shadow',
 		responsive: true,
 	},
+
+	// cart page
+	cart_totals_border: {
+		selector: '.ct-woocommerce-cart-form .cart_totals',
+		variable: 'cart-totals-border',
+		type: 'border',
+		responsive: true,
+	},	
+
+	cart_totals_border_radius: {
+		selector: '.ct-woocommerce-cart-form .cart_totals',
+		type: 'spacing',
+		variable: 'cart-totals-border-radius',
+		responsive: true,
+	},
+
+	cart_totals_padding: {
+		selector: '.ct-woocommerce-cart-form .cart_totals',
+		type: 'spacing',
+		variable: 'cart-totals-padding',
+		responsive: true,
+		unit: '',
+	},
+
+
+	// checkout page
+	checkout_order_border: {
+		selector: '.ct-order-review',
+		variable: 'order-review-border',
+		type: 'border',
+		responsive: true,
+	},	
+
+	checkout_order_border_radius: {
+		selector: '.ct-order-review',
+		type: 'spacing',
+		variable: 'order-review-border-radius',
+		responsive: true,
+	},
+
+	checkout_order_padding: {
+		selector: '.ct-order-review',
+		type: 'spacing',
+		variable: 'order-review-padding',
+		responsive: true,
+		unit: '',
+	},
 })

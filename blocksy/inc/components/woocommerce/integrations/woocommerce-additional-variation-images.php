@@ -40,7 +40,7 @@ add_filter(
 
 		$original_image = wc_get_product_attachment_props(
 			$product->get_image_id()
-		);		
+		);
 
 		$original_image['id'] = $product->get_image_id();
 
@@ -137,13 +137,20 @@ function blocksy_get_product_view_for_variation() {
 	);
 
 	if (isset($_GET['variation_id'])) {
-		$variation_id = isset($_GET['variation_id']) ? absint($_GET['variation_id']) : false;
-		$variation = $variation_id ? wc_get_product($variation_id) : false;
+		$variation_id = false;
 
-		global $blocksy_current_variation;
+		if (isset($_GET['variation_id'])) {
+			$variation_id = absint($_GET['variation_id']);
+		}
 
-		if ($variation) {
-			$blocksy_current_variation = $variation;
+		if ($variation_id) {
+			$variation = wc_get_product($variation_id);
+
+			global $blocksy_current_variation;
+
+			if ($variation) {
+				$blocksy_current_variation = $variation;
+			}
 		}
 	}
 
@@ -161,3 +168,4 @@ function blocksy_get_product_view_for_variation() {
 		'blocksy_gallery_style' => $blocksy_gallery_style
 	]);
 }
+

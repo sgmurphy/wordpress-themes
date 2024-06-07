@@ -1,15 +1,8 @@
 .ct-order-review {
 	align-self: flex-start;
-	border: 2px solid var(--theme-border-color);
-
-	@include media-breakpoint-down (sm) {
-		padding: 30px 25px;
-	}
-
-	@include media-breakpoint-up (md) {
-		padding: 40px 35px;
-	}
-
+	padding: var(--order-review-padding);
+	border: var(--order-review-border);
+	border-radius: var(--order-review-border-radius);
 
 	table.shop_table {
 

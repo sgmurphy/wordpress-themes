@@ -163,15 +163,6 @@ svg > * {
 	transition: none;
 }
 
-// Lists -------------------------------------
-ul {
-	list-style-type: var(--theme-list-style-type, disc);
-}
-
-ol {
-	list-style-type: var(--theme-list-style-type, decimal);
-}
-
 // Code --------------------------------------
 code,
 kbd,

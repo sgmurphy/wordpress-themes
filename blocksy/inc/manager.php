@@ -228,6 +228,7 @@ class Blocksy_Manager {
 			'show_more_text' => __('Show more', 'blocksy'),
 			'more_text' => __('More', 'blocksy'),
 			'search_live_results' => __('Search results', 'blocksy'),
+			'search_live_no_results' => __('No results', 'blocksy'),
 
 			'search_live_no_result' => __('No results', 'blocksy'),
 			'search_live_one_result' => _n(

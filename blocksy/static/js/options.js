@@ -86,6 +86,8 @@ export {
 export { getColorsDefaults } from './editor/utils/colors'
 export { getStableJsonKey } from './options/helpers/get-stable-json-key'
 
+export { default as cachedFetch } from './frontend/helpers/cached-fetch'
+
 export const onDocumentLoaded = (cb) => {
 	if (/comp|inter|loaded/.test(document.readyState)) {
 		cb()

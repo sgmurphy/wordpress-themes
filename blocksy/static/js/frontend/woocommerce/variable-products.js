@@ -1,9 +1,9 @@
 import $ from 'jquery'
 import ctEvents from 'ct-events'
 
-let originalImageUpdate = null
+import cachedFetch from '../helpers/cached-fetch'
 
-const store = {}
+let originalImageUpdate = null
 
 function isTouchDevice() {
 	try {
@@ -14,25 +14,16 @@ function isTouchDevice() {
 	}
 }
 
-const cachedFetch = (url) =>
-	store[url]
-		? new Promise((resolve) => {
-				resolve(store[url])
-				store[url] = store[url].clone()
-		  })
-		: new Promise((resolve) =>
-				fetch(url).then((response) => {
-					resolve(response)
-					store[url] = response.clone()
-				})
-		  )
-
 const makeUrlFor = ({ variation, productId, isQuickView }) => {
 	let url = new URL(ct_localizations.ajax_url)
 	let params = new URLSearchParams(url.search.slice(1))
 
 	params.append('action', 'blocksy_get_product_view_for_variation')
-	params.append('variation_id', variation.variation_id)
+
+	if (variation) {
+		params.append('variation_id', variation.variation_id)
+	}
+
 	params.append('product_id', productId)
 	params.append('is_quick_view', isQuickView)
 
@@ -269,6 +260,7 @@ export const mount = (el) => {
 
 	originalImageUpdate = $.fn.wc_variations_image_update
 
+	// TODO: Attempt to rely only on found_variation event that woo triggers
 	$.fn.wc_variations_image_update = function (variation) {
 		const currentElement = this[0]
 
@@ -306,20 +298,21 @@ export const mount = (el) => {
 		let currentVariationObj = false
 
 		if (allVariations) {
-			nextVariationObj = variation.variation_id
-				? allVariations.find(
-						({ variation_id }) =>
-							parseInt(variation_id) ===
-							parseInt(variation.variation_id)
-				  )
-				: false
-			currentVariationObj = currentVariation.dataset.currentVariation
-				? allVariations.find(
-						({ variation_id }) =>
-							parseInt(variation_id) ===
-							parseInt(currentVariation.dataset.currentVariation)
-				  )
-				: false
+			if (variation.variation_id) {
+				nextVariationObj = allVariations.find(
+					({ variation_id }) =>
+						parseInt(variation_id) ===
+						parseInt(variation.variation_id)
+				)
+			}
+
+			if (currentVariation.dataset.currentVariation) {
+				currentVariationObj = allVariations.find(
+					({ variation_id }) =>
+						parseInt(variation_id) ===
+						parseInt(currentVariation.dataset.currentVariation)
+				)
+			}
 		}
 
 		let defaultCanDoInPlaceUpdate = '__DEFAULT__'
@@ -371,12 +364,14 @@ export const mount = (el) => {
 				  })
 				: defaultCanDoInPlaceUpdate
 
+		// TODO: add better check for in place update
 		if (canDoInPlaceUpdate) {
 			performInPlaceUpdate({
 				container: currentVariation,
 				nextVariationObj,
 				currentVariationObj,
 			})
+
 			return
 		}
 
@@ -438,6 +433,7 @@ export const mount = (el) => {
 				variation.blocksy_gallery_html,
 				variation.blocksy_gallery_style
 			)
+
 			return
 		}
 
@@ -446,39 +442,18 @@ export const mount = (el) => {
 			currentVariation.dataset.state = 'loading'
 		})
 
-		let maybeLoadedVariation = allVariations
-			? allVariations.find(
-					(nestedVariation) =>
-						store[
-							makeUrlFor({
-								variation: nestedVariation,
-								productId,
-								isQuickView,
-							})
-						] &&
-						nestedVariation.image_id === variation.image_id &&
-						variation.blocksy_gallery_source === 'default' &&
-						nestedVariation.blocksy_gallery_source === 'default'
-			  )
-			: null
-
 		cachedFetch(
 			makeUrlFor({
-				variation: maybeLoadedVariation || variation,
+				variation,
 				productId,
 				isQuickView,
-			}),
-			{
-				method: 'POST',
-			}
-		)
-			.then((response) => response.json())
-			.then(({ success, data }) => {
-				if (!success) {
-					return
-				}
-
-				acceptHtml(data.html, data.blocksy_gallery_style)
 			})
+		).then(({ success, data }) => {
+			if (!success) {
+				return
+			}
+
+			acceptHtml(data.html, data.blocksy_gallery_style)
+		})
 	}
 }

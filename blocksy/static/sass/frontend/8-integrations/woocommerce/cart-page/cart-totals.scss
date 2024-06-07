@@ -21,15 +21,9 @@
 	align-self: flex-start;
 	position: sticky;
 	top: calc(50px + var(--admin-bar, 0px) + var(--header-sticky-height, 0px) * (var(--sticky-shrink, 100) / 100));
-	border: 2px solid var(--theme-border-color);
-
-	@include media-breakpoint-down(sm) {
-		padding: 25px;
-	}
-
-	@include media-breakpoint-up(md) {
-		padding: 30px;
-	}
+	padding: var(--cart-totals-padding);
+	border: var(--cart-totals-border);
+	border-radius: var(--cart-totals-border-radius);
 
 	h2 {
 		font-size: 15px;

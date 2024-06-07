@@ -1,6 +1,6 @@
 {
 	"name": "small-ct",
-	"version": "2.0.51",
+	"version": "2.0.53",
 	"title": "Blocksy",
 	"browserslist": "> 1%, not opera > 0, not op_mini all",
 	"devDependencies": {
@@ -52,6 +52,7 @@
 		"deep-equal": "^1.0.1",
 		"dom-chef": "^3.3.0",
 		"downshift": "^6.0.6",
+		"fast-deep-equal": "^3.1.3",
 		"file-saver": "^2.0.0-rc.4",
 		"flexy": "git+ssh://git@github.com:sergiu-radu/flexy.git",
 		"gradient-parser": "^1.0.2",

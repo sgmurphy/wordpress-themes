@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-05-30 18:39+0000\n"
+"POT-Creation-Date: 2024-06-07 11:59+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Search in category"
 msgstr ""
 
-#: searchform.php:345, inc/manager.php:232
+#: searchform.php:345, inc/manager.php:231, inc/manager.php:233
 msgid "No results"
 msgstr ""
 
@@ -164,18 +164,18 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: inc/manager.php:233, inc/manager.php:239
+#: inc/manager.php:234, inc/manager.php:240
 msgid "You got %s result. Please press Tab to select it."
 msgid_plural "You got %s results. Please press Tab to select one."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/manager.php:246, inc/components/menus.php:93,
+#: inc/manager.php:247, inc/components/menus.php:93,
 #: inc/components/menus.php:80, inc/components/menus.php:242
 msgid "Expand dropdown menu"
 msgstr ""
 
-#: inc/manager.php:247
+#: inc/manager.php:248
 msgid "Collapse dropdown menu"
 msgstr ""
 
@@ -653,6 +653,8 @@ msgstr ""
 #: inc/options/integrations/the-events-calendar/archive.php:25,
 #: inc/options/integrations/the-events-calendar/single.php:27,
 #: inc/options/woocommerce/general/account-page.php:19,
+#: inc/options/woocommerce/general/cart-page.php:19,
+#: inc/options/woocommerce/general/checkout-page.php:52,
 #: inc/options/woocommerce/general/product-badges.php:19,
 #: inc/options/woocommerce/general/quantity-input.php:19,
 #: inc/options/woocommerce/general/store-notice.php:24,
@@ -1345,6 +1347,8 @@ msgstr ""
 #: inc/options/integrations/the-events-calendar/archive.php:36,
 #: inc/options/integrations/the-events-calendar/single.php:38,
 #: inc/options/woocommerce/general/account-page.php:74,
+#: inc/options/woocommerce/general/cart-page.php:58,
+#: inc/options/woocommerce/general/checkout-page.php:200,
 #: inc/options/woocommerce/general/product-badges.php:182,
 #: inc/options/woocommerce/general/quantity-input.php:61,
 #: inc/options/woocommerce/general/store-notice.php:56,
@@ -2753,7 +2757,7 @@ msgstr ""
 #: inc/options/woocommerce/single-product-gallery.php:113,
 #: inc/options/woocommerce/single-product-gallery.php:338,
 #: inc/components/blocks/about-me/options.php:81,
-#: inc/options/woocommerce/general/cart-page.php:35,
+#: inc/options/woocommerce/general/cart-page.php:40,
 #: inc/panel-builder/header/cart/options.php:690
 msgid "Image Size"
 msgstr ""
@@ -3030,7 +3034,7 @@ msgstr ""
 #: inc/options/single-elements/related-posts.php:240,
 #: inc/options/woocommerce/card-product-elements.php:243,
 #: inc/options/woocommerce/single-product-gallery.php:101,
-#: inc/options/woocommerce/general/cart-page.php:24,
+#: inc/options/woocommerce/general/cart-page.php:29,
 #: inc/panel-builder/header/cart/options.php:682
 msgid "Image Ratio"
 msgstr ""
@@ -4992,6 +4996,18 @@ msgstr ""
 msgid "Cart Page"
 msgstr ""
 
+#: inc/options/woocommerce/general/cart-page.php:63
+msgid "Cart Totals Border"
+msgstr ""
+
+#: inc/options/woocommerce/general/cart-page.php:78
+msgid "Cart Totals Border Radius"
+msgstr ""
+
+#: inc/options/woocommerce/general/cart-page.php:87
+msgid "Cart Totals Padding"
+msgstr ""
+
 #: inc/options/woocommerce/general/checkout-page.php:30
 msgid "No page set"
 msgstr ""
@@ -5000,80 +5016,92 @@ msgstr ""
 msgid "Checkout Page"
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:53
+#: inc/options/woocommerce/general/checkout-page.php:58
 msgid "Coupon Form"
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:69
+#: inc/options/woocommerce/general/checkout-page.php:74
 msgid "Highlight Required Fields"
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:80
+#: inc/options/woocommerce/general/checkout-page.php:85
 msgid "Company Name Field"
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:87,
-#: inc/options/woocommerce/general/checkout-page.php:105,
-#: inc/options/woocommerce/general/checkout-page.php:123
+#: inc/options/woocommerce/general/checkout-page.php:92,
+#: inc/options/woocommerce/general/checkout-page.php:110,
+#: inc/options/woocommerce/general/checkout-page.php:128
 msgid "Hidden"
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:88,
-#: inc/options/woocommerce/general/checkout-page.php:106,
-#: inc/options/woocommerce/general/checkout-page.php:124
+#: inc/options/woocommerce/general/checkout-page.php:93,
+#: inc/options/woocommerce/general/checkout-page.php:111,
+#: inc/options/woocommerce/general/checkout-page.php:129
 msgid "Optional"
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:89,
-#: inc/options/woocommerce/general/checkout-page.php:107,
-#: inc/options/woocommerce/general/checkout-page.php:125
+#: inc/options/woocommerce/general/checkout-page.php:94,
+#: inc/options/woocommerce/general/checkout-page.php:112,
+#: inc/options/woocommerce/general/checkout-page.php:130
 msgid "Required"
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:98
+#: inc/options/woocommerce/general/checkout-page.php:103
 msgid "Address Line 2 Field"
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:116
+#: inc/options/woocommerce/general/checkout-page.php:121
 msgid "Phone Field"
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:134
+#: inc/options/woocommerce/general/checkout-page.php:139
 msgid "Privacy Policy Page"
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:147
+#: inc/options/woocommerce/general/checkout-page.php:152
 msgid "Terms And Conditions Page"
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:159
+#: inc/options/woocommerce/general/checkout-page.php:164
 msgid "Privacy policy"
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:160
+#: inc/options/woocommerce/general/checkout-page.php:165
 msgid ""
 "Optionally add some text about your store privacy policy to show during "
 "checkout."
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:162
+#: inc/options/woocommerce/general/checkout-page.php:167
 msgid ""
 "Your personal data will be used to process your order, support your "
 "experience throughout this website, and for other purposes described in our "
 "[privacy_policy]."
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:175
+#: inc/options/woocommerce/general/checkout-page.php:180
 msgid "Terms and conditions"
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:176
+#: inc/options/woocommerce/general/checkout-page.php:181
 msgid ""
 "Optionally add some text for the terms checkbox that customers must accept."
 msgstr ""
 
-#: inc/options/woocommerce/general/checkout-page.php:179
+#: inc/options/woocommerce/general/checkout-page.php:184
 msgid "I have read and agree to the website %s"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:205
+msgid "Order Review Border"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:220
+msgid "Order Review Border Radius"
+msgstr ""
+
+#: inc/options/woocommerce/general/checkout-page.php:229
+msgid "Order Review Padding"
 msgstr ""
 
 #: inc/options/woocommerce/general/messages.php:13
@@ -6233,33 +6261,33 @@ msgstr ""
 msgid "Join Facebook Community"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Changelog.js:168
+#: admin/dashboard/static/js/screens/Changelog.js:191
 msgid "Loading changelog..."
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Changelog.js:201
+#: admin/dashboard/static/js/screens/Changelog.js:224
 msgid "New"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Changelog.js:205
+#: admin/dashboard/static/js/screens/Changelog.js:228
 msgid "Fix"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Changelog.js:209
+#: admin/dashboard/static/js/screens/Changelog.js:232
 msgid "Improvement"
 msgstr ""
 
-#: admin/dashboard/static/js/screens/Changelog.js:228
+#: admin/dashboard/static/js/screens/Changelog.js:251
 msgid "No changelog present at the moment."
 msgstr ""
 
 # placeholder here means the actual version.
-#: admin/dashboard/static/js/screens/Changelog.js:37
+#: admin/dashboard/static/js/screens/Changelog.js:39
 msgid "Version: %s"
 msgstr ""
 
 # placeholder here means the actual date.
-#: admin/dashboard/static/js/screens/Changelog.js:43
+#: admin/dashboard/static/js/screens/Changelog.js:45
 msgid "Released on %s"
 msgstr ""
 
