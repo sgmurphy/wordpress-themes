@@ -4,8 +4,8 @@ Author: Themeansar
 Requires at least: WordPress 4.7
 Tested up to: 6.5.3
 Requires PHP: 7.0
-Stable tag: 4.0.0.37
-Version: 4.0.0.37
+Stable tag: 4.0.0.38
+Version: 4.0.0.38
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -992,3 +992,6 @@ Added selective refresh to header social icons link and target.
 
 = Version 4.0.0.37
 Added selective refresh to header search and subscribe.
+
+= Version 4.0.0.38
+Fixed Stytling Issues.

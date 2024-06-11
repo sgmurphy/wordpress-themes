@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsup/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Newsup is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsup is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsup is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsup and documentation at https://docs.themeansar.com/docs/newsup/
-Version: 4.0.0.37
+Version: 4.0.0.38
 Tested up to: 6.5.3
 Requires PHP: 7.0
 Requires at least: 5.4
@@ -1552,8 +1552,11 @@ button.mfp-close:hover, button.mfp-close:focus {
     border-style: solid;
     border-top: none;
 }	
+.top-right-area .mg-posts-sec-inner .small-list-post {
+	gap: 6px;
+}
 .top-right-area .mg-posts-sec-inner .small-list-post .small-post{
-    margin-bottom: 6px;
+	overflow: hidden;
     min-height: 103px;
 }
 /*Featured Boxs Posts*/
@@ -1747,8 +1750,6 @@ footer .widget_post_list .widget_post_list_inner{
 .mg-posts-sec-inner .img-small-post{
   height: 88px;
   width: 88px;
-  float:right;
-  margin-left: 20px;
 }
 .small-list-post ul{
   margin: 0;
@@ -1763,17 +1764,16 @@ footer .widget_post_list .widget_post_list_inner{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.mg-posts-sec-inner .small-list-post{
+	display: grid;
+	gap: 20px;
+}
 .mg-posts-sec-inner .small-list-post .small-post{
   list-style: none;
   padding: 8px;
   margin-bottom: 20px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.15);
-}
-.mg-posts-sec-inner .small-list-post .small-post:last-child{
-  border-bottom: none;
-}
-.small-list-post:last-child{
-   margin-bottom: 0px;
+  gap: 20px;
 }
 .mg-posts-sec-inner .small-list-post .mg-blog-category {
 	margin: 10px 0 5px 0;
@@ -1804,8 +1804,8 @@ footer .widget_post_list .widget_post_list_inner{
 .small-post{
   list-style: none;
   padding: 8px;
-  margin-bottom: 20px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  gap: 20px;
 }
 .small-list-post h5, .small-post .title{
   margin: 0px;
