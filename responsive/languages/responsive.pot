@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v3 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Responsive 5.0.6\n"
+"Project-Id-Version: Responsive 5.0.7\n"
 "Report-Msgid-Bugs-To: https://cyberchimps.com/forum/free/responsive/\n"
-"POT-Creation-Date: 2024-06-04 05:32:23+00:00\n"
+"POT-Creation-Date: 2024-06-12 05:16:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1054,44 +1054,44 @@ msgstr ""
 msgid "Sensei Settings"
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:311
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:313
 msgid "Sale!"
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:407
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:409
 msgid "WooCommerce Sidebar"
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:409
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:411
 msgid ""
 "This sidebar will be used on Product archive, Cart, Checkout and My Account "
 "pages."
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:438
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:440
 msgid "Close off canvas panel"
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:465
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:467
 msgid "Off-Canvas Filters"
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:467
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:469
 msgid ""
 "Widgets in this area are used in the Off Canvas Filter. To enable the Off "
 "Canvas filter, go to the Product Catalog Option > Layout in customizer and "
 "check Enable Off Canvas Filter checkbox under Off Canvas Filter section."
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:504
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:506
 msgid "Selected : "
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:513
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:515
 msgid "Out Of Stock"
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:520
+#: core/includes/compatibility/woocommerce/class-responsive-woocommerce.php:522
 msgid "Select options"
 msgstr ""
 
@@ -1144,27 +1144,27 @@ msgstr ""
 msgid "Main Content Width (%)"
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:57
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:60
 msgid "Enable Cross-sells"
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:60
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:64
 msgid "Disable Cart Fragments"
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:76
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:80
 msgid "Cart Icon Visibility"
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:77
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:81
 msgid "Cart Icon Will be displayed only when Header Menu is set"
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:81
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:85
 msgid "Display On All Devices"
 msgstr ""
 
-#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:82
+#: core/includes/compatibility/woocommerce/customizer/settings/class-responsive-woocommerce-cart-layout-customizer.php:86
 msgid "Disabled On All Devices"
 msgstr ""
 
@@ -3586,25 +3586,28 @@ msgstr ""
 msgid "Font Color"
 msgstr ""
 
-#: core/includes/functions-admin.php:78
-msgid "Hi! Thanks for using the Responsive theme."
-msgstr ""
-
 #: core/includes/functions-admin.php:79
 msgid ""
-"Can you please do us a favor and give us a 5-star rating? Your feedback "
-"keeps us motivated and helps us grow the Responsive community."
+"Hello! Seems like you have used Responsive Theme to build this website — "
+"Thanks a ton!"
 msgstr ""
 
 #: core/includes/functions-admin.php:80
-msgid "Ok, you deserve it"
+msgid ""
+"Could you please do us a BIG favor and give it a 5-star rating on "
+"WordPress? This would boost our motivation and help other users make a "
+"comfortable decision while choosing the Responsive Theme."
 msgstr ""
 
 #: core/includes/functions-admin.php:81
-msgid "Nope, maybe later"
+msgid "Ok, you deserve it"
 msgstr ""
 
 #: core/includes/functions-admin.php:82
+msgid "Nope, maybe later"
+msgstr ""
+
+#: core/includes/functions-admin.php:83
 msgid "I already did"
 msgstr ""
 
