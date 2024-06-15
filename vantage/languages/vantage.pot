@@ -778,11 +778,11 @@ msgstr ""
 msgid "Menu Alignment"
 msgstr ""
 
-#: inc/customizer.php:267, inc/customizer.php:714, inc/widgets.php:209
+#: inc/customizer.php:267, inc/customizer.php:714, inc/widgets.php:220
 msgid "Left"
 msgstr ""
 
-#: inc/customizer.php:268, inc/customizer.php:715, inc/widgets.php:210
+#: inc/customizer.php:268, inc/customizer.php:715, inc/widgets.php:221
 msgid "Right"
 msgstr ""
 
@@ -794,7 +794,7 @@ msgstr ""
 msgid "Background"
 msgstr ""
 
-#: inc/customizer.php:282, inc/widgets.php:171
+#: inc/customizer.php:282, inc/widgets.php:181
 msgid "Text Color"
 msgstr ""
 
@@ -822,7 +822,7 @@ msgstr ""
 msgid "Second Level Hover Text"
 msgstr ""
 
-#: inc/customizer.php:335, inc/widgets.php:190
+#: inc/customizer.php:335, inc/widgets.php:201
 msgid "Icon Color"
 msgstr ""
 
@@ -998,7 +998,7 @@ msgstr ""
 msgid "Widget Titles"
 msgstr ""
 
-#: inc/customizer.php:660, inc/widgets.php:166
+#: inc/customizer.php:660, inc/widgets.php:175
 msgid "Text"
 msgstr ""
 
@@ -1030,7 +1030,7 @@ msgstr ""
 msgid "Sidebar Position"
 msgstr ""
 
-#: inc/customizer.php:713, inc/menu.php:62, inc/settings.php:250, inc/widgets.php:178, inc/sliders/sliders.php:7
+#: inc/customizer.php:713, inc/menu.php:62, inc/settings.php:250, inc/widgets.php:189, inc/sliders/sliders.php:7
 msgid "None"
 msgstr ""
 
@@ -1482,7 +1482,7 @@ msgstr ""
 msgid "Featured Image Type"
 msgstr ""
 
-#: inc/settings.php:248, inc/widgets.php:219, inc/widgets.php:393
+#: inc/settings.php:248, inc/widgets.php:232, inc/widgets.php:406
 msgid "Large"
 msgstr ""
 
@@ -1932,222 +1932,218 @@ msgid "No related posts."
 msgstr ""
 
 #: inc/widgets.php:14
-msgid "Circle Icon"
+msgid "Vantage Circle Icon"
 msgstr ""
 
 #: inc/widgets.php:15
 msgid "An icon in a circle with some text beneath it"
 msgstr ""
 
-#: inc/widgets.php:105
+#: inc/widgets.php:111
 msgid "More Info"
 msgstr ""
 
-#: inc/widgets.php:156, inc/widgets.php:400
+#: inc/widgets.php:163, inc/widgets.php:414
 msgid "Title"
 msgstr ""
 
-#: inc/widgets.php:161
+#: inc/widgets.php:169
 msgid "Title Color"
 msgstr ""
 
-#: inc/widgets.php:176
+#: inc/widgets.php:187
 msgid "Icon"
 msgstr ""
 
-#: inc/widgets.php:195
+#: inc/widgets.php:206
 msgid "Icon Background Color"
 msgstr ""
 
-#: inc/widgets.php:200
+#: inc/widgets.php:211
 msgid "Circle Background Image URL"
 msgstr ""
 
-#: inc/widgets.php:205
+#: inc/widgets.php:216
 msgid "Icon Position"
 msgstr ""
 
-#: inc/widgets.php:207
+#: inc/widgets.php:218
 msgid "Top"
 msgstr ""
 
-#: inc/widgets.php:208
+#: inc/widgets.php:219
 msgid "Bottom"
 msgstr ""
 
-#: inc/widgets.php:215, inc/widgets.php:405
+#: inc/widgets.php:227, inc/widgets.php:421
 msgid "Icon Size"
 msgstr ""
 
-#: inc/widgets.php:217, inc/widgets.php:395
+#: inc/widgets.php:230, inc/widgets.php:408
 msgid "Small"
 msgstr ""
 
-#: inc/widgets.php:218, inc/widgets.php:342, inc/widgets.php:394
+#: inc/widgets.php:231, inc/widgets.php:355, inc/widgets.php:407
 msgid "Medium"
 msgstr ""
 
-#: inc/widgets.php:224
+#: inc/widgets.php:238
 msgid "More Text"
 msgstr ""
 
-#: inc/widgets.php:229
+#: inc/widgets.php:245
 msgid "More URL"
 msgstr ""
 
-#: inc/widgets.php:236
+#: inc/widgets.php:253
 msgid "Link title and icon to \"More URL\""
 msgstr ""
 
-#: inc/widgets.php:243
+#: inc/widgets.php:260
 msgid "Open link in a new tab"
 msgstr ""
 
-#: inc/widgets.php:250
-msgid "Show Box Container"
-msgstr ""
-
-#: inc/widgets.php:271
+#: inc/widgets.php:280
 msgid "Vantage Headline"
 msgstr ""
 
-#: inc/widgets.php:272
+#: inc/widgets.php:281
 msgid "A lovely big headline."
 msgstr ""
 
-#: inc/widgets.php:295
+#: inc/widgets.php:305
 msgid "Headline"
 msgstr ""
 
-#: inc/widgets.php:300
+#: inc/widgets.php:312
 msgid "Sub Headline"
 msgstr ""
 
-#: inc/widgets.php:321
+#: inc/widgets.php:334
 msgid "Vantage Social Media"
 msgstr ""
 
-#: inc/widgets.php:323
+#: inc/widgets.php:336
 msgid "Add nice little icons that link out to your social media profiles."
 msgstr ""
 
-#: inc/widgets.php:328
+#: inc/widgets.php:341
 msgid "Facebook"
 msgstr ""
 
-#: inc/widgets.php:329
+#: inc/widgets.php:342
 msgid "X (Twitter)"
 msgstr ""
 
-#: inc/widgets.php:330
+#: inc/widgets.php:343
 msgid "Google Plus"
 msgstr ""
 
-#: inc/widgets.php:331
+#: inc/widgets.php:344
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/widgets.php:332
+#: inc/widgets.php:345
 msgid "Dribbble"
 msgstr ""
 
-#: inc/widgets.php:333
+#: inc/widgets.php:346
 msgid "Behance"
 msgstr ""
 
-#: inc/widgets.php:334
+#: inc/widgets.php:347
 msgid "DeviantArt"
 msgstr ""
 
-#: inc/widgets.php:335
+#: inc/widgets.php:348
 msgid "Flickr"
 msgstr ""
 
-#: inc/widgets.php:336
+#: inc/widgets.php:349
 msgid "500px"
 msgstr ""
 
-#: inc/widgets.php:337
+#: inc/widgets.php:350
 msgid "Instagram"
 msgstr ""
 
-#: inc/widgets.php:338
+#: inc/widgets.php:351
 msgid "Pinterest"
 msgstr ""
 
-#: inc/widgets.php:339
+#: inc/widgets.php:352
 msgid "Skype"
 msgstr ""
 
-#: inc/widgets.php:340
+#: inc/widgets.php:353
 msgid "YouTube"
 msgstr ""
 
-#: inc/widgets.php:341
+#: inc/widgets.php:354
 msgid "Vimeo"
 msgstr ""
 
-#: inc/widgets.php:343
+#: inc/widgets.php:356
 msgid "Tumblr"
 msgstr ""
 
-#: inc/widgets.php:344
+#: inc/widgets.php:357
 msgid "WordPress"
 msgstr ""
 
-#: inc/widgets.php:345
+#: inc/widgets.php:358
 msgid "GitHub"
 msgstr ""
 
-#: inc/widgets.php:346
+#: inc/widgets.php:359
 msgid "Bitbucket"
 msgstr ""
 
-#: inc/widgets.php:347
+#: inc/widgets.php:360
 msgid "Codepen"
 msgstr ""
 
-#: inc/widgets.php:348
+#: inc/widgets.php:361
 msgid "Mixcloud"
 msgstr ""
 
-#: inc/widgets.php:349
+#: inc/widgets.php:362
 msgid "SoundCloud"
 msgstr ""
 
-#: inc/widgets.php:350
+#: inc/widgets.php:363
 msgid "StumbleUpon"
 msgstr ""
 
-#: inc/widgets.php:351
+#: inc/widgets.php:364
 msgid "VK"
 msgstr ""
 
-#: inc/widgets.php:352
+#: inc/widgets.php:365
 msgid "RSS"
 msgstr ""
 
-#: inc/widgets.php:353
+#: inc/widgets.php:366
 msgid "Email"
 msgstr ""
 
-#: inc/widgets.php:354
+#: inc/widgets.php:367
 msgid "Phone"
 msgstr ""
 
-#: inc/widgets.php:425
+#: inc/widgets.php:445
 msgid "Open in New Window"
 msgstr ""
 
-#: inc/widgets.php:457
+#: inc/widgets.php:477
 msgid "Next"
 msgstr ""
 
-#: inc/widgets.php:458
+#: inc/widgets.php:478
 msgid "Previous"
 msgstr ""
 
-#: inc/widgets.php:505
+#: inc/widgets.php:525
 msgid "Post "
 msgstr ""
 

@@ -400,7 +400,7 @@ function siteorigin_panels_lite_generate_css($post_id, $panels_data) {
 	}
 
 	// Let other plugins and components filter the CSS object.
-	$css = apply_filters('siteorigin_panels_css_object', $css, $panels_data, $post_id);
+	$css = apply_filters( 'siteorigin_panels_css_object', $css, $panels_data, $post_id, array() );
 	return $css->get_css();
 }
 
