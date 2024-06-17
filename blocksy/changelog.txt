@@ -1,3 +1,6 @@
+2.0.54: 2024-06-17
+- Improvement: Ensure all assets are loaded correctly in the customizer preview
+
 2.0.53: 2024-06-07
 - Improvement: General fixes and improvements
 

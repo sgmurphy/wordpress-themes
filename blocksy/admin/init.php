@@ -155,7 +155,7 @@ add_action(
 		if (function_exists('wp_get_global_settings')) {
 			if (isset(wp_get_global_settings()['color']['gradients']['theme'])) {
 				$gradients = wp_get_global_settings()['color']['gradients']['theme'];
-			}			
+			}
 		}
 
 		wp_localize_script(

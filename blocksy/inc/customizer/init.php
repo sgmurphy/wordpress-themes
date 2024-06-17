@@ -78,38 +78,43 @@ add_action('customize_register', function ($wp_customize) {
 add_action(
 	'customize_preview_init',
 	function () {
+		add_action(
+			'wp_enqueue_scripts',
+			function () {
+				$theme = blocksy_get_wp_parent_theme();
 
-		wp_enqueue_script(
-			'ct-customizer',
-			get_template_directory_uri() . '/static/bundle/sync.min.js',
-			['customize-preview', 'wp-date', 'ct-scripts'],
-			'20151215',
-			true
+				wp_enqueue_script(
+					'ct-customizer',
+					get_template_directory_uri() . '/static/bundle/sync.min.js',
+					['customize-preview', 'wp-date', 'ct-scripts'],
+					$theme->get('Version'),
+					true
+				);
+
+				$locale_data_ct = blocksy_get_jed_locale_data('blocksy');
+
+				wp_add_inline_script(
+					'wp-i18n',
+					'wp.i18n.setLocaleData( ' . wp_json_encode($locale_data_ct) . ', "blocksy" );'
+				);
+
+				wp_localize_script(
+					'ct-customizer',
+					'ct_customizer_localizations',
+					[
+						'static_public_url' => get_template_directory_uri() . '/static/',
+						'product_name' => blocksy_get_wp_theme()->get('Name'),
+						'header_builder_data' => Blocksy_Manager::instance()->builder->get_data_for_customizer(),
+						'dismissed_google_fonts_notice' => get_option(
+							'dismissed-blocksy_google_fonts_notice',
+							'no'
+						) === 'yes',
+
+					]
+				);
+			}
 		);
 
-		$locale_data_ct = blocksy_get_jed_locale_data('blocksy');
-
-		wp_add_inline_script(
-			'wp-i18n',
-			'wp.i18n.setLocaleData( ' . wp_json_encode($locale_data_ct) . ', "blocksy" );'
-		);
-
-		wp_localize_script(
-			'ct-customizer',
-			'ct_customizer_localizations',
-			[
-				'static_public_url' => get_template_directory_uri() . '/static/',
-				'product_name' => blocksy_get_wp_theme()->get('Name'),
-				'header_builder_data' => Blocksy_Manager::instance()->builder->get_data_for_customizer(),
-				'dismissed_google_fonts_notice' => get_option(
-					'dismissed-blocksy_google_fonts_notice',
-					'no'
-				) === 'yes',
-
-			]
-		);
-
-		wp_enqueue_media();
 	}
 );
 
