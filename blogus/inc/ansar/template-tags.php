@@ -61,32 +61,34 @@ endif;
 
 if (!function_exists('blogus_post_meta')) :
 
-    function blogus_post_meta()
-    {
-    $global_post_date = get_theme_mod('global_post_date_author_setting','show-date-author');
-    $blogus_global_comment_enable = get_theme_mod('blogus_global_comment_enable','true');?>
+    function blogus_post_meta() {
+        $global_post_date = get_theme_mod('global_post_date_author_setting','show-date-author');
+        $blogus_global_comment_enable = get_theme_mod('blogus_global_comment_enable','true');?>
 
-    <div class="bs-blog-meta">
-    <?php if($global_post_date =='show-date-author') {
-        blogus_author_content();
-        blogus_date_content();  
+        <div class="bs-blog-meta">
+        <?php if($global_post_date =='show-date-author') {
+            blogus_author_content();
+            blogus_date_content();  
 
-    } elseif($global_post_date =='show-date-only') { 
-        blogus_date_content();
-    
-    } elseif($global_post_date =='show-author-only') {
-        blogus_author_content();
+        } elseif($global_post_date =='show-date-only') { 
+            blogus_date_content();
+        
+        } elseif($global_post_date =='show-author-only') {
+            blogus_author_content();
 
-    } elseif($global_post_date =='hide-date-author') { }
-    if($blogus_global_comment_enable == true) { ?>
-        <span class="comments-link"> 
-            <a href="<?php the_permalink(); ?>"><span><?php echo absint(get_comments_number()); ?></span><span><?php esc_html_e('Comments','blogus'); ?></span></a> 
-        </span>
-    <?php } 
-    blogus_edit_link(); ?>
-    </div>
-<?php
-}
+        } elseif($global_post_date =='hide-date-author') { }
+        if($blogus_global_comment_enable == true) {
+            if(get_comments_number() <= '1') { $comment_label = 'Comment'; } else { $comment_label = 'Comments'; } ?>
+            <span class="comments-link"> 
+                <a href="<?php the_permalink(); ?>">
+                <span><?php echo absint(get_comments_number()); ?></span><span><?php esc_html_e($comment_label ,'blogus'); ?></span>
+            </a> 
+            </span>
+        <?php } 
+        blogus_edit_link(); ?>
+        </div>
+    <?php
+    }
 endif; 
 
 if (!function_exists('blogus_menu_search')) :

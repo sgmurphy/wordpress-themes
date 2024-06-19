@@ -85,34 +85,34 @@ if ( ! function_exists( 'newsup_edit_link' ) ) :
 endif;
 
 if ( ! function_exists( 'newsup_post_comment' ) ) :
-    function newsup_post_comment() { ?>
+    function newsup_post_comment() { 
+        if(get_comments_number() <= '1') { $comment_label = 'Comment'; } else { $comment_label = 'Comments'; } ?>
         <span class="comments-link"><i class="fas fa-comments"></i>
-            <a href="<?php the_permalink(); ?>"><?php echo get_comments_number(); ?> <?php esc_html_e('Comments','newsup'); ?></a> 
+            <a href="<?php the_permalink(); ?>"><?php echo get_comments_number(); ?> <?php esc_html_e($comment_label,'newsup'); ?></a> 
         </span>  
     <?php }
 endif;
 
 if (!function_exists('newsup_post_meta')) :
 
-    function newsup_post_meta()
-    { ?>
+    function newsup_post_meta() { ?>
         <div class="mg-blog-meta"> 
-        <?php $global_post_date = get_theme_mod('global_post_date_author_setting','show-date-author');
-        $all_post_comment_disable = get_theme_mod('all_post_comment_disable',false);
-        if($global_post_date =='show-date-author') { 
-            newsup_date_content();
-            newsup_author_content(); 
-        } elseif ($global_post_date =='show-date-only') {
-            newsup_date_content();
-        } elseif ($global_post_date =='show-author-only') {
-            newsup_author_content(); 
-        } elseif ($global_post_date =='hide-date-author') { }
-        if($all_post_comment_disable == true) { 
-            newsup_post_comment(); 
-        } 
-            newsup_edit_link(); ?>
-    </div> 
-<?php }
+            <?php $global_post_date = get_theme_mod('global_post_date_author_setting','show-date-author');
+            $all_post_comment_disable = get_theme_mod('all_post_comment_disable',false);
+            if($global_post_date =='show-date-author') { 
+                newsup_date_content();
+                newsup_author_content(); 
+            } elseif ($global_post_date =='show-date-only') {
+                newsup_date_content();
+            } elseif ($global_post_date =='show-author-only') {
+                newsup_author_content(); 
+            } elseif ($global_post_date =='hide-date-author') { }
+            if($all_post_comment_disable == true) { 
+                newsup_post_comment(); 
+            } 
+                newsup_edit_link(); ?>
+        </div> 
+    <?php }
 endif;
 
 function newsup_read_more() {

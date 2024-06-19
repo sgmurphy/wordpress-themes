@@ -3,9 +3,9 @@ Contributors: Themeansar
 Author: Themeansar
 Requires PHP: 7.0
 Requires at least: 5.4
-Tested up to: 6.5.3
-Stable tag: 1.0.0.97
-Version: 1.0.0.97
+Tested up to: 6.5.4
+Stable tag: 1.0.0.98
+Version: 1.0.0.98
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -418,3 +418,7 @@ License: CC0 Public Domain
 
 = Version 1.0.0.97
 1. Fixed Styling Issue.
+
+= Version 1.0.0.98
+1. Fixed Text Domain Issue.
+2. Fixed Comments Label.
