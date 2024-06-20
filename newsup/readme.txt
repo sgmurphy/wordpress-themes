@@ -4,8 +4,8 @@ Author: Themeansar
 Requires at least: WordPress 4.7
 Tested up to: 6.5.4
 Requires PHP: 7.0
-Stable tag: 4.0.0.39
-Version: 4.0.0.39
+Stable tag: 4.0.0.40
+Version: 4.0.0.40
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -998,3 +998,6 @@ Fixed Stytling Issues.
 
 = Version 4.0.0.39
 Fixed Comments Label.
+
+= Version 4.0.0.40
+Fixed Text Domain Issue.

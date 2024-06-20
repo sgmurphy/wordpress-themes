@@ -85,10 +85,9 @@ if ( ! function_exists( 'newsup_edit_link' ) ) :
 endif;
 
 if ( ! function_exists( 'newsup_post_comment' ) ) :
-    function newsup_post_comment() { 
-        if(get_comments_number() <= '1') { $comment_label = 'Comment'; } else { $comment_label = 'Comments'; } ?>
+    function newsup_post_comment() { ?>
         <span class="comments-link"><i class="fas fa-comments"></i>
-            <a href="<?php the_permalink(); ?>"><?php echo get_comments_number(); ?> <?php esc_html_e($comment_label,'newsup'); ?></a> 
+            <a href="<?php the_permalink(); ?>"><?php echo get_comments_number(); ?> <?php echo esc_attr((get_comments_number() <= 1 ? 'Comment' : 'Comments'),'newsup'); ?></a> 
         </span>  
     <?php }
 endif;

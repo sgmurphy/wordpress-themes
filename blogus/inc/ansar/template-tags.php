@@ -77,11 +77,10 @@ if (!function_exists('blogus_post_meta')) :
             blogus_author_content();
 
         } elseif($global_post_date =='hide-date-author') { }
-        if($blogus_global_comment_enable == true) {
-            if(get_comments_number() <= '1') { $comment_label = 'Comment'; } else { $comment_label = 'Comments'; } ?>
+        if($blogus_global_comment_enable == true) { ?>
             <span class="comments-link"> 
                 <a href="<?php the_permalink(); ?>">
-                <span><?php echo absint(get_comments_number()); ?></span><span><?php esc_html_e($comment_label ,'blogus'); ?></span>
+                <span><?php echo absint(get_comments_number()); ?></span><span><?php echo esc_html((get_comments_number() <= 1 ? 'Comment' : 'Comments') ,'blogus'); ?></span>
             </a> 
             </span>
         <?php } 
