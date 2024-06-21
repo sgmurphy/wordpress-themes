@@ -73,7 +73,7 @@ class Blocksy_Manager {
 		$i18n_manager = new Blocksy_Translations_Manager();
 		$i18n_manager->init();
 
-		new \Blocksy\Blocks();
+		new \Blocksy\BlocksFallback();
 
 		add_action('customize_save_after', function () {
 			$i18n_manager = new Blocksy_Translations_Manager();

@@ -15,7 +15,7 @@ blocksy_output_font_css([
 	'css' => $css,
 	'tablet_css' => $tablet_css,
 	'mobile_css' => $mobile_css,
-	'selector' => '.woocommerce-tabs .tabs, .woocommerce-tabs .ct-accordion-heading',
+	'selector' => '.woocommerce-tabs .tabs, .woocommerce-tabs .ct-accordion-heading, .woocommerce-tabs[data-type*="type-4"] .entry-content > h2',
 ]);
 
 blocksy_output_colors([
@@ -28,7 +28,7 @@ blocksy_output_colors([
 	'css' => $css,
 	'variables' => [
 		'default' => [
-			'selector' => '.woocommerce-tabs .tabs, .woocommerce-tabs .ct-accordion-heading',
+			'selector' => '.woocommerce-tabs .tabs, .woocommerce-tabs .ct-accordion-heading, .woocommerce-tabs[data-type*="type-4"] .entry-content > h2',
 			'variable' => 'theme-link-initial-color'
 		],
 

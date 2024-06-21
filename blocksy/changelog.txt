@@ -1,3 +1,10 @@
+2.0.55: 2024-06-21
+- Improvement: Better compatibility with Annasta Woocommerce Product Filters plugin
+- Improvement: Better compatibility with RankMath and breadcrumbs
+- Fix: Hovering the cart icon on a touch device that also has mouse input automatically redirects the site to the cart page
+- Fix: Lightbox gallery does not close on mobile if tapped outside the image
+- Fix: Product tabs font size does not work with type 4 design
+
 2.0.54: 2024-06-17
 - Improvement: Ensure all assets are loaded correctly in the customizer preview
 

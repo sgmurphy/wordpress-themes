@@ -223,13 +223,15 @@ $options = [
 							[
 								'title' => __( 'Hover', 'blocksy' ),
 								'id' => 'hover',
-								'inherit' => 'var(--theme-link-hover-color)'
+								'inherit' => 'var(--theme-link-hover-color)',
+								'condition' => [ 'woo_tabs_type' => '!type-4' ]
 							],
 
 							[
 								'title' => __( 'Active', 'blocksy' ),
 								'id' => 'active',
-								'inherit' => 'self:hover'
+								'inherit' => 'self:hover',
+								'condition' => [ 'woo_tabs_type' => '!type-4' ]
 							],
 						],
 					],

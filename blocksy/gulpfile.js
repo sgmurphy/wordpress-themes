@@ -128,23 +128,6 @@ var options = {
 		},
 
 		{
-			entry: `./static/js/editor/blocks/index.js`,
-			output: {
-				filename: 'blocks.js',
-				path: `./static/bundle/blocks/`,
-				chunkFilename: '[id].[chunkhash].js',
-			},
-			externals: {
-				_: 'window._',
-				jquery: 'jQuery',
-				'ct-i18n': 'window.wp.i18n',
-				'ct-events': 'ctEvents',
-				underscore: 'window._',
-				...wpExternals,
-			},
-		},
-
-		{
 			entry: './static/js/customizer/sync.js',
 			output: {
 				filename: 'sync.min.js',

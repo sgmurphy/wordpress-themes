@@ -171,6 +171,10 @@
 
 	> article .entry-content {
 
+		> h2 {
+			color: var(--theme-link-initial-color);
+		}
+
 		&:not(:last-child) {
 			margin-bottom: var(--woo-separated-tabs-spacing, 50px);
 		}

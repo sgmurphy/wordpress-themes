@@ -6,7 +6,7 @@ let mounted = false
 
 let addedToCart = false
 
-export const mount = (el) => {
+export const mount = (el, { event }) => {
 	if (!$) return
 
 	const maybeCartLink = el.querySelector('.ct-cart-item')
@@ -14,7 +14,8 @@ export const mount = (el) => {
 	if (
 		maybeCartLink &&
 		!maybeCartLink.classList.contains('ct-offcanvas-trigger') &&
-		isTouchDevice()
+		isTouchDevice() &&
+		event?.type !== 'mouseover'
 	) {
 		location.href = maybeCartLink.getAttribute('href')
 		return

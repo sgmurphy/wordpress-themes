@@ -142,6 +142,10 @@ watchOptionsWithPrefix({
 								}
 							}
 
+							if (el.length === 1) {
+								el = el[0]
+							}
+
 							renderSingleEntryMeta({
 								el,
 								...moreDefaults,
@@ -315,10 +319,14 @@ export const getPostListingVariables = () => ({
 			// bottom spacing
 			let selectorsMap = {
 				title: '[data-archive="default"] .card-content .entry-title',
-				featured_image: '[data-archive="default"] .card-content .ct-media-container',
-				excerpt: '[data-archive="default"] .card-content .entry-excerpt',
-				read_more: '[data-archive="default"] .card-content .entry-button',
-				overall_score: '[data-archive="default"] .card-content .ct-overall-score-layer',
+				featured_image:
+					'[data-archive="default"] .card-content .ct-media-container',
+				excerpt:
+					'[data-archive="default"] .card-content .entry-excerpt',
+				read_more:
+					'[data-archive="default"] .card-content .entry-button',
+				overall_score:
+					'[data-archive="default"] .card-content .ct-overall-score-layer',
 			}
 
 			if (selectorsMap[layer.id]) {

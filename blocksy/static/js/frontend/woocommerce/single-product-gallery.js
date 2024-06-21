@@ -92,6 +92,7 @@ export const mount = (el, { event: mountEvent }) => {
 				showHideOpacity: false,
 				hideAnimationDuration: 0,
 				showAnimationDuration: 0,
+				tapToClose: true,
 			}
 		)
 

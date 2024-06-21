@@ -6,12 +6,12 @@ export const getWooSingleGeneralVariablesFor = () => ({
 	// product tabs
 	...typographyOption({
 		id: 'woo_tabs_font',
-		selector: '.woocommerce-tabs .tabs, .woocommerce-tabs .ct-accordion-heading',
+		selector: '.woocommerce-tabs .tabs, .woocommerce-tabs .ct-accordion-heading, .woocommerce-tabs[data-type*="type-4"] .entry-content > h2',
 	}),
 
 	woo_tabs_font_color: [
 		{
-			selector: '.woocommerce-tabs .tabs, .woocommerce-tabs .ct-accordion-heading',
+			selector: '.woocommerce-tabs .tabs, .woocommerce-tabs .ct-accordion-heading, .woocommerce-tabs[data-type*="type-4"] .entry-content > h2',
 			variable: 'theme-link-initial-color',
 			type: 'color:default',
 		},
