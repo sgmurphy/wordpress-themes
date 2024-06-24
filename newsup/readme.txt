@@ -1001,3 +1001,6 @@ Fixed Comments Label.
 
 = Version 4.0.0.40
 Fixed Text Domain Issue.
+
+= Version 4.0.0.41
+Added Selective Refresh to Single Page.

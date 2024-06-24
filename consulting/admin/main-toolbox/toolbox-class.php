@@ -22,23 +22,29 @@ if ( ! class_exists( 'thinkup_toolbox_section' ) ) {
 		 */
 		private $config;
 		/**
+		 * The current theme object.
+		 *
+		 * @var WP_Theme $theme The current theme.
+		 */
+		private $theme;
+		/**
 		 * Get the theme name using wp_get_theme.
 		 *
 		 * @var string $theme_name The theme name.
 		 */
 		private $theme_name;
 		/**
+		 * Get the theme name using wp_get_theme.
+		 *
+		 * @var string $theme_name_slug The theme name.
+		 */
+		private $theme_name_base;
+		/**
 		 * Get the theme slug ( theme folder name ).
 		 *
 		 * @var string $theme_slug The theme slug.
 		 */
 		private $theme_slug;
-		/**
-		 * The current theme object.
-		 *
-		 * @var WP_Theme $theme The current theme.
-		 */
-		private $theme;
 		/**
 		 * Holds the theme version.
 		 *
@@ -101,11 +107,11 @@ if ( ! class_exists( 'thinkup_toolbox_section' ) ) {
 		public function setup_config() {
 			$theme = wp_get_theme();
 			if ( is_child_theme() ) {
+				$this->theme      = $theme->parent();
 				$this->theme_name = $theme->parent()->get( 'Name' );
-				$this->theme      = $theme->parent();
 			} else {
-				$this->theme_name = $theme->get( 'Name' );
 				$this->theme      = $theme->parent();
+				$this->theme_name = $theme->get( 'Name' );
 			}
 			$this->theme_name_base = strtolower(str_replace(' ', '-', $theme->get( 'Name' )));
 			$this->theme_version   = $theme->get( 'Version' );
@@ -160,10 +166,10 @@ if ( ! class_exists( 'thinkup_toolbox_section' ) ) {
 				$theme_name = ucfirst( trim( $theme_name ) );
 
 				// Appearance subpage
-				add_theme_page( 
-					$this->menu_name, 
-					$this->page_name, 
-					'activate_plugins', 
+				add_theme_page(
+					$this->menu_name,
+					$this->page_name,
+					'activate_plugins',
 					'/admin.php?page=thinkup-setup'
 				);
 

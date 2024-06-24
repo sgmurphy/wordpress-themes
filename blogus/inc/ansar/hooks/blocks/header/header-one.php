@@ -9,7 +9,7 @@
         <div class="inner">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-md-3">
+              <div class="col-md-3 left-nav">
                 <?php do_action('blogus_action_header_social_section'); ?>
               </div>
               <div class="navbar-header col-md-6">
@@ -27,7 +27,7 @@
                   </div>
               </div>     
               <div class="col-md-3">
-                <div class="info-right right-nav  d-flex align-items-center justify-content-center justify-content-md-end">
+                <div class="info-right right-nav d-flex align-items-center justify-content-center justify-content-md-end">
                  <?php blogus_menu_btns(); ?>              
                 </div>
               </div>

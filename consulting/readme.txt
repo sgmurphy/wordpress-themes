@@ -2,8 +2,8 @@
 Contributors: thinkupthemes
 Requires at least: 5.0
 Tested up to: 6.4
-Requires PHP: 5.6
-Version: 1.4.7
+Requires PHP: 7.0
+Version: 1.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography
@@ -103,6 +103,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 
 == Changelog ==
+
+= 1.4.8
+- Fixed:   Depreciated error fixed for variable $theme_name_base in toolbox-class.php.
+- Updated: "Requires PHP" updated to v7.0.
 
 = 1.4.7
 - Updated: Feedback script check for theme name.

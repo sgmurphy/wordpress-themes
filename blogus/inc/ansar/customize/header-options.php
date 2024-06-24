@@ -38,6 +38,7 @@ $wp_customize->add_section( 'social_options' , array(
     $wp_customize->add_setting('header_social_icon_enable',
     array(
         'default' => true,
+        'transport' => 'postMessage',
         'sanitize_callback' => 'blogus_sanitize_checkbox',
     )
     );
@@ -53,7 +54,8 @@ $wp_customize->add_section( 'social_options' , array(
             'blogus_header_social_icons',
             array(
                 'default'           => blogus_get_social_icon_default(),
-                'sanitize_callback' => 'blogus_repeater_sanitize'
+                'sanitize_callback' => 'blogus_repeater_sanitize',
+                'transport' => 'postMessage',
             )
         );
 

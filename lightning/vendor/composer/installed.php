@@ -3,7 +3,7 @@
         'name' => 'vektor-inc/lightning',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '979afd45f6be236fb7a1148a6dc5b679423cfaea',
+        'reference' => '62335901064812d5d91b0936ded76209696bdfb8',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'vektor-inc/lightning' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '979afd45f6be236fb7a1148a6dc5b679423cfaea',
+            'reference' => '62335901064812d5d91b0936ded76209696bdfb8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
