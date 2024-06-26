@@ -27,6 +27,16 @@
 
 		wp.customize.state.create( 'kadenceTab' );
 		wp.customize.state( 'kadenceTab' ).set( 'general' );
+		wp.customize.sectionConstructor['kadence_section_pro'] = wp.customize.Section.extend( {
+
+			// No events for this type of section.
+			attachEvents: () => {},
+		
+			// Always make the section active.
+			isContextuallyActive: () => {
+				return true;
+			}
+		} );
 		
 
 		// Set handler when custom responsive toggle is clicked.

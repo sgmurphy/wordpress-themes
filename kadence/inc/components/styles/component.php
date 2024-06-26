@@ -1381,17 +1381,33 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$css->add_property( 'border-bottom', $css->render_border( kadence()->option( 'mobile_navigation_divider' ) ) );
 		$css->set_selector( '.mobile-navigation:not(.drawer-navigation-parent-toggle-true) ul li.menu-item-has-children .drawer-nav-drop-wrap button' );
 		$css->add_property( 'border-left', $css->render_border( kadence()->option( 'mobile_navigation_divider' ) ) );
+
 		// Mobile Popout.
-		$css->set_selector( '#mobile-drawer .drawer-inner, #mobile-drawer.popup-drawer-layout-fullwidth.popup-drawer-animation-slice .pop-portion-bg, #mobile-drawer.popup-drawer-layout-fullwidth.popup-drawer-animation-slice.pop-animated.show-drawer .drawer-inner' );
-		$css->render_background( kadence()->sub_option( 'header_popup_background', 'desktop' ), $css );
-		$css->start_media_query( $media_query['tablet'] );
-		$css->set_selector( '#mobile-drawer .drawer-inner, #mobile-drawer.popup-drawer-layout-fullwidth.popup-drawer-animation-slice .pop-portion-bg, #mobile-drawer.popup-drawer-layout-fullwidth.popup-drawer-animation-slice.pop-animated.show-drawer .drawer-inner' );
-		$css->render_background( kadence()->sub_option( 'header_popup_background', 'tablet' ), $css );
-		$css->stop_media_query();
-		$css->start_media_query( $media_query['mobile'] );
-		$css->set_selector( '#mobile-drawer .drawer-inner, #mobile-drawer.popup-drawer-layout-fullwidth.popup-drawer-animation-slice .pop-portion-bg, #mobile-drawer.popup-drawer-layout-fullwidth.popup-drawer-animation-slice.show-drawer.pop-animated .drawer-inner' );
-		$css->render_background( kadence()->sub_option( 'header_popup_background', 'mobile' ), $css );
-		$css->stop_media_query();
+		$header_popup_width = kadence()->option( 'header_popup_width' );
+		$header_popup_content_max_width = kadence()->option( 'header_popup_content_max_width' );
+		$header_popup_content_align = kadence()->option( 'header_popup_content_align' ) ?? 'left';
+		foreach ( array( 'desktop', 'tablet', 'mobile' ) as $device ) {
+			$css->set_selector( '#mobile-drawer .drawer-inner, #mobile-drawer.popup-drawer-layout-fullwidth.popup-drawer-animation-slice .pop-portion-bg, #mobile-drawer.popup-drawer-layout-fullwidth.popup-drawer-animation-slice.pop-animated.show-drawer .drawer-inner' );
+
+			if ( $device != 'desktop' ) {
+				$css->start_media_query( $media_query[ $device ] );
+			}
+			$css->render_background( kadence()->sub_option( 'header_popup_background', $device ), $css );
+			if ( 'sidepanel' === kadence()->option( 'header_popup_layout' ) && isset( $header_popup_width['size'] ) && isset( $header_popup_width['size'][ $device ] ) && $header_popup_width['size'][ $device ] ) {
+				$unit = isset( $header_popup_width['unit'][ $device ] ) ? $header_popup_width['unit'][ $device ] : ( isset( $header_popup_width['unit'] ) ? $header_popup_width['unit'] : 'px' );
+				$css->add_property( 'width', $header_popup_width['size'][ $device ] . $unit );
+			}
+			$css->set_selector( '#mobile-drawer .drawer-content' );
+			if ( isset( $header_popup_content_max_width['size'] ) && isset( $header_popup_content_max_width['size'][ $device ] ) && $header_popup_content_max_width['size'][ $device ] ) {
+				$unit = isset( $header_popup_content_max_width['unit'][ $device ] ) ? $header_popup_content_max_width['unit'][ $device ] : ( isset( $header_popup_content_max_width['unit'] ) ? $header_popup_content_max_width['unit'] : 'px' );
+				$css->add_property( 'max-width', $header_popup_content_max_width['size'][ $device ] . $unit );
+				$css->add_property( 'margin', '0 auto' );
+			}
+			if ( $device != 'desktop' ) {
+				$css->stop_media_query();
+			}
+		}
+
 		$css->set_selector( '#mobile-drawer .drawer-header .drawer-toggle' );
 		$css->add_property( 'padding', $this->render_measure( kadence()->option( 'header_popup_close_padding' ) ) );
 		$css->add_property( 'font-size', kadence()->sub_option( 'header_popup_close_icon_size', 'size' ) . kadence()->sub_option( 'header_popup_close_icon_size', 'unit' ) );

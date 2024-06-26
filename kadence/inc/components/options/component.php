@@ -505,6 +505,30 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					'enable_footer_on_bottom' => true,
 					'enable_scroll_to_id'     => true,
 					'lightbox' => false,
+					'header_popup_width' => array(
+						'size' => array(
+							'mobile'  => '',
+							'tablet'  => '',
+							'desktop' => '',
+						),
+						'unit' => array(
+							'mobile'  => 'px',
+							'tablet'  => 'px',
+							'desktop' => 'px',
+						),
+					),
+					'header_popup_content_max_width' => array(
+						'size' => array(
+							'mobile'  => '',
+							'tablet'  => '',
+							'desktop' => '',
+						),
+						'unit' => array(
+							'mobile'  => 'px',
+							'tablet'  => 'px',
+							'desktop' => 'px',
+						),
+					),
 					'enable_popup_body_animate' => false,
 					// Typography.
 					'font_rendering' => false,
@@ -3111,6 +3135,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						'paypal' => true,
 						'applepay' => false,
 						'stripe' => false,
+						'link' => false,
+						'googlepay' => false,
 						'card_color' => 'inherit',
 						'custom_enable_01' => false,
 						'custom_img_01' => '',
@@ -4205,6 +4231,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					// MISC
 					'ie11_basic_support' => false,
 					'theme_json_mode'    => false,
+					'microdata'          => true,
 				)
 			);
 		}

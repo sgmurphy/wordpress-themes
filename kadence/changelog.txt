@@ -1,3 +1,12 @@
+== 1.2.6 | 26th June 2024 ==
+* Add: Settings to adjust off canvas width.
+* Add: Option to disable microdata schema.
+* Add: Google Pay and Strip Link payment icons for products.
+* Update: Visa Payment Icon.
+* Update: Pro Customizer upgrade button.
+* Update: Google font options.
+* Fix: Link styles in group block.
+
 == 1.2.5 | 20th May 2024 ==
 * Add: Support for AVIF images in theme gallery.
 * Fix: Issue with footer builder covering footer.
