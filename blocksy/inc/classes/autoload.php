@@ -50,6 +50,8 @@ class ThemeAutoloader {
 
 			'WpHooksManager' => 'inc/classes/hooks-manager.php',
 
+			'ArchiveLogic' => 'inc/components/archive/archive.php',
+
 			'CustomPostTypes' => 'inc/integrations/custom-post-types.php',
 			'ThemeDynamicCss' => 'inc/dynamic-css.php',
 

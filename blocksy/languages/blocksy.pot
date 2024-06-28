@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-20 22:48+0000\n"
+"POT-Creation-Date: 2024-06-27 19:46+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Search in category"
 msgstr ""
 
-#: searchform.php:345, inc/manager.php:231, inc/manager.php:233
+#: searchform.php:345, inc/manager.php:235, inc/manager.php:237
 msgid "No results"
 msgstr ""
 
@@ -147,30 +147,30 @@ msgstr ""
 msgid "Footer Widget Area "
 msgstr ""
 
-#: inc/manager.php:228
+#: inc/manager.php:232
 msgid "Show more"
 msgstr ""
 
-#: inc/manager.php:229
+#: inc/manager.php:233
 msgid "More"
 msgstr ""
 
-#: inc/manager.php:230
+#: inc/manager.php:234
 msgid "Search results"
 msgstr ""
 
-#: inc/manager.php:234, inc/manager.php:240
+#: inc/manager.php:238, inc/manager.php:244
 msgid "You got %s result. Please press Tab to select it."
 msgid_plural "You got %s results. Please press Tab to select one."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/manager.php:247, inc/components/menus.php:93,
+#: inc/manager.php:251, inc/components/menus.php:93,
 #: inc/components/menus.php:80, inc/components/menus.php:242
 msgid "Expand dropdown menu"
 msgstr ""
 
-#: inc/manager.php:248
+#: inc/manager.php:252
 msgid "Collapse dropdown menu"
 msgstr ""
 
@@ -452,32 +452,32 @@ msgstr ""
 msgid "Share your love"
 msgstr ""
 
-#: inc/components/social-box.php:486, inc/components/social-box.php:1510
+#: inc/components/social-box.php:486, inc/components/social-box.php:1521
 msgid "Apple Podcasts"
 msgstr ""
 
-#: inc/components/social-box.php:603, inc/components/social-box.php:1682
+#: inc/components/social-box.php:603, inc/components/social-box.php:1693
 msgid "VK"
 msgstr ""
 
-#: inc/components/social-box.php:616, inc/components/social-box.php:1594,
+#: inc/components/social-box.php:616, inc/components/social-box.php:1605,
 #: inc/options/single-elements/post-share-box.php:243
 msgid "Odnoklassniki"
 msgstr ""
 
-#: inc/components/social-box.php:642, inc/components/social-box.php:1546
+#: inc/components/social-box.php:642, inc/components/social-box.php:1557
 msgid "Facebook Group"
 msgstr ""
 
-#: inc/components/social-box.php:655, inc/components/social-box.php:1550
+#: inc/components/social-box.php:655, inc/components/social-box.php:1561
 msgid "Facebook Messenger"
 msgstr ""
 
-#: inc/components/social-box.php:891, inc/components/social-box.php:1606
+#: inc/components/social-box.php:891, inc/components/social-box.php:1617
 msgid "Phone"
 msgstr ""
 
-#: inc/components/social-box.php:904, inc/components/social-box.php:1538,
+#: inc/components/social-box.php:904, inc/components/social-box.php:1549,
 #: inc/components/single/comments.php:127,
 #: inc/options/single-elements/post-share-box.php:293,
 #: inc/components/woocommerce/single/review-form.php:16
@@ -582,7 +582,7 @@ msgstr ""
 #: inc/options/single-elements/author-box.php:21,
 #: inc/options/single-elements/featured-image.php:21,
 #: inc/options/single-elements/post-nav.php:29,
-#: inc/options/single-elements/post-share-box.php:658,
+#: inc/options/single-elements/post-share-box.php:668,
 #: inc/options/single-elements/post-tags.php:29,
 #: inc/options/single-elements/related-posts.php:29,
 #: inc/options/woocommerce/archive-main.php:48,
@@ -783,46 +783,46 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: inc/components/blocks/blocks-fallback.php:31
+#: inc/components/blocks/blocks-fallback.php:35
 msgid "About Me"
 msgstr ""
 
-#: inc/components/blocks/blocks-fallback.php:32,
+#: inc/components/blocks/blocks-fallback.php:36,
 #: inc/options/general/breadcrumbs.php:240,
 #: inc/options/general/page-title.php:279,
 #: inc/options/woocommerce/single-product-layers.php:133
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/components/blocks/blocks-fallback.php:33
+#: inc/components/blocks/blocks-fallback.php:37
 msgid "Contact Info"
 msgstr ""
 
-#: inc/components/blocks/blocks-fallback.php:34
+#: inc/components/blocks/blocks-fallback.php:38
 msgid "Advanced Posts"
 msgstr ""
 
-#: inc/components/blocks/blocks-fallback.php:35
+#: inc/components/blocks/blocks-fallback.php:39
 msgid "Advanced Search"
 msgstr ""
 
-#: inc/components/blocks/blocks-fallback.php:36,
-#: inc/options/single-elements/post-share-box.php:673,
-#: inc/options/single-elements/post-share-box.php:689
+#: inc/components/blocks/blocks-fallback.php:40,
+#: inc/options/single-elements/post-share-box.php:683,
+#: inc/options/single-elements/post-share-box.php:699
 msgid "Share Box"
 msgstr ""
 
-#: inc/components/blocks/blocks-fallback.php:37,
+#: inc/components/blocks/blocks-fallback.php:41,
 #: inc/panel-builder/footer/socials/config.php:4,
 #: inc/panel-builder/header/socials/config.php:4
 msgid "Socials"
 msgstr ""
 
-#: inc/components/blocks/blocks-fallback.php:38
+#: inc/components/blocks/blocks-fallback.php:42
 msgid "Dynamic Data"
 msgstr ""
 
-#: inc/components/blocks/blocks-fallback.php:72
+#: inc/components/blocks/blocks-fallback.php:76
 msgid ""
 "The %s block is moved to the Blocksy Companion plugin. Please install this "
 "plugin to get access to the block."
@@ -1093,7 +1093,7 @@ msgid "Circle"
 msgstr ""
 
 #: inc/options/general/back-to-top.php:147,
-#: inc/options/single-elements/post-share-box.php:317,
+#: inc/options/single-elements/post-share-box.php:327,
 #: inc/options/woocommerce/single-product-layers.php:354,
 #: inc/panel-builder/header/cart/options.php:65,
 #: inc/panel-builder/header/cart/options.php:1064,
@@ -1120,7 +1120,7 @@ msgstr ""
 #: inc/options/general/page-title.php:302,
 #: inc/options/general/page-title.php:503,
 #: inc/options/single-elements/author-box.php:213,
-#: inc/options/single-elements/post-share-box.php:442,
+#: inc/options/single-elements/post-share-box.php:452,
 #: inc/options/single-elements/post-tags.php:87,
 #: inc/options/single-elements/related-posts.php:464
 msgid "Visibility"
@@ -1137,7 +1137,7 @@ msgstr ""
 #: inc/options/single-elements/post-nav.php:121,
 #: inc/options/single-elements/post-nav.php:141,
 #: inc/options/single-elements/post-nav.php:159,
-#: inc/options/single-elements/post-share-box.php:454,
+#: inc/options/single-elements/post-share-box.php:464,
 #: inc/options/single-elements/post-tags.php:100,
 #: inc/options/single-elements/related-posts.php:477,
 #: inc/options/woocommerce/related-upsells.php:81,
@@ -1172,7 +1172,7 @@ msgstr ""
 #: inc/options/single-elements/post-nav.php:122,
 #: inc/options/single-elements/post-nav.php:142,
 #: inc/options/single-elements/post-nav.php:160,
-#: inc/options/single-elements/post-share-box.php:455,
+#: inc/options/single-elements/post-share-box.php:465,
 #: inc/options/single-elements/post-tags.php:101,
 #: inc/options/single-elements/related-posts.php:478,
 #: inc/options/woocommerce/related-upsells.php:82,
@@ -1215,7 +1215,7 @@ msgstr ""
 #: inc/options/single-elements/post-nav.php:123,
 #: inc/options/single-elements/post-nav.php:143,
 #: inc/options/single-elements/post-nav.php:161,
-#: inc/options/single-elements/post-share-box.php:456,
+#: inc/options/single-elements/post-share-box.php:466,
 #: inc/options/single-elements/post-tags.php:102,
 #: inc/options/single-elements/related-posts.php:479,
 #: inc/options/woocommerce/related-upsells.php:83,
@@ -1265,7 +1265,7 @@ msgstr ""
 #: inc/options/single-elements/author-box.php:235,
 #: inc/options/single-elements/featured-image.php:138,
 #: inc/options/single-elements/post-nav.php:169,
-#: inc/options/single-elements/post-share-box.php:664,
+#: inc/options/single-elements/post-share-box.php:674,
 #: inc/options/single-elements/post-tags.php:110,
 #: inc/options/single-elements/related-posts.php:487,
 #: inc/options/woocommerce/archive-main.php:165,
@@ -1369,10 +1369,10 @@ msgstr ""
 #: inc/options/single-elements/author-box.php:399,
 #: inc/options/single-elements/author-box.php:438,
 #: inc/options/single-elements/post-nav.php:189,
-#: inc/options/single-elements/post-share-box.php:490,
-#: inc/options/single-elements/post-share-box.php:554,
-#: inc/options/single-elements/post-share-box.php:613,
-#: inc/options/single-elements/post-share-box.php:642,
+#: inc/options/single-elements/post-share-box.php:500,
+#: inc/options/single-elements/post-share-box.php:564,
+#: inc/options/single-elements/post-share-box.php:623,
+#: inc/options/single-elements/post-share-box.php:652,
 #: inc/options/single-elements/post-tags.php:136,
 #: inc/options/single-elements/related-posts.php:510,
 #: inc/options/single-elements/related-posts.php:572,
@@ -1547,9 +1547,9 @@ msgstr ""
 #: inc/options/single-elements/author-box.php:405,
 #: inc/options/single-elements/post-nav.php:194,
 #: inc/options/single-elements/post-nav.php:214,
-#: inc/options/single-elements/post-share-box.php:560,
-#: inc/options/single-elements/post-share-box.php:618,
-#: inc/options/single-elements/post-share-box.php:647,
+#: inc/options/single-elements/post-share-box.php:570,
+#: inc/options/single-elements/post-share-box.php:628,
+#: inc/options/single-elements/post-share-box.php:657,
 #: inc/options/single-elements/related-posts.php:606,
 #: inc/options/single-elements/related-posts.php:646,
 #: inc/options/woocommerce/card-product-elements.php:663,
@@ -1860,7 +1860,7 @@ msgstr ""
 #: inc/options/general/form-elements.php:276,
 #: inc/options/general/sidebar.php:384,
 #: inc/options/single-elements/author-box.php:456,
-#: inc/options/single-elements/post-share-box.php:625,
+#: inc/options/single-elements/post-share-box.php:635,
 #: inc/options/woocommerce/card-product-elements.php:100,
 #: inc/options/woocommerce/general/messages.php:53,
 #: inc/options/woocommerce/general/messages.php:169,
@@ -1883,7 +1883,7 @@ msgstr ""
 
 #: inc/options/general/buttons.php:110, inc/options/general/sidebar.php:413,
 #: inc/options/single-elements/author-box.php:492,
-#: inc/options/single-elements/post-share-box.php:570,
+#: inc/options/single-elements/post-share-box.php:580,
 #: inc/options/woocommerce/single-product-tabs.php:324,
 #: inc/panel-builder/header/cart/options.php:947,
 #: inc/panel-builder/header/mobile-menu/options.php:85,
@@ -2550,7 +2550,7 @@ msgstr ""
 
 #: inc/options/general/page-title.php:619,
 #: inc/options/single-elements/author-box.php:177,
-#: inc/options/single-elements/post-share-box.php:308,
+#: inc/options/single-elements/post-share-box.php:318,
 #: inc/panel-builder/footer/socials/options.php:59,
 #: inc/panel-builder/header/socials/options.php:58
 msgid "Set links to nofollow"
@@ -3544,8 +3544,8 @@ msgstr ""
 
 #: inc/options/single-elements/author-box.php:347,
 #: inc/options/single-elements/post-share-box.php:93,
-#: inc/options/single-elements/post-share-box.php:536,
-#: inc/options/single-elements/post-share-box.php:596,
+#: inc/options/single-elements/post-share-box.php:546,
+#: inc/options/single-elements/post-share-box.php:606,
 #: inc/options/woocommerce/single-product-layers.php:366,
 #: inc/panel-builder/footer/socials/options.php:89,
 #: inc/panel-builder/footer/socials/options.php:295,
@@ -3690,21 +3690,25 @@ msgstr ""
 msgid "Flipboard"
 msgstr ""
 
-#: inc/options/single-elements/post-share-box.php:344,
+#: inc/options/single-elements/post-share-box.php:303
+msgid "Line"
+msgstr ""
+
+#: inc/options/single-elements/post-share-box.php:354,
 #: inc/panel-builder/footer/socials/options.php:78,
 #: inc/panel-builder/header/socials/options.php:77
 msgid "Icons Spacing"
 msgstr ""
 
-#: inc/options/single-elements/post-share-box.php:372
+#: inc/options/single-elements/post-share-box.php:382
 msgid "Top Box Spacing"
 msgstr ""
 
-#: inc/options/single-elements/post-share-box.php:395
+#: inc/options/single-elements/post-share-box.php:405
 msgid "Bottom Box Spacing"
 msgstr ""
 
-#: inc/options/single-elements/post-share-box.php:420,
+#: inc/options/single-elements/post-share-box.php:430,
 #: inc/options/single-elements/post-tags.php:71,
 #: inc/options/woocommerce/card-product-elements.php:530,
 #: inc/panel-builder/header/logo/options.php:304,
@@ -3712,14 +3716,14 @@ msgstr ""
 msgid "Content Alignment"
 msgstr ""
 
-#: inc/options/single-elements/post-share-box.php:469,
+#: inc/options/single-elements/post-share-box.php:479,
 #: inc/options/single-elements/post-tags.php:116,
 #: inc/options/single-elements/related-posts.php:493,
 #: inc/options/woocommerce/related-upsells.php:122
 msgid "Module Title Font"
 msgstr ""
 
-#: inc/options/single-elements/post-share-box.php:478,
+#: inc/options/single-elements/post-share-box.php:488,
 #: inc/options/single-elements/post-tags.php:125,
 #: inc/options/single-elements/related-posts.php:499
 msgid "Module Title Font Color"

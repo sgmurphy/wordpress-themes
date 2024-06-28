@@ -972,7 +972,8 @@ if (! function_exists('blocksy_get_social_metadata')) {
 				'viber' => 'viber://forward?text={url}',
 				'whatsapp' => 'whatsapp://send?text={url}',
 				'flipboard' => 'https://share.flipboard.com/bookmarklet/popout?v=2&title={text}&url={url}',
-				'email' => 'mailto:?subject={text}&body={url}'
+				'email' => 'mailto:?subject={text}&body={url}',
+				'line' => 'https://social-plugins.line.me/lineit/share?url={url}&text={text}'
 			];
 
 			if (isset($social_urls[$args['social']])) {
@@ -1121,6 +1122,15 @@ if (! function_exists('blocksy_get_social_share_items')) {
 				'id' => 'email',
 				'enabled' => blocksy_akg_or_customizer(
 					'share_email',
+					$args['strategy'],
+					'no'
+				) === 'yes',
+			],
+
+			[
+				'id' => 'line',
+				'enabled' => blocksy_akg_or_customizer(
+					'share_line',
 					$args['strategy'],
 					'no'
 				) === 'yes',
@@ -1282,6 +1292,7 @@ function blocksy_get_social_box($args = []) {
 		'hacker_news' => '#fd6721',
 		'ok' => '#eb7e2f',
 		'flipboard' => '#c40812',
+		'line' => '#03c755',
 	];
 
 	$prefix = blocksy_manager()->screen->get_prefix();

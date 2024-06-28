@@ -1,6 +1,5 @@
 import $ from 'jquery'
 import ctEvents from 'ct-events'
-import { isTouchDevice } from '../helpers/is-touch-device'
 
 let mounted = false
 
@@ -14,8 +13,8 @@ export const mount = (el, { event }) => {
 	if (
 		maybeCartLink &&
 		!maybeCartLink.classList.contains('ct-offcanvas-trigger') &&
-		isTouchDevice() &&
-		event?.type !== 'mouseover'
+		event &&
+		event.type === 'touchstart'
 	) {
 		location.href = maybeCartLink.getAttribute('href')
 		return

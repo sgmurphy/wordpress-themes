@@ -115,7 +115,11 @@ export const getItemsDistribution = (nav) => {
 
 	const totalItemsWidth = getTotalItemsWidthFor(nav)
 
-	const hasAnyOverlap = totalItemsWidth > containerWidth
+	const navSideMargins =
+		parseInt(navStyle.getPropertyValue('margin-left')) +
+		parseInt(navStyle.getPropertyValue('margin-right'))
+
+	const hasAnyOverlap = totalItemsWidth > containerWidth - navSideMargins
 
 	if (!hasAnyOverlap) {
 		return {
@@ -127,10 +131,6 @@ export const getItemsDistribution = (nav) => {
 	let allNavs = baseContainer.querySelectorAll('[data-id*="menu"]')
 
 	const itemsWidth = getCacheFor(nav.__id).itemsWidth
-
-	const navSideMargins =
-		parseInt(navStyle.getPropertyValue('margin-left')) +
-		parseInt(navStyle.getPropertyValue('margin-right'))
 
 	const availableSpaceForItems = containerWidth - navSideMargins
 

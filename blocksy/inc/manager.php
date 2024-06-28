@@ -20,6 +20,8 @@ class Blocksy_Manager {
 	public $woocommerce = null;
 	public $colors = null;
 
+	public $archive = null;
+
 	private $hooks = null;
 
 	private $current_template = null;
@@ -60,6 +62,8 @@ class Blocksy_Manager {
 		$this->post_types = new \Blocksy\CustomPostTypes();
 		$this->screen = new Blocksy_Screen_Manager();
 		$this->colors = new \Blocksy\Colors();
+
+		$this->archive = new \Blocksy\ArchiveLogic();
 
 		$breadcrumbs = new \Blocksy\BreadcrumbsBuilder();
 		$breadcrumbs->mount_shortcode();

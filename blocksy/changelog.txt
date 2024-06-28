@@ -1,3 +1,13 @@
+2.0.56: 2024-06-27
+- Improvement: Better integration with WooCommerce Force Default Variant plugin
+- Improvement: Correct emojis insertion in `wp-editor` option type
+- Improvement: Correctly re-mount scroll lock logic on overlay update for iOS devices
+- Improvement: Make sure card meta element applies margin bottom correctly
+- Improvement: Responsive menu - correctly take in consideration menu inline margin
+- Improvement: Share box - add support for LINE social network
+- Improvement: Smarter handling for cart popover on touch devices with pointing capabilities
+- Fix: Header button with outline style does not correctly apply font proprieties
+
 2.0.55: 2024-06-21
 - Improvement: Better compatibility with Annasta Woocommerce Product Filters plugin
 - Improvement: Better compatibility with RankMath and breadcrumbs

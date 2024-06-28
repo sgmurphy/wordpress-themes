@@ -52,7 +52,7 @@ const getVariables = ({ itemId, fullItemId, panelType }) => ({
 			mutateSelector({
 				selector: getRootSelectorFor({ itemId, panelType }),
 				operation: 'suffix',
-				to_add: '.ct-button',
+				to_add: '[class*="ct-button"]',
 			})
 		),
 	}),

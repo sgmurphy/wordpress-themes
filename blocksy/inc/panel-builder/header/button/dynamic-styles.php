@@ -32,7 +32,7 @@ blocksy_output_font_css([
 		blocksy_mutate_selector([
 			'selector' => $root_selector,
 			'operation' => 'suffix',
-			'to_add' => '.ct-button'
+			'to_add' => '[class*="ct-button"]'
 		])
 	),
 ]);

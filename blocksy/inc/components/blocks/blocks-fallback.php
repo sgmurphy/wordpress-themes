@@ -13,6 +13,10 @@ class BlocksFallback {
 	}
 
 	public function render_block($content, $block, $render) {
+		if (! isset($block['blockName'])) {
+			return $content;
+		}
+
 		if (strpos($block['blockName'], 'blocksy/') !== 0) {
 			return $content;
 		}

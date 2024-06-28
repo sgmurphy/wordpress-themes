@@ -114,20 +114,6 @@ var options = {
 		},
 
 		{
-			entry: './static/js/editor/blocks/widgets-wrapper/index.js',
-			output: {
-				filename: 'widgets-wrapper.js',
-				path: './static/bundle/blocks/',
-				chunkFilename: '[id].[chunkhash].js',
-			},
-
-			externals: {
-				'ct-i18n': 'window.wp.i18n',
-				...wpExternals,
-			},
-		},
-
-		{
 			entry: './static/js/customizer/sync.js',
 			output: {
 				filename: 'sync.min.js',

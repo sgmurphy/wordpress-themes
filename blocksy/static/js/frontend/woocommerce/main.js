@@ -48,6 +48,12 @@ export const wooEntryPoints = [
 	},
 
 	{
+		els: '.ct-cart-auto-update .qty',
+		load: () => import('./quantity-input'),
+		trigger: ['change'],
+	},
+
+	{
 		els: () => [...document.querySelectorAll('.ct-ajax-add-to-cart .cart')],
 		load: () => import('./add-to-cart-single'),
 		trigger: ['submit'],

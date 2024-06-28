@@ -605,7 +605,7 @@ foreach (blocksy_get_theme_mod($prefix . '_archive_order', []) as $layer) {
 	}
 
 	$spacing = blocksy_akg('spacing', $layer, $spacing_default);
-
+	
 	if (
 		isset($selectors_map[$layer['id']])
 		&&
@@ -646,7 +646,7 @@ foreach (blocksy_get_theme_mod($prefix . '_archive_order', []) as $layer) {
 	}
 
 	if ($layer['id'] === 'post_meta') {
-		$id = isset($layer["__id"]) ? $layer["__id"] : 'default';
+		$id = substr(isset($layer["__id"]) ? $layer["__id"] : 'default', 0, 6);
 
 		blocksy_output_responsive([
 			'css' => $css,

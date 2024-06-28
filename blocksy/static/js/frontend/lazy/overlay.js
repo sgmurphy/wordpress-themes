@@ -5,6 +5,7 @@ import { mount as mountMobileMenu } from './overlay/mobile-menu'
 import { focusLockManager } from '../helpers/focus-lock'
 import { whenTransitionEnds } from '../helpers/when-transition-ends'
 import { isTouchDevice } from '../helpers/is-touch-device'
+import { isIosDevice } from '../helpers/is-ios-device'
 
 const persistSettings = (settings) => {
 	settings.container.__overlay_settings__ = settings
@@ -122,28 +123,32 @@ const showOffcanvas = (initialSettings) => {
 
 		scrollLockManager().disable(scrollContainer)
 
-		const observer = new MutationObserver((mutations) => {
-			if (scrollContainer.isConnected) {
-				return
-			}
+		if (isIosDevice()) {
+			const observer = new MutationObserver((mutations) => {
+				if (scrollContainer.isConnected) {
+					return
+				}
 
-			scrollLockManager().enable()
+				scrollLockManager().enable()
 
-			setTimeout(() => {
-				scrollLockManager().disable(
-					settings.computeScrollContainer
-						? settings.computeScrollContainer()
-						: settings.container.querySelector('.ct-panel-content')
-				)
-			}, 1000)
-		})
+				setTimeout(() => {
+					scrollLockManager().disable(
+						settings.computeScrollContainer
+							? settings.computeScrollContainer()
+							: settings.container.querySelector(
+									'.ct-panel-content'
+							  )
+					)
+				}, 1000)
+			})
 
-		observer.observe(settings.container, {
-			childList: true,
-			subtree: true,
-		})
+			observer.observe(settings.container, {
+				childList: true,
+				subtree: true,
+			})
 
-		settings.container.__overlay_observer__ = observer
+			settings.container.__overlay_observer__ = observer
+		}
 
 		setTimeout(() => {
 			focusLockManager().focusLockOn(

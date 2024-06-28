@@ -299,6 +299,16 @@ $general_tab_options = array_merge(
 			]),
 		],
 
+		$prefix . 'share_line' => [
+			'label' => __( 'Line', 'blocksy' ),
+			'type' => 'ct-switch',
+			'value' => 'no',
+			'sync' => blocksy_sync_whole_page([
+				'prefix' => $sync_prefix,
+				'loader_selector' => '.ct-share-box'
+			]),
+		],
+
 		blocksy_rand_md5() => [
 			'type' => 'ct-divider',
 		],

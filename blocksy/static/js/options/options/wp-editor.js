@@ -51,7 +51,7 @@ const TextArea = ({ id, value, option, onChange }) => {
 			setTimeout(
 				() =>
 					window.tinymce.editors[editorId] &&
-					window.tinymce.editors[editorId].on('change', listener)
+					window.tinymce.editors[editorId].on('input', listener)
 			)
 		}
 
@@ -64,7 +64,7 @@ const TextArea = ({ id, value, option, onChange }) => {
 							window.tinymce.editors[editorId]
 						) {
 							window.tinymce.editors[editorId].off(
-								'change',
+								'input',
 								listener
 							)
 						}
@@ -100,7 +100,7 @@ const TextArea = ({ id, value, option, onChange }) => {
 								() =>
 									window.tinymce.editors[editorId] &&
 									window.tinymce.editors[editorId].on(
-										'change',
+										'input',
 										listener
 									)
 							)
@@ -115,7 +115,7 @@ const TextArea = ({ id, value, option, onChange }) => {
 		return () => {
 			setTimeout(() => {
 				if (window.tinymce && window.tinymce.editors[editorId]) {
-					window.tinymce.editors[editorId].off('change', listener)
+					window.tinymce.editors[editorId].off('input', listener)
 				}
 
 				correctEditor().remove(editorId)

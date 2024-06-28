@@ -40,7 +40,10 @@ trait WordPressActionsManager {
 
 			add_filter(
 				$action['action'],
-				[$this, $action['action']],
+				[
+					$this,
+					str_replace(':', '_', $action['action'])
+				],
 				isset($action['priority']) ? $action['priority'] : 10,
 				isset($filter['args']) ? $filter['args'] : 1
 			);
@@ -63,7 +66,10 @@ trait WordPressActionsManager {
 
 			add_action(
 				$filter['action'],
-				[$this, $filter['action']],
+				[
+					$this,
+					str_replace(':', '_', $filter['action'])
+				],
 				isset($filter['priority']) ? $filter['priority'] : 10,
 				isset($filter['args']) ? $filter['args'] : 1
 			);

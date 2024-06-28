@@ -229,12 +229,6 @@ const loadSingleEntryPoint = ({
 				el.hasLazyLoadClickHoverListener = true
 
 				const l = (event) => {
-					// iOS devices will prevent the click by default, no need
-					// to prevent it manually
-					if (!isIosDevice()) {
-						event.preventDefault()
-					}
-
 					load().then((arg) =>
 						mount({
 							...arg,
@@ -244,11 +238,38 @@ const loadSingleEntryPoint = ({
 					)
 				}
 
+				let hadMouseOver = false
+
 				el.addEventListener(
-					isTouchDevice() ? 'click' : 'mouseover',
-					l,
+					'mouseover',
+					(event) => {
+						hadMouseOver = setTimeout(() => {
+							l(event)
+						}, 50)
+					},
 					{ once: true }
 				)
+
+				if (isTouchDevice()) {
+					el.addEventListener(
+						'click',
+						(event) => {
+							// iOS devices will prevent the click by default, no need
+							// to prevent it manually
+							if (!isIosDevice()) {
+								event.preventDefault()
+							}
+
+							if (hadMouseOver) {
+								clearTimeout(hadMouseOver)
+								return
+							}
+
+							l(event)
+						},
+						{ once: true }
+					)
+				}
 
 				el.addEventListener('focus', l, { once: true })
 			})
