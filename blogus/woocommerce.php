@@ -6,11 +6,11 @@
  */
 get_header(); ?>
 <!-- #main -->
-<main id="content">
+<main id="content" class="woo-class">
 	<div class="container">
+		<!--==================== breadcrumb section ====================-->
+		<?php do_action('blogus_action_archive_page_title'); ?>
 		<div class="row">
-			<!--==================== breadcrumb section ====================-->
-			<?php do_action('blogus_breadcrumb_content'); ?>
 			<div class="col-md-12">
 				<div class="bs-card-box padding-20">
 					<?php woocommerce_content(); ?>

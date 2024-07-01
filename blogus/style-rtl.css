@@ -4,8 +4,8 @@ Theme URI: https://themeansar.com/free-themes/blogus-free-blog-wordpress-theme/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Blogus is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Blogus is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Blogus is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demos.themeansar.com/blogus-demos/ and documentation at https://docs.themeansar.com/docs/blogus/
-Version: 2.0.0.0
-Tested up to: 6.5.4
+Version: 2.0.0.2
+Tested up to: 6.5.5
 Requires PHP: 7.0
 Requires at least: 5.4
 Tags: two-columns, three-columns, left-sidebar, right-sidebar, translation-ready, custom-background, custom-logo, featured-images, footer-widgets, full-width-template, blog, e-commerce, entertainment
@@ -2233,6 +2233,9 @@ header .navbar-nav:not(.sm-collapsible) .dropdown-item.has-submenu {
 	position: relative;
 	box-shadow: var(--bxsh);
 }
+.bs-breadcrumb-section .breadcrumb span {
+    word-break: break-word;
+}
 .bs-breadcrumb-section .breadcrumb {
     margin-bottom: 0;
 }
@@ -2286,13 +2289,17 @@ header .navbar-nav:not(.sm-collapsible) .dropdown-item.has-submenu {
 }
 .page-entry-title .bs-breadcrumb-section .overlay{
 	box-shadow: none;
+	padding: 0;
 }
 .page-entry-title{
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     justify-content: space-between;
     margin-bottom: 20px;
+}
+.page-entry-title:has(.entry-title.title){
+	padding: 20px;
 }
 /* --------------------------------------
 =========================================
@@ -3134,7 +3141,9 @@ blockquote.right {
 .navigation.pagination > li:first-child > a, .navigation.pagination > li:first-child > span {
     border-radius: 0;
 }
-
+.bs-card-box.page-entry-title + .row .page-title{
+	display: none;
+}
 /* WordPress Gallery 
 ------------------------------------------ */
 
@@ -3323,7 +3332,7 @@ form.search-form .search-submit{
 .nav.navbar-nav:not(.sm-collapsible) .nav-link .sub-arrow{
 	display: none;
 }
-.nav.navbar-nav:not(.sm-collapsible) .menu-item-has-children .nav-link:before{
+.nav.navbar-nav:not(.sm-collapsible) .menu-item-has-children .nav-link:before, .nav-link.has-submenu:before{
 	content: '';
 	font-family: 'Font Awesome 6 Free';
 	margin-right: 0.5em; 

@@ -34,7 +34,7 @@ if (!function_exists('blogus_post_categories')) :
 
                     $output .= '<a class="blogus-categories ' . esc_attr($color_class) . '" href="' . esc_url(get_category_link($post_category)) . '" alt="' . esc_attr(sprintf(__('View all posts in %s', 'blogus'), $post_category->name)) . '"> 
                                  ' . esc_html($post_category->name) . '
-                             </a>';
+                                </a>';
                 }
                 $output .= '';
                 echo $output;
@@ -142,13 +142,23 @@ if (!function_exists('blogus_menu_btns')) :
 endif; 
 
 if (!function_exists('get_archive_title')) :
-        
+
     function get_archive_title($title)
     {
+        if (class_exists('WooCommerce')) {
+            if (is_shop()) {
+                $title = 'Shop';
+            } elseif (is_product_category()) {
+                $title = single_term_title('', false);
+            } elseif (is_product_tag()) {
+                $title = single_term_title('', false);
+            }
+        }
+    
         if (is_category()) {
-            $title = single_cat_title();
+            $title = single_cat_title('', false);
         } elseif (is_tag()) {
-            $title = single_tag_title();
+            $title = single_tag_title('', false);
         } elseif (is_author()) {
             $title = get_the_author();
         } elseif (is_year()) {
@@ -159,24 +169,28 @@ if (!function_exists('get_archive_title')) :
             $title = get_the_date('F j, Y');
         } elseif (is_post_type_archive()) {
             $title = post_type_archive_title('', false);
+        } elseif (is_single()) {
+            $title = '';
         } else {
-            $title =  get_the_title();
+            $title = get_the_title();
         }
         
         return $title;
     }
-
+    
 endif;
+
 add_filter('get_the_archive_title', 'get_archive_title');
 
 if (!function_exists('blogus_archive_page_title')) :
         
     function blogus_archive_page_title($title) { ?>
-            <div class="bs-card-box page-entry-title">
-                <h1 class="entry-title title mb-0"><?php echo get_the_archive_title();?></h1>
-                <?php do_action('blogus_breadcrumb_content'); ?>
-            </div>
-        <?php
+        <div class="bs-card-box page-entry-title">
+            <?php if(!empty(get_the_archive_title())){ ?>
+            <h1 class="entry-title title mb-0"><?php echo get_the_archive_title();?></h1>
+            <?php } do_action('blogus_breadcrumb_content'); ?>
+        </div>
+    <?php
     }
 endif;
 add_action('blogus_action_archive_page_title', 'blogus_archive_page_title');

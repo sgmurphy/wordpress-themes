@@ -4,7 +4,7 @@
  * @package Blogus
  */
 ?>
-<div id="blog-list">
+<div id="blog-list" class="blog-post-list">
     <?php while(have_posts()){ the_post(); ?> 
         <div id="post-<?php the_ID(); ?>" <?php post_class('bs-blog-post list-blog'); ?>>
             <?php blogus_post_image_display_type($post);  ?>

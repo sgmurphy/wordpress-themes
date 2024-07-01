@@ -140,3 +140,23 @@ function colmnthree() {
   });
 }
 colmnthree();
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Tab') {
+    var focusedElement = document.activeElement;
+    var parentElement = document.getElementById('navbar-wp');
+    var ulParent = parentElement.querySelector("ul.nav.navbar-nav");
+    var lastChild = ulParent.lastElementChild.firstElementChild;
+
+    // Check if the focused element is the last child
+    if (focusedElement === lastChild) {
+      // Prevent the default tab behavior
+      event.preventDefault();
+
+      // Perform your actions here
+      const returnFocus = document.querySelector('button.navbar-toggler');
+      returnFocus.click();
+      returnFocus.focus();
+    }
+  }
+});

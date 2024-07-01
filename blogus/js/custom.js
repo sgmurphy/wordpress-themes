@@ -60,3 +60,10 @@ document.addEventListener('keydown', (event) => {
     }
   }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var pageTitle = document.querySelector('.bs-card-box.page-entry-title + .row .page-title');
+  if (pageTitle) {
+    pageTitle.remove();
+  }
+});
