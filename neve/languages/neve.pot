@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-27T07:31:32+00:00\n"
+"POT-Creation-Date: 2024-07-03T11:32:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: neve\n"
@@ -93,7 +93,7 @@ msgstr ""
 #: neve/header-footer-grid/Core/Builder/Header.php:70
 #: neve/header-footer-grid/Core/Components/Button.php:165
 #: neve/inc/admin/dashboard/main.php:374
-#: neve/inc/core/admin.php:549
+#: neve/inc/core/admin.php:548
 #: neve/inc/core/front_end.php:534
 #: neve/inc/customizer/controls/simple_upsell.php:83
 #: neve/inc/customizer/controls/simple_upsell_section.php:62
@@ -334,7 +334,7 @@ msgstr ""
 
 #: neve/header-footer-grid/Core/Builder/Footer.php:52
 #: neve/header-footer-grid/Core/Builder/Header.php:71
-#: neve/inc/core/admin.php:550
+#: neve/inc/core/admin.php:549
 msgid "Read full documentation"
 msgstr ""
 
@@ -1073,7 +1073,7 @@ msgstr ""
 
 #. translators: %s - Theme name
 #: neve/inc/admin/dashboard/main.php:354
-#: neve/inc/core/admin.php:538
+#: neve/inc/core/admin.php:537
 msgid "%s now comes with a sites library with various designs to pick from. Visit our collection of demos that are constantly being added."
 msgstr ""
 
@@ -1103,7 +1103,7 @@ msgstr ""
 
 #. translators: %s - Theme name
 #: neve/inc/admin/dashboard/main.php:365
-#: neve/inc/core/admin.php:547
+#: neve/inc/core/admin.php:546
 msgid "Need more details? Please check our full documentation for detailed information on how to use %s."
 msgstr ""
 
@@ -1609,42 +1609,42 @@ msgctxt "Theme starter content"
 msgid "Project Details"
 msgstr ""
 
-#: neve/inc/compatibility/starter_content.php:170
+#: neve/inc/compatibility/starter_content.php:201
 msgctxt "Theme starter content"
 msgid "Blog"
 msgstr ""
 
-#: neve/inc/core/admin.php:495
+#: neve/inc/core/admin.php:494
 msgid "Congratulations!"
 msgstr ""
 
 #. translators: %s - theme name
-#: neve/inc/core/admin.php:498
+#: neve/inc/core/admin.php:497
 msgid "%s is now installed and ready to use. We've assembled some links to get you started."
 msgstr ""
 
-#: neve/inc/core/admin.php:514
+#: neve/inc/core/admin.php:513
 #: neve/assets/apps/starter-sites/build/notice.js:1
 msgid "Try one of our ready to use Starter Sites"
 msgstr ""
 
-#: neve/inc/core/admin.php:519
+#: neve/inc/core/admin.php:518
 msgid "Return to your dashboard"
 msgstr ""
 
-#: neve/inc/core/admin.php:525
+#: neve/inc/core/admin.php:524
 msgid "or go to the theme settings"
 msgstr ""
 
-#: neve/inc/core/admin.php:536
+#: neve/inc/core/admin.php:535
 msgid "Sites Library"
 msgstr ""
 
-#: neve/inc/core/admin.php:539
+#: neve/inc/core/admin.php:538
 msgid "Install the template patterns plugin to get started."
 msgstr ""
 
-#: neve/inc/core/admin.php:545
+#: neve/inc/core/admin.php:544
 #: neve/assets/apps/customizer-controls/build/controls.js:5
 #: neve/assets/apps/dashboard/build/dashboard.js:3
 msgid "Documentation"
