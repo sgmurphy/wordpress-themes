@@ -1292,7 +1292,6 @@ function blocksy_get_social_box($args = []) {
 		'hacker_news' => '#fd6721',
 		'ok' => '#eb7e2f',
 		'flipboard' => '#c40812',
-		'line' => '#03c755',
 	];
 
 	$prefix = blocksy_manager()->screen->get_prefix();

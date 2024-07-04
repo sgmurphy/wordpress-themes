@@ -6,6 +6,7 @@
 		align-items: var(--horizontal-alignment);
 		text-align: var(--text-horizontal-alignment);
 		position: relative;
+		isolation: isolate;
 
 		> * {
 			margin-bottom: var(--product-element-spacing, 10px);

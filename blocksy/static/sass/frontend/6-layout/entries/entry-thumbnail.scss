@@ -38,7 +38,7 @@
 }
 
 
-[data-layout="simple"] .entry-card .boundless-image {
+[data-layout="simple"][data-cards="boxed"] .entry-card .boundless-image {
 	@include media-breakpoint-up (md) {
 		border-radius: var(--theme-image-border-radius, var(--theme-border-radius, 0px));
 		border-start-end-radius: 0;

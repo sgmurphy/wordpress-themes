@@ -18,10 +18,9 @@ const TextArea = ({ id, value, option, onChange }) => {
 
 	const correctEditor = () => wp.oldEditor || wp.editor
 
-	const listener = useCallback(
-		() => onChange(correctEditor().getContent(editorId)),
-		[editorId]
-	)
+	const listener = useCallback(() => {
+		onChange(correctEditor().getContent(editorId))
+	}, [editorId])
 
 	useEffect(() => {
 		correctEditor().initialize(editorId, {
@@ -48,11 +47,14 @@ const TextArea = ({ id, value, option, onChange }) => {
 		})
 
 		if (window.tinymce) {
-			setTimeout(
-				() =>
-					window.tinymce.editors[editorId] &&
-					window.tinymce.editors[editorId].on('input', listener)
-			)
+			setTimeout(() => {
+				const maybeEditor = window.tinymce.editors[editorId]
+
+				if (maybeEditor) {
+					maybeEditor.on('input', listener)
+					maybeEditor.on('change', listener)
+				}
+			})
 		}
 
 		if (wp.oldEditor) {
@@ -65,6 +67,11 @@ const TextArea = ({ id, value, option, onChange }) => {
 						) {
 							window.tinymce.editors[editorId].off(
 								'input',
+								listener
+							)
+
+							window.tinymce.editors[editorId].off(
+								'change',
 								listener
 							)
 						}
@@ -96,14 +103,15 @@ const TextArea = ({ id, value, option, onChange }) => {
 						})
 
 						if (window.tinymce) {
-							setTimeout(
-								() =>
-									window.tinymce.editors[editorId] &&
-									window.tinymce.editors[editorId].on(
-										'input',
-										listener
-									)
-							)
+							setTimeout(() => {
+								const maybeEditor =
+									window.tinymce.editors[editorId]
+
+								if (maybeEditor) {
+									maybeEditor.on('input', listener)
+									maybeEditor.on('change', listener)
+								}
+							})
 						}
 					}, 300)
 				},
@@ -116,12 +124,24 @@ const TextArea = ({ id, value, option, onChange }) => {
 			setTimeout(() => {
 				if (window.tinymce && window.tinymce.editors[editorId]) {
 					window.tinymce.editors[editorId].off('input', listener)
+					window.tinymce.editors[editorId].off('change', listener)
 				}
 
 				correctEditor().remove(editorId)
 			}, 300)
 		}
 	}, [])
+
+	useEffect(() => {
+		if (editorId && window.tinymce) {
+			const maybeEditor = window.tinymce.get(editorId)
+
+			if (correctEditor().getContent(editorId) !== value && maybeEditor) {
+				maybeEditor.setContent(value)
+				maybeEditor.onChange.dispatch()
+			}
+		}
+	}, [value, editorId])
 
 	return (
 		<div className="ct-option-editor" {...(option.attr || {})}>

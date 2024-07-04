@@ -1,3 +1,9 @@
+2.0.57: 2024-07-04
+- Improvement: Advanced Search live results `z-index` issue with other product elements, when placed in hero section
+- Improvement: Improve single product gallery events handling on user interaction
+- Improvement: Make sure classic widgets logic for conversion to blocks work correctly when updating from an old version
+- Fix: Border radius issue on archive cards in simple/boxed layout
+
 2.0.56: 2024-06-27
 - Improvement: Better integration with WooCommerce Force Default Variant plugin
 - Improvement: Correct emojis insertion in `wp-editor` option type

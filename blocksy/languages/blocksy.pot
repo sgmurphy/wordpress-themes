@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-27 19:46+0000\n"
+"POT-Creation-Date: 2024-07-03 21:03+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
@@ -452,34 +452,34 @@ msgstr ""
 msgid "Share your love"
 msgstr ""
 
-#: inc/components/social-box.php:486, inc/components/social-box.php:1521
+#: inc/components/social-box.php:486, inc/components/social-box.php:1520
 msgid "Apple Podcasts"
 msgstr ""
 
-#: inc/components/social-box.php:603, inc/components/social-box.php:1693
+#: inc/components/social-box.php:603, inc/components/social-box.php:1692
 msgid "VK"
 msgstr ""
 
-#: inc/components/social-box.php:616, inc/components/social-box.php:1605,
+#: inc/components/social-box.php:616, inc/components/social-box.php:1604,
 #: inc/options/single-elements/post-share-box.php:243
 msgid "Odnoklassniki"
 msgstr ""
 
-#: inc/components/social-box.php:642, inc/components/social-box.php:1557
+#: inc/components/social-box.php:642, inc/components/social-box.php:1556
 msgid "Facebook Group"
 msgstr ""
 
-#: inc/components/social-box.php:655, inc/components/social-box.php:1561
+#: inc/components/social-box.php:655, inc/components/social-box.php:1560
 msgid "Facebook Messenger"
 msgstr ""
 
-#: inc/components/social-box.php:891, inc/components/social-box.php:1617
+#: inc/components/social-box.php:891, inc/components/social-box.php:1616
 msgid "Phone"
 msgstr ""
 
-#: inc/components/social-box.php:904, inc/components/social-box.php:1549,
+#: inc/components/social-box.php:904, inc/components/social-box.php:1548,
 #: inc/components/single/comments.php:127,
-#: inc/options/single-elements/post-share-box.php:293,
+#: inc/options/single-elements/post-share-box.php:303,
 #: inc/components/woocommerce/single/review-form.php:16
 msgid "Email"
 msgstr ""
@@ -794,7 +794,8 @@ msgstr ""
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/components/blocks/blocks-fallback.php:37
+#: inc/components/blocks/blocks-fallback.php:37,
+#: inc/components/blocks/legacy/legacy-contact-info-transformer.php:29
 msgid "Contact Info"
 msgstr ""
 
@@ -3517,7 +3518,8 @@ msgstr ""
 msgid "Author Archive Link"
 msgstr ""
 
-#: inc/options/single-elements/author-box.php:124
+#: inc/options/single-elements/author-box.php:124,
+#: inc/components/blocks/legacy/legacy-socials-transformer.php:29
 msgid "Social Icons"
 msgstr ""
 
@@ -3690,7 +3692,7 @@ msgstr ""
 msgid "Flipboard"
 msgstr ""
 
-#: inc/options/single-elements/post-share-box.php:303
+#: inc/options/single-elements/post-share-box.php:293
 msgid "Line"
 msgstr ""
 
@@ -4367,6 +4369,38 @@ msgstr ""
 msgid ""
 "Please note, you can also change the background color for each row "
 "individually."
+msgstr ""
+
+#: inc/components/blocks/legacy/legacy-about-me-transformer.php:17
+msgid "About me"
+msgstr ""
+
+#: inc/components/blocks/legacy/legacy-advertisement-transformer.php:17
+msgid "Advertisement"
+msgstr ""
+
+#: inc/components/blocks/legacy/legacy-advertisement-transformer.php:19
+msgid "Insert ad code here"
+msgstr ""
+
+#: inc/components/blocks/legacy/legacy-contact-info-transformer.php:35
+msgid "Address:"
+msgstr ""
+
+#: inc/components/blocks/legacy/legacy-contact-info-transformer.php:43
+msgid "Phone:"
+msgstr ""
+
+#: inc/components/blocks/legacy/legacy-contact-info-transformer.php:51
+msgid "Mobile:"
+msgstr ""
+
+#: inc/components/blocks/legacy/legacy-newsletter-subscribe.php:17
+msgid "Newsletter"
+msgstr ""
+
+#: inc/components/blocks/legacy/legacy-newsletter-subscribe.php:18
+msgid "Enter your email address below to subscribe to our newsletter"
 msgstr ""
 
 #: inc/components/woocommerce/common/account.php:98

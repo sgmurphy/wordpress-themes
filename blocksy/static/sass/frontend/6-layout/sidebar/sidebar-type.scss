@@ -29,7 +29,7 @@
 }
 
 aside {
-	position: relative;
+	// position: relative;
 
 	// type 2
 	&[data-type='type-2'] .ct-sidebar {
@@ -82,7 +82,6 @@ aside {
 	}
 
 	aside[data-type='type-4']:after {
-		// prettier-ignore
 		background: var(--sidebar-background-color, var(--theme-palette-color-8));
 		width: calc(100% + 30vw);
 	}

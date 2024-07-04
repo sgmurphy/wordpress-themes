@@ -1,6 +1,6 @@
 .hero-section[data-type='type-2'] {
 	position: relative;
-	z-index: 1;
+	// z-index: 1;
 	padding-top: calc(var(--has-transparent-header) * var(--header-height));
 
 	> [class*='ct-container'] {

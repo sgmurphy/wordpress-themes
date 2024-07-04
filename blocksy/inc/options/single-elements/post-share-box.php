@@ -289,8 +289,8 @@ $general_tab_options = array_merge(
 			]),
 		],
 
-		$prefix . 'share_email' => [
-			'label' => __( 'Email', 'blocksy' ),
+		$prefix . 'share_line' => [
+			'label' => __( 'Line', 'blocksy' ),
 			'type' => 'ct-switch',
 			'value' => 'no',
 			'sync' => blocksy_sync_whole_page([
@@ -299,8 +299,8 @@ $general_tab_options = array_merge(
 			]),
 		],
 
-		$prefix . 'share_line' => [
-			'label' => __( 'Line', 'blocksy' ),
+		$prefix . 'share_email' => [
+			'label' => __( 'Email', 'blocksy' ),
 			'type' => 'ct-switch',
 			'value' => 'no',
 			'sync' => blocksy_sync_whole_page([

@@ -28,6 +28,23 @@ const loadSingleEntryPoint = ({
 		trigger = []
 	}
 
+	/*
+	[
+		{
+			id: 'click',
+		},
+	]
+    */
+	trigger = trigger.map((t) => {
+		if (typeof t === 'string') {
+			return {
+				id: t,
+			}
+		}
+
+		return t
+	})
+
 	if (!mount) {
 		mount = ({ mount, el, ...everything }) =>
 			el ? mount(el, everything) : mount()
@@ -63,8 +80,18 @@ const loadSingleEntryPoint = ({
 		return
 	}
 
-	if (trigger.length > 0) {
-		if (trigger.includes('click')) {
+	if (trigger.length === 0) {
+		load().then((arg) => {
+			allEls.map((el) => {
+				mount({ ...arg, el })
+			})
+		})
+
+		return
+	}
+
+	trigger.forEach((triggerDescriptor) => {
+		if (triggerDescriptor.id === 'click') {
 			allEls.map((el) => {
 				if (el.hasLazyLoadClickListener) {
 					return
@@ -72,24 +99,34 @@ const loadSingleEntryPoint = ({
 
 				el.hasLazyLoadClickListener = true
 
-				el.addEventListener('click', (event) => {
-					// stopPropagation(). is here because on touch devices the
-					// click event gets triggered for every child in the
-					// actual el.
-					//
-					// In result, mount is triggered a couple times.
-					//
-					// Context: https://github.com/sergiu-radu/blocksy/issues/3374
-					event.stopPropagation()
+				el.addEventListener(
+					'click',
+					(event) => {
+						// stopPropagation(). is here because on touch devices the
+						// click event gets triggered for every child in the
+						// actual el.
+						//
+						// In result, mount is triggered a couple times.
+						//
+						// Context: https://github.com/sergiu-radu/blocksy/issues/3374
+						event.stopPropagation()
 
-					event.preventDefault()
+						event.preventDefault()
 
-					load().then((arg) => mount({ ...arg, event, el }))
-				})
+						load().then((arg) => mount({ ...arg, event, el }))
+					},
+					{
+						...(triggerDescriptor.once
+							? {
+									once: true,
+							  }
+							: {}),
+					}
+				)
 			})
 		}
 
-		if (trigger.includes('change')) {
+		if (triggerDescriptor.id === 'change') {
 			allEls.map((el) => {
 				if (el.hasLazyLoadChangeListener) {
 					return
@@ -110,7 +147,7 @@ const loadSingleEntryPoint = ({
 			})
 		}
 
-		if (trigger.includes('scroll')) {
+		if (triggerDescriptor.id === 'scroll') {
 			allEls.map((el) => {
 				if (el.hasLazyLoadScrollListener) {
 					return
@@ -138,7 +175,7 @@ const loadSingleEntryPoint = ({
 			})
 		}
 
-		if (trigger.includes('slight-mousemove')) {
+		if (triggerDescriptor.id === 'slight-mousemove') {
 			if (!document.body.hasSlightMousemoveListenerTheme) {
 				document.body.hasSlightMousemoveListenerTheme = true
 
@@ -153,7 +190,7 @@ const loadSingleEntryPoint = ({
 			}
 		}
 
-		if (trigger.includes('input')) {
+		if (triggerDescriptor.id === 'input') {
 			allEls.map((el) => {
 				if (el.hasLazyLoadInputListener) {
 					return
@@ -169,7 +206,7 @@ const loadSingleEntryPoint = ({
 			})
 		}
 
-		if (trigger.includes('hover-with-touch')) {
+		if (triggerDescriptor.id === 'hover-with-touch') {
 			allEls.map((el) => {
 				if (el.hasLazyLoadMouseOverListener) {
 					return
@@ -220,7 +257,7 @@ const loadSingleEntryPoint = ({
 			})
 		}
 
-		if (trigger.includes('hover-with-click')) {
+		if (triggerDescriptor.id === 'hover-with-click') {
 			allEls.map((el) => {
 				if (el.hasLazyLoadClickHoverListener) {
 					return
@@ -238,14 +275,33 @@ const loadSingleEntryPoint = ({
 					)
 				}
 
-				let hadMouseOver = false
+				// Only relevant for touch devices
+				//
+				// false | number | true
+				let mouseOverState = false
 
 				el.addEventListener(
 					'mouseover',
 					(event) => {
-						hadMouseOver = setTimeout(() => {
+						// Add delay to wait for potential click event
+						// This should be done only on touch devices to facilitate
+						// devices that have both touch and pointin capabilities.
+						//
+						// Need to wait 500ms specifically because that is how
+						// much time is passing between mouseover and a full
+						// click event.
+						if (isTouchDevice()) {
+							mouseOverState = setTimeout(() => {
+								mouseOverState = true
+								l(event)
+							}, 500)
+						}
+
+						// Non touch device gets processed immediately, to not
+						// make it wait.
+						if (!isTouchDevice()) {
 							l(event)
-						}, 50)
+						}
 					},
 					{ once: true }
 				)
@@ -260,9 +316,12 @@ const loadSingleEntryPoint = ({
 								event.preventDefault()
 							}
 
-							if (hadMouseOver) {
-								clearTimeout(hadMouseOver)
+							if (mouseOverState === true) {
 								return
+							}
+
+							if (mouseOverState !== false) {
+								clearTimeout(mouseOverState)
 							}
 
 							l(event)
@@ -275,7 +334,7 @@ const loadSingleEntryPoint = ({
 			})
 		}
 
-		if (trigger.includes('hover')) {
+		if (triggerDescriptor.id === 'hover') {
 			allEls.map((el) => {
 				if (el.hasLazyLoadMouseOverListener) {
 					return
@@ -299,7 +358,7 @@ const loadSingleEntryPoint = ({
 			})
 		}
 
-		if (trigger.includes('submit')) {
+		if (triggerDescriptor.id === 'submit') {
 			allEls.map((el) => {
 				if (el.hasLazyLoadSubmitListener) {
 					return
@@ -313,13 +372,7 @@ const loadSingleEntryPoint = ({
 				})
 			})
 		}
-	} else {
-		load().then((arg) => {
-			allEls.map((el) => {
-				mount({ ...arg, el })
-			})
-		})
-	}
+	})
 }
 
 export const onDocumentLoaded = (cb) => {
