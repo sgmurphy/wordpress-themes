@@ -167,8 +167,7 @@ if (!function_exists('newsup_render_posts')):
                         <div class="small-post-content">
                         <?php newsup_post_categories(); ?> 
                             <div class="title_small_post">
-                            
-                            <h5>
+                            <h5 class="title">
                                 <a href="<?php the_permalink(); ?>">
                                     <?php the_title(); ?>
                                 </a>

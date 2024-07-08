@@ -126,8 +126,8 @@ if (!function_exists('blogus_single_content')) :
                     $prev =  (is_rtl()) ? " fa-angle-double-right" : " fa-angle-double-left";
                     $next =  (is_rtl()) ? " fa-angle-double-left" : " fa-angle-double-right";
                     the_post_navigation(array(
-                        'prev_text' => '<div class="fa' .$prev.'"></div><span></span> %title ',
-                        'next_text' => ' %title <div class="fa' .$next.'"></div><span></span>',
+                        'prev_text' => '<div class="fas' .$prev.'"></div><span> %title</span>',
+                        'next_text' => '<span>%title </span><div class="fas' .$next.'"></div>',
                         'in_same_term' => true,
                     ));
                 
@@ -173,7 +173,7 @@ if (!function_exists('blogus_single_related_box')) :
         $blogus_enable_single_post_date = esc_attr(get_theme_mod('blogus_enable_single_post_date','true'));
         $blogus_enable_single_post_admin_details = esc_attr(get_theme_mod('blogus_enable_single_post_admin_details','true'));
         if($blogus_enable_related_post == true){ ?>
-            <div class="py-4 px-3 mb-4 bs-card-box">
+            <div class="py-4 px-3 mb-4 bs-card-box bs-single-related">
                 <!--Start bs-realated-slider -->
                 <div class="bs-widget-title  mb-3 relat-cls">
                     <!-- bs-sec-title -->

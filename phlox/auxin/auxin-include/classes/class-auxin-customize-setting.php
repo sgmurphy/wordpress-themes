@@ -92,7 +92,7 @@ class Auxin_Customize_Setting extends WP_Customize_Setting {
                         echo $this->post_js; ?>
                     });
 
-                    var initialStyles = '<?php echo str_replace( array( "\n", "\r" ) , array(" \ ", " \ "), $custom_style );  ?>';
+                    var initialStyles = '<?php echo $custom_style ? str_replace( array( "\n", "\r" ) , array(" \ ", " \ "), $custom_style ) : '';  ?>';
                     if( ! initialStyles && selectors ){
                         var initialValue = wp.customize( '<?php echo esc_js( $this->id_data['base'] ); ?>' )();
                         initialStyles += auxinGetSelectorStyles( initialValue, selectors );

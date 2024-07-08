@@ -131,7 +131,7 @@ a {
 	color: #0025ff;
 }
 a:hover, a:focus {
-	color: #0F1012;
+	color: var(--head-color);
 }
 .wp-block-calendar tbody td{
 	color: var(--text-color);
@@ -919,6 +919,9 @@ th{
 }
 .woocommerce form .form-row label { 
 	color: #222;
+}
+pre {
+	background: var(--border-color);
 }
 @media (max-width: 991.98px) {
     .navbar-wp .navbar-nav {

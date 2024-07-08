@@ -7665,7 +7665,7 @@ blockquote { border: none; background-color: rgba(0, 0, 0, 0.05); color: inherit
 /*!>>>>>>>>>>>>>>>>>>>> #Woo General Styles <<<<<<<<<<<<<<<<<<<<<< */
 .woocommerce-page .woocommerce-tabs .panel { display: none; }
 
-.auxshp-title-heading { font-size: inherit; font-weight: inherit; line-height: inherit; letter-spacing: inherit; text-transform: inherit; margin: 0; }
+.auxshp-title-heading { font-family: inherit; font-size: inherit; font-weight: inherit; line-height: inherit; letter-spacing: inherit; text-transform: inherit; margin: 0; }
 
 .product.aux-remove-view-cart a.added_to_cart { display: none !important; }
 
@@ -8905,7 +8905,7 @@ aside.aux-dark .aux-slide-title h3 { color: #3D3D3D; }
 .aux-widget-faq .toggle-header:after { display: none; }
 .aux-widget-faq .toggle-content { padding: 0px 1.875em 1.5625em 1.875em; border: none; }
 .aux-widget-faq .aux-accordion-simple .aux-faq-item { border: 1px solid #BBB; border-bottom: none; }
-.aux-widget-faq .aux-accordion-simple .aux-faq-item:last-of-type { border-bottom: 1px solid #BBB; }
+.aux-widget-faq .aux-accordion-simple .aux-faq-item:last-of-type, .aux-widget-faq .aux-accordion-simple .aux-faq-item:nth-last-child(2) { border-bottom: 1px solid #BBB; }
 .aux-widget-faq .aux-accordion-simple .aux-faq-item.active .aux-accordion-indicator:after { transform: translateY(-50%) scaleY(-1); }
 .aux-widget-faq .aux-accordion-simple .aux-accordion-indicator:after { content: ''; position: absolute; right: 1.3em; background-image: url(images/svg/symbols.svg); background-repeat: no-repeat; display: block; width: 16px; height: 8px; background-position: 0px -522px; position: absolute; top: 50%; transform: translateY(-50%); transition: transform 300ms; }
 .aux-widget-faq .aux-accordion-plus-indicator .aux-faq-item { border-bottom: 1px solid #e0e0e0; }

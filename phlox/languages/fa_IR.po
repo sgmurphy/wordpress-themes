@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Phlox Pro\n"
 "Report-Msgid-Bugs-To: http://averta.net/phlox/wordpress-theme/\n"
-"POT-Creation-Date: 2024-05-19 07:43:30+00:00\n"
+"POT-Creation-Date: 2024-07-08 05:57:13+00:00\n"
 "PO-Revision-Date: 2019-08-04 03:37+0430\n"
 "Last-Translator: test <monsterwordpress@gmail.com>\n"
 "Language-Team: WPMonster.co\n"
@@ -2318,8 +2318,11 @@ msgid "Shopping Basket"
 msgstr "زنبیل خرید"
 
 #: auxin/auxin-include/include/functions.php:3157
+#: auxin/auxin-include/include/templates/templates-post.php:1940
 #: build/phlox/auxin/auxin-include/include/functions.php:3086
+#: build/phlox/auxin/auxin-include/include/templates/templates-post.php:1943
 #: build/phlox-pro/auxin/auxin-include/include/functions.php:3086
+#: build/phlox-pro/auxin/auxin-include/include/templates/templates-post.php:1943
 msgid "View your shopping cart"
 msgstr "نمایش سبد خرید"
 
@@ -2529,119 +2532,119 @@ msgstr "فهرست سربرگ بالا"
 msgid "Footer Social Menu"
 msgstr "فهرست شبکه های اجتماعی پاورقی"
 
-#: auxin/auxin-include/include/hooks-general.php:1137
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1108
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1108
+#: auxin/auxin-include/include/hooks-general.php:1138
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1109
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1109
 msgid "Likes"
 msgstr "لایک"
 
-#: auxin/auxin-include/include/hooks-general.php:1160
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1131
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1131
+#: auxin/auxin-include/include/hooks-general.php:1161
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1132
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1132
 msgid "Global Primary Widget Area"
 msgstr "ناحیه ابزارک اصلی سراسری"
 
-#: auxin/auxin-include/include/hooks-general.php:1162
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1133
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1133
+#: auxin/auxin-include/include/hooks-general.php:1163
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1134
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1134
 msgid "It is accessible everywhere on primary sidebars."
 msgstr "در تمامی سایدبارهای اصلی در دسترس هستند."
 
-#: auxin/auxin-include/include/hooks-general.php:1170
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1141
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1141
+#: auxin/auxin-include/include/hooks-general.php:1171
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1142
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1142
 msgid "Global Secondary Widget Area"
 msgstr "ناحیه ابزارک ثانویه سراسری"
 
-#: auxin/auxin-include/include/hooks-general.php:1172
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1143
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1143
+#: auxin/auxin-include/include/hooks-general.php:1173
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1144
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1144
 msgid "It is accessible everywhere on secondary sidebars."
 msgstr "در تمامی سایدبارهای ثانویه در دسترس هستند."
 
-#: auxin/auxin-include/include/hooks-general.php:1181
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1152
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1152
+#: auxin/auxin-include/include/hooks-general.php:1182
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1153
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1153
 #, fuzzy
 msgid "Shop Sidebar Widget Area"
 msgstr "ناحیه ابزارک ثانویه وبلاگ"
 
-#: auxin/auxin-include/include/hooks-general.php:1183
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1154
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1154
+#: auxin/auxin-include/include/hooks-general.php:1184
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1155
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1155
 #, fuzzy
 msgid "It is accessible on shop page sidebar."
 msgstr "در تمامی سایدبارهای ثانویه در دسترس هستند."
 
-#: auxin/auxin-include/include/hooks-general.php:1192
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1163
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1163
+#: auxin/auxin-include/include/hooks-general.php:1193
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1164
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1164
 msgid "Pages Primary Widget Area"
 msgstr "ناحیه ابزارک اصلی صفحات"
 
-#: auxin/auxin-include/include/hooks-general.php:1194
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1165
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1165
+#: auxin/auxin-include/include/hooks-general.php:1195
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1166
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1166
 msgid "It is accessible on primary sidebars except the blog pages."
 msgstr "فقط در سایدبارهای اصلی به غیر از صفحات وبلاگ در دسترس است."
 
-#: auxin/auxin-include/include/hooks-general.php:1202
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1173
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1173
+#: auxin/auxin-include/include/hooks-general.php:1203
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1174
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1174
 msgid "Pages Secondary Widget Area"
 msgstr "ناحیه ابزارک ثانویه صفحات"
 
-#: auxin/auxin-include/include/hooks-general.php:1204
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1175
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1175
+#: auxin/auxin-include/include/hooks-general.php:1205
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1176
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1176
 msgid "It is accessible on secondary sidebars except the blog pages."
 msgstr "فقط در سایدبارهای ثانویه به غیر از صفحات وبلاگ در دسترس است."
 
-#: auxin/auxin-include/include/hooks-general.php:1212
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1183
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1183
+#: auxin/auxin-include/include/hooks-general.php:1213
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1184
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1184
 msgid "Blog Primary Widget Area"
 msgstr "ناحیه ابزارک اصلی وبلاگ"
 
-#: auxin/auxin-include/include/hooks-general.php:1214
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1185
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1185
+#: auxin/auxin-include/include/hooks-general.php:1215
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1186
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1186
 msgid "It is accessible only on primary sidebars in blog pages."
 msgstr "فقط در سایدبارهای اصلی و صفحات وبلاگ در دسترس است."
 
-#: auxin/auxin-include/include/hooks-general.php:1222
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1193
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1193
+#: auxin/auxin-include/include/hooks-general.php:1223
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1194
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1194
 msgid "Blog Secondary Widget Area"
 msgstr "ناحیه ابزارک ثانویه وبلاگ"
 
-#: auxin/auxin-include/include/hooks-general.php:1224
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1195
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1195
+#: auxin/auxin-include/include/hooks-general.php:1225
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1196
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1196
 msgid "It is accessible only on secondary sidebars in blog pages."
 msgstr "فقط در سایدبارهای ثانویه و صفحات وبلاگ در دسترس است."
 
-#: auxin/auxin-include/include/hooks-general.php:1232
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1203
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1203
+#: auxin/auxin-include/include/hooks-general.php:1233
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1204
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1204
 msgid "Search Result Widget Area"
 msgstr "ناحیه ابزارک نتایج جستجو"
 
-#: auxin/auxin-include/include/hooks-general.php:1234
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1205
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1205
+#: auxin/auxin-include/include/hooks-general.php:1235
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1206
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1206
 msgid "It is accessible only on primary sidebars in search result page."
 msgstr "فقط در سایدبارهای اصلی و صفحات نتایج جستجو در دسترس است."
 
-#: auxin/auxin-include/include/hooks-general.php:1244
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1215
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1215
+#: auxin/auxin-include/include/hooks-general.php:1245
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1216
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1216
 msgid "Subfooter Bar Widget Area"
 msgstr "ناحیه ابزارک نوار ساب فوتر"
 
-#: auxin/auxin-include/include/hooks-general.php:1246
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1217
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1217
+#: auxin/auxin-include/include/hooks-general.php:1247
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1218
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1218
 msgid ""
 "The widget area above the subfooter section. Perfect for placing the "
 "\"Newsletter\", \"Social icons\" or \"Instagram\" widget."
@@ -2649,50 +2652,50 @@ msgstr ""
 "ناحیه ابزارک زیر بخش ساب فوتر. برای قرار دادن ابزارک های \"خبرنامه\" ، "
 "\"شبکه های اجتماعی\" یا \"اینستاگرام\" عالی هست."
 
-#: auxin/auxin-include/include/hooks-general.php:1266
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1237
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1237
+#: auxin/auxin-include/include/hooks-general.php:1267
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1238
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1238
 msgid "Subfooter %s Widget Area"
 msgstr "ناحیه ابزارک %s ساب فوتر"
 
-#: auxin/auxin-include/include/hooks-general.php:1268
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1239
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1239
+#: auxin/auxin-include/include/hooks-general.php:1269
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1240
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1240
 msgid "The %s column in subfooter section."
 msgstr "ستون %s در بخش ساب فوتر"
 
-#: auxin/auxin-include/include/hooks-general.php:1319
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1290
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1290
+#: auxin/auxin-include/include/hooks-general.php:1320
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1291
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1291
 msgid "Post Options"
 msgstr "تنظیمات نوشته"
 
-#: auxin/auxin-include/include/hooks-general.php:1327
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1298
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1298
+#: auxin/auxin-include/include/hooks-general.php:1328
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1299
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1299
 msgid "Page Options"
 msgstr "تنظیمات برگه"
 
-#: auxin/auxin-include/include/hooks-general.php:1371
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1342
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1342
+#: auxin/auxin-include/include/hooks-general.php:1372
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1343
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1343
 msgid "Loading"
 msgstr "در حال بارگذاری"
 
-#: auxin/auxin-include/include/hooks-general.php:1575
+#: auxin/auxin-include/include/hooks-general.php:1576
 #: auxin-content/options/auxin-options.php:1245
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1546
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1547
 #: build/phlox/auxin-content/options/auxin-options.php:1182
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1546
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1547
 #: build/phlox-pro/auxin-content/options/auxin-options.php:1182
 msgid "Add a Comment"
 msgstr "یک دیدگاه بنویسید"
 
-#: auxin/auxin-include/include/hooks-general.php:1576
+#: auxin/auxin-include/include/hooks-general.php:1577
 #: auxin-content/options/auxin-options.php:1266
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1547
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1548
 #: build/phlox/auxin-content/options/auxin-options.php:1203
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1547
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1548
 #: build/phlox-pro/auxin-content/options/auxin-options.php:1203
 msgid "Your email address will not be published. Required fields are marked *"
 msgstr "آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی با * نشان گذاری شده اند"

@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/blogus-free-blog-wordpress-theme/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Blogus is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Blogus is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Blogus is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demos.themeansar.com/blogus-demos/ and documentation at https://docs.themeansar.com/docs/blogus/
-Version: 2.0.0.2
+Version: 2.0.0.3
 Tested up to: 6.5.5
 Requires PHP: 7.0
 Requires at least: 5.4
@@ -48,18 +48,16 @@ body {
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
-
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1; 
 }
- 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888; 
 }
-
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 	background: #0025ff; 
@@ -115,7 +113,6 @@ select {
  padding-right: 0;
  padding-left: 0;
 }
-
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -185,31 +182,24 @@ address {
 	margin: 0 0 1.6rem; 
 	line-height: 2; 
 }
-
 pre {
-	background: #f6f6f6;
 	margin-bottom: 32px;
 	max-width: 100%;
 	overflow: auto;
 	padding: 16px;
 }
-
-
 mark, ins, .mark {
 	padding: 2px 5px;
 	border-radius: 3px;
 }
-
 hr { 
 	background-color: #e9e9e9; 
 	border: 0; 
 	height: 1px; 
 }
-
 code, kbd, tt, var { 
 	font-size: 16px; 
 }
-
 code, kbd, tt, var, samp, pre {
     font-family: Inconsolata, monospace;
     -webkit-hyphens: none;
@@ -317,27 +307,21 @@ fieldset p { margin: 0px 0 20px; }
 -----------------------------------------*/
 h1, .h1 {
 	font-size: 34px;
-	line-height: 1.3;
 }
 h2, .h2 {
 	font-size: 32px;
-	line-height: 1.3;
 }
 h3, .h3 {
 	font-size: 28px;
-	line-height: 1.3;
 }
 h4, .h4 {
 	font-size: 24px;
-	line-height: 1.3;
 }
 h5, .h5 {
 	font-size: 20px;
-	line-height: 1.3;
 }
 h6, .h6 {
 	font-size: 16px;
-	line-height: 1.3;
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	font-family: 'Josefin Sans', sans-serif;
@@ -346,6 +330,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	font-feature-settings: "lnum";
     font-variant-numeric: lining-nums;
 	letter-spacing: 0;
+	line-height: 1.3;
 	text-size-adjust: 100%;
 	text-rendering: optimizeSpeed;
 }
@@ -488,6 +473,13 @@ blockquote p {
     display: flex;
     justify-content: space-between;
     width: 100%;
+	gap: 10px;
+}
+.nav-links:has(.nav-next){
+	justify-content: end;
+}
+.nav-links:has(.nav-previous +.nav-next){
+	justify-content: space-between;
 }
 .nav-links a, .single-nav-links a {
     font-size: 16px;
@@ -495,6 +487,7 @@ blockquote p {
     letter-spacing: -.02em;
     line-height: 1.2;
     width: 100%;
+	word-break: break-word;
 }
 .featured-image-caption{
 	display: block;
@@ -509,6 +502,12 @@ button.mfp-close:hover, button.mfp-close:focus {
 } 
 .navigation p{ 
 	margin-bottom: 10px;
+}
+.comments-area .reply a {
+    text-decoration: none;
+}
+.comments-area .comments-title{
+	word-break: break-word;
 }
 /*---------------------------------------
 	social Links
@@ -564,7 +563,7 @@ button.mfp-close:hover, button.mfp-close:focus {
 }
 .padding-20 {
    padding: 20px;
- }
+}
 /*---------------------------------------
 	swipper controls         
 -----------------------------------------*/
@@ -1254,6 +1253,14 @@ header .navbar-nav:not(.sm-collapsible) .dropdown-item.has-submenu {
 	display: grid;
     grid-gap: 1.5rem;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.missed .bs-blog-post.three.md .title, .bs-single-related .bs-blog-post.three.md .title{
+	display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 /*---------------------------------------
 =========================================
@@ -2500,7 +2507,6 @@ header .navbar-nav:not(.sm-collapsible) .dropdown-item.has-submenu {
 	width: 100%;
 	font-size: 15px;
 }
-
 .bs-widget .calendar_wrap table caption {
 	font-size: 16px;
 	font-weight: 500;
@@ -2579,6 +2585,9 @@ header .navbar-nav:not(.sm-collapsible) .dropdown-item.has-submenu {
 }
 ol.wp-block-latest-comments { 
 	padding: 0;
+}
+ol.wp-block-latest-comments a{
+	word-break: break-word;
 }
 /* Social Icons */
 .bs-sidebar .wp-block-social-links .wp-social-link{
@@ -3064,66 +3073,65 @@ footer .blogus-widget .woocommerce ul.cart_list li img, footer .blogus-widget .w
 /* == WordPress WYSIWYG Editor Styles == */
 .entry-content img {
 	margin: 0 0 1.5em 0;
-	}
+}
 .alignleft, img.alignleft {
 	margin-right: 1.5em;
 	display: inline;
 	float: left;
-	}
+}
 .alignright, img.alignright {
 	margin-left: 1.5em;
 	display: inline;
 	float: right;
-	}
+}
 .aligncenter, img.aligncenter {
 	margin-right: auto;
 	margin-left: auto;
 	display: block;
 	clear: both;
-	}
+}
 .alignnone, img.alignnone {
 	/* not sure about this one */
-	}
+}
 .wp-caption {
 	margin-bottom: 1.5em;
 	text-align: center;
 	padding-top: 5px;
-	}
+}
 .wp-caption img {
 	border: 0 none;
 	padding: 0;
 	margin: 0;
-	}
+}
 .wp-caption p.wp-caption-text {
 	line-height: 1.5;
 	font-size: 10px;
 	margin: 0;
-	}
+}
 .wp-smiley {
 	margin: 0 !important;
 	max-height: 1em;
-	}
+}
 blockquote.left {
 	margin-right: 20px;
 	text-align: right;
 	margin-left: 0;
 	width: 33%;
 	float: left;
-	}
+}
 blockquote.right {
 	margin-left: 20px;
 	text-align: left;
 	margin-right: 0;
 	width: 33%;
 	float: right;
-	}
+}
 .gallery dl {}
 .gallery dt {}
 .gallery dd {}
 .gallery dl a {}
 .gallery dl img {}
 .gallery-caption {}
-
 .size-full {}
 .size-large {}
 .size-medium {}
@@ -3137,7 +3145,6 @@ blockquote.right {
 .commentlist .bypostauthor {}
 .commentlist li ul.children li.bypostauthor {}
 .sticky{}
-
 .navigation.pagination > li:first-child > a, .navigation.pagination > li:first-child > span {
     border-radius: 0;
 }
@@ -3151,23 +3158,19 @@ blockquote.right {
 	margin-left: -0.5em;
 	margin-right: -0.5em;
 }
-
 .gallery:after {
 	display: table;
 	content: "";
 	clear: both;
 }
-
 .gallery-item {
 	margin: 0;
 	float: left;
 	padding: 0.5em;
 }
-
 .gallery-item img {
 	width: 100%;
 }
-
 .gallery-columns-1 .gallery-item {
     width: 100%;
     float: none;
@@ -3196,7 +3199,6 @@ blockquote.right {
 .gallery-columns-9 .gallery-item {
     width: 11.1111%
 }
-
 .gallery-columns-2 .gallery-item:nth-child(2n+1),
 .gallery-columns-3 .gallery-item:nth-child(3n+1),
 .gallery-columns-4 .gallery-item:nth-child(4n+1),
@@ -3207,7 +3209,6 @@ blockquote.right {
 .gallery-columns-9 .gallery-item:nth-child(9n+1) {
 	clear: left;
 }
-
 /* Text meant only for screen readers. */
 .screen-reader-text {
     position: absolute;
@@ -3241,7 +3242,6 @@ blockquote.right {
     height: auto;
     margin: 0;
 }
- 
 /*--Widget Block Css ----*/
 :where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) {
 	border: none;
@@ -3342,7 +3342,7 @@ form.search-form .search-submit{
 }
 /* --------------------------------------
 =========================================
-	 Responsive part
+	Responsive part
 =========================================
 -----------------------------------------*/
 /* ---- ==== Media ==== ----*/
@@ -3378,7 +3378,7 @@ form.search-form .search-submit{
 @media (max-width: 991.98px) {
 	.bs-masonry-columns {
 	    columns: 1;
-	  }
+	}
 	#menu-primary li.active.home {
 		display: none;
 	}

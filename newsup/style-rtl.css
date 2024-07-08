@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsup/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Newsup is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsup is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsup is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsup and documentation at https://docs.themeansar.com/docs/newsup/
-Version: 4.0.0.42
+Version: 4.0.0.43
 Tested up to: 6.5.5
 Requires PHP: 7.0
 Requires at least: 5.4
@@ -1815,7 +1815,7 @@ footer .widget_post_list .widget_post_list_inner{
   padding-right: 8px;
 }
 .small-list-post h5.title,
-.title_small_post{
+.title_small_post, .small-post .title{
 	display: block;
     display: -webkit-box;
     -webkit-line-clamp: 2;

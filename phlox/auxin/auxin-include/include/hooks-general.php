@@ -599,6 +599,7 @@ function auxin_allow_img_srcset_shortcode( $allowedposttags, $context ) {
 			'src'             => true,
 			'height'          => true,
 			'width'           => true,
+            'style'           => true,
 			'frameborder'     => true,
 			'allowfullscreen' => true,
 		];

@@ -1940,7 +1940,7 @@ function auxin_wc_add_to_cart( $args = array() ){
             <div id="shopping-basket-burger" class="aux-shopping-basket aux-basket-burger aux-phone-on">
                 <a class="aux-cart-contents <?php echo esc_attr( $args['icon'] ); ?>"
                 href="<?php echo esc_url( $args['cart_url'] ); ?>"
-                title="<?php echo esc_attr( 'View your shopping cart', 'phlox' ); ?>">
+                title="<?php esc_attr_e( 'View your shopping cart', 'phlox' ); ?>">
             <?php
                 echo ! empty( $args['title'] ) ? esc_html( $args['title'] ) : '';
                 if ( $count > 0 ) {
@@ -2505,7 +2505,7 @@ function auxin_get_post_format_media( $post, $settings = array(), $aux_content_w
             $size = auxin_wp_get_image_size( $media_size );
             $size = array( 'width' => $size['width'], 'height' => $size['height'] );
         } else {
-            $size = array( 'width' => $media_width, 'height' => $media_width * $aspect_ratio );    
+            $size = array( 'width' => $media_width, 'height' => $media_width * $aspect_ratio );
         }
     } else {
         $size = array( 'width' => $media_width, 'height' => $media_width * $aspect_ratio );

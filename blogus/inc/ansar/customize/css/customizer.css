@@ -42,6 +42,9 @@ li.customize-control-section-title h3{
 	box-shadow: none;
 }
 
+.customizer-repeater-box-content-hidden input[type=checkbox]{
+	margin-bottom: 0 !important;
+}
 input[type="text"],
 input[type="number"],
 input[type="url"],

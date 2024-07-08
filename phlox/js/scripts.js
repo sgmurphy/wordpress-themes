@@ -1,4 +1,4 @@
-/*! Auxin WordPress Framework - v2.16.0 (2024-05-19)
+/*! Auxin WordPress Framework - v2.16.3 (2024-07-08)
  *  Scripts for initializing plugins 
  *  http://averta.net
  *  (c) 2014-2024 averta;
@@ -1360,13 +1360,27 @@ for ( var i = 0 ; UlikeHeart.length > i; i++){
             });
         });
 
-        $scope.find('.aux-widget-faq').each( function( index, el ){
+        $scope.find('.aux-widget-faq').each(function (index, el) {
+            var faqAccordion = $(this);
             $(this).avertaAccordion({
                 items : '.aux-faq-item',
                 itemHeader : '.toggle-header',
                 itemContent: '.toggle-content',
                 oneVisible : $(this).data("toggle") ,
-                expandHashItem : false,
+                expandHashItem: false,
+                onExpand: function ($item) {
+                    var faqAccordionOptions = this;
+                    setTimeout(function () {
+                        var height = 0;
+                        height += $item.outerHeight();
+                        $item.siblings(faqAccordionOptions.items).each(function (index, item) {
+                            if ($(item).is(faqAccordionOptions.items)) {
+                                height += $(item).outerHeight();   
+                            }
+                        });
+                        faqAccordion.find('.aux-isotope-faq').height(height);
+                    }, this.showDuration);
+                }
             });
         });
     }

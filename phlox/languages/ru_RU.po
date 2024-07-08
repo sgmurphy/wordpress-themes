@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Themes - Phlox\n"
 "Report-Msgid-Bugs-To: http://averta.net/phlox/wordpress-theme/\n"
-"POT-Creation-Date: 2024-05-19 07:43:30+00:00\n"
+"POT-Creation-Date: 2024-07-08 05:57:13+00:00\n"
 "PO-Revision-Date: 2018-07-23 17:10+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -2322,8 +2322,11 @@ msgid "Shopping Basket"
 msgstr "Корзина"
 
 #: auxin/auxin-include/include/functions.php:3157
+#: auxin/auxin-include/include/templates/templates-post.php:1940
 #: build/phlox/auxin/auxin-include/include/functions.php:3086
+#: build/phlox/auxin/auxin-include/include/templates/templates-post.php:1943
 #: build/phlox-pro/auxin/auxin-include/include/functions.php:3086
+#: build/phlox-pro/auxin/auxin-include/include/templates/templates-post.php:1943
 msgid "View your shopping cart"
 msgstr "Просмотреть свою корзину"
 
@@ -2529,121 +2532,121 @@ msgstr "Верхнее меню"
 msgid "Footer Social Menu"
 msgstr "Социальное меню подвала"
 
-#: auxin/auxin-include/include/hooks-general.php:1137
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1108
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1108
+#: auxin/auxin-include/include/hooks-general.php:1138
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1109
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1109
 msgid "Likes"
 msgstr "Нравится"
 
-#: auxin/auxin-include/include/hooks-general.php:1160
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1131
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1131
+#: auxin/auxin-include/include/hooks-general.php:1161
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1132
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1132
 msgid "Global Primary Widget Area"
 msgstr "Глобальная зона основных виджетов"
 
-#: auxin/auxin-include/include/hooks-general.php:1162
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1133
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1133
+#: auxin/auxin-include/include/hooks-general.php:1163
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1134
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1134
 msgid "It is accessible everywhere on primary sidebars."
 msgstr "Он доступен повсюду на основных боковых панелях."
 
-#: auxin/auxin-include/include/hooks-general.php:1170
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1141
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1141
+#: auxin/auxin-include/include/hooks-general.php:1171
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1142
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1142
 msgid "Global Secondary Widget Area"
 msgstr "Глобальная зона вторичных виджетов"
 
-#: auxin/auxin-include/include/hooks-general.php:1172
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1143
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1143
+#: auxin/auxin-include/include/hooks-general.php:1173
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1144
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1144
 msgid "It is accessible everywhere on secondary sidebars."
 msgstr "Он доступен повсюду на вторичных боковых панелях."
 
-#: auxin/auxin-include/include/hooks-general.php:1181
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1152
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1152
+#: auxin/auxin-include/include/hooks-general.php:1182
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1153
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1153
 #, fuzzy
 msgid "Shop Sidebar Widget Area"
 msgstr "Область вторичного виджета блога"
 
-#: auxin/auxin-include/include/hooks-general.php:1183
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1154
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1154
+#: auxin/auxin-include/include/hooks-general.php:1184
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1155
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1155
 #, fuzzy
 msgid "It is accessible on shop page sidebar."
 msgstr "Он доступен повсюду на вторичных боковых панелях."
 
-#: auxin/auxin-include/include/hooks-general.php:1192
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1163
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1163
+#: auxin/auxin-include/include/hooks-general.php:1193
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1164
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1164
 msgid "Pages Primary Widget Area"
 msgstr "Основная область виджетов страниц"
 
-#: auxin/auxin-include/include/hooks-general.php:1194
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1165
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1165
+#: auxin/auxin-include/include/hooks-general.php:1195
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1166
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1166
 msgid "It is accessible on primary sidebars except the blog pages."
 msgstr "Он доступен только на основных боковых панелях на страницах блога."
 
-#: auxin/auxin-include/include/hooks-general.php:1202
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1173
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1173
+#: auxin/auxin-include/include/hooks-general.php:1203
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1174
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1174
 msgid "Pages Secondary Widget Area"
 msgstr "Вторичная область виджетов страниц"
 
-#: auxin/auxin-include/include/hooks-general.php:1204
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1175
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1175
+#: auxin/auxin-include/include/hooks-general.php:1205
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1176
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1176
 msgid "It is accessible on secondary sidebars except the blog pages."
 msgstr "Он доступен только на вторичных боковых панелях на страницах блога."
 
-#: auxin/auxin-include/include/hooks-general.php:1212
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1183
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1183
+#: auxin/auxin-include/include/hooks-general.php:1213
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1184
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1184
 msgid "Blog Primary Widget Area"
 msgstr "Область основного виджета блога"
 
-#: auxin/auxin-include/include/hooks-general.php:1214
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1185
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1185
+#: auxin/auxin-include/include/hooks-general.php:1215
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1186
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1186
 msgid "It is accessible only on primary sidebars in blog pages."
 msgstr "Он доступен только на основных боковых панелях на страницах блога."
 
-#: auxin/auxin-include/include/hooks-general.php:1222
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1193
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1193
+#: auxin/auxin-include/include/hooks-general.php:1223
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1194
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1194
 msgid "Blog Secondary Widget Area"
 msgstr "Область вторичного виджета блога"
 
-#: auxin/auxin-include/include/hooks-general.php:1224
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1195
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1195
+#: auxin/auxin-include/include/hooks-general.php:1225
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1196
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1196
 msgid "It is accessible only on secondary sidebars in blog pages."
 msgstr "Он доступен только на вторичных боковых панелях на страницах блога."
 
-#: auxin/auxin-include/include/hooks-general.php:1232
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1203
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1203
+#: auxin/auxin-include/include/hooks-general.php:1233
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1204
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1204
 msgid "Search Result Widget Area"
 msgstr "Раздел виджета результата поиска"
 
-#: auxin/auxin-include/include/hooks-general.php:1234
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1205
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1205
+#: auxin/auxin-include/include/hooks-general.php:1235
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1206
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1206
 msgid "It is accessible only on primary sidebars in search result page."
 msgstr ""
 "Он доступен только на основных боковых панелях на странице результатов "
 "поиска."
 
-#: auxin/auxin-include/include/hooks-general.php:1244
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1215
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1215
+#: auxin/auxin-include/include/hooks-general.php:1245
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1216
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1216
 msgid "Subfooter Bar Widget Area"
 msgstr "Панель подподвала раздела виджетов"
 
-#: auxin/auxin-include/include/hooks-general.php:1246
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1217
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1217
+#: auxin/auxin-include/include/hooks-general.php:1247
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1218
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1218
 msgid ""
 "The widget area above the subfooter section. Perfect for placing the "
 "\"Newsletter\", \"Social icons\" or \"Instagram\" widget."
@@ -2651,50 +2654,50 @@ msgstr ""
 "Область виджета над секцией под подвала. Идеально подходит для размещения "
 "виджета «Новостной блок», «Социальные значки» или «Instagram»."
 
-#: auxin/auxin-include/include/hooks-general.php:1266
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1237
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1237
+#: auxin/auxin-include/include/hooks-general.php:1267
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1238
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1238
 msgid "Subfooter %s Widget Area"
 msgstr "%s раздел виджетов под подвала"
 
-#: auxin/auxin-include/include/hooks-general.php:1268
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1239
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1239
+#: auxin/auxin-include/include/hooks-general.php:1269
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1240
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1240
 msgid "The %s column in subfooter section."
 msgstr "Столбец %s в разделе под подвалом."
 
-#: auxin/auxin-include/include/hooks-general.php:1319
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1290
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1290
+#: auxin/auxin-include/include/hooks-general.php:1320
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1291
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1291
 msgid "Post Options"
 msgstr "Настройки записи"
 
-#: auxin/auxin-include/include/hooks-general.php:1327
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1298
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1298
+#: auxin/auxin-include/include/hooks-general.php:1328
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1299
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1299
 msgid "Page Options"
 msgstr "Настройки страницы"
 
-#: auxin/auxin-include/include/hooks-general.php:1371
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1342
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1342
+#: auxin/auxin-include/include/hooks-general.php:1372
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1343
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1343
 msgid "Loading"
 msgstr "Загрузка"
 
-#: auxin/auxin-include/include/hooks-general.php:1575
+#: auxin/auxin-include/include/hooks-general.php:1576
 #: auxin-content/options/auxin-options.php:1245
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1546
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1547
 #: build/phlox/auxin-content/options/auxin-options.php:1182
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1546
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1547
 #: build/phlox-pro/auxin-content/options/auxin-options.php:1182
 msgid "Add a Comment"
 msgstr "Добавить комментарий"
 
-#: auxin/auxin-include/include/hooks-general.php:1576
+#: auxin/auxin-include/include/hooks-general.php:1577
 #: auxin-content/options/auxin-options.php:1266
-#: build/phlox/auxin/auxin-include/include/hooks-general.php:1547
+#: build/phlox/auxin/auxin-include/include/hooks-general.php:1548
 #: build/phlox/auxin-content/options/auxin-options.php:1203
-#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1547
+#: build/phlox-pro/auxin/auxin-include/include/hooks-general.php:1548
 #: build/phlox-pro/auxin-content/options/auxin-options.php:1203
 #, fuzzy
 msgid "Your email address will not be published. Required fields are marked *"
