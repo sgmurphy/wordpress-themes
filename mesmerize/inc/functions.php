@@ -1223,4 +1223,35 @@ function mesmerize_color_picker_scripts() {
 
 if ( is_customize_preview() ) {
 	add_action( 'init', 'mesmerize_color_picker_scripts' );
-}	
+}
+
+add_action('admin_enqueue_scripts', 'add_admin_scripts');
+
+function add_admin_scripts()
+{
+    if (!get_option('msm_companion_activation_time')) {
+        wp_enqueue_script('mesmerize_admin_js',
+            get_template_directory_uri() . '/assets/js/admin.js', array('jquery'), false, true);
+    }
+}
+
+add_action(
+    "cloudpress\companion\activated\mesmerize",
+    function () {
+        $start_source = get_option('msm_companion_start_source');
+
+        if(!$start_source){
+            update_option("msm_companion_start_source", 'other');
+        }
+    }
+);
+
+add_action(
+    "cloudpress\companion\deactivated\mesmerize",
+    function () {
+        // Clear start source
+        delete_option('msm_companion_start_source');
+    }
+);
+
+

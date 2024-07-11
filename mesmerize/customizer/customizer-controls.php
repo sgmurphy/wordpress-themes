@@ -652,7 +652,7 @@ class FrontPageSection extends \WP_Customize_Section {
 									$mesmerize_link  = \Mesmerize\Companion_Plugin::get_install_link();
 									$mesmerize_label = esc_html__( 'Install now', 'mesmerize' );
 								}
-								printf( '<a class="button button-small button-orange upgrade-to-pro" href="%1$s">%2$s</a>',
+								printf( '<a class="button button-small button-orange upgrade-to-pro" href="%1$s" install-source="customizer">%2$s</a>',
 									esc_url( $mesmerize_link ),
 									$mesmerize_label );
 								?>

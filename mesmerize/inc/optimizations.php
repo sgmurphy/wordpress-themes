@@ -2,6 +2,7 @@
 
 
 add_action('wp_ajax_mesmerize_apply_autoptimize_settings', function () {
+    check_ajax_referer( 'mesmerize_apply_autoptimize_settings_nonce', '_wpnonce' );
     $autoptmize_settings = array(
         'autoptimize_html'               => 'on',
         'autoptimize_html_keepcomments'  => 'on',
@@ -55,7 +56,8 @@ function mesmerize_print_autoptimize_mesmerize_settings_button($plugin)
                 event.stopPropagation();
                 $('[data-name="autoptmize-settings-applied"]').hide();
                 var data = {
-                    action: 'mesmerize_apply_autoptimize_settings'
+                    action: 'mesmerize_apply_autoptimize_settings',
+                    _wpnonce: '<?php echo wp_create_nonce('mesmerize_apply_autoptimize_settings_nonce'); ?>'
                 };
                 jQuery.post(ajaxurl, data).done(function (response) {
                     $('[data-name="autoptmize-settings-applied"]').show();

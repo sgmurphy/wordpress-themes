@@ -13,6 +13,7 @@ class Companion_Plugin {
 		self::$slug   = $config['slug'];
 		add_action( 'tgmpa_register', array( __CLASS__, 'tgma_register' ) );
 		add_action( 'wp_ajax_companion_disable_popup', array( __CLASS__, 'companion_disable_popup' ) );
+        add_action('wp_ajax_on_install_activate_mesmerize_companion', array(__CLASS__, 'on_install_activate_mesmerize_companion'));
 
 		if ( get_template() === get_stylesheet() ) {
 
@@ -217,4 +218,15 @@ class Companion_Plugin {
 
 		return self::$instance;
 	}
+
+    public static function on_install_activate_mesmerize_companion()
+    {
+        check_ajax_referer('mesmerize_install_homepage_nonce', 'nonce');
+
+        $source = key_exists('source', $_REQUEST) ? $_REQUEST['source'] : 'other';
+        update_option("msm_companion_start_source", $source);
+
+        wp_send_json_success();
+    }
+
 }

@@ -353,7 +353,8 @@ add_action( 'customize_controls_enqueue_scripts', function () {
 			'changeImageLabel'    => esc_attr__( 'Change image', 'mesmerize' ),
 		),
 		'upgrade_url'   => mesmerize_get_upgrade_link(),
-		'cache_key'     => md5( get_stylesheet() . "|" . wp_get_theme()->get( "Version" ) )
+		'cache_key'     => md5( get_stylesheet() . "|" . wp_get_theme()->get( "Version" ) ),
+        'mesmerize_install_homepage_nonce' => wp_create_nonce( 'mesmerize_install_homepage_nonce' ),
 	);
 
 	// ensure correct localization script

@@ -1,3 +1,14 @@
+
+<?php
+wp_localize_script(
+    'mesmerize_admin_js',
+    'mesmerize_page_info',
+    array(
+        'mesmerize_install_homepage_nonce'   => wp_create_nonce( 'mesmerize_install_homepage_nonce' )
+    )
+);
+?>
+
 <div id="extendthemes_start_with_homepage">
     <div class="extendthemes-container-fluid">
         <div class="extendthemes-row reverse">
@@ -32,7 +43,7 @@
                         } else {
 	                        $mesmerize_link = \Mesmerize\Companion_Plugin::get_install_link();
                         }
-                        printf( '<a class="button button-hero button-primary" href="%1$s" onclick="window.location=this.href;this.href=\'javascript:void(0)\';">%2$s</a>',
+                        printf( '<a class="button button-hero button-primary install-frontpage" href="%1$s" install-source="notice">%2$s</a>',
 	                        esc_url( $mesmerize_link ),
 	                        $mesmerize_label );
                         ?>
