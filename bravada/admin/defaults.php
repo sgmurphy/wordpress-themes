@@ -42,7 +42,7 @@ function bravada_get_option_defaults() {
 	//"theme_headerfullscreenarchives"=> 0, // 1=enabled, 0=disabled
 	"theme_headerheight" 		=> 1080, // pixels
 	"theme_headerresponsive" 	=> 0, 	// 0=cropped, 1=contained
-
+	
 	"theme_headerwidgetwidth"	=> "33%", // 25%, 33%, 50%, 60%, 100%
 	"theme_headerwidgetalign"	=> "right", // left, center, right
 
@@ -115,6 +115,7 @@ function bravada_get_option_defaults() {
 	"theme_copyright"			=> '&copy;'. date_i18n('Y') . ' '. get_bloginfo('name'),
 
 	"theme_articleanimation"	=> "fade", // 0=none, >0=effect
+	"theme_headingsaccent"		=> 1, // 0=disabled everywhere, 1=lp only, 2=lp and general content
 
 	"theme_image_style"			=> 'bravada-image-none',
 	"theme_caption_style"		=> 'bravada-caption-one',

@@ -70,7 +70,7 @@
 						<?php } ?>
 
 						<?php if ( bravada_check_empty_menu( 'top' ) && ( has_nav_menu( 'top' ) || ( true == cryout_get_option('theme_pagesmenu') ) ) ) { ?>
-						<nav id="access" aria-label="<?php esc_attr_e( 'Top Menu', 'bravada' ) ?>" <?php cryout_schema_microdata( 'menu' ); ?>>
+						<nav id="<?php echo apply_filters('bravada_navigation_compat', 'access') ?>" aria-label="<?php esc_attr_e( 'Top Menu', 'bravada' ) ?>" <?php cryout_schema_microdata( 'menu' ); ?>>
 							<?php cryout_access_hook(); ?>
 						</nav><!-- #access -->
 						<?php } ?>

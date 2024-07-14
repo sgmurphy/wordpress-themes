@@ -28,11 +28,17 @@
 
 .wp-full-overlay.cryout-maximized .cryout-expand-sidebar  .collapse-sidebar-arrow::before { transform: initial; }
 
-.wp-full-overlay.cryout-maximized { margin-left: 40%; }
-
-.wp-full-overlay.cryout-maximized .wp-full-overlay-sidebar {
-	margin-left: 0 !important;
-	width: 40% !important; }
+@media screen and (min-width: 1667px) {
+	.wp-full-overlay.cryout-maximized { 
+		/* margin-left: 40%; */ 
+		margin-left: 600px; 
+	}
+	.wp-full-overlay.cryout-maximized .wp-full-overlay-sidebar {
+		margin-left: 0 !important;
+		/* width: 40% !important; */
+		width: 600px !important;
+	}
+}
 
 /* Panel maximizer wp 4.5+ */
 .wp-full-overlay .wp-full-overlay-footer { transition: width .2s; }
@@ -74,6 +80,8 @@
 
 /* Theme panels/sections */
 #customize-theme-controls [id*="cryout-"] .ui-slider { max-width: 80%; }
+#customize-theme-controls [id*="cryout-"] .customize-control-numberslider .ui-slider::before,
+#customize-theme-controls [id*="cryout-"] .customize-control-numberslider .ui-slider::after { display: none; } /* precognitive fix for zynith seo */
 #customize-theme-controls [id*="cryout-"] .customize-control-numberslider .ui-slider { max-width: 62%; margin-top: 11px; }
 #customize-theme-controls [id*="cryout-"] .customize-control-numberslider + .customize-control-numberslider { margin-top: -0.7em; }
 

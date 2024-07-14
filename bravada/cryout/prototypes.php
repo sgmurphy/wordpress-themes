@@ -434,10 +434,10 @@ function cryout_gen_featured_sizes( $default = 1440, $magazinelayout = false, $l
 } // cryout_gen_featured_sizes()
 
 /**
- * Shorter detection of blog page (when separate from homepage) 
+ * Shorter detection of blog page (when separate from homepage)
  */
 function cryout_on_blog() {
-	if ( ( 'page' == get_option( 'show_on_front' )) && is_home() ) return true; 
+	if ( ( 'page' == get_option( 'show_on_front' )) && is_home() ) return true;
 	return false;
 } // cryout_on_blog()
 

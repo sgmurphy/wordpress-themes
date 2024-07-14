@@ -10,7 +10,7 @@ function bravada_body_classes( $classes ) {
 		'theme_landingpage', 'theme_layoutalign',  'theme_image_style', 'theme_magazinelayout', 'theme_comclosed', 'theme_contenttitles', 'theme_caption_style',
 		'theme_elementborder', 'theme_elementshadow', 'theme_elementborderradius', 'theme_totop', 'theme_menustyle', 'theme_menuposition', 'theme_menulayout',
 		'theme_topsection', 'theme_headerresponsive', 'theme_headerfullscreen', 'theme_fresponsive', 'theme_comlabels', 'theme_comicons', 'theme_comdate',
-		'theme_tables', 'theme_normalizetags', 'theme_articleanimation', 'theme_headertitle_anim', 'theme_lazyimages'
+		'theme_tables', 'theme_normalizetags', 'theme_articleanimation', 'theme_headertitle_anim', 'theme_lazyimages', 'theme_headingsaccent'
 	) );
 
 	if ( is_front_page() && $options['theme_landingpage'] && ('page' == get_option('show_on_front')) ) {
@@ -1361,6 +1361,7 @@ a.staticslider-button:hover,
 	.bravada-landing-page #header-image-main-inside { display: block; }
 <?php } ?>
 
+<?php if ( $theme_headingsaccent > 0 ) { ?>
 .widget-title,
 #comments-title,
 #reply-title,
@@ -1368,21 +1369,26 @@ a.staticslider-button:hover,
 .main .page-title,
 #nav-below em,
 .lp-text .lp-text-title,
-.lp-boxes-animated .lp-box-title,
-.entry-content h2, .entry-content h4 {
+.lp-boxes-animated .lp-box-title {
 	background-image: linear-gradient(to bottom, rgba(<?php echo  esc_html( cryout_hex2rgb( $theme_accent1 ) ) ?>,0.4) 0%, rgba(<?php echo esc_html( cryout_hex2rgb( $theme_accent1 ) ) ?>,0.4) 100%);
 }
+<?php } ?>
 
+<?php if ( $theme_headingsaccent == 2 ) { ?>
+.entry-content h2, .entry-content h4 {
+	text-decoration-color: rgba(<?php echo  esc_html( cryout_hex2rgb( $theme_accent1 ) ) ?>,0.3);
+}
 .entry-content h3 {
-	background-image: linear-gradient(to bottom, rgba(<?php echo  esc_html( cryout_hex2rgb( $theme_accent2 ) ) ?>,0.4) 0%, rgba(<?php echo esc_html( cryout_hex2rgb( $theme_accent2 ) ) ?>,0.4) 100%);
+	text-decoration-color: rgba(<?php echo  esc_html( cryout_hex2rgb( $theme_accent2 ) ) ?>,0.3);
 }
 
 .entry-content h2, .entry-content h3, .entry-content h4 {
-	background-repeat: no-repeat;
-	background-position: 0 100%;
-	background-size: 100% .4em;
-	max-width: max-content;
+	text-decoration-line: underline;
+	text-decoration-thickness: 0.4em;
+	text-decoration-skip-ink: none;
+	text-underline-offset: -0.2em;
 }
+<?php } ?>
 
 .lp-blocks {
 	background-color: <?php echo esc_html( $theme_lpblocksbg ) ?>;
@@ -1426,9 +1432,11 @@ a.staticslider-button:hover,
 	color: <?php echo esc_html( $theme_headingstext ) ?>;
 }
 
+<?php if ( $theme_headingsaccent > 0 ) { ?>
 .lp-block .lp-block-title::after {
 	background-color: <?php echo esc_html( $theme_accent1 ) ?>;
 }
+<?php } ?>
 
 .lp-blocks1 .lp-block i[class^="blicon"] +i[class^="blicon"]::before {
 	color: <?php echo esc_html( $theme_accent2 ) ?>;

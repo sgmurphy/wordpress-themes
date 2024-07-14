@@ -43,7 +43,7 @@ function bravada_setup() {
 	load_theme_textdomain( 'bravada', get_template_directory() . '/cryout/languages' );
 	load_theme_textdomain( 'bravada', get_template_directory() . '/languages' );
 	load_textdomain( 'cryout', '' );
-
+	
 	// This theme allows users to set a custom backgrounds
 	add_theme_support( 'custom-background' );
 

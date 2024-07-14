@@ -216,44 +216,46 @@ if (!function_exists('total_premium_demo_config')) {
 
     function total_premium_demo_config($demos) {
         $premium_demos = array(
+            'wave' => array(
+                'name' => 'Total Plus - Wave',
+                'type' => 'pro',
+                'buy_url' => 'https://hashthemes.com/wordpress-theme/wave/',
+                'image' => 'https://hashthemes.com/import-files/totalplus/screen/wave.jpg',
+                'preview_url' => 'https://demo.hashthemes.com/total-plus/wave/',
+            ),
             'total' => array(
-                'slug' => 'total',
                 'name' => 'Total Plus - Total',
                 'type' => 'pro',
                 'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
-                'image' => 'https://hashthemes.com/import-files/total-plus/screen/total.jpg',
+                'image' => 'https://hashthemes.com/import-files/totalplus/screen/total.jpg',
                 'preview_url' => 'https://demo.hashthemes.com/total-plus/total/',
             ),
             'main-demo' => array(
-                'slug' => 'main-demo',
                 'name' => 'Total Plus - Main Demo',
                 'type' => 'pro',
                 'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
-                'image' => 'https://hashthemes.com/import-files/total-plus/screen/main-demo.jpg',
+                'image' => 'https://hashthemes.com/import-files/totalplus/screen/main-demo.jpg',
                 'preview_url' => 'https://demo.hashthemes.com/total-plus/main/'
             ),
             'creative-agency' => array(
-                'slug' => 'creative-agency',
                 'name' => 'Total Plus - Creative Agency',
                 'type' => 'pro',
                 'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
-                'image' => 'https://hashthemes.com/import-files/total-plus/screen/creative-agency.jpg',
+                'image' => 'https://hashthemes.com/import-files/totalplus/screen/creative-agency.jpg',
                 'preview_url' => 'https://demo.hashthemes.com/total-plus/creative-agency'
             ),
             'one-page' => array(
-                'slug' => 'one-page',
                 'name' => 'Total Plus - One Page',
                 'type' => 'pro',
                 'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
-                'image' => 'https://hashthemes.com/import-files/total-plus/screen/one-page.jpg',
+                'image' => 'https://hashthemes.com/import-files/totalplus/screen/one-page.jpg',
                 'preview_url' => 'https://demo.hashthemes.com/total-plus/one-page'
             ),
             'construction' => array(
-                'slug' => 'construction',
                 'name' => 'Total Plus - Construction',
                 'type' => 'pro',
                 'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
-                'image' => 'https://hashthemes.com/import-files/total-plus/screen/construction.jpg',
+                'image' => 'https://hashthemes.com/import-files/totalplus/screen/construction.jpg',
                 'preview_url' => 'https://demo.hashthemes.com/total-plus/construction'
         ));
 

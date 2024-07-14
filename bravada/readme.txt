@@ -2,13 +2,13 @@
 
 Contributors: Cryout Creations
 Requires at least: 4.5
-Tested up to: 6.4
-Stable tag: 1.1.1
+Tested up to: 6.5
+Stable tag: 1.1.2
 Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Copyright 2020-22 Cryout Creations
+Copyright 2020-24 Cryout Creations
 https://www.cryoutcreations.eu/
 
 == Description ==
@@ -77,6 +77,11 @@ Copyright Sam Collins
 License: MIT license, https://opensource.org/licenses/MIT
 Source: https://github.com/smcllns/css-social-buttons
 
+Bootstrap Icons
+Copyright The Bootstrap Authors
+License: MIT license, https://opensource.org/licenses/MIT
+Source: https://icons.getbootstrap.com/
+
 == Bundled Images ==
 
 The following bundled images are released into the public domain under Creative Commons CC0:
@@ -90,13 +95,25 @@ The rest of the bundled images are created by Cryout Creations and released with
 
 == Changelog ==
 
+= 1.1.2 = 
+*Release date: 2024.07.13*
+
+* Added 'bravada_navigation_compat' filter to allow overriding the "access" id on menu container and improve uber/mega menu compatibility
+* Improved behaviour of site title and logo with custom height sticky menu bar
+* Rewrote and fixed the content headings accent effect and also added option to control the effect with the previous homepage-only setting being the default by (un)popular demand.
+* Fixed missing YouTube icon in v1.1.1
+* Updated to Cryout Framework 0.8.6.5:
+	* Updated rich text schema support for comments
+	* Precognitively fixed erroneous white square in customize screen panels with Zynith SEO plugin
+
 = 1.1.1 =
 *Release date: 2024.01.30*
 
 * Fixed posts navigation being visible on blog (and possibly other sections) due to incomplete conditionality check
 * Improved main menu accessibility (tab navigation)
 * Fixed theme reset styling overriding block file buttons
-* Added new social icons: AliPay, Apple, Behance, Bootstrap, Git, Gitlab, Google, Mastodon, Messenger, Microsoft, Teams, Person (simple, circle, square), QR Code, Rumble, Signal, Snapchat, Sourceforge, Substack, Telegram, Threads, Trello, Twitter (X), Unity, Whatsapp, Xbox (and one that shall not be named) and updated existing ones: Facebook, Github, Google Play, PayPal, Skype, Stripe, Steam, Spotify, Linkedin, Reddit, YouTube, WordPress (old icons are still available by adding the '-old' subfix to the classnames).
+* Added new social icons: AliPay, Apple, Behance, Bootstrap, Git, Gitlab, Google, Mastodon, Messenger, Microsoft, Teams, Person (simple, circle, square), QR Code, Rumble, Signal, Snapchat, Sourceforge, Substack, Telegram, Threads, Trello, Unity, Whatsapp, Xbox, and one that shall not be named
+* Updated social icons: Twitter (X), Facebook, Github, Google Play, PayPal, Skype, Stripe, Steam, Spotify, Linkedin, Reddit, YouTube, WordPress (old icons are still available by adding the '-old' suffix to the classnames).
 * Changed default social icon for tel: links
 * Improved theme defaults to make all default configurable texts translatable
 

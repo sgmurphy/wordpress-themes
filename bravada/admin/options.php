@@ -508,8 +508,8 @@ $bravada_big = array(
 	'id' => 'theme_headerfullscreen',
 		'type' => 'select',
 		'label' => __('Fullscreen header image','bravada'),
-		'values' => array( 1, 0, 2 ), // always, never, only-homepage
-		'labels' => array( __("Always","bravada"), __("Disabled","bravada"), __("Homepage only","bravada") ),
+		'values' => array( 0, 1, 2 ), // never, always, only-homepage
+		'labels' => array( __("Disabled","bravada"), __("Always","bravada"), __("Homepage only","bravada") ),
 		'desc' => '',
 	'section' => 'theme_headercontent' ),
 	// array(
@@ -1739,6 +1739,15 @@ $bravada_big = array(
 	//////////////////////////////////////////////////// Graphics ////////////////////////////////////////////////////
 
 	array(
+	'id' => 'theme_headingsaccent',
+		'type' => 'select',
+		'label' => __('Headings Accent Effect','bravada'),
+		'values' => array( 0, 1, 2),
+		'labels' => array( __("Disabled","bravada"), __("Reduced","bravada"), __("All","bravada") ),
+		'desc' => '',
+	'section' => 'theme_contentgraphics' ),
+	
+	array(
 	'id' => 'theme_articleanimation',
 		'type' => 'select',
 		'label' => __('Article Animation on Scroll','bravada'),
@@ -1746,6 +1755,7 @@ $bravada_big = array(
 		'labels' => array( __("None","bravada"), __("Fade","bravada"), __("Slide","bravada"), __("Flip Up","bravada"), __("Flip Down","bravada") ),
 		'desc' => '',
 	'section' => 'theme_contentgraphics' ),
+	
 
 	//////////////////////////////////////////////////// Search Box ////////////////////////////////////////////////////
 

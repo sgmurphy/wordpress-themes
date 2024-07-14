@@ -4,10 +4,10 @@
  * @package Cryout Framework
  */
 
-var _cryout_label_max = 'Maximize';
+var _cryout_label_max = 'Enlarge';
 var _cryout_label_min = 'Restore';
 
-var _cryout_innerHTML = '<button class="button cryout-expand-sidebar button-secondary" aria-expanded="true" aria-label="' + _cryout_label_max + '" title="' + _cryout_label_max + '" href="#">\
+var _cryout_innerHTML = '<button class="button cryout-expand-sidebar button-secondary" aria-expanded="true" aria-label="' + _cryout_label_max + '" href="#">\
         <span class="collapse-sidebar-label">' + _cryout_label_max + '</span>\
 		<span class="collapse-sidebar-arrow" title="' + _cryout_label_max + '"></span>\
 </button> ';
@@ -36,10 +36,10 @@ jQuery( document ).ready(function( jQuery ) {
 
 	});
 	
-	/* maximize/restore button */
+	/* enlarge/restore button */
 	jQuery('.cryout-expand-sidebar').on( 'click', function( event ) {
 			var label = jQuery('.cryout-expand-sidebar span.collapse-sidebar-label');
-			var lebutton = jQuery('.cryout-expand-sidebar');
+			var lebutton = jQuery('.cryout-expand-sidebar .collapse-sidebar-arrow');
 			if (jQuery(label).html() == _cryout_label_max) {
 					jQuery(label).html(_cryout_label_min);
 					jQuery(lebutton).attr('title',_cryout_label_min);
