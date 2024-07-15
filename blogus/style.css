@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/blogus-free-blog-wordpress-theme/
 Author: Themeansar
 Author URI: https://themeansar.com
 Description: Blogus is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Blogus is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Blogus is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demos.themeansar.com/blogus-demos/ and documentation at https://docs.themeansar.com/docs/blogus/
-Version: 2.0.0.3
+Version: 2.0.0.4
 Tested up to: 6.5.5
 Requires PHP: 7.0
 Requires at least: 5.4
@@ -1966,7 +1966,7 @@ pre.wp-block-code a, #cancel-comment-reply-link, .comment-reply-link{
 }
 .bs-widget ul li:last-child {
 	border: none;
-	padding-bottom: 0;
+	margin-bottom: 0;
 }
 .bs-widget ul li {
 	display: block;
@@ -2268,6 +2268,12 @@ footer ul.menu li.menu-item:before{
 	font-family: 'Font Awesome 6 Free';
 	font-weight: 900;
 	margin-right: 10px;
+}
+footer .bs-widget .sub-menu{
+	padding-left: 20px;
+}
+footer .bs-widget .sub-menu li:first-child {
+    margin-top: 10px;
 }
 .text-right{
 	text-align: end;
@@ -2840,12 +2846,6 @@ blockquote.right {
     margin-left: -1px;
 	padding: 10px 15px;
 }
-.bs-blog-post .small .wp-block-button a {
-    color: #fff;
-}
-.bs-blog-post .single a{
-	/* box-shadow: 0 1px 0 0 currentColor; */
-}
 .bs-blog-post .single a:hover, .bs-blog-post .single a:focus {
     box-shadow: none;
 }
@@ -2891,6 +2891,13 @@ form.search-form .search-submit{
 	font-size: 10px;
 	vertical-align: .255em; 
 	font-weight: 900;
+}
+
+.small.single a, p a, .small.single .nav-links a:hover, .bs-info-author-block .title a:hover, .bs-sidebar .bs-widget ul li a:hover, .wp-block-latest-comments .wp-block-latest-comments__comment-link:hover, .bs-blog-meta a:hover, .small.single .wp-block-latest-posts li a:hover, .small.single .wp-block-categories-list li a:hover, .small.single .wp-block-categories__list li a:hover, .small.single .wp-block-archives-list li a:hover, .bs-footer-copyright p a:hover, .page-class .bs-card-box a {
+	text-decoration: underline;
+}
+.small.single a:hover, p a:hover, .small.single .wp-block-button__link, .site-title a, .small.single .nav-links a, .small.single .single-nav-links a, a, .site-title-footer a, .small.single .wp-block-latest-posts li a, .small.single .wp-block-categories-list li a, .small.single .wp-block-categories__list li a, .small.single .wp-block-archives-list li a, .bs-footer-copyright p a, .page-class .bs-card-box a:hover {
+	text-decoration: none;
 }
 /* --------------------------------------
 =========================================

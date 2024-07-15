@@ -4,8 +4,8 @@ Author: Themeansar
 Requires at least: WordPress 4.7
 Tested up to: 6.5.5
 Requires PHP: 7.0
-Stable tag: 4.0.0.43
-Version: 4.0.0.43
+Stable tag: 4.0.0.44
+Version: 4.0.0.44
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -1010,3 +1010,6 @@ Added Keyword Control.
 
 = Version 4.0.0.43
 Fixed Stytling Issues.
+
+= Version 4.0.0.44
+Fixed Body Fonts.

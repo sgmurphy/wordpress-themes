@@ -352,8 +352,13 @@ a:hover, a:focus {
 .bs-blog-post .bs-header .bs-read{
 	color: #f56565;
 }
-.bs-blog-post .single .nav-links{
-	background: #e2e8f0;
+.bs-blog-post .small .wp-block-button a {
+    color: #fff;
+}
+.bs-blog-post .small .wp-block-button .wp-block-button__link:hover, .wp-block-button .wp-block-button__link:focus {
+    background: transparent;
+    border: 2px solid #32373c;
+    color: var(--head-color);
 }
 .featured-image-caption{
 	background-color: #343a40 ;
