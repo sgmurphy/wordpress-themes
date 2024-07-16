@@ -3993,8 +3993,8 @@ function pluginNotice(message) {
 function installBuilder(options) {
   pluginNotice(colibriwp_plugin_status.messages.installing);
   prepareCall(function () {
-  $.get(colibriwp_plugin_status.install_url).done(function () {
-    activateBuilder(options);
+    $.get(colibriwp_plugin_status.install_url).done(function () {
+      activateBuilder(options);
     });
   });
 }

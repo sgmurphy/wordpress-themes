@@ -3507,9 +3507,10 @@ function ColibriBase() {
     };
 
     Colibri.isBlockEditor = function () {
-      var _top, _top$wp;
+      var _top, _top$wp, _top2, _top2$kubio;
 
-      return !!((_top = top) !== null && _top !== void 0 && (_top$wp = _top.wp) !== null && _top$wp !== void 0 && _top$wp.blockEditor);
+      //the block library is added because of this https://mantis.iconvert.pro/view.php?id=54821. Some hosting providers add the blockEditor package in the frontend
+      return !!((_top = top) !== null && _top !== void 0 && (_top$wp = _top.wp) !== null && _top$wp !== void 0 && _top$wp.blockEditor) && ((_top2 = top) === null || _top2 === void 0 ? void 0 : (_top2$kubio = _top2.kubio) === null || _top2$kubio === void 0 ? void 0 : _top2$kubio.blockLibrary);
     }; // Core Functionality
 
 

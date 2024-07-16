@@ -108,11 +108,6 @@ if ( ! function_exists( 'zakra_page_title' ) ) :
 
 			</<?php echo esc_attr( $markup ); ?>>
 
-			<?php
-			if ( is_archive() ) {
-				the_archive_description( '<div class="zak-archive-description">', '</div>' );
-			}
-			?>
 		</div>
 		<?php
 	}

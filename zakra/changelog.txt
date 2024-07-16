@@ -1,4 +1,8 @@
 == Changelog ==
+= 3.0.19 - 2024-07-16 =
+* Add     - Compatibility with Woo Product Addon plugin.
+* Feature - Option to enable category description.
+
 = 3.0.18 - 2024-05-29 =
 * Add         - Option to set search page post limit.
 * Fix         - WooCommerce css notice.

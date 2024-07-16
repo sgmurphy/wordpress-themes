@@ -50,6 +50,25 @@ if ( ! class_exists( 'Zakra_Customize_Blog_Option' ) ) :
 				),
 
 				array(
+					'name'     => 'zakra_category_description_heading',
+					'type'     => 'control',
+					'control'  => 'zakra-title',
+					'label'    => esc_html__( 'Category Description', 'zakra' ),
+					'section'  => 'zakra_blog',
+					'priority' => 110,
+				),
+
+				array(
+					'name'     => 'zakra_enable_category_description',
+					'default'  => false,
+					'type'     => 'control',
+					'control'  => 'zakra-toggle',
+					'label'    => esc_html__( 'Enable', 'zakra' ),
+					'section'  => 'zakra_blog',
+					'priority' => 110,
+				),
+
+				array(
 					'name'     => 'zakra_blog_post_date_type_heading',
 					'type'     => 'control',
 					'control'  => 'zakra-title',

@@ -79,11 +79,11 @@ if ( ! function_exists( 'zakra_content_loop' ) ) {
 
 			do_action( 'zakra_before_posts_the_loop' );
 
-			$classes = apply_filters( 'zakra_content_loop_class', array('zak-posts') );
+			$classes = apply_filters( 'zakra_content_loop_class', array( 'zak-posts' ) );
 			$classes = implode( ' ', array_unique( $classes ) )
 			?>
 
-			<div class="<?php echo esc_attr( $classes); ?>">
+			<div class="<?php echo esc_attr( $classes ); ?>">
 
 				<?php
 				/* Start the Loop */
@@ -108,4 +108,21 @@ if ( ! function_exists( 'zakra_content_loop' ) ) {
 
 	add_action( 'zakra_content', 'zakra_content_loop' );
 	add_action( 'zakra_content_search', 'zakra_content_loop' );
+}
+
+if ( ! function_exists( 'zakra_archive_description' ) ) {
+
+	/**
+	 * Archive description.
+	 */
+	function zakra_archive_description() {
+
+		$category_enable = get_theme_mod( 'zakra_enable_category_description', false );
+
+		if ( is_archive() && $category_enable ) {
+			the_archive_description( '<div class="zak-archive-description">', '</div>' );
+		}
+	}
+
+	add_action( 'zakra_before_posts_the_loop', 'zakra_archive_description' );
 }

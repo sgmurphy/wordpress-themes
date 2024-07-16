@@ -2,7 +2,7 @@
 
 Tags: entertainment, food-and-drink, portfolio, one-column, two-columns, grid-layout, custom-header, custom-menu, custom-logo, full-width-template, theme-options, translation-ready, featured-images, threaded-comments
 Requires at least: 5.8
-Tested up to: 6.5
+Tested up to: 6.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Requires PHP: 7.1
