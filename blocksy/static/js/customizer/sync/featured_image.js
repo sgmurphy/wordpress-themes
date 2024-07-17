@@ -44,10 +44,10 @@ watchOptionsWithPrefix({
 		}
 
 		if (id === `${prefix}_featured_image_ratio`) {
-			setRatioFor(
-				getOptionFor('featured_image_ratio', prefix),
-				image.querySelector('.ct-media-container')
-			)
+			setRatioFor({
+				ratio: getOptionFor('featured_image_ratio', prefix),
+				el: image.querySelector('.ct-media-container'),
+			})
 		}
 
 		if (id === `${prefix}_featured_image_visibility`) {

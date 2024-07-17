@@ -572,7 +572,10 @@ ctEvents.on('ct:header:sync:item:cart', ({ optionId, optionValue, values }) => {
 	if (optionId === 'thumb_ratio') {
 		updateAndSaveEl(selector, (el) => {
 			;[...el.querySelectorAll('.ct-media-container')].map((el) => {
-				setRatioFor(optionValue, el)
+				setRatioFor({
+					ratio: optionValue,
+					el,
+				})
 			})
 		})
 	}

@@ -1,3 +1,11 @@
+2.0.58: 2024-07-17
+- Improvement: Classic Widgets plugin causes a customizer conflict in color palettes dropdown
+- Improvement: Load back to top styles earlier for iOS devices
+- Improvement: Make sure share box module pop-ups are opening correctly in Safari
+- Improvement: Menu heights are inconsistent when there's a drop down present in another drop down
+- Improvement: Output correctly the product cards markup when used as shortcode in Elementor preview mode
+- Fix: Single product gallery image ratio option doesn't live update it's value
+
 2.0.57: 2024-07-04
 - Improvement: Advanced Search live results `z-index` issue with other product elements, when placed in hero section
 - Improvement: Improve single product gallery events handling on user interaction

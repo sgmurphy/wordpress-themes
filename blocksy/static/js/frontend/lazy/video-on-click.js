@@ -156,9 +156,11 @@ const loadVideoWithStyles = (el) => {
 				descriptor.selector
 		)
 
-	loadStyle(maybeMatchingContainer.url).then(() => {
-		loadVideoOrIframeViaAjax(el)
-	})
+	if (maybeMatchingContainer) {
+		loadStyle(maybeMatchingContainer.url).then(() => {
+			loadVideoOrIframeViaAjax(el)
+		})
+	}
 }
 
 ctEvents.on('blocksy:frontend:flexy:slide-change', ({ instance, payload }) => {

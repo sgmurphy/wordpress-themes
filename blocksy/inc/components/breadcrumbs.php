@@ -185,10 +185,7 @@ class BreadcrumbsBuilder {
 				array_pop($tax_result);
 			}
 
-			$return = array_merge(
-				$return,
-				$tax_result
-			);
+			$return = array_merge($return, $tax_result);
 		} elseif (is_tag()) {
 			$term_id = get_query_var('tag');
 			$term = get_term_by('slug', $term_id, 'post_tag');
@@ -375,7 +372,6 @@ class BreadcrumbsBuilder {
 						]
 					]);
 				}
-					
 			}
 		}
 
@@ -444,7 +440,7 @@ class BreadcrumbsBuilder {
 
 		$page_obj['type'] = 'post';
 		$page_obj['post_type'] = $page->post_type;
-		$page_obj['name'] = $page->post_title;
+		$page_obj['name'] = get_the_title($page);
 		$page_obj['id'] = $id;
 		$page_obj['url'] = get_permalink($id);
 
@@ -530,7 +526,6 @@ class BreadcrumbsBuilder {
 		return $return;
 	}
 
-
 	/**
 	 * Returns the lowest hierarchical term
 	 * @return array
@@ -582,15 +577,15 @@ class BreadcrumbsBuilder {
 	}
 
 	private function filter_terms($terms) {
-		$return_terms = array();
-		$term_ids = array();
+		$return_terms = [];
+		$term_ids = [];
 
 		foreach ($terms as $t) {
 			$term_ids[] = $t->term_id;
 		}
 
 		foreach ($terms as $t) {
-			if ($t->parent == false || !in_array($t->parent,$term_ids)) {
+			if ($t->parent == false || ! in_array($t->parent,$term_ids)) {
 				// remove this term
 			} else {
 				$return_terms[] = $t;
@@ -667,7 +662,7 @@ class BreadcrumbsBuilder {
 		if (! in_array($source, $available_sources)) {
 			$source = 'default';
 		}
-		
+
 		$class = 'ct-breadcrumbs';
 
 		if (! empty($args['class'])) {

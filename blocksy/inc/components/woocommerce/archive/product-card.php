@@ -104,6 +104,7 @@ function blocksy_template_loop_product_thumbnail($attr) {
 		'post_id' => $product->get_id(),
 		'other_images' => $maybe_other_images,
 		'size' => 'woocommerce_archive_thumbnail',
+		'include_original_image_size' => is_customize_preview(),
 		'ratio' => apply_filters(
 			'blocksy:woocommerce:product-card:thumbnail:ratio',
 			blocksy_get_woocommerce_ratio([
@@ -188,7 +189,15 @@ function blocksy_output_product_toolbar() {
 
 $action_to_hook = 'wp';
 
-if (wp_doing_ajax()) {
+if (
+	wp_doing_ajax()
+	||
+	(
+		isset($_GET['action'])
+		&&
+		$_GET['action'] === 'elementor'
+	)
+) {
 	$action_to_hook = 'init';
 }
 
@@ -398,7 +407,16 @@ add_action($action_to_hook, function () {
 				) {
 					do_action('blocksy:woocommerce:product-card:actions:before');
 					echo '<div class="ct-woo-card-actions" data-add-to-cart="auto-hide">';
+
+					ob_start();
 					woocommerce_template_loop_price();
+					$default_price = ob_get_clean();
+
+					echo apply_filters(
+						'blocksy:woocommerce:product-card:price',
+						$default_price
+					);
+
 					woocommerce_template_loop_add_to_cart();
 					echo '</div>';
 					do_action('blocksy:woocommerce:product-card:actions:after');
@@ -457,6 +475,7 @@ add_action($action_to_hook, function () {
 						blocksy_media([
 							'no_image_type' => 'woo',
 							'attachment_id' => $thumbnail_id,
+							'include_original_image_size' => is_customize_preview(),
 							'size' => 'woocommerce_archive_thumbnail',
 							'ratio' => blocksy_get_woocommerce_ratio([
 								'key' => 'archive_thumbnail',

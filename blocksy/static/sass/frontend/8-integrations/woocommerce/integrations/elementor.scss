@@ -64,3 +64,9 @@
 		}
 	}
 }
+
+// products shortcode
+.elementor-shortcode [data-products] .product > figure {
+	margin-bottom: var(--product-element-spacing, 10px) !important;
+
+}

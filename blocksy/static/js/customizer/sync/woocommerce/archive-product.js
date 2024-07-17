@@ -22,18 +22,22 @@ export const replaceCards = () => {
 				'predefined'
 
 			if (product.querySelector('.ct-media-container')) {
-				setRatioFor(
-					ratio === 'uncropped'
-						? 'original'
-						: ratio === 'custom' || ratio === 'predefined'
-						? `${wp.customize(
-								'woocommerce_archive_thumbnail_cropping_custom_width'
-						  )()}/${wp.customize(
-								'woocommerce_archive_thumbnail_cropping_custom_height'
-						  )()}`
-						: '1/1',
-					product.querySelector('.ct-media-container')
-				)
+				setRatioFor({
+					ratio:
+						ratio === 'uncropped'
+							? 'original'
+							: ratio === 'custom' || ratio === 'predefined'
+							? `${wp.customize(
+									'woocommerce_archive_thumbnail_cropping_custom_width'
+							  )()}/${wp.customize(
+									'woocommerce_archive_thumbnail_cropping_custom_height'
+							  )()}`
+							: '1/1',
+
+					el: product.querySelector('.ct-media-container'),
+
+					setFullSize: true,
+				})
 			}
 		}
 	})

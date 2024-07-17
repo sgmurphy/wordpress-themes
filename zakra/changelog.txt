@@ -1,7 +1,12 @@
 == Changelog ==
+= 3.0.20 - 2024-07-17 =
+* Fix - Primary menu active color issue.
+* Fix - Anchor tag underline issue.
+
 = 3.0.19 - 2024-07-16 =
 * Add     - Compatibility with Woo Product Addon plugin.
 * Feature - Option to enable category description.
+* Fix     - Primary menu active color issue.
 
 = 3.0.18 - 2024-05-29 =
 * Add         - Option to set search page post limit.

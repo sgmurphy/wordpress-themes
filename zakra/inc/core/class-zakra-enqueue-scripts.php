@@ -117,7 +117,7 @@ if ( ! class_exists( 'Zakra_Enqueue_Scripts' ) ) {
 				'zakra-style',
 				get_stylesheet_uri(),
 				array(),
-
+				ZAKRA_THEME_VERSION
 			);
 
 			wp_enqueue_style( 'zakra-style' );
@@ -221,7 +221,7 @@ if ( ! class_exists( 'Zakra_Enqueue_Scripts' ) ) {
 			$add_to_cart_typography           = get_theme_mod( 'zakra_shop_product_button_typography', $typography_default_400 );
 			$product_price_typography         = get_theme_mod( 'zakra_shop_product_price_typography', $typography_default_400 );
 			$product_title_typography         = get_theme_mod( 'zakra_shop_product_title_typography', $typography_default_400 );
-			$view_cart_typography        = get_theme_mod( 'zakra_shop_product_view_cart_typography', $typography_default_400 );
+			$view_cart_typography             = get_theme_mod( 'zakra_shop_product_view_cart_typography', $typography_default_400 );
 
 			$post_page_title_typography = get_theme_mod( 'zakra_post_page_title_typography', $typography_default_500 );
 			$blog_post_title_typography = get_theme_mod( 'zakra_blog_post_title_typography', $typography_default_500 );
@@ -233,7 +233,7 @@ if ( ! class_exists( 'Zakra_Enqueue_Scripts' ) ) {
 			$h6_typography              = get_theme_mod( 'zakra_h6_typography', $typography_default_500 );
 			$widget_heading_typography  = get_theme_mod( 'zakra_widget_title_typography', $typography_default_500 );
 			$widget_content_typography  = get_theme_mod( 'zakra_widget_content_typography', $typography_default_500 );
-			$drawer_menu_typography       = get_theme_mod( 'zakra_header_drawer_menu_typography', $typography_default_500 );
+			$drawer_menu_typography     = get_theme_mod( 'zakra_header_drawer_menu_typography', $typography_default_500 );
 
 			// Grouped typography options with default font-wight of 400.
 			$zakra_typography_options_one = array(

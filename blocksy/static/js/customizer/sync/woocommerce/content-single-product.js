@@ -83,15 +83,17 @@ wp.customize('product_gallery_ratio', (val) =>
 			return
 		}
 
-		const article = document.querySelector('.product.type-product')
+		const article = document.querySelector('.ct-product-gallery-container')
 
-		;[
-			...article.querySelectorAll(
-				'.flexy-items .ct-media-container, .woocommerce-product-gallery > .ct-product-gallery-container > .ct-media-container'
-			),
-		].map((el) => {
+		;[...article.querySelectorAll('.ct-media-container')].map((el) => {
 			ctEvents.trigger('ct:flexy:update-height')
-			setRatioFor(to, el)
+
+			setRatioFor({
+				ratio: to,
+				el,
+
+				setFullSize: true,
+			})
 
 			const flexyItems = article.querySelector('.flexy-items')
 

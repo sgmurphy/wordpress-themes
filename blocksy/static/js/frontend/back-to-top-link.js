@@ -2,6 +2,8 @@ import ctEvents from 'ct-events'
 import { areWeDealingWithSafari } from '../main'
 import { loadStyle } from '../helpers'
 
+import { isIosDevice } from './helpers/is-ios-device'
+
 // idle | loading | loaded
 let stylesState = 'idle'
 
@@ -13,6 +15,11 @@ export const mount = (backTop) => {
 	}
 
 	backTop.hasListener = true
+
+	// Loading styles early for iOS devices
+	if (isIosDevice()) {
+		loadStyle(ct_localizations.dynamic_styles.back_to_top).then(() => {})
+	}
 
 	// browser window scroll (in pixels) after which the "back to top" link is shown
 	// browser window scroll (in pixels) after which the "back to top" link opacity is reduced
@@ -29,14 +36,24 @@ export const mount = (backTop) => {
 
 			if (stylesState === 'idle') {
 				stylesState = 'loading'
-				loadStyle(ct_localizations.dynamic_styles.back_to_top).then(
-					() => {
-						backTop.removeAttribute('hidden')
 
-						stylesState = 'loaded'
-						backTop.classList.add('ct-show')
-					}
-				)
+				const cb = () => {
+					backTop.removeAttribute('hidden')
+
+					stylesState = 'loaded'
+					backTop.classList.add('ct-show')
+				}
+
+				// Styles are already loaded for iOS devices
+				if (isIosDevice()) {
+					cb()
+				} else {
+					loadStyle(ct_localizations.dynamic_styles.back_to_top).then(
+						() => {
+							cb()
+						}
+					)
+				}
 			}
 		} else {
 			backTop.classList.remove('ct-show')

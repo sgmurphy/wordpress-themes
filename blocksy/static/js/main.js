@@ -28,6 +28,7 @@ import {
 	fastOverlayHandleClick,
 	fastOverlayMount,
 } from './frontend/fast-overlay'
+// import { mount } from './frontend/social-buttons'
 
 let allFrontendEntryPoints = [
 	...menuEntryPoints,
@@ -61,7 +62,7 @@ let allFrontendEntryPoints = [
 	{
 		els: '.ct-share-box [data-network]:not([data-network="pinterest"]):not([data-network="email"])',
 		load: () => import('./frontend/social-buttons'),
-		trigger: ['click'],
+		trigger: ['hover'],
 		condition: () =>
 			!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
 				navigator.userAgent

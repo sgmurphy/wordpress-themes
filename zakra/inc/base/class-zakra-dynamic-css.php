@@ -1037,11 +1037,14 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			// Primary menu item hover color.
 			$primary_menu_item_color_hover     = get_theme_mod( 'zakra_main_menu_hover_color', '' );
 			$primary_menu_item_color_hover_css = array(
-				'.zak-primary-nav ul li:hover > a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-primary-nav ul li:hover > a, .zak-main-nav.zak-primary-nav ul.zak-primary-menu li:hover > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+				'.zak-primary-nav ul li:not(.current-menu-item):hover > a, .zak-primary-nav.zak-menu-item--layout-2 > ul > li:not(.current-menu-item):hover > a, .zak-primary-nav ul li:not(.current-menu-item):hover > a, .zak-main-nav.zak-primary-nav ul.zak-primary-menu li:not(.current-menu-item):hover > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
 					'color' => esc_html( $primary_menu_item_color_hover ),
 				),
 				'.zak-primary-nav ul li:hover > .zak-icon, .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon' => array(
 					'fill' => esc_html( $primary_menu_item_color_hover ),
+				),
+				'.zak-primary-nav.zak-layout-1-style-2 > ul li a:hover::before' => array(
+					'background-color' => esc_html( $primary_menu_item_color_hover ),
 				),
 			);
 			$parse_css                         .= zakra_parse_css( '', $primary_menu_item_color_hover, $primary_menu_item_color_hover_css );

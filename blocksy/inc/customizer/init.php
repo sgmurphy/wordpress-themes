@@ -163,7 +163,6 @@ function blocksy_customizer_sync_data() {
 add_action(
 	'customize_controls_enqueue_scripts',
 	function () {
-
 		if (class_exists('Kadence_Woomail_Designer')) {
 			if (
 				Kadence_Woomail_Designer::is_own_customizer_request()
@@ -298,6 +297,7 @@ add_action(
 				'has_child_theme' => $has_child_theme,
 				'is_parent_theme' => ! wp_get_theme()->parent(),
 				'rest_url' => get_rest_url(),
+				'wp_admin_url' => admin_url(),
 				'dismissed_google_fonts_notice' => get_option(
 					'dismissed-blocksy_google_fonts_notice',
 					'no'

@@ -1,6 +1,6 @@
 {
 	"name": "small-ct",
-	"version": "2.0.57",
+	"version": "2.0.58",
 	"title": "Blocksy",
 	"browserslist": "> 1%, not opera > 0, not op_mini all",
 	"devDependencies": {

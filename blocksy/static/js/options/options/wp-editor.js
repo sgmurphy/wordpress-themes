@@ -6,8 +6,9 @@ import {
 	useCallback,
 } from '@wordpress/element'
 import md5 from 'md5'
+import ctEvents from 'ct-events'
 
-const TextArea = ({ id, value, option, onChange }) => {
+const WpEditor = ({ id, value, option, onChange }) => {
 	const el = useRef()
 	const editor = useRef(null)
 	const [editorId, _] = useState(
@@ -22,126 +23,116 @@ const TextArea = ({ id, value, option, onChange }) => {
 		onChange(correctEditor().getContent(editorId))
 	}, [editorId])
 
-	useEffect(() => {
-		correctEditor().initialize(editorId, {
-			quicktags: true,
-			mediaButtons: true,
-			...option,
-
-			...(window.tinymce
-				? {
-						tinymce: {
-							toolbar1:
-								'formatselect,styleselect,bold,italic,bullist,numlist,link,alignleft,aligncenter,alignright,wp_adv',
-							toolbar2:
-								'strikethrough,hr,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help',
-
-							...(typeof option.tinymce === 'object'
-								? option.tinymce
-								: {}),
-							style_formats_merge: true,
-							style_formats: [],
-						},
-				  }
-				: { tinymce: null }),
-		})
-
-		if (window.tinymce) {
-			setTimeout(() => {
-				const maybeEditor = window.tinymce.editors[editorId]
-
-				if (maybeEditor) {
-					maybeEditor.on('input', listener)
-					maybeEditor.on('change', listener)
-				}
-			})
-		}
-
+	const mount = () => {
 		if (wp.oldEditor) {
-			setTimeout(
-				() => {
-					setTimeout(() => {
-						if (
-							window.tinymce &&
-							window.tinymce.editors[editorId]
-						) {
-							window.tinymce.editors[editorId].off(
-								'input',
-								listener
-							)
+			if (window.tinymce && window.tinymce.editors[editorId]) {
+				window.tinymce.editors[editorId].off('input', listener)
 
-							window.tinymce.editors[editorId].off(
-								'change',
-								listener
-							)
-						}
+				window.tinymce.editors[editorId].off('change', listener)
+			}
 
-						correctEditor().remove(editorId)
+			correctEditor().remove(editorId)
 
-						correctEditor().initialize(editorId, {
-							quicktags: true,
-							mediaButtons: true,
-							...option,
+			correctEditor().initialize(editorId, {
+				quicktags: true,
+				mediaButtons: true,
+				...option,
 
-							...(window.tinymce
-								? {
-										tinymce: {
-											toolbar1:
-												'formatselect,styleselect,bold,italic,bullist,numlist,link,alignleft,aligncenter,alignright,wp_adv',
-											toolbar2:
-												'strikethrough,hr,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help',
+				...(window.tinymce
+					? {
+							tinymce: {
+								toolbar1:
+									'formatselect,styleselect,bold,italic,bullist,numlist,link,alignleft,aligncenter,alignright,wp_adv',
+								toolbar2:
+									'strikethrough,hr,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help',
 
-											...(typeof option.tinymce ===
-											'object'
-												? option.tinymce
-												: {}),
-											style_formats_merge: true,
-											style_formats: [],
-										},
-								  }
-								: { tinymce: null }),
-						})
+								...(typeof option.tinymce === 'object'
+									? option.tinymce
+									: {}),
+								style_formats_merge: true,
+								style_formats: [],
+							},
+					  }
+					: { tinymce: null }),
+			})
 
-						if (window.tinymce) {
-							setTimeout(() => {
-								const maybeEditor =
-									window.tinymce.editors[editorId]
+			if (window.tinymce) {
+				setTimeout(() => {
+					const maybeEditor = window.tinymce.editors[editorId]
 
-								if (maybeEditor) {
-									maybeEditor.on('input', listener)
-									maybeEditor.on('change', listener)
-								}
-							})
-						}
-					}, 300)
-				},
+					if (maybeEditor) {
+						maybeEditor.on('input', listener)
+						maybeEditor.on('change', listener)
+					}
+				})
+			}
+		} else {
+			correctEditor().initialize(editorId, {
+				quicktags: true,
+				mediaButtons: true,
+				...option,
 
-				1000
-			)
+				...(window.tinymce
+					? {
+							tinymce: {
+								toolbar1:
+									'formatselect,styleselect,bold,italic,bullist,numlist,link,alignleft,aligncenter,alignright,wp_adv',
+								toolbar2:
+									'strikethrough,hr,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help',
+
+								...(typeof option.tinymce === 'object'
+									? option.tinymce
+									: {}),
+								style_formats_merge: true,
+								style_formats: [],
+							},
+					  }
+					: { tinymce: null }),
+			})
+
+			if (window.tinymce) {
+				setTimeout(() => {
+					const maybeEditor = window.tinymce.editors[editorId]
+
+					if (maybeEditor) {
+						maybeEditor.on('input', listener)
+						maybeEditor.on('change', listener)
+					}
+				})
+			}
 		}
+	}
+
+	const unmount = () => {
+		if (window.tinymce && window.tinymce.editors[editorId]) {
+			window.tinymce.editors[editorId].off('input', listener)
+			window.tinymce.editors[editorId].off('change', listener)
+		}
+
+		correctEditor().remove(editorId)
+	}
+
+	useEffect(() => {
+		mount()
+
+		const cb = () => {
+			const maybeEditor = window.tinymce.editors[editorId]
+
+			if (maybeEditor) {
+				maybeEditor.setContent(option.value)
+			}
+		}
+
+		ctEvents.on('ct:options:wp-editor:revert', cb)
 
 		return () => {
-			setTimeout(() => {
-				if (window.tinymce && window.tinymce.editors[editorId]) {
-					window.tinymce.editors[editorId].off('input', listener)
-					window.tinymce.editors[editorId].off('change', listener)
-				}
+			ctEvents.off('ct:options:wp-editor:revert', cb)
 
-				correctEditor().remove(editorId)
+			setTimeout(() => {
+				unmount()
 			}, 300)
 		}
 	}, [])
-
-	useEffect(() => {
-		if (editorId && window.tinymce) {
-			const maybeEditor = window.tinymce.get(editorId)
-
-			if (correctEditor().getContent(editorId) !== value && maybeEditor) {
-				maybeEditor.setContent(value)
-				maybeEditor.onChange.dispatch()
-			}
-		}
-	}, [value, editorId])
 
 	return (
 		<div className="ct-option-editor" {...(option.attr || {})}>
@@ -165,4 +156,10 @@ const TextArea = ({ id, value, option, onChange }) => {
 	)
 }
 
-export default TextArea
+WpEditor.renderingConfig = {
+	performRevert: ({ onChangeFor }) => {
+		ctEvents.trigger('ct:options:wp-editor:revert')
+	},
+}
+
+export default WpEditor

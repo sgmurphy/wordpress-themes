@@ -116,7 +116,11 @@ $options = [
 
 					'widgets_title_wrapper' => [
 						'label' => __( 'Widget Title Tag', 'blocksy' ),
-						'type' => 'ct-select',
+						'type' => (
+							function_exists('wp_use_widgets_block_editor')
+							&&
+							wp_use_widgets_block_editor()
+						) ? 'hidden' : 'ct-select',
 						'value' => 'h3',
 						'view' => 'text',
 						'design' => 'inline',
@@ -133,7 +137,6 @@ $options = [
 								'span' => 'span',
 							]
 						),
-						// 'desc' => __( 'Please note, this option will work only with legacy widgets.', 'blocksy' ),
 					],
 
 					blocksy_rand_md5() => [

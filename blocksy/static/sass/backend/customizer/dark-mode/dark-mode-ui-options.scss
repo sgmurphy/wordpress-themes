@@ -35,7 +35,7 @@
 
 
 	// ct-title
-	.ct-title {
+	.ct-options-container .ct-title {
 		h3 {
 			color: $light;
 		}
@@ -55,7 +55,7 @@
 		}
 	}
 
-	.ct-control > header label {
+	.ct-options-container .ct-control > header label {
 		color: lighten($background, 65%);
 	}
 

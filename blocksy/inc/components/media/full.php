@@ -22,6 +22,8 @@ if (! function_exists('blocksy_media')) {
 				'lazyload' => true,
 				'size' => 'medium',
 
+				'include_original_image_size' => false,
+
 				// default | woo
 				'no_image_type' => 'default',
 
@@ -151,6 +153,13 @@ if (! function_exists('blocksy_media')) {
 
 				$attachment = get_post($args['attachment_id']);
 
+				if ($args['include_original_image_size']) {
+					$args['img_atts']['data-original'] = wp_get_attachment_image_src(
+						$args['attachment_id'],
+						'full'
+					)[0];
+				}
+
 				$args['img_atts'] = apply_filters(
 					'wp_get_attachment_image_attributes',
 					array_merge(
@@ -180,7 +189,13 @@ if (! function_exists('blocksy_media')) {
 
 		$image_result = blocksy_get_image_element($args);
 
-		if ($args['display_video']) {
+		if (
+			$args['display_video']
+			&&
+			function_exists('blc_fs')
+			&&
+			blc_fs()->can_use_premium_code()
+		) {
 			$maybe_video_result = blocksy_has_video_element($args);
 
 			if ($maybe_video_result) {
@@ -290,6 +305,8 @@ if (! function_exists('blocksy_get_image_element')) {
 
 		if (! empty($args['other_images'])) {
 			foreach ($args['other_images'] as $other_image) {
+				$other_attachment_id = $other_image;
+
 				$other_image = wp_get_attachment_image(
 					$other_image,
 					$args['size'],
@@ -302,6 +319,17 @@ if (! function_exists('blocksy_get_image_element')) {
 					'class',
 					'ct-swap'
 				);
+
+				if ($args['include_original_image_size']) {
+					$other_image = $parser->add_attribute_to_images(
+						$other_image,
+						'data-original',
+						wp_get_attachment_image_src(
+							$other_attachment_id,
+							'full'
+						)[0]
+					);
+				}
 
 				if ($args['aspect_ratio']) {
 					$other_image = $parser->add_attribute_to_images(

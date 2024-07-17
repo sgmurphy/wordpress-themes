@@ -103,6 +103,27 @@ add_action(
 				$deps,
 				$theme->get('Version')
 			);
+
+			$styles_deps = [];
+
+			if (
+				$current_screen->base === 'nav-menus'
+				||
+				(
+					$current_screen->base === 'post'
+					&&
+					$current_screen->is_block_editor
+				)
+			) {
+				$styles_deps[] = 'wp-components';
+			}
+
+			wp_enqueue_style(
+				'ct-options-styles',
+				get_template_directory_uri() . '/static/bundle/options.min.css',
+				$styles_deps,
+				$theme->get('Version')
+			);
 		}
 
 		$locale_data_ct = blocksy_get_jed_locale_data('blocksy');
@@ -112,26 +133,6 @@ add_action(
 			'wp.i18n.setLocaleData( ' . wp_json_encode($locale_data_ct) . ', "blocksy" );'
 		);
 
-		$styles_deps = [];
-
-		if (
-			$current_screen->base === 'nav-menus'
-			||
-			(
-				$current_screen->base === 'post'
-				&&
-				$current_screen->is_block_editor
-			)
-		) {
-			$styles_deps[] = 'wp-components';
-		}
-
-		wp_enqueue_style(
-			'ct-options-styles',
-			get_template_directory_uri() . '/static/bundle/options.min.css',
-			$styles_deps,
-			$theme->get('Version')
-		);
 
 		if (is_rtl()) {
 			wp_enqueue_style(
@@ -195,7 +196,7 @@ add_action(
 				'gutenberg_metaboxes_data' => apply_filters(
 					'blocksy:gutenberg-metaboxes-data',
 					[]
-				),
+				)
 			]
 		);
 	},

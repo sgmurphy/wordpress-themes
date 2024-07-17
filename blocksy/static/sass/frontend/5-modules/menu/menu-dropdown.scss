@@ -86,8 +86,12 @@
 }
 
 .animated-submenu-inline {
-	--dropdown-toggle-margin-start: auto;
-	--toggle-ghost-inset-end: calc(var(--dropdown-items-spacing, 13px) * 1.5 + 16px);
+
+	[class*='ct-toggle'] {
+		--toggle-button-size: 18px;
+		--dropdown-toggle-margin-start: auto;
+		--toggle-ghost-inset-end: calc(var(--dropdown-items-spacing, 13px) * 1.5 + 16px);
+	}
 
 	&[data-submenu='left'] > a {
 		--toggle-icon-transform: rotate(90deg);

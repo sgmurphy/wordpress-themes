@@ -114,10 +114,13 @@ watchOptionsWithPrefix({
 					'.ct-related-posts .ct-media-container'
 				)
 			).map((el) => {
-				setRatioFor(
-					getOptionFor('related_featured_image_ratio', prefix),
-					el
-				)
+				setRatioFor({
+					ratio: getOptionFor(
+						'related_featured_image_ratio',
+						prefix
+					),
+					el,
+				})
 			})
 		}
 

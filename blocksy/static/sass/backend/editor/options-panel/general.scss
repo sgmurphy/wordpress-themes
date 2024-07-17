@@ -6,7 +6,7 @@
 }
 
 
-// sidebar & editor new width
+// sidebar & editor width - up to WP 6.5
 @media (min-width: 782px) {
 	body .edit-post-layout.is-sidebar-opened .edit-post-sidebar {
 		width: 320px !important;
@@ -16,3 +16,15 @@
 		margin-right: 320px !important;
 	}
 }
+
+
+// sidebar & editor width - WP 6.6
+// not a good solution, we need to change the width from JS
+// .interface-interface-skeleton__sidebar:not(:empty) {
+// 	width: 320px;
+// }
+
+// .interface-complementary-area__fill,
+// .interface-complementary-area.editor-sidebar {
+// 	width: 100% !important;
+// }
