@@ -2,8 +2,8 @@
 
 Author: WP Royal
 Requires at least: WordPress 4.7+
-Tested up to: WordPress 6.5.4
-Version: 1.0.122
+Tested up to: WordPress 6.6
+Version: 1.0.123
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: blog, e-commerce, one-column, custom-background, custom-colors, full-width-template, custom-menu, custom-logo, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
