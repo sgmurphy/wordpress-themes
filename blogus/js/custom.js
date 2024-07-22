@@ -41,11 +41,17 @@ function taupr() {
 taupr();
 })(jQuery);
 
-document.addEventListener('keydown', (event) => {
+function addKeydownListener() {
+  document.addEventListener('keydown', keydownHandler);
+}
+function removeKeydownListener() {
+  document.removeEventListener('keydown', keydownHandler);
+}
+function keydownHandler(event) {
   if (event.key === 'Tab') {
     var focusedElement = document.activeElement;
     var parentElement = document.getElementById('navbar-wp');
-    var ulParent = parentElement.querySelector("ul.navbar-nav");
+    var ulParent = parentElement.querySelector("ul.nav.navbar-nav");
     var lastChild = ulParent.lastElementChild.firstElementChild;
 
     // Check if the focused element is the last child
@@ -59,7 +65,17 @@ document.addEventListener('keydown', (event) => {
       returnFocus.focus();
     }
   }
-});
+}
+function checkWindowSize() {
+  if (window.innerWidth < 992) {
+    addKeydownListener();
+  } else {
+    removeKeydownListener();
+  }
+}
+
+checkWindowSize();
+window.addEventListener('resize', checkWindowSize);
 
 document.addEventListener('DOMContentLoaded', function() {
   var pageTitle = document.querySelector('.bs-card-box.page-entry-title + .row .page-title');

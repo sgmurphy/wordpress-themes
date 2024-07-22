@@ -142,7 +142,14 @@ function colmnthree() {
 }
 colmnthree();
 
-document.addEventListener('keydown', (event) => {
+
+function addKeydownListener() {
+  document.addEventListener('keydown', keydownHandler);
+}
+function removeKeydownListener() {
+  document.removeEventListener('keydown', keydownHandler);
+}
+function keydownHandler(event) {
   if (event.key === 'Tab') {
     var focusedElement = document.activeElement;
     var parentElement = document.getElementById('navbar-wp');
@@ -160,4 +167,14 @@ document.addEventListener('keydown', (event) => {
       returnFocus.focus();
     }
   }
-});
+}
+function checkWindowSize() {
+  if (window.innerWidth < 992) {
+    addKeydownListener();
+  } else {
+    removeKeydownListener();
+  }
+}
+
+checkWindowSize();
+window.addEventListener('resize', checkWindowSize);
