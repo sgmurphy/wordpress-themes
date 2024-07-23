@@ -16364,10 +16364,8 @@ body {
 #customize-controls #colibri-customizer-main-section-content #colibri-main-section-content {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
-  -webkit-transition: 0.18s -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: 0.18s -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: 0.18s transform cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: 0.18s transform cubic-bezier(0.645, 0.045, 0.355, 1), 0.18s -webkit-transform cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition: none !important;
+  transition: none !important;
   pointer-events: all;
   position: absolute;
   padding-left: 0px;
