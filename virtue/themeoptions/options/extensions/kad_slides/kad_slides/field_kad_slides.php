@@ -12,7 +12,9 @@ if (!class_exists('ReduxFramework_kad_slides')) {
      * @since       1.0.0
      */
     class ReduxFramework_kad_slides {
-
+        public $parent;
+        public $field;
+        public $value;
         /**
          * Field Constructor.
          *

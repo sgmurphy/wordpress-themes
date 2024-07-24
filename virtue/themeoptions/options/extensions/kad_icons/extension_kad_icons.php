@@ -38,6 +38,7 @@ if( !class_exists( 'ReduxFramework_Extension_kad_icons' ) ) {
         public $extension_url;
         public $extension_dir;
         public static $theInstance;
+        public $field_name = '';
 
         /**
         * Class Constructor. Defines the args for the extions class

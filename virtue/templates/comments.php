@@ -32,7 +32,7 @@ if ( have_comments() && ( comments_open() || get_comments_number() ) ) : ?>
 				'reverse_top_level' => null,
 				'reverse_children'  => '',
 				'format'            => 'html5',
-				'short_ping'        => false,
+				'short_ping'        => true,
 				'echo'              => true
 			);
 			wp_list_comments( $args ); ?>

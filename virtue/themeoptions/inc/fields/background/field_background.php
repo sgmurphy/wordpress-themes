@@ -31,7 +31,9 @@
          * @since       3.1.5
          */
         class ReduxFramework_background {
-
+            public $parent;
+            public $field;
+            public $value;
             /**
              * Field Constructor.
              * Required - must call the parent constructor, then assign field and value to vars, and obviously call the render field function

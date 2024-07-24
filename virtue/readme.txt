@@ -48,6 +48,10 @@ developers of this theme.
 
 = Theme Name: Virtue =
 
+= Version 3.4.10 | 23rd July 2024 =
+* Update: WC Templates
+* Update: PHP 8.2 deprecations
+
 = Version 3.4.9 | 24th April 2024 =
 * Update: WC Templates
 * Update: esc author name.

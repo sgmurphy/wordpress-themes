@@ -25,6 +25,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'ReduxFramework_palette' ) ) {
     class ReduxFramework_palette {
+        public $parent;
+        public $field;
+        public $value;
 
         /**
          * Field Constructor.

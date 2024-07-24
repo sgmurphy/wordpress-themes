@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     7.8.0
+ * @version     9.0.0
  */
 
 
@@ -28,25 +28,18 @@ $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_cl
 	'images',
 	'kad-light-gallery',
 ) );
-if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
-	if(isset($virtue['product_gallery_slider']) && 1 == $virtue['product_gallery_slider']) {
-		$galleryslider = 'woo_product_slider_enabled';
-		$galslider = true;
-	} else {
-		$galleryslider = 'woo_product_slider_disabled';
-		$galslider = false;
-	}
-	if(isset($virtue['product_gallery_zoom']) && 1 == $virtue['product_gallery_zoom']) {
-		$galleryzoom = 'woo_product_zoom_enabled';
-		$galzoom = true;
-	} else {
-		$galleryzoom= 'woo_product_zoom_disabled';
-		$galzoom = false;
-	}
+if(isset($virtue['product_gallery_slider']) && 1 == $virtue['product_gallery_slider']) {
+	$galleryslider = 'woo_product_slider_enabled';
+	$galslider = true;
 } else {
 	$galleryslider = 'woo_product_slider_disabled';
 	$galslider = false;
-	$galleryzoom = 'woo_product_zoom_disabled';
+}
+if(isset($virtue['product_gallery_zoom']) && 1 == $virtue['product_gallery_zoom']) {
+	$galleryzoom = 'woo_product_zoom_enabled';
+	$galzoom = true;
+} else {
+	$galleryzoom= 'woo_product_zoom_disabled';
 	$galzoom = false;
 }
 if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0) {

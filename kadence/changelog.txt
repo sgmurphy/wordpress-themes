@@ -1,3 +1,7 @@
+== 1.2.7 | 23rd July 2024 ==
+* Add: Order, orderby and title to related posts section.
+* Fix: Alt text in archive featured images.
+
 == 1.2.6 | 26th June 2024 ==
 * Add: Settings to adjust off canvas width.
 * Add: Option to disable microdata schema.

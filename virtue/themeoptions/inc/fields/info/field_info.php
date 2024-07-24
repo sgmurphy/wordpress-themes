@@ -33,6 +33,9 @@
          * @since       1.0.0
          */
         class ReduxFramework_info {
+            public $parent;
+            public $field;
+            public $value;
 
             /**
              * Field Constructor.

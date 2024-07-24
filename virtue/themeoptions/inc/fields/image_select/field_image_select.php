@@ -19,6 +19,7 @@
  * @version     3.0.0
  */
 
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
@@ -26,13 +27,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Don't duplicate me!
 if ( ! class_exists( 'ReduxFramework_image_select' ) ) {
-
     /**
      * Main ReduxFramework_image_select class
-     *
+     * 
      * @since       1.0.0
      */
     class ReduxFramework_image_select {
+        public $parent;
+        public $field;
+        public $value;
 
         /**
          * Field Constructor.

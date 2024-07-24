@@ -2452,6 +2452,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					'post_related_style'      => 'wide',
 					'post_related_carousel_loop' => true,
 					'post_related_columns'    => '',
+					'post_related_title'      => '',
+					'post_related_orderby'    => '',
+					'post_related_order'    => '',
 					'post_related_title_font' => array(
 						'size' => array(
 							'desktop' => '',

@@ -20,7 +20,7 @@ function virtue_setup() {
 		)
 	);
 
-	define( 'VIRTUE_VERSION', '3.4.8' );
+	define( 'VIRTUE_VERSION', '3.4.10' );
 
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );

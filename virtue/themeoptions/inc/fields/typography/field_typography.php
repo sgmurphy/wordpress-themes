@@ -18,7 +18,9 @@
 
 if ( ! class_exists( 'ReduxFramework_typography' ) ) {
     class ReduxFramework_typography {
-
+        public $parent;
+        public $field;
+        public $value;
         private $std_fonts = array(
             "Arial, Helvetica, sans-serif"                         => "Arial, Helvetica, sans-serif",
             "'Arial Black', Gadget, sans-serif"                    => "'Arial Black', Gadget, sans-serif",
