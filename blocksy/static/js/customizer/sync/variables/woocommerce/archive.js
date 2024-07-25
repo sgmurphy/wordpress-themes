@@ -25,6 +25,8 @@ export const getWooArchiveVariablesFor = () => ({
 				product_swatches:
 					'[data-products] .product .ct-card-variation-swatches',
 				product_sku: '[data-products] .product .ct-product-sku',
+				product_stock_scarcity:
+					'[data-products] .product .ct-product-stock-scarcity',
 			}
 
 			if (selectorsMap[layer.id]) {

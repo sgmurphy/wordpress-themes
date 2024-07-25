@@ -73,7 +73,7 @@ if (! function_exists('blocksy_schema_org_definitions')) {
 					'itemscope' => 'itemscope',
 					'itemtype' => 'https://schema.org/WebPage'
 				];
-			} else if (function_exists('is_product') && is_product()) {
+			} else if (blocksy_manager()->screen->is_product()) {
 				$value = [
 					'itemscope' => 'itemscope',
 					'itemtype' => 'https://schema.org/WebPage'

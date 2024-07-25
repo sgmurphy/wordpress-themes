@@ -134,7 +134,7 @@ add_action(
 
 		echo '<div ' . blocksy_attr_to_html($attr) . ' ' . wp_kses(blocksy_sidebar_position_attr(), []) . ' ' . blocksy_get_v_spacing() . '>';
 
-		if (is_product()) {
+		if (blocksy_manager()->screen->is_product()) {
 			echo '<article class="post-' . get_the_ID() . '">';
 		} else {
 			echo '<section>';
@@ -177,7 +177,7 @@ add_action(
 			return;
 		}
 
-		if (is_product()) {
+		if (blocksy_manager()->screen->is_product()) {
 			echo '</article>';
 		} else {
 			echo '</section>';

@@ -32,6 +32,7 @@ foreach ($woo_card_layout as $layer) {
 			'product_swatches' => '[data-products] .product .ct-card-variation-swatches',
 			'content-block' => '[data-products] .product .ct-product-content-block',
 			'product_sku' => '[data-products] .product .ct-product-sku',
+			'product_stock_scarcity' => '[data-products] .product .ct-product-stock-scarcity',
 		];
 
 		if ($shop_cards_type === 'type-1') {

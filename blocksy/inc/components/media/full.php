@@ -192,9 +192,9 @@ if (! function_exists('blocksy_media')) {
 		if (
 			$args['display_video']
 			&&
-			function_exists('blc_fs')
+			class_exists('\Blocksy\Plugin')
 			&&
-			blc_fs()->can_use_premium_code()
+			\Blocksy\Plugin::instance()->premium
 		) {
 			$maybe_video_result = blocksy_has_video_element($args);
 

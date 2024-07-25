@@ -1,3 +1,11 @@
+2.0.59: 2024-07-25
+- Improvement: Better apply single product modifications to handle pages made with `[product_page]` shortcode
+- Improvement: Bring "custom class" feature to footer button element
+- Improvement: Correctly load customizer preview when WP Optimize is active
+- Improvement: Pagination infinity scroll - better handle layouts made with Elementor
+- Improvement: Products card type 1 - add option to align add to cart button
+- Improvement: Star rating styling issue for cross sell products if new WooCommerce Cart block is used
+
 2.0.58: 2024-07-17
 - Improvement: Classic Widgets plugin causes a customizer conflict in color palettes dropdown
 - Improvement: Load back to top styles earlier for iOS devices

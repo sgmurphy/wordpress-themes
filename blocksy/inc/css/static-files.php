@@ -220,7 +220,7 @@ class Blocksy_Static_Css_Files {
 					(
 						function_exists('is_woocommerce')
 						&&
-						is_product()
+						blocksy_manager()->screen->is_product()
 					)
 					||
 					is_singular('blc-product-review')

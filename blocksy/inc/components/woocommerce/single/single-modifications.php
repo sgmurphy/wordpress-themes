@@ -17,7 +17,11 @@ function blocksy_woocommerce_has_flexy_view() {
 	);
 
 	if (
-		(is_product() || wp_doing_ajax())
+		(
+			blocksy_manager()->screen->is_product()
+			||
+			wp_doing_ajax()
+		)
 		&&
 		! blocksy_manager()->screen->uses_woo_default_template()
 		&&
@@ -361,7 +365,7 @@ add_action(
 if (! function_exists('blocksy_woo_single_product_after_main_content')) {
 	function blocksy_woo_single_product_after_main_content() {
 		if (
-			! is_product()
+			! blocksy_manager()->screen->is_product()
 			||
 			blocksy_get_theme_mod('woo_has_related_upsells', 'yes') !== 'yes'
 		) {
@@ -452,7 +456,7 @@ add_filter('woocommerce_upsells_columns', function ($columns) {
 });
 
 add_filter('comment_class', function ($classes, $class, $comment_id, $comment) {
-	if (! is_product()) {
+	if (! blocksy_manager()->screen->is_product()) {
 		return $classes;
 	}
 

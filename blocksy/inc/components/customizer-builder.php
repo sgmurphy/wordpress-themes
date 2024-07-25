@@ -125,6 +125,8 @@ class Blocksy_Customizer_Builder {
 
 				$row_id = null;
 
+				$row_ids = [];
+
 				if (isset($item['is_primary']) && $item['is_primary']) {
 					$row_id = $item['id'];
 					$css_args['primary_item'] = $render->get_primary_item($item['id']);
@@ -134,6 +136,7 @@ class Blocksy_Customizer_Builder {
 							foreach ($row['placements'] as $single_placement) {
 								if (in_array($item['id'], $single_placement['items'])) {
 									$row_id = $row['id'];
+									$row_ids[] = $row['id'];
 								}
 							}
 						}
@@ -144,6 +147,7 @@ class Blocksy_Customizer_Builder {
 							foreach ($row['placements'] as $single_placement) {
 								if (in_array($item['id'], $single_placement['items'])) {
 									$row_id = $row['id'];
+									$row_ids[] = $row['id'];
 								}
 							}
 						}
@@ -155,6 +159,7 @@ class Blocksy_Customizer_Builder {
 					array_merge([
 						'section_id' => $args['section_id'],
 						'row_id' => $row_id,
+						'row_ids' => $row_ids,
 						'panel_type' => $args['panel_type'],
 						'path' => $item['path'] . '/dynamic-styles.php',
 						'root_selector' => $render->get_root_selector($item),

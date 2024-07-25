@@ -35,7 +35,7 @@ add_action(
 );
 
 add_action('woocommerce_post_class', function ($classes) {
-	if (! is_product()) {
+	if (! blocksy_manager()->screen->is_product()) {
 		return $classes;
 	}
 
@@ -63,7 +63,7 @@ add_filter(
 );
 
 function blocksy_woo_single_post_class($classes, $product) {
-	if (!is_product()) {
+	if (! blocksy_manager()->screen->is_product()) {
 		return $classes;
 	}
 

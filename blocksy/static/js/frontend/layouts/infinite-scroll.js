@@ -5,7 +5,12 @@ import ctEvents from 'ct-events'
 const generateQuerySelector = (el) => {
 	let itemsToSkip = '.yit-wcan-container'
 
-	const classesToSkip = ['active', 'ct-active', 'wpgb-enabled']
+	const classesToSkip = [
+		'active',
+		'ct-active',
+		'wpgb-enabled',
+		'e-lazyloaded',
+	]
 
 	let parents = []
 

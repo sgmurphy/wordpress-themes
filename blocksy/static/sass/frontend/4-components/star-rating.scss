@@ -8,7 +8,9 @@
 
 $star_rating_selectors:
 	'.star-rating',
+	'.wc-block-components-product-rating-stars__stars',
 	'.wc-block-rating-filter .wc-block-components-product-rating__stars',
+	'.wc-block-grid__product-rating .wc-block-grid__product-rating__stars',
 	'.has-rating .wc-block-components-review-list-item__rating > .wc-block-components-review-list-item__rating__stars',
 ;
 

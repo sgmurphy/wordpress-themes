@@ -202,9 +202,6 @@ class SearchReplace {
 		if (method_exists($wpdb, 'esc_like')) {
 			// 4.0
 			$old = $wpdb->esc_like($old);
-		} else {
-			// phpcs:ignore WordPress.WP.DeprecatedFunctions.like_escapeFound -- BC-layer for WP 3.9 or less.
-			$old = like_escape(esc_sql($old)); // Note: this double escaping is actually necessary, even though `esc_like()` will be used in a `prepare()`.
 		}
 
 		return $old;

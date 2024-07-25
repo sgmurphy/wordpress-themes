@@ -61,6 +61,7 @@ const handleItemChangeFor = (args = {}) => {
 			? itemDescriptors({
 					itemId: shortenItemId(itemId),
 					fullItemId: itemId,
+					values,
 			  })
 			: itemDescriptors
 	)[optionId]

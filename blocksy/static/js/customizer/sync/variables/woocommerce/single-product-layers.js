@@ -30,6 +30,8 @@ const collectVariablesForLayers = (v) => {
 				'.entry-summary-items > .ct-product-additional-actions',
 			product_countdown:
 				'.entry-summary-items > .ct-product-sale-countdown',
+			product_stock_scarcity:
+				'.entry-summary-items > .ct-product-stock-scarcity',
 		}
 
 		if (selectorsMap[layer.id]) {

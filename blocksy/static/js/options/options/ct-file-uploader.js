@@ -84,7 +84,7 @@ export default class ImageUploader extends Component {
 					<button
 						className="button"
 						onClick={() => this.openFrame()}>
-						{__('Choose File', 'blocksy-companion')}
+						{__('Choose File', 'blocksy')}
 					</button>
 				</Fragment>
 			</div>

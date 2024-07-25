@@ -58,6 +58,7 @@ foreach ($woo_single_layout as $layer) {
 		'free_shipping' => '.entry-summary-items > .ct-shipping-progress',
 		'product_actions' => '.entry-summary-items > .ct-product-additional-actions',
 		'product_countdown' => '.entry-summary-items > .ct-product-sale-countdown',
+		'product_stock_scarcity' => '.entry-summary-items > .ct-product-stock-scarcity',
 	];
 
 	$spacing_default = 10;

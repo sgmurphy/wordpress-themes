@@ -48,7 +48,11 @@ class WooCommerceAddToCart {
 
 	private function output_cart_action_open() {
 		if (
-			(is_product() || wp_doing_ajax())
+			(
+				blocksy_manager()->screen->is_product()
+				||
+				wp_doing_ajax()
+			)
 			&&
 			! blocksy_manager()->screen->uses_woo_default_template()
 		) {
@@ -173,7 +177,7 @@ class WooCommerceAddToCart {
 		// On single product pages we know for sure that there's only one
 		// product that needs handling. On other pages or during AJAX requests,
 		// we need to make sure that we don't handle the same product twice.
-		if (is_product()) {
+		if (blocksy_manager()->screen->is_product()) {
 			$this->detach_hooks();
 		} else {
 			$this->handled_product_ids[] = $product->get_id();
@@ -210,7 +214,7 @@ class WooCommerceAddToCart {
 			$woocommerce_loop['name'] === 'related'
 			||
 			(
-				! is_product()
+				! blocksy_manager()->screen->is_product()
 				&&
 				! wp_doing_ajax()
 			)

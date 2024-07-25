@@ -252,7 +252,7 @@ $overridable_card_options = [
 								],
 
 								'spacing' => [
-									'label' => __('Bottom Spacing', 'blocksy-companion'),
+									'label' => __('Bottom Spacing', 'blocksy'),
 									'type' => 'ct-slider',
 									'min' => 0,
 									'max' => 100,
@@ -425,7 +425,7 @@ $overridable_card_options = [
 								],
 
 								'spacing' => [
-									'label' => __('Bottom Spacing', 'blocksy-companion'),
+									'label' => __('Bottom Spacing', 'blocksy'),
 									'type' => 'ct-slider',
 									'min' => 0,
 									'max' => 100,
@@ -470,7 +470,7 @@ $overridable_card_options = [
 								],
 
 								'spacing' => [
-									'label' => __('Bottom Spacing', 'blocksy-companion'),
+									'label' => __('Bottom Spacing', 'blocksy'),
 									'type' => 'ct-slider',
 									'min' => 0,
 									'max' => 100,
@@ -522,7 +522,7 @@ $overridable_card_options = [
 								],
 
 								'spacing' => [
-									'label' => __('Bottom Spacing', 'blocksy-companion'),
+									'label' => __('Bottom Spacing', 'blocksy'),
 									'type' => 'ct-slider',
 									'min' => 0,
 									'max' => 100,
@@ -569,7 +569,7 @@ $overridable_card_options = [
 								]),
 
 								'spacing' => [
-									'label' => __('Bottom Spacing', 'blocksy-companion'),
+									'label' => __('Bottom Spacing', 'blocksy'),
 									'type' => 'ct-slider',
 									'min' => 0,
 									'max' => 100,
@@ -590,7 +590,7 @@ $overridable_card_options = [
 							],
 							'options' => [
 								'spacing' => [
-									'label' => __('Bottom Spacing', 'blocksy-companion'),
+									'label' => __('Bottom Spacing', 'blocksy'),
 									'type' => 'ct-slider',
 									'min' => 0,
 									'max' => 100,

@@ -496,6 +496,26 @@ class Blocksy_Screen_Manager {
 
 		return $this->process_allowed_prefixes($actual_prefix, $args);
 	}
+
+	public function is_product() {
+		global $wp_query;
+		
+		if (! function_exists('is_product')) {
+			return false;
+		}
+
+		$post_type = $wp_query->get('post_type');
+
+		if (! is_array($post_type)) {
+			$post_type = [$post_type];
+		}
+
+		return is_product() || (
+			$wp_query->is_single
+			&&
+			in_array('product', $post_type)
+		);
+	}
 }
 
 /**

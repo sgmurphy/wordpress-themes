@@ -69,6 +69,49 @@ blocksy_output_font_css([
 
 
 // Font color
+$font_variables = [
+	'default' => [
+		'selector' => blocksy_assemble_selector(
+			blocksy_mutate_selector([
+				'selector' => $root_selector,
+				'operation' => 'suffix',
+				'to_add' => '> ul > li > a'
+			])
+		),
+		'variable' => 'theme-link-initial-color'
+	]
+];
+
+$hover_option_id = 'hover';
+$active_option_id = 'active';
+
+if ($menu_type === 'type-3') {
+	$hover_option_id = 'hover-type-3';
+	$active_option_id = 'active-type-3';
+}
+
+$font_variables[$hover_option_id] = [
+	'selector' => blocksy_assemble_selector(
+		blocksy_mutate_selector([
+			'selector' => $root_selector,
+			'operation' => 'suffix',
+			'to_add' => '> ul > li > a'
+		])
+	),
+	'variable' => 'theme-link-hover-color'
+];
+
+$font_variables[$active_option_id] = [
+	'selector' => blocksy_assemble_selector(
+		blocksy_mutate_selector([
+			'selector' => $root_selector,
+			'operation' => 'suffix',
+			'to_add' => '> ul > li > a'
+		])
+	),
+	'variable' => 'theme-link-active-color'
+];
+
 blocksy_output_colors([
 	'value' => blocksy_akg('menuFontColor', $atts),
 	'default' => [
@@ -80,62 +123,7 @@ blocksy_output_colors([
 		'active-type-3' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 	],
 	'css' => $css,
-	'variables' => [
-		'default' => [
-			'selector' => blocksy_assemble_selector(
-				blocksy_mutate_selector([
-					'selector' => $root_selector,
-					'operation' => 'suffix',
-					'to_add' => '> ul > li > a'
-				])
-			),
-			'variable' => 'theme-link-initial-color'
-		],
-
-		'hover' => [
-			'selector' => blocksy_assemble_selector(
-				blocksy_mutate_selector([
-					'selector' => $root_selector,
-					'operation' => 'suffix',
-					'to_add' => '> ul > li > a'
-				])
-			),
-			'variable' => 'theme-link-hover-color'
-		],
-
-		'active' => [
-			'selector' => blocksy_assemble_selector(
-				blocksy_mutate_selector([
-					'selector' => $root_selector,
-					'operation' => 'suffix',
-					'to_add' => '> ul > li > a'
-				])
-			),
-			'variable' => 'theme-link-active-color'
-		],
-
-		'hover-type-3' => [
-			'selector' => blocksy_assemble_selector(
-				blocksy_mutate_selector([
-					'selector' => $root_selector,
-					'operation' => 'el-suffix',
-					'to_add' => '[data-menu*="type-3"] > ul > li > a'
-				])
-			),
-			'variable' => 'theme-link-hover-color'
-		],
-
-		'active-type-3' => [
-			'selector' => blocksy_assemble_selector(
-				blocksy_mutate_selector([
-					'selector' => $root_selector,
-					'operation' => 'el-suffix',
-					'to_add' => '[data-menu*="type-3"] > ul > li > a'
-				])
-			),
-			'variable' => 'theme-link-active-color'
-		],
-	],
+	'variables' => $font_variables
 ]);
 
 // Active indicator color
@@ -151,7 +139,7 @@ blocksy_output_colors([
 			'selector' => blocksy_assemble_selector($root_selector),
 			'variable' => 'menu-indicator-hover-color'
 		],
-		
+
 		'active' => [
 			'selector' => blocksy_assemble_selector($root_selector),
 			'variable' => 'menu-indicator-active-color'
@@ -239,6 +227,55 @@ blocksy_output_colors([
 
 // transparent state
 if (isset($has_transparent_header) && $has_transparent_header) {
+	$font_variables = [
+		'default' => [
+			'selector' => blocksy_assemble_selector(
+				blocksy_mutate_selector([
+					'selector' => blocksy_mutate_selector([
+						'selector' => $root_selector,
+						'operation' => 'suffix',
+						'to_add' => '> ul > li > a'
+					]),
+					'operation' => 'between',
+					'to_add' => '[data-transparent-row="yes"]'
+				])
+			),
+			'variable' => 'theme-link-initial-color'
+		]
+	];
+
+	$font_variables[$hover_option_id] = [
+		'selector' => blocksy_assemble_selector(
+			blocksy_mutate_selector([
+				'selector' => blocksy_mutate_selector([
+					'selector' => $root_selector,
+					'operation' => 'suffix',
+					'to_add' => '> ul > li > a'
+				]),
+				'operation' => 'between',
+				'to_add' => '[data-transparent-row="yes"]'
+			])
+		),
+
+		'variable' => 'theme-link-hover-color'
+	];
+
+	$font_variables[$active_option_id] = [
+		'selector' => blocksy_assemble_selector(
+			blocksy_mutate_selector([
+				'selector' => blocksy_mutate_selector([
+					'selector' => $root_selector,
+					'operation' => 'suffix',
+					'to_add' => '> ul > li > a'
+				]),
+				'operation' => 'between',
+				'to_add' => '[data-transparent-row="yes"]'
+			])
+		),
+
+		'variable' => 'theme-link-active-color'
+	];
+
 	blocksy_output_colors([
 		'value' => blocksy_akg('transparentMenuFontColor', $atts),
 		'default' => [
@@ -250,83 +287,7 @@ if (isset($has_transparent_header) && $has_transparent_header) {
 			'active-type-3' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 		],
 		'css' => $css,
-
-		'variables' => [
-			'default' => [
-				'selector' => blocksy_assemble_selector(
-					blocksy_mutate_selector([
-						'selector' => blocksy_mutate_selector([
-							'selector' => $root_selector,
-							'operation' => 'suffix',
-							'to_add' => '> ul > li > a'
-						]),
-						'operation' => 'between',
-						'to_add' => '[data-transparent-row="yes"]'
-					])
-				),
-				'variable' => 'theme-link-initial-color'
-			],
-
-			'hover' => [
-				'selector' => blocksy_assemble_selector(
-					blocksy_mutate_selector([
-						'selector' => blocksy_mutate_selector([
-							'selector' => $root_selector,
-							'operation' => 'suffix',
-							'to_add' => '> ul > li > a'
-						]),
-						'operation' => 'between',
-						'to_add' => '[data-transparent-row="yes"]'
-					])
-				),
-				'variable' => 'theme-link-hover-color'
-			],
-
-			'active' => [
-				'selector' => blocksy_assemble_selector(
-					blocksy_mutate_selector([
-						'selector' => blocksy_mutate_selector([
-							'selector' => $root_selector,
-							'operation' => 'suffix',
-							'to_add' => '> ul > li > a'
-						]),
-						'operation' => 'between',
-						'to_add' => '[data-transparent-row="yes"]'
-					])
-				),
-				'variable' => 'theme-link-active-color'
-			],
-
-			'hover-type-3' => [
-				'selector' => blocksy_assemble_selector(
-					blocksy_mutate_selector([
-						'selector' => blocksy_mutate_selector([
-							'selector' => $root_selector,
-							'operation' => 'el-suffix',
-							'to_add' => '[data-menu*="type-3"] > ul > li > a'
-						]),
-						'operation' => 'between',
-						'to_add' => '[data-transparent-row="yes"]'
-					])
-				),
-				'variable' => 'theme-link-hover-color'
-			],
-
-			'active-type-3' => [
-				'selector' => blocksy_assemble_selector(
-					blocksy_mutate_selector([
-						'selector' => blocksy_mutate_selector([
-							'selector' => $root_selector,
-							'operation' => 'el-suffix',
-							'to_add' => '[data-menu*="type-3"] > ul > li > a'
-						]),
-						'operation' => 'between',
-						'to_add' => '[data-transparent-row="yes"]'
-					])
-				),
-				'variable' => 'theme-link-active-color'
-			],
-		],
+		'variables' => $font_variables
 	]);
 
 	blocksy_output_colors([
@@ -463,6 +424,53 @@ if (isset($has_transparent_header) && $has_transparent_header) {
 
 // sticky state
 if (isset($has_sticky_header) && $has_sticky_header) {
+	$font_variables = [
+		'default' => [
+			'selector' => blocksy_assemble_selector(
+				blocksy_mutate_selector([
+					'selector' => blocksy_mutate_selector([
+						'selector' => $root_selector,
+						'operation' => 'suffix',
+						'to_add' => '> ul > li > a'
+					]),
+					'operation' => 'between',
+					'to_add' => '[data-sticky*="yes"]'
+				])
+			),
+			'variable' => 'theme-link-initial-color'
+		]
+	];
+
+	$font_variables[$hover_option_id] = [
+		'selector' => blocksy_assemble_selector(
+			blocksy_mutate_selector([
+				'selector' => blocksy_mutate_selector([
+					'selector' => $root_selector,
+					'operation' => 'suffix',
+					'to_add' => '> ul > li > a'
+				]),
+				'operation' => 'between',
+				'to_add' => '[data-sticky*="yes"]'
+			])
+		),
+		'variable' => 'theme-link-hover-color'
+	];
+
+	$font_variables[$active_option_id] = [
+		'selector' => blocksy_assemble_selector(
+			blocksy_mutate_selector([
+				'selector' => blocksy_mutate_selector([
+					'selector' => $root_selector,
+					'operation' => 'suffix',
+					'to_add' => '> ul > li > a'
+				]),
+				'operation' => 'between',
+				'to_add' => '[data-sticky*="yes"]'
+			])
+		),
+		'variable' => 'theme-link-active-color'
+	];
+
 	blocksy_output_colors([
 		'value' => blocksy_akg('stickyMenuFontColor', $atts),
 		'default' => [
@@ -474,83 +482,7 @@ if (isset($has_sticky_header) && $has_sticky_header) {
 			'active-type-3' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
 		],
 		'css' => $css,
-
-		'variables' => [
-			'default' => [
-				'selector' => blocksy_assemble_selector(
-					blocksy_mutate_selector([
-						'selector' => blocksy_mutate_selector([
-							'selector' => $root_selector,
-							'operation' => 'suffix',
-							'to_add' => '> ul > li > a'
-						]),
-						'operation' => 'between',
-						'to_add' => '[data-sticky*="yes"]'
-					])
-				),
-				'variable' => 'theme-link-initial-color'
-			],
-
-			'hover' => [
-				'selector' => blocksy_assemble_selector(
-					blocksy_mutate_selector([
-						'selector' => blocksy_mutate_selector([
-							'selector' => $root_selector,
-							'operation' => 'suffix',
-							'to_add' => '> ul > li > a'
-						]),
-						'operation' => 'between',
-						'to_add' => '[data-sticky*="yes"]'
-					])
-				),
-				'variable' => 'theme-link-hover-color'
-			],
-
-			'active' => [
-				'selector' => blocksy_assemble_selector(
-					blocksy_mutate_selector([
-						'selector' => blocksy_mutate_selector([
-							'selector' => $root_selector,
-							'operation' => 'suffix',
-							'to_add' => '> ul > li > a'
-						]),
-						'operation' => 'between',
-						'to_add' => '[data-sticky*="yes"]'
-					])
-				),
-				'variable' => 'theme-link-active-color'
-			],
-
-			'hover-type-3' => [
-				'selector' => blocksy_assemble_selector(
-					blocksy_mutate_selector([
-						'selector' => blocksy_mutate_selector([
-							'selector' => $root_selector,
-							'operation' => 'el-suffix',
-							'to_add' => '[data-menu*="type-3"] > ul > li > a'
-						]),
-						'operation' => 'between',
-						'to_add' => '[data-sticky*="yes"]'
-					])
-				),
-				'variable' => 'theme-link-hover-color'
-			],
-
-			'active-type-3' => [
-				'selector' => blocksy_assemble_selector(
-					blocksy_mutate_selector([
-						'selector' => blocksy_mutate_selector([
-							'selector' => $root_selector,
-							'operation' => 'el-suffix',
-							'to_add' => '[data-menu*="type-3"] > ul > li > a'
-						]),
-						'operation' => 'between',
-						'to_add' => '[data-sticky*="yes"]'
-					])
-				),
-				'variable' => 'theme-link-active-color'
-			],
-		],
+		'variables' => $font_variables
 	]);
 
 	blocksy_output_colors([

@@ -486,6 +486,14 @@ $options = [
 												'desc' => __( 'Automatically hide "Add to cart" button after adding the product to cart.', 'blocksy' ),
 											],
 
+											'button_equal_alignment' => [
+												'label' => __( 'Equal Alignment', 'blocksy' ),
+												'type' => 'ct-switch',
+												'value' => 'yes',
+												'setting' => [ 'transport' => 'postMessage' ],
+												'desc' => __( 'Align all buttons on the same line, when positioned as the last element.', 'blocksy' ),
+											],
+
 											'spacing' => [
 												'label' => __( 'Bottom Spacing', 'blocksy' ),
 												'type' => 'ct-slider',

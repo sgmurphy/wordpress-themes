@@ -103,6 +103,7 @@
 // dragging item
 .ct-builder-dragging {
 	cursor: grabbing;
+	user-select: none;
 
 	.ct-builder-item {
 		cursor: grabbing;

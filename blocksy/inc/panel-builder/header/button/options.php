@@ -280,7 +280,7 @@ $options = [
 				],
 			],
 
-			$panel_type === 'header' ? [
+			[
 				'header_button_class' => [
 					'label' => __( 'CSS Class', 'blocksy' ),
 					'type' => 'text',
@@ -289,9 +289,7 @@ $options = [
 					'value' => '',
 					'desc' => __( 'Separate multiple classes with spaces.', 'blocksy' ),
 				],
-			] : [],
 
-			[
 				'button_aria_label' => [
 					'label' => __( 'Custom Aria Label', 'blocksy' ),
 					'type' => 'text',

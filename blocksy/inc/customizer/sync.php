@@ -239,6 +239,14 @@ function blocksy_replace_current_template() {
 		return ob_get_clean();
 	}
 
+	// WP Optimize will output a footer output that will render after JSON
+	// response, which will generate an invalid JSON response.
+	//
+	// This makes sure this output is removed entirely on sync requests.
+	if (function_exists('wpo_cache_add_footer_output')) {
+		remove_action('shutdown', 'wpo_cache_add_footer_output', 11);
+	}
+
 	if ($template) {
 		ob_start();
 		$level = ob_get_level();
