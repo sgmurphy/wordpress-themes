@@ -87,7 +87,7 @@ endif;
 if ( ! function_exists( 'newsup_post_comment' ) ) :
     function newsup_post_comment() { ?>
         <span class="comments-link"><i class="fas fa-comments"></i>
-            <a href="<?php the_permalink(); ?>"><?php echo get_comments_number(); ?> <?php echo esc_attr((get_comments_number() <= 1 ? 'Comment' : 'Comments'),'newsup'); ?></a> 
+            <a href="<?php the_permalink(); ?>"><?php echo get_comments_number(); ?> <?php esc_html_e( get_comments_number() <= 1 ? __('Comment', 'newsup') : __('Comments', 'newsup')); ?> </a> 
         </span>  
     <?php }
 endif;

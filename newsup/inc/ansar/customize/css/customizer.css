@@ -244,3 +244,10 @@ input#_customize-input-post_image_type-radio-newsup_post_img_acc  {
 .mg-latest-news .customize-partial-edit-shortcut-button{
 	margin-top: -35px;
 }
+#customize-controls .ui-checkboxradio-radio-label{
+	padding: 0;
+    height: auto;
+    box-shadow: none;
+    border: 0;
+	background: transparent;
+}

@@ -80,7 +80,7 @@ if (!function_exists('blogus_post_meta')) :
         if($blogus_global_comment_enable == true) { ?>
             <span class="comments-link"> 
                 <a href="<?php the_permalink(); ?>">
-                <span><?php echo absint(get_comments_number()); ?></span><span><?php echo esc_html((get_comments_number() <= 1 ? 'Comment' : 'Comments') ,'blogus'); ?></span>
+                <span><?php echo absint(get_comments_number()); ?></span><span><?php esc_html_e( get_comments_number() <= 1 ? __('Comment', 'blogus') : __('Comments', 'blogus')); ?></span>
             </a> 
             </span>
         <?php } 
