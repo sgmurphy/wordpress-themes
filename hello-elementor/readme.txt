@@ -3,8 +3,8 @@
 Contributors: elemntor, KingYes, ariel.k, bainternet
 Requires at least: 6.0
 Tested up to: 6.5
-Stable tag: 3.1.0
-Version: 3.1.0
+Stable tag: 3.1.1
+Version: 3.1.1
 Requires PHP: 7.4
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -36,6 +36,9 @@ Source: https://stocksnap.io/photo/4B83RD7BV9
 
 == Changelog ==
 
+= 3.1.1 - 2024-07-30 =
+* Fix: Use consistent `<h2>` for comments title and comment form
+
 = 3.1.0 - 2024-06-19 =
 * Tweak: Update `Requires PHP 7.4`
 * Tweak: Update `Tested up to 6.5`
@@ -49,7 +52,7 @@ Source: https://stocksnap.io/photo/4B83RD7BV9
 * Fix: Single post renders redundant wrapping `<div>` when it has no tags
 * Fix: Remove redundant wrapping `<div>` from `wp_nav_menu()` output
 * Fix: Wrap page `<h1>` with `<div>`, not `<header>`
-* Fix: Uses consistent `<h3>` for comments title and comment form
+* Fix: Use consistent `<h3>` for comments title and comment form
 * Fix: Remove heading tags from dynamic header/footer
 * Fix: Mobile Menu hamburger is not visible for logged-out users in some cases ([#369](https://github.com/elementor/hello-theme/issues/369))
 * Fix: Remove duplicate ID attributes in the header mobile menu
