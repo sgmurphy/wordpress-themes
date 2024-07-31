@@ -1,3 +1,19 @@
+##### [Version 3.3.27](https://github.com/Codeinwp/themeisle-sdk/compare/v3.3.26...v3.3.27) (2024-07-30)
+
+- fix: array out of bounds index
+
+##### [Version 3.3.26](https://github.com/Codeinwp/themeisle-sdk/compare/v3.3.25...v3.3.26) (2024-07-29)
+
+- fix: JS error in core editor
+- twak: change ROP product name
+- tweak: updated developers list
+- fix: removed duplicate feed URL
+- feat: add private translation functionality
+
+##### [Version 3.3.25](https://github.com/Codeinwp/themeisle-sdk/compare/v3.3.24...v3.3.25) (2024-07-08)
+
+improve upgrade link
+
 ##### [Version 3.3.24](https://github.com/Codeinwp/themeisle-sdk/compare/v3.3.23...v3.3.24) (2024-06-25)
 
 - Feat: Allow affiliate url change via DB option.

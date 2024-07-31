@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-04T12:59:54+00:00\n"
+"POT-Creation-Date: 2024-07-31T06:33:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: neve\n"
@@ -814,7 +814,7 @@ msgstr ""
 
 #: neve/header-footer-grid/Core/Components/SecondNav.php:42
 #: neve/header-footer-grid/Core/Components/SecondNav.php:225
-#: neve/header-footer-grid/templates/components/component-nav-secondary.php:25
+#: neve/header-footer-grid/templates/components/component-nav-secondary.php:27
 #: neve/inc/core/front_end.php:79
 msgid "Secondary Menu"
 msgstr ""
