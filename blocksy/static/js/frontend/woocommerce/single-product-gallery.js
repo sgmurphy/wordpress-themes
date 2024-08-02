@@ -318,11 +318,9 @@ export const mount = (el, { event: mountEvent }) => {
 					}
 
 					if (mediaContainer) {
-						$(mediaContainer).trigger(
-							mountEvent && mountEvent.type === 'click'
-								? 'click.zoom'
-								: 'mouseenter.zoom'
-						)
+						if (mountEvent && mountEvent.type !== 'click') {
+							$(mediaContainer).trigger('mouseenter.zoom')
+						}
 					}
 				}, 150)
 			}
@@ -459,9 +457,9 @@ export const mount = (el, { event: mountEvent }) => {
 		if (mountEvent.type === 'click') {
 			setTimeout(() => {
 				if (mountEvent.target && mountEvent.target.click) {
-					mountEvent.target.click()
+					mountEvent.target.dispatchEvent(mountEvent)
 				}
-			})
+			}, 100)
 		}
 	}
 

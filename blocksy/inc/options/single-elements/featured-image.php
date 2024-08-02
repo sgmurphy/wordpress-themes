@@ -119,7 +119,7 @@ $options = [
 						'value' => [
 							'desktop' => true,
 							'tablet' => true,
-							'mobile' => false,
+							'mobile' => true,
 						],
 
 						'choices' => blocksy_ordered_keys([

@@ -278,6 +278,48 @@ blocksy_output_colors([
 	],
 ]);
 
+
+blocksy_output_colors([
+	'value' => blocksy_akg_or_customizer('page_social_icons_color', $source),
+	'default' => [
+		'default' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+		'hover' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+	],
+	'css' => $css,
+	'variables' => [
+		'default' => [
+			'selector' => blocksy_prefix_selector('.entry-header .author-box-socials', $prefix),
+			'variable' => 'theme-icon-color'
+		],
+
+		'hover' => [
+			'selector' => blocksy_prefix_selector('.entry-header .author-box-socials', $prefix),
+			'variable' => 'theme-icon-hover-color'
+		],
+	],
+]);
+
+blocksy_output_colors([
+	'value' => blocksy_akg_or_customizer('page_social_icons_background', $source),
+	'default' => [
+		'default' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+		'hover' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+	],
+	'css' => $css,
+	'variables' => [
+		'default' => [
+			'selector' => blocksy_prefix_selector('.entry-header .author-box-socials', $prefix),
+			'variable' => 'background-color'
+		],
+
+		'hover' => [
+			'selector' => blocksy_prefix_selector('.entry-header .author-box-socials', $prefix),
+			'variable' => 'background-hover-color'
+		],
+	],
+]);
+
+
 if ($type === 'type-1') {
 	$hero_alignment1 = blocksy_akg_or_customizer(
 		'hero_alignment1',

@@ -65,9 +65,56 @@ class LegacyWidgetsContactInfoTransformer {
 		);
 
 		$innerContent = [
-			'<h3 class="wp-block-heading" style="font-size:18px">',
+			'<h3 class="widget-title">',
 			$options['title'],
 			'</h3>'
+		];
+
+		$innerBlocks = [
+			[
+				'blockName' => 'core/heading',
+				'attrs' => [
+					'level' => 3,
+					'fontSize' => 'medium',
+					'className' => 'widget-title',
+				],
+				'innerBlocks' => [],
+				'innerHTML' => join('', $innerContent),
+				'innerContent' => $innerContent
+			]
+		];
+
+		if (! empty($options['contact_text'])) {
+			$innerBlocks[] = [
+				'blockName' => 'core/paragraph',
+				'attrs' => [
+					'placeholder' => 'Description',
+				],
+				'innerBlocks' => [],
+				'innerHTML' => '<p>' . $options['contact_text'] . '</p>',
+				'innerContent' => [
+					'<p>',
+					$options['contact_text'],
+					'</p>'
+				]
+			];
+		}
+
+		$innerBlocks[] = [
+			'blockName' => 'blocksy/contact-info',
+			'attrs' => array_merge(
+				[
+					'lock' => [
+						'remove' => true
+					]
+				],
+				$options
+			),
+			'innerBlocks' => [],
+			'innerHTML' => '<div>Blocksy: Contact Info</div>',
+			'innerContent' => [
+				'<div>Blocksy: Contact Info</div>'
+			]
 		];
 
 		$blocks = [
@@ -79,55 +126,7 @@ class LegacyWidgetsContactInfoTransformer {
 					'hasDescription' => true,
 					'description' => $options['contact_text'],
 				],
-				'innerBlocks' => [
-					[
-						'blockName' => 'core/heading',
-						'attrs' => [
-							'level' => 3,
-							'fontSize' => 'medium',
-							'className' => 'widget-title',
-							'style' => [
-								'typography' => [
-									'fontSize' => '18px'
-								]
-							]
-						],
-						'innerBlocks' => [],
-						'innerHTML' => join('', $innerContent),
-						'innerContent' => $innerContent
-					],
-
-					[
-						'blockName' => 'core/paragraph',
-						'attrs' => [
-							'placeholder' => 'Description',
-						],
-						'innerBlocks' => [],
-						'innerHTML' => '<p>' . $options['contact_text'] . '</p>',
-						'innerContent' => [
-							'<p>',
-							$options['contact_text'],
-							'</p>'
-						]
-					],
-
-					[
-						'blockName' => 'blocksy/contact-info',
-						'attrs' => array_merge(
-							[
-								'lock' => [
-									'remove' => true
-								]
-							],
-							$options
-						),
-						'innerBlocks' => [],
-						'innerHTML' => '<div>Blocksy: Contact Info</div>',
-						'innerContent' => [
-							'<div>Blocksy: Contact Info</div>'
-						]
-					]
-				],
+				'innerBlocks' => $innerBlocks,
 				'innerHTML' => '',
 				'innerContent' => [null, null, null],
 				'firstLevelBlock' => true

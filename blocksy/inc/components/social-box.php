@@ -973,7 +973,8 @@ if (! function_exists('blocksy_get_social_metadata')) {
 				'whatsapp' => 'whatsapp://send?text={url}',
 				'flipboard' => 'https://share.flipboard.com/bookmarklet/popout?v=2&title={text}&url={url}',
 				'email' => 'mailto:?subject={text}&body={url}',
-				'line' => 'https://social-plugins.line.me/lineit/share?url={url}&text={text}'
+				'line' => 'https://social-plugins.line.me/lineit/share?url={url}&text={text}',
+				'threads' => 'https://threads.net/intent/post?text={url}',
 			];
 
 			if (isset($social_urls[$args['social']])) {
@@ -1135,6 +1136,15 @@ if (! function_exists('blocksy_get_social_share_items')) {
 					'no'
 				) === 'yes',
 			],
+
+			[
+				'id' => 'threads',
+				'enabled' => blocksy_akg_or_customizer(
+					'share_threads',
+					$args['strategy'],
+					'no'
+				) === 'yes',
+			],
 		];
 	}
 }
@@ -1291,7 +1301,7 @@ function blocksy_get_social_box($args = []) {
 		'wordpress' => '#1074a8',
 		'hacker_news' => '#fd6721',
 		'ok' => '#eb7e2f',
-		'flipboard' => '#c40812',
+		'flipboard' => '#c40812',	
 	];
 
 	$prefix = blocksy_manager()->screen->get_prefix();

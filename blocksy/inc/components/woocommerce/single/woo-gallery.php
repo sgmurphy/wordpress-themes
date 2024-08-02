@@ -144,18 +144,11 @@ function blocksy_retrieve_product_default_variation($product, $object = true) {
 		return null;
 	}
 
-	$maybe_variation = (new \WC_Product_Data_Store_CPT())->find_matching_product_variation(
-		$product,
-		$_GET
-	);
+	$maybe_variation = null;
 
-	if (! $maybe_variation) {
-		$default_attributes = $product->get_default_attributes();
+	$default_attributes = $product->get_default_attributes();
 
-		if (count($default_attributes) !== count($product->get_variation_attributes())) {
-			return null;
-		}
-
+	if (count($default_attributes) === count($product->get_variation_attributes())) {
 		$prefixed_slugs = array_map(function($pa_name) {
 			return 'attribute_'. sanitize_title($pa_name);
 		}, array_keys($default_attributes));
@@ -166,6 +159,26 @@ function blocksy_retrieve_product_default_variation($product, $object = true) {
 			$product,
 			$default_attributes
 		);
+	}
+
+	$has_some_matching_get_param = false;
+
+	foreach ($product->get_variation_attributes() as $attribute_name => $attribute_values) {
+		if (isset($_GET['attribute_' . $attribute_name])) {
+			$has_some_matching_get_param = true;
+			break;
+		}
+	}
+
+	if ($has_some_matching_get_param) {
+		$maybe_get_variation = (new \WC_Product_Data_Store_CPT())->find_matching_product_variation(
+			$product,
+			$_GET
+		);
+
+		if ($maybe_get_variation) {
+			$maybe_variation = $maybe_get_variation;
+		}
 	}
 
 	$current_variation = null;

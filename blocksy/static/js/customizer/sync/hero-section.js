@@ -174,6 +174,34 @@ const getVariablesForPrefix = (prefix) => ({
 		},
 	],
 
+	[`${prefix}_page_social_icons_color`]: [
+		{
+			selector: `[data-prefix="${prefix}"] .entry-header .author-box-socials`,
+			variable: 'theme-icon-color',
+			type: 'color:default',
+		},
+
+		{
+			selector: `[data-prefix="${prefix}"] .entry-header .author-box-socials`,
+			variable: 'theme-icon-hover-color',
+			type: 'color:hover',
+		},
+	],
+
+	[`${prefix}_page_social_icons_background`]: [
+		{
+			selector: `[data-prefix="${prefix}"] .entry-header .author-box-socials`,
+			variable: 'background-color',
+			type: 'color:default',
+		},
+
+		{
+			selector: `[data-prefix="${prefix}"] .entry-header .author-box-socials`,
+			variable: 'background-hover-color',
+			type: 'color:hover',
+		},
+	],
+
 	[`${prefix}_hero_alignment1`]: {
 		selector: `[data-prefix="${prefix}"] .hero-section[data-type="type-1"]`,
 		variable: 'alignment',

@@ -591,7 +591,7 @@ if (! function_exists('blocksy_get_featured_image_output')) {
 				[
 					'desktop' => true,
 					'tablet' => true,
-					'mobile' => false,
+					'mobile' => true,
 				]
 			)
 		);

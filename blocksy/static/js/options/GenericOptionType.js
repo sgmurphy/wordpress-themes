@@ -521,7 +521,7 @@ const GenericOptionType = ({
 						...optionAdditionalWrapperAttr,
 						...additionalWrapperAttr,
 					}}>
-					<header>
+					<header {...(!maybeLabel ? { 'data-label': 'no' } : {})}>
 						{maybeLabel && <label>{maybeLabel}</label>}
 						<RevertButton />
 

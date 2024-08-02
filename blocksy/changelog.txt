@@ -1,3 +1,10 @@
+2.0.60: 2024-08-01
+- Improvement: Author page hero section - color options for the social icons
+- Improvement: Better `schema.org` markup for post comments
+- Improvement: Cart page quantity update does not work with keyboard input if browser is in responsive view
+- Improvement: Share box - add possibility to share on Threads platform
+- Improvement: Single product image zoom effect does not zoom to the appropriate place on first zoom on touch devices
+
 2.0.59: 2024-07-25
 - Improvement: Better apply single product modifications to handle pages made with `[product_page]` shortcode
 - Improvement: Bring "custom class" feature to footer button element

@@ -185,7 +185,10 @@ function blocksy_custom_comment_template($comment, $args, $depth) {
 	?>
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class($class); ?>>
-		<article class="ct-comment-inner" id="ct-comment-inner-<?php comment_ID(); ?>">
+		<article 
+			class="ct-comment-inner" 
+			id="ct-comment-inner-<?php comment_ID(); ?>"
+			<?php echo blocksy_schema_org_definitions('comment'); ?>>
 
 			<footer class="ct-comment-meta">
 				<?php
@@ -221,18 +224,29 @@ function blocksy_custom_comment_template($comment, $args, $depth) {
 					}
 				?>
 
-				<h4 class="ct-comment-author">
+				<h4 class="ct-comment-author" <?php echo blocksy_schema_org_definitions('author'); ?>>
 					<?php echo get_comment_author_link(); ?>
 				</h4>
 
 				<div class="ct-comment-meta-data">
 					<?php
 
-						$date_link_content = blocksy_safe_sprintf(
-							/* translators: 1: date, 2: time */
-							wp_kses_post( __( '%1$s / %2$s', 'blocksy' ) ),
-							wp_kses_post( get_comment_date() ),
-							wp_kses_post( get_comment_time() )
+						$date_link_content = blocksy_html_tag(
+							'time',
+							array_merge(
+								[
+									'datetime' => get_comment_time( 'c' )
+								],
+								blocksy_schema_org_definitions('publish_date', [
+									'array' => true
+								]),
+							),
+							blocksy_safe_sprintf(
+								/* translators: 1: date, 2: time */
+								wp_kses_post( __( '%1$s / %2$s', 'blocksy' ) ),
+								wp_kses_post( get_comment_date() ),
+								wp_kses_post( get_comment_time() )
+							)
 						);
 
 						if ( $meta_with_link ) {
@@ -271,7 +285,7 @@ function blocksy_custom_comment_template($comment, $args, $depth) {
 			</footer>
 
 
-			<div class="ct-comment-content entry-content">
+			<div class="ct-comment-content entry-content" <?php echo blocksy_schema_org_definitions('entry_content'); ?>>
 				<?php comment_text(); ?>
 
 				<?php if ( '0' === $comment->comment_approved ) : ?>

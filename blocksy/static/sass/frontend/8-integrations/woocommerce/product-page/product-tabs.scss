@@ -60,9 +60,9 @@
 		padding-top: 40px;
 	}
 
-	.ct-has-heading > h2:first-of-type {
-		font-size: 20px;
-	}
+	// .ct-has-heading > h2:first-of-type {
+	// 	font-size: 20px;
+	// }
 }
 
 
@@ -171,7 +171,7 @@
 
 	> article .entry-content {
 
-		> h2 {
+		> h2:first-of-type {
 			color: var(--theme-link-initial-color);
 		}
 

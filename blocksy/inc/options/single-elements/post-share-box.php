@@ -299,6 +299,16 @@ $general_tab_options = array_merge(
 			]),
 		],
 
+		$prefix . 'share_threads' => [
+			'label' => __( 'Threads', 'blocksy' ),
+			'type' => 'ct-switch',
+			'value' => 'no',
+			'sync' => blocksy_sync_whole_page([
+				'prefix' => $sync_prefix,
+				'loader_selector' => '.ct-share-box'
+			]),
+		],
+
 		$prefix . 'share_email' => [
 			'label' => __( 'Email', 'blocksy' ),
 			'type' => 'ct-switch',

@@ -54,7 +54,7 @@ class LegacyWidgetsSocialsTransformer {
 		);
 
 		$innerContent = [
-			'<h3 class="wp-block-heading" style="font-size:18px">',
+			'<h3 class="widget-title">',
 			$options['title'],
 			'</h3>'
 		];
@@ -73,11 +73,6 @@ class LegacyWidgetsSocialsTransformer {
 							'level' => 3,
 							'fontSize' => 'medium',
 							'className' => 'widget-title',
-							'style' => [
-								'typography' => [
-									'fontSize' => '18px'
-								]
-							]
 						],
 						'innerBlocks' => [],
 						'innerHTML' => join('', $innerContent),

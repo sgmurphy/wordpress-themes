@@ -20,6 +20,7 @@ if (! function_exists('blocksy_schema_org_definitions')) {
 		$value = [];
 
 		if (! blocksy_has_schema_org_markup() || ! $args['condition']) {
+
 			if ($args['array']) {
 				return $value;
 			}
@@ -281,6 +282,13 @@ if (! function_exists('blocksy_schema_org_definitions')) {
 				'itemscope' => '',
 				'itemprop' => "itemListElement",
 				'itemtype' => "https://schema.org/ListItem"
+			];
+		}
+
+		if ($place === 'comment') {
+			$value = [
+				'itemscope' => '',
+				'itemtype' => "https://schema.org/Comment"
 			];
 		}
 

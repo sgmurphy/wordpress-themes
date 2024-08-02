@@ -236,7 +236,7 @@
 
 	// select
 	.ct-select-input {
-		input {
+		input[readonly] {
 			color: $light;
 			border-color: $border;
 			background: $background_light;

@@ -48,7 +48,7 @@ export const wooEntryPoints = [
 	},
 
 	{
-		els: '.ct-cart-auto-update .qty',
+		els: '.quantity .qty',
 		load: () => import('./quantity-input'),
 		trigger: ['change'],
 	},

@@ -231,7 +231,7 @@ class LegacyWidgetsPostsTransformer {
 		);
 
 		$innerContent = [
-			'<h3 class="wp-block-heading" style="font-size:18px">',
+			'<h3 class="widget-title">',
 			blocksy_akg('title', $atts, ''),
 			'</h3>'
 		];
@@ -250,11 +250,6 @@ class LegacyWidgetsPostsTransformer {
 						'blockName' => 'core/heading',
 						'attrs' => [
 							'level' => 3,
-							'style' => [
-								'typography' => [
-									'fontSize' => '18px'
-								]
-							]
 						],
 						'innerBlocks' => [],
 						'innerHTML' => join('', $innerContent),

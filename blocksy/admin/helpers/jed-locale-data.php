@@ -5,7 +5,8 @@ if (! function_exists('blocksy_get_json_translation_files')) {
 		$cached_mofiles = [];
 
 		$locations = [
-			WP_LANG_DIR . '/themes'
+			WP_LANG_DIR . '/themes',
+			WP_LANG_DIR . '/plugins'
 		];
 
 		foreach ($locations as $location) {
