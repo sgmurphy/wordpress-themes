@@ -1,3 +1,7 @@
+:root {
+    --total-h-size: 42px;
+}
+
 body {
     color: var(--total-body-color, #444);
     font-size: var(--total-body-size, 17px);
@@ -29,32 +33,32 @@ h6 {
     text-transform: var(--total-h-text-transform, none);
 }
 
-h1{
+h1 {
     font-size: var(--total-h-size);
     margin: 0 0 15px 0;
 }
 
-h2{
+h2 {
     font-size: calc(var(--total-h-size) * 7/8);
     margin: 0 0 15px 0;
 }
 
-h3{
+h3 {
     font-size: calc(var(--total-h-size) * 6/8);
     margin: 0 0 15px 0;
 }
 
-h4{
+h4 {
     font-size: calc(var(--total-h-size) * 5/8);
     margin: 0 0 10px 0;
 }
 
-h5{
+h5 {
     font-size: calc(var(--total-h-size) * 4/8);
     margin: 0 0 10px 0;
 }
 
-h6{
+h6 {
     font-size: calc(var(--total-h-size) * 3/8);
     margin: 0 0 10px 0;
 }
@@ -68,7 +72,7 @@ a {
     text-decoration: underline;
 }
 
-a:hover{
+a:hover {
     color: var(--total-content-link-hov-color, var(--total-content-link-color));
 }
 
@@ -94,7 +98,7 @@ blockquote {
     padding-left: 17px;
 }
 
-blockquote>blockquote {
+blockquote > blockquote {
     margin-left: 0;
 }
 
@@ -102,7 +106,7 @@ blockquote p {
     margin-bottom: 35px;
 }
 
-blockquote>p:last-child {
+blockquote > p:last-child {
     margin-bottom: 0;
 }
 
@@ -230,8 +234,10 @@ dd {
 }
 
 img {
-    height: auto; /* Make sure images are scaled correctly. */
-    max-width: 100%; /* Adhere to container width. */
+    height: auto;
+    /* Make sure images are scaled correctly. */
+    max-width: 100%;
+    /* Adhere to container width. */
     vertical-align: middle;
 }
 

@@ -32,7 +32,8 @@ if (get_theme_mod('total_team_section_disable') != 'on') {
                         $args = array('page_id' => absint($total_team_page_id));
                         $query = new WP_Query($args);
                         if ($query->have_posts()):
-                            while ($query->have_posts()) : $query->the_post();
+                            while ($query->have_posts()):
+                                $query->the_post();
                                 $total_team_designation = get_theme_mod('total_team_designation' . $i);
                                 $total_team_facebook = get_theme_mod('total_team_facebook' . $i);
                                 $total_team_twitter = get_theme_mod('total_team_twitter' . $i);
@@ -75,7 +76,7 @@ if (get_theme_mod('total_team_section_disable') != 'on') {
                                                 </div>
                                             </div>
                                         </a>
-                                    </div>	
+                                    </div>
 
                                     <?php if ($total_team_facebook || $total_team_twitter || $total_team_instagram) { ?>
                                         <div class="ht-team-social-id">
@@ -93,7 +94,7 @@ if (get_theme_mod('total_team_section_disable') != 'on') {
 
                                             <?php if ($total_team_linkedin) { ?>
                                                 <a target="_blank" href="<?php echo esc_url($total_team_linkedin) ?>"><i class="fab fa-linkedin-in"></i></a>
-                                                <?php } ?>
+                                            <?php } ?>
                                         </div>
                                     <?php } ?>
                                 </div>

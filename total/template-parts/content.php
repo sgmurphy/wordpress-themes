@@ -7,7 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php if ('post' == get_post_type()) : ?>
+    <?php if ('post' == get_post_type()): ?>
         <div class="entry-meta ht-post-info">
             <?php total_posted_on(); ?>
         </div><!-- .entry-meta -->
@@ -41,8 +41,8 @@
             <?php
             /* translators: %s: Name of current post */
             the_content(sprintf(
-                            /* translators: title of the post */
-                            wp_kses(__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'total'), array('span' => array('class' => array()))), the_title('<span class="screen-reader-text">"', '"</span>', false)
+                /* translators: title of the post */
+                wp_kses(__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'total'), array('span' => array('class' => array()))), the_title('<span class="screen-reader-text">"', '"</span>', false)
             ));
             ?>
 

@@ -22,48 +22,49 @@ if (!function_exists('total_excerpt')) {
 if (!function_exists('total_comment')) {
 
     function total_comment($comment, $args, $depth) {
-        $tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
+        $tag = ('div' === $args['style']) ? 'div' : 'li';
         ?>
         <<?php echo esc_attr($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class(empty($args['has_children']) ? 'parent' : '', $comment); ?>>
-        <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-            <footer class="comment-meta">
-                <div class="comment-author vcard">
-                    <?php if (0 != $args['avatar_size']) echo get_avatar($comment, $args['avatar_size']); ?>
-                    <?php echo sprintf('<b class="fn">%s</b>', get_comment_author_link($comment)); ?>
-                </div><!-- .comment-author -->
+            <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+                <footer class="comment-meta">
+                    <div class="comment-author vcard">
+                        <?php if (0 != $args['avatar_size'])
+                            echo get_avatar($comment, $args['avatar_size']); ?>
+                        <?php echo sprintf('<b class="fn">%s</b>', get_comment_author_link($comment)); ?>
+                    </div><!-- .comment-author -->
 
-                <?php if ('0' == $comment->comment_approved) : ?>
-                    <p class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.', 'total'); ?></p>
-                <?php endif; ?>
-                <?php edit_comment_link(esc_html__('Edit', 'total'), '<span class="edit-link">', '</span>'); ?>
-            </footer><!-- .comment-meta -->
+                    <?php if ('0' == $comment->comment_approved): ?>
+                        <p class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.', 'total'); ?></p>
+                    <?php endif; ?>
+                    <?php edit_comment_link(esc_html__('Edit', 'total'), '<span class="edit-link">', '</span>'); ?>
+                </footer><!-- .comment-meta -->
 
-            <div class="comment-content">
-                <?php comment_text(); ?>
-            </div><!-- .comment-content -->
+                <div class="comment-content">
+                    <?php comment_text(); ?>
+                </div><!-- .comment-content -->
 
-            <div class="comment-metadata ht-clearfix">
-                <a href="<?php echo esc_url(get_comment_link($comment, $args)); ?>">
-                    <time datetime="<?php comment_time('c'); ?>">
-                        <?php
-                        /* translators: 1: comment date, 2: comment time */
-                        printf(esc_html__('%1$s at %2$s', 'total'), get_comment_date('', $comment), get_comment_time());
-                        ?>
-                    </time>
-                </a>
+                <div class="comment-metadata ht-clearfix">
+                    <a href="<?php echo esc_url(get_comment_link($comment, $args)); ?>">
+                        <time datetime="<?php comment_time('c'); ?>">
+                            <?php
+                            /* translators: 1: comment date, 2: comment time */
+                            printf(esc_html__('%1$s at %2$s', 'total'), get_comment_date('', $comment), get_comment_time());
+                            ?>
+                        </time>
+                    </a>
 
-                <?php
-                comment_reply_link(array_merge($args, array(
-                    'add_below' => 'div-comment',
-                    'depth' => $depth,
-                    'max_depth' => $args['max_depth'],
-                    'before' => '<div class="reply">',
-                    'after' => '</div>'
-                )));
-                ?>
-            </div><!-- .comment-metadata -->
-        </article><!-- .comment-body -->
-        <?php
+                    <?php
+                    comment_reply_link(array_merge($args, array(
+                        'add_below' => 'div-comment',
+                        'depth' => $depth,
+                        'max_depth' => $args['max_depth'],
+                        'before' => '<div class="reply">',
+                        'after' => '</div>'
+                    )));
+                    ?>
+                </div><!-- .comment-metadata -->
+            </article><!-- .comment-body -->
+            <?php
     }
 
 }
@@ -397,7 +398,7 @@ if (!function_exists('total_home_section')) {
             'total_blog_section',
             'total_logo_section',
             'total_cta_section'
-                )
+        )
         );
         $sections = get_theme_mod('total_frontpage_sections', $defaults);
 

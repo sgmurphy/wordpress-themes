@@ -35,14 +35,15 @@ if (get_theme_mod('total_blog_section_disable') != 'on') {
                 );
                 $query = new WP_Query($args);
                 if ($query->have_posts()):
-                    while ($query->have_posts()) : $query->the_post();
+                    while ($query->have_posts()):
+                        $query->the_post();
                         ?>
                         <div class="ht-blog-post ht-clearfix">
                             <?php
                             if (has_post_thumbnail()) {
                                 $total_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'total-blog-thumb');
                                 if (isset($total_image[0])) {
-                                    ?> 
+                                    ?>
                                     <div class="ht-blog-thumbnail">
                                         <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($total_image[0]) ?>" alt="<?php the_title(); ?>"></a>
                                     </div>
@@ -71,7 +72,7 @@ if (get_theme_mod('total_blog_section_disable') != 'on') {
                 endif;
                 wp_reset_postdata();
                 ?>
-            </div>	
+            </div>
         </div>
     </section>
     <?php

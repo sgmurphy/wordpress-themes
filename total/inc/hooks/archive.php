@@ -29,15 +29,16 @@ if (!function_exists('total_home_content')) {
                 <main id="main" class="site-main">
 
                     <?php
-                    if (have_posts()) :
-                        while (have_posts()) : the_post();
+                    if (have_posts()):
+                        while (have_posts()):
+                            the_post();
 
                             get_template_part('template-parts/content', 'summary');
 
                         endwhile;
 
                         the_posts_pagination();
-                    else :
+                    else:
                         get_template_part('template-parts/content', 'none');
                     endif;
                     ?>
@@ -62,8 +63,8 @@ if (!function_exists('total_search_header')) {
                 <h1 class="ht-main-title">
                     <?php
                     printf(
-                            /* translators: search query text */
-                            esc_html__('Search Results for: %s', 'total'), '<span>' . get_search_query() . '</span>'
+                        /* translators: search query text */
+                        esc_html__('Search Results for: %s', 'total'), '<span>' . get_search_query() . '</span>'
                     );
                     ?>
                 </h1>
@@ -84,12 +85,13 @@ if (!function_exists('total_search_content')) {
                 <main id="main" class="site-main">
 
                     <?php
-                    if (have_posts()) :
-                        while (have_posts()) : the_post();
+                    if (have_posts()):
+                        while (have_posts()):
+                            the_post();
                             get_template_part('template-parts/content', 'search');
                         endwhile;
                         the_posts_pagination();
-                    else :
+                    else:
                         get_template_part('template-parts/content', 'none');
                     endif;
                     ?>
@@ -135,12 +137,13 @@ if (!function_exists('total_archive_content')) {
                 <main id="main" class="site-main" role="main">
 
                     <?php
-                    if (have_posts()) :
-                        while (have_posts()) : the_post();
+                    if (have_posts()):
+                        while (have_posts()):
+                            the_post();
                             get_template_part('template-parts/content', 'summary');
                         endwhile;
                         the_posts_pagination();
-                    else :
+                    else:
                         get_template_part('template-parts/content', 'none');
                     endif;
                     ?>

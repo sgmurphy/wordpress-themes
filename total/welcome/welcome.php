@@ -1,5 +1,5 @@
 <?php
-if (!class_exists('Total_Welcome')) :
+if (!class_exists('Total_Welcome')):
 
     class Total_Welcome {
 
@@ -215,7 +215,7 @@ if (!class_exists('Total_Welcome')) :
                     return wp_nonce_url(add_query_arg(array(
                         'action' => 'install-plugin',
                         'plugin' => esc_attr($slug)
-                                    ), network_admin_url('update.php')), 'install-plugin_' . esc_attr($slug));
+                    ), network_admin_url('update.php')), 'install-plugin_' . esc_attr($slug));
                     break;
 
                 case 'inactive':
@@ -225,7 +225,7 @@ if (!class_exists('Total_Welcome')) :
                         'plugin_status' => 'all',
                         'paged' => '1',
                         '_wpnonce' => wp_create_nonce('deactivate-plugin_' . esc_attr($slug) . '/' . esc_attr($file_name) . '.php'),
-                            ), network_admin_url('plugins.php'));
+                    ), network_admin_url('plugins.php'));
                     break;
 
                 case 'active':
@@ -235,7 +235,7 @@ if (!class_exists('Total_Welcome')) :
                         'plugin_status' => 'all',
                         'paged' => '1',
                         '_wpnonce' => wp_create_nonce('activate-plugin_' . esc_attr($slug) . '/' . esc_attr($file_name) . '.php'),
-                            ), network_admin_url('plugins.php'));
+                    ), network_admin_url('plugins.php'));
                     break;
             }
         }
@@ -371,7 +371,7 @@ if (!class_exists('Total_Welcome')) :
                 <div class="total-notice-logo">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.36 80.36">
                         <g>
-                            <path d="M73 80.36A7.33 7.33 0 0 0 80.36 73V7.33A7.33 7.33 0 0 0 73 0H7.33A7.33 7.33 0 0 0 0 7.33V73a7.33 7.33 0 0 0 7.33 7.33ZM58.26 4.14l7 3.23-43.13 19.74-7-3.23Zm-9.35 19-.46.7v49.1l-7.39 3.35V28l-1.16-.69-17 7.74v-6.56L66.34 8.64v6.58ZM21.32 35.08l-7.39-3.24v-6.58l7.39 3.35Zm10.73 37.86V32.65l7.39-3.35v47Z"/>
+                            <path d="M73 80.36A7.33 7.33 0 0 0 80.36 73V7.33A7.33 7.33 0 0 0 73 0H7.33A7.33 7.33 0 0 0 0 7.33V73a7.33 7.33 0 0 0 7.33 7.33ZM58.26 4.14l7 3.23-43.13 19.74-7-3.23Zm-9.35 19-.46.7v49.1l-7.39 3.35V28l-1.16-.69-17 7.74v-6.56L66.34 8.64v6.58ZM21.32 35.08l-7.39-3.24v-6.58l7.39 3.35Zm10.73 37.86V32.65l7.39-3.35v47Z" />
                         </g>
                     </svg>
                 </div>
@@ -380,8 +380,8 @@ if (!class_exists('Total_Welcome')) :
                     <p>
                         <?php
                         printf(
-                                /* translators: %1$s is link start tag, %2$s is link end tag. */
-                                esc_html__('Great to see that you have been using Total Theme for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'total'), '<a target="_blank" href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post">', '</a>'
+                            /* translators: %1$s is link start tag, %2$s is link end tag. */
+                            esc_html__('Great to see that you have been using Total Theme for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'total'), '<a target="_blank" href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post">', '</a>'
                         );
                         ?>
                     </p>

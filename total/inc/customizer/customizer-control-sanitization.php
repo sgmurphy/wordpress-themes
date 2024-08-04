@@ -42,7 +42,7 @@ function total_sanitize_choices_array($input, $setting) {
 }
 
 function total_sanitize_color_alpha($color) {
-    $mode = ( false === strpos($color, 'rgba') ) ? 'hex' : 'rgba';
+    $mode = (false === strpos($color, 'rgba')) ? 'hex' : 'rgba';
     if ('rgba' === $mode) {
         $color = str_replace(' ', '', $color);
         sscanf($color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha);
@@ -54,7 +54,7 @@ function total_sanitize_color_alpha($color) {
 
 function total_sanitize_color($color) {
     // Is this an rgba color or a hex?
-    $mode = ( false === strpos($color, 'rgba') ) ? 'hex' : 'rgba';
+    $mode = (false === strpos($color, 'rgba')) ? 'hex' : 'rgba';
     if ('rgba' === $mode) {
         $color = str_replace(' ', '', $color);
         sscanf($color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha);
@@ -92,7 +92,7 @@ function total_sanitize_image($image, $setting) {
     // Return an array with file extension and mime_type.
     $file = wp_check_filetype($image, $mimes);
     // If $image has a valid mime_type, return it; otherwise, return the default.
-    return ( $file['ext'] ? $image : $setting->default );
+    return ($file['ext'] ? $image : $setting->default);
 }
 
 function total_sanitize_number_range($number, $setting) {
@@ -103,16 +103,16 @@ function total_sanitize_number_range($number, $setting) {
     $atts = $setting->manager->get_control($setting->id)->input_attrs;
 
     // Get minimum number in the range.
-    $min = ( isset($atts['min']) ? $atts['min'] : $number );
+    $min = (isset($atts['min']) ? $atts['min'] : $number);
 
     // Get maximum number in the range.
-    $max = ( isset($atts['max']) ? $atts['max'] : $number );
+    $max = (isset($atts['max']) ? $atts['max'] : $number);
 
     // Get step.
-    $step = ( isset($atts['step']) ? $atts['step'] : 1 );
+    $step = (isset($atts['step']) ? $atts['step'] : 1);
 
     // If the number is within the valid range, return it; otherwise, return the default
-    return ( $min <= $number && $number <= $max && is_int($number / $step) ? $number : $setting->default );
+    return ($min <= $number && $number <= $max && is_int($number / $step) ? $number : $setting->default);
 }
 
 function total_sanitize_dropdown_pages($page_id, $setting) {
@@ -120,7 +120,7 @@ function total_sanitize_dropdown_pages($page_id, $setting) {
     $page_id = absint($page_id);
 
     // If $page_id is an ID of a published page, return it; otherwise, return the default.
-    return ( 'publish' == get_post_status($page_id) ? $page_id : $setting->default );
+    return ('publish' == get_post_status($page_id) ? $page_id : $setting->default);
 }
 
 function total_sanitize_hex_color($hex_color, $setting) {
@@ -128,7 +128,7 @@ function total_sanitize_hex_color($hex_color, $setting) {
     $hex_color = sanitize_hex_color($hex_color);
 
     // If $input is a valid hex value, return it; otherwise, return the default.
-    return (!is_null($hex_color) ? $hex_color : $setting->default );
+    return (!is_null($hex_color) ? $hex_color : $setting->default);
 }
 
 function total_sanitize_html($html) {
@@ -140,7 +140,7 @@ function total_sanitize_number_absint($number, $setting) {
     $number = absint($number);
 
     // If the input is an absolute integer, return it; otherwise, return the default
-    return ( $number ? $number : $setting->default );
+    return ($number ? $number : $setting->default);
 }
 
 function total_sanitize_select($input, $setting) {
@@ -152,7 +152,7 @@ function total_sanitize_select($input, $setting) {
     $choices = $setting->manager->get_control($setting->id)->choices;
 
     // If the input is a valid key, return it; otherwise, return the default.
-    return ( array_key_exists($input, $choices) ? $input : $setting->default );
+    return (array_key_exists($input, $choices) ? $input : $setting->default);
 }
 
 function total_sanitize_url($url) {
@@ -197,10 +197,10 @@ function total_sanitize_multi_choices($input, $setting) {
 
     // If the input is a valid key, return it;
     // otherwise, return the default.
-    return ( is_array($input) ? $input : $setting->default );
+    return (is_array($input) ? $input : $setting->default);
 }
 
 /** Sanitize Boolean */
 function total_sanitize_boolean($input) {
-    return ( ( isset($input) && true == $input ) ? true : false );
+    return ((isset($input) && true == $input) ? true : false);
 }

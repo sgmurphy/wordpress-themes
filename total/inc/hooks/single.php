@@ -30,14 +30,15 @@ if (!function_exists('total_page_content')) {
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
 
-                    <?php while (have_posts()) : the_post();
+                    <?php while (have_posts()):
+                        the_post();
                         ?>
 
                         <?php get_template_part('template-parts/content', 'page'); ?>
 
                         <?php
                         // If comments are open or we have at least one comment, load up the comment template.
-                        if (comments_open() || get_comments_number()) :
+                        if (comments_open() || get_comments_number()):
                             comments_template();
                         endif;
                         ?>
@@ -82,13 +83,14 @@ if (!function_exists('total_single_content')) {
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
 
-                    <?php while (have_posts()) : the_post(); ?>
+                    <?php while (have_posts()):
+                        the_post(); ?>
 
                         <?php get_template_part('template-parts/content', 'single'); ?>
 
                         <?php
                         // If comments are open or we have at least one comment, load up the comment template.
-                        if (comments_open() || get_comments_number()) :
+                        if (comments_open() || get_comments_number()):
                             comments_template();
                         endif;
                         ?>

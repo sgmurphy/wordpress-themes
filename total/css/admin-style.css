@@ -1,49 +1,49 @@
-.total-sidebar-layouts{
+.total-sidebar-layouts {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin-bottom: 20px;
 }
 
-.total-sidebar-layouts label{
+.total-sidebar-layouts label {
     position: relative;
     display: block;
 }
 
-.total-sidebar-layouts label input{
+.total-sidebar-layouts label input {
     opacity: 0;
     position: absolute;
     left: 0;
     top: 0;
 }
 
-.total-sidebar-layouts label img{
+.total-sidebar-layouts label img {
     vertical-align: middle;
     border: 2px solid #EEE;
     width: 100%;
 }
 
-.total-sidebar-layouts label input:checked + img{
+.total-sidebar-layouts label input:checked + img {
     border: 2px solid #007cba;
 }
 
 .clearfix:after,
-.clearfix:before{
+.clearfix:before {
     content: "";
     display: table;
 }
 
-.clearfix:after{
+.clearfix:after {
     clear: both;
 }
 
-.widget-content .attachment-media-view{
+.widget-content .attachment-media-view {
     font-size: 13px;
     line-height: 1.5;
     margin: 1em 0;
 }
 
-.widget-content .placeholder{
+.widget-content .placeholder {
     width: 100%;
     position: relative;
     text-align: center;
@@ -54,7 +54,7 @@
     line-height: 20px;
 }
 
-.widget-content .actions{
+.widget-content .actions {
     margin-top: 8px;
 }
 
@@ -78,6 +78,6 @@ a[href="admin.php?page=elementor_custom_code"],
 a[href="admin.php?page=e-form-submissions"],
 #elementor-notice-bar,
 #e-notice-bar,
-#elementor-panel-get-pro-elements{
+#elementor-panel-get-pro-elements {
     display: none !important;
 }

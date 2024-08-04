@@ -363,7 +363,8 @@
     <tr>
         <td>
             <span><?php esc_html_e('39) Translation Ready', 'total'); ?></span>
-            <p><?php esc_html_e('Both the free and pro versions are fully translation ready.', 'total'); ?></td>
+            <p><?php esc_html_e('Both the free and pro versions are fully translation ready.', 'total'); ?>
+        </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></p>
         </td>
         <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>

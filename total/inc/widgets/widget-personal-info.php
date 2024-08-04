@@ -12,9 +12,9 @@ class Total_Personal_Info extends WP_Widget {
 
     public function __construct() {
         parent::__construct(
-                'total_personal_info', 'Total - Personal Info', array(
-            'description' => esc_html__('A widget to display Personal Information', 'total')
-                )
+            'total_personal_info', 'Total - Personal Info', array(
+                'description' => esc_html__('A widget to display Personal Information', 'total')
+            )
         );
     }
 

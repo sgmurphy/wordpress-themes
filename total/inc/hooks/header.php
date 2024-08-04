@@ -28,7 +28,7 @@ if (!function_exists('total_custom_logo')) {
                     <p class="ht-site-description"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('description'); ?></a></p>
                 <?php }
                 ?>
-            </div> 
+            </div>
             <?php
         }
     }

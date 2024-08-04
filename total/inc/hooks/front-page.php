@@ -17,9 +17,9 @@ if (!function_exists('total_front_page_loop')) {
             }
         } else {
             if ('posts' == get_option('show_on_front')) {
-                include( get_home_template() );
+                include (get_home_template());
             } else {
-                include( get_page_template() );
+                include (get_page_template());
             }
         }
     }

@@ -502,8 +502,8 @@ function totalDynamicCss(control, style) {
     jQuery('style.' + control).remove();
 
     jQuery('head').append(
-            '<style class="' + control + '">:root{' + style + '}</style>'
-            );
+        '<style class="' + control + '">:root{' + style + '}</style>'
+    );
 }
 
 function totalConvertHex(hexcolor, opacity) {

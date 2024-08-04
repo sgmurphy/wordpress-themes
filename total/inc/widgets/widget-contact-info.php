@@ -13,9 +13,9 @@ class Total_Contact_Info extends WP_Widget {
 
     public function __construct() {
         parent::__construct(
-                'total_contact_info', 'Total - Contact Info', array(
+            'total_contact_info', 'Total - Contact Info', array(
                 'description' => esc_html__('A widget to display Contact Information', 'total')
-                )
+            )
         );
     }
 
@@ -73,12 +73,12 @@ class Total_Contact_Info extends WP_Widget {
     public function widget($args, $instance) {
         extract($args);
 
-        $title = isset( $instance['title'] ) ? $instance['title'] : '' ;
-        $phone = isset( $instance['phone'] ) ? $instance['phone'] : '' ;
-        $email = isset( $instance['email'] ) ? $instance['email'] : '' ;
-        $website = isset( $instance['website'] ) ? $instance['website'] : '' ;
-        $address = isset( $instance['address'] ) ? $instance['address'] : '' ;
-        $time = isset( $instance['time'] ) ? $instance['time'] : '' ;
+        $title = isset($instance['title']) ? $instance['title'] : '';
+        $phone = isset($instance['phone']) ? $instance['phone'] : '';
+        $email = isset($instance['email']) ? $instance['email'] : '';
+        $website = isset($instance['website']) ? $instance['website'] : '';
+        $address = isset($instance['address']) ? $instance['address'] : '';
+        $time = isset($instance['time']) ? $instance['time'] : '';
 
         echo $before_widget; // WPCS: XSS OK.
         ?>
@@ -108,7 +108,7 @@ class Total_Contact_Info extends WP_Widget {
 
                 <?php if (!empty($time)): ?>
                     <li><i class="far fa-clock"></i><?php echo wp_kses_post(wpautop($time)); ?></li>
-                    <?php endif; ?>
+                <?php endif; ?>
             </ul>
         </div>
         <?php

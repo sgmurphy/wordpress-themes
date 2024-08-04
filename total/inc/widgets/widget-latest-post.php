@@ -85,7 +85,8 @@ class Total_Latest_Posts extends WP_Widget {
 
             $query = new WP_Query($args);
 
-            while ($query->have_posts()) : $query->the_post();
+            while ($query->have_posts()):
+                $query->the_post();
                 ?>
                 <li class="ht-clearfix">
                     <?php
@@ -117,7 +118,7 @@ class Total_Latest_Posts extends WP_Widget {
                             </div>
                         <?php } ?>
                     </div>
-                </li>   
+                </li>
                 <?php
             endwhile;
             wp_reset_postdata();

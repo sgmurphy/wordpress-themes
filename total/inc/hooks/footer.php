@@ -29,7 +29,7 @@ if (!function_exists('total_main_footer')) {
                             if (is_active_sidebar('total-footer' . $i)) {
                                 ?>
                                 <div class="ht-footer ht-footer<?php echo absint($i); ?>">
-                                    <?php dynamic_sidebar('total-footer' . $i); ?>	
+                                    <?php dynamic_sidebar('total-footer' . $i); ?>
                                 </div>
                                 <?php
                             }
@@ -62,8 +62,8 @@ if (!function_exists('total_bottom_footer')) {
                     }
                     if ($show_credit) {
                         printf(
-                                // translators: 1-Theme URL, 2-Theme Author
-                                esc_html__('%1$s by %2$s', 'total'), '<a href="https://hashthemes.com/wordpress-theme/total/" target="_blank">WordPress Theme - Total</a>', 'HashThemes');
+                            // translators: 1-Theme URL, 2-Theme Author
+                            esc_html__('%1$s by %2$s', 'total'), '<a href="https://hashthemes.com/wordpress-theme/total/" target="_blank">WordPress Theme - Total</a>', 'HashThemes');
                     }
                     ?>
                 </div><!-- #site-info -->

@@ -17,7 +17,8 @@ if (get_theme_mod('total_slider_section_disable') != 'on') {
                     );
                     $query = new WP_Query($args);
                     if ($query->have_posts()):
-                        while ($query->have_posts()) : $query->the_post();
+                        while ($query->have_posts()):
+                            $query->the_post();
                             ?>
                             <div class="ht-slide">
                                 <div class="ht-slide-overlay"></div>
@@ -48,6 +49,6 @@ if (get_theme_mod('total_slider_section_disable') != 'on') {
             }
             ?>
         </div>
-    </div>    
+    </div>
     <?php
 }

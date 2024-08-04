@@ -175,13 +175,13 @@ class Breadcrumb_Trail {
             if (true === $this->args['show_browse']) {
 
                 $breadcrumb .= sprintf(
-                        '<%1$s class="trail-browse">%2$s</%1$s>', tag_escape($this->args['browse_tag']), $this->labels['browse']
+                    '<%1$s class="trail-browse">%2$s</%1$s>', tag_escape($this->args['browse_tag']), $this->labels['browse']
                 );
             }
 
             // Open the unordered list.
             $breadcrumb .= sprintf(
-                    '<%s class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">', tag_escape($this->args['list_tag'])
+                '<%s class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">', tag_escape($this->args['list_tag'])
             );
 
             // Add the number of items and item list order schema.
@@ -208,7 +208,6 @@ class Breadcrumb_Trail {
 
                 if (1 === $item_position && 1 < $item_count)
                     $item_class .= ' trail-begin';
-
                 elseif ($item_count === $item_position)
                     $item_class .= ' trail-end';
 
@@ -227,7 +226,7 @@ class Breadcrumb_Trail {
 
             // Wrap the breadcrumb trail.
             $breadcrumb = sprintf(
-                    '<%1$s role="navigation" aria-label="%2$s" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">%3$s%4$s%5$s</%1$s>', tag_escape($this->args['container']), esc_attr($this->labels['aria_label']), $this->args['before'], $breadcrumb, $this->args['after']
+                '<%1$s role="navigation" aria-label="%2$s" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">%3$s%4$s%5$s</%1$s>', tag_escape($this->args['container']), esc_attr($this->labels['aria_label']), $this->args['before'], $breadcrumb, $this->args['after']
             );
         }
 
@@ -334,31 +333,22 @@ class Breadcrumb_Trail {
 
                 if (is_post_type_archive())
                     $this->add_post_type_archive_items();
-
                 elseif (is_category() || is_tag() || is_tax())
                     $this->add_term_archive_items();
-
                 elseif (is_author())
                     $this->add_user_archive_items();
-
                 elseif (get_query_var('minute') && get_query_var('hour'))
                     $this->add_minute_hour_archive_items();
-
                 elseif (get_query_var('minute'))
                     $this->add_minute_archive_items();
-
                 elseif (get_query_var('hour'))
                     $this->add_hour_archive_items();
-
                 elseif (is_day())
                     $this->add_day_archive_items();
-
                 elseif (get_query_var('w'))
                     $this->add_week_archive_items();
-
                 elseif (is_month())
                     $this->add_month_archive_items();
-
                 elseif (is_year())
                     $this->add_year_archive_items();
                 else
@@ -458,7 +448,7 @@ class Breadcrumb_Trail {
     protected function add_front_page_items() {
 
         // Only show front items if the 'show_on_front' argument is set to 'true'.
-        if (true === $this->args['show_on_front'] || is_paged() || ( is_singular() && 1 < get_query_var('page') )) {
+        if (true === $this->args['show_on_front'] || is_paged() || (is_singular() && 1 < get_query_var('page'))) {
 
             // Add network home link.
             $this->add_network_home_link();
@@ -496,7 +486,6 @@ class Breadcrumb_Trail {
         // Add the posts page item.
         if (is_paged())
             $this->items[] = sprintf('<a href="%s">%s</a>', esc_url(get_permalink($post_id)), $title);
-
         elseif ($title && true === $this->args['show_title'])
             $this->items[] = $title;
     }
@@ -529,9 +518,8 @@ class Breadcrumb_Trail {
         // End with the post title.
         if ($post_title = single_post_title('', false)) {
 
-            if (( 1 < get_query_var('page') || is_paged() ) || ( get_option('page_comments') && 1 < absint(get_query_var('cpage')) ))
+            if ((1 < get_query_var('page') || is_paged()) || (get_option('page_comments') && 1 < absint(get_query_var('cpage'))))
                 $this->items[] = sprintf('<a href="%s">%s</a>', esc_url(get_permalink($post_id)), $post_title);
-
             elseif (true === $this->args['show_title'])
                 $this->items[] = $post_title;
         }
@@ -641,7 +629,6 @@ class Breadcrumb_Trail {
         // Add the term name to the trail end.
         if (is_paged())
             $this->items[] = sprintf('<a href="%s">%s</a>', esc_url(get_term_link($term, $term->taxonomy)), single_term_title('', false));
-
         elseif (true === $this->args['show_title'])
             $this->items[] = single_term_title('', false);
     }
@@ -672,7 +659,6 @@ class Breadcrumb_Trail {
         // Add the post type [plural] name to the trail end.
         if (is_paged() || is_author())
             $this->items[] = sprintf('<a href="%s">%s</a>', esc_url(get_post_type_archive_link($post_type_object->name)), post_type_archive_title('', false));
-
         elseif (true === $this->args['show_title'])
             $this->items[] = post_type_archive_title('', false);
 
@@ -705,7 +691,6 @@ class Breadcrumb_Trail {
         // Add the author's display name to the trail end.
         if (is_paged())
             $this->items[] = sprintf('<a href="%s">%s</a>', esc_url(get_author_posts_url($user_id)), get_the_author_meta('display_name', $user_id));
-
         elseif (true === $this->args['show_title'])
             $this->items[] = get_the_author_meta('display_name', $user_id);
     }
@@ -785,7 +770,6 @@ class Breadcrumb_Trail {
         // Add the day item.
         if (is_paged())
             $this->items[] = sprintf('<a href="%s">%s</a>', esc_url(get_day_link(get_the_time('Y')), get_the_time('m'), get_the_time('d')), $day);
-
         elseif (true === $this->args['show_title'])
             $this->items[] = $day;
     }
@@ -812,7 +796,6 @@ class Breadcrumb_Trail {
         // Add the week item.
         if (is_paged())
             $this->items[] = esc_url(get_archives_link(add_query_arg(array('m' => get_the_time('Y'), 'w' => get_the_time('W')), home_url()), $week, false));
-
         elseif (true === $this->args['show_title'])
             $this->items[] = $week;
     }
@@ -839,7 +822,6 @@ class Breadcrumb_Trail {
         // Add the month item.
         if (is_paged())
             $this->items[] = sprintf('<a href="%s">%s</a>', esc_url(get_month_link(get_the_time('Y'), get_the_time('m'))), $month);
-
         elseif (true === $this->args['show_title'])
             $this->items[] = $month;
     }
@@ -862,7 +844,6 @@ class Breadcrumb_Trail {
         // Add the year item.
         if (is_paged())
             $this->items[] = sprintf('<a href="%s">%s</a>', esc_url(get_year_link(get_the_time('Y'))), $year);
-
         elseif (true === $this->args['show_title'])
             $this->items[] = $year;
     }
@@ -896,7 +877,6 @@ class Breadcrumb_Trail {
 
         if (is_paged())
             $this->items[] = sprintf('<a href="%s">%s</a>', esc_url(get_search_link()), sprintf($this->labels['search'], get_search_query()));
-
         elseif (true === $this->args['show_title'])
             $this->items[] = sprintf($this->labels['search'], get_search_query());
     }
@@ -1027,7 +1007,7 @@ class Breadcrumb_Trail {
 
         foreach ($post_types as $type) {
 
-            if ($slug === $type->has_archive || ( true === $type->has_archive && $slug === $type->rewrite['slug'] ))
+            if ($slug === $type->has_archive || (true === $type->has_archive && $slug === $type->rewrite['slug']))
                 $return[] = $type;
         }
 

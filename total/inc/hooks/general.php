@@ -86,19 +86,19 @@ if (!function_exists('total_comments_content')) {
 
         <div id="comments" class="comments-area">
 
-            <?php if (have_comments()) : ?>
+            <?php if (have_comments()): ?>
                 <h3 class="comments-title">
                     <?php
                     $total_comment_count = get_comments_number();
                     if ('1' === $total_comment_count) {
                         printf(
-                                /* translators: 1: title. */
-                                esc_html__('One thought on &ldquo;%1$s&rdquo;', 'total'), '<span>' . esc_html(get_the_title()) . '</span>'
+                            /* translators: 1: title. */
+                            esc_html__('One thought on &ldquo;%1$s&rdquo;', 'total'), '<span>' . esc_html(get_the_title()) . '</span>'
                         );
                     } else {
                         printf(// WPCS: XSS OK.
-                                /* translators: 1: comment count number, 2: title. */
-                                esc_html(_nx('%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $total_comment_count, 'comments title', 'total')), number_format_i18n($total_comment_count), '<span>' . esc_html(get_the_title()) . '</span>'
+                            /* translators: 1: comment count number, 2: title. */
+                            esc_html(_nx('%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $total_comment_count, 'comments title', 'total')), number_format_i18n($total_comment_count), '<span>' . esc_html(get_the_title()) . '</span>'
                         );
                     }
                     ?>
@@ -112,7 +112,7 @@ if (!function_exists('total_comments_content')) {
                     ?>
                 </ul><!-- .comment-list -->
 
-                <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : // Are there comments to navigate through?        ?>
+                <?php if (get_comment_pages_count() > 1 && get_option('page_comments')): // Are there comments to navigate through?        ?>
                     <nav id="comment-nav-above" class="navigation pagination">
                         <?php paginate_comments_links(); ?>
                     </nav>
@@ -121,7 +121,7 @@ if (!function_exists('total_comments_content')) {
             <?php endif; ?>
 
             <?php
-            if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type(), 'comments')) :
+            if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type(), 'comments')):
                 ?>
                 <p class="no-comments"><?php esc_html_e('Comments are closed.', 'total'); ?></p>
             <?php endif; ?>
@@ -129,18 +129,18 @@ if (!function_exists('total_comments_content')) {
             <?php
             $commenter = wp_get_current_commenter();
             $req = get_option('require_name_email');
-            $aria_req = ( $req ? " aria-required='true'" : '' );
+            $aria_req = ($req ? " aria-required='true'" : '');
 
             $fields = array(
                 'author' =>
-                '<div class="author-email-url ht-clearfix"><p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) .
-                '" size="30"' . $aria_req . ' placeholder="' . esc_attr__('Name', 'total') . ( $req ? '*' : '' ) . '" /></p>',
+                    '<div class="author-email-url ht-clearfix"><p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) .
+                    '" size="30"' . $aria_req . ' placeholder="' . esc_attr__('Name', 'total') . ($req ? '*' : '') . '" /></p>',
                 'email' =>
-                '<p class="comment-form-email"><input id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) .
-                '" size="30"' . $aria_req . ' placeholder="' . esc_attr__('Email', 'total') . ( $req ? '*' : '' ) . '" /></p>',
+                    '<p class="comment-form-email"><input id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) .
+                    '" size="30"' . $aria_req . ' placeholder="' . esc_attr__('Email', 'total') . ($req ? '*' : '') . '" /></p>',
                 'url' =>
-                '<p class="comment-form-url"><input id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author_url']) .
-                '" size="30" placeholder="' . esc_attr__('Website', 'total') . '" /></p></div>',
+                    '<p class="comment-form-url"><input id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author_url']) .
+                    '" size="30" placeholder="' . esc_attr__('Website', 'total') . '" /></p></div>',
             );
 
             if (has_action('set_comment_cookies', 'wp_set_comment_cookies') && get_option('show_comments_cookies_opt_in')) {
@@ -151,7 +151,7 @@ if (!function_exists('total_comments_content')) {
             $args = array(
                 'fields' => apply_filters('comment_form_default_fields', $fields),
                 'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . esc_attr__('Comment', 'total') . '">' .
-                '</textarea></p>',
+                    '</textarea></p>',
             );
 
             comment_form($args);
@@ -257,7 +257,7 @@ if (!function_exists('total_premium_demo_config')) {
                 'buy_url' => 'https://hashthemes.com/wordpress-theme/total/',
                 'image' => 'https://hashthemes.com/import-files/totalplus/screen/construction.jpg',
                 'preview_url' => 'https://demo.hashthemes.com/total-plus/construction'
-        ));
+            ));
 
         $demos = array_merge($demos, $premium_demos);
 

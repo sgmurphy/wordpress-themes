@@ -37,7 +37,8 @@ if (get_theme_mod('total_service_section_disable') != 'on') {
                             $args = array('page_id' => absint($total_service_page_id));
                             $query = new WP_Query($args);
                             if ($query->have_posts()):
-                                while ($query->have_posts()) : $query->the_post();
+                                while ($query->have_posts()):
+                                    $query->the_post();
                                     ?>
                                     <div class="ht-service-post ht-clearfix">
                                         <div class="ht-service-icon"><i class="<?php echo esc_attr($total_service_page_icon); ?>"></i></div>
@@ -51,7 +52,7 @@ if (get_theme_mod('total_service_section_disable') != 'on') {
                                                     echo esc_html(total_excerpt(get_the_content(), 100));
                                                 }
                                                 ?>
-                                                <br/>
+                                                <br />
                                                 <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'total'); ?> <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                                             </div>
                                         </div>

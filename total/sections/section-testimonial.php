@@ -38,7 +38,8 @@ if (get_theme_mod('total_testimonial_section_disable') != 'on') {
                         );
                         $query = new WP_Query($args);
                         if ($query->have_posts()):
-                            while ($query->have_posts()) : $query->the_post();
+                            while ($query->have_posts()):
+                                $query->the_post();
                                 ?>
                                 <div class="ht-testimonial">
                                     <div class="ht-testimonial-excerpt">
@@ -71,7 +72,7 @@ if (get_theme_mod('total_testimonial_section_disable') != 'on') {
                     ?>
                 </div>
             </div>
-        </div>	
+        </div>
     </section>
     <?php
 }

@@ -163,9 +163,9 @@ for ($i = 1; $i < 6; $i++) {
     $wp_customize->add_setting('total_about_progressbar_title' . $i, array(
         'sanitize_callback' => 'total_sanitize_text',
         'default' => sprintf(
-                /* translators: Progress bar count */
-                esc_html__('Progress Bar %d', 'total'), $i
-    )));
+            /* translators: Progress bar count */
+            esc_html__('Progress Bar %d', 'total'), $i
+        )));
 
     $wp_customize->add_control('total_about_progressbar_title' . $i, array(
         'settings' => 'total_about_progressbar_title' . $i,

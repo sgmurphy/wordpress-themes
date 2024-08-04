@@ -10,8 +10,8 @@
     <header class="entry-header">
         <?php
         the_title(sprintf(
-                        /* translators: permalink */
-                        '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h3>');
+            /* translators: permalink */
+            '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h3>');
         ?>
     </header><!-- .entry-header -->
 
@@ -26,4 +26,3 @@
     </div>
 
 </article><!-- #post-## -->
-

@@ -29,7 +29,7 @@ if (get_theme_mod('total_portfolio_section_disable') != 'on') {
 
             if ($total_portfolio_cat) {
                 $total_portfolio_cat_array = explode(',', $total_portfolio_cat);
-                ?>	
+                ?>
                 <div class="ht-portfolio-cat-name-list">
                     <i class="fas fa-th-large" aria-hidden="true"></i>
                     <?php
@@ -57,7 +57,8 @@ if (get_theme_mod('total_portfolio_section_disable') != 'on') {
                         $args = array('cat' => $total_portfolio_cat, 'posts_per_page' => -1);
                         $query = new WP_Query($args);
                         if ($query->have_posts()):
-                            while ($query->have_posts()) : $query->the_post();
+                            while ($query->have_posts()):
+                                $query->the_post();
                                 $categories = get_the_category();
                                 $category_slug = "";
                                 $cat_slug = array();
@@ -81,7 +82,7 @@ if (get_theme_mod('total_portfolio_section_disable') != 'on') {
                                     <div class="ht-portfolio-outer-wrap">
                                         <div class="ht-portfolio-wrap" style="background-image: url(<?php echo esc_url($total_image[0]) ?>);">
 
-                                            <img  class="no-lazyload" src="<?php echo esc_url($image_url); ?>" alt="<?php esc_attr(get_the_title()); ?>">
+                                            <img class="no-lazyload" src="<?php echo esc_url($image_url); ?>" alt="<?php esc_attr(get_the_title()); ?>">
 
                                             <div class="ht-portfolio-caption">
                                                 <h5><?php the_title(); ?></h5>
@@ -89,7 +90,7 @@ if (get_theme_mod('total_portfolio_section_disable') != 'on') {
 
                                                 <?php if (has_post_thumbnail()) { ?>
                                                     <a class="ht-portfolio-image" data-lightbox-gallery="gallery1" href="<?php echo esc_url($total_image_large[0]) ?>"><i class="fas fa-search"></i></a>
-                                                    <?php } ?>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>

@@ -2155,7 +2155,7 @@ msgstr ""
 msgid "A <a href=\"%s\">SiteOrigin</a> Theme"
 msgstr ""
 
-#: parts/menu.php:49
+#: parts/menu.php:50
 msgid "Open the search"
 msgstr ""
 

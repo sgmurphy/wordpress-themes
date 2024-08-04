@@ -82,4 +82,3 @@
 
     <a class="upgrade-button" href="https://hashthemes.com/wordpress-theme/total/?utm_source=wordpress&utm_medium=total-footer&utm_campaign=total-upgrade" target="_blank"><?php esc_html_e('Upgrade Now', 'total'); ?></a>
 </div>
-

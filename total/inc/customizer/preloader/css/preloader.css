@@ -1,11 +1,11 @@
 /**
  * Dots
  */
-.ht--preloader-container{
+.ht--preloader-container {
     margin-top: 10px;
 }
 
-.ht--preloader-container .ht--preloader{
+.ht--preloader-container .ht--preloader {
     width: 100%;
     height: 200px;
     background: #FFF;

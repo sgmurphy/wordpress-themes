@@ -14,7 +14,7 @@ function total_widgets_show_widget_field($instance = '', $widget_field = '', $to
     switch ($total_widgets_field_type) {
 
         // Standard text field
-        case 'text' :
+        case 'text':
             ?>
             <p>
                 <label for="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>"><?php echo esc_html($total_widgets_title); ?>:</label>
@@ -29,7 +29,7 @@ function total_widgets_show_widget_field($instance = '', $widget_field = '', $to
             break;
 
         // Standard url field
-        case 'url' :
+        case 'url':
             ?>
             <p>
                 <label for="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>"><?php echo esc_html($total_widgets_title); ?>:</label>
@@ -44,7 +44,7 @@ function total_widgets_show_widget_field($instance = '', $widget_field = '', $to
             break;
 
         // Textarea field
-        case 'textarea' :
+        case 'textarea':
             ?>
             <p>
                 <label for="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>"><?php echo esc_html($total_widgets_title); ?>:</label>
@@ -54,10 +54,10 @@ function total_widgets_show_widget_field($instance = '', $widget_field = '', $to
             break;
 
         // Checkbox field
-        case 'checkbox' :
+        case 'checkbox':
             ?>
             <p>
-                <input id="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>" name="<?php echo esc_attr($instance->get_field_name($total_widgets_name)); ?>" type="checkbox" value="1" <?php checked('1', $total_field_value); ?>/>
+                <input id="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>" name="<?php echo esc_attr($instance->get_field_name($total_widgets_name)); ?>" type="checkbox" value="1" <?php checked('1', $total_field_value); ?> />
                 <label for="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>"><?php echo esc_html($total_widgets_title); ?></label>
 
                 <?php if (isset($total_widgets_description)) { ?>
@@ -69,7 +69,7 @@ function total_widgets_show_widget_field($instance = '', $widget_field = '', $to
             break;
 
         // Radio fields
-        case 'radio' :
+        case 'radio':
             ?>
             <p>
                 <?php
@@ -90,7 +90,7 @@ function total_widgets_show_widget_field($instance = '', $widget_field = '', $to
             break;
 
         // Select field
-        case 'select' :
+        case 'select':
             ?>
             <p>
                 <label for="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>"><?php echo esc_html($total_widgets_title); ?>:</label>
@@ -108,7 +108,7 @@ function total_widgets_show_widget_field($instance = '', $widget_field = '', $to
             <?php
             break;
 
-        case 'number' :
+        case 'number':
             ?>
             <p>
                 <label for="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>"><?php echo esc_html($total_widgets_title); ?>:</label><br />
@@ -144,7 +144,7 @@ function total_widgets_show_widget_field($instance = '', $widget_field = '', $to
                     <button type="button" class="button total-widget-delete-button align-left"><?php esc_html_e('Remove', 'total'); ?></button>
                     <button type="button" class="button total-widget-upload-button alignright"><?php esc_html_e('Select Image', 'total'); ?></button>
 
-                    <input name="<?php echo esc_attr($instance->get_field_name($total_widgets_name)); ?>" id="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>" class="upload-id" type="hidden" value="<?php echo esc_url($total_field_value) ?>"/>
+                    <input name="<?php echo esc_attr($instance->get_field_name($total_widgets_name)); ?>" id="<?php echo esc_attr($instance->get_field_id($total_widgets_name)); ?>" class="upload-id" type="hidden" value="<?php echo esc_url($total_field_value) ?>" />
                 </div>
 
                 <?php if (isset($total_widgets_description)) { ?>

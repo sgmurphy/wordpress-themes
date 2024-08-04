@@ -127,7 +127,7 @@ function total_order_sections() {
 function total_get_section_position($key) {
     $sections = total_home_section();
     $position = array_search($key, $sections);
-    $return = ( $position + 1 ) * 10;
+    $return = ($position + 1) * 10;
     return $return;
 }
 

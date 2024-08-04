@@ -7,7 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('total-hentry ht-clearfix'); ?>>
-    <?php if ('post' == get_post_type()) : ?>
+    <?php if ('post' == get_post_type()): ?>
         <div class="entry-meta ht-post-info">
             <?php total_posted_on(); ?>
         </div><!-- .entry-meta -->

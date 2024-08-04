@@ -199,7 +199,7 @@ $wp_customize->add_control(new Total_Switch_Control($wp_customize, 'total_sticky
     'on_off_label' => array(
         'on' => esc_html__('Yes', 'total'),
         'off' => esc_html__('No', 'total')
-))));
+    ))));
 
 $wp_customize->add_setting('total_enable_header_border', array(
     'sanitize_callback' => 'total_sanitize_text',
@@ -524,14 +524,14 @@ $wp_customize->add_control(new Total_Upgrade_Info_Control($wp_customize, 'total_
 )));
 
 $wp_customize->selective_refresh->add_partial(
-        'blogname', array(
-    'selector' => '.site-title a',
-    'render_callback' => 'total_customize_partial_blogname',
-        )
+    'blogname', array(
+        'selector' => '.site-title a',
+        'render_callback' => 'total_customize_partial_blogname',
+    )
 );
 $wp_customize->selective_refresh->add_partial(
-        'blogdescription', array(
-    'selector' => '.site-description',
-    'render_callback' => 'total_customize_partial_blogdescription',
-        )
+    'blogdescription', array(
+        'selector' => '.site-description',
+        'render_callback' => 'total_customize_partial_blogdescription',
+    )
 );

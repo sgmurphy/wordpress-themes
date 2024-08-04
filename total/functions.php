@@ -11,7 +11,7 @@ if (!defined('TOTAL_VERSION')) {
     define('TOTAL_VERSION', $total_version);
 }
 
-if (!function_exists('total_setup')) :
+if (!function_exists('total_setup')):
 
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -102,8 +102,6 @@ if (!function_exists('total_setup')) :
         // Add support for Block Styles.
         add_theme_support('wp-block-styles');
 
-        // Add support for full and wide align images.
-        add_theme_support('align-wide');
         /*
          * This theme styles the visual editor to resemble the theme style,
          * specifically font, colors, icons, and column width.
@@ -217,7 +215,7 @@ function total_widgets_init() {
 
 add_action('widgets_init', 'total_widgets_init');
 
-if (!function_exists('total_fonts_url')) :
+if (!function_exists('total_fonts_url')):
 
     /**
      * Register Google fonts for Total.
@@ -263,7 +261,7 @@ if (!function_exists('total_fonts_url')) :
                     'family' => urlencode(implode('|', $fonts)),
                     'subset' => urlencode($subsets),
                     'display' => 'swap',
-                        ), 'https://fonts.googleapis.com/css');
+                ), 'https://fonts.googleapis.com/css');
             }
         }
         return $fonts_url;
@@ -324,9 +322,9 @@ add_action('wp_print_scripts', function () {
         return;
     }
     if (function_exists('get_current_screen') && get_current_screen() && get_current_screen()->is_block_editor() && get_current_screen()->base === 'post') {
-    echo '<style id="total-admin-css-vars">';
-    echo total_dymanic_styles();
-    echo '</style>';
+        echo '<style id="total-admin-css-vars">';
+        echo total_dymanic_styles();
+        echo '</style>';
     }
 });
 

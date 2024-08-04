@@ -13,7 +13,7 @@ function total_sidebar_layout_meta_box() {
     $screens = array('post', 'page');
 
     add_meta_box(
-            'total_sidebar_layout', esc_html__('Sidebar Layout', 'total'), 'total_sidebar_layout_meta_box_callback', $screens, 'side', 'high'
+        'total_sidebar_layout', esc_html__('Sidebar Layout', 'total'), 'total_sidebar_layout_meta_box_callback', $screens, 'side', 'high'
     );
 }
 

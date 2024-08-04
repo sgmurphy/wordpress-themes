@@ -24,18 +24,19 @@ if (get_theme_mod('total_about_page_disable') != 'on') {
                         );
                         $query = new WP_Query($args);
                         if ($query->have_posts()):
-                            while ($query->have_posts()) : $query->the_post();
+                            while ($query->have_posts()):
+                                $query->the_post();
                                 ?>
-                                <h2 class="ht-section-title"><?php the_title(); ?></h2>
-                                <div class="ht-content">
-                                    <?php
-                                    if (has_excerpt() && '' != trim(get_the_excerpt())) {
-                                        the_excerpt();
-                                    } else {
-                                        the_content();
-                                    }
-                                    ?>
-                                </div>
+                                    <h2 class="ht-section-title"><?php the_title(); ?></h2>
+                                    <div class="ht-content">
+                                        <?php
+                                        if (has_excerpt() && '' != trim(get_the_excerpt())) {
+                                            the_excerpt();
+                                        } else {
+                                            the_content();
+                                        }
+                                        ?>
+                                    </div>
                                 <?php
                             endwhile;
                         endif;
@@ -84,4 +85,4 @@ if (get_theme_mod('total_about_page_disable') != 'on') {
         </div>
     </section>
     <?php
-} 
+}

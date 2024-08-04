@@ -6,7 +6,7 @@
  *
  * @package Total
  */
-if (!function_exists('total_posted_on')) :
+if (!function_exists('total_posted_on')):
 
     /**
      * Prints HTML with meta information for the current post-date/time and author.
@@ -18,8 +18,8 @@ if (!function_exists('total_posted_on')) :
         );
 
         $byline = sprintf(
-                /* translators: author */
-                esc_html_x('by %s', 'post author', 'total'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
+            /* translators: author */
+            esc_html_x('by %s', 'post author', 'total'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
         );
 
         $comment_count = get_comments_number(); // get_comments_number returns only a numeric value
@@ -42,7 +42,7 @@ if (!function_exists('total_posted_on')) :
 
 endif;
 
-if (!function_exists('total_entry_footer')) :
+if (!function_exists('total_entry_footer')):
 
     /**
      * Prints HTML with meta information for the categories, tags and comments.
@@ -54,20 +54,20 @@ if (!function_exists('total_entry_footer')) :
             $categories_list = get_the_category_list(', ');
             if ($categories_list && total_categorized_blog()) {
                 printf(// WPCS: XSS OK.
-                        /* translators: categories */
-                        '<span class="cat-links">' . esc_html__('Posted in %s', 'total') . '</span>', $categories_list);
+                    /* translators: categories */
+                    '<span class="cat-links">' . esc_html__('Posted in %s', 'total') . '</span>', $categories_list);
             }
 
             /* translators: used between list items, there is a space after the comma */
             $tags_list = get_the_tag_list('', ', ');
             if ($tags_list) {
                 printf(// WPCS: XSS OK.
-                        /* translators: tags */
-                        '<span class="tags-links">' . esc_html__('Tagged %s', 'total') . '</span>', $tags_list);
+                    /* translators: tags */
+                    '<span class="tags-links">' . esc_html__('Tagged %s', 'total') . '</span>', $tags_list);
             }
         }
 
-        if (!is_single() && !post_password_required() && ( comments_open() || get_comments_number() )) {
+        if (!is_single() && !post_password_required() && (comments_open() || get_comments_number())) {
             echo '<span class="comments-link">';
             comments_popup_link(esc_html__('Leave a comment', 'total'), esc_html__('1 Comment', 'total'), esc_html__('% Comments', 'total'));
             echo '</span>';
@@ -78,7 +78,7 @@ if (!function_exists('total_entry_footer')) :
 
 endif;
 
-if (!function_exists('total_entry_category')) :
+if (!function_exists('total_entry_category')):
 
     /**
      * Prints HTML with meta information for the categories
@@ -101,7 +101,7 @@ endif;
  * @return bool
  */
 function total_categorized_blog() {
-    if (false === ( $all_the_cool_cats = get_transient('total_categories') )) {
+    if (false === ($all_the_cool_cats = get_transient('total_categories'))) {
         // Create an array of all the categories that are attached to posts.
         $all_the_cool_cats = get_categories(array(
             'fields' => 'ids',

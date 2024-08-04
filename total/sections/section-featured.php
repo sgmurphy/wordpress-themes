@@ -37,7 +37,8 @@ if (get_theme_mod('total_featured_section_disable') != 'on') {
                         );
                         $query = new WP_Query($args);
                         if ($query->have_posts()):
-                            while ($query->have_posts()) : $query->the_post();
+                            while ($query->have_posts()):
+                                $query->the_post();
                                 ?>
                                 <div class="ht-featured-post">
                                     <div class="ht-featured-icon"><i class="<?php echo esc_attr($total_featured_page_icon); ?>"></i></div>
