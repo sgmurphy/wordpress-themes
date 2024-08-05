@@ -269,6 +269,26 @@ function newsup_customize_register($wp_customize) {
 			'selector'        => '.single-class > .container-fluid > .row',
 			'render_callback' => 'newsup_customize_partial_single_layout',
 		));
+		$wp_customize->selective_refresh->add_partial('newsup_enable_related_post', array(
+			'selector'        => '.single-class > .container-fluid > .row',
+			'render_callback' => 'newsup_customize_partial_single_layout',
+		));
+		$wp_customize->selective_refresh->add_partial('newsup_enable_single_post_category', array(
+			'selector'        => '.single-class > .container-fluid > .row',
+			'render_callback' => 'newsup_customize_partial_single_layout',
+		));
+		$wp_customize->selective_refresh->add_partial('newsup_enable_single_post_date', array(
+			'selector'        => '.single-class > .container-fluid > .row',
+			'render_callback' => 'newsup_customize_partial_single_layout',
+		));
+		$wp_customize->selective_refresh->add_partial('newsup_enable_single_post_admin', array(
+			'selector'        => '.single-class > .container-fluid > .row',
+			'render_callback' => 'newsup_customize_partial_single_layout',
+		));
+		$wp_customize->selective_refresh->add_partial('newsup_enable_single_post_comments', array(
+			'selector'        => '.single-class > .container-fluid > .row',
+			'render_callback' => 'newsup_customize_partial_single_layout',
+		));
 	}
 
     $default = newsup_get_default_theme_options();

@@ -749,6 +749,7 @@ $wp_customize->add_setting('newsup_enable_related_post',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_enable_related_post', 
@@ -778,6 +779,7 @@ $wp_customize->add_setting('newsup_enable_single_post_category',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_enable_single_post_category', 
@@ -791,6 +793,7 @@ $wp_customize->add_setting('newsup_enable_single_post_date',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_enable_single_post_date', 
@@ -804,6 +807,7 @@ $wp_customize->add_setting('newsup_enable_single_post_admin',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_enable_single_post_admin', 
@@ -817,6 +821,7 @@ $wp_customize->add_setting('newsup_enable_single_post_comments',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_enable_single_post_comments', 
