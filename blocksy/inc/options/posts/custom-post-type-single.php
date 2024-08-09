@@ -60,7 +60,6 @@ $page_structure_options = [
 
 $maybe_taxonomy = blocksy_maybe_get_matching_taxonomy($post_type->name, false);
 
-
 $areas = [
 	[
 		'title' => __('Page Title', 'blocksy'),

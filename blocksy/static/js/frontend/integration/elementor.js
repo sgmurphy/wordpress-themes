@@ -1,6 +1,6 @@
 import ctEvents from 'ct-events'
 
-export const mountElementorIntegration = () => {
+export const mount = () => {
 	if (!window.elementorFrontend) {
 		return
 	}

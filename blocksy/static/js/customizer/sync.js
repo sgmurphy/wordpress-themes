@@ -58,6 +58,21 @@ wp.customize('blogdescription', (value) =>
 	value.bind((to) => $('.site-description').text(to))
 )
 
+document.addEventListener('DOMContentLoaded', () => {
+	const oldisLinkPreviewable = wp.customize.isLinkPreviewable
+
+	// WooCommerce archive add to cart links should not trigger full page
+	// refresh.
+	wp.customize.isLinkPreviewable = function (element, opts) {
+		if (element.matches('.ajax_add_to_cart')) {
+			element.classList.remove('customize-unpreviewable')
+			return false
+		}
+
+		return oldisLinkPreviewable(element, opts)
+	}
+})
+
 export const updateAndSaveEl = (
 	selector,
 	cb,

@@ -1,4 +1,4 @@
-export const mountTurnstileIntegration = () => {
+export const mount = () => {
 	if (!window.turnstile) {
 		return
 	}

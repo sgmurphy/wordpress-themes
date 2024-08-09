@@ -585,6 +585,7 @@ require get_template_directory() . '/inc/integrations/cartflows.php';
 require get_template_directory() . '/inc/integrations/bbpress.php';
 require get_template_directory() . '/inc/integrations/fluent-forms.php';
 require get_template_directory() . '/inc/integrations/coauthors.php';
+require get_template_directory() . '/inc/integrations/disqus.php';
 
 require get_template_directory() . '/inc/components/archive/helpers.php';
 require get_template_directory() . '/inc/components/archive/archive-card.php';

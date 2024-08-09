@@ -94,7 +94,9 @@
 }
 
 .ct-comment-author {
-	font-size: 16px;
+	--theme-font-size: 16px;
+	--theme-link-initial-color: currentColor;
+
 	margin-bottom: 0;
 }
 
@@ -146,7 +148,7 @@
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 10px;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 #cancel-comment-reply-link {

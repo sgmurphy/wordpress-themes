@@ -1,3 +1,9 @@
+2.0.61: 2024-08-08
+- Improvement: Better handle Disqus comments with "Contained" module placement
+- Improvement: Customizer options - better handle options with long translated labels
+- Improvement: Customizer range/slider option - make sure invalid values are handled correctly
+- Improvement: Product archive columns number option - better handle revert state
+
 2.0.60: 2024-08-01
 - Improvement: Author page hero section - color options for the social icons
 - Improvement: Better `schema.org` markup for post comments

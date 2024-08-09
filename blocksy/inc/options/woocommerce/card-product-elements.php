@@ -7,24 +7,43 @@ $card_additional_actions = apply_filters(
 	]
 );
 
-$card_additional_actions_options = [];
 $card_additional_actions_design_options = [];
+$card_actions_condition = [];
+
+$card_additional_actions_options = apply_filters(
+	'blocksy_woo_card_options:additional_options',
+	[
+		[
+			blocksy_rand_md5() => [
+				'type' => 'ct-condition',
+				'condition' => [
+					'shop_cards_type' => 'type-3'
+				],
+				'options' => [
+					blocksy_rand_md5() => [
+						'type' => 'ct-title',
+						'label' => __( 'Additional Actions', 'blocksy' ),
+					]
+				]
+			],
+	
+			blocksy_rand_md5() => [
+				'type' => 'ct-condition',
+				'condition' => [
+					'shop_cards_type' => '!type-3'
+				],
+				'options' => ! empty($card_additional_actions) ? [
+					blocksy_rand_md5() => [
+						'type' => 'ct-title',
+						'label' => __( 'Additional Actions', 'blocksy' ),
+					]
+				] : []
+			]
+		]
+	]
+);
 
 if (! empty($card_additional_actions)) {
-	$card_additional_actions_options = apply_filters(
-		'blocksy_woo_card_options:additional_options',
-		[
-			[
-				blocksy_rand_md5() => [
-					'type' => 'ct-title',
-					'label' => __( 'Additional Actions', 'blocksy' ),
-				],
-			],
-		]
-	);
-
-	$card_actions_condition = [];
-
 	foreach ($card_additional_actions as $single_action) {
 		$card_actions_condition[$single_action['id']] = 'yes';
 
@@ -37,115 +56,120 @@ if (! empty($card_additional_actions)) {
 			]),
 		];
 	}
-
-	$card_additional_actions_design_options[blocksy_rand_md5()] = [
-		'type' => 'ct-condition',
-		'condition' => [
-			'any' => $card_actions_condition
-		],
-		'options' => [
-			blocksy_rand_md5() => [
-				'type' => 'ct-title',
-				'label' => __( 'Additional Actions', 'blocksy' ),
-			],
-
-			'additional_actions_button_icon_color' => [
-				'label' => __( 'Icon Color', 'blocksy' ),
-				'type'  => 'ct-color-picker',
-				'design' => 'block:right',
-				'responsive' => true,
-				'setting' => [ 'transport' => 'postMessage' ],
-				'value' => [
-					'default' => [
-						'color' => 'var(--theme-text-color)',
-					],
-					'hover' => [
-						'color' => '#ffffff',
-					],
-
-					'default_2' => [
-						'color' => 'var(--theme-text-color)',
-					],
-					'hover_2' => [
-						'color' => 'var(--theme-palette-color-1)',
-					],
-				],
-
-				'pickers' => [
-					[
-						'title' => __( 'Initial', 'blocksy' ),
-						'id' => 'default',
-						'condition' => [ 'shop_cards_type' => 'type-1|type-2' ]
-					],
-					[
-						'title' => __( 'Hover/Active', 'blocksy' ),
-						'id' => 'hover',
-						'condition' => [ 'shop_cards_type' => 'type-1|type-2' ]
-					],
-
-					[
-						'title' => __( 'Initial', 'blocksy' ),
-						'id' => 'default_2',
-						'condition' => [ 'shop_cards_type' => 'type-3' ]
-					],
-					[
-						'title' => __( 'Hover/Active', 'blocksy' ),
-						'id' => 'hover_2',
-						'condition' => [ 'shop_cards_type' => 'type-3' ]
-					],
-				],
-			],
-
-			'additional_actions_button_background_color' => [
-				'label' => __( 'Background Color', 'blocksy' ),
-				'type'  => 'ct-color-picker',
-				'design' => 'block:right',
-				'responsive' => true,
-				'setting' => [ 'transport' => 'postMessage' ],
-				'value' => [
-					'default' => [
-						'color' => '#ffffff',
-					],
-					'hover' => [
-						'color' => 'var(--theme-palette-color-1)',
-					],
-
-					'default_2' => [
-						'color' => '#ffffff',
-					],
-					'hover_2' => [
-						'color' => '#ffffff',
-					],
-				],
-
-				'pickers' => [
-					[
-						'title' => __( 'Initial', 'blocksy' ),
-						'id' => 'default',
-						'condition' => [ 'shop_cards_type' => 'type-1|type-2' ]
-					],
-					[
-						'title' => __( 'Hover/Active', 'blocksy' ),
-						'id' => 'hover',
-						'condition' => [ 'shop_cards_type' => 'type-1|type-2' ]
-					],
-
-					[
-						'title' => __( 'Initial', 'blocksy' ),
-						'id' => 'default_2',
-						'condition' => [ 'shop_cards_type' => 'type-3' ]
-					],
-					[
-						'title' => __( 'Hover/Active', 'blocksy' ),
-						'id' => 'hover_2',
-						'condition' => [ 'shop_cards_type' => 'type-3' ]
-					],
-				],
-			],
-		]
-	];
 }
 
+$card_additional_actions_design_options[blocksy_rand_md5()] = [
+	'type' => 'ct-condition',
+	'condition' => [
+		'any' => [
+			'all' => [
+				'has_archive_add_to_cart' => 'yes',
+				'shop_cards_type' => 'type-3'
+			],
+			'any' => $card_actions_condition,
+		]
+	],
+	'options' => [
+		blocksy_rand_md5() => [
+			'type' => 'ct-title',
+			'label' => __( 'Additional Actions', 'blocksy' ),
+		],
+
+		'additional_actions_button_icon_color' => [
+			'label' => __( 'Icon Color', 'blocksy' ),
+			'type'  => 'ct-color-picker',
+			'design' => 'block:right',
+			'responsive' => true,
+			'setting' => [ 'transport' => 'postMessage' ],
+			'value' => [
+				'default' => [
+					'color' => 'var(--theme-text-color)',
+				],
+				'hover' => [
+					'color' => '#ffffff',
+				],
+
+				'default_2' => [
+					'color' => 'var(--theme-text-color)',
+				],
+				'hover_2' => [
+					'color' => 'var(--theme-palette-color-1)',
+				],
+			],
+
+			'pickers' => [
+				[
+					'title' => __( 'Initial', 'blocksy' ),
+					'id' => 'default',
+					'condition' => [ 'shop_cards_type' => 'type-1|type-2' ]
+				],
+				[
+					'title' => __( 'Hover/Active', 'blocksy' ),
+					'id' => 'hover',
+					'condition' => [ 'shop_cards_type' => 'type-1|type-2' ]
+				],
+
+				[
+					'title' => __( 'Initial', 'blocksy' ),
+					'id' => 'default_2',
+					'condition' => [ 'shop_cards_type' => 'type-3' ]
+				],
+				[
+					'title' => __( 'Hover/Active', 'blocksy' ),
+					'id' => 'hover_2',
+					'condition' => [ 'shop_cards_type' => 'type-3' ]
+				],
+			],
+		],
+
+		'additional_actions_button_background_color' => [
+			'label' => __( 'Background Color', 'blocksy' ),
+			'type'  => 'ct-color-picker',
+			'design' => 'block:right',
+			'responsive' => true,
+			'setting' => [ 'transport' => 'postMessage' ],
+			'value' => [
+				'default' => [
+					'color' => '#ffffff',
+				],
+				'hover' => [
+					'color' => 'var(--theme-palette-color-1)',
+				],
+
+				'default_2' => [
+					'color' => '#ffffff',
+				],
+				'hover_2' => [
+					'color' => '#ffffff',
+				],
+			],
+
+			'pickers' => [
+				[
+					'title' => __( 'Initial', 'blocksy' ),
+					'id' => 'default',
+					'condition' => [ 'shop_cards_type' => 'type-1|type-2' ]
+				],
+				[
+					'title' => __( 'Hover/Active', 'blocksy' ),
+					'id' => 'hover',
+					'condition' => [ 'shop_cards_type' => 'type-1|type-2' ]
+				],
+
+				[
+					'title' => __( 'Initial', 'blocksy' ),
+					'id' => 'default_2',
+					'condition' => [ 'shop_cards_type' => 'type-3' ]
+				],
+				[
+					'title' => __( 'Hover/Active', 'blocksy' ),
+					'id' => 'hover_2',
+					'condition' => [ 'shop_cards_type' => 'type-3' ]
+				],
+			],
+		],
+	]
+];
 
 $options = [
 	'product_card_options_panel' => [

@@ -366,6 +366,10 @@ add_action(
 					$single_setting->id === 'woocommerce_archive_thumbnail_cropping'
 					||
 					$single_setting->id === 'woocommerce_archive_thumbnail_image_width'
+					||
+					$single_setting->id === 'woocommerce_catalog_columns'
+					||
+					$single_setting->id === 'woocommerce_catalog_rows'
 				) {
 					delete_option($single_setting->id);
 				}

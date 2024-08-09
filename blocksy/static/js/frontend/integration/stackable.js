@@ -1,4 +1,4 @@
-export const mountStackableIntegration = () => {
+export const mount = () => {
 	if (window.stackableEntrance && window.stackableEntrance.init) {
 		window.stackableEntrance.init()
 	}

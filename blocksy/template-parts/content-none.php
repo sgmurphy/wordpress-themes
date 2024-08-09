@@ -7,7 +7,7 @@
  * @package Blocksy
  */
 
-echo '<div class="entry-content">';
+echo '<div class="entry-content is-layout-flow">';
 
 if (is_home() && current_user_can('publish_posts')) {
 	printf(

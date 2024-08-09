@@ -185,8 +185,8 @@ function blocksy_custom_comment_template($comment, $args, $depth) {
 	?>
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class($class); ?>>
-		<article 
-			class="ct-comment-inner" 
+		<article
+			class="ct-comment-inner"
 			id="ct-comment-inner-<?php comment_ID(); ?>"
 			<?php echo blocksy_schema_org_definitions('comment'); ?>>
 
@@ -225,7 +225,19 @@ function blocksy_custom_comment_template($comment, $args, $depth) {
 				?>
 
 				<h4 class="ct-comment-author" <?php echo blocksy_schema_org_definitions('author'); ?>>
-					<?php echo get_comment_author_link(); ?>
+					<?php
+						echo blocksy_html_tag(
+							'cite',
+							blocksy_schema_org_definitions('author_name', [
+								'array' => true
+							]),
+							blocksy_get_comment_author_link([
+								'attr' => blocksy_schema_org_definitions('author_url', [
+									'array' => true
+								])
+							])
+						);
+					?>
 				</h4>
 
 				<div class="ct-comment-meta-data">
@@ -285,7 +297,7 @@ function blocksy_custom_comment_template($comment, $args, $depth) {
 			</footer>
 
 
-			<div class="ct-comment-content entry-content" <?php echo blocksy_schema_org_definitions('entry_content'); ?>>
+			<div class="ct-comment-content entry-content is-layout-flow" <?php echo blocksy_schema_org_definitions('entry_content'); ?>>
 				<?php comment_text(); ?>
 
 				<?php if ( '0' === $comment->comment_approved ) : ?>

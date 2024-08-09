@@ -58,7 +58,7 @@ if (blocksy_default_akg('has_header_text_full_width', $atts, 'no') === 'yes') {
 <div
 	class="<?php echo esc_attr($class) ?>"
 	<?php echo blocksy_attr_to_html($attr) ?>>
-	<div class="entry-content">
+	<div class="entry-content is-layout-flow">
 		<?php echo $text ?>
 	</div>
 </div>

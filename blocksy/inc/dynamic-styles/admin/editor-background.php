@@ -12,10 +12,6 @@ $prefix = blocksy_manager()->screen->get_admin_prefix($post_type);
 
 $post_atts = blocksy_get_post_options($post_id);
 
-$source = [
-	'strategy' => $post_atts
-];
-
 $background_source = blocksy_default_akg(
 	'background',
 	$post_atts,
@@ -75,6 +71,29 @@ if ($post_type === 'ct_content_block') {
 	}
 }
 
+$maybe_matching_template = null;
+$content_block_atts = null;
+$strategy = [
+	'strategy' => 'customizer',
+	'prefix' => $prefix
+];
+
+if (function_exists('blc_get_content_block_that_matches')) {
+	$maybe_matching_template = blc_get_content_block_that_matches([
+		'template_type' => 'single',
+		'template_subtype' => 'canvas',
+		'match_conditions_strategy' => $prefix
+	]);
+
+	if ($maybe_matching_template) {
+		$content_block_atts = blocksy_get_post_options($maybe_matching_template);
+
+		$strategy = [
+			'strategy' => $content_block_atts
+		];
+	}
+}
+
 if (
 	isset($background_source['background_type'])
 	&&
@@ -84,8 +103,9 @@ if (
 	&&
 	$background_source['backgroundColor']['default']['color'] === Blocksy_Css_Injector::get_skip_rule_keyword()
 ) {
-	$background_source = blocksy_get_theme_mod(
-		$prefix . '_background',
+	$background_source = blocksy_akg_or_customizer(
+		'background',
+		$strategy,
 		blocksy_background_default_value([
 			'backgroundColor' => [
 				'default' => [

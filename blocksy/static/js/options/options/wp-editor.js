@@ -113,7 +113,9 @@ const WpEditor = ({ id, value, option, onChange }) => {
 	}
 
 	useEffect(() => {
-		mount()
+		setTimeout(() => {
+			mount()
+		}, 5)
 
 		const cb = () => {
 			const maybeEditor = window.tinymce.editors[editorId]

@@ -190,6 +190,14 @@ ctEvents.on('blocksy:frontend:flexy:slide-change', ({ instance, payload }) => {
 	})
 })
 
+ctEvents.on('blocksy:ajax:filters:done', () => {
+	;[...document.querySelectorAll('.ct-media-container[data-media-id]')].map(
+		(el) => {
+			processInitialAutoplayFor(el)
+		}
+	)
+})
+
 const processInitialAutoplayFor = (el, args = {}) => {
 	args = {
 		performVisibilityCheck: true,
@@ -228,11 +236,22 @@ export const mount = (el, { event }) => {
 		}
 
 		mounted = true
-		;[
-			...document.querySelectorAll('.ct-media-container[data-media-id]'),
-		].map((el) => {
-			processInitialAutoplayFor(el)
+
+		const cb = () => {
+			;[
+				...document.querySelectorAll(
+					'.ct-media-container[data-media-id]'
+				),
+			].map((el) => {
+				processInitialAutoplayFor(el)
+			})
+		}
+
+		ctEvents.on('blocksy:frontend:init', () => {
+			cb()
 		})
+
+        cb()
 
 		return
 	}

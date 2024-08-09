@@ -42,6 +42,8 @@ function blocksy_template_loop_product_thumbnail($attr) {
 		blocksy_product_get_gallery_images($product)
 	);
 
+	// TODO: investigate why this isn't in blocksy_product_get_gallery_images()
+	// function.
 	if ($product->get_type() === 'variation') {
 		$variation_main_image = $product->get_image_id();
 

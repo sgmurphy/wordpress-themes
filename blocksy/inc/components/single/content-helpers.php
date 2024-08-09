@@ -137,7 +137,7 @@ function blocksy_single_content($content = null) {
 	$share_box2_location = blocksy_get_theme_mod($prefix . '_share_box2_location', 'right');
 	$share_box2_colors = blocksy_get_theme_mod($prefix . '_share_box2_colors', 'custom');
 
-	$content_class = 'entry-content';
+	$content_class = 'entry-content is-layout-flow';
 
 	ob_start();
 

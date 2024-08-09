@@ -40,6 +40,15 @@ class WooCommerceAddToCart {
 				'woocommerce_after_add_to_cart_button'
 			]
 		]);
+
+		if (isset($_REQUEST['blocksy_add_to_cart'])) {
+			add_filter(
+				'woocommerce_add_to_cart_redirect',
+				'__return_false'
+			);
+		}
+
+		add_action('wp_footer', [$this, 'wp_footer']);
 	}
 
 	private function product_was_handled($product) {
@@ -200,7 +209,7 @@ class WooCommerceAddToCart {
 		);
 
 		if (
-			
+
 			(
 				function_exists('blocksy_has_product_specific_layer')
 				&&
@@ -246,6 +255,31 @@ class WooCommerceAddToCart {
 		];
 
 		return in_array($product->get_type(), $allowed_custom_product_types);
+	}
+
+	public function wp_footer() {
+		if (! isset($_REQUEST['blocksy_add_to_cart'])) {
+			return;
+		}
+
+		ob_start();
+		woocommerce_mini_cart();
+		$mini_cart = ob_get_clean();
+
+		$data = array(
+			'fragments' => apply_filters(
+				'woocommerce_add_to_cart_fragments',
+				array(
+					'div.widget_shopping_cart_content' => '<div class="widget_shopping_cart_content">' . $mini_cart . '</div>',
+				)
+			),
+			'cart_hash' => WC()->cart->get_cart_hash(),
+		);
+
+		echo blocksy_html_tag('script', [
+			'type' => 'application/json',
+			'id' => 'blocksy-woo-add-to-cart-fragments',
+		], json_encode($data));
 	}
 }
 

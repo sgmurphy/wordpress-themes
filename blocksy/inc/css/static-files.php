@@ -48,6 +48,10 @@ class Blocksy_Static_Css_Files {
 		);
 
 		$prefix = blocksy_manager()->screen->get_prefix();
+		
+		$woo_extra_settings = get_option('blocksy_ext_woocommerce_extra_settings', [
+			'features' => []
+		]);
 
 		return [
 			[
@@ -247,6 +251,16 @@ class Blocksy_Static_Css_Files {
 							||
 							has_shortcode($post->post_content, 'product_page')
 						)
+					)
+					||
+					(
+						function_exists('is_woocommerce')
+						&&
+						is_woocommerce()
+						&&
+						isset($woo_extra_settings['features']['added-to-cart-popup'])
+						&&
+						$woo_extra_settings['features']['added-to-cart-popup']
 					)
 				)
 			],

@@ -361,7 +361,7 @@ const GenericOptionType = ({
 		let computeOptionValue = renderingConfig.computeOptionValue
 
 		if (!computeOptionValue) {
-			computeOptionValue = (o) => o
+			computeOptionValue = (o, { option, values }) => o
 		}
 
 		return (
@@ -374,7 +374,7 @@ const GenericOptionType = ({
 				<button
 					type="button"
 					disabled={deepEqual(
-						computeOptionValue(option.value),
+						computeOptionValue(option.value, { option, values }),
 						renderingConfig.getValueForRevert
 							? renderingConfig.getValueForRevert({
 									value,
@@ -398,6 +398,7 @@ const GenericOptionType = ({
 						if (renderingConfig.performRevert) {
 							renderingConfig.performRevert({
 								onChangeFor,
+								option,
 							})
 						}
 

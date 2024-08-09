@@ -14,6 +14,17 @@ export const mount = (sliderEl, args) => {
 
 	let maybePillsSlider = sliderEl.querySelector('.flexy-pills [data-flexy]')
 
+	let leftArrow = sliderEl.querySelector('.flexy .flexy-arrow-prev')
+	let rightArrow = sliderEl.querySelector('.flexy .flexy-arrow-next')
+
+
+	const maybeSuggested = sliderEl.closest('.ct-suggested-products')
+
+	if (maybeSuggested) {
+		leftArrow = maybeSuggested.querySelector('.ct-arrow-prev')
+		rightArrow = maybeSuggested.querySelector('.ct-arrow-next')
+	}
+
 	const inst = new Flexy(sliderEl.querySelector('.flexy-items'), {
 		flexyAttributeEl: sliderEl,
 		elementsThatDoNotStartDrag: ['.twentytwenty-handle'],
@@ -34,8 +45,8 @@ export const mount = (sliderEl, args) => {
 							.firstElementChild,
 			  }
 			: {}),
-		leftArrow: sliderEl.querySelector('.flexy .flexy-arrow-prev'),
-		rightArrow: sliderEl.querySelector('.flexy .flexy-arrow-next'),
+		leftArrow,
+		rightArrow,
 		scaleRotateEffect: false,
 
 		onDragStart: (e) => {

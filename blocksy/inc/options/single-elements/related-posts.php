@@ -51,6 +51,7 @@ $options = [
 									'label' => __( 'Columns & Posts', 'blocksy' ),
 									'attr' => [ 'data-columns' => '2:medium' ],
 									'responsive' => true,
+									'hasGroupRevertButton' => true,
 									'options' => [
 
 										$prefix . 'related_posts_columns' => [
@@ -59,12 +60,12 @@ $options = [
 											'value' => [
 												'desktop' => 3,
 												'tablet' => 2,
-												'mobile' => 1
+												'mobile' => 1,
+												'__changed' => ['tablet', 'mobile']
 											],
 											'min' => 1,
 											'max' => 4,
 											'design' => 'block',
-											'disableRevertButton' => true,
 											'attr' => [ 'data-width' => 'full' ],
 											'desc' => __('Number of columns', 'blocksy' ),
 											'sync' => 'live',
@@ -79,7 +80,6 @@ $options = [
 											'min' => 1,
 											'max' => 20,
 											'design' => 'block',
-											'disableRevertButton' => true,
 											'attr' => [ 'data-width' => 'full' ],
 											'desc' => __( 'Number of posts', 'blocksy' ),
 											'markAsAutoFor' => ['tablet', 'mobile'],

@@ -7,7 +7,7 @@
 	font-size: 15px;
 	color: var(--theme-text-color);
 	padding: 10px;
-	min-height: 65px;
+	min-height: 60px;
 	clear: both;
 	border-radius: 5px;
 	margin-bottom: 2rem;
@@ -36,8 +36,8 @@
 	.restore-item {
 		order: 2;
 		--theme-button-font-size: 14px;
-		--theme-button-min-height: 45px;
-		--theme-button-padding: 5px 20px;
+		--theme-button-min-height: 40px;
+		--theme-button-padding: 5px 15px;
 
 		@include media-breakpoint-down (xs) {
 			margin-top: 10px !important;
@@ -63,7 +63,7 @@
 		}
 
 		@include media-breakpoint-up (sm) {
-			top: 23px;
+			top: 21px;
 			inset-inline-start: 20px;
 		}
 	}

@@ -1,4 +1,4 @@
-export const mountCF7Integration = () => {
+export const mount = () => {
 	if (!window.wpcf7) {
 		return
 	}

@@ -296,13 +296,17 @@ export default class Slider extends Component {
 		this.setState({ is_empty_input: false })
 
 		if (this.state.localValue !== '__DEFAULT__') {
-			this.props.onChange(
-				`${clamp(
-					parseFloat(this.getMin(), 10),
-					parseFloat(this.getMax(), 10),
-					parseFloat(this.state.localValue, 10)
-				)}${this.getCurrentUnit()}`
-			)
+			const futureValue = parseFloat(this.state.localValue, 10)
+
+			if (futureValue || futureValue === 0) {
+				this.props.onChange(
+					`${clamp(
+						parseFloat(this.getMin(), 10),
+						parseFloat(this.getMax(), 10),
+						futureValue
+					)}${this.getCurrentUnit()}`
+				)
+			}
 
 			this.setState({ localValue: '__DEFAULT__' })
 

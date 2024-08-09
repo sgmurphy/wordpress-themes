@@ -555,12 +555,12 @@ $overridable_card_options = [
 											'id' => 'author',
 											'enabled' => true,
 										],
-	
+
 										[
 											'id' => 'post_date',
 											'enabled' => true,
 										],
-	
+
 										[
 											'id' => 'comments',
 											'enabled' => true,
@@ -1583,8 +1583,9 @@ $options = [
 						'label' => __( 'Columns & Posts', 'blocksy' ),
 						'attr' => [ 'data-columns' => '2:medium' ],
 						'responsive' => true,
+						'hasGroupRevertButton' => true,
 						'options' => [
-
+							
 							$prefix . 'columns' => [
 								'label' => false,
 								'desc' => __( 'Number of columns', 'blocksy' ),
@@ -1592,12 +1593,12 @@ $options = [
 								'value' => [
 									'desktop' => 3,
 									'tablet' => 2,
-									'mobile' => 1
+									'mobile' => 1,
+									'__changed' => ['tablet', 'mobile']
 								],
 								'min' => 1,
 								'max' => 6,
 								'design' => 'block',
-								'disableRevertButton' => true,
 								'attr' => [ 'data-width' => 'full' ],
 								'sync' => 'live',
 								'responsive' => true,
@@ -1613,14 +1614,12 @@ $options = [
 								'max' => 500,
 								'markAsAutoFor' => ['tablet', 'mobile'],
 								'design' => 'block',
-								'disableRevertButton' => true,
 								'attr' => [ 'data-width' => 'full' ],
 								'sync' => blocksy_sync_whole_page([
 									'prefix' => $prefix,
 									'loader_selector' => '.entries > article'
 								]),
-							],
-
+							]
 						],
 					],
 

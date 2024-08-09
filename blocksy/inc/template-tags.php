@@ -132,7 +132,7 @@ if (! function_exists('blocksy_entry_excerpt')) {
 		}
 
 		if ($args['source'] === 'full') {
-			$args['class'] .= ' entry-content';
+			$args['class'] .= ' entry-content is-layout-flow';
 
 			ob_start();
 			the_content(

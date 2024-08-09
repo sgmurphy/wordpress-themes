@@ -1,4 +1,5 @@
 import ctEvents from 'ct-events'
+import $ from 'jquery'
 
 let deepLinkLocation = null
 
@@ -10,9 +11,9 @@ if (wp.customize) {
 	wp.customize.bind('ready', () => {
 		wp.customize.previewer.bind('ct-initiate-deep-link', (location) => {
 			const [section, panel] = location.split(':')
-			const expanded = Object.values(
-				wp.customize.section._value
-			).find((e) => e.expanded())
+			const expanded = Object.values(wp.customize.section._value).find(
+				(e) => e.expanded()
+			)
 
 			if (!expanded || expanded.id !== section) {
 				deepLinkLocation = location
@@ -22,6 +23,13 @@ if (wp.customize) {
 			}
 
 			ctEvents.trigger('ct-deep-link-start', location)
+		})
+
+		wp.customize.previewer.bind('ct-trigger-autosave', () => {
+			// https://github.com/WordPress/WordPress/blob/38fdd7bb3afcd59d51bc7bafcaa3d78820e3593b/wp-admin/js/customize-controls.js#L9336
+			//
+			// Trigger customizer autosave
+			$(window).trigger('beforeunload')
 		})
 	})
 }

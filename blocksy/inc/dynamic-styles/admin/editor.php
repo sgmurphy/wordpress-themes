@@ -27,11 +27,34 @@ $page_structure = blocksy_default_akg(
 	'default'
 );
 
+$maybe_matching_template = null;
+$content_block_atts = null;
+
+if (function_exists('blc_get_content_block_that_matches')) {
+	$maybe_matching_template = blc_get_content_block_that_matches([
+		'template_type' => 'single',
+		'template_subtype' => 'canvas',
+		'match_conditions_strategy' => $prefix
+	]);
+
+	if ($maybe_matching_template) {
+		$content_block_atts = blocksy_get_post_options($maybe_matching_template);
+	}
+}
+
 if ($page_structure === 'default') {
 	$page_structure = blocksy_get_theme_mod(
 		$prefix . '_structure',
 		($prefix === 'single_blog_post') ? 'type-3' : 'type-4'
 	);
+
+	if ($content_block_atts) {
+		$page_structure = blocksy_default_akg(
+			'content_block_structure',
+			$content_block_atts,
+			'type-4'
+		);
+	}
 }
 
 if ($post_type === 'ct_content_block') {
@@ -77,6 +100,12 @@ if (blocksy_default_akg(
 		'prefix' => $prefix,
 		'strategy' => 'customizer'
 	];
+
+	if ($content_block_atts) {
+		$source = [
+			'strategy' => $content_block_atts
+		];
+	}
 }
 
 $has_boxed = blocksy_akg_or_customizer(

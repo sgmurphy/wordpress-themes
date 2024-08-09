@@ -153,6 +153,8 @@ class CustomPostTypes {
 				'pdfviewer',
 				'da_image',
 				'ha_library',
+				'ni-order-status',
+				'lws_badge',
 			]));
 
 			$this->supported_post_types = array_unique(apply_filters(

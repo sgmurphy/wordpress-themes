@@ -100,36 +100,38 @@ WooColumnsAndRows.renderingConfig = {
 		device,
 	}) => {
 		const rowsValue = rows_id ? values[rows_id] : woocommerce_catalog_rows
+		const columnsValue = columns_id
+			? values[columns_id]
+			: woocommerce_catalog_columns
 
 		let myResult = {
 			...value,
-			desktop: woocommerce_catalog_columns,
-			woocommerce_catalog_columns,
-			woocommerce_catalog_rows,
+			woocommerce_catalog_columns: columnsValue,
+			woocommerce_catalog_rows: rowsValue,
 		}
 
 		return myResult
 	},
 
-	computeOptionValue: (v) => ({
-		...v,
-		woocommerce_catalog_columns: 4,
-		woocommerce_catalog_rows: 4,
-	}),
-
-	computeOptionValue: (v) => {
-		const result = {
+	computeOptionValue: (v, { option, values }) => {
+		let result = {
 			...v,
-			woocommerce_catalog_columns: 4,
-			woocommerce_catalog_rows: 4,
+			woocommerce_catalog_columns: option.columns_value || 4,
+			woocommerce_catalog_rows: option.rows_value || 4,
 		}
 
 		return result
 	},
 
-	performRevert: ({ onChangeFor }) => {
-		onChangeFor('woocommerce_catalog_columns', 4)
-		onChangeFor('woocommerce_catalog_rows', 4)
+	performRevert: ({ onChangeFor, option }) => {
+		onChangeFor(
+			option.columns_id || 'woocommerce_catalog_columns',
+			option.columns_value || 4
+		)
+		onChangeFor(
+			option.rows_id || 'woocommerce_catalog_rows',
+			option.rows_value || 4
+		)
 	},
 }
 

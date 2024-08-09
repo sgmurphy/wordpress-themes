@@ -45,7 +45,27 @@ function singleProductAddToCart(wrapper) {
 
 	// Trigger event.
 
-	$(document.body).trigger('adding_to_cart', [button, {}])
+	$(document.body).trigger('adding_to_cart', [
+		button,
+		[...formData.entries()].reduce((acc, [key, value]) => {
+			acc[key] = value
+			return acc
+		}, {}),
+	])
+
+	const url = new URL(formUrl)
+
+	const searchParams = new URLSearchParams(url.search)
+
+	searchParams.set('blocksy_add_to_cart', 'yes')
+
+	if (window.wp && window.wp.customize) {
+		searchParams.set('wp_customize', 'on')
+	}
+
+	url.search = searchParams.toString()
+
+	formUrl = url.toString()
 
 	currentTask = fetch(formUrl, {
 		method: formMethod,
@@ -59,6 +79,7 @@ function singleProductAddToCart(wrapper) {
 		.then((r) => r.text())
 		.then((addToCartData, textStatus, jqXHR) => {
 			const div = document.createElement('div')
+
 			div.innerHTML = addToCartData
 
 			const errorSelector =
@@ -82,14 +103,21 @@ function singleProductAddToCart(wrapper) {
 				return
 			}
 
-			$(document.body).trigger('added_to_cart', [
-				{},
-				addToCartData.cart_hash,
-				button,
-				quantity,
-			])
+			const maybeFragmentsTemplate = div.querySelector(
+				'#blocksy-woo-add-to-cart-fragments'
+			)
 
-			$(document.body).trigger('wc_fragment_refresh')
+			if (maybeFragmentsTemplate) {
+				const fragmentsData = JSON.parse(
+					maybeFragmentsTemplate.textContent
+				)
+
+				$(document.body).trigger('added_to_cart', [
+					fragmentsData.fragments,
+					fragmentsData.cart_hash,
+					button,
+				])
+			}
 
 			if (form.closest('.quick-view-modal').length) {
 				form.closest('.quick-view-modal')
@@ -100,24 +128,6 @@ function singleProductAddToCart(wrapper) {
 					.find('.ct-quick-add')
 					.removeClass('loading')
 			}
-
-			/*
-			$.ajax({
-				url: wc_cart_fragments_params.wc_ajax_url
-					.toString()
-					.replace('%%endpoint%%', 'get_refreshed_fragments'),
-				type: 'POST',
-				success: (data) => {
-					if (data && data.fragments) {
-						$.each(data.fragments, function (key, value) {
-							$(key).replaceWith(value)
-						})
-
-						$(document.body).trigger('wc_fragments_refreshed')
-					}
-				},
-			})
-            */
 		})
 		.catch(() => button.removeClass('loading'))
 		.finally(() => button.removeClass('loading'))

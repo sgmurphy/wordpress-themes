@@ -84,7 +84,8 @@ $options = [
 								'value' => [
 									'desktop' => 4,
 									'tablet' => 3,
-									'mobile' => 1
+									'mobile' => 1,
+									'__changed' => ['tablet', 'mobile']
 								],
 								'min' => 1,
 								'max' => 6,

@@ -48,7 +48,7 @@ export const wooEntryPoints = [
 	},
 
 	{
-		els: '.quantity .qty',
+		els: '.ct-woocommerce-cart-form .quantity .qty',
 		load: () => import('./quantity-input'),
 		trigger: ['change'],
 	},

@@ -35,7 +35,8 @@ $options = [
 								'value' => [
 									'desktop' => 4,
 									'tablet' => 3,
-									'mobile' => 1
+									'mobile' => 1,
+									'__changed' => ['tablet', 'mobile']
 								],
 								'min' => 1,
 								'max' => 6,
@@ -45,7 +46,14 @@ $options = [
 									'loader_selector' => '[class*="post"] .products'
 								]),
 								'columns_id' => 'woo_product_related_cards_columns',
-								'rows_id' => 'woo_product_related_cards_rows'
+								'rows_id' => 'woo_product_related_cards_rows',
+								'columns_value' => [
+									'desktop' => 4,
+									'tablet' => 3,
+									'mobile' => 1,
+									'__changed' => ['tablet', 'mobile']
+								],
+								'rows_value' => 1,
 							],
 
 							'woo_product_related_cards_rows' => [

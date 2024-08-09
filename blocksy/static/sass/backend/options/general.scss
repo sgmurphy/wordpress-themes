@@ -5,10 +5,12 @@
 	margin-top: var(--options-vertical-spacing, 25px);
 
 	> header {
+
 		&:not(:empty) {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			column-gap: 10px;
 			position: relative;
 		}
 
@@ -24,17 +26,22 @@
 
 	// inline
 	&[data-design='inline'] {
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		grid-column-gap: 10px;
 
 		> header {
-			flex: var(--flex, 1 1 auto);
 
 			label {
 				display: flex;
 				align-items: center;
-				max-width: 220px;
 			}
+		}
+
+		&[data-divider]:before,
+		&[data-divider]:after,
+		.ct-option-description {
+			grid-column: 1/-1;
 		}
 	}
 
@@ -43,7 +50,8 @@
 	&[data-design*='block'] {
 		
 		> header {
-			&:not(:empty) {
+			// &:not(:empty)
+			&:not([data-label="no"]) {
 				margin-bottom: 10px;
 			}
 		}
@@ -70,7 +78,8 @@
 	// control options
 	.ct-control-options {
 		display: flex;
-		align-self: center;
+		align-self: start;
+		margin-top: 2px;
 	}
 
 
@@ -190,6 +199,7 @@
 
 // divider
 .ct-divider {
+
 	&:before {
 		content: '';
 		display: block;
@@ -260,6 +270,7 @@
 
 // control with divider
 [data-divider] {
+
 	&:before, &:after {
 		display: block;
 		width: 100%;

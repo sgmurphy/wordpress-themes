@@ -14,7 +14,7 @@ function blocksy_get_avatar_url($args = []) {
 
 	$user_id = $args['avatar_entity'];
 	$avatar_id = null;
-	
+
 	// user registration plugin
 	if (function_exists('ur_replace_gravatar_image')) {
 
@@ -56,7 +56,7 @@ if (! function_exists('blocksy_get_author_id')) {
 
 		if (! $author_id) {
 			$author = get_user_by('slug', get_query_var('author_name'));
-			
+
 			if ($author) {
 				$author_id = $author->ID;
 			}
@@ -83,6 +83,33 @@ function blocksy_get_the_author_meta($field, $user_id = false) {
 	}
 
 	return get_the_author_meta($field, $user_id);
+}
+
+function blocksy_get_comment_author_link($args = []) {
+	$args = wp_parse_args($args, [
+		'comment_id' => 0,
+		'attr' => []
+	]);
+
+	$link = get_comment_author_link($args['comment_id']);
+
+	if (strpos($link, 'href="') !== false) {
+		$reader = new \WP_HTML_Tag_Processor($link);
+
+		if (
+			$reader->next_tag([
+				'tag_name' => 'a'
+			])
+		) {
+			foreach ($args['attr'] as $attr_name => $attr_value) {
+				$reader->set_attribute($attr_name, $attr_value);
+			}
+
+			$link = $reader->get_updated_html();
+		}
+	}
+
+	return $link;
 }
 
 function blocksy_count_user_posts() {

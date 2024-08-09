@@ -28,7 +28,7 @@ if ( !function_exists('blocksy_custom_accordion_tabs') ) {
 						</button>
 
 						<article id="tab-<?php echo esc_attr( $key ); ?>" aria-hidden="<?php echo $is_open && !$index ? "false" : "true" ?>" data-behaviour="drop-down">
-							<div class="entry-content">
+							<div class="entry-content is-layout-flow">
 								<?php
 									if (isset($tab['callback'])) {
 										call_user_func( $tab['callback'], $key, $tab );
@@ -55,7 +55,7 @@ if ( !function_exists('blocksy_custom_simple_tabs') ) {
 			<div class="woocommerce-tabs wc-tabs-wrapper">
 				<article>
 					<?php foreach ( $tabs as $key => $tab ) : ?>
-						<div class="entry-content">
+						<div class="entry-content is-layout-flow">
 							<?php call_user_func( $tab['callback'], $key, $tab ); ?>
 						</div>
 					<?php endforeach; ?>

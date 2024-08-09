@@ -4,7 +4,7 @@
 	justify-content: center;
 	position: absolute;
 	pointer-events: auto;
-	top: calc(50% - var(--revert-button-size, 15px) / 2 - 1px);
+	top: var(--revert-button-top, calc(50% - var(--revert-button-size, 15px) / 2 - 1px));
 	inset-inline-start: calc(var(--revert-button-offset, 20px) * -1);
 	width: var(--revert-button-size, 15px);
 	height: var(--revert-button-size, 15px);
@@ -63,6 +63,11 @@
 			}
 		}
 	}
+}
+
+// revert button when no label
+[data-label="no"] .ct-revert {
+	--revert-button-top: calc(100% + 7px);
 }
 
 

@@ -13,7 +13,7 @@
 			</header>
 		</section>
 
-		<div class="entry-content">
+		<div class="entry-content is-layout-flow">
 			<?php get_search_form(); ?>
 		</div>
 
