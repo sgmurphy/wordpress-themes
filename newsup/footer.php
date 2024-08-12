@@ -45,9 +45,9 @@ if($you_missed_enable == true) { ?>
 <?php $newsup_footer_widget_background = get_theme_mod('newsup_footer_widget_background');
 $newsup_footer_overlay_color = get_theme_mod('newsup_footer_overlay_color'); 
 if($newsup_footer_widget_background != '') { ?>
-<footer class="back-img" style="background-image:url('<?php echo esc_url($newsup_footer_widget_background);?>');">
+<footer class="footer back-img" style="background-image:url('<?php echo esc_url($newsup_footer_widget_background);?>');">
     <?php } else { ?>
-<footer> 
+<footer class="footer"> 
 <?php } ?>
     <div class="overlay" style="background-color: <?php echo esc_attr($newsup_footer_overlay_color);?>;">
         <!--Start mg-footer-widget-area-->

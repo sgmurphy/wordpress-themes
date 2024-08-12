@@ -98,6 +98,39 @@
 		} );
 	} );
 
+	// Footer Background Image
+	wp.customize( 'newsup_footer_widget_background', function( value ) {
+		value.bind( function( newVal ) {
+			if(newVal !== ''){
+				$('footer.footer').css('background-image', 'url(' + newVal + ')');
+				$('footer.footer').addClass('back-img');
+			}else{
+				$('footer.footer').removeAttr('style');
+				$('footer.footer').removeClass('back-img');
+			}
+		});
+	});
+
+	// Footer Background overlay color.
+	wp.customize( 'newsup_footer_overlay_color', function( value ) {
+		value.bind( function( newVal ) {
+			if(newVal !== ''){
+				$('footer .overlay').css('background', newVal);
+			}else{
+				$('footer .overlay').css('background', '');
+			}
+		} );
+	} );
+	// Footer all Text color.
+	wp.customize( 'newsup_footer_text_color', function( value ) {
+		value.bind( function( newVal ) {
+			if(newVal !== ''){
+				$('footer .mg-widget p, footer .site-title-footer a, footer .site-title a:hover , footer .site-description-footer, footer .site-description:hover').css('color', newVal);
+			}else{
+				$('footer .mg-widget p, footer .site-title-footer a, footer .site-title a:hover , footer .site-description-footer, footer .site-description:hover').css('color', '');
+			}
+		} );
+	} );
 	// Footer all Text color.
 	wp.customize( 'newsup_footer_column_layout', function( value ) {
 		var colum = 12 / value();
