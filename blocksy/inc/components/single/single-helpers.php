@@ -34,6 +34,10 @@ function blocksy_get_avatar_url($args = []) {
 		$avatar_id = $yith_custom_avatar->get_user_avatar_id($user_id);
 	}
 
+	if (class_exists('\FrmRegAvatar')) {
+		$avatar_id = get_user_meta($user_id, 'frm_avatar_id', true);
+	}
+
 	if ($avatar_id) {
 		return wp_get_attachment_url($avatar_id);
 	}
@@ -437,7 +441,7 @@ function blocksy_author_box() {
 		'yes'
 	) === 'yes';
 
-	$class = 'author-box';
+	$class = 'author-box ct-constrained-width';
 
 	$class .= ' ' . blocksy_visibility_classes(blocksy_get_theme_mod(
 		$prefix . '_author_box_visibility',

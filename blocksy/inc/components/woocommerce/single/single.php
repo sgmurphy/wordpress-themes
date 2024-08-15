@@ -9,6 +9,18 @@ class WooCommerceSingle {
 		$this->additional_actions = new SingleProductAdditionalActions();
 
 		new WooCommerceAddToCart();
+
+		add_filter('the_password_form', function($output, $post) {
+			if ($post->post_type !== 'product') {
+				return $output;
+			}
+
+			return str_replace(
+				'post-password-form"',
+				'post-password-form ct-constrained-width"',
+				$output
+			);
+		}, 10, 2);
 	}
 
 	public function register_translations() {
@@ -107,6 +119,8 @@ class WooCommerceSingle {
 			$args['layout']
 		);
 
+		do_action('blocksy:woocommerce:product-single:layout:before', $args);
+
 		foreach ($args['layout'] as $layer) {
 			if (! $layer['enabled']) {
 				continue;
@@ -119,6 +133,8 @@ class WooCommerceSingle {
 
 			do_action('blocksy:woocommerce:product:custom:layer', $layer);
 		}
+
+		do_action('blocksy:woocommerce:product-single:layout:after', $args);
 	}
 
 	public function product_title($layer) {

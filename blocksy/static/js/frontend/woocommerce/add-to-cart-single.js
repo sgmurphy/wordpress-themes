@@ -59,7 +59,7 @@ function singleProductAddToCart(wrapper) {
 
 	searchParams.set('blocksy_add_to_cart', 'yes')
 
-	if (window.wp && window.wp.customize) {
+	if (window.ct_customizer_localizations) {
 		searchParams.set('wp_customize', 'on')
 	}
 

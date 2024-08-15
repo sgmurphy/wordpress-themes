@@ -48,7 +48,7 @@ class Blocksy_Static_Css_Files {
 		);
 
 		$prefix = blocksy_manager()->screen->get_prefix();
-		
+
 		$woo_extra_settings = get_option('blocksy_ext_woocommerce_extra_settings', [
 			'features' => []
 		]);

@@ -49,7 +49,8 @@
 [data-sticky],
 [data-sticky] [data-row],
 [data-sticky] [data-row*="boxed"] > div {
-	transition: box-shadow 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955), 
+	transition: box-shadow 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+				backdrop-filter 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955),
 				background-color 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 

@@ -399,3 +399,10 @@ function blocksy_output_html_safely($html) {
 	// return wp_kses($html, 'post');
 }
 
+function blocksy_get_pricing_links() {
+	return apply_filters('blocksy:modal:pricing-links', [
+		'pricing' => 'https://creativethemes.com/blocksy/pricing/',
+		'premium' => 'https://creativethemes.com/blocksy/premium/',
+		'compare-plans' => 'https://creativethemes.com/blocksy/pricing/#comparison-free-vs-pro'
+	]);
+}

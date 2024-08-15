@@ -316,4 +316,11 @@ export const getWooGeneralVariablesFor = () => ({
 		responsive: true,
 		unit: '',
 	},
+
+	// woo listing top
+	shop_results_count_color: {
+		selector: '.woo-listing-top .woocommerce-result-count',
+		variable: 'theme-text-color',
+		type: 'color',
+	},
 })

@@ -257,6 +257,10 @@ if (! function_exists('blocksy_output_hero_section')) {
 			'data-type' => $type
 		];
 
+		if ($type === 'type-1') {
+			$attr['class'] .= ' ct-constrained-width';
+		}
+
 		if (
 			is_customize_preview()
 			&&

@@ -3,7 +3,7 @@
 .ct-account-modal > ul,
 .ct-language-switcher ul,
 [class*=ct-contact-info] ul,
-.products,
+.products:is(ul),
 .woocommerce-Reviews :where(ol, ul),
 .ct-comments :where(ol, ul),
 .ct-comments ul,

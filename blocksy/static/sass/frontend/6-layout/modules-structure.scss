@@ -1,23 +1,25 @@
+.ct-constrained-width,
 .woocommerce-notices-wrapper,
-article > .related,
-article > .upsells,
-article > .page-links,
-article > .entry-tags,
-article > .author-box,
-article > .ct-comments,
-article > .ct-share-box,
-article > .hero-section,
-article > .post-edit-link,
-article > .post-navigation,
-article > .ct-related-posts,
-article > .ct-newsletter-subscribe-container,
-article > .product .wc-tabs,
-article > .product .ct-accordion-heading,
-article > .post-password-form,
-article > .product .product-entry-wrapper {
-	margin-left: auto;
-	margin-right: auto;
-	// width: var(--theme-block-width, var(--theme-container-width));
+
+// article > .related,
+// article > .upsells,
+// article > .page-links,
+// article > .entry-tags,
+// article > .author-box,
+// article > .ct-comments,
+// article > .ct-share-box,
+// article > .hero-section,
+// article > .post-edit-link,
+// article > .post-navigation,
+// article > .ct-related-posts,
+// article > .ct-newsletter-subscribe-container,
+// article > .product .wc-tabs,
+// article > .product .ct-accordion-heading,
+// article > .product .product-entry-wrapper,
+// article > .post-password-form 
+
+{
+	margin-inline: auto;
 	width: var(--theme-container-width);
 	max-width: var(--theme-block-max-width);
 }

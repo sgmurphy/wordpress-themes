@@ -340,4 +340,9 @@ export const getTypographyVariablesFor = () => ({
 		id: 'breadcrumbsFont',
 		selector: '.ct-breadcrumbs',
 	}),
+
+	...typographyOption({
+		id: 'shop_results_count_font',
+		selector: '.woo-listing-top .woocommerce-result-count',
+	}),
 })

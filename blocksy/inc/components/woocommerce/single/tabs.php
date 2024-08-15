@@ -14,7 +14,7 @@ if ( !function_exists('blocksy_custom_accordion_tabs') ) {
 				<?php foreach ( $tabs as $key => $tab ) : ?>
 					<div class="ct-accordion-tab">
 						<button
-							class="ct-accordion-heading ct-expandable-trigger"
+							class="ct-accordion-heading ct-constrained-width ct-expandable-trigger"
 							data-target="#tab-<?php echo esc_attr( $key ); ?>"
 							aria-expanded="<?php echo $is_open && !$index ? "true" : "false" ?>"
 							<?php echo $additional_attr; ?>
@@ -55,7 +55,7 @@ if ( !function_exists('blocksy_custom_simple_tabs') ) {
 			<div class="woocommerce-tabs wc-tabs-wrapper">
 				<article>
 					<?php foreach ( $tabs as $key => $tab ) : ?>
-						<div class="entry-content is-layout-flow">
+						<div id="tab-<?php echo esc_attr( $key ); ?>" class="entry-content is-layout-flow">
 							<?php call_user_func( $tab['callback'], $key, $tab ); ?>
 						</div>
 					<?php endforeach; ?>
@@ -110,6 +110,12 @@ if (! function_exists('woocommerce_output_product_data_tabs')) {
 			'prefix' => $prefix,
 			'suffix' => 'woo_has_product_tabs'
 		];
+
+		$result = str_replace(
+			'"tabs wc-tabs',
+			'"tabs wc-tabs ct-constrained-width',
+			$result
+		);
 
 		echo str_replace(
 			'wc-tabs-wrapper"',

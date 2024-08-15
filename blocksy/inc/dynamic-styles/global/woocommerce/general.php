@@ -546,3 +546,34 @@ blocksy_output_spacing([
 		]
 	)
 ]);
+
+
+// woo listing top
+blocksy_output_font_css([
+	'font_value' => blocksy_get_theme_mod( 'shop_results_count_font',
+		blocksy_typography_default_values([
+			'size' => '11px',
+			'variation' => 'n5',
+			'letter-spacing' => '0.05em',
+			'text-transform' => 'uppercase',
+		])
+	),
+	'css' => $css,
+	'tablet_css' => $tablet_css,
+	'mobile_css' => $mobile_css,
+	'selector' => '.woo-listing-top .woocommerce-result-count',
+]);
+
+blocksy_output_colors([
+	'value' => blocksy_get_theme_mod('shop_results_count_color'),
+	'default' => [
+		'default' => [ 'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT') ],
+	],
+	'css' => $css,
+	'variables' => [
+		'default' => [
+			'selector' => '.woo-listing-top .woocommerce-result-count',
+			'variable' => 'theme-text-color'
+		],
+	],
+]);

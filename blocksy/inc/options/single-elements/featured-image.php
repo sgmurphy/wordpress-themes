@@ -27,8 +27,8 @@ $options = [
 						$prefix . 'featured_image_ratio' => [
 							'label' => __( 'Image Ratio', 'blocksy' ),
 							'type' => 'ct-ratio',
+							'view' => 'inline',
 							'value' => 'original',
-							'design' => 'inline',
 							'sync' => 'live',
 						],
 	
@@ -37,7 +37,8 @@ $options = [
 							'type' => 'ct-select',
 							'value' => 'full',
 							'view' => 'text',
-							'design' => 'inline',
+							'design' => 'block',
+							'divider' => 'top',
 							'sync' => blocksy_sync_single_post_container([
 								'prefix' => $prefix
 							]),
@@ -55,6 +56,7 @@ $options = [
 							'label' => __( 'Video Thumbnail', 'blocksy' ),
 							'type' => 'ct-switch',
 							'value' => 'no',
+							'divider' => 'top',
 							'sync' => blocksy_sync_single_post_container([
 								'prefix' => $prefix
 							]),

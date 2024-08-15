@@ -31,6 +31,14 @@ export const handleRowVariables = ({ itemId }) => ({
 		responsive: true,
 	},
 
+	headerRowBlur: {
+		selector: assembleSelector(getRootSelectorFor({ itemId })),
+		variable: 'theme-backdrop-blur',
+		responsive: true,
+		unit: 'px',
+		forceOutput: true,
+	},
+
 	...withKeys(
 		[
 			'headerRowTopBorder',
@@ -393,6 +401,21 @@ export const handleRowVariables = ({ itemId }) => ({
 		responsive: true,
 	},
 
+	transparentHeaderRowBlur: {
+		selector: assembleSelector(
+			mutateSelector({
+				selector: getRootSelectorFor({ itemId }),
+				operation: 'el-prefix',
+				to_add: '[data-transparent-row="yes"]',
+			})
+		),
+
+		variable: 'theme-backdrop-blur',
+		responsive: true,
+		unit: 'px',
+		forceOutput: true,
+	},
+
 	// Sticky
 	stickyHeaderRowShadow: {
 		selector: assembleSelector(
@@ -406,6 +429,19 @@ export const handleRowVariables = ({ itemId }) => ({
 		variable: 'theme-box-shadow',
 		forceOutput: true,
 		responsive: true,
+	},
+
+	stickyHeaderRowBlur: {
+		selector: assembleSelector(
+			mutateSelector({
+				selector: getRootSelectorFor({ itemId }),
+				to_add: '[data-sticky*="yes"]',
+			})
+		),
+		variable: 'theme-backdrop-blur',
+		responsive: true,
+		unit: 'px',
+		forceOutput: true,
 	},
 
 	header_row_border_radius: {

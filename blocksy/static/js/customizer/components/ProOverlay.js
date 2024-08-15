@@ -60,14 +60,20 @@ const ProOverlay = ({ username }) => {
 							className="ct-modal-actions has-divider"
 							data-buttons="2">
 							<a
-								href="https://creativethemes.com/blocksy/premium/"
+								href={
+									ct_customizer_localizations.modal_links
+										.premium
+								}
 								target="_blank"
 								className="button">
 								{__('View Pro Features', 'blocksy')}
 							</a>
 
 							<a
-								href="https://creativethemes.com/blocksy/pricing/"
+								href={
+									ct_customizer_localizations.modal_links
+										.pricing
+								}
 								target="_blank"
 								className="button button-primary">
 								{__('Upgrade Now', 'blocksy')}

@@ -13,7 +13,15 @@
  * @param string $data Devices state.
  */
 if (! function_exists('blocksy_visibility_classes')) {
-	function blocksy_visibility_classes($data) {
+	function blocksy_visibility_classes($data, $args = []) {
+		$args = wp_parse_args(
+			$args,
+			[
+				// string | array
+				'output' => 'string'
+			]
+		);
+
 		$classes = [];
 
 		if (isset($data['mobile']) && !$data['mobile']) {
@@ -26,6 +34,10 @@ if (! function_exists('blocksy_visibility_classes')) {
 
 		if (isset($data['desktop']) && !$data['desktop']) {
 			$classes[] = 'ct-hidden-lg';
+		}
+
+		if ($args['output'] === 'array') {
+			return $classes;
 		}
 
 		return implode(' ', $classes);

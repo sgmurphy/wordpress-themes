@@ -210,6 +210,73 @@ $options = [
 
 			blocksy_rand_md5() => [
 				'type' => 'ct-labeled-group',
+				'label' => __( 'Backdrop Blur', 'blocksy' ),
+				'responsive' => true,
+				'choices' => [
+					[
+						'id' => 'headerRowBlur',
+						'label' => __('Default State', 'blocksy')
+					],
+
+					[
+						'id' => 'transparentHeaderRowBlur',
+						'label' => __('Transparent State', 'blocksy'),
+						'condition' => [
+							'builderSettings/has_transparent_header' => 'yes',
+						],
+					],
+
+					[
+						'id' => 'stickyHeaderRowBlur',
+						'label' => __('Sticky State', 'blocksy'),
+						'condition' => [
+							'builderSettings/has_sticky_header' => 'yes',
+						],
+					],
+				],
+				'options' => [
+
+					'headerRowBlur' => [
+						'label' => __( 'Backdrop Blur', 'blocksy' ),
+						'type' => 'ct-number',
+						'design' => 'block:right',
+						'value' => 0,
+						'min' => 0,
+						'max' => 100,
+						'responsive' => true,
+					],
+
+					'transparentHeaderRowBlur' => [
+						'label' => __( 'Backdrop Blur', 'blocksy' ),
+						'type' => 'ct-number',
+						'design' => 'block:right',
+						'value' => 0,
+						'min' => 0,
+						'max' => 100,
+						'responsive' => true,
+					],
+
+					'stickyHeaderRowBlur' => [
+						'label' => __( 'Backdrop Blur', 'blocksy' ),
+						'type' => 'ct-number',
+						'design' => 'block:right',
+						'value' => 0,
+						'min' => 0,
+						'max' => 100,
+						'responsive' => true,
+					],
+
+				],
+			],
+
+
+
+			blocksy_rand_md5() => [
+				'type' => 'ct-divider',
+			],
+
+			blocksy_rand_md5() => [
+				'type' => 'ct-labeled-group',
 				'label' => __( 'Top Border', 'blocksy' ),
 				'responsive' => true,
 				'choices' => [

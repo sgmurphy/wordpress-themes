@@ -2,6 +2,7 @@
 
 class Blocksy_Screen_Manager {
 	private $prefixes = [];
+	private $shortcode_tag_callback = null;
 
 	public function wipe_caches() {
 		$this->prefixes = [];
@@ -499,7 +500,7 @@ class Blocksy_Screen_Manager {
 
 	public function is_product() {
 		global $wp_query;
-		
+
 		if (! function_exists('is_product')) {
 			return false;
 		}
@@ -510,11 +511,72 @@ class Blocksy_Screen_Manager {
 			$post_type = [$post_type];
 		}
 
+		$object = get_queried_object();
+
 		return is_product() || (
 			$wp_query->is_single
 			&&
 			in_array('product', $post_type)
+		) || (
+			$object
+			&&
+			isset($object->post_content)
+			&&
+			has_shortcode($object->post_content, 'product_page')
 		);
+	}
+
+	public function on_product_shortcode_rendered($cb = null) {
+		if (! $cb) {
+			return;
+		}
+
+		$this->shortcode_tag_callback = $cb;
+
+		add_filter(
+			'do_shortcode_tag',
+			[$this, '_do_shortcode_tag_filter'],
+			10,
+			3
+		);
+	}
+
+	public function _do_shortcode_tag_filter($output, $tag, $attr) {
+		if (! $this->shortcode_tag_callback) {
+			return $output;
+		}
+
+		$cb = $this->shortcode_tag_callback;
+
+		if (
+			'products' === $tag
+			||
+			'sale_products' === $tag
+			||
+			'recent_products' === $tag
+			||
+			'related_products' === $tag
+			||
+			'featured_products' === $tag
+			||
+			'top_rated_products' === $tag
+			||
+			'best_selling_products' === $tag
+			||
+			'product_page' === $tag
+		) {
+			$cb($tag);
+		}
+
+		/*
+		remove_filter(
+			'do_shortcode_tag',
+			[$this, '_do_shortcode_tag_filter'],
+			10
+		);
+		 */
+
+		return $output;
 	}
 }
 

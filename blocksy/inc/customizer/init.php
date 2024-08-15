@@ -315,6 +315,7 @@ add_action(
 				),
 				'dashboard_actions_nonce' => wp_create_nonce('ct-dashboard'),
 				'conditions_override' => blocksy_manager()->get_conditions_overrides(),
+				'modal_links' => blocksy_get_pricing_links()
 			]
 		);
 	}

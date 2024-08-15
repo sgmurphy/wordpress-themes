@@ -239,6 +239,12 @@ add_action($action_to_hook, function () {
 				'priority_min' => 40,
 				'priority_max' => 50
 			]);
+
+			blocksy_manager()->get_hooks()->redirect_callbacks([
+				'token' => 'single_product_sharing',
+				'source' => ['woocommerce_share'],
+				'destination' => 'blocksy:woocommerce:product-single:layout:after'
+			]);
 		}
 	);
 
@@ -285,7 +291,7 @@ add_action(
 		global $blocksy_single_product_summary_buffering_started;
 		$blocksy_single_product_summary_buffering_started = true;
 
-		echo '<div class="product-entry-wrapper">';
+		echo '<div class="product-entry-wrapper ct-constrained-width">';
 		ob_start();
 	},
 	1

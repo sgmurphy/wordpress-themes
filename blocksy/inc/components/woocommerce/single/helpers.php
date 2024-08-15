@@ -1,6 +1,9 @@
 <?php
 
-function blocksy_has_product_specific_layer($layer_id = '') {
+function blocksy_has_product_specific_layer($layer_id = '', $args = []) {
+	$args = wp_parse_args($args, [
+		'respect_post_type' => true
+	]);
 
 	if (empty($layer_id)) {
 		return false;
@@ -8,10 +11,12 @@ function blocksy_has_product_specific_layer($layer_id = '') {
 
 	$prefix = blocksy_manager()->screen->get_prefix();
 
-	$post_type = get_post_type();
+	if ($args['respect_post_type']) {
+		$post_type = get_post_type();
 
-	if ($post_type !== 'product') {
-		return false;
+		if ($post_type !== 'product') {
+			return false;
+		}
 	}
 
 	$default_product_layout = blocksy_get_woo_single_layout_defaults();

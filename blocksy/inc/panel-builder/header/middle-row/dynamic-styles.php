@@ -241,6 +241,23 @@ blocksy_output_box_shadow([
 	'should_skip_output' => false
 ]);
 
+// Backdrop Blur
+$headerRowBlur = blocksy_akg('headerRowBlur', $atts, 0);
+
+if($headerRowBlur !== 0) {
+	blocksy_output_responsive([
+		'css' => $css,
+		'tablet_css' => $tablet_css,
+		'mobile_css' => $mobile_css,
+		'selector' => blocksy_assemble_selector($root_selector),
+		'variableName' => 'theme-backdrop-blur',
+		'value' => $headerRowBlur,
+		'unit' => 'px',
+		'should_skip_output' => false
+	]);
+}
+
+
 // transparent state
 if (isset($has_transparent_header) && $has_transparent_header) {
 	// background
@@ -452,6 +469,26 @@ if (isset($has_transparent_header) && $has_transparent_header) {
 		'responsive' => true,
 		'should_skip_output' => false
 	]);
+
+	// Backdrop Blur
+	$transparentHeaderRowBlur = blocksy_akg('transparentHeaderRowBlur', $atts, 0);
+
+	if($transparentHeaderRowBlur !== 0) {
+		blocksy_output_responsive([
+			'css' => $css,
+			'tablet_css' => $tablet_css,
+			'mobile_css' => $mobile_css,
+			'selector' => blocksy_assemble_selector(blocksy_mutate_selector([
+				'selector' => $root_selector,
+				'operation' => 'el-prefix',
+				'to_add' => '[data-transparent-row="yes"]'
+			])),
+			'variableName' => 'theme-backdrop-blur',
+			'value' => $transparentHeaderRowBlur,
+			'unit' => 'px',
+			'should_skip_output' => false
+		]);
+	}
 }
 
 // sticky state
@@ -720,6 +757,25 @@ if (
 		'responsive' => true,
 		'should_skip_output' => false
 	]);
+
+	// Backdrop Blur
+	$stickyHeaderRowBlur = blocksy_akg('stickyHeaderRowBlur', $atts, 0);
+
+	if($stickyHeaderRowBlur !== 0) {
+		blocksy_output_responsive([
+			'css' => $css,
+			'tablet_css' => $tablet_css,
+			'mobile_css' => $mobile_css,
+			'selector' => blocksy_assemble_selector(blocksy_mutate_selector([
+				'selector' => $root_selector,
+				'to_add' => '[data-sticky*="yes"]'
+			])),
+			'variableName' => 'theme-backdrop-blur',
+			'value' => $stickyHeaderRowBlur,
+			'unit' => 'px',
+			'should_skip_output' => false
+		]);
+	}
 }
 
 blocksy_output_spacing([

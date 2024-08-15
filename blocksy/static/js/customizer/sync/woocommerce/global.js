@@ -1,3 +1,5 @@
+import { responsiveClassesFor } from '../helpers'
+
 wp.customize('account_page_avatar_size', (val) =>
 	val.bind((to) => {
 		Array.from(document.querySelectorAll('.ct-account-welcome img')).map(
@@ -50,3 +52,27 @@ wp.customize('store_notice_position', (val) =>
 			to
 	})
 )
+
+wp.customize('shop_results_count_visibility', (val) => {
+	val.bind((to) => {
+		const el = document.querySelector('.woocommerce-result-count')
+
+		if (!el) {
+			return
+		}
+
+		responsiveClassesFor(to, el)
+	})
+})
+
+wp.customize('shop_sort_visibility', (val) => {
+	val.bind((to) => {
+		const el = document.querySelector('.woocommerce-ordering')
+
+		if (!el) {
+			return
+		}
+
+		responsiveClassesFor(to, el)
+	})
+})

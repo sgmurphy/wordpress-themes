@@ -185,9 +185,8 @@ function blocksy_single_content($content = null) {
 				 * Function blocksy_get_social_share_box() used here escapes the value properly.
 				 */
 				echo blocksy_get_social_share_box([
-					'html_atts' => [
-						'data-location' => 'top'
-					],
+					'root_class' => 'ct-constrained-width',
+					'html_atts' => [ 'data-location' => 'top'],
 					'links_wrapper_attr' => $share_box_type === 'type-2' ? [
 						'data-color' => $share_box2_colors
 					] : [],
@@ -275,13 +274,17 @@ function blocksy_single_content($content = null) {
 						'<span class="screen-reader-text">',
 						get_the_title(),
 						'</span>'
-					)
+					),
+					'',
+					'',
+					null,
+					'post-edit-link ct-constrained-width'
 				);
 			}
 
 			wp_link_pages(
 				[
-					'before' => '<div class="page-links"><span class="post-pages-label">' . esc_html__( 'Pages', 'blocksy' ) . '</span>',
+					'before' => '<div class="page-links ct-constrained-width"><span class="post-pages-label">' . esc_html__( 'Pages', 'blocksy' ) . '</span>',
 					'after'  => '</div>',
 				]
 			);
@@ -291,7 +294,7 @@ function blocksy_single_content($content = null) {
 
 		<?php if ($has_post_tags) { ?>
 			<?php
-				$class = 'entry-tags';
+				$class = 'entry-tags ct-constrained-width';
 
 				$class .= ' ' . blocksy_visibility_classes(blocksy_get_theme_mod(
 					$prefix . '_post_tags_visibility',
@@ -383,6 +386,7 @@ function blocksy_single_content($content = null) {
 				 * Function blocksy_get_social_share_box() used here escapes the value properly.
 				 */
 				echo blocksy_get_social_share_box([
+					'root_class' => 'ct-constrained-width',
 					'html_atts' => ['data-location' => 'bottom'],
 					'links_wrapper_attr' => $share_box_type === 'type-2' ? [
 						'data-color' => $share_box2_colors

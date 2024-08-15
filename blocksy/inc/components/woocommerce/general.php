@@ -283,19 +283,28 @@ add_action(
 				}
 			}
 
+			$constrained_class = '';
+			$visibility_classes = '';
+
+			if (blocksy_manager()->screen->uses_woo_default_template()) {
+				$constrained_class = 'ct-constrained-width';
+
+				$visibility_classes = blocksy_visibility_classes(
+					blocksy_get_theme_mod(
+						'upsell_products_visibility',
+						[
+							'desktop' => true,
+							'tablet' => false,
+							'mobile' => false,
+						]
+					)
+				);
+			}
+
 			echo str_replace(
 				'class="up-sells upsells products"',
 				blocksy_attr_to_html($other_attr) . 'class="up-sells upsells products ' . trim(
-					blocksy_visibility_classes(
-						blocksy_get_theme_mod(
-							'upsell_products_visibility',
-							[
-								'desktop' => true,
-								'tablet' => false,
-								'mobile' => false,
-							]
-						)
-					)
+					$constrained_class . ' ' . $visibility_classes
 				) . '"',
 				$upsells
 			);
@@ -317,19 +326,28 @@ add_action(
 				}
 			}
 
+			$constrained_class = '';
+			$visibility_classes = '';
+
+			if (blocksy_manager()->screen->uses_woo_default_template()) {
+				$constrained_class = 'ct-constrained-width';
+
+				$visibility_classes = blocksy_visibility_classes(
+					blocksy_get_theme_mod(
+						'related_products_visibility',
+						[
+							'desktop' => true,
+							'tablet' => false,
+							'mobile' => false,
+						]
+					)
+				);
+			}
+
 			echo str_replace(
 				'class="related products"',
 				blocksy_attr_to_html($other_attr) . 'class="related products ' . trim(
-					blocksy_visibility_classes(
-						blocksy_get_theme_mod(
-							'related_products_visibility',
-							[
-								'desktop' => true,
-								'tablet' => false,
-								'mobile' => false,
-							]
-						)
-					)
+					$constrained_class . ' ' . $visibility_classes
 				) . '"',
 				$related
 			);

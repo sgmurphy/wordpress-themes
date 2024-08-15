@@ -59,6 +59,7 @@ if (! function_exists('blocksy_get_social_share_box')) {
 		$args = wp_parse_args(
 			$args,
 			[
+				'root_class' => '',
 				'html_atts' => [],
 				'links_wrapper_attr' => [],
 				'type' => 'type-1',
@@ -109,7 +110,7 @@ if (! function_exists('blocksy_get_social_share_box')) {
 
 		return blocksy_get_social_box([
 			'type' => 'share',
-			'root_class' => 'ct-share-box',
+			'root_class' => trim('ct-share-box' . ' ' . $args['root_class']),
 			'class' => blocksy_visibility_classes(
 				blocksy_akg_or_customizer(
 					'share_box_visibility',
