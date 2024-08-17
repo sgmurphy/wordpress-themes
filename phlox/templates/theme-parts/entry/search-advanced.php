@@ -86,7 +86,7 @@ foreach( $available_post_types as $key => $post_type ) {
         echo "<div class='aux-search-from'>
                 <span>".$post_type_obj->labels->name."</span>
                 <span class='aux-show-all-results'>
-                    <a href='".add_query_arg( 'post_type',$post_type )."'>".
+                    <a href='". esc_url( add_query_arg( 'post_type',$post_type ) ) ."'>".
                     sprintf( __( 'Show All %s Results', 'phlox' ), $post_type_obj->labels->name ).
                     "</a>
                 </span>

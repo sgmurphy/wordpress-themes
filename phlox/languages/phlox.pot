@@ -1,9 +1,9 @@
 # Averta Copyright (c) {2024}
 msgid ""
 msgstr ""
-"Project-Id-Version: Phlox 2.16.3\n"
+"Project-Id-Version: Phlox 2.16.5\n"
 "Report-Msgid-Bugs-To: http://averta.net/phlox/wordpress-theme/\n"
-"POT-Creation-Date: 2024-07-08 05:57:13+00:00\n"
+"POT-Creation-Date: 2024-08-17 13:38:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
