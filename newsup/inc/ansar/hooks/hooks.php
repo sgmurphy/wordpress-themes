@@ -151,7 +151,7 @@ if (!function_exists('newsup_banner_advertisement')):
     function newsup_banner_advertisement(){
         if (('' != newsup_get_option('banner_advertisement_section')) ) { ?>
             <?php $newsup_center_logo_title = get_theme_mod('newsup_center_logo_title',false); ?>
-            <div class="col-md-9<?php esc_attr($newsup_center_logo_title == false ? 'col-md-9' : 'col text-center mx-auto') ?>"> <?php  
+            <div class="<?php echo esc_attr($newsup_center_logo_title == false ? 'col-md-9' : 'col text-center mx-auto') ?>"> <?php  
                 $newsup_banner_advertisement = newsup_get_option('banner_advertisement_section');
                 $newsup_banner_advertisement = absint($newsup_banner_advertisement);
                 $newsup_banner_advertisement = wp_get_attachment_image($newsup_banner_advertisement, 'full');
