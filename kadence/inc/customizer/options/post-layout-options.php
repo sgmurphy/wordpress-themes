@@ -1046,10 +1046,10 @@ $kadence_post_settings = array(
 			),
 		),
 	),
-	'post_realted_orderby' => array(
+	'post_related_orderby' => array(
 		'control_type' => 'kadence_select_control',
 		'section'      => 'post_layout',
-		'label'        => esc_html__( 'Realted Posts Order By', 'kadence' ),
+		'label'        => esc_html__( 'Related Posts Order By', 'kadence' ),
 		'priority'     => 20,
 		'default'      => kadence()->default( 'post_related_orderby' ),
 		'input_attrs'  => array(
@@ -1087,10 +1087,10 @@ $kadence_post_settings = array(
 			),
 		),
 	),
-	'post_realted_order' => array(
+	'post_related_order' => array(
 		'control_type' => 'kadence_select_control',
 		'section'      => 'post_layout',
-		'label'        => esc_html__( 'Realted Posts Order', 'kadence' ),
+		'label'        => esc_html__( 'Related Posts Order', 'kadence' ),
 		'priority'     => 20,
 		'default'      => kadence()->default( 'post_related_order' ),
 		'input_attrs'  => array(

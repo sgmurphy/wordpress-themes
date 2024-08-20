@@ -4,7 +4,7 @@ Tags: translation-ready, two-columns, right-sidebar, left-sidebar, footer-widget
 Requires at least: 6.3
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.2.7
+Stable tag: 1.2.8
 License: GNU General Public License v3.0 (or later)
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -25,6 +25,12 @@ Please report security bugs found in the source code of the Kadence Theme throug
 Please report security bugs found in the Kadence theme's source code through the Patchstack Vulnerability Disclosure Program https://patchstack.com/database/vdp/kadence. The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this theme.
 
 = Changelog =
+
+== 1.2.8 | 19th August 2024 ==
+* Update: Header logic to work with upcoming optional block based header builder.
+* Fix: Styling with Woocommerce.
+* Fix: Styling with LifterLMS 7.7.
+* Fix: Related post order and order by settings.
 
 == 1.2.7 | 23rd July 2024 ==
 * Add: Order, orderby and title to related posts section.

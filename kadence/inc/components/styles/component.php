@@ -238,7 +238,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		if ( ! empty( $generated_css ) ) {
 			$css .= "\n/* Kadence Base CSS */\n" . $generated_css;
 		}
-		if ( kadence()->has_header() ) {
+		if ( kadence()->has_header_styles() ) {
 			$generated_header_css = $this->generate_header_css();
 			if ( ! empty( $generated_header_css ) ) {
 				$css .= "\n/* Kadence Header CSS */\n" . $generated_header_css;
@@ -2148,7 +2148,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$css->add_property( 'border-radius', $this->render_range( kadence()->option( 'image_border_radius' ), 'mobile' ) );
 		$css->stop_media_query();
 		// Padding for transparent header.
-		if ( kadence()->has_header() ) {
+		if ( kadence()->has_header_styles() ) {
 			$css->start_media_query( $media_query['desktop'] );
 			$css->set_selector( '.transparent-header .entry-hero .entry-hero-container-inner' );
 			$css->add_property( 'padding-top', $this->render_hero_padding( 'desktop' ) );
@@ -4118,7 +4118,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'kadence-header'    => array(
 				'file'             => 'header.min.css',
 				'preload_callback' => function() {
-					return kadence()->has_header();
+					return kadence()->has_header_styles();
 				},
 			),
 			'kadence-content'    => array(

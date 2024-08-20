@@ -76,6 +76,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	protected static $sidebars = null;
 
 	/**
+	 * Holds header options values
+	 *
+	 * @var values of the theme settings.
+	 */
+	protected static $headers = null;
+
+	/**
 	 * Holds default palette values
 	 *
 	 * @var values of the theme settings.
@@ -139,6 +146,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'get_default_palette'        => array( $this, 'get_default_palette' ),
 			'get_palette_for_customizer' => array( $this, 'get_palette_for_customizer' ),
 			'get_pro_url'                => array( $this, 'get_pro_url' ),
+			'block_header_options'       => array( $this, 'block_header_options' ),
 		);
 	}
 
@@ -504,6 +512,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					),
 					'enable_footer_on_bottom' => true,
 					'enable_scroll_to_id'     => true,
+					'blocks_header'           => false,
+					'blocks_header_id'        => '',
 					'lightbox' => false,
 					'header_popup_width' => array(
 						'size' => array(
@@ -4728,7 +4738,34 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 		return apply_filters( 'kadence_palette_option', $value, $subkey );
 	}
-
+	/**
+	 * Get all the kadence_header posts to show in the customizer.
+	 *
+	 * @access public
+	 * @return array
+	 */
+	public function block_header_options() {
+		if ( is_null( self::$headers ) ) {
+			$headers = array( '' => array( 'name' => esc_html__( 'Select', 'kadence' ) ) );
+			if ( defined( 'KADENCE_BLOCKS_VERSION' ) ) {
+				$args    = array(
+					'post_type'      => 'kadence_header',
+					'posts_per_page' => 100,
+					'post_status'    => 'publish',
+					'order'          => 'ASC',
+					'orderby'        => 'menu_order',
+				);
+				$posts = get_posts( $args );
+				foreach ( $posts as $post ) {
+					$headers[ $post->ID ] = array(
+						'name' => $post->post_title,
+					);
+				}
+			}
+			self::$headers = $headers;
+		}
+		return self::$headers;
+	}
 	/**
 	 * Get Customizer Sidebar Options
 	 *

@@ -568,7 +568,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				</svg>';
 				break;
 			case 'account':
-				$output .= '<svg class="kadence-svg-icon kadence-account-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">';
+				$output .= '<svg'. ( ! $aria ? ' aria-hidden="true"' : '' ) . ' class="kadence-svg-icon kadence-account-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">';
 				if ( $display_title ) {
 					$output .= '<title>' . ( ! empty( $icon_title ) ? $icon_title : esc_html__( 'Account', 'kadence' ) ) . '</title>';
 				}
@@ -576,7 +576,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				</svg>';
 				break;
 			case 'account2':
-				$output .= '<svg class="kadence-svg-icon kadence-account2-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">';
+				$output .= '<svg'. ( ! $aria ? ' aria-hidden="true"' : '' ) . ' class="kadence-svg-icon kadence-account2-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">';
 				if ( $display_title ) {
 					$output .= '<title>' . ( ! empty( $icon_title ) ? $icon_title : esc_html__( 'Account', 'kadence' ) ) . '</title>';
 				}
@@ -584,7 +584,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				</svg>';
 				break;
 			case 'account3':
-				$output .= '<svg class="kadence-svg-icon kadence-account3-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">';
+				$output .= '<svg'. ( ! $aria ? ' aria-hidden="true"' : '' ) . ' class="kadence-svg-icon kadence-account3-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">';
 				if ( $display_title ) {
 					$output .= '<title>' . ( ! empty( $icon_title ) ? $icon_title : esc_html__( 'Account', 'kadence' ) ) . '</title>';
 				}

@@ -36,6 +36,7 @@ use function dynamic_sidebar;
  * * `kadence()->sidebar_side()`
  * * `kadence()->display_sidebar()`
  * * `kadence()->has_header()`
+ * * `kadence()->has_header_styles()`
  * * `kadence()->has_footer()`
  * * `kadence()->has_content()`
  *
@@ -151,6 +152,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'desk_transparent_header'   => array( $this, 'desk_transparent_header' ),
 			'mobile_transparent_header' => array( $this, 'mobile_transparent_header' ),
 			'has_header'                => array( $this, 'has_header' ),
+			'has_header_styles'         => array( $this, 'has_header_styles' ),
 			'has_footer'                => array( $this, 'has_footer' ),
 			'has_content'               => array( $this, 'has_content' ),
 		);
@@ -203,6 +205,21 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * @return string normal or above
 	 */
 	public static function has_header() {
+		if ( is_null( self::$layout ) ) {
+			self::$layout = apply_filters( 'kadence_post_layout', self::check_conditionals() );
+		}
+		return ( 'disable' === self::$layout['header'] ? false : true );
+	}
+
+	/**
+	 * Checks if header is here or incontent
+	 *
+	 * @return string normal or above
+	 */
+	public static function has_header_styles() {
+		if ( kadence()->option( 'blocks_header' ) ) {
+			return false;
+		}
 		if ( is_null( self::$layout ) ) {
 			self::$layout = apply_filters( 'kadence_post_layout', self::check_conditionals() );
 		}
@@ -326,6 +343,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * @return boolean True will hide the header, False will not
 	 */
 	public static function no_header() {
+		if ( kadence()->option( 'blocks_header' ) ) {
+			return true;
+		}
 		if ( is_null( self::$layout ) ) {
 			self::$layout = apply_filters( 'kadence_post_layout', self::check_conditionals() );
 		}

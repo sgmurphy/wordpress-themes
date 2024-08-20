@@ -1,3 +1,9 @@
+== 1.2.8 | 19th August 2024 ==
+* Update: Header logic to work with upcoming optional block based header builder.
+* Fix: Styling with Woocommerce.
+* Fix: Styling with LifterLMS 7.7.
+* Fix: Related post order and order by settings.
+
 == 1.2.7 | 23rd July 2024 ==
 * Add: Order, orderby and title to related posts section.
 * Fix: Alt text in archive featured images.
