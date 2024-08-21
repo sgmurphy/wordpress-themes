@@ -387,6 +387,8 @@ if ( defined( 'KADENCE_BLOCKS_VERSION' ) && version_compare( KADENCE_BLOCKS_VERS
 			),
 		),
 	);
+} else {
+	$settings['blocks_header'] = array();
 }
 Theme_Customizer::add_settings( $settings );
 
