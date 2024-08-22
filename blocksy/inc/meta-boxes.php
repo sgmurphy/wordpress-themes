@@ -29,6 +29,14 @@ function blocksy_get_post_options($post_id = null, $args = []) {
 		if ($maybe_page) {
 			$post_id = $maybe_page;
 		}
+
+		if (! $post_id) {
+			$object = get_queried_object();
+
+			if (isset($object->ID)) {
+				$post_id = $object->ID;
+			}
+		}
 	}
 
 	if (is_array($post_id)) {

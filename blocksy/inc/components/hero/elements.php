@@ -171,19 +171,7 @@ foreach ($hero_elements as $index => $single_hero_element) {
 						'has_label' => $has_category_label === 'yes'
 					]);
 
-					add_filter(
-						'get_the_archive_title',
-						[$archive_title_renderer, 'render_title'],
-						10, 3
-					);
-
-					$title = get_the_archive_title();
-
-					remove_filter(
-						'get_the_archive_title',
-						[$archive_title_renderer, 'render_title'],
-						10, 3
-					);
+					$title = $archive_title_renderer->get_the_archive_title();
 				}
 
 				if (is_author()) {

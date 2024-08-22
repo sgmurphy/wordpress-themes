@@ -4,10 +4,10 @@ Theme URI: https://github.com/extendify/extendable
 Author: Extendify
 Author URI: https://extendify.com
 Description: Extendable is a distinct, dynamic block theme designed as a canvas for your next online venture. Sporting multiple style variations, Extendable is the most expressive block theme yet. Go fresh, bold, bohemian or minimal — with a single click.
-Requires at least: 6.0
-Tested up to: 6.0
-Requires PHP: 5.6
-Version: 2.0.10
+Requires at least: 6.3
+Tested up to: 6.6
+Requires PHP: 7.4
+Version: 2.0.11
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: extendable
@@ -56,6 +56,11 @@ a {
 a:hover,
 a:focus {
 	text-decoration-style: var(--wp--custom--elements--link--interactive--text-decoration-style, dashed);
+}
+
+:where(.wp-site-blocks *:focus) {
+	outline-width:1px;
+	outline-style:solid
 }
 
 a:active {
@@ -185,40 +190,19 @@ blockquote:is(.is-style-plain) {
 /*
  * Matching caret and focus outline colors.
  */
-input {
+input, textarea {
 	caret-color: inherit;
-	outline-color: var(--wp--preset--color--tertiary);
-	outline-offset: 0.2ch;
-}
-
-.wp-block-post-comments input:not([type="submit"]),
-.wp-block-post-comments input:not([type="submit"]):not([type="checkbox"]),
-.wp-block-post-comments textarea
- {
-	background-color: var(--wp--custom--elements--input--color--background);
-	color: var(--wp--custom--elements--input--color--text);
-    border-color: var(--wp--custom--elements--input--border--color);
-    border-radius: var(--wp--custom--elements--input--border--radius);
-    border-width: var(--wp--custom--elements--input--border--width);
-    display: block;
-    font-size: var(--wp--custom--elements--input--typography--font-size);
-    line-height: var(--wp--custom--elements--input--typography--line-height);
-    padding: var(--wp--custom--elements--input--spacing--padding--top) var(--wp--custom--elements--input--spacing--padding--right) var(--wp--custom--elements--input--spacing--padding--bottom) var(--wp--custom--elements--input--spacing--padding--left);
-    width: 100%;
+	outline-color: inherit;
 }
 
 /*
  * Matching input with outline button style.
  */
-.wp-block-post-comments-form input:not([type=submit]),
-.wp-block-post-comments-form textarea {
-    border: 2px solid currentColor;
-    padding: 0.667em 1.333em !important;
-	font-size: 1.15rem;
-    line-height: 1.384;
-	border-radius: 0.5rem;
+:where(.wp-block-post-comments-form) input:not([type=submit]), 
+:where(.wp-block-post-comments-form) textarea {
 	background-color: var(--wp--preset--color--background);
 	color: var(--wp--preset--color--foreground);
+	border-color: inherit;
 }
 
 

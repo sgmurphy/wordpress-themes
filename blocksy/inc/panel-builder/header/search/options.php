@@ -42,7 +42,6 @@ $options = [
 		'title' => __( 'General', 'blocksy' ),
 		'type' => 'tab',
 		'options' => [
-
 			apply_filters(
 				'blocksy:header:search:options:icon',
 				[]

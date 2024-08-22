@@ -5,19 +5,25 @@ import $ from 'jquery'
 import { __ } from 'ct-i18n'
 
 export const initWooVariation = (variationWrapper) => {
-	const uploadImage = variationWrapper.querySelector('.upload_image')
+	let uploadImage = variationWrapper.querySelector('.upload_image')
 
 	if (!uploadImage) {
 		return
 	}
 
-	const div = document.createElement('p')
+	if(uploadImage.closest('.form-flex-box')) {
+		uploadImage = uploadImage.closest('.form-flex-box')
+	} else {
+		uploadImage = uploadImage.nextElementSibling
+	}
+
+	const div = document.createElement('div')
 
 	div.classList.add('form-row')
 	div.classList.add('form-row-full')
 	div.classList.add('ct-variation-image-gallery')
 
-	uploadImage.nextElementSibling.insertAdjacentElement('afterend', div)
+	uploadImage.insertAdjacentElement('afterend', div)
 
 	const input = variationWrapper.querySelector(
 		'[name*="blocksy_post_meta_options"]'

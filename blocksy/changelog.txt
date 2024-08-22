@@ -1,3 +1,10 @@
+2.0.63: 2024-08-22
+- Improvement: Add theme editor options for The Events Calendar single post templates
+- Improvement: New sort icon with selected dropdown option overlays the icon
+- Improvement: Small visual issue for product variation gallery option
+- Fix: Better handle infinite and load more pagination in Advanced Posts block
+- Fix: Single product AJAX add to cart does not work if archives AJAX add to cart is disabled
+
 2.0.62: 2024-08-15
 - New: Header builder - option to add backdrop blur (frosted glass) effect
 - Improvement: Add anchor links to product tabs type 4

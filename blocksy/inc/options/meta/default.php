@@ -2,10 +2,17 @@
 
 $maybe_taxonomy = blocksy_maybe_get_matching_taxonomy($post_type->name, false);
 
+if (! isset($has_post_elements)) {
+	$has_post_elements = true;
+}
+
 $options = [
 	[
 		'post_title_panel' => [
-			'label' => __( 'Post Title', 'blocksy' ),
+			'label' => blocksy_safe_sprintf(
+				__('%s Title', 'blocksy'),
+				$post_type->labels->singular_name
+			),
 			'type' => 'ct-panel',
 			'wrapperAttr' => [ 'data-label' => 'heading-label' ],
 			'setting' => [ 'transport' => 'postMessage' ],
@@ -14,7 +21,11 @@ $options = [
 				blocksy_get_options('general/page-title', [
 					'is_cpt' => $post_type->name . '_single',
 					'has_default' => true,
-					'is_single' => true
+					'is_single' => true,
+					'enabled_label' => blocksy_safe_sprintf(
+						__('%s Title', 'blocksy'),
+						$post_type->labels->singular_name
+					)
 				]),
 
 			]
@@ -22,7 +33,10 @@ $options = [
 
 		blocksy_rand_md5() => [
 			'type' => 'ct-title',
-			'label' => __( 'Post Structure', 'blocksy' ),
+			'label' => blocksy_safe_sprintf(
+				__('%s Structure', 'blocksy'),
+				$post_type->labels->singular_name
+			)
 		],
 
 		blocksy_rand_md5() => [
@@ -168,8 +182,10 @@ $options = [
 					]
 				])
 			],
-		],
+		]
+	],
 
+	$has_post_elements ? [
 		blocksy_rand_md5() => [
 			'type' => 'ct-title',
 			'label' => __( 'Post Elements', 'blocksy' ),
@@ -179,10 +195,10 @@ $options = [
 			'label' => __( 'Disable Featured Image', 'blocksy' ),
 			'type' => 'ct-switch',
 			'value' => 'no',
-		],
-	],
+		]
+	] : [],
 
-	$maybe_taxonomy ? [
+	$has_post_elements && $maybe_taxonomy ? [
 		'disable_post_tags' => [
 			'label' => blocksy_safe_sprintf(
 				__('Disable %s %s', 'blocksy'),
@@ -194,7 +210,7 @@ $options = [
 		],
 	] : [],
 
-	[
+	$has_post_elements ? [
 		'disable_share_box' => [
 			'label' => __( 'Disable Share Box', 'blocksy' ),
 			'type' => 'ct-switch',
@@ -235,12 +251,12 @@ $options = [
 			'type' => 'ct-switch',
 			'value' => 'no',
 		],
-	],
+	] : [],
 
-	apply_filters(
+	$has_post_elements ? apply_filters(
 		'blocksy_extensions_metabox_post_bottom',
 		[]
-	),
+	) : [],
 ];
 
 

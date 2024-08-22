@@ -82,7 +82,7 @@ class WooCommerceBoot {
 			wp_enqueue_style(
 				'ct-woocommerce-styles',
 				get_template_directory_uri() . '/static/bundle/woocommerce.min.css',
-				[],
+				['ct-main-styles'],
 				$theme->get('Version')
 			);
 

@@ -21,6 +21,16 @@ class WooCommerceSingle {
 				$output
 			);
 		}, 10, 2);
+
+		add_action('wp_enqueue_scripts', function() {
+			if (
+				get_option('woocommerce_enable_ajax_add_to_cart') === 'no'
+				&&
+				blocksy_manager()->screen->is_product()
+			) {
+				wp_enqueue_script('wc-add-to-cart');
+			}
+		});
 	}
 
 	public function register_translations() {

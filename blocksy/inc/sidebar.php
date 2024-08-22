@@ -90,14 +90,6 @@ if (! function_exists('blocksy_get_single_page_structure')) {
 			)
 			&&
 			(
-				$prefix !== 'tribe_events_single'
-				&&
-				class_exists('Tribe__Events__Main')
-				||
-				! class_exists('Tribe__Events__Main')
-			)
-			&&
-			(
 				$prefix !== 'tribe_events_archive'
 				&&
 				class_exists('Tribe__Events__Main')
@@ -195,12 +187,6 @@ if (! function_exists('blocksy_sidebar_position_unfiltered')) {
 			function_exists('tutor')
 			||
 			! function_exists('tutor')
-		) && (
-			$prefix !== 'tribe_events_single'
-			&&
-			class_exists('Tribe__Events__Main')
-			||
-			! class_exists('Tribe__Events__Main')
 		) && (
 			$prefix !== 'tribe_events_archive'
 			&&

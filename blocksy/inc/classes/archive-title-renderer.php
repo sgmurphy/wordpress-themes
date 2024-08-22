@@ -26,4 +26,38 @@ class ArchiveTitleRenderer {
 			rtrim(trim($prefix), ':')
 		) . ' ' . $original_title;
 	}
+
+	public function get_the_archive_title() {
+		$this->start_rendering();
+
+		$title = get_the_archive_title();
+
+		$this->finish_rendering();
+
+		return $title;
+	}
+
+	private function start_rendering() {
+		add_filter(
+			'get_the_archive_title',
+			[$this, 'render_title'],
+
+			// Start rendering early, so that someone that alters the title
+			// later will get our changes.
+			1,
+			3
+		);
+	}
+
+	private function finish_rendering() {
+		remove_filter(
+			'get_the_archive_title',
+			[$this, 'render_title'],
+
+			// Start rendering early, so that someone that alters the title
+			// later will get our changes.
+			1,
+			3
+		);
+	}
 }

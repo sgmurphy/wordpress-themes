@@ -3,20 +3,17 @@
 }
 
 .ct-variation-image-gallery {
-	padding-bottom: 0.5em;
+	padding-bottom: 0.8em;
 	border-top: 1px solid #eee;
 	--options-horizontal-spacing: 0;
 	--optionBorderColor: #eee;
 
-	[data-design="inline"] > section {
-		width: 48%;
-	}
+	[data-design="inline"] {
+		grid-template-columns: 1fr 48%;
+		grid-template-columns: calc(52% - 10px) min(80%, 450px) auto;
 
-	[data-design="block"] .ct-thumbnails-list {
-		justify-content: flex-end;
-	}
-
-	.ct-attachment-multi {
-		text-align: right;
+		// .ct-attachment-multi {
+		// 	text-align: right;
+		// }
 	}
 }

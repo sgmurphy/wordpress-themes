@@ -138,7 +138,6 @@ function blocksy_count_user_posts() {
 	);
 }
 
-
 if (! function_exists('blocksy_post_uses_vc')) {
 	function blocksy_post_uses_vc() {
 		$post = get_post();

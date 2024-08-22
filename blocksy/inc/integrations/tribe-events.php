@@ -27,3 +27,25 @@ add_filter(
 	},
 	50
 );
+
+add_filter(
+	'blocksy:editor:post_types_for_rest_field',
+	function ($post_types) {
+		$post_types[] = 'tribe_events';
+
+		return $post_types;
+	}
+);
+
+add_filter(
+	'blocksy:editor:post_meta_options',
+	function ($options, $post_type) {
+		if ($post_type !== 'tribe_events') {
+			return $options;
+		}
+
+		return blocksy_get_options('integrations/the-events-calendar/meta');
+	},
+	10,
+	2
+);

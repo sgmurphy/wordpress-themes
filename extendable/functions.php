@@ -24,7 +24,7 @@ if ( ! function_exists( 'extendable_support' ) ) :
 
 		global $wp_version;
 		// Add style for WordPress older versions.
-		if(version_compare( $wp_version, '6.0.2', '<=' )) {
+		if ( version_compare( $wp_version, '6.0.2', '<=' ) ) {
 			$editor_style = array(
 				'style.css',
 				'/assets/css/deprecate-style.css',
@@ -34,7 +34,6 @@ if ( ! function_exists( 'extendable_support' ) ) :
 		}
 		// Enqueue editor styles.
 		add_editor_style( $editor_style );
-
 	}
 
 endif;
@@ -67,7 +66,7 @@ if ( ! function_exists( 'extendable_styles' ) ) :
 		wp_enqueue_style( 'extendable-style' );
 
 		global $wp_version;
-		if(version_compare( $wp_version, '6.0.2', '<=' )) {
+		if ( version_compare( $wp_version, '6.0.2', '<=' ) ) {
 			// Register deprecate stylesheet.
 			wp_register_style(
 				'extendable-deprecate-style',
@@ -77,12 +76,42 @@ if ( ! function_exists( 'extendable_styles' ) ) :
 			);
 			// Enqueue deprecate stylesheet.
 			wp_enqueue_style( 'extendable-deprecate-style' );
-		};
+		}
 	}
 
 endif;
 
 add_action( 'wp_enqueue_scripts', 'extendable_styles' );
+
+/**
+ * Enqueue block-specific styles.
+ *
+ * @since Extendable 2.0.11
+ *
+ * @return void
+ */
+function extendable_enqueue_block_styles() {
+	// Check for specific blocks and enqueue their styles
+	if ( has_block( 'contact-form-7/contact-form-selector' ) ) {
+		wp_enqueue_style(
+			'extendable-contact-form-7-style',
+			get_template_directory_uri() . '/assets/css/contact-form-7.css',
+			array(),
+			'1.0.0'
+		);
+	}
+
+	if ( has_block( 'wpforms/form-selector' ) ) {
+		wp_enqueue_style(
+			'extendable-wpforms-style',
+			get_template_directory_uri() . '/assets/css/wpforms.css',
+			array(),
+			'1.0.0'
+		);
+	}
+}
+
+add_action( 'enqueue_block_assets', 'extendable_enqueue_block_styles' );
 
 /**
  * Registers pattern categories.
@@ -119,6 +148,5 @@ function extendable_register_pattern_categories() {
 			register_block_pattern_category( $name, $properties );
 		}
 	}
-
 }
 add_action( 'init', 'extendable_register_pattern_categories', 9 );

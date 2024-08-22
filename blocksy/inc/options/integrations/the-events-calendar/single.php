@@ -13,14 +13,14 @@ $options = [
 				'enabled_default' => 'no',
 				'enabled_label' => blocksy_safe_sprintf(
 					__('%s Title', 'blocksy'),
-					'Events Calendar Single'
+					'Event'
 				)
 			]),
 
 			[
 				blocksy_rand_md5() => [
 					'type' => 'ct-title',
-					'label' => __( 'Events Calendar Single Structure', 'blocksy' ),
+					'label' => __( 'Event Structure', 'blocksy' ),
 				],
 
 				blocksy_rand_md5() => [
