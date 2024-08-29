@@ -2,6 +2,24 @@
 	display: flex;
 	flex-direction: column;
 	align-items: var(--horizontal-alignment);
+
+	a {
+		display: flex;
+		justify-content: center;
+
+		&:hover {
+
+			.ct-tooltip {
+				opacity: 1;
+				visibility: visible;
+				transform: translate3d(0px, calc(-100% - 12px), 0px);
+			}
+		}
+	}
+
+	.ct-tooltip {
+		transform: translate3d(0px, calc(-100% - 7px), 0px);
+	}
 }
 
 // box location

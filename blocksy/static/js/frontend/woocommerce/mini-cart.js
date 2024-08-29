@@ -11,6 +11,7 @@ export const mount = (el, { event }) => {
 	const maybeCartLink = el.querySelector('.ct-cart-item')
 
 	if (
+		el.matches('.ct-header-cart') &&
 		maybeCartLink &&
 		!maybeCartLink.classList.contains('ct-offcanvas-trigger') &&
 		event &&

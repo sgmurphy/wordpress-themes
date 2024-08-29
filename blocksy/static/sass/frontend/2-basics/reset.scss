@@ -170,12 +170,12 @@ samp {
 	padding: 3px 6px;
 }
 
+pre,
 code,
-kbd,
 samp,
-pre {
+kbd {
 	tab-size: 4;
-	border-radius: 2px;
+	border-radius: 3px;
 	background: var(--theme-palette-color-6);
 
 	&:focus {

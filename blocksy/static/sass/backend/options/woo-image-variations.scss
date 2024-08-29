@@ -9,8 +9,7 @@
 	--optionBorderColor: #eee;
 
 	[data-design="inline"] {
-		grid-template-columns: 1fr 48%;
-		grid-template-columns: calc(52% - 10px) min(80%, 450px) auto;
+		grid-template-columns: calc(52% - 10px) min(48%, 450px) auto;
 
 		// .ct-attachment-multi {
 		// 	text-align: right;

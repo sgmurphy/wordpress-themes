@@ -319,14 +319,31 @@ $general_tab_options = array_merge(
 			]),
 		],
 
+		$prefix . 'share_clipboard' => [
+			'label' => __( 'Copy to Clipboard', 'blocksy' ),
+			'type' => 'ct-switch',
+			'value' => 'no',
+			'sync' => blocksy_sync_whole_page([
+				'prefix' => $sync_prefix,
+				'loader_selector' => '.ct-share-box'
+			]),
+		],
+
 		blocksy_rand_md5() => [
 			'type' => 'ct-divider',
+		],
+
+		$prefix . 'share_item_tooltip' => [
+			'type'  => 'ct-switch',
+			'label' => __( 'Tooltip', 'blocksy' ),
+			'value' => 'no',
 		],
 
 		$prefix . 'share_links_nofollow' => [
 			'type'  => 'ct-switch',
 			'label' => __( 'Set links to nofollow', 'blocksy' ),
 			'value' => 'yes',
+			'divider' => 'top',
 		],
 
 		blocksy_rand_md5() => [

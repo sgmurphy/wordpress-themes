@@ -47,6 +47,16 @@ class Blocksy_Meta_Boxes {
 
 				$post_id = $variation->ID;
 
+				global $sitepress, $woocommerce_wpml;
+
+				if (
+					$sitepress
+					&&
+					$woocommerce_wpml
+				) {
+					$post_id = apply_filters('wpml_object_id', $variation->ID, 'product_variation', TRUE, $sitepress->get_default_language());
+				}				
+
 				$values = get_post_meta($post_id, 'blocksy_post_meta_options');
 
 				if (empty($values)) {

@@ -1,7 +1,7 @@
 <?php
 
 if (empty($class)) {
-	$class = 'mobile-menu-inline';
+	$class = 'mobile-menu-inline menu-container';
 }
 
 $class .= ' ' . blocksy_visibility_classes(blocksy_default_akg(

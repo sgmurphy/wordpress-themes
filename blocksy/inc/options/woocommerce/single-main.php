@@ -102,7 +102,7 @@ $options = [
 				'has_ajax_add_to_cart' => [
 					'label' => __('AJAX Add To Cart', 'blocksy'),
 					'type' => 'ct-switch',
-					'value' => 'no',
+					'value' => 'yes',
 				],
 			],
 		],

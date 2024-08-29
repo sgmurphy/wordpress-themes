@@ -1,4 +1,4 @@
-.menu,
+.menu-container ul,
 .entry-meta,
 .ct-account-modal > ul,
 .ct-language-switcher ul,
@@ -7,7 +7,6 @@
 .woocommerce-Reviews :where(ol, ul),
 .ct-comments :where(ol, ul),
 .ct-comments ul,
-.mobile-menu ul,
 .woocommerce-tabs > ul,
 .wc-item-meta,
 .ct-header-account ul,
@@ -22,8 +21,7 @@
 .ct-product-hero ul,
 .ct-widget ul,
 .ct-added-to-cart-product ul {
-	margin-bottom: 0;
 	list-style-type: none;
-
-	--theme-list-indent: 0;
+	margin-bottom: 0;
+	padding-inline-start: 0;
 }

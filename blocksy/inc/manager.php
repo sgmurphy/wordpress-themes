@@ -248,6 +248,9 @@ class Blocksy_Manager {
 				'blocksy'
 			),
 
+			'clipboard_copied' => __('Copied!', 'blocksy'),
+			'clipboard_failed' => __('Failed to Copy', 'blocksy'),
+
 			'expand_submenu' => __('Expand dropdown menu', 'blocksy'),
 			'collapse_submenu' => __('Collapse dropdown menu', 'blocksy'),
 

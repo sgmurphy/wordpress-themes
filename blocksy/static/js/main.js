@@ -52,13 +52,19 @@ let allFrontendEntryPoints = [
 	},
 
 	{
+		els: '.ct-share-box [data-network="clipboard"]',
+		load: () => import('./frontend/social-buttons'),
+		trigger: ['click'],
+	},
+
+	{
 		els: '.ct-media-container[data-media-id], .ct-dynamic-media[data-media-id]',
 		load: () => import('./frontend/lazy/video-on-click'),
 		trigger: ['click', 'slight-mousemove', 'scroll'],
 	},
 
 	{
-		els: '.ct-share-box [data-network]:not([data-network="pinterest"]):not([data-network="email"])',
+		els: '.ct-share-box [data-network]:not([data-network="pinterest"]):not([data-network="email"]):not([data-network="clipboard"])',
 		load: () => import('./frontend/social-buttons'),
 		trigger: ['hover'],
 		condition: () =>

@@ -470,15 +470,34 @@ $options = [
 									],
 
 									'product_desc' => [
-										'label' => __('Excerpt', 'blocksy'),
+										'label' => __('Short Description', 'blocksy'),
 										'options' => [
-											'excerpt_length' => [
-												'label' => __('Length', 'blocksy'),
-												'type' => 'ct-number',
-												'design' => 'inline',
-												'value' => 40,
-												'min' => 1,
-												'max' => 300,
+											'excerpt_source' => [
+												'label' => __('Excerpt Type', 'blocksy'),
+												'type' => 'ct-radio',
+												'value' => 'excerpt',
+												'view' => 'text',
+												'choices' => [
+													'excerpt' => __('Custom', 'blocksy'),
+													'full' => __('Full', 'blocksy'),
+												],
+											],
+
+											blocksy_rand_md5() => [
+												'type' => 'ct-condition',
+												'condition' => [ 'excerpt_source' => 'excerpt' ],
+												'options' => [
+
+													'excerpt_length' => [
+														'label' => __('Length', 'blocksy'),
+														'type' => 'ct-number',
+														'design' => 'inline',
+														'value' => 40,
+														'min' => 1,
+														'max' => 300,
+													],
+
+												],
 											],
 
 											'spacing' => [

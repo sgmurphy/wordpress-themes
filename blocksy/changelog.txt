@@ -1,3 +1,12 @@
+2.0.64: 2024-08-29
+- Improvement: Better integration with Klarna Checkout for WooCommerce plugin
+- Improvement: Make sure code block font size adjustments work properly in all cases
+- Improvement: More robust redirection to cart pages on touch devices
+- Improvement: Product variation custom gallery - better integration with WPML plugin
+- Improvement: Products archive short description - option to output full short description without stripping tags
+- Improvement: Scroll trigger don't attempt to mount logic if element was removed from the page
+- Improvement: Share box - add link item with possibility to copy post/page url to clipboard
+
 2.0.63: 2024-08-22
 - Improvement: Add theme editor options for The Events Calendar single post templates
 - Improvement: New sort icon with selected dropdown option overlays the icon

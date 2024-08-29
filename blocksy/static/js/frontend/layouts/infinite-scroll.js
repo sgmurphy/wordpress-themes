@@ -81,7 +81,9 @@ export const mount = (paginationContainer) => {
 				c.classList.contains('entries')
 		)
 
-	if (!paginationContainer) return
+	if (!paginationContainer) {
+		return
+	}
 
 	let paginationType = paginationContainer.dataset.pagination
 

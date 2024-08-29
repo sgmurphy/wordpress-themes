@@ -5,7 +5,7 @@ if (! isset($location)) {
 }
 
 if (empty($class)) {
-	$class = 'footer-menu-inline';
+	$class = 'footer-menu-inline menu-container';
 }
 
 if (empty($id)) {

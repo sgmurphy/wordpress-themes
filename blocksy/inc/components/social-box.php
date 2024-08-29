@@ -136,7 +136,12 @@ if (! function_exists('blocksy_get_social_share_box')) {
 				'yes'
 			) === 'yes' ? 'noopener noreferrer nofollow' : 'noopener',
 			'strategy' => $args['strategy'],
-			'enable_shortcut' => $args['enable_shortcut']
+			'enable_shortcut' => $args['enable_shortcut'],
+			'has_tooltip' => blocksy_akg_or_customizer(
+				'share_item_tooltip',
+				$args['strategy'],
+				'no'
+			) === 'yes'
 		]);
 	}
 }
@@ -769,7 +774,6 @@ if (! function_exists('blocksy_get_social_metadata')) {
 				'
 			],
 
-
 			'viber' => [
 				'name' => 'Viber',
 				'icon' => '
@@ -913,6 +917,19 @@ if (! function_exists('blocksy_get_social_metadata')) {
 					</svg>
 				'
 			],
+
+			'clipboard' => [
+				'name' => __( 'Copy to Clipboard', 'blocksy' ),
+				'icon' => '
+					<svg
+					width="20"
+					height="20"
+					viewBox="0 0 20 20"
+					aria-hidden="true">
+						<path d="M20 3.89v6.667a3.89 3.89 0 0 1-3.89 3.89h-.55v-2.223h.55c.921 0 1.667-.746 1.667-1.667V3.889c0-.92-.746-1.666-1.666-1.666H9.443c-.92 0-1.667.746-1.667 1.666v6.668c0 .92.746 1.667 1.667 1.667h1.674v2.222H9.443a3.89 3.89 0 0 1-3.89-3.889V3.889A3.89 3.89 0 0 1 9.444 0h6.668A3.89 3.89 0 0 1 20 3.89Zm-9.443 1.664H8.891v2.222h1.666c.92 0 1.667.746 1.667 1.667v6.668c0 .92-.746 1.666-1.667 1.666H3.889c-.92 0-1.666-.746-1.666-1.666V9.443c0-.92.746-1.667 1.666-1.667h.55V5.554h-.55A3.89 3.89 0 0 0 0 9.443v6.668A3.89 3.89 0 0 0 3.89 20h6.667a3.89 3.89 0 0 0 3.89-3.89V9.444a3.89 3.89 0 0 0-3.89-3.89Z"/>
+					</svg>
+				'
+			],
 		];
 
 		foreach (blocksy_get_dynamic_social_networks() as $dynamic_network) {
@@ -976,6 +993,7 @@ if (! function_exists('blocksy_get_social_metadata')) {
 				'email' => 'mailto:?subject={text}&body={url}',
 				'line' => 'https://social-plugins.line.me/lineit/share?url={url}&text={text}',
 				'threads' => 'https://threads.net/intent/post?text={url}',
+				'clipboard' => '#'
 			];
 
 			if (isset($social_urls[$args['social']])) {
@@ -1146,6 +1164,15 @@ if (! function_exists('blocksy_get_social_share_items')) {
 					'no'
 				) === 'yes',
 			],
+
+			[
+				'id' => 'clipboard',
+				'enabled' => blocksy_akg_or_customizer(
+					'share_clipboard',
+					$args['strategy'],
+					'no'
+				) === 'yes',
+			],
 		];
 	}
 }
@@ -1187,7 +1214,9 @@ function blocksy_get_social_box($args = []) {
 				'prefix' => blocksy_manager()->screen->get_prefix(),
 				'strategy' => 'customizer'
 			],
-			'enable_shortcut' => false
+			'enable_shortcut' => false,
+
+			'has_tooltip' => false,
 		]
 	);
 
@@ -1303,6 +1332,7 @@ function blocksy_get_social_box($args = []) {
 		'hacker_news' => '#fd6721',
 		'ok' => '#eb7e2f',
 		'flipboard' => '#c40812',	
+		'clipboard' => '#2c3e50',
 	];
 
 	$prefix = blocksy_manager()->screen->get_prefix();
@@ -1464,6 +1494,25 @@ function blocksy_get_social_box($args = []) {
 									]);
 								}
 
+							}
+
+							if ($args['has_tooltip']) {
+								$share_text = blocksy_safe_sprintf(
+									__('Share on %s', 'blocksy'),
+									$metadata['name']
+								);
+
+								if ($single_social['id'] === 'clipboard') {
+									$share_text = __('Copy to Clipboard', 'blocksy');
+								}
+
+								echo blocksy_html_tag(
+									'span',
+									[
+										'class' => 'ct-tooltip'
+									],
+									$share_text
+								);
 							}
 
 							echo $icon;

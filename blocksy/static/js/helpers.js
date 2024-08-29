@@ -159,6 +159,15 @@ const loadSingleEntryPoint = ({
 					let prevScroll = scrollY
 
 					let cb = (event) => {
+						// If the element was removed from the DOM before the
+						// threshold was reached, we should remove the listener
+						// to prevent memory leaks and to prevent calling the
+						// mount on element being outside of DOM.
+						if (!el.parentNode) {
+							document.removeEventListener('scroll', cb)
+							return
+						}
+
 						if (Math.abs(scrollY - prevScroll) > 30) {
 							document.removeEventListener('scroll', cb)
 

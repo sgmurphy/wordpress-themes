@@ -74,7 +74,7 @@ remove_filter(
 
 $menu_output = ob_get_clean();
 
-$class = 'mobile-menu';
+$class = 'mobile-menu menu-container';
 
 if (strpos($menu_output, 'sub-menu')) {
 	$class .= ' has-submenu';

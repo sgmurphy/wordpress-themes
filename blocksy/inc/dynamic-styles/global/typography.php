@@ -162,7 +162,7 @@ blocksy_output_font_css([
 	'css' => $css,
 	'tablet_css' => $tablet_css,
 	'mobile_css' => $mobile_css,
-	'selector' => 'code, kbd, samp, pre'
+	'selector' => 'pre, code, samp, kbd'
 ]);
 
 blocksy_output_font_css([

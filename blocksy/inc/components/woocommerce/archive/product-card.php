@@ -360,6 +360,11 @@ add_action($action_to_hook, function () {
 							$layout,
 							'40'
 						),
+						'source' => blocksy_default_akg(
+							'excerpt_source',
+							$layout,
+							'excerpt'
+						),
 					]);
 					continue;
 				}

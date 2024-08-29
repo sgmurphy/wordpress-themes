@@ -22,6 +22,57 @@ export const mount = (el, { event }) => {
 		return
 	}
 
+	if (el.dataset.network === 'clipboard') {
+		event.preventDefault()
+		const text = window.location.href
+
+		const tooltip = el.querySelector('.ct-tooltip')
+
+		const initialText = tooltip.innerHTML
+
+		if (navigator.clipboard && window.isSecureContext) {
+			navigator.clipboard.writeText(text)
+
+			if (tooltip) {
+				tooltip.innerHTML = ct_localizations.clipboard_copied
+			}
+		} else {
+			const textArea = document.createElement('textarea')
+			textArea.value = text
+
+			// Move textarea out of the viewport so it's not visible
+			textArea.style.position = 'absolute'
+			textArea.style.left = '-999999px'
+
+			document.body.prepend(textArea)
+			textArea.select()
+
+			try {
+				document.execCommand('copy')
+			} catch (error) {
+				console.error(error)
+
+				if (tooltip) {
+					tooltip.innerHTML = ct_localizations.clipboard_failed
+				}
+			} finally {
+				textArea.remove()
+
+				if (tooltip) {
+					tooltip.innerHTML = ct_localizations.clipboard_copied
+				}
+			}
+		}
+
+		setTimeout(() => {
+			if (tooltip) {
+				tooltip.innerText = initialText
+			}
+		}, 2000)
+
+		return
+	}
+
 	if (el.hasClickListener) {
 		return
 	}

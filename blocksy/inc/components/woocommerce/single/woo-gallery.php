@@ -76,10 +76,19 @@ function blocksy_woo_single_post_class($classes, $product) {
 			);
 
 			if ($maybe_current_variation) {
-				$variation_values = get_post_meta(
-					$maybe_current_variation->get_id(),
-					'blocksy_post_meta_options'
-				);
+				$post_id = $maybe_current_variation->get_id();
+
+				global $sitepress, $woocommerce_wpml;
+
+				if (
+					$sitepress
+					&&
+					$woocommerce_wpml
+				) {
+					$post_id = apply_filters('wpml_object_id', $maybe_current_variation->get_id(), 'product_variation', TRUE, $sitepress->get_default_language());
+				}				
+
+				$variation_values = get_post_meta($post_id, 'blocksy_post_meta_options');
 
 				if (empty($variation_values)) {
 					$variation_values = [[]];

@@ -393,7 +393,7 @@ $options = apply_filters(
 		],
 
 		'additional_info' => [
-			'label' => __('Additional Info', 'blocksy'),
+			'label' => __('Reasons to Buy', 'blocksy'),
 			'options' => [
 				'product_additional_info_title' => [
 					'label' => __('Title', 'blocksy'),

@@ -134,27 +134,36 @@ if (! function_exists('blocksy_entry_excerpt')) {
 		if ($args['source'] === 'full') {
 			$args['class'] .= ' entry-content is-layout-flow';
 
-			ob_start();
-			the_content(
-				blocksy_safe_sprintf(
-					wp_kses(
-						/* translators: 1: span open 2: Name of current post. Only visible to screen readers 3: span closing */
-						__(
-							'Continue reading%1$s "%2$s"%3$s',
-							'blocksy'
-						),
-						array(
-							'span' => array(
-								'class' => array(),
+			if (! $is_product) {
+				ob_start();
+				the_content(
+					blocksy_safe_sprintf(
+						wp_kses(
+							/* translators: 1: span open 2: Name of current post. Only visible to screen readers 3: span closing */
+							__(
+								'Continue reading%1$s "%2$s"%3$s',
+								'blocksy'
 							),
-						)
-					),
-					'<span class="screen-reader-text">',
-					get_the_title(),
-					'</span>'
-				)
-			);
-			$excerpt = ob_get_clean();
+							array(
+								'span' => array(
+									'class' => array(),
+								),
+							)
+						),
+						'<span class="screen-reader-text">',
+						get_the_title(),
+						'</span>'
+					)
+				);
+				$excerpt = ob_get_clean();
+			}
+
+			if ($is_product) {
+				$excerpt = apply_filters(
+					'woocommerce_short_description',
+					$post->post_excerpt
+				);
+			}
 
 			$excerpt = apply_filters('blocksy:excerpt:output', $excerpt);
 		}

@@ -233,7 +233,7 @@ class WooCommerceAddToCart {
 
 		$has_ajax_add_to_cart = blocksy_get_theme_mod(
 			'has_ajax_add_to_cart',
-			'no'
+			'yes'
 		);
 
 		if (

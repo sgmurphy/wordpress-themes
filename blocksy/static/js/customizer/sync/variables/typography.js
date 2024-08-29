@@ -308,7 +308,7 @@ export const getTypographyVariablesFor = () => ({
 
 	...typographyOption({
 		id: 'pre',
-		selector: 'code, kbd, samp, pre',
+		selector: 'pre, code, samp, kbd',
 	}),
 
 	...typographyOption({
