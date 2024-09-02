@@ -202,15 +202,11 @@ var sydney = sydney || {};
 
 		// Function to toggle aria-expanded
 		function toggleAriaExpanded(event) {
-			event.preventDefault(); // Prevent default behavior on click
 			const expanded = this.getAttribute('aria-expanded') === 'true';
 			this.setAttribute('aria-expanded', !expanded);
 		}
 
 		dropdowns.forEach(dropdown => {
-			// Toggle aria-expanded on click
-			dropdown.addEventListener('click', toggleAriaExpanded);
-
 			// Toggle aria-expanded on hover (mouse enter)
 			dropdown.addEventListener('mouseenter', function() {
 				this.setAttribute('aria-expanded', 'true');

@@ -194,11 +194,73 @@ function newsup_customize_register($wp_customize) {
 			'render_callback' => 'newsup_customize_partial_you_missed_title',
 		));
 
-		$wp_customize->selective_refresh->add_partial('newsup_footer_fb_link', array(
-			'selector'        => 'footer .mg-social',
-			'render_callback' => 'newsup_customize_partial_newsup_footer_fb_link',
+		$wp_customize->selective_refresh->add_partial('footer_social_icon_enable', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
 		));
 
+		$wp_customize->selective_refresh->add_partial('newsup_footer_fb_link', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
+		$wp_customize->selective_refresh->add_partial('newsup_footer_fb_target', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
+
+		$wp_customize->selective_refresh->add_partial('newsup_footer_twt_link', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
+		$wp_customize->selective_refresh->add_partial('newsup_footer_twt_target', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
+
+		$wp_customize->selective_refresh->add_partial('newsup_footer_lnkd_link', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
+		$wp_customize->selective_refresh->add_partial('newsup_footer_lnkd_target', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
+
+		$wp_customize->selective_refresh->add_partial('newsup_footer_insta_link', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
+		$wp_customize->selective_refresh->add_partial('newsup_footer_insta_target', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
+
+		$wp_customize->selective_refresh->add_partial('newsup_footer_youtube_link', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
+		$wp_customize->selective_refresh->add_partial('newsup_footer_youtube_target', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
+
+		$wp_customize->selective_refresh->add_partial('newsup_footer_pinterest_link', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
+		$wp_customize->selective_refresh->add_partial('newsup_footer_pinterest_target', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
+
+		$wp_customize->selective_refresh->add_partial('newsup_footer_tele_link', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
+		$wp_customize->selective_refresh->add_partial('newsup_footer_tele_target', array(
+			'selector'        => 'footer .mg-footer-bottom-area .mg-social',
+			'render_callback' => 'newsup_customize_partial_footer_social_icon',
+		));
 		$wp_customize->selective_refresh->add_partial('newsup_related_post_title', array(
 			'selector'        => '.mg-featured-slider .mg-sec-title h4',
 			'render_callback' => 'newsup_customize_partial_newsup_related_post_title',
@@ -353,8 +415,8 @@ function newsup_customize_partial_you_missed_title() {
     return get_theme_mod( 'you_missed_title' );
 }
 
-function newsup_customize_partial_newsup_footer_fb_link() {
-    return get_theme_mod( 'newsup_footer_fb_link' );
+function newsup_customize_partial_footer_social_icon() {
+    return do_action('newsup_action_footer_social_icon');
 }
 
 function newsup_customize_partial_newsup_related_post_title() {

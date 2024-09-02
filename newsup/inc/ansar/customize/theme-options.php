@@ -966,6 +966,7 @@ $wp_customize->add_setting('footer_social_icon_enable',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'footer_social_icon_enable', 
@@ -980,6 +981,7 @@ $wp_customize->add_setting(
     'newsup_footer_fb_link',
     array(
         'sanitize_callback' => 'esc_url_raw',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(
@@ -994,6 +996,7 @@ $wp_customize->add_setting('newsup_footer_fb_target',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_social_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_footer_fb_target', 
@@ -1008,6 +1011,7 @@ $wp_customize->add_setting(
     'newsup_footer_twt_link',
     array(
         'sanitize_callback' => 'esc_url_raw',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(
@@ -1022,6 +1026,7 @@ $wp_customize->add_setting('newsup_footer_twt_target',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_social_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_footer_twt_target', 
@@ -1036,6 +1041,7 @@ $wp_customize->add_setting(
     'newsup_footer_lnkd_link',
     array(
         'sanitize_callback' => 'esc_url_raw',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(
@@ -1050,6 +1056,7 @@ $wp_customize->add_setting('newsup_footer_lnkd_target',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_social_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_footer_lnkd_target', 
@@ -1064,6 +1071,7 @@ $wp_customize->add_setting(
     'newsup_footer_insta_link',
     array(
         'sanitize_callback' => 'esc_url_raw',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(
@@ -1078,6 +1086,7 @@ $wp_customize->add_setting('newsup_footer_insta_target',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_social_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_footer_insta_target', 
@@ -1092,6 +1101,7 @@ $wp_customize->add_setting(
     'newsup_footer_youtube_link',
     array(
         'sanitize_callback' => 'esc_url_raw',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(
@@ -1106,6 +1116,7 @@ $wp_customize->add_setting('newsup_footer_youtube_target',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_social_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_footer_youtube_target', 
@@ -1120,6 +1131,7 @@ $wp_customize->add_setting(
     'newsup_footer_pinterest_link',
     array(
         'sanitize_callback' => 'esc_url_raw',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(
@@ -1134,6 +1146,7 @@ $wp_customize->add_setting('newsup_footer_pinterest_target',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_social_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_footer_pinterest_target', 
@@ -1148,6 +1161,7 @@ $wp_customize->add_setting(
 'newsup_footer_tele_link',
     array(
         'sanitize_callback' => 'esc_url_raw',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(
@@ -1162,6 +1176,7 @@ $wp_customize->add_setting('newsup_footer_tele_target',
     array(
         'default' => true,
         'sanitize_callback' => 'newsup_social_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new Newsup_Toggle_Control( $wp_customize, 'newsup_footer_tele_target', 
