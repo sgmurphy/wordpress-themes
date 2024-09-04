@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v3 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Responsive 5.1.0\n"
+"Project-Id-Version: Responsive 5.1.1\n"
 "Report-Msgid-Bugs-To: https://cyberchimps.com/forum/free/responsive/\n"
-"POT-Creation-Date: 2024-08-14 09:20:37+00:00\n"
+"POT-Creation-Date: 2024-09-04 10:17:57+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -150,7 +150,7 @@ msgstr ""
 msgid "If you like"
 msgstr ""
 
-#: admin/templates/get-started.php:130 functions.php:1179
+#: admin/templates/get-started.php:130 functions.php:1181
 msgid "Responsive Theme"
 msgstr ""
 
@@ -579,35 +579,35 @@ msgstr ""
 msgid "Submit Review"
 msgstr ""
 
-#: admin/templates/getting-started-home.php:805
+#: admin/templates/getting-started-home.php:806
 msgid "Upgrade to PRO"
 msgstr ""
 
-#: admin/templates/getting-started-home.php:806
+#: admin/templates/getting-started-home.php:807
 msgid ""
 "Upgrade to Cyberchimps Pro plan to unlock access to 150+ Premium Starter "
 "Templates and priority support."
 msgstr ""
 
-#: admin/templates/getting-started-home.php:807
+#: admin/templates/getting-started-home.php:808
 msgid "Upgrade"
 msgstr ""
 
-#: admin/templates/getting-started-home.php:813
+#: admin/templates/getting-started-home.php:815
 msgid "Learn and Grow"
 msgstr ""
 
-#: admin/templates/getting-started-home.php:814
+#: admin/templates/getting-started-home.php:816
 msgid ""
 "Meet the Responsive Power-users. Say hello, ask questions, give feedback, "
 "and help each other"
 msgstr ""
 
-#: admin/templates/getting-started-home.php:816
+#: admin/templates/getting-started-home.php:818
 msgid "Join Facebook"
 msgstr ""
 
-#: admin/templates/getting-started-home.php:819
+#: admin/templates/getting-started-home.php:821
 msgid "Watch Video Tutorials"
 msgstr ""
 
@@ -2622,10 +2622,6 @@ msgstr ""
 msgid "Embeds to header.php"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-header-secondary-menu-layouts-customizer.php:65
-msgid "customize-control-"
-msgstr ""
-
 #: core/includes/customizer/settings/class-responsive-header-secondary-menu-layouts-customizer.php:81
 #: core/includes/functions.php:249 partials/header/secondary-navigation.php:13
 msgid "Secondary Menu"
@@ -2870,7 +2866,7 @@ msgid "Disable Hero Area"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-home-page-customizer.php:141
-#: core/includes/functions.php:92 functions.php:631
+#: core/includes/functions.php:92 functions.php:633
 msgid "HAPPINESS"
 msgstr ""
 
@@ -2879,7 +2875,7 @@ msgid "Headline"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-home-page-customizer.php:160
-#: core/includes/functions.php:93 functions.php:634
+#: core/includes/functions.php:93 functions.php:636
 msgid "IS A WARM CUP"
 msgstr ""
 
@@ -2888,7 +2884,7 @@ msgid "Subheadline"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-home-page-customizer.php:178
-#: core/includes/functions.php:94 functions.php:637
+#: core/includes/functions.php:94 functions.php:639
 msgid ""
 "Your title, subtitle and this very content is editable from Theme Option. "
 "Call to Action button and its destination link as well. Image on your right "
@@ -3798,7 +3794,7 @@ msgstr ""
 msgid "Area 15 - sidebar-footer.php"
 msgstr ""
 
-#: core/includes/functions.php:95 functions.php:640
+#: core/includes/functions.php:95 functions.php:642
 msgid "Call to Action"
 msgstr ""
 
@@ -3978,27 +3974,27 @@ msgstr ""
 msgid "Scroll to Top"
 msgstr ""
 
-#: functions.php:526
+#: functions.php:528
 #. translators: 1 : Permalink, 2 : Title
 msgid "Permalink to %s"
 msgstr ""
 
-#: functions.php:591
+#: functions.php:593
 #. translators: %s Link to 5 star rating
 msgid ""
 "If you like <strong>Responsive Theme</strong> please leave us a %s rating. "
 "It takes a minute and helps a lot. Thanks in advance!"
 msgstr ""
 
-#: functions.php:592
+#: functions.php:594
 msgid "Thanks :)"
 msgstr ""
 
-#: functions.php:643
+#: functions.php:645
 msgid "#"
 msgstr ""
 
-#: functions.php:1194
+#: functions.php:1196
 msgid "You do not have sufficient permissions to perform this action."
 msgstr ""
 
@@ -4422,42 +4418,42 @@ msgctxt "Text for a page Breadcrumb"
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:230
+#: functions.php:232
 msgctxt "Name of the small font size in the block editor"
 msgid "Small"
 msgstr ""
 
-#: functions.php:231
+#: functions.php:233
 msgctxt "Short name of the small font size in the block editor."
 msgid "S"
 msgstr ""
 
-#: functions.php:236
+#: functions.php:238
 msgctxt "Name of the regular font size in the block editor"
 msgid "Regular"
 msgstr ""
 
-#: functions.php:237
+#: functions.php:239
 msgctxt "Short name of the regular font size in the block editor."
 msgid "M"
 msgstr ""
 
-#: functions.php:242
+#: functions.php:244
 msgctxt "Name of the large font size in the block editor"
 msgid "Large"
 msgstr ""
 
-#: functions.php:243
+#: functions.php:245
 msgctxt "Short name of the large font size in the block editor."
 msgid "L"
 msgstr ""
 
-#: functions.php:248
+#: functions.php:250
 msgctxt "Name of the larger font size in the block editor"
 msgid "Larger"
 msgstr ""
 
-#: functions.php:249
+#: functions.php:251
 msgctxt "Short name of the larger font size in the block editor."
 msgid "XL"
 msgstr ""
