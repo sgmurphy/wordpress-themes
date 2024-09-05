@@ -72,6 +72,7 @@
 			<key name="email" />
 			<key name="free_not_enought_message" />
 			<key name="free_enought_message" />
+			<key name="breadcrumb_home_text" />
 		</key>
 
 		<key name="theme_mods_blocksy-child">
@@ -137,6 +138,7 @@
 			<key name="email" />
 			<key name="free_not_enought_message" />
 			<key name="free_enought_message" />
+			<key name="breadcrumb_home_text" />
 		</key>
 	</admin-texts>
 </wpml-config>

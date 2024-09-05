@@ -69,9 +69,15 @@ if (! function_exists('blocksy_entry_excerpt')) {
 			PHP_INT_MAX
 		);
 
-		ob_start();
+		// Previously we had output buffering here, but it caused a conflict
+		// with assets printing from the Tribe Events Calendar plugin.
+		//
+		// ob_start();
+		// $post_excerpt = get_the_excerpt($args['post_id']);
+		// $excerpt_additions = ob_get_clean();
+
 		$post_excerpt = get_the_excerpt($args['post_id']);
-		$excerpt_additions = ob_get_clean();
+		$excerpt_additions = '';
 
 		remove_filter(
 			'excerpt_length',

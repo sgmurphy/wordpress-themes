@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-29 15:29+0000\n"
+"POT-Creation-Date: 2024-09-05 16:49+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
@@ -190,21 +190,21 @@ msgid ""
 msgstr ""
 
 #. translators: 1: span open 2: Name of current post. Only visible to screen readers 3: span closing
-#: inc/template-tags.php:143, inc/components/single/content-helpers.php:228
+#: inc/template-tags.php:149, inc/components/single/content-helpers.php:228
 msgid "Continue reading%1$s \"%2$s\"%3$s"
 msgstr ""
 
 #. translators: post title
-#: inc/template-tags.php:347
+#: inc/template-tags.php:353
 msgid "Previous %s"
 msgstr ""
 
 #. translators: post title
-#: inc/template-tags.php:375
+#: inc/template-tags.php:381
 msgid "Next %s"
 msgstr ""
 
-#: inc/template-tags.php:508, inc/options/single-elements/related-posts.php:19,
+#: inc/template-tags.php:514, inc/options/single-elements/related-posts.php:19,
 #: inc/options/single-elements/related-posts.php:168
 msgid "Related Posts"
 msgstr ""
@@ -360,7 +360,7 @@ msgctxt "breadcrumb"
 msgid "Home"
 msgstr ""
 
-#: inc/components/gallery.php:288, inc/components/gallery.php:276
+#: inc/components/gallery.php:287, inc/components/gallery.php:275
 msgid "Slide %s"
 msgstr ""
 
@@ -1017,7 +1017,7 @@ msgstr ""
 #: inc/panel-builder/header/socials/options.php:95
 #: static/js/backend/woo-variation.js:47
 #: static/js/options/options/color-palettes/ColorPalettesModal.js:41
-#: static/js/options/options/ct-ratio.js:257
+#: static/js/options/options/ct-ratio.js:263
 #: static/js/options/options/ct-slider.js:118
 #: static/js/options/options/ct-spacing.js:209
 #: static/js/options/options/ct-typography.js:151
@@ -6622,7 +6622,7 @@ msgid "Color Palette Presets"
 msgstr ""
 
 #: static/js/options/options/color-palettes/ColorPalettesModal.js:37
-#: static/js/options/options/ct-ratio.js:263
+#: static/js/options/options/ct-ratio.js:269
 msgid "Predefined"
 msgstr ""
 
@@ -6744,17 +6744,17 @@ msgstr ""
 msgid "Add/Edit Gallery"
 msgstr ""
 
-#: static/js/options/options/ct-ratio.js:189
+#: static/js/options/options/ct-ratio.js:195
 msgid ""
 "Use %sthis tool%s for calculating a custom image ratio based on your image "
 "size."
 msgstr ""
 
-#: static/js/options/options/ct-ratio.js:204
+#: static/js/options/options/ct-ratio.js:210
 msgid "Displays the image using the aspect ratio in which they were uploaded."
 msgstr ""
 
-#: static/js/options/options/ct-ratio.js:268
+#: static/js/options/options/ct-ratio.js:274
 msgid "Original Ratio"
 msgstr ""
 

@@ -123,7 +123,13 @@ const Ratio = ({ option, value, onChange, onChangeFor, values }) => {
 										className={cls({
 											active: ratio === value,
 										})}
-										onClick={() => onChange(ratio)}>
+										onClick={() => {
+											if (ratio === '1/1') {
+												setIsReversed(false)
+											}
+
+											onChange(ratio)
+										}}>
 										{ratio}
 									</li>
 								))}

@@ -5,9 +5,9 @@ import {
 	useRef,
 	useCallback,
 	useEffect,
-	useState
+	useState,
 } from '@wordpress/element'
-import OptionsPanel from './OptionsPanel.js'
+import OptionsPanel from './OptionsPanel'
 import $ from 'jquery'
 
 import ctEvents from 'ct-events'
@@ -19,7 +19,7 @@ const OptionsRoot = ({
 	options,
 	input_name,
 	input_id,
-	hasRevertButton
+	hasRevertButton,
 }) => {
 	const [internalValue, setInternalValue] = useState(value)
 
@@ -27,9 +27,9 @@ const OptionsRoot = ({
 
 	const handleChange = useCallback(({ id, value, input: inputRef }) => {
 		if (inputRef === input.current) {
-			setInternalValue(internalValue => ({
+			setInternalValue((internalValue) => ({
 				...internalValue,
-				[id]: value
+				[id]: value,
 			}))
 		}
 	}, [])
@@ -58,9 +58,9 @@ const OptionsRoot = ({
 			<OptionsPanel
 				hasRevertButton={hasRevertButton}
 				onChange={(key, newValue) => {
-					setInternalValue(internalValue => ({
+					setInternalValue((internalValue) => ({
 						...internalValue,
-						[key]: newValue
+						[key]: newValue,
 					}))
 					$(input.current).change()
 				}}

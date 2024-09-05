@@ -20,11 +20,11 @@
 	
 	.children {
 		@include media-breakpoint-down(sm) {
-			--theme-list-indent: 35px;
+			padding-inline-start: 35px;
 		}
 
 		@include media-breakpoint-up(md) {
-			--theme-list-indent: 70px;
+			padding-inline-start: 70px;
 		}
 	}
 

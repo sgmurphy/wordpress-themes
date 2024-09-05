@@ -1,10 +1,13 @@
 // single product rating
 .woocommerce-product-rating {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
+	gap: 12px;
+
 
 	.woocommerce-review-link {
-		margin-inline-start: 10px;
+		// margin-inline-start: 10px;
 		font-size: 12px;
 		--theme-link-initial-color: var(--theme-text-color);
 	}

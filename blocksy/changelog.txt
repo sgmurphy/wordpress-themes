@@ -1,3 +1,9 @@
+2.0.65: 2024-09-05
+- Improvement: Aspect ratio reverse button changes states if switched from a reversible ratio to a non-reversible one
+- Improvement: Breadcrumbs Home string couldn't be found in Polylang strings/translations pane
+- Improvement: Certain foreign lengthy words go outside the bounds of the drop down menu
+- Improvement: Open Graph issue when "The Events Calendar" plugin is active
+
 2.0.64: 2024-08-29
 - Improvement: Better integration with Klarna Checkout for WooCommerce plugin
 - Improvement: Make sure code block font size adjustments work properly in all cases

@@ -232,7 +232,6 @@ if (! function_exists('blocksy_flexy_pills')) {
 		$args = wp_parse_args($args, [
 			'pills_count' => 0,
 			'pills_images' => null,
-			'pills_have_slider' => false,
 			'pills_container_attr' => [],
 			'pills_have_arrows' => false,
 			'active_index' => 1,

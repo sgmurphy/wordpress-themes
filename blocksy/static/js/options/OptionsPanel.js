@@ -15,6 +15,14 @@ const OptionsPanel = (props) => {
 		value,
 		onChange, // default | customizer
 
+		// (values) => {}
+		//
+		// Optional, provided only in some cases. Used to update multiple
+		// values at once.
+		// Not supported in customizer since we have to update values one
+		// by one there.
+		onChangeMultiple = null,
+
 		// default | taxonomy | gutenberg
 		purpose = 'default',
 
@@ -101,6 +109,7 @@ const OptionsPanel = (props) => {
 					parentValue={parentValue}
 					renderingChunk={renderingChunk}
 					onChange={onChange}
+					onChangeMultiple={onChangeMultiple}
 					purpose={purpose}
 					hasRevertButton={hasRevertButton}
 				/>

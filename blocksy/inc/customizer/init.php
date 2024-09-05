@@ -381,6 +381,7 @@ add_action(
 			remove_theme_mod( $single_setting->id );
 		}
 
+		update_option('blocksy_custom_palettes', []);
 		do_action('blocksy:dynamic-css:refresh-caches');
 
 		wp_send_json_success();

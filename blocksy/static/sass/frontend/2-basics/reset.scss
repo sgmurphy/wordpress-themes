@@ -6,7 +6,8 @@ html {
 
 body {
 	overflow-x: hidden;
-	overflow-wrap: break-word;
+	// overflow-wrap: break-word;
+	overflow-wrap: anywhere;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
