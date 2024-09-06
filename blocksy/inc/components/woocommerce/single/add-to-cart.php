@@ -52,6 +52,10 @@ class WooCommerceAddToCart {
 	}
 
 	private function product_was_handled($product) {
+		if (! $product instanceof \WC_Product) {
+			return false;
+		}
+
 		return in_array($product->get_id(), $this->handled_product_ids);
 	}
 

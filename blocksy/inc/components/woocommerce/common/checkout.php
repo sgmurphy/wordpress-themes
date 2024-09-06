@@ -54,6 +54,11 @@ class WooCommerceCheckout {
 				global $ct_skip_checkout;
 				$ct_skip_checkout = true;
 			});
+
+			add_action( 'wc_dibs_before_checkout_form', function() {
+				global $ct_skip_checkout;
+				$ct_skip_checkout = true;
+			});
 		}, 10, 1);
 
 		add_action('wpfunnels/before_gb_checkout_form', function($widget) {

@@ -24,7 +24,6 @@ $star_rating_selectors:
 	font-weight: 400;
 	line-height: 1em;
 	letter-spacing: 0.4em;
-	white-space: nowrap;
 	color: var(--star-rating-inactive-color, #F9DFCC);
 
 	&:before {

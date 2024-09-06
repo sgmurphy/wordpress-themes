@@ -1,3 +1,9 @@
+2.0.66: 2024-09-06
+- Improvement: Better check for instance type in the woocommerce_post_class
+- Improvement: Better compatibility with Nexi Checkout plugin
+- Improvement: Single product AJAX add to cart better check for form action presence
+- Fix: Fix an issue with not correctly breaking words
+
 2.0.65: 2024-09-05
 - Improvement: Aspect ratio reverse button changes states if switched from a reversible ratio to a non-reversible one
 - Improvement: Breadcrumbs Home string couldn't be found in Polylang strings/translations pane

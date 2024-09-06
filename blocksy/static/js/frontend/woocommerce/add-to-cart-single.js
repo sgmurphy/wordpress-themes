@@ -6,8 +6,16 @@ function singleProductAddToCart(wrapper) {
 	if (!$) return
 
 	var form = wrapper.closest('form')
+
 	var button = form.find('button.button')
 	var formUrl = $(form)[0].action
+
+	if (typeof formUrl !== 'string') {
+		form.submit()
+
+		return
+	}
+
 	var formMethod = form.attr('method')
 
 	if (typeof formMethod === 'undefined' || formMethod == '') {
