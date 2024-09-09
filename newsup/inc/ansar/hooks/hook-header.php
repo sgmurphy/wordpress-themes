@@ -6,8 +6,7 @@ if (!function_exists('newsup_header_section')) :
  * @since Newsup
  *
  */
-function newsup_header_section()
-{
+function newsup_header_section(){
     
     $header_social_icon_enable = esc_attr(get_theme_mod('header_social_icon_enable','true'));
     $header_data_enable = esc_attr(get_theme_mod('header_data_enable','true'));

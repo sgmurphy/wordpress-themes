@@ -6,27 +6,22 @@ $newsup_count = 1;
 
 if ($newsup_all_posts_main->have_posts()) :
     while ($newsup_all_posts_main->have_posts()) : $newsup_all_posts_main->the_post();
-
-        global $post;
-        $newsup_url = newsup_get_freatured_image_url($post->ID, 'newsup-slider-full');
-
-        ?>
-         <div class="item">
-                <div class="mg-blog-post lg back-img" 
-                <?php if (!empty($newsup_url)): ?>
-                style="background-image: url('<?php echo esc_url($newsup_url); ?>');"
-                <?php endif; ?>>
-
-                <a class="link-div" href="<?php the_permalink(); ?>"> </a>
-
-                <article class="bottom">
-                        <?php echo newsup_post_format_type($post);
-                        newsup_post_categories(); ?> 
-                        <h4 class="title"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                        <?php newsup_post_meta(); ?>
-                </article>
-            </div>
+    global $post;
+    $newsup_url = newsup_get_freatured_image_url($post->ID, 'newsup-slider-full');  ?>
+    <div class="item">
+        <div class="mg-blog-post lg back-img" 
+            <?php if (!empty($newsup_url)): ?>
+            style="background-image: url('<?php echo esc_url($newsup_url); ?>');"
+            <?php endif; ?>>
+            <a class="link-div" href="<?php the_permalink(); ?>"> </a>
+            <article class="bottom">
+                <?php echo newsup_post_format_type($post);
+                newsup_post_categories(); ?> 
+                <h4 class="title"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                <?php newsup_post_meta(); ?>
+            </article>
         </div>
+    </div>
     <?php
     endwhile;
 endif;

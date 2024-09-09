@@ -5,13 +5,13 @@
 
 [![](https://www.wpzoom.com/wp-content/uploads/2022/05/inspiro-lite-1.png)](https://wpzoom.com/themes/inspiro-lite/)
 
-**Contributors:** [WPZOOM](https://profiles.wordpress.org/WPZOOM)  
+**Contributors:** [wpzoom](https://profiles.wordpress.org/wpzoom/)
 **Requires at least:** 6.0
 **Tested up to:** 6.6
-**Version:** 1.8.8
-**License:** GPLv2 or later  
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
-**Tags:** one-column, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready  
+**Version:** 1.9.1
+**License:** GPLv2 or later
+**License URI:** http://www.gnu.org/licenses/gpl-2.0.html
+**Tags:** one-column, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 ## Description ##
 
@@ -98,6 +98,10 @@ Included as part of the following classes and functions:
 - inspiro_get_theme_svg()
 - inspiro_dropdown_icon_to_menu_link()
 
+Bundled header image, Jeremy Bishop
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/sea-ocean-ECZV5RZKSZ
+
 Bundled header image, Enrapture Media
 License: CC0 1.0 Universal (CC0 1.0)
 Source: https://stocksnap.io/photo/sea-ocean-M6D1GS9PSL
@@ -111,6 +115,15 @@ License: CC0 1.0 Universal (CC0 1.0)
 Source: https://stocksnap.io/photo/autumn-trees-WV0YTVMU7P
 
 ## Changelog ##
+
+### 1.9.1 ###
+* Fix the default hero image
+
+### 1.9.0 ###
+* Multiple Improvements to the Customizer
+* New Footer option to edit the Copyright text
+* Minor code improvements
+* Add Header hamburger icon color option
 
 ### 1.8.8 ###
 * Minor bug fixes

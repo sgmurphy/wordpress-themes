@@ -6,7 +6,6 @@
  */
 
 if ( ! function_exists( 'newsup_sanitize_checkbox' ) ) :
-
     /**
      * Sanitize checkbox.
      *
@@ -16,9 +15,7 @@ if ( ! function_exists( 'newsup_sanitize_checkbox' ) ) :
      * @return bool Whether the checkbox is checked.
      */
     function newsup_sanitize_checkbox( $checked ) {
-
         return ( ( isset( $checked ) && true === $checked ) ? true : false );
-
     }
 
 endif;
@@ -45,23 +42,21 @@ if ( ! function_exists( 'newsup_sanitize_select' ) ) :
 
         // If the input is a valid key, return it; otherwise, return the default.
         return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-
     }
-
 endif;
 
 if ( ! function_exists( 'newsup_sanitize_radio' ) ) :
 function newsup_sanitize_radio( $val, $setting ) {
-        $val = sanitize_key( $val );
-        $choices = $setting->manager->get_control( $setting->id )->choices;
-        return array_key_exists( $val, $choices ) ? $val : $setting->default;
-    }
+    $val = sanitize_key( $val );
+    $choices = $setting->manager->get_control( $setting->id )->choices;
+    return array_key_exists( $val, $choices ) ? $val : $setting->default;
+}
 endif;
 
 function newsup_social_sanitize_checkbox( $input ) {
-            // Boolean check 
-            return ( ( isset( $input ) && true == $input ) ? true : false );
-    }
+    // Boolean check 
+    return ( ( isset( $input ) && true == $input ) ? true : false );
+}
 
 
 if ( ! function_exists( 'newsup_alpha_color_custom_sanitization_callback' ) ) :

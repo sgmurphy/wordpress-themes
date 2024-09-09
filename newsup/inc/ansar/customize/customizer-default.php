@@ -55,21 +55,15 @@ function newsup_get_default_theme_options() {
     $defaults['global_post_date_author_setting'] = 'show-date-author';
     $defaults['global_hide_post_date_author_in_list'] = 1;
     $defaults['global_widget_excerpt_setting'] = 'trimmed-content';
-     
-    $defaults['frontpage_latest_posts_section_title'] = __('You may have missed', 'newsup');
-    $defaults['frontpage_latest_posts_category'] = 0;
-    $defaults['number_of_frontpage_latest_posts'] = 4;
 
     //Single
     $defaults['single_show_featured_image'] = true;
     $defaults['single_show_share_icon'] = true;
 
-
     // filter.
     $defaults = apply_filters('newsup_filter_default_theme_options', $defaults);
 
 	return $defaults;
-
 }
 
 endif;

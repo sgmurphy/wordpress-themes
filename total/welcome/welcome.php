@@ -97,9 +97,9 @@ if (!class_exists('Total_Welcome')):
                 $this->total_notice();
             }
 
-            if (!$this->is_dismissed('review') && !empty(get_option('total_first_activation')) && time() > get_option('total_first_activation') + 15 * DAY_IN_SECONDS) {
+            //if (!$this->is_dismissed('review') && !empty(get_option('total_first_activation')) && time() > get_option('total_first_activation') + 15 * DAY_IN_SECONDS) {
                 $this->review_notice();
-            }
+            //}
         }
 
         private function total_notice() {
@@ -108,8 +108,6 @@ if (!class_exists('Total_Welcome')):
             if ('appearance_page_total-welcome' === $screen->id || (isset($screen->parent_file) && 'plugins.php' === $screen->parent_file && 'update' === $screen->id) || 'theme-install' === $screen->id) {
                 return;
             }
-
-            $slug = $filename = 'hashthemes-demo-importer';
             ?>
             <div class="updated notice total-welcome-notice total-notice">
                 <?php $this->dismiss_button('welcome'); ?>
@@ -381,7 +379,7 @@ if (!class_exists('Total_Welcome')):
                         <?php
                         printf(
                             /* translators: %1$s is link start tag, %2$s is link end tag. */
-                            esc_html__('Great to see that you have been using Total Theme for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'total'), '<a target="_blank" href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post">', '</a>'
+                            esc_html__('Great to see that you have been using Total Theme for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a %3$s rating%2$s. Your valuable review will inspire us to make it more better.', 'total'), '<a style="text-decoration:none;font-weight:bold;" target="_blank" href="https://wordpress.org/support/theme/total/reviews/?filter=5#new-post">', '</a>', '<span class="total-notice-star"><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></span>'
                         );
                         ?>
                     </p>

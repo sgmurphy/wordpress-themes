@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Total 1.0.0\n"
 "Report-Msgid-Bugs-To: http://hashthemes.com\n"
-"POT-Creation-Date: 2024-03-10 15:08+0000\n"
+"POT-Creation-Date: 2024-09-09 10:05+0000\n"
 "POT-Revision-Date: Wed Jul 20 2016 15:08:32 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hash Themes <hashthemes@gmail.com>\n"
@@ -33,7 +33,7 @@ msgid "% Comments"
 msgstr ""
 
 #. 1: comment date, 2: comment time
-#: inc/helper-functions.php:50
+#: inc/helper-functions.php:51
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
@@ -56,7 +56,7 @@ msgstr ""
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: welcome/welcome.php:118
+#: welcome/welcome.php:116
 #, php-format
 msgid ""
 "%1$s is now installed and ready to use. You can start either by importing "
@@ -68,7 +68,7 @@ msgstr ""
 msgid "%s Demo"
 msgstr ""
 
-#: welcome/welcome.php:150
+#: welcome/welcome.php:148
 #, php-format
 msgid "%s Settings"
 msgstr ""
@@ -319,7 +319,7 @@ msgstr ""
 msgid "4) Elementor Compatible"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:373
+#: welcome/sections/free_vs_pro.php:374
 msgid "40) Search Engine Optimization"
 msgstr ""
 
@@ -331,19 +331,19 @@ msgstr ""
 msgid "404 Error"
 msgstr ""
 
-#: inc/breadcrumbs.php:258
+#: inc/breadcrumbs.php:257
 msgid "404 Not Found"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:381
+#: welcome/sections/free_vs_pro.php:382
 msgid "41) Major Browser Compatible"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:389
+#: welcome/sections/free_vs_pro.php:390
 msgid "42) Responsive - Mobile Friendly"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:397
+#: welcome/sections/free_vs_pro.php:398
 msgid "43) Fast and Friendly Support"
 msgstr ""
 
@@ -450,11 +450,11 @@ msgstr ""
 msgid "Activate %2$s"
 msgstr ""
 
-#: welcome/welcome.php:279
+#: welcome/welcome.php:282
 msgid "Activate Demo Importer Plugin"
 msgstr ""
 
-#: welcome/welcome.php:182
+#: welcome/welcome.php:180
 msgid "Activating Demo Importer Plugin"
 msgstr ""
 
@@ -462,7 +462,7 @@ msgstr ""
 msgid "Active"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:390
+#: welcome/sections/free_vs_pro.php:391
 msgid "Adapts to any screen size and displays beautifully."
 msgstr ""
 
@@ -474,15 +474,15 @@ msgstr ""
 msgid "Add unlimited blocks(like slider, team, testimonial) for each Section"
 msgstr ""
 
-#: functions.php:187 functions.php:197 functions.php:207 functions.php:217
+#: functions.php:178 functions.php:188 functions.php:198 functions.php:208
 msgid "Add widgets here to appear in your Footer."
 msgstr ""
 
-#: functions.php:176
+#: functions.php:167
 msgid "Add widgets here to appear in your sidebar of shop page."
 msgstr ""
 
-#: functions.php:155 functions.php:165
+#: functions.php:146 functions.php:156
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
@@ -537,7 +537,7 @@ msgstr ""
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#: inc/breadcrumbs.php:259
+#: inc/breadcrumbs.php:258
 msgid "Archives"
 msgstr ""
 
@@ -596,6 +596,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. Name of the template
+#: templates/page-builder-template.php:2
 msgid "Blank Template(For Page Builders)"
 msgstr ""
 
@@ -649,12 +650,12 @@ msgid "Body Typography"
 msgstr ""
 
 #: inc/customizer/custom-controls/typography/typography.php:33
-#: inc/customizer/custom-controls/typography/typography-control-class.php:430
+#: inc/customizer/custom-controls/typography/typography-control-class.php:425
 msgid "Bold"
 msgstr ""
 
 #: inc/customizer/custom-controls/typography/typography.php:34
-#: inc/customizer/custom-controls/typography/typography-control-class.php:431
+#: inc/customizer/custom-controls/typography/typography-control-class.php:426
 msgid "Bold Italic"
 msgstr ""
 
@@ -670,9 +671,9 @@ msgstr ""
 msgid "Both the free and pro versions are fully translation ready."
 msgstr ""
 
-#: inc/customizer/custom-controls/dimensions-control.php:179
-#: inc/customizer/custom-controls/dimensions-control.php:183
-#: inc/customizer/custom-controls/dimensions-control.php:187
+#: inc/customizer/custom-controls/dimensions-control.php:180
+#: inc/customizer/custom-controls/dimensions-control.php:184
+#: inc/customizer/custom-controls/dimensions-control.php:188
 #: inc/customizer/custom-controls/border-control.php:64
 msgid "Bottom"
 msgstr ""
@@ -703,12 +704,12 @@ msgid ""
 "on your site."
 msgstr ""
 
-#: inc/breadcrumbs.php:256
+#: inc/breadcrumbs.php:255
 msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/breadcrumbs.php:255
+#: inc/breadcrumbs.php:254
 msgid "Browse:"
 msgstr ""
 
@@ -728,7 +729,7 @@ msgstr ""
 msgid "Button 2 Text"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:25 welcome/sections/free_vs_pro.php:409
+#: welcome/sections/free_vs_pro.php:25 welcome/sections/free_vs_pro.php:410
 msgid "Buy Now ($65 only)"
 msgstr ""
 
@@ -741,7 +742,7 @@ msgstr ""
 msgid "Call To Action Section SubTitle"
 msgstr ""
 
-#: inc/customizer/custom-controls/typography/typography-control-class.php:463
+#: inc/customizer/custom-controls/typography/typography-control-class.php:458
 msgid "Capitalize"
 msgstr ""
 
@@ -785,7 +786,7 @@ msgstr ""
 msgid "Choose from multiple go to top icons"
 msgstr ""
 
-#: welcome/welcome.php:130
+#: welcome/welcome.php:128
 msgid "Click below to install and active HashThemes Demo Importer Plugin."
 msgstr ""
 
@@ -841,7 +842,7 @@ msgid "Comment"
 msgstr ""
 
 #. %s is the page number.
-#: inc/breadcrumbs.php:265
+#: inc/breadcrumbs.php:264
 #, php-format
 msgid "Comment Page %s"
 msgstr ""
@@ -877,7 +878,7 @@ msgstr ""
 msgid "Configure no of column to display in a row"
 msgstr ""
 
-#: welcome/welcome.php:117
+#: welcome/welcome.php:115
 msgid "Congratulations!"
 msgstr ""
 
@@ -990,7 +991,7 @@ msgstr ""
 msgid "Custom Angle Spread"
 msgstr ""
 
-#: inc/hooks/general.php:320
+#: inc/hooks/general.php:322
 msgid "Custom Fonts"
 msgstr ""
 
@@ -998,7 +999,7 @@ msgstr ""
 msgid "Custom HTMl and Shortcodes Supported"
 msgstr ""
 
-#: inc/breadcrumbs.php:779 inc/breadcrumbs.php:1205
+#: inc/breadcrumbs.php:764 inc/breadcrumbs.php:1185
 msgctxt "daily archives date format"
 msgid "j"
 msgstr ""
@@ -1033,7 +1034,7 @@ msgstr ""
 msgid "Demo Importer"
 msgstr ""
 
-#: sections/section-team.php:74 welcome/sections/free_vs_pro.php:43
+#: sections/section-team.php:75 welcome/sections/free_vs_pro.php:43
 #: welcome/sections/free_vs_pro.php:51 welcome/sections/free_vs_pro.php:83
 #: welcome/sections/free_vs_pro.php:91 welcome/sections/free_vs_pro.php:99
 #: welcome/sections/free_vs_pro.php:107 welcome/sections/free_vs_pro.php:139
@@ -1065,7 +1066,7 @@ msgstr ""
 msgid "Dismiss this notice"
 msgstr ""
 
-#: welcome/welcome.php:328
+#: welcome/welcome.php:331
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -1158,7 +1159,7 @@ msgstr ""
 msgid "Drag and Drop to reorder"
 msgstr ""
 
-#: inc/helper-functions.php:38 inc/template-tags.php:76
+#: inc/helper-functions.php:39 inc/template-tags.php:76
 msgid "Edit"
 msgstr ""
 
@@ -1194,7 +1195,7 @@ msgstr ""
 msgid "Enable/Disable gap between portfolio images"
 msgstr ""
 
-#: welcome/welcome.php:185
+#: welcome/welcome.php:183
 msgid "Error! Reload the page and try again."
 msgstr ""
 
@@ -1253,7 +1254,7 @@ msgstr ""
 msgid "Fluid"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:374
+#: welcome/sections/free_vs_pro.php:375
 msgid ""
 "Follows best SEO practices so that your website always ranks higher in "
 "Search Engines."
@@ -1273,6 +1274,31 @@ msgstr ""
 
 #: inc/customizer/custom-controls/typography/typography-control-class.php:49
 msgid "Font Size"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "Extra Extra Large"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "Extra Large"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "Small"
 msgstr ""
 
 #: inc/customizer/custom-controls/typography/typography-control-class.php:46
@@ -1298,11 +1324,11 @@ msgstr ""
 msgid "Footer Column"
 msgstr ""
 
-#: functions.php:215
+#: functions.php:206
 msgid "Footer Four"
 msgstr ""
 
-#: functions.php:185
+#: functions.php:176
 msgid "Footer One"
 msgstr ""
 
@@ -1315,7 +1341,7 @@ msgstr ""
 msgid "Footer Text Color"
 msgstr ""
 
-#: functions.php:205
+#: functions.php:196
 msgid "Footer Three"
 msgstr ""
 
@@ -1323,7 +1349,7 @@ msgstr ""
 msgid "Footer Title Color"
 msgstr ""
 
-#: functions.php:195
+#: functions.php:186
 msgid "Footer Two"
 msgstr ""
 
@@ -1368,7 +1394,7 @@ msgstr ""
 msgid "For more settings,"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:398
+#: welcome/sections/free_vs_pro.php:399
 msgid "For the Premium theme, the user will get a reply in 10 hours or less."
 msgstr ""
 
@@ -1424,7 +1450,7 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: welcome/welcome.php:138
+#: welcome/welcome.php:136
 msgid "Get Started"
 msgstr ""
 
@@ -1436,11 +1462,11 @@ msgstr ""
 msgid "Go to Appearance > Customize"
 msgstr ""
 
-#: welcome/welcome.php:183 welcome/welcome.php:282
+#: welcome/welcome.php:181 welcome/welcome.php:285
 msgid "Go to Demo Importer Page"
 msgstr ""
 
-#: welcome/welcome.php:140
+#: welcome/welcome.php:138
 msgid "Go to Setting Page"
 msgstr ""
 
@@ -1458,12 +1484,12 @@ msgid "Gradient Preview"
 msgstr ""
 
 #. %1$s is link start tag, %2$s is link end tag.
-#: welcome/welcome.php:379
+#: welcome/welcome.php:382
 #, php-format
 msgid ""
 "Great to see that you have been using Total Theme for some time. We hope you "
-"love it, and we would really appreciate it if you would %1$sgive us a 5 "
-"stars rating%2$s and spread your words to the world."
+"love it, and we would really appreciate it if you would %1$sgive us a %3$s "
+"rating%2$s. Your valuable review will inspire us to make it more better."
 msgstr ""
 
 #: inc/customizer/custom-controls/border-control.php:180
@@ -1498,7 +1524,7 @@ msgstr ""
 msgid "here"
 msgstr ""
 
-#: welcome/welcome.php:139
+#: welcome/welcome.php:137
 #, php-format
 msgid ""
 "Here you will find all the necessary links and information on how to use %s."
@@ -1506,7 +1532,7 @@ msgstr ""
 
 #: inc/customizer/custom-controls/box-shadow-control.php:125
 #: inc/customizer/custom-controls/border-control.php:156
-#: inc/customizer/custom-controls/typography/typography-control-class.php:376
+#: inc/customizer/custom-controls/typography/typography-control-class.php:371
 msgid "Hex Value"
 msgstr ""
 
@@ -1535,11 +1561,12 @@ msgstr ""
 msgid "Highlight Block - 4 styles"
 msgstr ""
 
-#: inc/breadcrumbs.php:257
+#: inc/breadcrumbs.php:256
 msgid "Home"
 msgstr ""
 
 #. Name of the template
+#: templates/home-template.php:3
 msgid "Home Page"
 msgstr ""
 
@@ -1559,7 +1586,7 @@ msgstr ""
 msgid "Horizontal Spread (Left To Right)"
 msgstr ""
 
-#: inc/breadcrumbs.php:761
+#: inc/breadcrumbs.php:746
 msgctxt "hour archives time format"
 msgid "g a"
 msgstr ""
@@ -1576,7 +1603,7 @@ msgstr ""
 msgid "https://hashthemes.com/wordpress-theme/total/"
 msgstr ""
 
-#: welcome/welcome.php:384
+#: welcome/welcome.php:387
 msgid "I have already rated"
 msgstr ""
 
@@ -1607,7 +1634,7 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
-#: welcome/welcome.php:129
+#: welcome/welcome.php:127
 msgid "Import Demo"
 msgstr ""
 
@@ -1619,6 +1646,11 @@ msgstr ""
 msgid ""
 "Import Elementor Templates and Sections with just one click without having "
 "to import the whole website."
+msgstr ""
+
+#: inc/customizer/customizer-panel/home-sections.php:11
+#, php-format
+msgid "Important! Home Page Sections are not enabled. Enable it %1shere%2s."
 msgstr ""
 
 #: inc/customizer/customizer-panel/homepage-settings.php:20
@@ -1647,7 +1679,7 @@ msgstr ""
 msgid "Install %2$s"
 msgstr ""
 
-#: welcome/welcome.php:286
+#: welcome/welcome.php:289
 msgid "Install Demo Importer Plugin"
 msgstr ""
 
@@ -1688,7 +1720,7 @@ msgstr ""
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: welcome/welcome.php:181
+#: welcome/welcome.php:179
 msgid "Installing Demo Importer Plugin"
 msgstr ""
 
@@ -1734,9 +1766,9 @@ msgstr ""
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/customizer/custom-controls/dimensions-control.php:180
-#: inc/customizer/custom-controls/dimensions-control.php:184
-#: inc/customizer/custom-controls/dimensions-control.php:188
+#: inc/customizer/custom-controls/dimensions-control.php:181
+#: inc/customizer/custom-controls/dimensions-control.php:185
+#: inc/customizer/custom-controls/dimensions-control.php:189
 #: inc/customizer/custom-controls/border-control.php:65
 msgid "Left"
 msgstr ""
@@ -1753,7 +1785,7 @@ msgstr ""
 msgid "Left Image"
 msgstr ""
 
-#: functions.php:163
+#: functions.php:154
 msgid "Left Sidebar"
 msgstr ""
 
@@ -1773,7 +1805,7 @@ msgstr ""
 msgid "Line Height"
 msgstr ""
 
-#: inc/customizer/custom-controls/typography/typography-control-class.php:446
+#: inc/customizer/custom-controls/typography/typography-control-class.php:441
 msgid "Line-through"
 msgstr ""
 
@@ -1781,7 +1813,7 @@ msgstr ""
 msgid "Link portfolio to external url"
 msgstr ""
 
-#: inc/customizer/custom-controls/dimensions-control.php:47
+#: inc/customizer/custom-controls/dimensions-control.php:48
 msgid "Link values together"
 msgstr ""
 
@@ -1797,7 +1829,7 @@ msgstr ""
 msgid "Logo Width(px)"
 msgstr ""
 
-#: inc/customizer/custom-controls/typography/typography-control-class.php:462
+#: inc/customizer/custom-controls/typography/typography-control-class.php:457
 msgid "Lowercase"
 msgstr ""
 
@@ -1846,22 +1878,22 @@ msgid "Minimum required version:"
 msgstr ""
 
 #. Minute archive title. %s is the minute time format.
-#: inc/breadcrumbs.php:267
+#: inc/breadcrumbs.php:266
 #, php-format
 msgid "Minute %s"
 msgstr ""
 
-#: inc/breadcrumbs.php:727
+#: inc/breadcrumbs.php:712
 msgctxt "minute and hour archives time format"
 msgid "g:i a"
 msgstr ""
 
-#: inc/breadcrumbs.php:744
+#: inc/breadcrumbs.php:729
 msgctxt "minute archives time format"
 msgid "i"
 msgstr ""
 
-#: inc/breadcrumbs.php:778 inc/breadcrumbs.php:834 inc/breadcrumbs.php:1201
+#: inc/breadcrumbs.php:763 inc/breadcrumbs.php:817 inc/breadcrumbs.php:1181
 msgctxt "monthly archives date format"
 msgid "F"
 msgstr ""
@@ -1970,19 +2002,19 @@ msgid "No Repeat"
 msgstr ""
 
 #: inc/customizer/custom-controls/border-control.php:175
-#: inc/customizer/custom-controls/typography/typography-control-class.php:444
-#: inc/customizer/custom-controls/typography/typography-control-class.php:460
+#: inc/customizer/custom-controls/typography/typography-control-class.php:439
+#: inc/customizer/custom-controls/typography/typography-control-class.php:455
 msgid "None"
 msgstr ""
 
 #: inc/customizer/custom-controls/color-tab-control.php:136
 #: inc/customizer/custom-controls/typography/typography.php:29
-#: inc/customizer/custom-controls/typography/typography-control-class.php:428
+#: inc/customizer/custom-controls/typography/typography-control-class.php:423
 msgid "Normal"
 msgstr ""
 
 #: inc/customizer/custom-controls/typography/typography.php:30
-#: inc/customizer/custom-controls/typography/typography-control-class.php:429
+#: inc/customizer/custom-controls/typography/typography-control-class.php:424
 msgid "Normal Italic"
 msgstr ""
 
@@ -2110,7 +2142,7 @@ msgstr ""
 msgid "Overlay Color"
 msgstr ""
 
-#: inc/customizer/custom-controls/typography/typography-control-class.php:447
+#: inc/customizer/custom-controls/typography/typography-control-class.php:442
 msgid "Overline"
 msgstr ""
 
@@ -2122,7 +2154,7 @@ msgid ""
 msgstr ""
 
 #. %s is the page number.
-#: inc/breadcrumbs.php:263
+#: inc/breadcrumbs.php:262
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -2161,7 +2193,7 @@ msgid ""
 "more features to the theme."
 msgstr ""
 
-#: welcome/welcome.php:266
+#: welcome/welcome.php:269
 #, php-format
 msgid ""
 "Please leave us a %s rating if you like our theme . A huge thank you from "
@@ -2252,7 +2284,7 @@ msgstr ""
 
 #: welcome/sections/footer.php:16 welcome/sections/footer.php:29
 #: welcome/sections/footer.php:42 welcome/sections/footer.php:55
-#: welcome/sections/footer.php:68
+#: welcome/sections/footer.php:68 welcome/sections/footer.php:81
 msgid "Preview"
 msgstr ""
 
@@ -2290,8 +2322,8 @@ msgid "Read Full Documentation"
 msgstr ""
 
 #. permalink
-#: sections/section-featured.php:55 sections/section-blog.php:66
-#: sections/section-service.php:55 template-parts/content-search.php:25
+#: sections/section-featured.php:56 sections/section-blog.php:67
+#: sections/section-service.php:56 template-parts/content-search.php:25
 #: template-parts/content-summary.php:47
 msgid "Read More"
 msgstr ""
@@ -2389,9 +2421,9 @@ msgstr ""
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: inc/customizer/custom-controls/dimensions-control.php:178
-#: inc/customizer/custom-controls/dimensions-control.php:182
-#: inc/customizer/custom-controls/dimensions-control.php:186
+#: inc/customizer/custom-controls/dimensions-control.php:179
+#: inc/customizer/custom-controls/dimensions-control.php:183
+#: inc/customizer/custom-controls/dimensions-control.php:187
 #: inc/customizer/custom-controls/border-control.php:63
 msgid "Right"
 msgstr ""
@@ -2408,7 +2440,7 @@ msgstr ""
 msgid "Right Image"
 msgstr ""
 
-#: functions.php:153
+#: functions.php:144
 msgid "Right Sidebar"
 msgstr ""
 
@@ -2434,13 +2466,13 @@ msgid "Search and social button option on header"
 msgstr ""
 
 #. search query text
-#: inc/hooks/archive.php:66
+#: inc/hooks/archive.php:67
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
 #. %s is the search query.
-#: inc/breadcrumbs.php:261
+#: inc/breadcrumbs.php:260
 #, php-format
 msgid "Search results for: %s"
 msgstr ""
@@ -2550,7 +2582,7 @@ msgstr ""
 msgid "Set spacing of menu and submenu"
 msgstr ""
 
-#: functions.php:174
+#: functions.php:165
 msgid "Shop Sidebar"
 msgstr ""
 
@@ -2986,7 +3018,7 @@ msgid ""
 "transition effect between sections"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:382
+#: welcome/sections/free_vs_pro.php:383
 msgid "The website runs smoothly in all major browsers."
 msgstr ""
 
@@ -3087,9 +3119,9 @@ msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/customizer/custom-controls/dimensions-control.php:177
-#: inc/customizer/custom-controls/dimensions-control.php:181
-#: inc/customizer/custom-controls/dimensions-control.php:185
+#: inc/customizer/custom-controls/dimensions-control.php:178
+#: inc/customizer/custom-controls/dimensions-control.php:182
+#: inc/customizer/custom-controls/dimensions-control.php:186
 #: inc/customizer/custom-controls/border-control.php:62
 msgid "Top"
 msgstr ""
@@ -3125,7 +3157,7 @@ msgid ""
 "//hashthemes.com/wordpress-theme/total/"
 msgstr ""
 
-#: welcome/welcome.php:122
+#: welcome/welcome.php:120
 msgid "Total Demo"
 msgstr ""
 
@@ -3137,7 +3169,7 @@ msgstr ""
 
 #: welcome/sections/footer.php:10 welcome/sections/footer.php:23
 #: welcome/sections/footer.php:36 welcome/sections/footer.php:49
-#: welcome/sections/footer.php:62
+#: welcome/sections/footer.php:62 welcome/sections/footer.php:75
 msgid "Total Plus Demo"
 msgstr ""
 
@@ -3151,7 +3183,7 @@ msgstr ""
 msgid "Total Plus has an additional 7 sections."
 msgstr ""
 
-#: welcome/sections/footer.php:80
+#: welcome/sections/footer.php:93
 msgid ""
 "Try the Premium version and check if it fits your need or not. If not, we "
 "have 7 days money-back guarantee."
@@ -3182,7 +3214,7 @@ msgstr ""
 msgid "Typography Settings"
 msgstr ""
 
-#: inc/customizer/custom-controls/typography/typography-control-class.php:445
+#: inc/customizer/custom-controls/typography/typography-control-class.php:440
 msgid "Underline"
 msgstr ""
 
@@ -3260,11 +3292,11 @@ msgstr ""
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: welcome/sections/footer.php:83
+#: welcome/sections/footer.php:96
 msgid "Upgrade Now"
 msgstr ""
 
-#: welcome/sections/footer.php:78
+#: welcome/sections/footer.php:91
 msgid "Upgrade To Premium Version (7 Days Money Back Guarantee)"
 msgstr ""
 
@@ -3272,7 +3304,7 @@ msgstr ""
 msgid "UPGRADE TO PRO"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:21 welcome/sections/free_vs_pro.php:405
+#: welcome/sections/free_vs_pro.php:21 welcome/sections/free_vs_pro.php:406
 #: inc/customizer/customizer-panel/general-settings.php:157
 #: inc/customizer/customizer-panel/general-settings.php:191
 #: inc/customizer/customizer-panel/home-sections.php:98
@@ -3298,7 +3330,7 @@ msgstr ""
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: welcome/sections/free_vs_pro.php:22 welcome/sections/free_vs_pro.php:406
+#: welcome/sections/free_vs_pro.php:22 welcome/sections/free_vs_pro.php:407
 msgid "Upgrade to the pro version for additional features and better support."
 msgstr ""
 
@@ -3316,7 +3348,7 @@ msgstr ""
 msgid "Upload Image"
 msgstr ""
 
-#: inc/customizer/custom-controls/typography/typography-control-class.php:461
+#: inc/customizer/custom-controls/typography/typography-control-class.php:456
 msgid "Uppercase"
 msgstr ""
 
@@ -3376,17 +3408,17 @@ msgid "Website Layout"
 msgstr ""
 
 #. Weekly archive title. %s is the week date format.
-#: inc/breadcrumbs.php:269
+#: inc/breadcrumbs.php:268
 #, php-format
 msgid "Week %s"
 msgstr ""
 
-#: inc/breadcrumbs.php:807
+#: inc/breadcrumbs.php:791
 msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
 
-#: welcome/welcome.php:150
+#: welcome/welcome.php:148
 msgid "Welcome"
 msgstr ""
 
@@ -3414,7 +3446,7 @@ msgstr ""
 msgid "Width"
 msgstr ""
 
-#: welcome/sections/footer.php:79
+#: welcome/sections/footer.php:92
 #, php-format
 msgid ""
 "With %s Theme you can create a beautiful website. But if you want to unlock "
@@ -3449,8 +3481,8 @@ msgstr ""
 msgid "Y"
 msgstr ""
 
-#: inc/breadcrumbs.php:777 inc/breadcrumbs.php:806 inc/breadcrumbs.php:833
-#: inc/breadcrumbs.php:860 inc/breadcrumbs.php:1197
+#: inc/breadcrumbs.php:762 inc/breadcrumbs.php:790 inc/breadcrumbs.php:816
+#: inc/breadcrumbs.php:842 inc/breadcrumbs.php:1177
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
@@ -3470,7 +3502,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: welcome/welcome.php:383
+#: welcome/welcome.php:386
 msgid "Yes, of course"
 msgstr ""
 
@@ -3505,6 +3537,6 @@ msgid ""
 "helpful if you are running an infographic website."
 msgstr ""
 
-#: inc/helper-functions.php:36
+#: inc/helper-functions.php:37
 msgid "Your comment is awaiting moderation."
 msgstr ""

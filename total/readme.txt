@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Requires at least: 5.0
 Tested up to: 6.6
-Stable tag: 2.1.71
+Stable tag: 2.1.72
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,9 @@ Total is a clean and beautiful WordPress theme with lots of features to make a c
 
 
 == Changelog ==
+= 2.1.72 - Sep 9, 2024 =
+* New demo (Hotel) added
+
 = 2.1.71 - Aug 11, 2024 =
 * Premium demo added
 

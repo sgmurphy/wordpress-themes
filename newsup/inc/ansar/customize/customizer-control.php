@@ -18,14 +18,11 @@ class Newsup_Section_Title extends WP_Customize_Control {
     public $label = '';
     public $description = '';
 
-    public function enqueue()
-    {
-
+    public function enqueue(){
         wp_enqueue_style('newsup-custom-controls-css', trailingslashit(get_template_directory_uri()) . '/inc/ansar/customize/css/customizer.css', array(), '1.0', 'all');
     }
 
-    public function render_content() {
-        ?>
+    public function render_content() { ?>
         <h3><?php echo esc_html( $this->label ); ?></h3>
         <?php if (!empty($this->description)) { ?>
             <span class="customize-control-description"><?php echo esc_html($this->description); ?></span>
@@ -33,7 +30,6 @@ class Newsup_Section_Title extends WP_Customize_Control {
         <?php
     }
 }
-
 
 /**
  * Customize Control for Taxonomy Select.
@@ -130,54 +126,54 @@ class Newsup_Dropdown_Taxonomies_Control extends WP_Customize_Control {
  */
 class Newsup_Radio_Image_Control extends WP_Customize_Control {
         
-        /**
-         * Declare the control type.
-         *
-         * @access public
-         * @var string
-         */
-        public $type = 'radio-image';
-        
-        /**
-         * Enqueue scripts and styles for the custom control.
-         * 
-         * Scripts are hooked at {@see 'customize_controls_enqueue_scripts'}.
-         * 
-         * Note, you can also enqueue stylesheets here as well. Stylesheets are hooked
-         * at 'customize_controls_print_styles'.
-         *
-         * @access public
-         */
-        public function enqueue() {
-            wp_enqueue_script( 'jquery-ui-button' );
-        }
-        
-        /**
-         * Render the control to be displayed in the Customizer.
-         */
-        public function render_content() {
-            if ( empty( $this->choices ) ) {
-                return;
-            }           
-            
-            $name = '_customize-radio-' . $this->id;
-            ?>
-            <span class="customize-control-title">
-                <?php echo esc_attr( $this->label ); ?>
-                <?php if ( ! empty( $this->description ) ) : ?>
-                    <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-                <?php endif; ?>
-            </span>
-            <div id="input_<?php echo $this->id; ?>" class="image">
-                <?php foreach ( $this->choices as $value => $label ) : ?>
-                    <input class="image-select" type="radio" value="<?php echo esc_attr( $value ); ?>" id="<?php echo $this->id . $value; ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?>>
-                        <label for="<?php echo $this->id . $value; ?>">
-                            <img src="<?php echo esc_html( $label ); ?>" alt="<?php echo esc_attr( $value ); ?>" title="<?php echo esc_attr( $value ); ?>">
-                        </label>
-                    </input>
-                <?php endforeach; ?>
-            </div>
-            <script>jQuery(document).ready(function($) { $( '[id="input_<?php echo $this->id; ?>"]' ).buttonset(); });</script>
-            <?php
-        }
+    /**
+     * Declare the control type.
+     *
+     * @access public
+     * @var string
+     */
+    public $type = 'radio-image';
+    
+    /**
+     * Enqueue scripts and styles for the custom control.
+     * 
+     * Scripts are hooked at {@see 'customize_controls_enqueue_scripts'}.
+     * 
+     * Note, you can also enqueue stylesheets here as well. Stylesheets are hooked
+     * at 'customize_controls_print_styles'.
+     *
+     * @access public
+     */
+    public function enqueue() {
+        wp_enqueue_script( 'jquery-ui-button' );
     }
+    
+    /**
+     * Render the control to be displayed in the Customizer.
+     */
+    public function render_content() {
+        if ( empty( $this->choices ) ) {
+            return;
+        }           
+        
+        $name = '_customize-radio-' . $this->id;
+        ?>
+        <span class="customize-control-title">
+            <?php echo esc_attr( $this->label ); ?>
+            <?php if ( ! empty( $this->description ) ) : ?>
+                <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+            <?php endif; ?>
+        </span>
+        <div id="input_<?php echo $this->id; ?>" class="image">
+            <?php foreach ( $this->choices as $value => $label ) : ?>
+                <input class="image-select" type="radio" value="<?php echo esc_attr( $value ); ?>" id="<?php echo $this->id . $value; ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?>>
+                    <label for="<?php echo $this->id . $value; ?>">
+                        <img src="<?php echo esc_html( $label ); ?>" alt="<?php echo esc_attr( $value ); ?>" title="<?php echo esc_attr( $value ); ?>">
+                    </label>
+                </input>
+            <?php endforeach; ?>
+        </div>
+        <script>jQuery(document).ready(function($) { $( '[id="input_<?php echo $this->id; ?>"]' ).buttonset(); });</script>
+        <?php
+    }
+}
