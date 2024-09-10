@@ -514,6 +514,10 @@ body.toplevel_page_total-welcome #wpfooter a {
     text-decoration: none;
 }
 
+.total-notice-star {
+    color: #ffa534;
+}
+
 @media screen and (max-width:782px) {
 
     .welcome-wrap {

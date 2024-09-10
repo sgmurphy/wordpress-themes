@@ -463,10 +463,6 @@ a.buy-pro-btn:hover {
     background-size: 18px auto;
 }
 
-.total-notice-star {
-    color: #ffa534;
-}
-
 /** Footer Review **/
 body.toplevel_page_total-welcome #wpfooter {
     position: fixed;
@@ -516,6 +512,10 @@ body.toplevel_page_total-welcome #wpfooter a {
 
 .total-notice a.notice-dismiss {
     text-decoration: none;
+}
+
+.total-notice-star {
+    color: #ffa534;
 }
 
 @media screen and (max-width:782px) {

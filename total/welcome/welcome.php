@@ -97,9 +97,9 @@ if (!class_exists('Total_Welcome')):
                 $this->total_notice();
             }
 
-            //if (!$this->is_dismissed('review') && !empty(get_option('total_first_activation')) && time() > get_option('total_first_activation') + 15 * DAY_IN_SECONDS) {
+            if (!$this->is_dismissed('review') && !empty(get_option('total_first_activation')) && time() > get_option('total_first_activation') + 15 * DAY_IN_SECONDS) {
                 $this->review_notice();
-            //}
+            }
         }
 
         private function total_notice() {
