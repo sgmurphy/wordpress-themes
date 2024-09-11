@@ -1,9 +1,9 @@
 === Extendable ===
 Contributors: extendify, richtabor, colorful-tones
-Requires at least: 6.0
-Tested up to: 6.0
-Requires PHP: 5.6
-Stable tag: 2.0.11
+Requires at least: 6.3
+Tested up to: 6.6
+Requires PHP: 7.4
+Stable tag: 2.0.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Extendable is a distinct, dynamic block theme designed as a canvas for your next online venture. Sporting multiple style variations, Extendable is the most expressive block theme yet. Go fresh, bold, bohemian or minimal — with a single click.
 
 == Changelog ==
+
+= 2.0.12 - 2024-09-11 =
+- Add no-title-sticky-header.html template
+- Add Smooth scrolling
 
 = 2.0.11 - 2024-08-22 =
 - New: Added style compatibility support for Contact Form 7 and WPForms.
