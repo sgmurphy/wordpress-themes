@@ -22,7 +22,7 @@ foreach ($woo_card_layout as $layer) {
 			'product_title' => '[data-products] .product .woocommerce-loop-product__title',
 			'product_price' => '[data-products] .product .price',
 			'product_rating' => '[data-products] .product .star-rating',
-			'product_meta' => '[data-products] .product .entry-meta',
+			// 'product_meta' => '[data-products] .product .entry-meta',
 			'product_desc' => '[data-products] .product .entry-excerpt',
 			'product_add_to_cart' => '[data-products] .product .ct-woo-card-actions',
 			'product_add_to_cart_and_price' => '[data-products] .product .ct-woo-card-actions',
@@ -114,6 +114,20 @@ foreach ($woo_card_layout as $layer) {
 					'value' => $brand_logo_gap,
 				]);
 			}
+		}
+
+		if ($layer['id'] === 'product_meta') {
+			$id = isset($layer["__id"]) ? $layer["__id"] : 'default';
+
+			blocksy_output_responsive([
+				'css' => $css,
+				'tablet_css' => $tablet_css,
+				'mobile_css' => $mobile_css,
+				'selector' => '[data-products] .product .entry-meta[data-id="' . $id . '"]',
+				'variableName' => 'product-element-spacing',
+				'value' => $spacing,
+				'unit' => 'px'
+			]);
 		}
 
 		if ($layer['id'] === 'content-block') {
@@ -620,8 +634,8 @@ if ($shop_cards_type !== 'type-2') {
 	$text_shop_cards_alignment = blocksy_map_values([
 		'value' => $shop_cards_alignment,
 		'map' => [
-			'flex-start' => 'left',
-			'flex-end' => 'right'
+			'flex-start' => 'start',
+			'flex-end' => 'end'
 		]
 	]);
 

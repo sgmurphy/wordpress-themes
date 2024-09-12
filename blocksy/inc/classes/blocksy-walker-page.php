@@ -45,6 +45,12 @@ class Blocksy_Walker_Page extends Walker_Page {
 			$output
 		);
 
+		$output = str_replace(
+			"current-menu-parent\"><a",
+			"current-menu-parent\">^^<a",
+			$output
+		);
+
 		$output = preg_replace('/~~+/', '~', $output);
 	}
 }

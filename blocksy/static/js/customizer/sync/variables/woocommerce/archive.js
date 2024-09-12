@@ -13,7 +13,7 @@ export const getWooArchiveVariablesFor = () => ({
 					'[data-products] .product .woocommerce-loop-product__title',
 				product_price: '[data-products] .product .price',
 				product_rating: '[data-products] .product .star-rating',
-				product_meta: '[data-products] .product .entry-meta',
+				// product_meta: '[data-products] .product .entry-meta',
 				product_desc: '[data-products] .product .entry-excerpt',
 				product_add_to_cart:
 					'[data-products] .product .ct-woo-card-actions',
@@ -74,6 +74,23 @@ export const getWooArchiveVariablesFor = () => ({
 						unit: 'px',
 						extractValue: () => {
 							return layer.brand_logo_gap || 10
+						},
+					},
+				]
+			}
+
+			if (layer.id === 'product_meta') {
+				variables = [
+					...variables,
+					{
+						selector: `[data-products] .product .entry-meta[data-id="${
+							layer?.__id || 'default'
+						}"]`,
+						variable: 'product-element-spacing',
+						responsive: true,
+						unit: 'px',
+						extractValue: () => {
+							return layer.spacing || 10
 						},
 					},
 				]
@@ -390,27 +407,27 @@ export const getWooArchiveVariablesFor = () => ({
 				}
 
 				if (value.desktop === 'flex-start') {
-					value.desktop = 'left'
+					value.desktop = 'start'
 				}
 
 				if (value.desktop === 'flex-end') {
-					value.desktop = 'right'
+					value.desktop = 'end'
 				}
 
 				if (value.tablet === 'flex-start') {
-					value.tablet = 'left'
+					value.tablet = 'start'
 				}
 
 				if (value.tablet === 'flex-end') {
-					value.tablet = 'right'
+					value.tablet = 'end'
 				}
 
 				if (value.mobile === 'flex-start') {
-					value.mobile = 'left'
+					value.mobile = 'start'
 				}
 
 				if (value.mobile === 'flex-end') {
-					value.mobile = 'right'
+					value.mobile = 'end'
 				}
 
 				return value

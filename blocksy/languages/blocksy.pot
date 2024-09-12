@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-09-06 14:28+0000\n"
+"POT-Creation-Date: 2024-09-12 16:42+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
@@ -344,11 +344,9 @@ msgstr ""
 
 #: inc/classes/screen-manager.php:210, inc/options/customizer.php:118,
 #: inc/options/posts/categories.php:10,
-#: inc/options/woocommerce/card-product-elements.php:436,
 #: build_tmp/build/inc/classes/screen-manager.php:210,
 #: build_tmp/build/inc/options/customizer.php:118,
-#: build_tmp/build/inc/options/posts/categories.php:10,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:436
+#: build_tmp/build/inc/options/posts/categories.php:10
 msgid "Categories"
 msgstr ""
 
@@ -458,7 +456,7 @@ msgstr ""
 #: inc/options/single-elements/featured-image.php:81,
 #: inc/options/single-elements/post-nav.php:41,
 #: inc/options/single-elements/related-posts.php:145,
-#: inc/options/woocommerce/card-product-elements.php:447,
+#: inc/options/woocommerce/card-product-elements.php:487,
 #: inc/options/woocommerce/single-product-layers.php:61,
 #: inc/options/woocommerce/single-product-layers.php:106,
 #: inc/options/woocommerce/single-product-layers.php:372,
@@ -485,7 +483,7 @@ msgstr ""
 #: build_tmp/build/inc/options/single-elements/featured-image.php:81,
 #: build_tmp/build/inc/options/single-elements/post-nav.php:41,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:145,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:447,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:487,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:61,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:106,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:372,
@@ -784,7 +782,7 @@ msgstr ""
 #: inc/options/single-elements/post-tags.php:29,
 #: inc/options/single-elements/related-posts.php:29,
 #: inc/options/woocommerce/archive-main.php:48,
-#: inc/options/woocommerce/card-product-elements.php:183,
+#: inc/options/woocommerce/card-product-elements.php:209,
 #: inc/options/woocommerce/related-upsells.php:16,
 #: inc/options/woocommerce/results-count.php:16,
 #: inc/options/woocommerce/single-main.php:49,
@@ -847,7 +845,7 @@ msgstr ""
 #: build_tmp/build/inc/options/single-elements/post-tags.php:29,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:29,
 #: build_tmp/build/inc/options/woocommerce/archive-main.php:48,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:183,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:209,
 #: build_tmp/build/inc/options/woocommerce/related-upsells.php:16,
 #: build_tmp/build/inc/options/woocommerce/results-count.php:16,
 #: build_tmp/build/inc/options/woocommerce/single-main.php:49,
@@ -1009,9 +1007,14 @@ msgstr ""
 msgid "Update cart"
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:144,
-#: build_tmp/build/woocommerce/cart/mini-cart.php:144
+#: woocommerce/cart/mini-cart.php:146,
+#: build_tmp/build/woocommerce/cart/mini-cart.php:146
 msgid "No products in the cart."
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:58,
+#: build_tmp/build/woocommerce/cart/mini-cart.php:58
+msgid "&ldquo;%s&rdquo; has been removed from your cart"
 msgstr ""
 
 #: admin/dashboard/plugins/config.php:8,
@@ -1353,7 +1356,7 @@ msgstr ""
 #: inc/options/meta/page.php:111, inc/options/meta/post.php:76,
 #: inc/options/meta/post.php:110,
 #: inc/options/single-elements/post-share-box.php:100,
-#: inc/options/woocommerce/card-product-elements.php:481,
+#: inc/options/woocommerce/card-product-elements.php:521,
 #: inc/options/woocommerce/single-product-layers.php:41,
 #: inc/options/woocommerce/single-product-layers.php:62,
 #: inc/options/woocommerce/single-product-layers.php:107,
@@ -1374,7 +1377,7 @@ msgstr ""
 #: build_tmp/build/inc/options/meta/post.php:76,
 #: build_tmp/build/inc/options/meta/post.php:110,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:100,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:481,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:521,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:41,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:62,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:107,
@@ -1866,7 +1869,7 @@ msgstr ""
 #: inc/options/single-elements/post-tags.php:110,
 #: inc/options/single-elements/related-posts.php:487,
 #: inc/options/woocommerce/archive-main.php:166,
-#: inc/options/woocommerce/card-product-elements.php:647,
+#: inc/options/woocommerce/card-product-elements.php:687,
 #: inc/options/woocommerce/related-upsells.php:123,
 #: inc/options/woocommerce/results-count.php:44,
 #: inc/options/woocommerce/single-main.php:61,
@@ -1927,7 +1930,7 @@ msgstr ""
 #: build_tmp/build/inc/options/single-elements/post-tags.php:110,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:487,
 #: build_tmp/build/inc/options/woocommerce/archive-main.php:166,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:647,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:687,
 #: build_tmp/build/inc/options/woocommerce/related-upsells.php:123,
 #: build_tmp/build/inc/options/woocommerce/results-count.php:44,
 #: build_tmp/build/inc/options/woocommerce/single-main.php:61,
@@ -2059,17 +2062,17 @@ msgstr ""
 #: inc/options/woocommerce/card-product-elements.php:113,
 #: inc/options/woocommerce/card-product-elements.php:149,
 #: inc/options/woocommerce/card-product-elements.php:160,
-#: inc/options/woocommerce/card-product-elements.php:686,
-#: inc/options/woocommerce/card-product-elements.php:758,
-#: inc/options/woocommerce/card-product-elements.php:798,
-#: inc/options/woocommerce/card-product-elements.php:856,
-#: inc/options/woocommerce/card-product-elements.php:896,
-#: inc/options/woocommerce/card-product-elements.php:928,
-#: inc/options/woocommerce/card-product-elements.php:975,
-#: inc/options/woocommerce/card-product-elements.php:1013,
-#: inc/options/woocommerce/card-product-elements.php:1044,
-#: inc/options/woocommerce/card-product-elements.php:1088,
-#: inc/options/woocommerce/card-product-elements.php:1122,
+#: inc/options/woocommerce/card-product-elements.php:731,
+#: inc/options/woocommerce/card-product-elements.php:807,
+#: inc/options/woocommerce/card-product-elements.php:851,
+#: inc/options/woocommerce/card-product-elements.php:905,
+#: inc/options/woocommerce/card-product-elements.php:942,
+#: inc/options/woocommerce/card-product-elements.php:974,
+#: inc/options/woocommerce/card-product-elements.php:1025,
+#: inc/options/woocommerce/card-product-elements.php:1067,
+#: inc/options/woocommerce/card-product-elements.php:1098,
+#: inc/options/woocommerce/card-product-elements.php:1142,
+#: inc/options/woocommerce/card-product-elements.php:1176,
 #: inc/options/woocommerce/related-upsells.php:152,
 #: inc/options/woocommerce/results-count.php:74,
 #: inc/options/woocommerce/single-product-elements.php:162,
@@ -2260,17 +2263,17 @@ msgstr ""
 #: build_tmp/build/inc/options/woocommerce/card-product-elements.php:113,
 #: build_tmp/build/inc/options/woocommerce/card-product-elements.php:149,
 #: build_tmp/build/inc/options/woocommerce/card-product-elements.php:160,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:686,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:758,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:798,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:856,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:896,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:928,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:975,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1013,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1044,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1088,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1122,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:731,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:807,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:851,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:905,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:942,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:974,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1025,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1067,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1098,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1142,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1176,
 #: build_tmp/build/inc/options/woocommerce/related-upsells.php:152,
 #: build_tmp/build/inc/options/woocommerce/results-count.php:74,
 #: build_tmp/build/inc/options/woocommerce/single-product-elements.php:162,
@@ -2434,13 +2437,13 @@ msgstr ""
 #: inc/options/single-elements/post-share-box.php:684,
 #: inc/options/single-elements/related-posts.php:606,
 #: inc/options/single-elements/related-posts.php:646,
-#: inc/options/woocommerce/card-product-elements.php:720,
-#: inc/options/woocommerce/card-product-elements.php:861,
-#: inc/options/woocommerce/card-product-elements.php:902,
-#: inc/options/woocommerce/card-product-elements.php:934,
-#: inc/options/woocommerce/card-product-elements.php:1019,
-#: inc/options/woocommerce/card-product-elements.php:1050,
-#: inc/options/woocommerce/card-product-elements.php:1093,
+#: inc/options/woocommerce/card-product-elements.php:765,
+#: inc/options/woocommerce/card-product-elements.php:910,
+#: inc/options/woocommerce/card-product-elements.php:948,
+#: inc/options/woocommerce/card-product-elements.php:980,
+#: inc/options/woocommerce/card-product-elements.php:1073,
+#: inc/options/woocommerce/card-product-elements.php:1104,
+#: inc/options/woocommerce/card-product-elements.php:1147,
 #: inc/options/woocommerce/single-product-elements.php:302,
 #: inc/options/woocommerce/single-product-elements.php:346,
 #: inc/options/woocommerce/single-product-elements.php:383,
@@ -2577,13 +2580,13 @@ msgstr ""
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:684,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:606,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:646,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:720,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:861,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:902,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:934,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1019,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1050,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1093,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:765,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:910,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:948,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:980,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1073,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1104,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1147,
 #: build_tmp/build/inc/options/woocommerce/single-product-elements.php:302,
 #: build_tmp/build/inc/options/woocommerce/single-product-elements.php:346,
 #: build_tmp/build/inc/options/woocommerce/single-product-elements.php:383,
@@ -2901,10 +2904,10 @@ msgstr ""
 
 #: inc/options/general/buttons.php:34,
 #: inc/options/general/posts-listing.php:341,
-#: inc/options/woocommerce/card-product-elements.php:307,
+#: inc/options/woocommerce/card-product-elements.php:333,
 #: build_tmp/build/inc/options/general/buttons.php:34,
 #: build_tmp/build/inc/options/general/posts-listing.php:341,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:307
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:333
 msgid "Hover Effect"
 msgstr ""
 
@@ -2914,6 +2917,12 @@ msgstr ""
 #: inc/options/general/form-elements.php:246,
 #: inc/options/general/pagination.php:196,
 #: inc/options/single-elements/post-nav.php:174,
+#: inc/options/woocommerce/card-product-elements.php:713,
+#: inc/options/woocommerce/card-product-elements.php:793,
+#: inc/options/woocommerce/card-product-elements.php:837,
+#: inc/options/woocommerce/card-product-elements.php:887,
+#: inc/options/woocommerce/card-product-elements.php:1011,
+#: inc/options/woocommerce/card-product-elements.php:1049,
 #: inc/options/woocommerce/results-count.php:61,
 #: inc/options/woocommerce/single-product-tabs.php:199,
 #: inc/panel-builder/footer/copyright/options.php:105,
@@ -2957,6 +2966,12 @@ msgstr ""
 #: build_tmp/build/inc/options/general/form-elements.php:246,
 #: build_tmp/build/inc/options/general/pagination.php:196,
 #: build_tmp/build/inc/options/single-elements/post-nav.php:174,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:713,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:793,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:837,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:887,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1011,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1049,
 #: build_tmp/build/inc/options/woocommerce/results-count.php:61,
 #: build_tmp/build/inc/options/woocommerce/single-product-tabs.php:199,
 #: build_tmp/build/inc/panel-builder/footer/copyright/options.php:105,
@@ -3004,6 +3019,7 @@ msgstr ""
 #: inc/options/single-elements/author-box.php:456,
 #: inc/options/single-elements/post-share-box.php:662,
 #: inc/options/woocommerce/card-product-elements.php:126,
+#: inc/options/woocommerce/card-product-elements.php:1081,
 #: inc/options/woocommerce/general/messages.php:53,
 #: inc/options/woocommerce/general/messages.php:169,
 #: inc/options/woocommerce/general/messages.php:283,
@@ -3026,6 +3042,7 @@ msgstr ""
 #: build_tmp/build/inc/options/single-elements/author-box.php:456,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:662,
 #: build_tmp/build/inc/options/woocommerce/card-product-elements.php:126,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1081,
 #: build_tmp/build/inc/options/woocommerce/general/messages.php:53,
 #: build_tmp/build/inc/options/woocommerce/general/messages.php:169,
 #: build_tmp/build/inc/options/woocommerce/general/messages.php:283,
@@ -3349,7 +3366,7 @@ msgstr ""
 #: inc/options/general/content-elements.php:25,
 #: inc/options/general/page-title.php:752,
 #: inc/options/general/posts-listing.php:349,
-#: inc/options/woocommerce/card-product-elements.php:315,
+#: inc/options/woocommerce/card-product-elements.php:341,
 #: inc/panel-builder/footer/socials/options.php:109,
 #: inc/panel-builder/footer/widget-area-1/options.php:109,
 #: inc/panel-builder/header/button/options.php:163,
@@ -3357,7 +3374,7 @@ msgstr ""
 #: build_tmp/build/inc/options/general/content-elements.php:25,
 #: build_tmp/build/inc/options/general/page-title.php:752,
 #: build_tmp/build/inc/options/general/posts-listing.php:349,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:315,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:341,
 #: build_tmp/build/inc/panel-builder/footer/socials/options.php:109,
 #: build_tmp/build/inc/panel-builder/footer/widget-area-1/options.php:109,
 #: build_tmp/build/inc/panel-builder/header/button/options.php:163,
@@ -3747,34 +3764,36 @@ msgid "Updated Date"
 msgstr ""
 
 #: inc/options/general/meta.php:349,
-#: build_tmp/build/inc/options/general/meta.php:349
+#: inc/options/woocommerce/card-product-elements.php:462,
+#: inc/options/woocommerce/card-product-elements.php:868,
+#: build_tmp/build/inc/options/general/meta.php:349,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:462,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:868
 msgid "Taxonomies"
 msgstr ""
 
 #: inc/options/general/meta.php:354,
-#: inc/options/single-elements/post-nav.php:42,
-#: inc/options/single-elements/post-nav.php:52,
+#: inc/options/woocommerce/card-product-elements.php:467,
 #: build_tmp/build/inc/options/general/meta.php:354,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:42,
-#: build_tmp/build/inc/options/single-elements/post-nav.php:52
-msgid "Taxonomy"
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:467
+msgid "Taxonomy Source"
 msgstr ""
 
 #: inc/options/general/meta.php:364,
-#: inc/options/woocommerce/card-product-elements.php:440,
+#: inc/options/woocommerce/card-product-elements.php:480,
 #: inc/panel-builder/header/trigger/options.php:50,
 #: build_tmp/build/inc/options/general/meta.php:364,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:440,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:480,
 #: build_tmp/build/inc/panel-builder/header/trigger/options.php:50
 msgid "Style"
 msgstr ""
 
 #: inc/options/general/meta.php:373,
-#: inc/options/woocommerce/card-product-elements.php:448,
+#: inc/options/woocommerce/card-product-elements.php:488,
 #: inc/components/woocommerce/single/additional-actions-layer.php:56,
 #: inc/panel-builder/header/button/config.php:4,
 #: build_tmp/build/inc/options/general/meta.php:373,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:448,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:488,
 #: build_tmp/build/inc/components/woocommerce/single/additional-actions-layer.php:56,
 #: build_tmp/build/inc/panel-builder/header/button/config.php:4
 #: static/js/backend/woo-attributes/AfterHeading.js:15
@@ -3782,10 +3801,10 @@ msgid "Button"
 msgstr ""
 
 #: inc/options/general/meta.php:374,
-#: inc/options/woocommerce/card-product-elements.php:449,
+#: inc/options/woocommerce/card-product-elements.php:489,
 #: inc/panel-builder/footer/widget-area-1/options.php:111,
 #: build_tmp/build/inc/options/general/meta.php:374,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:449,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:489,
 #: build_tmp/build/inc/panel-builder/footer/widget-area-1/options.php:111
 #: static/js/options/options/typography/FontOptions.js:232
 msgid "Underline"
@@ -3931,7 +3950,8 @@ msgstr ""
 #: inc/options/general/page-title.php:327,
 #: inc/options/general/page-title.php:360,
 #: inc/options/general/posts-listing.php:221,
-#: inc/options/woocommerce/card-product-elements.php:362,
+#: inc/options/woocommerce/card-product-elements.php:388,
+#: inc/options/woocommerce/card-product-elements.php:699,
 #: inc/options/woocommerce/single-product-layers.php:83,
 #: inc/options/woocommerce/single-product-layers.php:150,
 #: inc/options/woocommerce/single-product-layers.php:246,
@@ -3940,7 +3960,8 @@ msgstr ""
 #: build_tmp/build/inc/options/general/page-title.php:327,
 #: build_tmp/build/inc/options/general/page-title.php:360,
 #: build_tmp/build/inc/options/general/posts-listing.php:221,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:362,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:388,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:699,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:83,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:150,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:246,
@@ -4117,7 +4138,7 @@ msgstr ""
 #: inc/options/single-elements/featured-image.php:36,
 #: inc/options/single-elements/post-nav.php:89,
 #: inc/options/single-elements/related-posts.php:248,
-#: inc/options/woocommerce/card-product-elements.php:288,
+#: inc/options/woocommerce/card-product-elements.php:314,
 #: inc/options/woocommerce/single-product-gallery.php:113,
 #: inc/options/woocommerce/single-product-gallery.php:338,
 #: inc/options/woocommerce/general/cart-page.php:40,
@@ -4127,7 +4148,7 @@ msgstr ""
 #: build_tmp/build/inc/options/single-elements/featured-image.php:36,
 #: build_tmp/build/inc/options/single-elements/post-nav.php:89,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:248,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:288,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:314,
 #: build_tmp/build/inc/options/woocommerce/single-product-gallery.php:113,
 #: build_tmp/build/inc/options/woocommerce/single-product-gallery.php:338,
 #: build_tmp/build/inc/options/woocommerce/general/cart-page.php:40,
@@ -4153,12 +4174,10 @@ msgstr ""
 #: inc/options/general/page-title.php:854,
 #: inc/options/general/posts-listing.php:825,
 #: inc/options/integrations/tutorlms-single.php:8,
-#: inc/options/woocommerce/card-product-elements.php:659,
 #: inc/options/woocommerce/single-product-elements.php:141,
 #: build_tmp/build/inc/options/general/page-title.php:854,
 #: build_tmp/build/inc/options/general/posts-listing.php:825,
 #: build_tmp/build/inc/options/integrations/tutorlms-single.php:8,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:659,
 #: build_tmp/build/inc/options/woocommerce/single-product-elements.php:141
 msgid "Title Font"
 msgstr ""
@@ -4166,12 +4185,10 @@ msgstr ""
 #: inc/options/general/page-title.php:863,
 #: inc/options/general/posts-listing.php:838,
 #: inc/options/integrations/tutorlms-single.php:17,
-#: inc/options/woocommerce/card-product-elements.php:668,
 #: inc/options/woocommerce/single-product-elements.php:149,
 #: build_tmp/build/inc/options/general/page-title.php:863,
 #: build_tmp/build/inc/options/general/posts-listing.php:838,
 #: build_tmp/build/inc/options/integrations/tutorlms-single.php:17,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:668,
 #: build_tmp/build/inc/options/woocommerce/single-product-elements.php:149
 msgid "Title Font Color"
 msgstr ""
@@ -4191,9 +4208,7 @@ msgid "Meta Font Color"
 msgstr ""
 
 #: inc/options/general/page-title.php:979,
-#: inc/options/general/posts-listing.php:992,
-#: build_tmp/build/inc/options/general/page-title.php:979,
-#: build_tmp/build/inc/options/general/posts-listing.php:992
+#: build_tmp/build/inc/options/general/page-title.php:979
 msgid "Meta Button Font"
 msgstr ""
 
@@ -4535,9 +4550,9 @@ msgid "Card Elements"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:225,
-#: inc/options/woocommerce/card-product-elements.php:365,
+#: inc/options/woocommerce/card-product-elements.php:391,
 #: build_tmp/build/inc/options/general/posts-listing.php:225,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:365
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:391
 msgid "Heading Tag"
 msgstr ""
 
@@ -4558,14 +4573,14 @@ msgstr ""
 #: inc/options/general/posts-listing.php:525,
 #: inc/options/general/posts-listing.php:572,
 #: inc/options/general/posts-listing.php:593,
-#: inc/options/woocommerce/card-product-elements.php:346,
-#: inc/options/woocommerce/card-product-elements.php:385,
-#: inc/options/woocommerce/card-product-elements.php:405,
-#: inc/options/woocommerce/card-product-elements.php:422,
-#: inc/options/woocommerce/card-product-elements.php:458,
-#: inc/options/woocommerce/card-product-elements.php:504,
-#: inc/options/woocommerce/card-product-elements.php:541,
-#: inc/options/woocommerce/card-product-elements.php:563,
+#: inc/options/woocommerce/card-product-elements.php:372,
+#: inc/options/woocommerce/card-product-elements.php:411,
+#: inc/options/woocommerce/card-product-elements.php:431,
+#: inc/options/woocommerce/card-product-elements.php:448,
+#: inc/options/woocommerce/card-product-elements.php:498,
+#: inc/options/woocommerce/card-product-elements.php:544,
+#: inc/options/woocommerce/card-product-elements.php:581,
+#: inc/options/woocommerce/card-product-elements.php:603,
 #: inc/options/woocommerce/single-product-layers.php:136,
 #: inc/options/woocommerce/single-product-layers.php:153,
 #: inc/options/woocommerce/single-product-layers.php:170,
@@ -4584,14 +4599,14 @@ msgstr ""
 #: build_tmp/build/inc/options/general/posts-listing.php:525,
 #: build_tmp/build/inc/options/general/posts-listing.php:572,
 #: build_tmp/build/inc/options/general/posts-listing.php:593,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:346,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:385,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:405,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:422,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:458,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:504,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:541,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:563,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:372,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:411,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:431,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:448,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:498,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:544,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:581,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:603,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:136,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:153,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:170,
@@ -4619,14 +4634,14 @@ msgstr ""
 #: inc/options/general/posts-listing.php:292,
 #: inc/options/single-elements/featured-image.php:28,
 #: inc/options/single-elements/related-posts.php:240,
-#: inc/options/woocommerce/card-product-elements.php:273,
+#: inc/options/woocommerce/card-product-elements.php:299,
 #: inc/options/woocommerce/single-product-gallery.php:101,
 #: inc/options/woocommerce/general/cart-page.php:29,
 #: inc/panel-builder/header/cart/options.php:682,
 #: build_tmp/build/inc/options/general/posts-listing.php:292,
 #: build_tmp/build/inc/options/single-elements/featured-image.php:28,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:240,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:273,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:299,
 #: build_tmp/build/inc/options/woocommerce/single-product-gallery.php:101,
 #: build_tmp/build/inc/options/woocommerce/general/cart-page.php:29,
 #: build_tmp/build/inc/panel-builder/header/cart/options.php:682
@@ -4635,33 +4650,33 @@ msgstr ""
 
 #: inc/options/general/posts-listing.php:312,
 #: inc/options/single-elements/featured-image.php:74,
-#: inc/options/woocommerce/card-product-elements.php:188,
+#: inc/options/woocommerce/card-product-elements.php:214,
 #: build_tmp/build/inc/options/general/posts-listing.php:312,
 #: build_tmp/build/inc/options/single-elements/featured-image.php:74,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:188
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:214
 msgid "Image Width"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:350,
-#: inc/options/woocommerce/card-product-elements.php:317,
+#: inc/options/woocommerce/card-product-elements.php:343,
 #: build_tmp/build/inc/options/general/posts-listing.php:350,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:317
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:343
 msgid "Zoom In"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:351,
-#: inc/options/woocommerce/card-product-elements.php:318,
+#: inc/options/woocommerce/card-product-elements.php:344,
 #: build_tmp/build/inc/options/general/posts-listing.php:351,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:318
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:344
 msgid "Zoom Out"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:369,
 #: inc/options/single-elements/featured-image.php:56,
-#: inc/options/woocommerce/card-product-elements.php:335,
+#: inc/options/woocommerce/card-product-elements.php:361,
 #: build_tmp/build/inc/options/general/posts-listing.php:369,
 #: build_tmp/build/inc/options/single-elements/featured-image.php:56,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:335
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:361
 msgid "Video Thumbnail"
 msgstr ""
 
@@ -4671,9 +4686,9 @@ msgid "Boundless Image"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:445,
-#: inc/options/woocommerce/card-product-elements.php:476,
+#: inc/options/woocommerce/card-product-elements.php:516,
 #: build_tmp/build/inc/options/general/posts-listing.php:445,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:476
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:516
 msgid "Excerpt Type"
 msgstr ""
 
@@ -4683,9 +4698,9 @@ msgid "Full Post"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:461,
-#: inc/options/woocommerce/card-product-elements.php:492,
+#: inc/options/woocommerce/card-product-elements.php:532,
 #: build_tmp/build/inc/options/general/posts-listing.php:461,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:492
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:532
 msgid "Length"
 msgstr ""
 
@@ -4736,9 +4751,15 @@ msgstr ""
 msgid "Excerpt Color"
 msgstr ""
 
+#: inc/options/general/posts-listing.php:992,
+#: build_tmp/build/inc/options/general/posts-listing.php:992
+msgid "Meta Button Font Color"
+msgstr ""
+
 #: inc/options/general/posts-listing.php:1069,
 #: inc/options/general/posts-listing.php:1115,
 #: inc/options/general/posts-listing.php:1161,
+#: inc/options/woocommerce/card-product-elements.php:923,
 #: inc/options/woocommerce/single-product-elements.php:360,
 #: inc/options/woocommerce/single-product-elements.php:433,
 #: inc/options/woocommerce/general/messages.php:73,
@@ -4747,6 +4768,7 @@ msgstr ""
 #: build_tmp/build/inc/options/general/posts-listing.php:1069,
 #: build_tmp/build/inc/options/general/posts-listing.php:1115,
 #: build_tmp/build/inc/options/general/posts-listing.php:1161,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:923,
 #: build_tmp/build/inc/options/woocommerce/single-product-elements.php:360,
 #: build_tmp/build/inc/options/woocommerce/single-product-elements.php:433,
 #: build_tmp/build/inc/options/woocommerce/general/messages.php:73,
@@ -4776,9 +4798,9 @@ msgid "Card Overlay Color"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:1384,
-#: inc/options/woocommerce/card-product-elements.php:1108,
+#: inc/options/woocommerce/card-product-elements.php:1162,
 #: build_tmp/build/inc/options/general/posts-listing.php:1384,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1108
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1162
 msgid "Card Background Color"
 msgstr ""
 
@@ -4788,9 +4810,9 @@ msgid "Card Border"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:1416,
-#: inc/options/woocommerce/card-product-elements.php:1130,
+#: inc/options/woocommerce/card-product-elements.php:1184,
 #: build_tmp/build/inc/options/general/posts-listing.php:1416,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1130
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1184
 msgid "Card Shadow"
 msgstr ""
 
@@ -4852,9 +4874,9 @@ msgid "Number of posts"
 msgstr ""
 
 #: inc/options/general/posts-listing.php:1635,
-#: inc/options/woocommerce/card-product-elements.php:176,
+#: inc/options/woocommerce/card-product-elements.php:202,
 #: build_tmp/build/inc/options/general/posts-listing.php:1635,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:176
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:202
 msgid "Card Options"
 msgstr ""
 
@@ -5169,18 +5191,12 @@ msgid "Course Structure"
 msgstr ""
 
 #: inc/options/integrations/tutorlms-single.php:39,
-#: inc/options/woocommerce/card-product-elements.php:819,
-#: build_tmp/build/inc/options/integrations/tutorlms-single.php:39,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:819
+#: build_tmp/build/inc/options/integrations/tutorlms-single.php:39
 msgid "Categories Font"
 msgstr ""
 
 #: inc/options/integrations/tutorlms-single.php:52,
-#: inc/options/woocommerce/card-product-elements.php:838,
-#: inc/options/woocommerce/card-product-elements.php:878,
-#: build_tmp/build/inc/options/integrations/tutorlms-single.php:52,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:838,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:878
+#: build_tmp/build/inc/options/integrations/tutorlms-single.php:52
 msgid "Categories Font Color"
 msgstr ""
 
@@ -5554,9 +5570,9 @@ msgid "Author Bio Font Color"
 msgstr ""
 
 #: inc/options/single-elements/featured-image.php:83,
-#: inc/options/woocommerce/card-product-elements.php:482,
+#: inc/options/woocommerce/card-product-elements.php:522,
 #: build_tmp/build/inc/options/single-elements/featured-image.php:83,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:482
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:522
 msgid "Full"
 msgstr ""
 
@@ -5590,6 +5606,13 @@ msgstr ""
 #: inc/options/single-elements/post-nav.php:34,
 #: build_tmp/build/inc/options/single-elements/post-nav.php:34
 msgid "Navigation Criteria"
+msgstr ""
+
+#: inc/options/single-elements/post-nav.php:42,
+#: inc/options/single-elements/post-nav.php:52,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:42,
+#: build_tmp/build/inc/options/single-elements/post-nav.php:52
+msgid "Taxonomy"
 msgstr ""
 
 #: inc/options/single-elements/post-nav.php:53,
@@ -5752,12 +5775,12 @@ msgstr ""
 
 #: inc/options/single-elements/post-share-box.php:457,
 #: inc/options/single-elements/post-tags.php:71,
-#: inc/options/woocommerce/card-product-elements.php:587,
+#: inc/options/woocommerce/card-product-elements.php:627,
 #: inc/panel-builder/header/logo/options.php:304,
 #: inc/panel-builder/header/text/options.php:57,
 #: build_tmp/build/inc/options/single-elements/post-share-box.php:457,
 #: build_tmp/build/inc/options/single-elements/post-tags.php:71,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:587,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:627,
 #: build_tmp/build/inc/panel-builder/header/logo/options.php:304,
 #: build_tmp/build/inc/panel-builder/header/text/options.php:57
 msgid "Content Alignment"
@@ -5866,9 +5889,9 @@ msgid "Posts Meta Font Color"
 msgstr ""
 
 #: inc/options/single-elements/related-posts.php:654,
-#: inc/options/woocommerce/card-product-elements.php:1157,
+#: inc/options/woocommerce/card-product-elements.php:1211,
 #: build_tmp/build/inc/options/single-elements/related-posts.php:654,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1157
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1211
 msgid "Image Border Radius"
 msgstr ""
 
@@ -6033,167 +6056,163 @@ msgstr ""
 msgid "Hover/Active"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:189,
-#: inc/options/woocommerce/card-product-elements.php:296,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:189,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:296
+#: inc/options/woocommerce/card-product-elements.php:215,
+#: inc/options/woocommerce/card-product-elements.php:322,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:215,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:322
 msgid "Image height will be automatically calculated based on the image ratio."
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:209,
-#: inc/options/woocommerce/card-product-elements.php:222,
+#: inc/options/woocommerce/card-product-elements.php:235,
+#: inc/options/woocommerce/card-product-elements.php:248,
 #: inc/panel-builder/header/menu/options.php:675,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:209,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:222,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:235,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:248,
 #: build_tmp/build/inc/panel-builder/header/menu/options.php:675
 msgid "Width"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:235,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:235
+#: inc/options/woocommerce/card-product-elements.php:261,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:261
 msgid "Height"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:268,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:268
+#: inc/options/woocommerce/card-product-elements.php:294,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:294
 msgid "Product Image"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:316,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:316
+#: inc/options/woocommerce/card-product-elements.php:342,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:342
 msgid "Swap Images"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:399,
+#: inc/options/woocommerce/card-product-elements.php:425,
+#: inc/options/woocommerce/card-product-elements.php:824,
 #: inc/options/woocommerce/single-product-layers.php:184,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:399,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:425,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:824,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:184
 msgid "Price"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:419,
+#: inc/options/woocommerce/card-product-elements.php:445,
 #: inc/options/woocommerce/single-product-layers.php:167,
 #: inc/options/woocommerce/general/star-rating.php:13,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:419,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:445,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:167,
 #: build_tmp/build/inc/options/woocommerce/general/star-rating.php:13
 msgid "Star Rating"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:473,
+#: inc/options/woocommerce/card-product-elements.php:513,
+#: inc/options/woocommerce/card-product-elements.php:782,
 #: inc/options/woocommerce/single-product-layers.php:207,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:473,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:513,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:782,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:207
 msgid "Short Description"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:518,
+#: inc/options/woocommerce/card-product-elements.php:558,
 #: inc/options/woocommerce/single-product-layers.php:242,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:518,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:558,
 #: build_tmp/build/inc/options/woocommerce/single-product-layers.php:242
 msgid "Add to Cart"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:525,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:525
+#: inc/options/woocommerce/card-product-elements.php:565,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:565
 msgid "Auto Hide"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:529,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:529
+#: inc/options/woocommerce/card-product-elements.php:569,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:569
 msgid ""
 "Automatically hide \"Add to cart\" button after adding the product to cart."
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:533,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:533
+#: inc/options/woocommerce/card-product-elements.php:573,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:573
 msgid "Equal Alignment"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:537,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:537
+#: inc/options/woocommerce/card-product-elements.php:577,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:577
 msgid ""
 "Align all buttons on the same line, when positioned as the last element."
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:556,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:556
+#: inc/options/woocommerce/card-product-elements.php:596,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:596
 msgid "Add to Cart and Price"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:605,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:605
+#: inc/options/woocommerce/card-product-elements.php:645,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:645
 msgid "Columns Gap"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:621,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:621
+#: inc/options/woocommerce/card-product-elements.php:661,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:661
 msgid "Rows Gap"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:737,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:737
-msgid "Short Description Font"
+#: inc/options/woocommerce/card-product-elements.php:704,
+#: inc/options/woocommerce/card-product-elements.php:787,
+#: inc/options/woocommerce/card-product-elements.php:829,
+#: inc/options/woocommerce/card-product-elements.php:873,
+#: inc/options/woocommerce/card-product-elements.php:1005,
+#: inc/options/woocommerce/results-count.php:50,
+#: inc/options/woocommerce/single-product-tabs.php:188,
+#: inc/panel-builder/footer/copyright/options.php:95,
+#: inc/panel-builder/footer/menu/options.php:153,
+#: inc/panel-builder/header/menu/options.php:158,
+#: inc/panel-builder/header/menu/options.php:736,
+#: inc/panel-builder/header/mobile-menu/options.php:197,
+#: inc/panel-builder/header/mobile-menu/options.php:330,
+#: inc/panel-builder/header/search/options.php:511,
+#: inc/panel-builder/header/text/options.php:156,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:704,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:787,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:829,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:873,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1005,
+#: build_tmp/build/inc/options/woocommerce/results-count.php:50,
+#: build_tmp/build/inc/options/woocommerce/single-product-tabs.php:188,
+#: build_tmp/build/inc/panel-builder/footer/copyright/options.php:95,
+#: build_tmp/build/inc/panel-builder/footer/menu/options.php:153,
+#: build_tmp/build/inc/panel-builder/header/menu/options.php:158,
+#: build_tmp/build/inc/panel-builder/header/menu/options.php:736,
+#: build_tmp/build/inc/panel-builder/header/mobile-menu/options.php:197,
+#: build_tmp/build/inc/panel-builder/header/mobile-menu/options.php:330,
+#: build_tmp/build/inc/panel-builder/header/search/options.php:511,
+#: build_tmp/build/inc/panel-builder/header/text/options.php:156
+msgid "Font"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:744,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:744
-msgid "Short Description Color"
+#: inc/options/woocommerce/card-product-elements.php:956,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:956
+msgid "Button Background"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:775,
-#: inc/options/woocommerce/single-product-elements.php:180,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:775,
-#: build_tmp/build/inc/options/woocommerce/single-product-elements.php:180
-msgid "Price Font"
+#: inc/options/woocommerce/card-product-elements.php:1000,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1000
+msgid "SKU"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:784,
-#: inc/options/woocommerce/single-product-elements.php:190,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:784,
-#: build_tmp/build/inc/options/woocommerce/single-product-elements.php:190
-msgid "Price Font Color"
+#: inc/options/woocommerce/card-product-elements.php:1045,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1045
+msgid "Add to Cart Button"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:910,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:910
-msgid "Categories Button Color"
-msgstr ""
-
-#: inc/options/woocommerce/card-product-elements.php:954,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:954
-msgid "SKU Font"
-msgstr ""
-
-#: inc/options/woocommerce/card-product-elements.php:961,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:961
-msgid "SKU Color"
-msgstr ""
-
-#: inc/options/woocommerce/card-product-elements.php:994,
-#: inc/options/woocommerce/card-product-elements.php:1069,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:994,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1069
+#: inc/options/woocommerce/card-product-elements.php:1123,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1123
 msgid "Button Text Color"
 msgstr ""
 
-#: inc/options/woocommerce/card-product-elements.php:1027,
-#: inc/options/woocommerce/single-product-elements.php:391,
-#: inc/options/woocommerce/single-product-elements.php:464,
-#: inc/options/woocommerce/general/messages.php:103,
-#: inc/options/woocommerce/general/messages.php:219,
-#: inc/options/woocommerce/general/messages.php:331,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1027,
-#: build_tmp/build/inc/options/woocommerce/single-product-elements.php:391,
-#: build_tmp/build/inc/options/woocommerce/single-product-elements.php:464,
-#: build_tmp/build/inc/options/woocommerce/general/messages.php:103,
-#: build_tmp/build/inc/options/woocommerce/general/messages.php:219,
-#: build_tmp/build/inc/options/woocommerce/general/messages.php:331
-msgid "Button Background Color"
-msgstr ""
-
-#: inc/options/woocommerce/card-product-elements.php:1161,
-#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1161
+#: inc/options/woocommerce/card-product-elements.php:1215,
+#: build_tmp/build/inc/options/woocommerce/card-product-elements.php:1215
 msgid "Card Border Radius"
 msgstr ""
 
@@ -6227,29 +6246,6 @@ msgstr ""
 msgid "Results Count"
 msgstr ""
 
-#: inc/options/woocommerce/results-count.php:50,
-#: inc/options/woocommerce/single-product-tabs.php:188,
-#: inc/panel-builder/footer/copyright/options.php:95,
-#: inc/panel-builder/footer/menu/options.php:153,
-#: inc/panel-builder/header/menu/options.php:158,
-#: inc/panel-builder/header/menu/options.php:736,
-#: inc/panel-builder/header/mobile-menu/options.php:197,
-#: inc/panel-builder/header/mobile-menu/options.php:330,
-#: inc/panel-builder/header/search/options.php:511,
-#: inc/panel-builder/header/text/options.php:156,
-#: build_tmp/build/inc/options/woocommerce/results-count.php:50,
-#: build_tmp/build/inc/options/woocommerce/single-product-tabs.php:188,
-#: build_tmp/build/inc/panel-builder/footer/copyright/options.php:95,
-#: build_tmp/build/inc/panel-builder/footer/menu/options.php:153,
-#: build_tmp/build/inc/panel-builder/header/menu/options.php:158,
-#: build_tmp/build/inc/panel-builder/header/menu/options.php:736,
-#: build_tmp/build/inc/panel-builder/header/mobile-menu/options.php:197,
-#: build_tmp/build/inc/panel-builder/header/mobile-menu/options.php:330,
-#: build_tmp/build/inc/panel-builder/header/search/options.php:511,
-#: build_tmp/build/inc/panel-builder/header/text/options.php:156
-msgid "Font"
-msgstr ""
-
 #: inc/options/woocommerce/single-main.php:6,
 #: build_tmp/build/inc/options/woocommerce/single-main.php:6
 msgid "Product Title"
@@ -6280,6 +6276,16 @@ msgstr ""
 msgid "Sticky Container"
 msgstr ""
 
+#: inc/options/woocommerce/single-product-elements.php:180,
+#: build_tmp/build/inc/options/woocommerce/single-product-elements.php:180
+msgid "Price Font"
+msgstr ""
+
+#: inc/options/woocommerce/single-product-elements.php:190,
+#: build_tmp/build/inc/options/woocommerce/single-product-elements.php:190
+msgid "Price Font Color"
+msgstr ""
+
 #: inc/options/woocommerce/single-product-elements.php:279,
 #: build_tmp/build/inc/options/woocommerce/single-product-elements.php:279
 msgid "Quantity Color"
@@ -6295,6 +6301,19 @@ msgstr ""
 #: inc/options/woocommerce/single-product-elements.php:356,
 #: build_tmp/build/inc/options/woocommerce/single-product-elements.php:356
 msgid "Add To Cart Button"
+msgstr ""
+
+#: inc/options/woocommerce/single-product-elements.php:391,
+#: inc/options/woocommerce/single-product-elements.php:464,
+#: inc/options/woocommerce/general/messages.php:103,
+#: inc/options/woocommerce/general/messages.php:219,
+#: inc/options/woocommerce/general/messages.php:331,
+#: build_tmp/build/inc/options/woocommerce/single-product-elements.php:391,
+#: build_tmp/build/inc/options/woocommerce/single-product-elements.php:464,
+#: build_tmp/build/inc/options/woocommerce/general/messages.php:103,
+#: build_tmp/build/inc/options/woocommerce/general/messages.php:219,
+#: build_tmp/build/inc/options/woocommerce/general/messages.php:331
+msgid "Button Background Color"
 msgstr ""
 
 #: inc/options/woocommerce/single-product-elements.php:429,

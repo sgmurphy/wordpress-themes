@@ -605,7 +605,7 @@ foreach (blocksy_get_theme_mod($prefix . '_archive_order', []) as $layer) {
 	}
 
 	$spacing = blocksy_akg('spacing', $layer, $spacing_default);
-	
+
 	if (
 		isset($selectors_map[$layer['id']])
 		&&
@@ -734,8 +734,8 @@ $flex_horizontal_alignment = $horizontal_alignment;
 $flex_horizontal_alignment = blocksy_map_values([
 	'value' => $horizontal_alignment,
 	'map' => [
-		'left' => 'flex-start',
-		'right' => 'flex-end'
+		'start' => 'flex-start',
+		'end' => 'flex-end'
 	]
 ]);
 

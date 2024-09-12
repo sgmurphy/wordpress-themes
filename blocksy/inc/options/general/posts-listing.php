@@ -745,9 +745,9 @@ $overridable_card_options = [
 					'setting' => [ 'transport' => 'postMessage' ],
 					'value' => 'CT_CSS_SKIP_RULE',
 					'choices' => [
-						'left' => '',
+						'start' => '',
 						'center' => '',
-						'right' => '',
+						'end' => '',
 					],
 				],
 			],
@@ -989,7 +989,7 @@ $overridable_card_options = [
 					'optionId' => $prefix . 'archive_order',
 					'options' => [
 						$prefix . 'card_meta_button_type_font_colors' => [
-							'label' => __( 'Meta Button Font', 'blocksy' ),
+							'label' => __( 'Meta Button Font Color', 'blocksy' ),
 							'type'  => 'ct-color-picker',
 							'design' => 'inline',
 							'divider' => 'top',

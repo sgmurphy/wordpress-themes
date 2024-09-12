@@ -3,7 +3,19 @@
 function blocksy_template_loop_product_thumbnail($attr) {
 	global $product;
 
-	echo '<figure>';
+	$loop_product_thumbnail_descriptor = apply_filters(
+		'blocksy:woocommerce:product-card:thumbnail:descriptor',
+		[
+			'container_attr' => [],
+			'gallery_images' => null
+		]
+	);
+
+	if (! $loop_product_thumbnail_descriptor['gallery_images']) {
+		$loop_product_thumbnail_descriptor['gallery_images'] = blocksy_product_get_gallery_images($product);
+	}
+
+	echo '<figure ' . blocksy_attr_to_html($loop_product_thumbnail_descriptor['container_attr']) . '>';
 
 	do_action('blocksy:woocommerce:product-card:thumbnail:start');
 
@@ -39,7 +51,7 @@ function blocksy_template_loop_product_thumbnail($attr) {
 
 	$gallery_images = apply_filters(
 		'blocksy:woocommerce:product-card:thumbnail:gallery-images',
-		blocksy_product_get_gallery_images($product)
+		$loop_product_thumbnail_descriptor['gallery_images']
 	);
 
 	// TODO: investigate why this isn't in blocksy_product_get_gallery_images()
@@ -345,8 +357,14 @@ add_action($action_to_hook, function () {
 							[
 								'id' => 'categories',
 								'enabled' => true,
-								'style' => $style
+								'style' => $style,
+								'taxonomy' => blocksy_akg('taxonomy', $layout, 'product_cat')
 							],
+						],
+						[
+							'attr' => [
+								'data-id' => blocksy_akg('__id', $layout, 'default')
+							]
 						]
 					);
 

@@ -32,4 +32,16 @@ body.rtl {
 			transform: translate3d(-18px, 0, 0);
 		}
 	}
+
+	// alignment
+	.ct-radio-option[data-type*=alignment] li {
+
+		&:first-child:before {
+			transform: rotateY(180deg);
+		}
+
+		&:last-child:before {
+			transform: rotateY(0deg);
+		}
+	}
 }

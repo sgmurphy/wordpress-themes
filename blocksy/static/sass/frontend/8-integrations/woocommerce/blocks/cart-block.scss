@@ -5,6 +5,10 @@
 
 		table.wc-block-cart-items {
 
+			.wc-block-cart-items__header-image {
+				text-align: start;
+			}
+
 			.wc-block-cart-item__image {
 				padding-inline-start: 0;
 			}
@@ -18,6 +22,16 @@
 					}
 				}
 			}	
+		}
+
+
+		// summary
+		.wc-block-components-sidebar {
+
+			.wc-block-components-panel,
+			.wc-block-components-totals-item {
+				padding-inline: 0;
+			}
 		}
 	}
 }

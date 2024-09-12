@@ -61,3 +61,12 @@ div.wc-square-wallet-buttons {
 #wc-stripe-payment-request-wrapper {
 	padding-top: 0 !important;
 }
+
+
+// express checkout issue - https://d.pr/v/zRs0dI
+.entry-content {
+
+	[id*="express-checkout-check-availability-container"] {
+		width: initial;
+	}
+}

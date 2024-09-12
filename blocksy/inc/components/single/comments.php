@@ -69,12 +69,12 @@ add_filter('comment_form_defaults', function ($defaults) {
 	) {
 		$consent = empty($commenter['comment_author_email']) ? '' : ' checked="checked"';
 
-		$defaults['comment_field'] .= '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . '>' .
+		$defaults['comment_notes_after'] .= '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . '>' .
 			'<label for="wp-comment-cookies-consent">' . __( 'Save my name, email, and website in this browser for the next time I comment.', 'blocksy') . '</label></p>';
 	}
 
 	if (function_exists('blocksy_ext_cookies_checkbox')) {
-		$defaults['comment_field'] .= blocksy_ext_cookies_checkbox('comment');
+		$defaults['comment_notes_after'] .= blocksy_ext_cookies_checkbox('comment');
 	}
 
 	return $defaults;

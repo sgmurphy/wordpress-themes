@@ -33,7 +33,7 @@ add_filter(
 			$woocommerce_wpml
 		) {
 			$post_id = apply_filters('wpml_object_id', $variation->get_id(), 'product_variation', TRUE, $sitepress->get_default_language());
-		}				
+		}
 
 		$variation_values = get_post_meta($post_id, 'blocksy_post_meta_options');
 
@@ -130,9 +130,50 @@ function blocksy_get_product_view_for_variation() {
 	$gallery_args = [
 		'product' => $product,
 		'forced_single' => true,
+		'skip_default_variation' => true
 	];
 
-	if (isset($_GET['is_quick_view']) && $_GET['is_quick_view'] === 'yes') {
+	if (
+		isset($_GET['retrieve_json'])
+		&&
+		$_GET['retrieve_json'] === 'yes'
+	) {
+		if (isset($_GET['variation_id'])) {
+			$product = wc_get_product(absint($_GET['variation_id']));
+		}
+
+		if (! $product) {
+			wp_send_json_error();
+		}
+
+		$images_ids = blocksy_product_get_gallery_images(
+			$product,
+			[
+				'enforce_first_image_replace' => true
+			]
+		);
+
+		$images_ids = array_slice($images_ids, 0, 2);
+
+		$images = [];
+
+		foreach ($images_ids as $image_id) {
+			$image_data = wc_get_product_attachment_props($image_id);
+			$image_data['id'] = $image_id;
+	
+			$images[] = $image_data;
+		}
+
+		wp_send_json_success([
+			'images' => $images
+		]);
+	}
+
+	if (
+		isset($_GET['is_quick_view'])
+		&&
+		$_GET['is_quick_view'] === 'yes'
+	) {
 		global $blocksy_is_quick_view;
 		$blocksy_is_quick_view = true;
 
@@ -174,7 +215,7 @@ function blocksy_get_product_view_for_variation() {
 			dirname(__FILE__) . '/../single/woo-gallery-template.php',
 			$gallery_args
 		),
-		'blocksy_gallery_style' => $blocksy_gallery_style
+		'blocksy_gallery_style' => $blocksy_gallery_style,
 	]);
 }
 

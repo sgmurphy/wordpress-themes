@@ -76,11 +76,19 @@ class SearchModifications {
 					$meta_query = $args['meta_query'];
 				}
 
-				$meta_query[] = array(
-					'key'     => '_stock_status',
-					'value'   => 'outofstock',
-					'compare' => '!=',
-				);
+				$meta_query[] = [
+					'relation' => 'OR',
+					[
+						'key'     => '_stock_status',
+						'value'   => 'outofstock',
+						'compare' => '!=',
+					],
+
+					[
+						'key'     => '_stock_status',
+						'compare' => 'NOT EXISTS',
+					]
+				];
 
 				$args['meta_query'] = $meta_query;
 			}

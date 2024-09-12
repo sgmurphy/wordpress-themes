@@ -12,9 +12,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
- * @version 7.9.0
+ * @see     https://woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 9.2.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -47,13 +47,15 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 					echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						'woocommerce_cart_item_remove_link',
 						blocksy_safe_sprintf(
-							'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"><svg class="ct-icon" width="10px" height="10px" viewBox="0 0 24 24"><path d="M9.6,0l0,1.2H1.2v2.4h21.6V1.2h-8.4l0-1.2H9.6z M2.8,6l1.8,15.9C4.8,23.1,5.9,24,7.1,24h9.9c1.2,0,2.2-0.9,2.4-2.1L21.2,6H2.8z"></path></svg></a>',
+							'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s" data-success_message="%s"><svg class="ct-icon" width="10px" height="10px" viewBox="0 0 24 24"><path d="M9.6,0l0,1.2H1.2v2.4h21.6V1.2h-8.4l0-1.2H9.6z M2.8,6l1.8,15.9C4.8,23.1,5.9,24,7.1,24h9.9c1.2,0,2.2-0.9,2.4-2.1L21.2,6H2.8z"></path></svg></a>',
 							esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 							/* translators: %s is the product name */
 							esc_attr( blocksy_safe_sprintf( __( 'Remove %s from cart', 'blocksy' ), wp_strip_all_tags($product_name) ) ),
 							esc_attr( $product_id ),
 							esc_attr( $cart_item_key ),
-							esc_attr( $_product->get_sku() )
+							esc_attr( $_product->get_sku() ),
+							/* translators: %s is the product name */
+							esc_attr( sprintf( __( '&ldquo;%s&rdquo; has been removed from your cart', 'blocksy' ), wp_strip_all_tags( $product_name ) ) )
 						),
 						$cart_item_key
 					);
@@ -82,7 +84,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 							'ratio' => $ratio_to_use,
 							'tag_name' => 'a',
 							'html_atts' => [
-								'href' => esc_url( $_product->get_permalink() )
+								'href' => esc_url( $product_permalink )
 							],
 						]),
 						$cart_item,

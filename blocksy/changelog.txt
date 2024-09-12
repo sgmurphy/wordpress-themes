@@ -1,3 +1,14 @@
+2.0.67: 2024-09-12
+- Improvement: Better compatibility with Comment Form Editor with TinyMCE plugin
+- Improvement: Change archive cards content horizontal alignment option value from `left/right` to `start/end` for better RTL support
+- Improvement: Minor style improvements for WooCommerce checkout and cart blocks
+- Improvement: Mobile menu - better detect child elements if a menu is not assigned
+- Improvement: Search through taxonomies improved SQL taxonomies lookup
+- Improvement: Single product AJAX add to cart more reliable button selector
+- Improvement: Update `mini-cart` template to latest version
+- Improvement: WooCommerce product archive - add possibility to display product tags
+- Fix: Single post "Share Box" copy to clipboard option does not work when tooltip is enabled
+
 2.0.66: 2024-09-06
 - Improvement: Better check for instance type in the woocommerce_post_class
 - Improvement: Better compatibility with Nexi Checkout plugin

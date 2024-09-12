@@ -27,8 +27,11 @@ export const mount = (el, { event }) => {
 		const text = window.location.href
 
 		const tooltip = el.querySelector('.ct-tooltip')
+		let initialText = ''
 
-		const initialText = tooltip.innerHTML
+		if (tooltip) {
+			initialText = tooltip.innerHTML
+		}
 
 		if (navigator.clipboard && window.isSecureContext) {
 			navigator.clipboard.writeText(text)

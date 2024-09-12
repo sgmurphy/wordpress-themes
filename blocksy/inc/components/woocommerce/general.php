@@ -395,13 +395,15 @@ if (! function_exists('blocksy_product_get_gallery_images')) {
 
 			global $sitepress, $woocommerce_wpml;
 
-			if (
-				$sitepress
-				&&
-				$woocommerce_wpml
-			) {
-				$post_id = apply_filters('wpml_object_id', $product->get_id(), 'product_variation', TRUE, $sitepress->get_default_language());
-			}				
+			if ($sitepress && $woocommerce_wpml) {
+				$post_id = apply_filters(
+					'wpml_object_id',
+					$product->get_id(),
+					'product_variation',
+					true,
+					$sitepress->get_default_language()
+				);
+			}
 
 			$variation_values = get_post_meta($post_id, 'blocksy_post_meta_options');
 

@@ -12,6 +12,25 @@ const Group = ({ renderingChunk, value, onChange, purpose, hasRevertButton }) =>
 			optionId,
 		} = conditionOption
 
+		// Product condition
+		if (
+			value[optionId].find(
+				({ id, enabled, style }) =>
+					enabled && id === 'product_meta' && style === 'pill'
+			)
+		) {
+			return (
+				<OptionsPanel
+					purpose={purpose}
+					onChange={onChange}
+					options={options}
+					value={value}
+					hasRevertButton={hasRevertButton}
+				/>
+			)
+		}
+
+		// CPT condition
 		if (
 			value[optionId].find(
 				({ id, enabled, meta_elements }) =>

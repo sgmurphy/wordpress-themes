@@ -351,7 +351,7 @@ $options = [
 				'options' => [
 					[
 						'taxonomy' => [
-							'label' => __( 'Taxonomy', 'blocksy' ),
+							'label' => __( 'Taxonomy Source', 'blocksy' ),
 							'type' => 'ct-select',
 							'design' => 'block',
 							'setting' => [ 'transport' => 'postMessage' ],

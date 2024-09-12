@@ -171,6 +171,32 @@ $card_additional_actions_design_options[blocksy_rand_md5()] = [
 	]
 ];
 
+$taxonomies = array_values(array_diff(
+	get_object_taxonomies('product'),
+	[
+		'post_format',
+		'product_shipping_class',
+	]
+));
+
+$taxonomies_options = [];
+
+foreach ($taxonomies as $taxonomy) {
+	$taxonomy_object = get_taxonomy($taxonomy);
+
+	if (! $taxonomy_object->public) {
+		continue;
+	}
+
+	$taxonomies_options[$taxonomy] = ucfirst(
+		str_replace(
+			'Product ',
+			'',
+			$taxonomy_object->label
+		)
+	);
+}
+
 $options = [
 	'product_card_options_panel' => [
 		'label' => __( 'Card Options', 'blocksy' ),
@@ -433,8 +459,22 @@ $options = [
 									],
 
 									'product_meta' => [
-										'label' => __('Categories', 'blocksy'),
+										'label' => __('Taxonomies', 'blocksy'),
+										'clone' => 4,
 										'options' => [
+
+											'taxonomy' => [
+												'label' => __( 'Taxonomy Source', 'blocksy' ),
+												'type' => 'ct-select',
+												'design' => 'block',
+												'setting' => [ 'transport' => 'postMessage' ],
+												'view' => 'text',
+												'choices' => blocksy_ordered_keys($taxonomies_options),
+												'value' => blocksy_maybe_get_matching_taxonomy('product'),
+												'sync' => [
+													'id' => 'woo_card_layout_meta'
+												]
+											],
 
 											'style' => [
 												'label' => __( 'Style', 'blocksy' ),
@@ -654,9 +694,14 @@ $options = [
 							'condition' => [ 'woo_card_layout:array-ids:product_title:enabled' => '!no' ],
 							'options' => [
 
+								blocksy_rand_md5() => [
+									'type' => 'ct-title',
+									'label' => __( 'Title', 'blocksy' ),
+								],
+
 								'cardProductTitleFont' => [
 									'type' => 'ct-typography',
-									'label' => __( 'Title Font', 'blocksy' ),
+									'label' => __( 'Font', 'blocksy' ),
 									'value' => blocksy_typography_default_values([
 										'size' => '17px',
 										'variation' => 'n6',
@@ -665,7 +710,7 @@ $options = [
 								],
 
 								'cardProductTitleColor' => [
-									'label' => __( 'Title Font Color', 'blocksy' ),
+									'label' => __( 'Font Color', 'blocksy' ),
 									'type'  => 'ct-color-picker',
 									'design' => 'block:right',
 									'responsive' => true,
@@ -732,16 +777,20 @@ $options = [
 							'condition' => [ 'woo_card_layout:array-ids:product_desc:enabled' => '!no' ],
 							'options' => [
 
+								blocksy_rand_md5() => [
+									'type' => 'ct-title',
+									'label' => __( 'Short Description', 'blocksy' ),
+								],
+
 								'cardProductExcerptFont' => [
 									'type' => 'ct-typography',
-									'label' => __( 'Short Description Font', 'blocksy' ),
+									'label' => __( 'Font', 'blocksy' ),
 									'value' => blocksy_typography_default_values([]),
 									'setting' => [ 'transport' => 'postMessage' ],
-									'divider' => 'top:full',
 								],
 
 								'cardProductExcerptColor' => [
-									'label' => __( 'Short Description Color', 'blocksy' ),
+									'label' => __( 'Font Color', 'blocksy' ),
 									'type'  => 'ct-color-picker',
 									'design' => 'block:right',
 									'responsive' => true,
@@ -770,18 +819,22 @@ $options = [
 							'condition' => [ 'woo_card_layout:array-ids:product_price:enabled' => '!no' ],
 							'options' => [
 
+								blocksy_rand_md5() => [
+									'type' => 'ct-title',
+									'label' => __( 'Price', 'blocksy' ),
+								],
+
 								'cardProductPriceFont' => [
 									'type' => 'ct-typography',
-									'label' => __( 'Price Font', 'blocksy' ),
+									'label' => __( 'Font', 'blocksy' ),
 									'value' => blocksy_typography_default_values([
 										'variation' => 'n6',
 									]),
 									'setting' => [ 'transport' => 'postMessage' ],
-									'divider' => 'top:full',
 								],
 
 								'cardProductPriceColor' => [
-									'label' => __( 'Price Font Color', 'blocksy' ),
+									'label' => __( 'Font Color', 'blocksy' ),
 									'type'  => 'ct-color-picker',
 									'design' => 'block:right',
 									'responsive' => true,
@@ -811,12 +864,13 @@ $options = [
 							'options' => [
 
 								blocksy_rand_md5() => [
-									'type' => 'ct-divider',
+									'type' => 'ct-title',
+									'label' => __( 'Taxonomies', 'blocksy' ),
 								],
 
 								'card_product_categories_font' => [
 									'type' => 'ct-typography',
-									'label' => __( 'Categories Font', 'blocksy' ),
+									'label' => __( 'Font', 'blocksy' ),
 									'sync' => 'live',
 									'value' => blocksy_typography_default_values([
 										'size' => [
@@ -829,55 +883,47 @@ $options = [
 									]),
 								],
 
-								blocksy_rand_md5() => [
-									'type' => 'ct-condition',
-									'condition' => [ 'woo_card_layout:array-ids:product_meta:style' => '!pill' ],
-									'options' => [
+								'cardProductCategoriesColor' => [
+									'label' => __( 'Font Color', 'blocksy' ),
+									'type'  => 'ct-color-picker',
+									'design' => 'block:right',
+									'responsive' => true,
+									'setting' => [ 'transport' => 'postMessage' ],
 
-										'cardProductCategoriesColor' => [
-											'label' => __( 'Categories Font Color', 'blocksy' ),
-											'type'  => 'ct-color-picker',
-											'design' => 'block:right',
-											'responsive' => true,
-											'setting' => [ 'transport' => 'postMessage' ],
-
-											'value' => [
-												'default' => [
-													'color' => 'var(--theme-text-color)',
-												],
-
-												'hover' => [
-													'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
-												],
-											],
-
-											'pickers' => [
-												[
-													'title' => __( 'Initial', 'blocksy' ),
-													'id' => 'default',
-												],
-
-												[
-													'title' => __( 'Hover', 'blocksy' ),
-													'id' => 'hover',
-													'inherit' => 'var(--theme-link-hover-color)'
-												],
-											],
+									'value' => [
+										'default' => [
+											'color' => 'var(--theme-text-color)',
 										],
 
+										'hover' => [
+											'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
+										],
+									],
+
+									'pickers' => [
+										[
+											'title' => __( 'Initial', 'blocksy' ),
+											'id' => 'default',
+										],
+
+										[
+											'title' => __( 'Hover', 'blocksy' ),
+											'id' => 'hover',
+											'inherit' => 'var(--theme-link-hover-color)'
+										],
 									],
 								],
 
-
 								blocksy_rand_md5() => [
-									'type' => 'ct-condition',
-									'condition' => [ 'woo_card_layout:array-ids:product_meta:style' => 'pill' ],
+									'type' => 'ct-has-meta-category-button',
+									'optionId' => 'woo_card_layout',
 									'options' => [
 
 										'card_product_categories_button_type_font_colors' => [
-											'label' => __( 'Categories Font Color', 'blocksy' ),
+											'label' => __( 'Button Font Color', 'blocksy' ),
 											'type'  => 'ct-color-picker',
 											'design' => 'block:right',
+											'divider' => 'top',
 											'responsive' => true,
 											'noColor' => [ 'background' => 'var(--theme-text-color)'],
 											'sync' => 'live',
@@ -907,7 +953,7 @@ $options = [
 										],
 
 										'card_product_categories_button_type_background_colors' => [
-											'label' => __( 'Categories Button Color', 'blocksy' ),
+											'label' => __( 'Button Background', 'blocksy' ),
 											'type'  => 'ct-color-picker',
 											'design' => 'block:right',
 											'responsive' => true,
@@ -949,16 +995,20 @@ $options = [
 							'condition' => [ 'woo_card_layout:array-ids:product_sku:enabled' => '!no' ],
 							'options' => [
 
+								blocksy_rand_md5() => [
+									'type' => 'ct-title',
+									'label' => __( 'SKU', 'blocksy' ),
+								],
+
 								'cardProductSkuFont' => [
 									'type' => 'ct-typography',
-									'label' => __( 'SKU Font', 'blocksy' ),
+									'label' => __( 'Font', 'blocksy' ),
 									'value' => blocksy_typography_default_values([]),
 									'setting' => [ 'transport' => 'postMessage' ],
-									'divider' => 'top:full',
 								],
 
 								'cardProductSkuColor' => [
-									'label' => __( 'SKU Color', 'blocksy' ),
+									'label' => __( 'Font Color', 'blocksy' ),
 									'type'  => 'ct-color-picker',
 									'design' => 'block:right',
 									'responsive' => true,
@@ -990,12 +1040,16 @@ $options = [
 							],
 							'options' => [
 
+								blocksy_rand_md5() => [
+									'type' => 'ct-title',
+									'label' => __( 'Add to Cart Button', 'blocksy' ),
+								],
+
 								'cardProductButton1Text' => [
-									'label' => __( 'Button Text Color', 'blocksy' ),
+									'label' => __( 'Font Color', 'blocksy' ),
 									'type'  => 'ct-color-picker',
 									'design' => 'block:right',
 									'responsive' => true,
-									'divider' => 'top:full',
 									'setting' => [ 'transport' => 'postMessage' ],
 
 									'value' => [
@@ -1024,7 +1078,7 @@ $options = [
 								],
 
 								'cardProductButtonBackground' => [
-									'label' => __( 'Button Background Color', 'blocksy' ),
+									'label' => __( 'Background Color', 'blocksy' ),
 									'type'  => 'ct-color-picker',
 									'design' => 'block:right',
 									'responsive' => true,
