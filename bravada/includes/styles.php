@@ -25,7 +25,7 @@ function bravada_enqueue_styles() {
 		$itemg = $item . 'google';
 		$itemw = $item . 'weight';
 		// custom font names
-		if ( ! empty( $options[$itemg] ) && ! preg_match( '/local\sfont/i', $options[$item] ) ) {
+		if ( ! empty( $options[$itemg] ) && ! preg_match( '/local\sfont/i', $options[$item] ) ) { // warning: identifier comes from defaults.php, keep in sync !
 				if ( $item == _CRYOUT_THEME_PREFIX . '_fgeneral' ) {
 					$gfonts[] = cryout_gfontclean( $options[$itemg], ":100,200,300,400,500,600,700,800,900" ); // include all weights for general font
 				} else {

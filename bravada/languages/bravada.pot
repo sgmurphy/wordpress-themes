@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bravada\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-26 11:28+0000\n"
+"POT-Creation-Date: 2024-09-10 12:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -36,7 +36,7 @@ msgctxt "%s = human-readable time difference"
 msgid "%1$s ago"
 msgstr ""
 
-#: admin/options.php:1949
+#: admin/options.php:1964
 msgid "'Comments Are Closed' Text"
 msgstr ""
 
@@ -127,11 +127,11 @@ msgstr ""
 msgid "900 black"
 msgstr ""
 
-#: admin/options.php:2164
+#: admin/options.php:2179
 msgid "<br>Only use these options to troubleshoot issues."
 msgstr ""
 
-#: admin/options.php:2026
+#: admin/options.php:2041
 msgid ""
 "<strong>Contained</strong> will scale depending on the viewed resolution<br>"
 "<strong>Cropped</strong> will try to keep the configured height."
@@ -153,11 +153,11 @@ msgstr ""
 msgid "Active Item"
 msgstr ""
 
-#: admin/options.php:1761
+#: admin/options.php:1771
 msgid "Add Search to Footer Menu"
 msgstr ""
 
-#: admin/options.php:1755
+#: admin/options.php:1765
 msgid "Add Search to Main Menu"
 msgstr ""
 
@@ -185,7 +185,7 @@ msgstr ""
 msgid "Angle"
 msgstr ""
 
-#: admin/options.php:921 admin/options.php:2145
+#: admin/options.php:921 admin/options.php:2160
 msgid "Animated"
 msgstr ""
 
@@ -200,17 +200,17 @@ msgid ""
 msgstr ""
 
 #. $text_home
-#: includes/core.php:495
+#: includes/core.php:485
 #, php-format
 msgid "Archive for category \"%s\""
 msgstr ""
 
-#: admin/options.php:1744
+#: admin/options.php:1753
 msgid "Article Animation on Scroll"
 msgstr ""
 
 #. $text_tag
-#: includes/core.php:498
+#: includes/core.php:488
 msgid "Articles posted by"
 msgstr ""
 
@@ -223,11 +223,11 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: admin/options.php:1998
+#: admin/options.php:2013
 msgid "Auto Select Image From Content"
 msgstr ""
 
-#: admin/options.php:2111
+#: admin/options.php:2126
 msgid "Autoscroll"
 msgstr ""
 
@@ -253,9 +253,12 @@ msgstr ""
 msgid "Banner Image"
 msgstr ""
 
+#: admin/options.php:1861
+msgid "Before Content"
+msgstr ""
+
 #: admin/options.php:753 admin/options.php:772 admin/options.php:791
 #: admin/options.php:810
-#, php-format
 msgid "Block %d"
 msgstr ""
 
@@ -269,6 +272,11 @@ msgstr ""
 
 #: admin/options.php:264
 msgid "Blog Metas"
+msgstr ""
+
+#: admin/defaults.php:269
+msgctxt "Blog post excerpts default read more label"
+msgid "Read more"
 msgstr ""
 
 #: admin/options.php:1478
@@ -396,31 +404,31 @@ msgstr ""
 msgid "Center"
 msgstr ""
 
-#: admin/options.php:2033
+#: admin/options.php:2048
 msgid "Center Bottom"
 msgstr ""
 
-#: admin/options.php:2033
+#: admin/options.php:2048
 msgid "Center Center"
 msgstr ""
 
-#: admin/options.php:2033
+#: admin/options.php:2048
 msgid "Center Top"
 msgstr ""
 
-#: admin/options.php:1968
+#: admin/options.php:1983
 msgid "Change to labels for better compatibility with comment-related plugins."
 msgstr ""
 
-#: admin/options.php:535 admin/options.php:2017 admin/options.php:2042
+#: admin/options.php:535 admin/options.php:2032 admin/options.php:2057
 msgid "Changing this value may require to recreate your thumbnails."
 msgstr ""
 
-#: admin/options.php:1852
+#: admin/options.php:1867
 msgid "Choose meta information to show on post lists."
 msgstr ""
 
-#: admin/options.php:1895
+#: admin/options.php:1910
 msgid "Choose meta information to show on single posts."
 msgstr ""
 
@@ -432,15 +440,15 @@ msgstr ""
 msgid "Colors"
 msgstr ""
 
-#: admin/options.php:1957
+#: admin/options.php:1972
 msgid "Comment Date Format"
 msgstr ""
 
-#: admin/options.php:1965
+#: admin/options.php:1980
 msgid "Comment Field Label"
 msgstr ""
 
-#: admin/options.php:1983
+#: admin/options.php:1998
 msgid "Comment Form Width"
 msgstr ""
 
@@ -457,6 +465,10 @@ msgstr ""
 msgid "Comments on \"%s\""
 msgstr ""
 
+#: admin/options.php:1746
+msgid "Complete"
+msgstr ""
+
 #: admin/options.php:735
 msgid "Configure the 'Read More' link text."
 msgstr ""
@@ -468,7 +480,7 @@ msgid ""
 "options under %s"
 msgstr ""
 
-#: admin/options.php:542 admin/options.php:2024
+#: admin/options.php:542 admin/options.php:2039
 msgid "Contained"
 msgstr ""
 
@@ -476,7 +488,7 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: admin/options.php:2891
+#: admin/options.php:2951
 msgid "Content After"
 msgstr ""
 
@@ -484,7 +496,7 @@ msgstr ""
 msgid "Content Background"
 msgstr ""
 
-#: admin/options.php:2884
+#: admin/options.php:2944
 msgid "Content Before"
 msgstr ""
 
@@ -508,11 +520,11 @@ msgstr ""
 msgid "Content Titles"
 msgstr ""
 
-#: admin/options.php:1941
+#: admin/options.php:1956
 msgid "Continue Reading Label"
 msgstr ""
 
-#: admin/options.php:542 admin/options.php:2024
+#: admin/options.php:542 admin/options.php:2039
 msgid "Cropped"
 msgstr ""
 
@@ -544,7 +556,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: admin/options.php:2086
+#: admin/options.php:2101
 msgid "Default Pages Menu"
 msgstr ""
 
@@ -552,7 +564,7 @@ msgstr ""
 msgid "Default Theme Layout"
 msgstr ""
 
-#: admin/options.php:1697 admin/options.php:2154 admin/options.php:2163
+#: admin/options.php:1697 admin/options.php:2169 admin/options.php:2178
 msgid "Disable"
 msgstr ""
 
@@ -563,7 +575,8 @@ msgstr ""
 #: admin/options.php:851 admin/options.php:852 admin/options.php:953
 #: admin/options.php:954 admin/options.php:961 admin/options.php:962
 #: admin/options.php:969 admin/options.php:970 admin/options.php:977
-#: admin/options.php:978 admin/options.php:1713 admin/options.php:1851
+#: admin/options.php:978 admin/options.php:1713 admin/options.php:1746
+#: admin/options.php:1861
 msgid "Disabled"
 msgstr ""
 
@@ -571,55 +584,47 @@ msgstr ""
 msgid "Disabled (use WordPress homepage)"
 msgstr ""
 
-#: admin/options.php:1814 admin/options.php:1859
+#: admin/options.php:1824 admin/options.php:1874
 msgid "Display Author"
 msgstr ""
 
-#: admin/options.php:1851
-msgid "Display Before Content"
-msgstr ""
-
-#: admin/options.php:1849 admin/options.php:1894
+#: admin/options.php:1859 admin/options.php:1909
 msgid "Display Byline"
 msgstr ""
 
-#: admin/options.php:1832 admin/options.php:1877
+#: admin/options.php:1842 admin/options.php:1892
 msgid "Display Category"
 msgstr ""
 
-#: admin/options.php:1844
+#: admin/options.php:1854
 msgid "Display Comments"
 msgstr ""
 
-#: admin/options.php:1820 admin/options.php:1865
+#: admin/options.php:1830 admin/options.php:1880
 msgid "Display Date"
 msgstr ""
 
-#: admin/options.php:2065
+#: admin/options.php:2080
 msgid "Display in Footer"
 msgstr ""
 
-#: admin/options.php:1851
-msgid "Display in Header"
-msgstr ""
-
-#: admin/options.php:2071
+#: admin/options.php:2086
 msgid "Display in Left Sidebar"
 msgstr ""
 
-#: admin/options.php:2059
+#: admin/options.php:2074
 msgid "Display in Main Menu"
 msgstr ""
 
-#: admin/options.php:2077
+#: admin/options.php:2092
 msgid "Display in Right Sidebar"
 msgstr ""
 
-#: admin/options.php:1838 admin/options.php:1883
+#: admin/options.php:1848 admin/options.php:1898
 msgid "Display Tags"
 msgstr ""
 
-#: admin/options.php:1826 admin/options.php:1871
+#: admin/options.php:1836 admin/options.php:1886
 msgid "Display Time"
 msgstr ""
 
@@ -633,7 +638,7 @@ msgstr ""
 msgid "Edit the site's title, tagline and logo from the %s panel"
 msgstr ""
 
-#: admin/options.php:2135
+#: admin/options.php:2150
 msgid "Editor Styles"
 msgstr ""
 
@@ -645,11 +650,11 @@ msgstr ""
 msgid "Empty"
 msgstr ""
 
-#: admin/options.php:2154 admin/options.php:2163
+#: admin/options.php:2169 admin/options.php:2178
 msgid "Enable"
 msgstr ""
 
-#: admin/options.php:2154
+#: admin/options.php:2169
 msgid "Enable on mobiles"
 msgstr ""
 
@@ -663,15 +668,15 @@ msgid ""
 "for the slider's appearance."
 msgstr ""
 
-#: admin/options.php:727 admin/options.php:1904 admin/options.php:1920
+#: admin/options.php:727 admin/options.php:1919 admin/options.php:1935
 msgid "Excerpt"
 msgstr ""
 
-#: admin/options.php:1929
+#: admin/options.php:1944
 msgid "Excerpt Length (words)"
 msgstr ""
 
-#: admin/options.php:1935
+#: admin/options.php:1950
 msgid "Excerpt Suffix"
 msgstr ""
 
@@ -679,7 +684,7 @@ msgstr ""
 msgid "Excerpts"
 msgstr ""
 
-#: admin/options.php:1746
+#: admin/options.php:1755
 msgid "Fade"
 msgstr ""
 
@@ -707,19 +712,19 @@ msgstr ""
 msgid "Featured Image"
 msgstr ""
 
-#: admin/options.php:2025
+#: admin/options.php:2040
 msgid "Featured Image Behaviour"
 msgstr ""
 
-#: admin/options.php:2031
+#: admin/options.php:2046
 msgid "Featured Image Crop Position"
 msgstr ""
 
-#: admin/options.php:2009
+#: admin/options.php:2024
 msgid "Featured Image Height"
 msgstr ""
 
-#: admin/options.php:1991
+#: admin/options.php:2006
 msgid "Featured Images"
 msgstr ""
 
@@ -735,7 +740,7 @@ msgstr ""
 msgid "Fine tune the visibility of these elements from the theme's %s"
 msgstr ""
 
-#: admin/options.php:2152
+#: admin/options.php:2167
 msgid "FitVids"
 msgstr ""
 
@@ -743,15 +748,15 @@ msgstr ""
 msgid "Fixed Menu"
 msgstr ""
 
-#: admin/options.php:1746
+#: admin/options.php:1755
 msgid "Flip Down"
 msgstr ""
 
-#: admin/options.php:1746
+#: admin/options.php:1755
 msgid "Flip Up"
 msgstr ""
 
-#: admin/options.php:260 admin/options.php:2876
+#: admin/options.php:260 admin/options.php:2936
 msgid "Footer"
 msgstr ""
 
@@ -775,7 +780,7 @@ msgstr ""
 msgid "Footer Widgets Columns"
 msgstr ""
 
-#: admin/options.php:2127
+#: admin/options.php:2142
 msgid "Force mobile menu on iOS mobile devices"
 msgstr ""
 
@@ -783,7 +788,7 @@ msgstr ""
 msgid "Formatting"
 msgstr ""
 
-#: admin/options.php:2163
+#: admin/options.php:2178
 msgid "Front Page Only"
 msgstr ""
 
@@ -791,7 +796,7 @@ msgstr ""
 msgid "Full Content"
 msgstr ""
 
-#: admin/options.php:1904 admin/options.php:1912 admin/options.php:1920
+#: admin/options.php:1919 admin/options.php:1927 admin/options.php:1935
 msgid "Full Post"
 msgstr ""
 
@@ -822,7 +827,7 @@ msgstr ""
 msgid "Google/Custom Font Override"
 msgstr ""
 
-#: admin/options.php:217 admin/options.php:259 admin/options.php:2898
+#: admin/options.php:217 admin/options.php:259 admin/options.php:2958
 msgid "Header"
 msgstr ""
 
@@ -846,7 +851,7 @@ msgstr ""
 msgid "Header Image Height"
 msgstr ""
 
-#: admin/options.php:2119
+#: admin/options.php:2134
 msgid "Header image size requirements"
 msgstr ""
 
@@ -882,15 +887,19 @@ msgstr ""
 msgid "Headings"
 msgstr ""
 
-#: admin/options.php:1951
+#: admin/options.php:1744
+msgid "Headings Background Accent"
+msgstr ""
+
+#: admin/options.php:1966
 msgid "Hide everywhere"
 msgstr ""
 
-#: admin/options.php:1951
+#: admin/options.php:1966
 msgid "Hide in pages"
 msgstr ""
 
-#: admin/options.php:1951
+#: admin/options.php:1966
 msgid "Hide in posts"
 msgstr ""
 
@@ -903,7 +912,7 @@ msgid "Hide on Pages"
 msgstr ""
 
 #. $layout_class
-#: includes/core.php:494
+#: includes/core.php:484
 msgid "Home"
 msgstr ""
 
@@ -927,7 +936,11 @@ msgstr ""
 msgid "In footer"
 msgstr ""
 
-#: admin/options.php:1912
+#: admin/options.php:1861
+msgid "In Header"
+msgstr ""
+
+#: admin/options.php:1927
 msgid "Inherit"
 msgstr ""
 
@@ -941,7 +954,7 @@ msgstr ""
 msgid "Joined"
 msgstr ""
 
-#: admin/options.php:2102
+#: admin/options.php:2117
 msgid "JS Defer loading"
 msgstr ""
 
@@ -953,7 +966,7 @@ msgstr ""
 msgid "Justify"
 msgstr ""
 
-#: admin/options.php:1967
+#: admin/options.php:1982
 msgid "Labels"
 msgstr ""
 
@@ -965,11 +978,26 @@ msgstr ""
 msgid "Landing Page > Slider > Banner Image"
 msgstr ""
 
+#: admin/defaults.php:62
+msgctxt "Landing page load more posts default label"
+msgid "More Posts"
+msgstr ""
+
+#: admin/defaults.php:87
+msgctxt "Landing page text boxes 1 default read more label"
+msgid "Read More"
+msgstr ""
+
+#: admin/defaults.php:99
+msgctxt "Landing page text boxes 2 default read more label"
+msgid "Read More"
+msgstr ""
+
 #: admin/options.php:216
 msgid "Layout"
 msgstr ""
 
-#: admin/options.php:2143
+#: admin/options.php:2158
 msgid "Lazy load images"
 msgstr ""
 
@@ -981,11 +1009,11 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: admin/options.php:2033
+#: admin/options.php:2048
 msgid "Left Bottom"
 msgstr ""
 
-#: admin/options.php:2033
+#: admin/options.php:2048
 msgid "Left Center"
 msgstr ""
 
@@ -1001,8 +1029,12 @@ msgstr ""
 msgid "Left Sidebar Width"
 msgstr ""
 
-#: admin/options.php:2033
+#: admin/options.php:2048
 msgid "Left Top"
+msgstr ""
+
+#: admin/options.php:1721 admin/options.php:1746
+msgid "Limited"
 msgstr ""
 
 #: admin/options.php:1232 admin/options.php:1371 admin/options.php:1427
@@ -1045,7 +1077,7 @@ msgstr ""
 msgid "Make icons clickable (linking to their respective pages)."
 msgstr ""
 
-#: admin/options.php:2094
+#: admin/options.php:2109
 msgid "Masonry"
 msgstr ""
 
@@ -1101,7 +1133,7 @@ msgstr ""
 msgid "No border"
 msgstr ""
 
-#: admin/options.php:2033
+#: admin/options.php:2048
 msgid "No Crop"
 msgstr ""
 
@@ -1110,7 +1142,7 @@ msgstr ""
 msgid "No search results for: <em>%s</em>"
 msgstr ""
 
-#: admin/options.php:1773
+#: admin/options.php:1783
 msgid "No Styling"
 msgstr ""
 
@@ -1121,7 +1153,7 @@ msgstr ""
 #: admin/options.php:1219 admin/options.php:1277 admin/options.php:1319
 #: admin/options.php:1358 admin/options.php:1414 admin/options.php:1459
 #: admin/options.php:1501 admin/options.php:1543 admin/options.php:1592
-#: admin/options.php:1634 admin/options.php:1746
+#: admin/options.php:1634 admin/options.php:1755
 msgid "None"
 msgstr ""
 
@@ -1130,7 +1162,7 @@ msgid "Normal"
 msgstr ""
 
 #. $text_author
-#: 404.php:15 includes/core.php:245 includes/core.php:499
+#: 404.php:15 includes/core.php:245 includes/core.php:489
 msgid "Not Found"
 msgstr ""
 
@@ -1175,7 +1207,7 @@ msgstr ""
 msgid "Opacity"
 msgstr ""
 
-#: admin/options.php:1967
+#: admin/options.php:1982
 msgid "Optimized Labels"
 msgstr ""
 
@@ -1192,7 +1224,7 @@ msgid "Overlay"
 msgstr ""
 
 #. $text_format
-#: includes/core.php:501
+#: includes/core.php:491
 msgid "Page"
 msgstr ""
 
@@ -1223,28 +1255,28 @@ msgstr ""
 msgid "pixels"
 msgstr ""
 
-#: admin/options.php:1967
+#: admin/options.php:1982
 msgid "Placeholders"
 msgstr ""
 
-#: admin/options.php:1804
+#: admin/options.php:1814
 msgid "Plain"
 msgstr ""
 
-#: admin/options.php:1802
+#: admin/options.php:1812
 msgid "Post Captions"
 msgstr ""
 
 #. $text_404
-#: includes/core.php:500
+#: includes/core.php:490
 msgid "Post format"
 msgstr ""
 
-#: admin/options.php:1905
+#: admin/options.php:1920
 msgid "Post formats always display full posts."
 msgstr ""
 
-#: admin/options.php:1770
+#: admin/options.php:1780
 msgid "Post Images"
 msgstr ""
 
@@ -1265,15 +1297,15 @@ msgid "Posts Layout"
 msgstr ""
 
 #. $text_search
-#: includes/core.php:497
+#: includes/core.php:487
 msgid "Posts tagged"
 msgstr ""
 
-#: includes/core.php:405
+#: includes/core.php:395
 msgid "Powered by"
 msgstr ""
 
-#: admin/options.php:2161
+#: admin/options.php:2176
 msgid "Preloader"
 msgstr ""
 
@@ -1305,7 +1337,7 @@ msgstr ""
 msgid "Read More Button"
 msgstr ""
 
-#: admin/options.php:1959
+#: admin/options.php:1974
 msgid "Relative"
 msgstr ""
 
@@ -1325,11 +1357,11 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: admin/options.php:2033
+#: admin/options.php:2048
 msgid "Right Bottom"
 msgstr ""
 
-#: admin/options.php:2033
+#: admin/options.php:2048
 msgid "Right Center"
 msgstr ""
 
@@ -1345,7 +1377,7 @@ msgstr ""
 msgid "Right Sidebar Width"
 msgstr ""
 
-#: admin/options.php:2033
+#: admin/options.php:2048
 msgid "Right Top"
 msgstr ""
 
@@ -1368,7 +1400,7 @@ msgid "Search for:"
 msgstr ""
 
 #. $text_archive
-#: includes/core.php:496
+#: includes/core.php:486
 #, php-format
 msgid "Search results for \"%s\""
 msgstr ""
@@ -1401,7 +1433,7 @@ msgstr ""
 msgid "Select the front (static) page in WordPress' %s"
 msgstr ""
 
-#: admin/options.php:2078
+#: admin/options.php:2093
 #, php-format
 msgid ""
 "Select where social icons should be displayed.<br><br><strong>Social Icons "
@@ -1410,7 +1442,7 @@ msgid ""
 "documentation</a> for detailed information."
 msgstr ""
 
-#: includes/core.php:408
+#: includes/core.php:398
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
@@ -1418,7 +1450,7 @@ msgstr ""
 msgid "Serious Slider"
 msgstr ""
 
-#: admin/options.php:2010
+#: admin/options.php:2025
 msgid "Set to 0 to disable image processing"
 msgstr ""
 
@@ -1430,11 +1462,11 @@ msgstr ""
 msgid "Shortcode"
 msgstr ""
 
-#: admin/options.php:1951
+#: admin/options.php:1966
 msgid "Show"
 msgstr ""
 
-#: admin/options.php:1973
+#: admin/options.php:1988
 msgid "Show Icons in Comment Fields"
 msgstr ""
 
@@ -1450,15 +1482,15 @@ msgstr ""
 msgid "Side Menu Text"
 msgstr ""
 
-#: admin/options.php:2906
+#: admin/options.php:2966
 msgid "Side Section"
 msgstr ""
 
-#: admin/options.php:2862
+#: admin/options.php:2922
 msgid "Sidebar Left"
 msgstr ""
 
-#: admin/options.php:2869
+#: admin/options.php:2929
 msgid "Sidebar Right"
 msgstr ""
 
@@ -1502,12 +1534,22 @@ msgstr ""
 msgid "Size Emphasis"
 msgstr ""
 
-#: admin/options.php:1746
+#: admin/options.php:1755
 msgid "Slide"
 msgstr ""
 
 #: admin/options.php:239 admin/options.php:612
 msgid "Slider"
+msgstr ""
+
+#: admin/defaults.php:57
+msgctxt "Slider CTA Text 1 default value"
+msgid "Read more"
+msgstr ""
+
+#: admin/defaults.php:59
+msgctxt "Slider CTA Text 2 default value"
+msgid "See more"
 msgstr ""
 
 #: admin/options.php:633
@@ -1526,19 +1568,19 @@ msgstr ""
 msgid "Spacing"
 msgstr ""
 
-#: admin/options.php:1959
+#: admin/options.php:1974
 msgid "Specific"
 msgstr ""
 
-#: admin/options.php:1918
+#: admin/options.php:1933
 msgid "Standard Posts in Categories/Archives"
 msgstr ""
 
-#: admin/options.php:1902
+#: admin/options.php:1917
 msgid "Standard Posts On Homepage"
 msgstr ""
 
-#: admin/options.php:921 admin/options.php:1697 admin/options.php:2145
+#: admin/options.php:921 admin/options.php:1697 admin/options.php:2160
 msgid "Static"
 msgstr ""
 
@@ -1550,7 +1592,7 @@ msgstr ""
 msgid "Static Page Layout"
 msgstr ""
 
-#: admin/options.php:1910
+#: admin/options.php:1925
 msgid "Sticky Posts on Homepage"
 msgstr ""
 
@@ -1562,9 +1604,8 @@ msgstr ""
 msgid "Structure"
 msgstr ""
 
-#: admin/options.php:1777 admin/options.php:1781 admin/options.php:1785
-#: admin/options.php:1789 admin/options.php:1793
-#, php-format
+#: admin/options.php:1787 admin/options.php:1791 admin/options.php:1795
+#: admin/options.php:1799 admin/options.php:1803
 msgid "Style %d"
 msgstr ""
 
@@ -1591,7 +1632,6 @@ msgstr ""
 
 #: admin/options.php:952 admin/options.php:960 admin/options.php:968
 #: admin/options.php:976
-#, php-format
 msgid "Text Area %d"
 msgstr ""
 
@@ -1623,13 +1663,13 @@ msgstr ""
 msgid "Theme Support"
 msgstr ""
 
-#: admin/options.php:2899
+#: admin/options.php:2959
 msgid ""
 "This widget area is displayed over the header image and requires an image to "
 "be set."
 msgstr ""
 
-#: admin/options.php:2907
+#: admin/options.php:2967
 msgid "This widget area is included below the main/side menu."
 msgstr ""
 
@@ -1717,7 +1757,7 @@ msgstr ""
 msgid "use a static page"
 msgstr ""
 
-#: admin/options.php:2049
+#: admin/options.php:2064
 msgid "Use Featured Images in Header"
 msgstr ""
 
@@ -1759,15 +1799,15 @@ msgstr ""
 msgid "Widget Title"
 msgstr ""
 
-#: admin/options.php:1804
+#: admin/options.php:1814
 msgid "With Background"
 msgstr ""
 
-#: admin/options.php:1804
+#: admin/options.php:1814
 msgid "With Border"
 msgstr ""
 
-#: admin/options.php:2877
+#: admin/options.php:2937
 msgid ""
 "You can configure how many columns the footer displays from the theme options"
 msgstr ""

@@ -4,9 +4,9 @@ Theme URI: http://www.cryoutcreations.eu/wordpress-themes/bravada
 Description: Bravada looks amazing, behaves flawlessly and scales to any screen. It goes anywhere, it's for everyone and everything. It's clear, clean and simply gorgeous. It has CSS powered animations that will bring users to their knees. Being designed as mobile-first, it's as responsive as you'll ever get. Being highly customizable, it comes with a plethora of options that will truly make it your own while still being extremely easy to use. Google fonts are supported, but you can also use your own fonts if GPPR is giving you trouble. You can dynamically change every aspect of your fonts for many site elements (size, line height, font styles, etc.) Colors are also editable and, if you want, you'll have a great time making your own color schemes. You have multiple layouts to choose from, the site, content and sidebar widths are also customizable, magazine layouts with masonry are enabled by default, but you can also edit those. Metas like author, date, tags, categories and comments are toggleable, you can decide which ones to show on blog pages and which ones to show on single pages. Widget areas galore, place your widgets almost anywhere you want, the theme doesn't discriminate. And then there's a fully customizable landing page with icon blocks, featured boxes, text areas and a slider (you can use our own or paste in a shortcut from any other slider). We also thought about socials and you can choose from a seemingly countless number of socials to populate your site with. Gutenberg blocks? They feel right at home in our theme! Of course it's also translation ready and Right To Left (RTL) languages are fully supported out of the box. WooCommerce feels right at home with our theme, we've taken all measures to seamlessly integrate it. Oh, and just like with our other themes, the updates will keep on coming, constantly improving and keeping it relevant for years to come. Bravada is a theme for all types of sites out there: blogs, businesses, presentation or photography sites, news or portfolio sites. There are no limits - there is only Bravada.
 Author: Cryout Creations
 Author URI: http://www.cryoutcreations.eu
-Version: 1.1.2
+Version: 1.1.3
 Requires at least: 4.5
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 5.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -2842,8 +2842,13 @@ span.edit-link .icon-edit::before {
 
 @media (max-width: 1200px) {
 	.meta-arrow {
-		display: none;
+		/* display: none; */
+		bottom: 50px;
 	}
+}
+
+body:not(.bravada-fullscreen-headerimage) .meta-arrow {
+	display: none;
 }
 
 a.meta-arrow:hover {
@@ -3926,7 +3931,7 @@ body .main .wp-caption > a {
 }
 
 .lp-staticslider-image {
-	display: block;
+	vertical-align: middle;
 }
 
 .lp-staticslider-image,
@@ -4915,7 +4920,9 @@ a.staticslider-button + a.staticslider-button,
 	color: rgba(0, 0, 0, .15);
 }
 
-.lp-box .lp-box-image > img {
+.lp-box .lp-box-image > img,
+/* for optimization plugins that replace the img: */
+.lp-box .lp-box-image picture {
 	position: relative;
 	z-index: 10;
 	display: block;

@@ -10,7 +10,7 @@
 
 // theme identification and options management - do NOT edit unless you know what you are doing
 define ( "_CRYOUT_THEME_NAME", "bravada" );
-define ( "_CRYOUT_THEME_VERSION", "1.1.2" );
+define ( "_CRYOUT_THEME_VERSION", "1.1.3" );
 
 // prefixes for theme options and functions
 define ( '_CRYOUT_THEME_SLUG', 'bravada' );

@@ -2,8 +2,8 @@
 
 Contributors: Cryout Creations
 Requires at least: 4.5
-Tested up to: 6.5
-Stable tag: 1.1.2
+Tested up to: 6.6
+Stable tag: 1.1.3
 Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -95,7 +95,17 @@ The rest of the bundled images are created by Cryout Creations and released with
 
 == Changelog ==
 
-= 1.1.2 = 
+= 1.1.3 =
+*Release date: 2024.09.12*
+
+* Added 'cryout_headerimage_hook' hook to landing page slider section
+* Added additional 'limited' selection for table appearance option for improved compatibility with content plugins
+* Enabled more content arrow on mobile devices
+* Disabled more content arrow when not needed (like when banner/header image is not fullscreen)
+* Fixed XSS vulnerability allowing the output of unsanitized user names set by rogue editors/contributors - reported by stealthcopter on patchstack.com
+* Fixed the broken again previously fixed landing page banner image horizontal centering when not fullscreen (since 1.1.0)
+
+= 1.1.2 =
 *Release date: 2024.07.13*
 
 * Added 'bravada_navigation_compat' filter to allow overriding the "access" id on menu container and improve uber/mega menu compatibility
@@ -149,7 +159,7 @@ The rest of the bundled images are created by Cryout Creations and released with
 * Fixed page/category titles visibility option not working as expected
 * Fixed header overlay appearing on top of the slider caption when slider appearance style is set to 'cryout theme'
 * Fixed caption displayed off-screen when slider appearance style is set to 'cryout theme'
-* Cleaned up some leftover sidebar layout detection code 
+* Cleaned up some leftover sidebar layout detection code
 
 = 1.0.7.1 =
 *Release date: 2022.05.26*
@@ -177,7 +187,7 @@ The rest of the bundled images are created by Cryout Creations and released with
 * Fixed a notice displayed in some instances related to the header image since 1.0.6
 * Fixed blog homepage sometimes displaying wrong featured image in header since 1.0.6
 * Updated to Cryout Framework 0.8.6.2:
-	* Added static blog page detection function (for featured images in header) 
+	* Added static blog page detection function (for featured images in header)
 
 = 1.0.6 =
 *Release date: 2021.09.03*
@@ -201,7 +211,7 @@ The rest of the bundled images are created by Cryout Creations and released with
 * Added visibility control options for byline on single posts and post lists
 * Fixed site title accent option not being visible when only site title is displayed
 * Fixed 'lighter' font weight typo
-* Added ability to hide when navigation area is empty to the main menu toggler 
+* Added ability to hide when navigation area is empty to the main menu toggler
 * Added support for anchor (or empty) links in main navigation
 * Fine tuned header socials alignment
 * Fixed to-top button position when configured to be displayed in the footer and its display/hide animation

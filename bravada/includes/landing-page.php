@@ -15,6 +15,7 @@ function bravada_lpslider() {
 ?>
 <section class="lp-slider">
 <?php
+cryout_headerimage_hook();
 if ( $options['theme_lpslider'] )
 	switch ( $options['theme_lpslider'] ):
 		case 1:

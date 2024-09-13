@@ -27,7 +27,7 @@ $bravada_heading_tag = ( is_single() ) ? 'h2' : 'h1';
 			<?php if ( is_single() ) { ?>
 				<div class="author-link">
 					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"  <?php cryout_schema_microdata( 'author-url' ); ?>>
-						<?php printf( __( 'View all posts by ', 'bravada' ) . '%s', get_the_author() ); ?>
+						<?php printf( __( 'View all posts by ', 'bravada' ) . '%s', esc_attr(get_the_author()) ); ?>
 					</a>
 				</div><!-- .author-link	-->
 			<?php } ?>

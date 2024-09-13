@@ -1717,8 +1717,8 @@ $bravada_big = array(
 	'id' => 'theme_tables',
 		'type' => 'select',
 		'label' => __('Tables Style','bravada'),
-		'values' => array( 'bravada-no-table', 'bravada-clean-table', 'bravada-striped-table', 'bravada-bordered-table' ),
-		'labels' => array( __("No border","bravada"), __("Clean","bravada"), __("Striped","bravada"), __("Bordered","bravada") ),
+		'values' => array( 'bravada-no-table', 'bravada-clean-table', 'bravada-striped-table', 'bravada-bordered-table', 'bravada-limited-table' ),
+		'labels' => array( __("No border","bravada"), __("Clean","bravada"), __("Striped","bravada"), __("Bordered","bravada"), __("Limited","bravada") ),
 		'desc' => '',
 	'section' => 'theme_contentstructure' ),
 	array(
@@ -1741,9 +1741,9 @@ $bravada_big = array(
 	array(
 	'id' => 'theme_headingsaccent',
 		'type' => 'select',
-		'label' => __('Headings Accent Effect','bravada'),
+		'label' => __('Headings Background Accent','bravada'),
 		'values' => array( 0, 1, 2),
-		'labels' => array( __("Disabled","bravada"), __("Reduced","bravada"), __("All","bravada") ),
+		'labels' => array( __("Disabled","bravada"), __("Limited","bravada"), __("Complete","bravada") ),
 		'desc' => '',
 	'section' => 'theme_contentgraphics' ),
 	
@@ -2214,7 +2214,7 @@ $bravada_big = array(
 'fonts' => array(
 
 	'Inherit' => array( // capitalization matters
-		'Inherit General Font',
+		'Inherit General Font', // 'inherit' is searched for by cryout_font_select() in framework prototypes.php
 	),
 	'Preferred Google Fonts'=> array(
 					"Muli/gfont",
@@ -2286,7 +2286,7 @@ $bravada_big = array(
 					"Garamond, Times New Roman, Times, serif"
 					),
 	'Advanced' => array(
-					"* Local Font *",
+					"* Local Font *", // this is preg_matched in styles.php, keep in sync !
 					),
 	), // fonts
 

@@ -112,8 +112,8 @@ function bravada_posted_author() {
 				<a class="url fn n" rel="author" href="%1$s" title="%2$s"' . cryout_schema_microdata( 'author-url', 0 ) . '>
 					<em' .  cryout_schema_microdata( 'author-name', 0 ) . '>%3$s</em></a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			sprintf( esc_attr__( 'View all posts by %s', 'bravada' ), get_the_author() ),
-			get_the_author()
+			sprintf( esc_attr__( 'View all posts by %s', 'bravada' ), esc_attr(get_the_author()) ),
+			esc_attr( get_the_author() )
 		);
 	}
 } // bravada_posted_author
@@ -137,8 +137,8 @@ function bravada_posted_author_single() {
 					<em' .  cryout_schema_microdata( 'author-name', 0 ) . '>%3$s</em></a>' .
 			'</span></div>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID', 	$author_id ) ) ),
-			sprintf( esc_attr__( 'View all posts by %s', 'bravada' ), wp_kses( get_the_author_meta( 'display_name', $author_id) , array() ) ),
-			wp_kses( get_the_author_meta( 'display_name', $author_id), array() )
+			sprintf( esc_attr__( 'View all posts by %s', 'bravada' ), esc_attr( get_the_author_meta( 'display_name', $author_id) ) ),
+			esc_attr( get_the_author_meta( 'display_name', $author_id) )
 		);
 	}
 } // bravada_posted_author_single
