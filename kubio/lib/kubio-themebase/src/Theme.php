@@ -63,6 +63,11 @@ class Theme extends ThemeBase {
         }
 
         $slug = get_template() . '-page-info';
+	    $is_fresh_site = !$this->themeWasCustomized();
+
+        if ( !$is_fresh_site ) {
+            return false;
+        }
 
         if ( get_option( "{$slug}-theme-notice-dismissed", false ) !== false ) {
             return false;
@@ -84,7 +89,7 @@ class Theme extends ThemeBase {
         if ( $this->shouldDisplayAdminNotice() ) :
             ?>
             <div class="notice notice-success is-dismissible kubio-admin-big-notice notice-large">
-                <?php View::make( 'admin/admin-notice' ); ?>
+                <?php View::make( 'admin/admin-notice-frontpage' ); ?>
             </div>
             <script>
 

@@ -24,7 +24,6 @@ var __webpack_exports__ = {};
     wp.ajax.post("colibriwp_disable_big_notice", {
       nonce: builderStatusData.kubio_disable_big_notice_nonce
     });
-    $notice_container.closest(".kubio-admin-big-notice").find("button.notice-dismiss").click();
   }
 
   function toggleProcessing(value) {
@@ -89,13 +88,16 @@ var __webpack_exports__ = {};
   function processBuilderInstalationStepts(callback) {
     var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
         _ref$AI = _ref.AI,
-        AI = _ref$AI === void 0 ? false : _ref$AI;
+        AI = _ref$AI === void 0 ? false : _ref$AI,
+        _ref$source = _ref.source,
+        source = _ref$source === void 0 ? "notice" : _ref$source;
 
     pluginNotice(builderStatusData.messages.preparing);
     wp.ajax.post(getStartedData.theme_prefix + "front_set_predesign", {
       index: selectedFrontPage,
       AI: AI ? "yes" : "no",
-      nonce: builderStatusData.kubio_front_set_predesign_nonce
+      nonce: builderStatusData.kubio_front_set_predesign_nonce,
+      source: source
     }).done(function () {
       if (builderStatusData.status === "not-installed") {
         toggleProcessing(true);
@@ -111,7 +113,9 @@ var __webpack_exports__ = {};
 
   $notice_container.on("click", ".start-with-predefined-design-button", function () {
     selectedFrontPage = $(".selected[data-index]").data("index");
-    processBuilderInstalationStepts();
+    processBuilderInstalationStepts(function () {}, {
+      AI: selectedFrontPage === 4
+    });
   });
   $notice_container.on("click", ".start-with-ai-page", function () {
     selectedFrontPage = $(".selected[data-index]").data("index");
@@ -119,7 +123,25 @@ var __webpack_exports__ = {};
       AI: true
     });
   });
-  $notice_container.closest('.kubio-admin-big-notice').on("click", ".kubio-notice-dont-show-container", disableNotice);
+  $notice_container.on("click", ".view-all-demos", function () {
+    selectedFrontPage = 0;
+    processBuilderInstalationStepts(function () {}, {
+      AI: false,
+      source: "starter-sites"
+    });
+  });
+  $notice_root = $notice_container.closest(".kubio-admin-big-notice");
+  $custom_close_button = $notice_root.find(".kubio-notice-dont-show-container");
+
+  if ($custom_close_button.length) {
+    $custom_close_button.on("click", function () {
+      disableNotice();
+      $notice_container.closest(".kubio-admin-big-notice").find("button.notice-dismiss").click();
+    });
+  } else {
+    $notice_root.on("click", ".notice-dismiss", disableNotice);
+  }
+
   var $document = $(document);
 
   var colibriInstallPluginSuccess = function colibriInstallPluginSuccess(response) {

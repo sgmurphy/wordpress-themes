@@ -246,7 +246,7 @@ class Theme {
 
 			?>
 			<div class="notice notice-success is-dismissible colibri-admin-big-notice notice-large">
-				<?php View::make( 'admin/admin-notice' ); ?>
+				<?php View::make( 'admin/admin-notice-frontpage' ); ?>
 			</div>
 			<?php
 		}

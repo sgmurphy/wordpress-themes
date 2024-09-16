@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define Constants
  */
-define( 'INSPIRO_THEME_VERSION', '1.9.1' );
+define( 'INSPIRO_THEME_VERSION', '1.9.2' );
 define( 'INSPIRO_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'INSPIRO_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 define( 'INSPIRO_THEME_ASSETS_URI', INSPIRO_THEME_URI . 'dist' );
@@ -73,7 +73,7 @@ require INSPIRO_THEME_DIR . 'inc/template-functions.php';
 /**
  * Custom template shortcode tags for this theme
  */
-//require INSPIRO_THEME_DIR . 'inc/shortcodes.php';
+// require INSPIRO_THEME_DIR . 'inc/shortcodes.php';
 
 /**
  * Customizer additions.

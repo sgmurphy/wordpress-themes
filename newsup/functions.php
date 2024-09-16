@@ -136,7 +136,7 @@ function newsup_setup() {
     // Set up the woocommerce feature.
     add_theme_support( 'woocommerce');
 
-     // Woocommerce Gallery Support
+    // Woocommerce Gallery Support
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
@@ -167,6 +167,12 @@ function newsup_setup() {
 		'wp-head-callback'       => 'newsup_header_color',
 	);
 	add_theme_support( 'custom-header', $args );
+
+	// Enable default block styles for Gutenberg blocks
+	add_theme_support( 'wp-block-styles' );
+
+	// Add custom styles to the editor
+    add_editor_style( array( 'css/editor-style.css') );
 }
 endif;
 add_action( 'after_setup_theme', 'newsup_setup' );

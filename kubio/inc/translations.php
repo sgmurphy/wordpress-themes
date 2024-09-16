@@ -299,9 +299,10 @@ return array(
     'benefit_3'                               => __( 'Matching color scheme and typography', 'kubio' ),
     'benefit_4'                               => __( 'Contact form and social media integration', 'kubio' ),
     'start_with_a_front_page_plugin_info'     => __(
-        '%s theme is powered by Kubio Page Builder, which will be installed when selecting the above.',
+        'Any of these actions will also install the Kubio Page Builder plugin.',
         'kubio'
     ),
+	'start_with_selected_page'                => __( 'Start with selected option', 'kubio' ),
 
 	'undefined_sanitize_function_for_control' => __(
 		'Undefined sanitize function for control "%s"',

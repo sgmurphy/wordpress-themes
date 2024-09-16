@@ -33,6 +33,7 @@ use Kubio\Theme\Components\PageNotFound;
 use Kubio\Theme\Components\SingleContent;
 use Kubio\Theme\Flags;
 use Kubio\Theme\Theme;
+use Kubio\Core\Activation;
 
 require_once get_template_directory() . '/vendor/autoload.php';
 require_once __DIR__ . '/inc/safari-polyfills.php';
@@ -173,26 +174,41 @@ function kubio_theme_add_woocommerce_support() {
 
 add_action('after_setup_theme', 'kubio_theme_add_woocommerce_support');
 
+add_filter( 'kubio/activation/after_activation_redirect_url', 'kubio_after_activation_redirect_url' );
+function kubio_after_activation_redirect_url( $url ) {
+	if ( Flags::get( 'start_source', false ) == 'notice-homepage' ) {
+		$url = add_query_arg(
+			array(
+				'page'                    => 'kubio-get-started',
+				'kubio-designed-imported' => intval( ! ! Flags::get( 'import_design', false ) ),
+			),
+			admin_url( 'admin.php' )
+		);
+	}
+	return $url;
+}
+
 Hooks::add_wp_ajax(
     'front_set_predesign',
     function () {
         check_ajax_referer('kubio_front_set_predesign_nonce', 'nonce');
         $with_ai = Utils::pathGet($_REQUEST, 'AI', 'no');
         $source = sanitize_text_field(Utils::pathGet($_REQUEST, 'source', 'notice'));
+	    $index   = intval( Utils::pathGet( $_REQUEST, 'index', 0 ) );
 
-        if ($with_ai === 'yes') {
-            Flags::set('start_with_ai', true);
-        } else {
-            Flags::set('import_design', true);
-        }
+	    if ( $with_ai === 'yes' ) {
+		    Flags::set( 'start_with_ai', true );
+	    } else {
+		    Flags::set( 'import_design', true );
+		    Flags::set( 'import_design_index', $index );
+	    }
 
-        // customizer source
-        $start_source = $source;
+	    // customizer source
+	    $start_source = $source;
 
-        // not customizer source
-        if (strpos($source, 'customizer') === false) {
-            $start_source = $with_ai === 'yes' ? "{$source}-ai" : "{$source}-homepage";
-        }
+	    if ( $source === 'notice' ) {
+		    $start_source = $with_ai === 'yes' ? "{$source}-ai" : "{$source}-homepage";
+	    }
         Flags::set('start_source', $start_source);
 
         wp_send_json_success();
@@ -229,42 +245,88 @@ function kubio_theme_plugins($plugins) {
 
 Hooks::prefixed_add_filter('theme_plugins', 'kubio_theme_plugins');
 
+add_filter(
+	'kubio/remote_data_url',
+	function( $url ) {
+		if ( strpos( $url, 'with-front' ) !== false && Flags::get( 'import_design_index', 0 ) !== 0 ) {
+			$front_slug = 'with-front-' . Flags::get( 'import_design_index' );
+			$base_url   = 'https://themes.kubiobuilder.com';
+			$file_name  = get_stylesheet() . '__' . get_template() . '__' . $front_slug . '.data';
+			return "{$base_url}/{$file_name}";
+		}
+		return $url;
+	}
+);
+
+
+add_action(
+	'kubio/after_activation',
+	function () {
+		$activation_instance = Activation::load();
+		if ( ! $activation_instance->isCLI() ) {
+			$start_source = Flags::get( 'start_source', 'other' );
+			if ( $start_source == 'starter-sites' ) {
+				$url = add_query_arg(
+					array(
+						'page' => 'kubio-get-started',
+						'tab'  => 'demo-sites',
+					),
+					admin_url( 'admin.php' )
+				);
+				wp_redirect( $url );
+				exit();
+			}
+		}
+	}
+);
+
 Hooks::prefixed_add_action(
-    'after_plugin_activated',
-    function ($slug) {
+	'after_plugin_activated',
+	function ( $slug ) {
 
-        if ($slug === kubio_get_builder_plugin_slug()) {
-            $hash = uniqid('activate-');
+		if ( $slug === kubio_get_builder_plugin_slug() ) {
+			$hash = uniqid( 'activate-' );
 
-            Flags::set('activation-hash', $hash);
+			Flags::set( 'activation-hash', $hash );
 
-            $start_source = Flags::get('start_source', "other");
-            if (strpos($start_source,  "customizer-sidebar") === 0) {
-                $url = add_query_arg(
-                    array(
-                        'page'                    => 'kubio',
-                        'kubio-activation-hash'   => $hash
-                    ),
-                    admin_url('admin.php')
-                );
-            } else {
-                $url = add_query_arg(
-                    array(
-                        'page'                    => 'kubio-get-started',
-                        'kubio-activation-hash'   => $hash,
-                        'kubio-designed-imported' => intval(!!Flags::get('import_design', false)),
-                    ),
-                    admin_url('admin.php')
-                );
-            }
+			$start_source = Flags::get( 'start_source', 'other' );
+			if ( strpos( $start_source, 'customizer-sidebar' ) === 0 ) {
+				$url = add_query_arg(
+					array(
+						'page'                  => 'kubio',
+						'kubio-activation-hash' => $hash,
+					),
+					admin_url( 'admin.php' )
+				);
+			} else {
+				if ( $start_source == 'starter-sites' ) {
+					$url = add_query_arg(
+						array(
+							'page'                  => 'kubio-get-started',
+							'tab'                   => 'demo-sites',
+							'kubio-activation-hash' => $hash,
+						),
+						admin_url( 'admin.php' )
+					);
+				} else {
+					$url = add_query_arg(
+						array(
+							'page'                    => 'kubio-get-started',
+							'kubio-activation-hash'   => $hash,
+							'kubio-designed-imported' => intval( ! ! Flags::get( 'import_design', false ) ),
+						),
+						admin_url( 'admin.php' )
+					);
+				}
+			}
 
-            wp_send_json_success(
-                array(
-                    'redirect' => $url,
-                )
-            );
-        }
-    }
+			wp_send_json_success(
+				array(
+					'redirect' => $url,
+				)
+			);
+		}
+	}
 );
 
 add_action(

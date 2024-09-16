@@ -625,4 +625,29 @@ return array(
 	'blog_show_post_thumb_placeholder'  => true,
 	'blog_posts_per_row'                => 2,
 	'blog_enable_masonry'               => true,
+	'front_page_designs'                => array(
+		array(
+			'name'    => __( 'Modern', 'kubio' ),
+			'index'   => 1,
+			'preview' => 'front-page-1.jpg',
+		),
+
+		array(
+			'name'    => __( 'Fullscreen', 'kubio' ),
+			'index'   => 2,
+			'preview' => 'front-page-2.jpg',
+		),
+
+		array(
+			'name'    => __( 'Classic', 'kubio' ),
+			'index'   => 3,
+			'preview' => 'front-page-3.jpg',
+		),
+
+		array(
+			'name'    => __( '', 'kubio' ),
+			'index'   => 4,
+			'preview' => 'admin/ai-icon.svg',
+		),
+	),
 );
