@@ -120,7 +120,6 @@ if ( ! function_exists( 'zakra_header_markup' ) ) {
 			 */
 			do_action( 'zakra_action_before_header_main' );
 
-
 				/**
 				 * Hook - zakra_action_header_main
 				 *
@@ -135,7 +134,6 @@ if ( ! function_exists( 'zakra_header_markup' ) ) {
 			 */
 			do_action( 'zakra_action_after_header_main' );
 			?>
-
 
 		<?php
 		/**
@@ -153,7 +151,6 @@ if ( ! function_exists( 'zakra_header_markup' ) ) {
 		 * @hooked zakra_page_header - 10.
 		 */
 		do_action( 'zakra_page_header' );
-
 	}
 
 	add_action( 'zakra_header', 'zakra_header_markup' );
@@ -170,9 +167,9 @@ if ( ! function_exists( 'zakra_header_start' ) ) :
 		<header id="zak-masthead" class="<?php zakra_css_class( 'zakra_header_class' ); ?>">
 		<?php
 	}
-endif;
 
-add_action( 'zakra_action_before_header', 'zakra_header_start', 15 );
+	add_action( 'zakra_action_before_header', 'zakra_header_start', 15 );
+endif;
 
 
 if ( ! function_exists( 'zakra_header_end' ) ) :
@@ -185,6 +182,6 @@ if ( ! function_exists( 'zakra_header_end' ) ) :
 		</header><!-- #zak-masthead -->
 		<?php
 	}
-endif;
 
-add_action( 'zakra_action_after_header', 'zakra_header_end', 15 );
+	add_action( 'zakra_action_after_header', 'zakra_header_end', 15 );
+endif;

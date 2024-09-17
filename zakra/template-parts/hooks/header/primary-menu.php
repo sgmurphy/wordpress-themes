@@ -108,9 +108,9 @@ if ( ! function_exists( 'zakra_add_submenu_icon' ) ) :
 	 */
 	function zakra_add_submenu_icon( $item_output, $item, $depth, $args ) {
 
-		$theme_location =array('menu-primary', 'menu-mobile', 'menu-header-top-1', 'menu-header-top-2', 'menu-right', 'menu-left','secondary-menu');
+		$theme_location = array( 'menu-primary', 'menu-mobile', 'menu-header-top-1', 'menu-header-top-2', 'menu-right', 'menu-left', 'secondary-menu', 'menu-secondary' );
 
-		if ( in_array($args->theme_location, $theme_location, true) ) {
+		if ( in_array( $args->theme_location, $theme_location, true ) ) {
 
 			if (
 					in_array( 'menu-item-has-children', $item->classes, true ) ||

@@ -92,11 +92,17 @@ if ( ! class_exists( 'Zakra_After_Setup_Theme' ) ) {
 			add_theme_support( 'post-thumbnails' );
 
 			// Register menu.
-			register_nav_menus(
-				array(
-					'menu-primary' => esc_html__( 'Primary', 'zakra' ),
-				)
+			$menus = array(
+				'menu-primary' => esc_html__( 'Primary Menu', 'zakra' ),
 			);
+
+			$enable_builder = get_theme_mod( 'zakra_enable_builder', false );
+			if ( $enable_builder || zakra_maybe_enable_builder() ) {
+				$menus['menu-secondary'] = esc_html__( 'Secondary Menu', 'zakra' );
+				$menus['menu-mobile']    = esc_html__( 'Mobile Menu', 'zakra' );
+			}
+
+			register_nav_menus( $menus );
 
 			/*
 			 * Switch default core markup for search form, comment form, and comments

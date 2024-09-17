@@ -48,7 +48,7 @@ if ( ! class_exists( 'Zakra_Demo_Import_Migration_Notice' ) ) {
 			$notice_dismiss = get_option( 'zakra_demo_import_migration_notice_dismiss' );
 
 			if ( ! $notice_dismiss && Zakra_Migration::maybe_run_migration() ) :
-					?>
+				?>
 					<div class="notice notice-info zakra-notice demo-import-migrate-notice" style="position:relative;">
 						<p>
 							<?php

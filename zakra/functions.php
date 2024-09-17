@@ -67,9 +67,15 @@ require ZAKRA_PARENT_INC_DIR . '/deprecated/deprecated-functions.php';
 require ZAKRA_PARENT_INC_DIR . '/deprecated/deprecated-hooks.php';
 
 /**
+ * Override global builder by page setting.
+ */
+require ZAKRA_PARENT_INC_DIR . '/meta-boxes/builder-meta-box.php';
+
+/**
  * Templates.
  */
 require ZAKRA_PARENT_INC_DIR . '/template-tags.php';
+require ZAKRA_PARENT_INC_DIR . '/builder-template-tags.php';
 require ZAKRA_PARENT_INC_DIR . '/template-functions.php';
 
 // Template hooks.
@@ -90,13 +96,16 @@ require ZAKRA_PARENT_DIR . '/template-parts/hooks/content/content.php';
 require ZAKRA_PARENT_DIR . '/template-parts/hooks/blog/blog.php';
 
 require ZAKRA_PARENT_DIR . '/template-parts/hooks/footer/footer.php';
+
+require ZAKRA_PARENT_DIR . '/template-parts/hooks/footer/scroll-to-top.php';
 require ZAKRA_PARENT_DIR . '/template-parts/hooks/footer/footer-widgets.php';
 require ZAKRA_PARENT_DIR . '/template-parts/hooks/footer/footer-bar.php';
-require ZAKRA_PARENT_DIR . '/template-parts/hooks/footer/scroll-to-top.php';
 
 require ZAKRA_PARENT_INC_DIR . '/hooks/hooks.php';
 require ZAKRA_PARENT_INC_DIR . '/hooks/content.php';
 require ZAKRA_PARENT_INC_DIR . '/hooks/customize.php';
+
+require ZAKRA_PARENT_DIR . '/template-parts/hooks/builder.php';
 
 /**
  * Plugins compatibility.
@@ -142,13 +151,19 @@ require_once ZAKRA_PARENT_INC_DIR . '/class-breadcrumb-trail.php';
 // Svg icon class.
 require_once ZAKRA_PARENT_INC_DIR . '/class-zakra-svg-icons.php';
 
+// Load customind.
+require_once ZAKRA_PARENT_INC_DIR . '/customizer/customind/init.php';
+
+global $customind;
+$customind->set_css_var_prefix( 'zakra' );
+
+require ZAKRA_PARENT_INC_DIR . '/meta-boxes/class-zakra-meta-box.php';
 
 // Admin screen.
 if ( is_admin() ) {
 
 	// Meta boxes.
 	require ZAKRA_PARENT_INC_DIR . '/meta-boxes/class-zakra-meta-box-page-settings.php';
-	require ZAKRA_PARENT_INC_DIR . '/meta-boxes/class-zakra-meta-box.php';
 
 	// Theme options page.
 	require ZAKRA_PARENT_INC_DIR . '/admin/class-zakra-admin.php';
@@ -175,7 +190,7 @@ function zakra_content_width_rdr() {
 
 	// Get layout type.
 	$layout_type     = zakra_get_layout_type();
-	$layouts_sidebar = array( 'left', 'right' );
+	$layouts_sidebar = [ 'left', 'right' ];
 
 	/**
 	 * Calculate content width.
@@ -184,17 +199,17 @@ function zakra_content_width_rdr() {
 	// Get required values from Customizer.
 	$container_width = get_theme_mod(
 		'zakra_container_width',
-		array(
+		[
 			'size' => 1170,
 			'unit' => 'px',
-		)
+		]
 	);
 	$sidebar_width   = get_theme_mod(
 		'zakra_sidebar_width',
-		array(
+		[
 			'size' => 30,
 			'unit' => '%',
-		)
+		]
 	);
 
 	$container_width = isset( $container_width['size'] ) ? (int) $container_width['size'] : 1160;
@@ -259,10 +274,10 @@ add_action( 'wp_ajax_activate_plugin', 'zakra_plugin_action_callback' );
 function zakra_plugin_action_callback() {
 
 	if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( $_POST['security'], 'zakra_demo_import_nonce' ) ) {
-		wp_send_json_error( array( 'message' => 'Security check failed.' ) );
+		wp_send_json_error( [ 'message' => 'Security check failed.' ] );
 	}
 	if ( ! current_user_can( 'install_plugins' ) ) {
-		wp_send_json_error( array( 'message' => 'You are not allowed to perform this action.' ) );
+		wp_send_json_error( [ 'message' => 'You are not allowed to perform this action.' ] );
 	}
 
 	$plugin      = sanitize_text_field( $_POST['plugin'] );
@@ -270,35 +285,35 @@ function zakra_plugin_action_callback() {
 
 	if ( zakra_is_plugin_installed( $plugin ) ) {
 		if ( is_plugin_active( $plugin ) ) {
-			wp_send_json_success( array( 'message' => 'Plugin is already activated.' ) );
+			wp_send_json_success( [ 'message' => 'Plugin is already activated.' ] );
 		} else {
 			// Activate the plugin
 			$result = activate_plugin( $plugin );
 
 			if ( is_wp_error( $result ) ) {
-				wp_send_json_error( array( 'message' => 'Error activating the plugin.' ) );
+				wp_send_json_error( [ 'message' => 'Error activating the plugin.' ] );
 			} else {
-				wp_send_json_success( array( 'message' => 'Plugin activated successfully!' ) );
+				wp_send_json_success( [ 'message' => 'Plugin activated successfully!' ] );
 			}
 		}
 	} else {
 		// Install and activate the plugin
 		include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 		include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-		$plugin_info = plugins_api( 'plugin_information', array( 'slug' => $plugin_slug ) );
+		$plugin_info = plugins_api( 'plugin_information', [ 'slug' => $plugin_slug ] );
 		$upgrader    = new Plugin_Upgrader( new WP_Ajax_Upgrader_Skin() );
 		$result      = $upgrader->install( $plugin_info->download_link );
 
 		if ( is_wp_error( $result ) ) {
-			wp_send_json_error( array( 'message' => 'Error installing the plugin.' ) );
+			wp_send_json_error( [ 'message' => 'Error installing the plugin.' ] );
 		}
 
 		$result = activate_plugin( $plugin );
 
 		if ( is_wp_error( $result ) ) {
-			wp_send_json_error( array( 'message' => 'Error activating the plugin.' ) );
+			wp_send_json_error( [ 'message' => 'Error activating the plugin.' ] );
 		} else {
-			wp_send_json_success( array( 'message' => 'Plugin installed and activated successfully!' ) );
+			wp_send_json_success( [ 'message' => 'Plugin installed and activated successfully!' ] );
 		}
 	}
 }
@@ -306,4 +321,17 @@ function zakra_plugin_action_callback() {
 function zakra_is_plugin_installed( $plugin_path ) {
 	$plugins = get_plugins();
 	return isset( $plugins[ $plugin_path ] );
+}
+
+function zakra_maybe_enable_builder() {
+
+	if ( get_option( 'zakra_builder_migration' ) ) {
+		return true;
+	}
+
+	if ( get_option( 'zakra_stretched_style_transfer' ) || get_option( 'zakra_migrations' ) || get_option( 'zakra_customizer_migration_v3' ) ) {
+		return false;
+	}
+
+	return true;
 }

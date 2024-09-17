@@ -55,9 +55,19 @@ if ( ! class_exists( 'Zakra_Enqueue_Scripts' ) ) {
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-			add_action( 'zakra_get_fonts', array( $this, 'get_fonts' ) );
-
 			add_action( 'enqueue_block_editor_assets', array( $this, 'block_editor_styles' ), 1 );
+
+			add_action( 'customize_controls_enqueue_scripts', array( $this, 'zakra_inline_customizer_css' ) );
+
+			if ( is_child_theme() ) {
+				add_action(
+					'customize_controls_enqueue_scripts',
+					[
+						$this,
+						'zakra_child_theme_inline_customizer_css',
+					]
+				);
+			}
 		}
 
 		/**
@@ -70,46 +80,49 @@ if ( ! class_exists( 'Zakra_Enqueue_Scripts' ) ) {
 
 			$suffix = zakra_get_script_suffix();
 
-			/**
-			 * Styles.
-			 */
-			// Font Awesome 4.
-			$font_awesome_styles = array(
+			// FontAwesome.
+			global $customind;
+
+			$fontawesome_path = $customind->get_asset_url( 'all.min.css', 'assets/fontawesome/v6/css', false );
+
+			wp_enqueue_style( 'font-awesome-all', $fontawesome_path, array(), '6.2.4' );
+
+			// Local Google fonts locally.
+			$host_fonts_locally = get_theme_mod( 'zakra_load_google_fonts_locally', false );
+
+			$typography_ids = apply_filters(
+				'zakra_enqueue_scripts_typography_ids',
 				array(
-					'handle'  => 'font-awesome-all',
-					'file'    => '/lib/font-awesome/css/all',
-					'version' => '6.2.4',
-				),
-				array(
-					'handle'  => 'font-awesome-solid',
-					'file'    => '/lib/font-awesome/css/solid',
-					'version' => '6.2.4',
-				),
-				array(
-					'handle'  => 'font-awesome-solid',
-					'file'    => '/lib/font-awesome/css/regular',
-					'version' => '6.2.4',
-				),
-				array(
-					'handle'  => 'font-awesome-solid',
-					'file'    => '/lib/font-awesome/css/brands',
-					'version' => '6.2.4',
-				),
-				array(
-					'handle'  => 'font-awesome-4',
-					'file'    => '/lib/font-awesome/css/font-awesome',
-					'version' => '4.7.0',
-				),
+					'zakra_body_typography',
+					'zakra_heading_typography',
+					'zakra_site_title_typography',
+					'zakra_site_tagline_typography',
+					'zakra_main_menu_typography',
+					'zakra_sub_menu_typography',
+					'zakra_mobile_menu_typography',
+					'zakra_breadcrumb_typography',
+					'zakra_shop_product_button_typography',
+					'zakra_shop_product_price_typography',
+					'zakra_shop_product_title_typography',
+					'zakra_shop_product_view_cart_typography',
+					'zakra_post_page_title_typography',
+					'zakra_blog_post_title_typography',
+					'zakra_h1_typography',
+					'zakra_h2_typography',
+					'zakra_h3_typography',
+					'zakra_h4_typography',
+					'zakra_h5_typography',
+					'zakra_h6_typography',
+					'zakra_widget_title_typography',
+					'zakra_widget_content_typography',
+					'zakra_header_drawer_menu_typography',
+				)
 			);
 
-			foreach ( $font_awesome_styles as $style ) {
-				wp_register_style(
-					$style['handle'],
-					ZAKRA_PARENT_ASSETS_URI . $style['file'] . $suffix . '.css',
-					false,
-					$style['version']
-				);
-				wp_enqueue_style( $style['handle'] );
+			$google_fonts_url = \Customind\Core\get_google_fonts_url_by_ids( $typography_ids, $host_fonts_locally );
+
+			if ( $google_fonts_url ) {
+				wp_enqueue_style( 'zakra_google_fonts', $google_fonts_url, array(), ZAKRA_THEME_VERSION, 'all' );
 			}
 
 			// Theme style.
@@ -130,9 +143,7 @@ if ( ! class_exists( 'Zakra_Enqueue_Scripts' ) ) {
 			 */
 			// Dynamically generated styles from options.
 			add_filter( 'zakra_dynamic_theme_css', array( 'Zakra_Dynamic_CSS', 'render_output' ) );
-
-			// Enqueue required Google fonts for the theme.
-			Zakra_Generate_Fonts::render_fonts();
+			add_filter( 'zakra_dynamic_theme_css', array( 'Zakra_Dynamic_CSS', 'render_builder_output' ) );
 
 			// Generate dynamic CSS to add inline styles for the theme.
 			$theme_dynamic_css = apply_filters( 'zakra_dynamic_theme_css', '' );
@@ -190,118 +201,102 @@ if ( ! class_exists( 'Zakra_Enqueue_Scripts' ) ) {
 		}
 
 		/**
-		 * Hook function to get the required Google fonts as chosen from typography options.
-		 *
-		 * @return void
-		 * TODO: @since.
-		 */
-		public function get_fonts() {
-
-			/**
-			 * Default values.
-			 */
-			$typography_default_400 = array(
-				'font-family' => 'default',
-				'font-weight' => '400',
-			);
-
-			$typography_default_500 = array(
-				'font-family' => 'default',
-				'font-weight' => '500',
-			);
-
-			$base_typography                  = get_theme_mod( 'zakra_body_typography', $typography_default_400 );
-			$base_heading_typography          = get_theme_mod( 'zakra_heading_typography', $typography_default_400 );
-			$site_title_typography            = get_theme_mod( 'zakra_site_title_typography', $typography_default_400 );
-			$site_tagline_typography          = get_theme_mod( 'zakra_site_tagline_typography', $typography_default_400 );
-			$primary_menu_typography          = get_theme_mod( 'zakra_main_menu_typography', $typography_default_400 );
-			$primary_menu_dropdown_typography = get_theme_mod( 'zakra_sub_menu_typography', $typography_default_400 );
-			$mobile_menu_typography           = get_theme_mod( 'zakra_mobile_menu_typography', $typography_default_400 );
-			$breadcrumb_typography            = get_theme_mod( 'zakra_breadcrumb_typography', $typography_default_400 );
-			$add_to_cart_typography           = get_theme_mod( 'zakra_shop_product_button_typography', $typography_default_400 );
-			$product_price_typography         = get_theme_mod( 'zakra_shop_product_price_typography', $typography_default_400 );
-			$product_title_typography         = get_theme_mod( 'zakra_shop_product_title_typography', $typography_default_400 );
-			$view_cart_typography             = get_theme_mod( 'zakra_shop_product_view_cart_typography', $typography_default_400 );
-
-			$post_page_title_typography = get_theme_mod( 'zakra_post_page_title_typography', $typography_default_500 );
-			$blog_post_title_typography = get_theme_mod( 'zakra_blog_post_title_typography', $typography_default_500 );
-			$h1_typography              = get_theme_mod( 'zakra_h1_typography', $typography_default_500 );
-			$h2_typography              = get_theme_mod( 'zakra_h2_typography', $typography_default_500 );
-			$h3_typography              = get_theme_mod( 'zakra_h3_typography', $typography_default_500 );
-			$h4_typography              = get_theme_mod( 'zakra_h4_typography', $typography_default_500 );
-			$h5_typography              = get_theme_mod( 'zakra_h5_typography', $typography_default_500 );
-			$h6_typography              = get_theme_mod( 'zakra_h6_typography', $typography_default_500 );
-			$widget_heading_typography  = get_theme_mod( 'zakra_widget_title_typography', $typography_default_500 );
-			$widget_content_typography  = get_theme_mod( 'zakra_widget_content_typography', $typography_default_500 );
-			$drawer_menu_typography     = get_theme_mod( 'zakra_header_drawer_menu_typography', $typography_default_500 );
-
-			// Grouped typography options with default font-wight of 400.
-			$zakra_typography_options_one = array(
-				$base_typography,
-				$base_heading_typography,
-				$site_title_typography,
-				$site_tagline_typography,
-				$primary_menu_typography,
-				$primary_menu_dropdown_typography,
-				$mobile_menu_typography,
-				$breadcrumb_typography,
-				$add_to_cart_typography,
-				$product_price_typography,
-				$product_title_typography,
-				$view_cart_typography,
-			);
-
-			// Grouped typography options with default font-wight of 500.
-			$zakra_typography_options_two = array(
-				$post_page_title_typography,
-				$blog_post_title_typography,
-				$h1_typography,
-				$h2_typography,
-				$h3_typography,
-				$h4_typography,
-				$h5_typography,
-				$h6_typography,
-				$widget_heading_typography,
-				$widget_content_typography,
-				$drawer_menu_typography,
-			);
-
-			// TODO: Optimize these.
-			foreach ( $zakra_typography_options_one as $zakra_typography_option_one ) {
-
-				if ( isset( $zakra_typography_option_one['font-family'] ) && 'default' === $zakra_typography_option_one['font-family'] ) {
-
-					$zakra_typography_option_one['font-family'] = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif';
-				}
-
-				if ( isset( $zakra_typography_option_one['font-family'] ) ) {
-
-					Zakra_Generate_Fonts::add_font( $zakra_typography_option_one['font-family'], isset( $zakra_typography_option_one['font-weight'] ) ? $zakra_typography_option_one['font-weight'] : '400' );
-				}
-			}
-
-			foreach ( $zakra_typography_options_two as $zakra_typography_option_two ) {
-
-				if ( isset( $zakra_typography_option_two['font-family'] ) && 'default' === $zakra_typography_option_two['font-family'] ) {
-
-					$zakra_typography_option_two['font-family'] = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif';
-				}
-
-				if ( isset( $zakra_typography_option_two['font-family'] ) ) {
-
-					Zakra_Generate_Fonts::add_font( $zakra_typography_option_two['font-family'], isset( $zakra_typography_option_two['font-weight'] ) ? $zakra_typography_option_two['font-weight'] : '500' );
-				}
-			}
-		}
-
-		/**
 		 * Enqueue block editor styles.
 		 *
 		 * TODO: @since.
 		 */
-		function block_editor_styles() {
+		public function block_editor_styles() {
 
-			wp_enqueue_style( 'zakra-block-editor-styles', ZAKRA_PARENT_URI . '/style-editor-block.css' );
+			wp_enqueue_style( 'zakra-block-editor-styles', ZAKRA_PARENT_URI . '/style-editor-block.css', array(), ZAKRA_THEME_VERSION );
+		}
+
+		public function zakra_inline_customizer_css() {
+			wp_add_inline_style(
+				'customize-controls',
+				'
+		        #customize-control-zakra_site_identity_general_heading .customind-control .font-normal{
+		        font-weight: 600;
+		        }
+
+		        #customize-control-zakra_header_media_heading .customind-control .font-normal{
+		        font-weight: 600;
+		        }
+
+		        #customize-control-zakra_header_media_heading .customind-control {
+		        border-bottom: 1px solid #e5e5e5;
+		        }
+
+		        #customize-control-zakra_site_identity_general_heading .customind-control {
+		        border-bottom: 1px solid #e5e5e5;
+		        }
+
+		        #customize-control-blogname #_customize-input-blogname {
+		        height: 40px;
+		        }
+
+		        #customize-control-blogdescription #_customize-input-blogdescription {
+		        height: 40px;
+		        }
+
+		        [data-zakra-header-panel="active"]{
+			    #sub-accordion-section-zakra_builder{
+			    top: 65px !important;
+			        left:2px !important;
+			    visibility: visible !important;
+			    height: auto !important;
+			    transform: none !important;
+			    z-index: 99999999;
+
+			    .section-meta{
+			        display:none !important;
+			    }
+			}
+
+			#accordion-section-zakra_builder {
+			    height:155px !important;
+			    visibility: hidden;
+			}
+			    [data-control-id="zakra_builder_heading"]{
+			        max-width: 310px !important;
+			    }
+			}
+
+			.section-open[data-zakra-header-panel="active"]{
+			    #sub-accordion-section-zakra_builder{
+			        visibility: hidden !important;
+			        height: auto !important;
+			        transform: none !important;
+			    }
+			    }
+
+			    #customize-control-zakra_header_builder_style_heading {
+			    margin-top: 20px;
+			    }
+
+			    .zak-hidden{
+			       height: 0;
+				    visibility: hidden;
+				    padding: 0 !important;
+				    margin: 0;
+				}
+		    '
+			);
+		}
+
+		public function zakra_child_theme_inline_customizer_css() {
+			wp_add_inline_style(
+				'customize-controls',
+				'
+		        .zak-hidden.child-theme-notice {
+					height: auto;
+				    visibility: visible;
+				        padding-top: 16px !important;
+                         padding-bottom: 16px !important;
+				    margin: 0;
+				}
+
+		    '
+			);
 		}
 	}
 

@@ -33,11 +33,37 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 
 			// Generate dynamic CSS.
 			$parse_css = '';
+
+			$color_palette_default = array(
+				'id'     => 'preset-1',
+				'name'   => 'Preset 1',
+				'colors' => array(
+					'zakra-color-1' => '#eaf3fb',
+					'zakra-color-2' => '#bfdcf3',
+					'zakra-color-3' => '#94c4eb',
+					'zakra-color-4' => '#6aace2',
+					'zakra-color-5' => '#257bc1',
+					'zakra-color-6' => '#1d6096',
+					'zakra-color-7' => '#15446b',
+					'zakra-color-8' => '#0c2941',
+					'zakra-color-9' => '#040e16',
+				),
+			);
+
+			// Color palette.
+			$color_palette = get_theme_mod('zakra_color_palette', $color_palette_default );
+			$parse_css .= sprintf(' :root{%s}', array_reduce( array_keys($color_palette['colors'] ?? []), function($acc, $curr) use ($color_palette) {
+				$acc .= "--{$curr}: {$color_palette['colors'][$curr]};";
+
+				return $acc;
+			}, '' ));
+
+			// Breakpoint media.
 			$breakpoint_media_default = array(
 				'size' => 768,
 				'unit' => 'px',
 			);
-			$breakpoint_media       = get_theme_mod( 'zakra_mobile_menu_breakpoint', $breakpoint_media_default );
+			$breakpoint_media = get_theme_mod( 'zakra_mobile_menu_breakpoint', $breakpoint_media_default );
 
 			if ( is_string($breakpoint_media)) {
 
@@ -114,7 +140,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 				.zak-entry-summary a,
 				.zak-entry-meta a, .zak-post-content .zak-entry-footer a:hover,
 				.pagebuilder-content a, .zak-style-2 .zak-entry-meta span,
-				.zak-style-2 .zak-entry-meta a, 
+				.zak-style-2 .zak-entry-meta a,
 				.entry-title:hover a,
 				.zak-breadcrumbs .trail-items a,
 				.breadcrumbs .trail-items a,
@@ -160,11 +186,11 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 
 				'.zak-primary-nav.zak-layout-1-style-2 > ul > li.current_page_item > a::before,
 				.zak-primary-nav.zak-layout-1-style-2 > ul a:hover::before,
-				.zak-primary-nav.zak-layout-1-style-2 > ul > li.current-menu-item > a::before, 
+				.zak-primary-nav.zak-layout-1-style-2 > ul > li.current-menu-item > a::before,
 				.zak-primary-nav.zak-layout-1-style-3 > ul > li.current_page_item > a::before,
-				.zak-primary-nav.zak-layout-1-style-3 > ul > li.current-menu-item > a::before, 
+				.zak-primary-nav.zak-layout-1-style-3 > ul > li.current-menu-item > a::before,
 				.zak-primary-nav.zak-layout-1-style-4 > ul > li.current_page_item > a::before,
-				.zak-primary-nav.zak-layout-1-style-4 > ul > li.current-menu-item > a::before, 
+				.zak-primary-nav.zak-layout-1-style-4 > ul > li.current-menu-item > a::before,
 				.zak-scroll-to-top:hover, button, input[type="button"], input[type="reset"],
 				input[type="submit"], .zak-header-buttons .zak-header-button--1 .zak-button,
 				.wp-block-button .wp-block-button__link,
@@ -173,6 +199,12 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 				#comments .comments-title::before,
 				#comments .comment-reply-title::before,
 				.widget .widget-title::before,
+				.zak-footer-builder .zak-footer-main-row .widget .wp-block-heading::before,
+				.zak-footer-builder .zak-footer-top-row .widget .wp-block-heading::before,
+				.zak-footer-builder .zak-footer-bottom-row .widget .wp-block-heading::before,
+				.zak-footer-builder .zak-footer-main-row .widget .widget-title::before,
+				.zak-footer-builder .zak-footer-top-row .widget .widget-title::before,
+				.zak-footer-builder .zak-footer-bottom-row .widget .widget-title::before,
 				.woocommerce-cart .actions .coupon button.button:hover,
 				.woocommerce-cart .actions > button.button,
 				.woocommerce-cart .actions > button.button:hover' => array(
@@ -211,7 +243,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			// Border color.
 			$border_color     = get_theme_mod( 'zakra_border_color', '#E4E4E7' );
 			$border_color_css = array(
-				'.zak-header, .zak-post, .zak-secondary, .zak-footer-bar, .zak-primary-nav .sub-menu, .zak-primary-nav .sub-menu li, .posts-navigation, #comments, .post-navigation, blockquote, .wp-block-quote, .zak-posts .zak-post' => array(
+				'.zak-header, .zak-post, .zak-secondary, .zak-footer-bar, .zak-primary-nav .sub-menu, .zak-primary-nav .sub-menu li, .posts-navigation, #comments, .post-navigation, blockquote, .wp-block-quote, .zak-posts .zak-post, .zak-content-area--boxed .widget' => array(
 					'border-color' => esc_html( $border_color ),
 				),
 
@@ -744,6 +776,21 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			);
 			$parse_css            .= zakra_parse_css( '#16181a', $site_title_color, $site_title_color_css );
 
+			// Site logo width.
+			$site_logo_width_default = array(
+				'size' => '',
+				'unit' => 'px',
+			);
+
+			$site_logo_width = get_theme_mod( 'zakra_site_logo_height', $site_logo_width_default );
+
+			$parse_css .= zakra_parse_slider_css(
+				$site_logo_width_default,
+				$site_logo_width,
+				'.site-branding .custom-logo-link img',
+				'max-width'
+			);
+
 			$typography_site_title_default = array(
 				'font-family'    => 'default',
 				'font-weight'    => 'regular',
@@ -849,7 +896,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 				)
 			);
 
-			// Header top text color.
+			// Header builder top text color.
 			$header_top_text_color     = get_theme_mod( 'zakra_top_bar_color', '#FAFAFA' );
 			$header_top_text_color_css = array(
 				'.zak-header .zak-top-bar' => array(
@@ -858,7 +905,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			);
 			$parse_css                 .= zakra_parse_css( '#FAFAFA', $header_top_text_color, $header_top_text_color_css );
 
-			// Header top background.
+			// Header builder top background.
 			$header_top_background_default = array(
 				'background-color'      => '#18181B',
 				'background-image'      => '',
@@ -872,7 +919,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 
 			$parse_css .= zakra_parse_background_css( $header_top_background_default, $header_top_background, '.zak-header .zak-top-bar' );
 
-			// Header main background.
+			// Header builder main background.
 			$header_main_background_default = array(
 				'background-color'      => '',
 				'background-image'      => '',
@@ -884,12 +931,12 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			$header_main_background         = get_theme_mod( 'zakra_main_header_background_color', $header_main_background_default );
 			$parse_css                      .= zakra_parse_background_css( $header_main_background_default, $header_main_background, '.zak-header .zak-main-header' );
 
-			// Header main border bottom.
+			// Header builder main border bottom.
 			$is_header_transparent                  = zakra_is_header_transparent_enabled();
 			$header_main_border_bottom_css_selector = $is_header_transparent ? '.zak-header.zak-layout-1-transparent .zak-header-transparent-wrapper' : '.zak-header, .zak-header-sticky-wrapper .sticky-header';
 
 			/**
-			 * Header main border bottom width.
+			 * Header builder main border bottom width.
 			 */
 			$header_main_border_bottom_width_default = array(
 				'size' => 1,
@@ -905,7 +952,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 				'border-bottom-width'
 			);
 
-			// Header main border bottom color.
+			// Header builder main border bottom color.
 			$header_main_border_bottom_color = get_theme_mod( 'zakra_main_header_border_bottom_color', '#E4E4E7' );
 
 			$header_main_border_bottom_color_css = array(
@@ -917,7 +964,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			$parse_css .= zakra_parse_css( '#E4E4E7', $header_main_border_bottom_color, $header_main_border_bottom_color_css );
 
 			/**
-			 *  Header button1 dynamic CSS.
+			 *  Header builder button1 dynamic CSS.
 			 */
 			$button_on_mobile      = get_theme_mod( 'zakra_header_button_mobile' );
 			$_mobile_button1_class = ( 1 === $button_on_mobile ) ? ', .zak-header-buttons .zak-button' : '';
@@ -925,7 +972,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			$mobile_button1_hover  = ( 1 === $button_on_mobile ) ? ', .zak-header-buttons .zak-button:hover' : '';
 			$button1_combine_hover = '.zak-header-buttons .zak-header-button.zak-header-button--1 .zak-button:hover' . $mobile_button1_hover;
 
-			// Header button padding.
+			// Header builder button padding.
 			$header_button_padding_default = array(
 				'top'    => '5',
 				'right'  => '10',
@@ -943,7 +990,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 				'padding'
 			);
 
-			// Header button text color.
+			// Header builder button text color.
 			$header_button_text_color     = get_theme_mod( 'zakra_header_button_color', '#ffffff' );
 			$header_button_text_color_css = array(
 				$button1_combine_class => array(
@@ -952,7 +999,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			);
 			$parse_css                    .= zakra_parse_css( '#ffffff', $header_button_text_color, $header_button_text_color_css );
 
-			// Header button hover text color.
+			// Header builder button hover text color.
 			$header_button_hover_text_color     = get_theme_mod( 'zakra_header_button_hover_color', '#ffffff' );
 			$header_button_hover_text_color_css = array(
 				$button1_combine_hover => array(
@@ -961,7 +1008,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			);
 			$parse_css                          .= zakra_parse_css( '#ffffff', $header_button_hover_text_color, $header_button_hover_text_color_css );
 
-			// Header background color.
+			// Header builder background color.
 			$header_button_background_color     = get_theme_mod( 'zakra_header_button_background_color', '#027abb' );
 			$header_button_background_color_css = array(
 				$button1_combine_class => array(
@@ -970,7 +1017,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			);
 			$parse_css                          .= zakra_parse_css( '#027abb', $header_button_background_color, $header_button_background_color_css );
 
-			// Header button hover background color.
+			// Header builder button hover background color.
 			$header_button_background_hover_color     = get_theme_mod( 'zakra_header_button_background_hover_color', '' );
 			$header_button_background_hover_color_css = array(
 				$button1_combine_hover => array(
@@ -980,7 +1027,7 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			$parse_css                                .= zakra_parse_css( '#ffffff', $header_button_background_hover_color, $header_button_background_hover_color_css );
 
 			/**
-			 * Header button border radius.
+			 * Header builder button border radius.
 			 */
 			$header_button_border_radius_default = array(
 				'size' => 0,
@@ -1561,6 +1608,19 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			);
 			$parse_css                           .= zakra_parse_css( '', $footer_widgets_link_hover_color, $footer_widgets_link_hover_color_css );
 
+			// Footer background.
+			$outside_container_background_defaults = array(
+				'background-color'      => '',
+				'background-image'      => '',
+				'background-repeat'     => 'repeat',
+				'background-position'   => 'center center',
+				'background-size'       => 'contain',
+				'background-attachment' => 'scroll',
+			);
+			$outside_container_background          = get_theme_mod( 'zakra_outside_container_background', $outside_container_background_defaults );
+			$parse_css                          .= zakra_parse_background_css( $outside_container_background_defaults, $outside_container_background, apply_filters( 'zakra_outside_container_background', 'body' ) );
+
+
 			/**
 			 * Footer widgets border top width.
 			 */
@@ -1859,6 +1919,3188 @@ if ( ! class_exists( 'Zakra_Dynamic_CSS' ) ) {
 			$parse_wc_css .= $dynamic_css;
 
 			return apply_filters( 'zakra_theme_wc_dynamic_css', $parse_wc_css );
+		}
+
+		/**
+		 * Return dynamic CSS output.
+		 *
+		 * @param string $dynamic_css Dynamic CSS.
+		 * @param string $dynamic_css_filtered Dynamic CSS Filters.
+		 *
+		 * @return string Generated CSS.
+		 */
+		public static function render_builder_output( $dynamic_css, $dynamic_css_filtered = '' ) {
+
+			$parse_builder_css = '';
+
+			/**
+			 * Header builder top area height.
+			 */
+			$header_top_area_height_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$header_top_area_height = get_theme_mod( 'zakra_header_top_area_height', $header_top_area_height_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_top_area_height_default,
+				$header_top_area_height,
+				'.zak-header-builder .zak-top-row',
+				'height'
+			);
+
+			/**
+			 * Header builder top area container.
+			 */
+			$header_top_area_container_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$header_top_area_container = get_theme_mod( 'zakra_header_top_area_container', $header_top_area_container_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_top_area_container_default,
+				$header_top_area_container,
+				'.zak-header-builder .zak-header-top-row .zak-container',
+				'max-width'
+			);
+
+			// Header builder top area background.
+			$header_top_area_background_default = array(
+				'background-color'      => '',
+				'background-image'      => '',
+				'background-repeat'     => 'repeat',
+				'background-position'   => 'center center',
+				'background-size'       => 'contain',
+				'background-attachment' => 'scroll',
+			);
+			$header_top_area_background         = get_theme_mod( 'zakra_header_top_area_background', $header_top_area_background_default );
+			$parse_builder_css                           .= zakra_parse_background_css( $header_top_area_background_default, $header_top_area_background, '.zak-header-builder .zak-header-top-row' );
+
+			// Header builder top area padding.
+			$header_top_area_padding_default = array(
+				'top'    => '14',
+				'right'  => '0',
+				'bottom' => '14',
+				'left'   => '0',
+				'unit'   => 'px',
+			);
+
+			$header_top_area_padding = get_theme_mod( 'zakra_header_top_area_padding', $header_top_area_padding_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$header_top_area_padding_default,
+				$header_top_area_padding,
+				'.zak-header-builder .zak-header-top-row',
+				'padding'
+			);
+
+			// Header builder top area border width.
+			$header_top_area_border_width_default = array(
+				'top'    => '0',
+				'right'  => '0',
+				'bottom' => '0',
+				'left'   => '0',
+				'unit'   => 'px',
+			);
+
+			$header_top_area_border_width = get_theme_mod( 'zakra_header_top_area_border_width', $header_top_area_border_width_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$header_top_area_border_width_default,
+				$header_top_area_border_width,
+				'.zak-header-builder .zak-header-top-row',
+				'border-width'
+			);
+
+			// Header builder top area border color.
+			$header_top_area_border_color     = get_theme_mod( 'zakra_header_top_area_border_color', '#FAFAFA' );
+			$header_top_area_border_color_css = array(
+				'.zak-header-builder .zak-header-top-row' => array(
+					'border-color' => esc_html( $header_top_area_border_color ),
+				),
+			);
+			$parse_builder_css                   .= zakra_parse_css( '#FAFAFA', $header_top_area_border_color, $header_top_area_border_color_css );
+
+			// Header builder top area color.
+			$header_top_area_color     = get_theme_mod( 'zakra_header_top_area_color', '' );
+			$header_top_area_color_css = array(
+				'.zak-header-builder .zak-header-top-row' => array(
+					'color' => esc_html( $header_top_area_color ),
+				),
+			);
+			$parse_builder_css                   .= zakra_parse_css( '', $header_top_area_color, $header_top_area_color_css );
+
+			// Header builder top area height.
+			$header_main_area_height_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$header_main_area_height = get_theme_mod( 'zakra_header_main_area_height', $header_main_area_height_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_main_area_height_default,
+				$header_main_area_height,
+				'.zak-header-builder .zak-main-row',
+				'height'
+			);
+
+			// Header builder main area container.
+			$header_main_area_container_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$header_main_area_container = get_theme_mod( 'zakra_header_main_area_container', $header_main_area_container_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_main_area_container_default,
+				$header_main_area_container,
+				'.zak-header-builder .zak-header-main-row .zak-container',
+				'max-width'
+			);
+
+			// Header builder main area background.
+			$header_main_area_background_default = array(
+				'background-color'      => '#FAFAFA',
+				'background-image'      => '',
+				'background-repeat'     => 'repeat',
+				'background-position'   => 'center center',
+				'background-size'       => 'contain',
+				'background-attachment' => 'scroll',
+			);
+			$header_main_area_background         = get_theme_mod( 'zakra_header_main_area_background', $header_main_area_background_default );
+			$parse_builder_css                           .= zakra_parse_background_css( $header_main_area_background_default, $header_main_area_background, '.zak-header-builder .zak-header-main-row' );
+
+			// Header builder main area padding.
+			$header_main_area_padding_default = array(
+				'top'    => '20',
+				'right'  => '20',
+				'bottom' => '20',
+				'left'   => '20',
+				'unit'   => 'px',
+			);
+
+			$header_main_area_padding = get_theme_mod( 'zakra_header_main_area_padding', $header_main_area_padding_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$header_main_area_padding_default,
+				$header_main_area_padding,
+				'.zak-header-builder .zak-header-main-row',
+				'padding'
+			);
+
+			// Header builder main area padding.
+			$header_main_area_margin_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$header_main_area_margin = get_theme_mod( 'zakra_header_main_area_margin', $header_main_area_margin_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$header_main_area_margin_default,
+				$header_main_area_margin,
+				'.zak-header-builder .zak-header-main-row',
+				'margin'
+			);
+
+			// Header builder main area border.
+			$header_main_area_border_width_default = array(
+				'top'    => '0',
+				'right'  => '0',
+				'bottom' => '1',
+				'left'   => '0',
+				'unit'   => 'px',
+			);
+
+			$header_main_area_border_width = get_theme_mod( 'zakra_header_main_area_border_width', $header_main_area_border_width_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$header_main_area_border_width_default,
+				$header_main_area_border_width,
+				'.zak-header-builder .zak-header-main-row',
+				'border-width'
+			);
+
+			// Header builder main area border color.
+			$header_main_area_border_color     = get_theme_mod( 'zakra_header_main_area_border_color', '#E4E4E7' );
+			$header_main_area_border_color_css = array(
+				'.zak-header-builder .zak-header-main-row' => array(
+					'border-color' => esc_html( $header_main_area_border_color ),
+				),
+			);
+			$parse_builder_css                   .= zakra_parse_css( '#E4E4E7', $header_main_area_border_color, $header_main_area_border_color_css );
+
+			$header_main_area_color     = get_theme_mod( 'zakra_header_main_area_color', '' );
+			$header_main_area_color_css = array(
+				'.zak-header-builder .zak-header-main-row' => array(
+					'color' => esc_html( $header_main_area_color ),
+				),
+			);
+			$parse_builder_css                   .= zakra_parse_css( '', $header_main_area_color, $header_main_area_color_css );
+
+			// Header builder bottom area height.
+			$header_bottom_area_height_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$header_bottom_area_height = get_theme_mod( 'zakra_header_bottom_area_height', $header_bottom_area_height_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_bottom_area_height_default,
+				$header_bottom_area_height,
+				'.zak-header-builder .zak-bottom-row',
+				'height'
+			);
+
+			// Header builder bottom area container.
+			$header_bottom_area_container_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$header_bottom_area_container = get_theme_mod( 'zakra_header_bottom_area_container', $header_bottom_area_container_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_bottom_area_container_default,
+				$header_bottom_area_container,
+				'.zak-header-builder .zak-header-bottom-row .zak-container',
+				'max-width'
+			);
+
+			// Header builder bottom area background.
+			$header_bottom_area_background_default = array(
+				'background-color'      => '',
+				'background-image'      => '',
+				'background-repeat'     => 'repeat',
+				'background-position'   => 'center center',
+				'background-size'       => 'contain',
+				'background-attachment' => 'scroll',
+			);
+			$header_bottom_area_background         = get_theme_mod( 'zakra_header_bottom_area_background', $header_bottom_area_background_default );
+			$parse_builder_css                           .= zakra_parse_background_css( $header_bottom_area_background_default, $header_bottom_area_background, '.zak-header-builder .zak-header-bottom-row' );
+
+			// Header builder bottom area padding.
+			$header_bottom_area_padding_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$header_bottom_area_padding = get_theme_mod( 'zakra_header_bottom_area_padding', $header_bottom_area_padding_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$header_bottom_area_padding_default,
+				$header_bottom_area_padding,
+				'.zak-header-builder .zak-header-bottom-row',
+				'padding'
+			);
+
+			// Header builder bottom area padding.
+			$header_bottom_area_margin_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$header_bottom_area_margin = get_theme_mod( 'zakra_header_bottom_area_margin', $header_bottom_area_margin_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$header_bottom_area_margin_default,
+				$header_bottom_area_margin,
+				'.zak-header-builder .zak-header-bottom-row',
+				'margin'
+			);
+
+			// Header builder bottom border width.
+			$header_bottom_area_border_width_default = array(
+				'top'    => '0',
+				'right'  => '0',
+				'bottom' => '0',
+				'left'   => '0',
+				'unit'   => 'px',
+			);
+
+			$header_bottom_area_border_width = get_theme_mod( 'zakra_header_bottom_area_border_width', $header_bottom_area_border_width_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$header_bottom_area_border_width_default,
+				$header_bottom_area_border_width,
+				'.zak-header-builder .zak-header-bottom-row',
+				'border-width'
+			);
+
+			// Header builder bottom border color.
+			$header_bottom_area_border_color     = get_theme_mod( 'zakra_header_bottom_area_border_color', '' );
+			$header_bottom_area_border_color_css = array(
+				'.zak-header-builder .zak-header-bottom-row' => array(
+					'border-color' => esc_html( $header_bottom_area_border_color ),
+				),
+			);
+			$parse_builder_css                   .= zakra_parse_css( '', $header_bottom_area_border_color, $header_bottom_area_border_color_css );
+
+			// Header builder bottom area color.
+			$header_bottom_area_color     = get_theme_mod( 'zakra_header_bottom_area_color', '' );
+			$header_bottom_area_color_css = array(
+				'.zak-header-builder .zak-header-bottom-row' => array(
+					'color' => esc_html( $header_bottom_area_color ),
+				),
+			);
+			$parse_builder_css                   .= zakra_parse_css( '', $header_bottom_area_color, $header_bottom_area_color_css );
+
+			// Header builder menu border.
+			$header_menu_border_bottom_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$header_menu_border_bottom = get_theme_mod( 'zakra_header_menu_border_bottom_width', $header_menu_border_bottom_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_menu_border_bottom_default,
+				$header_menu_border_bottom,
+				'.zak-header-builder .zak-main-nav',
+				'border-bottom-width'
+			);
+
+			// Header builder secondary menu border.
+			$header_secondary_menu_border_bottom_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$header_secondary_menu_border_bottom = get_theme_mod( 'zakra_header_secondary_menu_border_bottom_width', $header_secondary_menu_border_bottom_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_secondary_menu_border_bottom_default,
+				$header_secondary_menu_border_bottom,
+				'.zak-header-builder .zak-secondary-nav',
+				'border-bottom-width'
+			);
+
+			// Header builder tertiary menu border bottom.
+			$header_tertiary_menu_border_bottom_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+			$header_tertiary_menu_border_bottom = get_theme_mod( 'zakra_header_tertiary_menu_border_bottom_width', $header_tertiary_menu_border_bottom_default );
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_tertiary_menu_border_bottom_default,
+				$header_tertiary_menu_border_bottom,
+				'.zak-header-builder .zak-tertiary-nav',
+				'border-bottom-width'
+			);
+
+			// Header builder primary menu border bottom.
+			$header_menu_border_bottom_color     = get_theme_mod( 'zakra_header_menu_border_bottom_color', '#e9ecef' );
+			$header_menu_border_bottom_color_css = array(
+				'.zak-header-builder .zak-main-nav' => array(
+					'border-bottom-color' => esc_html( $header_menu_border_bottom_color ),
+				),
+			);
+			$parse_builder_css                            .= zakra_parse_css( '#e9ecef', $header_menu_border_bottom_color, $header_menu_border_bottom_color_css );
+
+			// Header builder secondary menu border bottom.
+			$header_secondary_menu_border_bottom_color     = get_theme_mod( 'zakra_header_secondary_menu_border_bottom_color', '#e9ecef' );
+			$header_secondary_menu_border_bottom_color_css = array(
+				'.zak-header-builder .zak-secondary-nav' => array(
+					'border-bottom-color' => esc_html( $header_secondary_menu_border_bottom_color ),
+				),
+			);
+			$parse_builder_css                            .= zakra_parse_css( '#e9ecef', $header_secondary_menu_border_bottom_color, $header_secondary_menu_border_bottom_color_css );
+
+			// Header builder tertiary menu border bottom.
+			$header_tertiary_menu_border_bottom_color     = get_theme_mod( 'zakra_header_tertiary_menu_border_bottom_color', '#e9ecef' );
+			$header_tertiary_menu_border_bottom_color_css = array(
+				'.zak-header-builder .zak-tertiary-menu' => array(
+					'border-bottom-color' => esc_html( $header_tertiary_menu_border_bottom_color ),
+				),
+			);
+			$parse_builder_css                            .= zakra_parse_css( '#e9ecef', $header_tertiary_menu_border_bottom_color, $header_tertiary_menu_border_bottom_color_css );
+
+
+			// Header builder primary menu item color.
+			$header_menu_item_color_normal     = get_theme_mod( 'zakra_header_main_menu_color', '' );
+			$header_menu_item_color_normal_css = array(
+				'.zak-header-builder .zak-primary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu > li > a, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+					'color' => esc_html( $header_menu_item_color_normal ),
+				),
+				'.zak-header-builder .zak-primary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu li .zak-icon, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon' => array(
+					'fill' => esc_html( $header_menu_item_color_normal ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_menu_item_color_normal, $header_menu_item_color_normal_css );
+
+			// Header builder secondary menu item color.
+			$header_secondary_menu_item_color_normal     = get_theme_mod( 'zakra_header_secondary_menu_color', '' );
+			$header_secondary_menu_item_color_normal_css = array(
+				'.zak-header-builder .zak-secondary-nav > ul > li > a, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu > li > a, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+					'color' => esc_html( $header_secondary_menu_item_color_normal ),
+				),
+				'.zak-header-builder .zak-secondary-nav > ul > li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu li .zak-icon, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon' => array(
+					'fill' => esc_html( $header_secondary_menu_item_color_normal ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_secondary_menu_item_color_normal, $header_secondary_menu_item_color_normal_css );
+
+			// Header builder tertiary menu item color.
+			$header_tertiary_menu_item_color_normal     = get_theme_mod( 'zakra_header_tertiary_menu_color', '' );
+			$header_tertiary_menu_item_color_normal_css = array(
+				'.zak-header-builder .zak-tertiary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu > li > a, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+					'color' => esc_html( $header_tertiary_menu_item_color_normal ),
+				),
+				'.zak-header-builder .zak-tertiary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu li .zak-icon, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon' => array(
+					'fill' => esc_html( $header_tertiary_menu_item_color_normal ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_tertiary_menu_item_color_normal, $header_tertiary_menu_item_color_normal_css );
+
+			// Header builder quaternary menu item color.
+			$header_quaternary_menu_item_color_normal     = get_theme_mod( 'zakra_header_quaternary_menu_color', '' );
+			$header_quaternary_menu_item_color_normal_css = array(
+				'.zak-header-builder .zak-quaternary-nav ul li > a, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu > li > a, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+					'color' => esc_html( $header_quaternary_menu_item_color_normal ),
+				),
+				'.zak-header-builder .zak-quaternary-nav ul li > a .zak-icon, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu li .zak-icon, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li > .zak-icon' => array(
+					'fill' => esc_html( $header_quaternary_menu_item_color_normal ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_quaternary_menu_item_color_normal, $header_quaternary_menu_item_color_normal_css );
+
+			// Header builder primary menu item hover color.
+			$header_menu_item_color_hover     = get_theme_mod( 'zakra_header_main_menu_hover_color', '' );
+			$header_menu_item_color_hover_css = array(
+				'.zak-header-builder .zak-primary-nav ul li:hover > a, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-primary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu li:hover > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+					'color' => esc_html( $header_menu_item_color_hover ),
+				),
+				'.zak-header-builder .zak-primary-nav ul li:hover > a .zak-icon, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu li:hover .zak-icon, .zak-header-builder .zak-primary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon' => array(
+					'fill' => esc_html( $header_menu_item_color_hover ),
+				),
+			);
+			$parse_builder_css                         .= zakra_parse_css( '', $header_menu_item_color_hover, $header_menu_item_color_hover_css );
+
+			// Header builder secondary menu item hover color.
+			$header_secondary_menu_item_color_hover     = get_theme_mod( 'zakra_header_secondary_menu_hover_color', '' );
+			$header_secondary_menu_item_color_hover_css = array(
+				'.zak-header-builder .zak-secondary-nav ul li:hover > a, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-secondary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu li:hover > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+					'color' => esc_html( $header_secondary_menu_item_color_hover ),
+				),
+				'.zak-header-builder .zak-secondary-nav ul li:hover > a .zak-icon, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu li:hover .zak-icon, .zak-header-builder .zak-secondary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon' => array(
+					'fill' => esc_html( $header_secondary_menu_item_color_hover ),
+				),
+			);
+			$parse_builder_css                         .= zakra_parse_css( '', $header_secondary_menu_item_color_hover, $header_secondary_menu_item_color_hover_css );
+
+			// Header builder tertiary menu item hover color.
+			$header_tertiary_menu_item_color_hover     = get_theme_mod( 'zakra_header_tertiary_menu_hover_color', '' );
+			$header_tertiary_menu_item_color_hover_css = array(
+				'.zak-header-builder .zak-tertiary-nav ul li:hover > a, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-tertiary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu li:hover > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+					'color' => esc_html( $header_tertiary_menu_item_color_hover ),
+				),
+				'.zak-header-builder .zak-tertiary-nav ul li:hover > a .zak-icon, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu li:hover .zak-icon, .zak-header-builder .zak-tertiary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon' => array(
+					'fill' => esc_html( $header_tertiary_menu_item_color_hover ),
+				),
+			);
+			$parse_builder_css                         .= zakra_parse_css( '', $header_tertiary_menu_item_color_hover, $header_tertiary_menu_item_color_hover_css );
+
+			// Header builder quaternary menu item hover color.
+			$header_quaternary_menu_item_color_hover     = get_theme_mod( 'zakra_header_quaternary_menu_hover_color', '' );
+			$header_quaternary_menu_item_color_hover_css = array(
+				'.zak-header-builder .zak-quaternary-nav ul li:hover > a, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li:hover > a, .zak-header-builder .zak-quaternary-nav ul li:hover > a, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu li:hover > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+					'color' => esc_html( $header_quaternary_menu_item_color_hover ),
+				),
+				'.zak-header-builder .zak-quaternary-nav ul li:hover > a .zak-icon, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu li:hover .zak-icon, .zak-header-builder .zak-quaternary-nav.zak-menu-item--layout-2 > ul > li:hover > .zak-icon' => array(
+					'fill' => esc_html( $header_quaternary_menu_item_color_hover ),
+				),
+			);
+			$parse_builder_css                         .= zakra_parse_css( '', $header_quaternary_menu_item_color_hover, $header_quaternary_menu_item_color_hover_css );
+
+			// Header builder primary menu item active color.
+			$header_menu_item_color_active     = get_theme_mod( 'zakra_header_main_menu_active_color', '' );
+			$header_menu_item_color_active_css = array(
+				'.zak-header-builder .zak-primary-nav ul li:active > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-primary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+					'color' => esc_html( $header_menu_item_color_active ),
+				),
+				'.zak-header-builder .zak-primary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-primary-nav ul.zak-primary-menu li.current-menu-item .zak-icon' => array(
+					'fill' => esc_html( $header_menu_item_color_active ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_menu_item_color_active, $header_menu_item_color_active_css );
+
+			// Header builder secondary menu item active color.
+			$header_secondary_menu_item_color_active     = get_theme_mod( 'zakra_header_secondary_menu_active_color', '' );
+			$header_secondary_menu_item_color_active_css = array(
+				'.zak-header-builder .zak-secondary-nav ul li:active > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-secondary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+					'color' => esc_html( $header_secondary_menu_item_color_active ),
+				),
+				'.zak-header-builder .zak-secondary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-secondary-nav ul.zak-secondary-menu li.current-menu-item .zak-icon' => array(
+					'fill' => esc_html( $header_secondary_menu_item_color_active ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_secondary_menu_item_color_active, $header_secondary_menu_item_color_active_css );
+
+			// Header builder tertiary menu item active color.
+			$header_tertiary_menu_item_color_active     = get_theme_mod( 'zakra_header_tertiary_menu_active_color', '' );
+			$header_tertiary_menu_item_color_active_css = array(
+				'.zak-header-builder .zak-tertiary-nav ul li:active > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-tertiary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+					'color' => esc_html( $header_tertiary_menu_item_color_active ),
+				),
+				'.zak-header-builder .zak-tertiary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-tertiary-nav ul.zak-tertiary-menu li.current-menu-item .zak-icon' => array(
+					'fill' => esc_html( $header_tertiary_menu_item_color_active ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_tertiary_menu_item_color_active, $header_tertiary_menu_item_color_active_css );
+
+			// Header builder quaternary menu item active color.
+			$header_quaternary_menu_item_color_active     = get_theme_mod( 'zakra_header_quaternary_menu_active_color', '' );
+			$header_quaternary_menu_item_color_active_css = array(
+				'.zak-header-builder .zak-quaternary-nav ul li:active > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current_page_item > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current_page_ancestor > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current-menu-item > a, .zak-header-builder .zak-quaternary-nav ul > li:not(.zak-header-button).current-menu-ancestor > a'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          => array(
+					'color' => esc_html( $header_quaternary_menu_item_color_active ),
+				),
+				'.zak-header-builder .zak-quaternary-nav ul li.current-menu-item > a .zak-icon, .zak-header-builder .zak-main-nav.zak-quaternary-nav ul.zak-quaternary-menu li.current-menu-item .zak-icon' => array(
+					'fill' => esc_html( $header_quaternary_menu_item_color_active ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_quaternary_menu_item_color_active, $header_quaternary_menu_item_color_active_css );
+
+			// Header builder primary menu typography.
+			$header_menu_typography_default = array(
+				'font-family'    => 'Default',
+				'font-weight'    => 'regular',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '1.6',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_menu_typography = get_theme_mod( 'zakra_header_main_menu_typography', $header_menu_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_menu_typography_default,
+				$header_menu_typography,
+				'.zak-header-builder .zak-primary-nav ul li a',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Header builder secondary menu typography.
+			$header_secondary_menu_typography_default = array(
+				'font-family'    => 'Default',
+				'font-weight'    => 'regular',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '1.6',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_secondary_menu_typography = get_theme_mod( 'zakra_header_secondary_menu_typography', $header_secondary_menu_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_secondary_menu_typography_default,
+				$header_secondary_menu_typography,
+				'.zak-header-builder .zak-secondary-nav ul li a',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Header builder tertiary menu typography.
+			$header_tertiary_menu_typography_default = array(
+				'font-family'    => 'Default',
+				'font-weight'    => 'regular',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '1.6',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_tertiary_menu_typography = get_theme_mod( 'zakra_header_tertiary_menu_typography', $header_tertiary_menu_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_tertiary_menu_typography_default,
+				$header_tertiary_menu_typography,
+				'.zak-header-builder .zak-tertiary-nav ul li a',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Header builder quaternary menu typography.
+			$header_quaternary_menu_typography_default = array(
+				'font-family'    => 'Default',
+				'font-weight'    => 'regular',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '1.6',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_quaternary_menu_typography = get_theme_mod( 'zakra_header_quaternary_menu_typography', $header_quaternary_menu_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_quaternary_menu_typography_default,
+				$header_quaternary_menu_typography,
+				'.zak-header-builder .zak-quaternary-nav ul li a',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Header builder primary sub menu typography.
+			$header_sub_menu_typography_default = array(
+				'font-family'    => 'Default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '1.6',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_sub_menu_typography = get_theme_mod( 'zakra_header_sub_menu_typography', $header_sub_menu_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_sub_menu_typography_default,
+				$header_sub_menu_typography,
+				'.zak-header-builder .zak-primary-nav ul li ul li a',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Header builder secondary sub menu typography.
+			$header_secondary_sub_menu_typography_default = array(
+				'font-family'    => 'Default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '1.6',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_secondary_sub_menu_typography = get_theme_mod( 'zakra_header_secondary_sub_menu_typography', $header_secondary_sub_menu_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_secondary_sub_menu_typography_default,
+				$header_secondary_sub_menu_typography,
+				'.zak-header-builder .zak-primary-nav ul li ul li a',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Header builder search icon color.
+			$header_search_icon_color = get_theme_mod( 'zakra_header_search_icon_color', '' );
+			$header_search_icon_color_css = array(
+				'.zak-header-builder .zak-header-search .zak-icon' => array(
+					'fill' => esc_html( $header_search_icon_color ),
+				),
+			);
+			$parse_builder_css                            .= zakra_parse_css( '', $header_search_icon_color, $header_search_icon_color_css );
+
+			// Header builder search background.
+			$header_search_background_default = array(
+				'background-color'      => '',
+				'background-image'      => '',
+				'background-repeat'     => 'repeat',
+				'background-position'   => 'center center',
+				'background-size'       => 'contain',
+				'background-attachment' => 'scroll',
+			);
+			$header_search_background         = get_theme_mod( 'zakra_header_search_background', $header_search_background_default );
+			$parse_builder_css                           .= zakra_parse_background_css( $header_search_background_default, $header_search_background, '.zak-header-builder .zak-main-header.zak-header-search--opened' );
+
+			// Header builder search text color.
+			$header_search_text_color = get_theme_mod( 'zakra_header_search_text_color', '' );
+			$header_search_text_color_css = array(
+				'.zak-header-builder .zak-header-search .zak-search-field, .zak-header-builder .zak-header-search .zak-search-field:focus' => array(
+					'color' => esc_html( $header_search_text_color ),
+				),
+				'.zak-header-builder .zak-header-search .zak-icon--close::after , .zak-header-builder .zak-header-search .zak-icon--close::before' => array(
+					'background' => esc_html( $header_search_text_color ),
+				),
+				'.zak-header-builder .zak-header-search .zak-icon--search .zak-icon' => array(
+					'fill' => esc_html( $header_search_text_color ),
+				),
+			);
+			$parse_builder_css                            .= zakra_parse_css( '', $header_search_text_color, $header_search_text_color_css );
+
+			// Header builder button text color.
+			$header_button_text_color     = get_theme_mod( 'zakra_header_button_color', '#ffffff' );
+			$header_button_text_color_css = array(
+				'.zak-header-builder .zak-header-buttons .zak-header-button .zak-button' => array(
+					'color' => esc_html( $header_button_text_color ),
+				),
+			);
+			$parse_builder_css                    .= zakra_parse_css( '#ffffff', $header_button_text_color, $header_button_text_color_css );
+
+			// Header builder button hover text color.
+			$header_button_hover_text_color     = get_theme_mod( 'zakra_header_button_hover_color', '#ffffff' );
+			$header_button_hover_text_color_css = array(
+				'.zak-header-builder .zak-header-buttons .zak-header-button .zak-button:hover' => array(
+					'color' => esc_html( $header_button_hover_text_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '#ffffff', $header_button_hover_text_color, $header_button_hover_text_color_css );
+
+			// Header builder button background color.
+			$header_button_background_color     = get_theme_mod( 'zakra_header_button_background_color', '#027abb' );
+			$header_button_background_color_css = array(
+				'.zak-header-builder .zak-header-buttons .zak-header-button .zak-button' => array(
+					'background-color' => esc_html( $header_button_background_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '#027abb', $header_button_background_color, $header_button_background_color_css );
+
+			// Header builder button hover background color.
+			$header_button_background_hover_color     = get_theme_mod( 'zakra_header_button_background_hover_color', '' );
+			$header_button_background_hover_color_css = array(
+				'.zak-header-builder .zak-header-buttons .zak-header-button .zak-button:hover' => array(
+					'background-color' => esc_html( $header_button_background_hover_color ),
+				),
+			);
+			$parse_builder_css                                .= zakra_parse_css( '#ffffff', $header_button_background_hover_color, $header_button_background_hover_color_css );
+
+			// Header builder button padding.
+			$header_button_padding_default = array(
+				'top'    => '5',
+				'right'  => '10',
+				'bottom' => '5',
+				'left'   => '10',
+				'unit'   => 'px',
+			);
+
+			$header_button_padding = get_theme_mod( 'zakra_header_button_padding', $header_button_padding_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$header_button_padding_default,
+				$header_button_padding,
+				'.zak-header-builder .zak-header-buttons .zak-header-button .zak-button',
+				'padding'
+			);
+
+			// Header builder button border width.
+			$header_button_border_width_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$header_button_border_width = get_theme_mod( 'zakra_header_button_border_width', $header_button_border_width_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$header_button_border_width_default,
+				$header_button_border_width,
+				'.zak-header-builder .zak-header-buttons .zak-header-button .zak-button',
+				'border-width'
+			);
+
+			// Header builder button border color.
+			$header_button_border_color     = get_theme_mod( 'zakra_header_button_border_color', '' );
+			$header_button_border_color_css = array(
+				'.zak-header-builder .zak-header-buttons .zak-header-button .zak-button' => array(
+					'border-color' => esc_html( $header_button_border_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_button_border_color, $header_button_border_color_css );
+
+			// Header builder button radius.
+			$header_button_border_radius_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$header_button_border_radius = get_theme_mod( 'zakra_header_button_border_radius', $header_button_border_radius_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_button_border_radius_default,
+				$header_button_border_radius,
+				'.zak-header-builder .zak-header-buttons .zak-header-button .zak-button',
+				'border-radius'
+			);
+
+			// Header builder html 1 color.
+			$header_html_1_text_color     = get_theme_mod( 'zakra_header_html_1_text_color', '' );
+			$header_html_1_text_color_css = array(
+				'.zak-header-builder .zak-html-1 *' => array(
+					'color' => esc_html( $header_html_1_text_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_html_1_text_color, $header_html_1_text_color_css );
+
+			// Header builder html 1 link color.
+			$header_html_1_link_color     = get_theme_mod( 'zakra_header_html_1_link_color', '' );
+			$header_html_1_link_color_css = array(
+				'.zak-header-builder .zak-html-1 a' => array(
+					'color' => esc_html( $header_html_1_link_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_html_1_link_color, $header_html_1_link_color_css );
+
+			// Header builder html 1 link hover color.
+			$header_html_1_link_hover_color     = get_theme_mod( 'zakra_header_html_1_link_hover_color', '' );
+			$header_html_1_link_hover_color_css = array(
+				'.zak-header-builder .zak-html-1 a:hover' => array(
+					'color' => esc_html( $header_html_1_link_hover_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_html_1_link_hover_color, $header_html_1_link_hover_color_css );
+
+			// Header builder html 1 font size.
+			$header_html_1_font_size_default = array(
+				'size' => '',
+				'unit' => 'px',
+			);
+
+			$header_html_1_font_size = get_theme_mod( 'zakra_header_html_1_font_size', $header_html_1_font_size_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_html_1_font_size_default,
+				$header_html_1_font_size,
+				'.zak-header-builder .zak-html-1 *',
+				'font-size'
+			);
+
+			// Header builder html 1 margin.
+			$header_html_1_margin_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$header_html_1_margin = get_theme_mod( 'zakra_header_html_1_margin', $header_html_1_margin_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$header_html_1_margin_default,
+				$header_html_1_margin,
+				'.zak-header-builder .zak-html-1',
+				'margin'
+			);
+
+			// Header builder html 2 color.
+			$header_html_2_text_color     = get_theme_mod( 'zakra_header_html_2_text_color', '' );
+			$header_html_2_text_color_css = array(
+				'.zak-header-builder .zak-html-2 *' => array(
+					'color' => esc_html( $header_html_2_text_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_html_2_text_color, $header_html_2_text_color_css );
+
+			// Header builder html 2 link color.
+			$header_html_2_link_color     = get_theme_mod( 'zakra_header_html_2_link_color', '' );
+			$header_html_2_link_color_css = array(
+				'.zak-header-builder .zak-html-2 a' => array(
+					'color' => esc_html( $header_html_2_link_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_html_2_link_color, $header_html_2_link_color_css );
+
+			// Header builder html 2 link hover color.
+			$header_html_2_link_hover_color     = get_theme_mod( 'zakra_header_html_2_link_hover_color', '' );
+			$header_html_2_link_hover_color_css = array(
+				'.zak-header-builder .zak-html-2 a:hover' => array(
+					'color' => esc_html( $header_html_2_link_hover_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $header_html_2_link_hover_color, $header_html_2_link_hover_color_css );
+
+			// Header builder html 2 font size.
+			$header_html_2_font_size_default = array(
+				'size' => '',
+				'unit' => 'px',
+			);
+
+			$header_html_2_font_size = get_theme_mod( 'zakra_header_html_2_font_size', $header_html_2_font_size_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_html_2_font_size_default,
+				$header_html_2_font_size,
+				'.zak-header-builder .zak-html-2 p',
+				'font-size'
+			);
+
+			// Header builder html 2 margin.
+			$header_html_2_margin_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$header_html_2_margin = get_theme_mod( 'zakra_header_html_2_margin', $header_html_2_margin_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$header_html_2_margin_default,
+				$header_html_2_margin,
+				'.zak-header-builder .zak-html-2',
+				'margin'
+			);
+
+			// Footer builder top area container.
+			$footer_top_area_container_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$footer_top_area_container = get_theme_mod( 'zakra_footer_top_area_container', $footer_top_area_container_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$footer_top_area_container_default,
+				$footer_top_area_container,
+				'.zak-footer-builder .zak-footer-top-row .zak-container',
+				'max-width'
+			);
+
+			// Footer builder top area height.
+			$footer_top_area_height_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$footer_top_area_height = get_theme_mod( 'zakra_footer_top_area_height', $footer_top_area_height_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$footer_top_area_height_default,
+				$footer_top_area_height,
+				'.zak-footer-builder .zak-top-row',
+				'height'
+			);
+
+			// Footer top area background.
+			$footer_top_area_background_default = array(
+				'background-color'      => '',
+				'background-image'      => '',
+				'background-repeat'     => 'repeat',
+				'background-position'   => 'center center',
+				'background-size'       => 'contain',
+				'background-attachment' => 'scroll',
+			);
+			$footer_top_area_background         = get_theme_mod( 'zakra_footer_top_area_background', $footer_top_area_background_default );
+			$parse_builder_css                           .= zakra_parse_background_css( $footer_top_area_background_default, $footer_top_area_background, '.zak-footer-builder .zak-footer-top-row' );
+
+			// Footer top area padding.
+			$footer_top_area_padding_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$footer_top_area_padding = get_theme_mod( 'zakra_footer_top_area_padding', $footer_top_area_padding_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$footer_top_area_padding_default,
+				$footer_top_area_padding,
+				'.zak-footer-builder .zak-footer-top-row',
+				'padding'
+			);
+
+			// Footer top area margin.
+			$footer_top_area_margin_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$footer_top_area_margin = get_theme_mod( 'zakra_footer_top_area_margin', $footer_top_area_margin_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$footer_top_area_margin_default,
+				$footer_top_area_margin,
+				'.zak-footer-builder .zak-footer-top-row',
+				'margin'
+			);
+
+			// Footer top area border width.
+			$footer_top_area_border_width_default = array(
+				'top'    => '0',
+				'right'  => '0',
+				'bottom' => '0',
+				'left'   => '0',
+				'unit'   => 'px',
+			);
+
+			$footer_top_area_border_width = get_theme_mod( 'zakra_footer_top_area_border_width', $footer_top_area_border_width_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$footer_top_area_border_width_default,
+				$footer_top_area_border_width,
+				'.zak-footer-builder .zak-footer-top-row',
+				'border-width'
+			);
+
+			// Footer builder top area border color.
+			$footer_top_area_border_color     = get_theme_mod( 'zakra_footer_top_area_border_color', '' );
+			$footer_top_area_border_color_css = array(
+				'.zak-footer-builder .zak-footer-top-row' => array(
+					'border-color' => esc_html( $footer_top_area_border_color ),
+				),
+			);
+			$parse_builder_css                   .= zakra_parse_css( '', $footer_top_area_border_color, $footer_top_area_border_color_css );
+
+			// Footer builder main area height.
+			$footer_main_area_height_default = array(
+
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$footer_main_area_height = get_theme_mod( 'zakra_footer_main_area_height', $footer_main_area_height_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$footer_main_area_height_default,
+				$footer_main_area_height,
+				'.zak-footer-builder .zak-main-row',
+				'height'
+			);
+
+			// Footer builder main area container.
+			$footer_main_area_container_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$footer_main_area_container = get_theme_mod( 'zakra_footer_main_area_container', $footer_main_area_container_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$footer_main_area_container_default,
+				$footer_main_area_container,
+				'.zak-footer-builder .zak-footer-main-row .zak-container',
+				'max-width'
+			);
+
+			// Footer builder main area background.
+			$footer_main_area_background_default = array(
+				'background-color'      => '',
+				'background-image'      => '',
+				'background-repeat'     => 'repeat',
+				'background-position'   => 'center center',
+				'background-size'       => 'contain',
+				'background-attachment' => 'scroll',
+			);
+			$footer_main_area_background         = get_theme_mod( 'zakra_footer_main_area_background', $footer_main_area_background_default );
+			$parse_builder_css                           .= zakra_parse_background_css( $footer_main_area_background_default, $footer_main_area_background, '.zak-footer-builder .zak-footer-main-row' );
+
+			// Footer builder main area padding.
+			$footer_main_area_padding_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$footer_main_area_padding = get_theme_mod( 'zakra_footer_main_area_padding', $footer_main_area_padding_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$footer_main_area_padding_default,
+				$footer_main_area_padding,
+				'.zak-footer-builder .zak-footer-main-row',
+				'padding'
+			);
+
+			// Footer builder main area margin.
+			$footer_main_area_margin_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$footer_main_area_margin = get_theme_mod( 'zakra_footer_main_area_margin', $footer_main_area_margin_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$footer_main_area_margin_default,
+				$footer_main_area_margin,
+				'.zak-footer-builder .zak-footer-main-row',
+				'margin'
+			);
+
+			// Footer builder main area border width.
+			$footer_main_area_border_width_default = array(
+				'top'    => '0',
+				'right'  => '0',
+				'bottom' => '0',
+				'left'   => '0',
+				'unit'   => 'px',
+			);
+
+			$footer_main_area_border_width = get_theme_mod( 'zakra_footer_main_area_border_width', $footer_main_area_border_width_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$footer_main_area_border_width_default,
+				$footer_main_area_border_width,
+				'.zak-footer-builder .zak-footer-main-row',
+				'border-width'
+			);
+
+			// Footer builder main area border color.
+			$footer_main_area_border_color     = get_theme_mod( 'zakra_footer_main_area_border_color', '' );
+			$footer_main_area_border_color_css = array(
+				'.zak-footer-builder .zak-footer-main-row' => array(
+					'border-color' => esc_html( $footer_main_area_border_color ),
+				),
+			);
+			$parse_builder_css                   .= zakra_parse_css( '', $footer_main_area_border_color, $footer_main_area_border_color_css );
+
+			// Footer builder bottom area height.
+			$footer_bottom_area_height_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$footer_bottom_area_height = get_theme_mod( 'zakra_footer_bottom_area_height', $footer_bottom_area_height_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$footer_bottom_area_height_default,
+				$footer_bottom_area_height,
+				'.zak-footer-builder .zak-bottom-row',
+				'height'
+			);
+
+			// Footer builder bottom area container.
+			$footer_bottom_area_container_default = array(
+				'size' => 0,
+				'unit' => 'px',
+			);
+
+			$footer_bottom_area_container = get_theme_mod( 'zakra_footer_bottom_area_container', $footer_bottom_area_container_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$footer_bottom_area_container_default,
+				$footer_bottom_area_container,
+				'.zak-footer-builder .zak-footer-bottom-row .zak-container',
+				'max-width'
+			);
+
+			// Footer builder bottom area background.
+			$footer_bottom_area_background_default = array(
+				'background-color'      => '',
+				'background-image'      => '',
+				'background-repeat'     => 'repeat',
+				'background-position'   => 'center center',
+				'background-size'       => 'contain',
+				'background-attachment' => 'scroll',
+			);
+			$footer_bottom_area_background         = get_theme_mod( 'zakra_footer_bottom_area_background', $footer_bottom_area_background_default );
+			$parse_builder_css                           .= zakra_parse_background_css( $footer_bottom_area_background_default, $footer_bottom_area_background, '.zak-footer-builder .zak-footer-bottom-row' );
+
+			// Footer builder bottom area padding.
+			$footer_bottom_area_padding_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$footer_bottom_area_padding = get_theme_mod( 'zakra_footer_bottom_area_padding', $footer_bottom_area_padding_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$footer_bottom_area_padding_default,
+				$footer_bottom_area_padding,
+				'.zak-footer-builder .zak-footer-bottom-row',
+				'padding'
+			);
+
+			// Footer builder bottom area margin.
+			$footer_bottom_area_margin_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$footer_bottom_area_margin = get_theme_mod( 'zakra_footer_bottom_area_margin', $footer_bottom_area_margin_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$footer_bottom_area_margin_default,
+				$footer_bottom_area_margin,
+				'.zak-footer-builder .zak-footer-bottom-row',
+				'margin'
+			);
+
+			// Footer builder bottom area border width.
+			$footer_bottom_area_border_width_default = array(
+				'top'    => '0',
+				'right'  => '0',
+				'bottom' => '0',
+				'left'   => '0',
+				'unit'   => 'px',
+			);
+
+			$footer_bottom_area_border_width = get_theme_mod( 'zakra_footer_bottom_area_border_width', $footer_bottom_area_border_width_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$footer_bottom_area_border_width_default,
+				$footer_bottom_area_border_width,
+				'.zak-footer-builder .zak-footer-bottom-row',
+				'border-width'
+			);
+
+			$footer_bottom_area_border_color     = get_theme_mod( 'zakra_footer_bottom_area_border_color', '' );
+			$footer_bottom_area_border_color_css = array(
+				'.zak-footer-builder .zak-footer-bottom-row' => array(
+					'border-color' => esc_html( $footer_bottom_area_border_color ),
+				),
+			);
+			$parse_builder_css                   .= zakra_parse_css( '', $footer_bottom_area_border_color, $footer_bottom_area_border_color_css );
+
+			// Header builder mobile menu item text color.
+			$header_mobile_menu_item_text_color     = get_theme_mod( 'zakra_header_mobile_menu_item_color', '' );
+			$header_mobile_menu_item_text_color_css = array(
+				'.zak-mobile-nav a' => array(
+					'color' => esc_html( $header_mobile_menu_item_text_color ),
+				),
+				'.zak-mobile-nav li.page_item_has_children .zak-submenu-toggle .zak-icon, .zak-mobile-nav li.menu-item-has-children .zak-submenu-toggle .zak-icon' => array(
+					'fill' => esc_html( $header_mobile_menu_item_text_color ),
+				),
+			);
+			$parse_builder_css                      .= zakra_parse_css( '', $header_mobile_menu_item_text_color, $header_mobile_menu_item_text_color_css );
+
+			// Header builder mobile menu item text hover color.
+			$header_mobile_menu_item_hover_color     = get_theme_mod( 'zakra_header_mobile_menu_item_hover_color', '' );
+			$header_mobile_menu_item_hover_color_css = array(
+				'.zak-mobile-nav li:hover > a' => array(
+					'color' => esc_html( $header_mobile_menu_item_hover_color ),
+				),
+			);
+			$parse_builder_css                       .= zakra_parse_css( '', $header_mobile_menu_item_hover_color, $header_mobile_menu_item_hover_color_css );
+
+			// Header builder mobile menu item text active color.
+			$header_mobile_menu_item_active_color     = get_theme_mod( 'zakra_header_mobile_menu_item_active_color', '' );
+			$header_mobile_menu_item_active_color_css = array(
+				'.zak-mobile-nav .current_page_item a, .zak-mobile-nav > .menu ul li.current-menu-item > a' => array(
+					'color' => esc_html( $header_mobile_menu_item_active_color ),
+				),
+			);
+			$parse_builder_css                        .= zakra_parse_css( '', $header_mobile_menu_item_active_color, $header_mobile_menu_item_active_color_css );
+
+			// Header builder mobile menu background color.
+			$header_mobile_menu_background_color     = get_theme_mod( 'zakra_header_mobile_menu_background', '' );
+			$header_mobile_menu_background_color_css = array(
+				'.zak-mobile-nav, .zak-search-form .zak-search-field' => array(
+					'background-color' => esc_html( $header_mobile_menu_background_color ),
+				),
+			);
+			$parse_builder_css                       .= zakra_parse_css( '', $header_mobile_menu_background_color, $header_mobile_menu_background_color_css );
+
+			// Header builder mobile menu item border bottom.
+			$header_mobile_menu_item_border_bottom_default = array(
+				'size' => 1,
+				'unit' => 'px',
+			);
+
+			$header_mobile_menu_item_border_bottom = get_theme_mod( 'zakra_header_mobile_menu_item_border_bottom', $header_mobile_menu_item_border_bottom_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_mobile_menu_item_border_bottom_default,
+				$header_mobile_menu_item_border_bottom,
+				'.zak-mobile-nav li:not(:last-child)',
+				'border-bottom-width'
+			);
+
+			// Header builer mobile menu item border bottom style.
+			$header_mobile_menu_item_border_bottom_style     = get_theme_mod( 'zakra_header_mobile_menu_item_border_bottom_style', 'solid' );
+			$header_mobile_menu_item_border_bottom_style_css = array(
+				'.zak-mobile-nav li' => array(
+					'border-bottom-style' => esc_html( $header_mobile_menu_item_border_bottom_style ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( 'solid', $header_mobile_menu_item_border_bottom_style, $header_mobile_menu_item_border_bottom_style_css );
+
+			// Header builder mobile menu item border bottom color.
+			$header_mobile_menu_item_border_bottom_color     = get_theme_mod( 'zakra_header_mobile_menu_item_border_bottom_color', '' );
+			$header_mobile_menu_item_border_bottom_color_css = array(
+				'.zak-mobile-nav li' => array(
+					'border-color' => esc_html( $header_mobile_menu_item_border_bottom_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $header_mobile_menu_item_border_bottom_color, $header_mobile_menu_item_border_bottom_color_css );
+
+			// Header builder mobile menu typography.
+			$header_mobile_menu_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '1.6',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '1.6',
+						'unit' => 'rem',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_mobile_menu_typography = get_theme_mod( 'zakra_header_mobile_menu_typography', $header_mobile_menu_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_mobile_menu_typography_default,
+				$header_mobile_menu_typography,
+				'.zak-mobile-menu a',
+				array(
+					'mobile' => 600,
+					'tablet' => 768,
+				)
+			);
+
+			// Header builder widget title color.
+			$header_widget_title_color     = get_theme_mod( 'zakra_widget_1_title_color', '' );
+			$header_widget_title_color_css = array(
+				'.zak-header-builder .widget.widget-top-bar-col-1-sidebar .widget-title' => array(
+					'color' => esc_html( $header_widget_title_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $header_widget_title_color, $header_widget_title_color_css );
+
+			// Header builder widget content color.
+			$header_widget_content_color     = get_theme_mod( 'zakra_widget_1_content_color', '' );
+			$header_widget_content_color_css = array(
+				'.zak-header-builder .widget.widget-top-bar-col-1-sidebar' => array(
+					'color' => esc_html( $header_widget_content_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $header_widget_content_color, $header_widget_content_color_css );
+
+			// Header builder widget link color.
+			$header_widget_link_color     = get_theme_mod( 'zakra_widget_1_link_color', '' );
+			$header_widget_link_color_css = array(
+				'.zak-header-builder .widget.widget-top-bar-col-1-sidebar a' => array(
+					'color' => esc_html( $header_widget_link_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $header_widget_link_color, $header_widget_link_color_css );
+
+			// Header builder widget title typography.
+			$header_widget_1_title_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '2',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_widget_1_title_typography = get_theme_mod( 'zakra_widget_1_title_typography', $header_widget_1_title_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_widget_1_title_typography_default,
+				$header_widget_1_title_typography,
+				'.zak-header-builder .widget.widget-top-bar-col-1-sidebar .widget-title',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Header builder widget content typography.
+			$header_widget_1_content_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '2',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_widget_1_content_typography = get_theme_mod( 'zakra_widget_1_content_typography', $header_widget_1_content_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_widget_1_content_typography_default,
+				$header_widget_1_content_typography,
+				'.zak-header-builder .widget.widget-top-bar-col-1-sidebar',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Header builder widget 2 title color.
+			$header_widget_2_title_color     = get_theme_mod( 'zakra_widget_2_title_color', '' );
+			$header_widget_2_title_color_css = array(
+				'.zak-header-builder .widget.widget-top-bar-col-2-sidebar .widget-title' => array(
+					'color' => esc_html( $header_widget_2_title_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $header_widget_2_title_color, $header_widget_2_title_color_css );
+
+			// Header builder widget 2 content color.
+			$header_widget_2_content_color     = get_theme_mod( 'zakra_widget_2_content_color', '' );
+			$header_widget_2_content_color_css = array(
+				'.zak-header-builder .widget.widget-top-bar-col-2-sidebar' => array(
+					'color' => esc_html( $header_widget_2_content_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $header_widget_2_content_color, $header_widget_2_content_color_css );
+
+			// Header builder widget 2 link color.
+			$header_widget_2_link_color     = get_theme_mod( 'zakra_widget_2_link_color', '' );
+			$header_widget_2_link_color_css = array(
+				'.zak-header-builder .widget.widget-top-bar-col-2-sidebar a' => array(
+					'color' => esc_html( $header_widget_2_link_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $header_widget_2_link_color, $header_widget_2_link_color_css );
+
+			// Header builder widget title typography.
+			$header_widget_2_title_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '2',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_widget_2_title_typography = get_theme_mod( 'zakra_widget_2_title_typography', $header_widget_2_title_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_widget_2_title_typography_default,
+				$header_widget_2_title_typography,
+				'.zak-header-builder .widget.widget-top-bar-col-2-sidebar .widget-title',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Header builder widget content typography.
+			$header_widget_2_content_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '2',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_widget_2_content_typography = get_theme_mod( 'zakra_widget_2_content_typography', $header_widget_2_content_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_widget_2_content_typography_default,
+				$header_widget_2_content_typography,
+				'.zak-header-builder .widget.widget-top-bar-col-2-sidebar',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder html 1 color.
+			$footer_html_1_text_color     = get_theme_mod( 'zakra_footer_html_1_text_color', '' );
+			$footer_html_1_text_color_css = array(
+				'.zak-footer-builder .zak-html-1 *' => array(
+					'color' => esc_html( $footer_html_1_text_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $footer_html_1_text_color, $footer_html_1_text_color_css );
+
+			// Footer builder html 1 link color.
+			$footer_html_1_link_color     = get_theme_mod( 'zakra_footer_html_1_link_color', '' );
+			$footer_html_1_link_color_css = array(
+				'.zak-footer-builder .zak-html-1 a' => array(
+					'color' => esc_html( $footer_html_1_link_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $footer_html_1_link_color, $footer_html_1_link_color_css );
+
+			// Footer builder html 1 link hover color.
+			$footer_html_1_link_hover_color     = get_theme_mod( 'zakra_footer_html_1_link_hover_color', '' );
+			$footer_html_1_link_hover_color_css = array(
+				'.zak-footer-builder .zak-html-1 a:hover' => array(
+					'color' => esc_html( $footer_html_1_link_hover_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $footer_html_1_link_hover_color, $footer_html_1_link_hover_color_css );
+
+			// Footer builder html 1 font size.
+			$footer_html_1_font_size_default = array(
+				'size' => '',
+				'unit' => 'px',
+			);
+
+			$footer_html_1_font_size = get_theme_mod( 'zakra_footer_html_1_font_size', $footer_html_1_font_size_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$footer_html_1_font_size_default,
+				$footer_html_1_font_size,
+				'.zak-footer-builder .zak-html-1 *',
+				'font-size'
+			);
+
+			// Footer builder html 1 margin.
+			$footer_html_1_margin_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$footer_html_1_margin = get_theme_mod( 'zakra_footer_html_1_margin', $footer_html_1_margin_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$footer_html_1_margin_default,
+				$footer_html_1_margin,
+				'.zak-footer-builder .zak-html-1',
+				'margin'
+			);
+
+			// Footer builder html 1 color.
+			$footer_html_2_text_color     = get_theme_mod( 'zakra_footer_html_2_text_color', '' );
+			$footer_html_2_text_color_css = array(
+				'.zak-footer-builder .zak-html-2 *' => array(
+					'color' => esc_html( $footer_html_2_text_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $footer_html_2_text_color, $footer_html_2_text_color_css );
+
+			// Footer builder html 1 link color.
+			$footer_html_2_link_color     = get_theme_mod( 'zakra_footer_html_2_link_color', '' );
+			$footer_html_2_link_color_css = array(
+				'.zak-footer-builder .zak-html-2 a' => array(
+					'color' => esc_html( $footer_html_2_link_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $footer_html_2_link_color, $footer_html_2_link_color_css );
+
+			// Footer builder html 1 link hover color.
+			$footer_html_2_link_hover_color     = get_theme_mod( 'zakra_footer_html_2_link_hover_color', '' );
+			$footer_html_2_link_hover_color_css = array(
+				'.zak-footer-builder .zak-html-2 a:hover' => array(
+					'color' => esc_html( $footer_html_2_link_hover_color ),
+				),
+			);
+			$parse_builder_css                          .= zakra_parse_css( '', $footer_html_2_link_hover_color, $footer_html_2_link_hover_color_css );
+
+			// Footer builder html 1 font size.
+			$footer_html_2_font_size_default = array(
+				'size' => '',
+				'unit' => 'px',
+			);
+
+			$footer_html_2_font_size = get_theme_mod( 'zakra_footer_html_2_font_size', $footer_html_2_font_size_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$footer_html_2_font_size_default,
+				$footer_html_2_font_size,
+				'.zak-footer-builder .zak-html-2 *',
+				'font-size'
+			);
+
+			// Footer builder html 1 margin.
+			$footer_html_2_margin_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$footer_html_2_margin = get_theme_mod( 'zakra_footer_html_2_margin', $footer_html_2_margin_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$footer_html_2_margin_default,
+				$footer_html_2_margin,
+				'.zak-footer-builder .zak-html-2',
+				'margin'
+			);
+
+			// Footer builder widget title color.
+			$footer_widget_title_color     = get_theme_mod( 'zakra_footer_widget_1_title_color', '' );
+			$footer_widget_title_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-sidebar-1 .widget-title' => array(
+					'color' => esc_html( $footer_widget_title_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_title_color, $footer_widget_title_color_css );
+
+			// Footer builder widget content color.
+			$footer_widget_content_color     = get_theme_mod( 'zakra_footer_widget_1_content_color', '' );
+			$footer_widget_content_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-sidebar-1' => array(
+					'color' => esc_html( $footer_widget_content_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_content_color, $footer_widget_content_color_css );
+
+			// Footer builder widget link color.
+			$footer_widget_link_color     = get_theme_mod( 'zakra_footer_widget_1_link_color', '' );
+			$footer_widget_link_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-sidebar-1 a' => array(
+					'color' => esc_html( $footer_widget_link_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_link_color, $footer_widget_link_color_css );
+
+			// Footer builder widget title typography.
+			$footer_widget_1_title_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '2',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+			$footer_widget_1_title_typography = get_theme_mod( 'zakra_footer_widget_1_title_typography', $footer_widget_1_title_typography_default );
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_widget_1_title_typography_default,
+				$footer_widget_1_title_typography,
+				'.zak-footer-builder .widget.widget-footer-sidebar-1 .widget-title',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder widget content typography.
+			$footer_widget_1_content_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '2',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+			$footer_widget_1_content_typography = get_theme_mod( 'zakra_footer_widget_1_content_typography', $footer_widget_1_content_typography_default );
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_widget_1_content_typography_default,
+				$footer_widget_1_content_typography,
+				'.zak-footer-builder .widget.widget-footer-sidebar-1',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder widget 2 title color.
+			$footer_widget_2_title_color     = get_theme_mod( 'zakra_footer_widget_2_title_color', '' );
+			$footer_widget_2_title_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-sidebar-2 .widget-title' => array(
+					'color' => esc_html( $footer_widget_2_title_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_2_title_color, $footer_widget_2_title_color_css );
+
+			// Footer builder widget 2 content color.
+			$footer_widget_2_content_color     = get_theme_mod( 'zakra_footer_widget_2_content_color', '' );
+			$footer_widget_2_content_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-sidebar-2' => array(
+					'color' => esc_html( $footer_widget_2_content_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_2_content_color, $footer_widget_2_content_color_css );
+
+			// Footer builder widget 2 link color.
+			$footer_widget_2_link_color     = get_theme_mod( 'zakra_footer_widget_2_link_color', '' );
+			$footer_widget_2_link_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-sidebar-2 a' => array(
+					'color' => esc_html( $footer_widget_2_link_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_2_link_color, $footer_widget_2_link_color_css );
+
+			// Footer builder widget 2 title typography.
+			$footer_widget_2_title_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '2',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+			$footer_widget_2_title_typography = get_theme_mod( 'zakra_footer_widget_2_title_typography', $footer_widget_2_title_typography_default );
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_widget_2_title_typography_default,
+				$footer_widget_2_title_typography,
+				'.zak-footer-builder .widget.widget-footer-sidebar-2 .widget-title',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder widget 2 content typography.
+			$footer_widget_2_content_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '2',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+			$footer_widget_2_content_typography = get_theme_mod( 'zakra_footer_widget_2_content_typography', $footer_widget_2_content_typography_default );
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_widget_2_content_typography_default,
+				$footer_widget_2_content_typography,
+				'.zak-footer-builder .widget.widget-footer-sidebar-2',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder widget 3 title color.
+			$footer_widget_3_title_color     = get_theme_mod( 'zakra_footer_widget_3_title_color', '' );
+			$footer_widget_3_title_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-sidebar-3 .widget-title' => array(
+					'color' => esc_html( $footer_widget_3_title_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_3_title_color, $footer_widget_3_title_color_css );
+
+			// Footer builder widget 3 content color.
+			$footer_widget_3_content_color     = get_theme_mod( 'zakra_footer_widget_3_content_color', '' );
+			$footer_widget_3_content_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-sidebar-3' => array(
+					'color' => esc_html( $footer_widget_3_content_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_3_content_color, $footer_widget_3_content_color_css );
+
+			// Footer builder widget 3 link color.
+			$footer_widget_3_link_color     = get_theme_mod( 'zakra_footer_widget_3_link_color', '' );
+			$footer_widget_3_link_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-sidebar-3 a' => array(
+					'color' => esc_html( $footer_widget_3_link_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_3_link_color, $footer_widget_3_link_color_css );
+
+			// Footer builder widget 3 title typography.
+			$footer_widget_3_title_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '3',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$footer_widget_3_title_typography = get_theme_mod( 'zakra_footer_widget_3_title_typography', $footer_widget_3_title_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_widget_3_title_typography_default,
+				$footer_widget_3_title_typography,
+				'.zak-footer-builder .widget.widget-footer-sidebar-3 .widget-title',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder widget 3 content typography.
+			$footer_widget_3_content_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '3',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$footer_widget_3_content_typography = get_theme_mod( 'zakra_footer_widget_3_content_typography', $footer_widget_3_content_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_widget_3_content_typography_default,
+				$footer_widget_3_content_typography,
+				'.zak-footer-builder .widget.widget-footer-sidebar-3',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder widget 4 title color.
+			$footer_widget_4_title_color     = get_theme_mod( 'zakra_footer_widget_4_title_color', '' );
+			$footer_widget_4_title_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-sidebar-4 .widget-title' => array(
+					'color' => esc_html( $footer_widget_4_title_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_4_title_color, $footer_widget_4_title_color_css );
+
+			// Footer builder widget 4 content color.
+			$footer_widget_4_content_color     = get_theme_mod( 'zakra_footer_widget_4_content_color', '' );
+			$footer_widget_4_content_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-sidebar-4' => array(
+					'color' => esc_html( $footer_widget_4_content_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_4_content_color, $footer_widget_4_content_color_css );
+
+			// Footer builder widget 4 link color.
+			$footer_widget_4_link_color     = get_theme_mod( 'zakra_footer_widget_4_link_color', '' );
+			$footer_widget_4_link_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-sidebar-4 a' => array(
+					'color' => esc_html( $footer_widget_4_link_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_4_link_color, $footer_widget_4_link_color_css );
+
+			// Footer builder widget 4 title typography.
+			$footer_widget_4_title_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '4',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$footer_widget_4_title_typography = get_theme_mod( 'zakra_footer_widget_4_title_typography', $footer_widget_4_title_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_widget_4_title_typography_default,
+				$footer_widget_4_title_typography,
+				'.zak-footer-builder .widget.widget-footer-sidebar-4 .widget-title',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder widget 4 content typography.
+			$footer_widget_4_content_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '4',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$footer_widget_4_content_typography = get_theme_mod( 'zakra_footer_widget_4_content_typography', $footer_widget_4_content_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_widget_4_content_typography_default,
+				$footer_widget_4_content_typography,
+				'.zak-footer-builder .widget.widget-footer-sidebar-4',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder footer menu color.
+			$footer_menu_color     = get_theme_mod( 'zakra_footer_menu_color', '' );
+			$footer_menu_color_css = array(
+				'.zak-footer-builder .zak-footer-nav ul li a' => array(
+					'color' => esc_html( $footer_menu_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_menu_color, $footer_menu_color_css );
+
+			// Footer builder footer menu hover color.
+			$footer_menu_hover_color     = get_theme_mod( 'zakra_footer_menu_hover_color', '' );
+			$footer_menu_hover_color_css = array(
+				'.zak-footer-builder .zak-footer-nav ul li a:hover' => array(
+					'color' => esc_html( $footer_menu_hover_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_menu_hover_color, $footer_menu_hover_color_css );
+
+			// Footer builder footer menu typography.
+			$footer_menu_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '4',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$footer_menu_1_typography = get_theme_mod( 'zakra_footer_menu_1_typography', $footer_menu_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_menu_typography_default,
+				$footer_menu_1_typography,
+				'.zak-footer-builder .zak-footer-nav-1 ul li a',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder footer menu 2 color.
+			$footer_menu_2_color     = get_theme_mod( 'zakra_footer_menu_2_color', '' );
+			$footer_menu_2_color_css = array(
+				'.zak-footer-builder .zak-footer-nav-2 ul li a' => array(
+					'color' => esc_html( $footer_menu_2_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_menu_2_color, $footer_menu_2_color_css );
+
+			// Footer builder footer menu 2 hover color.
+			$footer_menu_2_hover_color     = get_theme_mod( 'zakra_footer_menu_2_hover_color', '' );
+			$footer_menu_2_hover_color_css = array(
+				'.zak-footer-builder .zak-footer-nav-2 ul li a:hover' => array(
+					'color' => esc_html( $footer_menu_2_hover_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_menu_2_hover_color, $footer_menu_2_hover_color_css );
+
+			// Footer builder footer menu 2 typography.
+			$footer_menu_2_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '4',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$footer_menu_2_typography = get_theme_mod( 'zakra_footer_menu_2_typography', $footer_menu_2_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_menu_2_typography_default,
+				$footer_menu_2_typography,
+				'.zak-footer-builder .zak-footer-nav-2 ul li a',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder copyright color.
+			$footer_copyright_color     = get_theme_mod( 'zakra_footer_copyright_text_color', '' );
+			$footer_copyright_color_css = array(
+				'.zak-footer-builder .zak-copyright' => array(
+					'color' => esc_html( $footer_copyright_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_copyright_color, $footer_copyright_color_css );
+
+			// Footer builder copyright color.
+			$footer_copyright_link_color     = get_theme_mod( 'zakra_footer_copyright_link_color', '' );
+			$footer_copyright_link_color_css = array(
+				'.zak-footer-builder .zak-copyright a' => array(
+					'color' => esc_html( $footer_copyright_link_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_copyright_link_color, $footer_copyright_link_color_css );
+
+			// Footer builder copyright hover color.
+			$footer_copyright_link_hover_color     = get_theme_mod( 'zakra_footer_copyright_link_hover_color', '' );
+			$footer_copyright_link_hover_color_css = array(
+				'.zak-footer-builder .zak-copyright a:hover' => array(
+					'color' => esc_html( $footer_copyright_link_hover_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_copyright_link_hover_color, $footer_copyright_link_hover_color_css );
+
+			// Footer builder copyright typography.
+			$footer_copyright_typography_default = array(
+				'font-family'    => 'Default',
+				'font-weight'    => 'regular',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '1.6',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$footer_copyright_typography = get_theme_mod( 'zakra_footer_menu_typography', $footer_copyright_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_copyright_typography_default,
+				$footer_copyright_typography,
+				'.zak-footer-builder .zak-copyright',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder copyright margin.
+			$footer_copyright_margin_default = array(
+				'top'    => '',
+				'right'  => '',
+				'bottom' => '',
+				'left'   => '',
+				'unit'   => 'px',
+			);
+
+			$footer_copyright_margin = get_theme_mod( 'zakra_footer_copyright_margin', $footer_copyright_margin_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$footer_copyright_margin_default,
+				$footer_copyright_margin,
+				'.zak-footer-builder .zak-copyright',
+				'margin'
+			);
+
+			// Header builder site logo width.
+			$header_site_logo_width_default = array(
+				'size' => '',
+				'unit' => 'px',
+			);
+
+			$header_site_logo_width = get_theme_mod( 'zakra_header_site_logo_height', $header_site_logo_width_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$header_site_logo_width_default,
+				$header_site_logo_width,
+				'.zak-header-builder .site-branding .custom-logo-link img',
+				'width'
+			);
+
+			// Header builder site title color.
+			$header_site_title_color     = get_theme_mod( 'zakra_header_site_identity_color', '#16181a' );
+			$header_site_title_color_css = array(
+				'.zak-header-builder .site-title' => array(
+					'color' => esc_html( $header_site_title_color ),
+				),
+			);
+			$parse_builder_css            .= zakra_parse_css( '#16181a', $header_site_title_color, $header_site_title_color_css );
+
+			// Header builder site title typography.
+			$header_site_title_typography_default = array(
+				'font-family'    => 'Default',
+				'font-weight'    => 'regular',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '1.6',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_site_title_typography = get_theme_mod( 'zakra_header_site_title_typography', $header_site_title_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_site_title_typography_default,
+				$header_site_title_typography,
+				'.zak-header-builder .site-title',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Header builder site tagline color.
+			$header_site_tagline_color     = get_theme_mod( 'zakra_header_site_tagline_color', '' );
+			$header_site_tagline_color_css = array(
+				'.zak-header-builder .site-description' => array(
+					'color' => esc_html( $header_site_tagline_color ),
+				),
+			);
+			$parse_builder_css            .= zakra_parse_css( '', $header_site_tagline_color, $header_site_tagline_color_css );
+
+			// Header builder site tagline typography.
+			$header_site_tagline_typography_default = array(
+				'font-family'    => 'Default',
+				'font-weight'    => 'regular',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '1.6',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_site_tagline_typography = get_theme_mod( 'zakra_header_site_tagline_typography', $header_site_tagline_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_site_tagline_typography_default,
+				$header_site_tagline_typography,
+				'.zak-header-builder .site-description',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder bottom area color.
+			$footer_bottom_area_color     = get_theme_mod( 'zakra_footer_bottom_area_color', '' );
+			$footer_bottom_area_color_css = array(
+				'.zak-footer-builder .zak-footer-bottom-row' => array(
+					'color' => esc_html( $footer_bottom_area_color ),
+				),
+			);
+			$parse_builder_css            .= zakra_parse_css( '', $footer_bottom_area_color, $footer_bottom_area_color_css );
+
+			// Footer builder top area color.
+			$footer_top_area_color     = get_theme_mod( 'zakra_footer_top_area_color', '#FF0000' );
+			$footer_top_area_color_css = array(
+				'.zak-footer-builder .zak-footer-top-row' => array(
+					'color' => esc_html( $footer_top_area_color ),
+				),
+			);
+			$parse_builder_css            .= zakra_parse_css( '#FF0000', $footer_top_area_color, $footer_top_area_color_css );
+
+			// Footer builder main area color.
+			$footer_main_area_color     = get_theme_mod( 'zakra_footer_main_area_color', '' );
+			$footer_main_area_color_css = array(
+				'.zak-footer-builder .zak-footer-main-row' => array(
+					'color' => esc_html( $footer_main_area_color ),
+				),
+			);
+			$parse_builder_css            .= zakra_parse_css( '', $footer_main_area_color, $footer_main_area_color_css );
+
+			// Footer builder main area link color.
+			$footer_main_area_link_color     = get_theme_mod( 'zakra_footer_main_area_link_color', '' );
+			$footer_main_area_link_color_css = array(
+				'.zak-footer-builder .zak-footer-main-row a, .zak-footer-builder .zak-footer-main-row ul li a, .zak-footer-builder .zak-footer-main-row .widget ul li a' => array(
+					'color' => esc_html( $footer_main_area_link_color ),
+				),
+			);
+			$parse_builder_css            .= zakra_parse_css( '', $footer_main_area_link_color, $footer_main_area_link_color_css );
+
+			// Footer builder main area link hover color.
+			$footer_main_area_link_hover_color     = get_theme_mod( 'zakra_footer_main_area_link_hover_color', '' );
+			$footer_main_area_link_hover_color_css = array(
+				'.zak-footer-builder .zak-footer-main-row a, .zak-footer-builder .zak-footer-main-row ul li a:hover, .zak-footer-builder .zak-footer-main-row .widget ul li a:hover' => array(
+					'color' => esc_html( $footer_main_area_link_hover_color ),
+				),
+			);
+			$parse_builder_css            .= zakra_parse_css( '', $footer_main_area_link_hover_color, $footer_main_area_link_hover_color_css );
+
+			// Header builder main border bottom.
+			$is_header_transparent                  = zakra_is_header_transparent_enabled();
+			$header_builder_main_border_bottom_css_selector = $is_header_transparent ? '.zak-header-builder.zak-layout-1-transparent .zak-header-transparent-wrapper' : '.zak-header-builder, .zak-header-sticky-wrapper .sticky-header';
+
+
+			// Header builder border color.
+			$header_builder_border_color     = get_theme_mod( 'zakra_header_builder_border_color', '' );
+			$header_builder_border_color_css = array(
+				$header_builder_main_border_bottom_css_selector => array(
+					'border-color' => esc_html( $header_builder_border_color ),
+				),
+			);
+			$parse_builder_css            .= zakra_parse_css( '', $header_builder_border_color, $header_builder_border_color_css );
+
+			// Header builder border width.
+			$header_builder_border_width_default = array(
+				'top'    => '0',
+				'right'  => '0',
+				'bottom' => '1',
+				'left'   => '0',
+				'unit'   => 'px',
+			);
+
+			$header_builder_border_width = get_theme_mod( 'zakra_header_builder_border_width', $header_builder_border_width_default );
+
+			$parse_builder_css .= zakra_parse_dimension_css(
+				$header_builder_border_width_default,
+				$header_builder_border_width,
+				$header_builder_main_border_bottom_css_selector,
+				'border-width'
+			);
+
+			// Header builder background.
+			$header_builder_background_default = array(
+				'background-color'      => '',
+				'background-image'      => '',
+				'background-position'   => 'center center',
+				'background-size'       => 'auto',
+				'background-attachment' => 'scroll',
+				'background-repeat'     => 'repeat',
+			);
+			$header_builder_background         = get_theme_mod( 'zakra_header_builder_background', $header_builder_background_default );
+			$parse_builder_css                           .= zakra_parse_background_css( $header_builder_background_default, $header_builder_background, '.zak-header-builder' );
+
+			// Footer builder widget title content color.
+			$footer_widget_main_area_title_color     = get_theme_mod( 'zakra_footer_main_area_widget_title_color', '' );
+			$footer_widget_main_area_title_color_css = array(
+				'.zak-footer-builder .zak-footer-main-row .widget-title, .zak-footer-builder .zak-footer-main-row h1, .zak-footer-builder .zak-footer-main-row h2, .zak-footer-builder .zak-footer-main-row h3, .zak-footer-builder .zak-footer-main-row h4, .zak-footer-builder .zak-footer-main-row h5, .zak-footer-builder .zak-footer-main-row h6' => array(
+					'color' => esc_html( $footer_widget_main_area_title_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_main_area_title_color, $footer_widget_main_area_title_color_css );
+
+			// Footer builder widget item border.
+			$footer_widgets_item_border_bottom_width_default = array(
+				'size' => '',
+				'unit' => 'px',
+			);
+
+			$footer_widgets_item_border_bottom_width = get_theme_mod( 'zakra_footer_widgets_item_border_bottom_width', $footer_widgets_item_border_bottom_width_default );
+
+			$parse_builder_css .= zakra_parse_slider_css(
+				$footer_widgets_item_border_bottom_width_default,
+				$footer_widgets_item_border_bottom_width,
+				'.zak-footer-builder .zak-footer-main-row ul li',
+				'border-bottom-width'
+			);
+
+			// Footer builder widgets item border bottom color.
+			$footer_widgets_item_border_bottom__color     = get_theme_mod( 'zakra_footer_widgets_item_border_bottom_color', '#e9ecef' );
+			$footer_widgets_item_border_bottom__color_css = array(
+				'.zak-footer-builder .zak-footer-main-row ul li' => array(
+					'border-bottom-color' => esc_html( $footer_widgets_item_border_bottom__color ),
+				),
+			);
+			$parse_builder_css                                    .= zakra_parse_css( '#e9ecef', $footer_widgets_item_border_bottom__color, $footer_widgets_item_border_bottom__color_css );
+
+			// Footer builder widget 5 title color.
+			$footer_widget_5_title_color     = get_theme_mod( 'zakra_footer_widget_5_title_color', '' );
+			$footer_widget_5_title_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-bar-col-1-sidebar .widget-title' => array(
+					'color' => esc_html( $footer_widget_5_title_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_5_title_color, $footer_widget_5_title_color_css );
+
+			// Footer builder widget 5 content color.
+			$footer_widget_5_content_color     = get_theme_mod( 'zakra_footer_widget_5_content_color', '' );
+			$footer_widget_5_content_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-bar-col-1-sidebar' => array(
+					'color' => esc_html( $footer_widget_5_content_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_5_content_color, $footer_widget_5_content_color_css );
+
+			// Footer builder widget 5 link color.
+			$footer_widget_5_link_color     = get_theme_mod( 'zakra_footer_widget_5_link_color', '' );
+			$footer_widget_5_link_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-bar-col-1-sidebar a' => array(
+					'color' => esc_html( $footer_widget_5_link_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_5_link_color, $footer_widget_5_link_color_css );
+
+			// Footer builder widget 5 title typography.
+			$footer_widget_5_title_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '5',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+			$footer_widget_5_title_typography = get_theme_mod( 'zakra_footer_widget_5_title_typography', $footer_widget_5_title_typography_default );
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_widget_5_title_typography_default,
+				$footer_widget_5_title_typography,
+				'.zak-footer-builder .widget.widget-footer-bar-col-1-sidebar .widget-title',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder widget 5 content typography.
+			$footer_widget_5_content_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '5',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+			$footer_widget_5_content_typography = get_theme_mod( 'zakra_footer_widget_5_content_typography', $footer_widget_5_content_typography_default );
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_widget_5_content_typography_default,
+				$footer_widget_5_content_typography,
+				'.zak-footer-builder .widget.widget-footer-bar-col-1-sidebar',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder widget 6 title color.
+			$footer_widget_6_title_color     = get_theme_mod( 'zakra_footer_widget_6_title_color', '' );
+			$footer_widget_6_title_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-bar-col-2-sidebar .widget-title' => array(
+					'color' => esc_html( $footer_widget_6_title_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_6_title_color, $footer_widget_6_title_color_css );
+
+			// Footer builder widget 6 content color.
+			$footer_widget_6_content_color     = get_theme_mod( 'zakra_footer_widget_6_content_color', '' );
+			$footer_widget_6_content_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-bar-col-2-sidebar' => array(
+					'color' => esc_html( $footer_widget_6_content_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_6_content_color, $footer_widget_6_content_color_css );
+
+			// Footer builder widget 6 link color.
+			$footer_widget_6_link_color     = get_theme_mod( 'zakra_footer_widget_6_link_color', '' );
+			$footer_widget_6_link_color_css = array(
+				'.zak-footer-builder .widget.widget-footer-bar-col-2-sidebar a' => array(
+					'color' => esc_html( $footer_widget_6_link_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $footer_widget_6_link_color, $footer_widget_6_link_color_css );
+
+			// Footer builder widget 6 title typography.
+			$footer_widget_6_title_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '6',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+			$footer_widget_6_title_typography = get_theme_mod( 'zakra_footer_widget_6_title_typography', $footer_widget_6_title_typography_default );
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_widget_6_title_typography_default,
+				$footer_widget_6_title_typography,
+				'.zak-footer-builder .widget.widget-footer-bar-col-2-sidebar .widget-title',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Footer builder widget 6 content typography.
+			$footer_widget_6_content_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '6',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.3',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+			$footer_widget_6_content_typography = get_theme_mod( 'zakra_footer_widget_6_content_typography', $footer_widget_6_content_typography_default );
+			$parse_builder_css .= zakra_parse_typography_css(
+				$footer_widget_6_content_typography_default,
+				$footer_widget_6_content_typography,
+				'.zak-footer-builder .widget.widget-footer-bar-col-2-sidebar',
+				array(
+					'tablet' => 768,
+					'mobile' => 600,
+				)
+			);
+
+			// Header builder mobile menu typography.
+			$header_builder_mobile_menu_typography_default = array(
+				'font-family'    => 'default',
+				'font-weight'    => '400',
+				'font-size'      => array(
+					'desktop' => array(
+						'size' => '1.6',
+						'unit' => 'rem',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '1.6',
+						'unit' => 'rem',
+					),
+				),
+				'line-height'    => array(
+					'desktop' => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+					'tablet'  => array(
+						'size' => '',
+						'unit' => '',
+					),
+					'mobile'  => array(
+						'size' => '1.8',
+						'unit' => '-',
+					),
+				),
+				'font-style'     => 'normal',
+				'text-transform' => 'none',
+			);
+
+			$header_builder_mobile_menu_typography = get_theme_mod( 'zakra_header_mobile_menu_typography', $header_builder_mobile_menu_typography_default );
+
+			$parse_builder_css .= zakra_parse_typography_css(
+				$header_builder_mobile_menu_typography_default,
+				$header_builder_mobile_menu_typography,
+				'.zak-header-builder .zak-mobile-menu a',
+				array(
+					'mobile' => 600,
+					'tablet' => 768,
+				)
+			);
+
+			// Footer builder area cols.
+			$footer_builder_top_col = get_theme_mod('zakra_footer_top_area_cols', 4);
+			$footer_builder_main_col = get_theme_mod('zakra_footer_main_area_cols', 4);
+			$footer_builder_bottom_col = get_theme_mod('zakra_footer_bottom_area_cols', 1);
+			$parse_builder_css .= ":root{--top-grid-columns: {$footer_builder_top_col};
+			--main-grid-columns: {$footer_builder_main_col};
+			--bottom-grid-columns: {$footer_builder_bottom_col};
+			}";
+
+			if ( 1 == $footer_builder_top_col ){
+				$parse_builder_css .= " .zak-footer-builder .zak-top-row{justify-items: center;} ";
+				$parse_builder_css .= " .zak-footer-builder .zak-top-row .zak-footer-top-1-col{ display: block;} ";
+			} elseif ( 1 === $footer_builder_main_col ) {
+				$parse_builder_css .= " .zak-footer-builder .zak-main-row{justify-items: center;} ";
+			} elseif ( 1 === $footer_builder_bottom_col ) {
+				$parse_builder_css .= " .zak-footer-builder .zak-bottom-row{justify-items: center;} ";
+			}
+
+			// Header cart color.
+			$header_cart_color     = get_theme_mod( 'zakra_cart_color', '' );
+			$header_cart_color_css = array(
+				'.zak-header-builder .zakra-icon--cart' => array(
+					'fill' => esc_html( $header_cart_color ),
+				),
+			);
+			$parse_builder_css                               .= zakra_parse_css( '', $header_cart_color, $header_cart_color_css );
+
+			// Footer widgets title color.
+			$footer_widgets_title_color     = get_theme_mod( 'zakra_footer_widgets_title_color', '' );
+			$footer_widgets_title_color_css = array(
+				'.zak-footer-builder .zak-footer-main-row .widget-title, .zak-footer-builder .zak-footer-main-row h1, .zak-footer-builder .zak-footer-main-row h2, .zak-footer-builder .zak-footer-main-row h3, .zak-footer-builder .zak-footer-main-row h4, .zak-footer-builder .zak-footer-main-row h5, .zak-footer-builder .zak-footer-main-row h6' => array(
+					'color' => esc_html( $footer_widgets_title_color ),
+				),
+			);
+			$parse_builder_css                      .= zakra_parse_css( '', $footer_widgets_title_color, $footer_widgets_title_color_css );
+
+			$parse_builder_css .= $dynamic_css;
+
+			return apply_filters( 'zakra_theme_builder_dynamic_css', $parse_builder_css );
 		}
 
 	}

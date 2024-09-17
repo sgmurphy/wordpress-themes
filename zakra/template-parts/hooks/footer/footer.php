@@ -22,9 +22,9 @@ if ( ! function_exists( 'zakra_footer_start' ) ) :
 		<footer id="zak-footer" class="zak-footer <?php zakra_footer_class(); ?>">
 		<?php
 	}
-endif;
 
-add_action( 'zakra_action_before_footer', 'zakra_footer_start' );
+	add_action( 'zakra_action_before_footer', 'zakra_footer_start' );
+endif;
 
 
 if ( ! function_exists( 'zakra_footer_end' ) ) :
@@ -37,10 +37,9 @@ if ( ! function_exists( 'zakra_footer_end' ) ) :
 		</footer><!-- #zak-footer -->
 		<?php
 	}
+
+	add_action( 'zakra_action_after_footer', 'zakra_footer_end' );
 endif;
-
-add_action( 'zakra_action_after_footer', 'zakra_footer_end' );
-
 
 if ( ! function_exists( 'zakra_page_end' ) ) :
 

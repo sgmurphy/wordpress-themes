@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 3.0.20
+Version: 4.0.0.2
 Tested up to: 6.6
 Requires PHP: 5.6
 Requires at least: 4.7
-Stable tag: 3.0.20
+Stable tag: 4.0.0.2
 
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -62,18 +62,61 @@ License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
-= Version 3.0.20 - 2024-07-17 =
-* Fix - Primary menu active color issue.
-* Fix - Anchor tag underline issue.
+= Version 4.0.0.2 - 2024-09-16 =
+* Fix       - Page sidebar issue.
 
-= Version 3.0.19 - 2024-07-16 =
-* Add     - Compatibility with Woo Product Addon plugin.
-* Feature - Option to enable category description.
+= Version 4.0.0.1 - 2024-09-16 =
+* Fix       - Footer migration issue.
 
-= Version 3.0.18 - 2024-05-29 =
-* Add         - Option to set search page post limit.
-* Fix         - WooCommerce css notice.
-* Enhancement - Welcome notice and get start button.
+= Version 4.0.0 - 2024-09-16 =
+* Added       - New Header builder.
+* Enhancement - Introduced a new visual Header Builder with drag and drop functionality.
+* Added       - Header Builder component - Site Title and Logo.
+* Enhancement - Option to change color and typography for Site Title and Logo.
+* Enhancement - Option to change enable/disable for Site Title and Logo.
+* Enhancement - Option to change logo height.
+* Added       - Header Builder component - Primary Menu.
+* Enhancement - Option to change color, background, padding, margin and typography for primary menu component.
+* Enhancement - Option to change sub menu color, background, padding, border etc.
+* Added       - Header Builder component - Secondary, Tertiary and Quaternary Menu.
+* Enhancement - Option to change color and typography for secondary, tertiary and quaternary menu component.
+* Enhancement - Option to change sub menu typography.
+* Added       - Header Builder component - Button.
+* Enhancement - Option to change color, background, padding, border for button.
+* Added       - Header Builder component - Search.
+* Added       - Option to change search input color text and background color.
+* Added       - Option to change search icon color.
+* Added       - Header Builder component - HTML 1 and HTML 2.
+* Added       - Option to change HTML 1 and HTML 2 color, link color, font size, margin.
+* Added       - Header Builder component - Widget 1 and Widget 2.
+* Added       - Option to change Widget 1 and Widget 2 title and content color, link color and typography.
+* Added       - Header Builder component - Social.
+* Added       - Option to add new social icons.
+* Added       - Header Builder component - Cart.
+* Added       - Option to change cart icon color.
+* Added       - Option to change all header row container width, height, color, background, padding, margin, border etc.
+* Enhancement - UI/UX improvement in toggle, select, slider, radio-image, sortable, editor, typography, dimension, navigation and color control.
+* Added       - New customizer color Palette.
+* Enhancement - Introduced reset to default option in all control.
+* Enhancement - Customizer color picker.
+* Enhancement - Customizer background control.
+* Enhancement - Customizer Typography control.
+* Added       - New Footer builder.
+* Enhancement - Introduced a new visual Footer Builder with drag and drop functionality.
+* Added       - Footer Builder component - HTML 1 and HTML 2.
+* Added       - Option to change HTML 1 and HTML 2 color, link color, font size, margin.
+* Added       - Footer Builder component - Widget 1, Widget 2, Widget 3, Widget 4, Widget 5 and Widget 6.
+* Added       - Option to change Widgets title and content color, link color and typography.
+* Added       - Footer Builder component - Menu 1 and Menu 2.
+* Added       - Option to change Menu 1 and Menu 2 color and typography.
+* Added       - Footer Builder component - Social.
+* Added       - Option to add new social icons.
+* Added       - Option to add new social icons.
+* Added       - Footer Builder component - Copyright.
+* Added       - Option to change copyright color, link color, typography, margin.
+* Added       - Option to change footer column for particular row.
+* Added       - Option to change all footer row container width, height, color, background, padding, margin, border etc.
+* Enhancement - UI/UX improvement in page setting.
 
 = Version 3.0.17 - 2024-05-17 =
 * Fix - Search issue.

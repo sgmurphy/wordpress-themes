@@ -43,7 +43,7 @@
 	padding: 0;
 }
 
-#wpbody-content {
+.appearance_page_zakra #wpbody-content {
 	background: #FAFAFC;
 }
 
@@ -1747,7 +1747,7 @@ body.demo-import-message-popup {
 /* Notices. */
 .zakra-notice {
 	position: relative;
-	padding: 20px 20px 0 20px;
+	padding: 0 20px;
 	border-left-color: #2563EB;
 }
 

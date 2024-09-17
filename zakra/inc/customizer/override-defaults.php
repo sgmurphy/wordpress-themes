@@ -8,41 +8,35 @@
 /**
  * Override controls.
  */
-// Outside container > background control.
-$wp_customize->get_control( 'background_color' )->section  = 'zakra_container';
-$wp_customize->get_control( 'background_color' )->priority = 70;
-$wp_customize->get_control( 'background_color' )->type     = 'zakra-color';
-
-$wp_customize->get_control( 'background_image' )->section  = 'zakra_container';
-$wp_customize->get_control( 'background_image' )->priority = 75;
-
-$wp_customize->get_control( 'background_preset' )->section  = 'zakra_container';
-$wp_customize->get_control( 'background_preset' )->priority = 80;
-
-$wp_customize->get_control( 'background_position' )->section  = 'zakra_container';
-$wp_customize->get_control( 'background_position' )->priority = 85;
-
-$wp_customize->get_control( 'background_size' )->section  = 'zakra_container';
-$wp_customize->get_control( 'background_size' )->priority = 90;
-
-$wp_customize->get_control( 'background_repeat' )->section  = 'zakra_container';
-$wp_customize->get_control( 'background_repeat' )->priority = 95;
-
-$wp_customize->get_control( 'background_attachment' )->section  = 'zakra_container';
-$wp_customize->get_control( 'background_attachment' )->priority = 100;
-
-// Site Identity.
-$wp_customize->get_control( 'custom_logo' )->priority         = 6;
-$wp_customize->get_control( 'site_icon' )->priority           = 12;
-$wp_customize->get_control( 'blogname' )->priority            = 14;
-$wp_customize->get_control( 'blogdescription' )->priority     = 16;
 
 // Settings.
-$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
+if ( get_theme_mod( 'zakra_enable_builder', false ) || zakra_maybe_enable_builder() ) {
+	$wp_customize->get_control( 'blogname' )->section         = 'zakra_header_builder_logo';
+	$wp_customize->get_control( 'blogname' )->priority        = 4;
+	$wp_customize->get_control( 'blogdescription' )->section  = 'zakra_header_builder_logo';
+	$wp_customize->get_control( 'blogdescription' )->priority = 5;
+	$wp_customize->get_control( 'site_icon' )->section        = 'zakra_header_builder_logo';
+	$wp_customize->get_control( 'site_icon' )->priority       = 6;
+} else {
+	$wp_customize->get_control( 'site_icon' )->priority       = 5;
+	$wp_customize->get_control( 'blogname' )->priority        = 6;
+	$wp_customize->get_control( 'blogdescription' )->priority = 7;
+}
+
 
 $wp_customize->remove_control( 'display_header_text' );
+$wp_customize->remove_control( 'display_header_text' );
 $wp_customize->remove_control( 'header_textcolor' );
+$wp_customize->remove_control( 'background_attachment' );
+$wp_customize->remove_control( 'background_repeat' );
+$wp_customize->remove_control( 'background_size' );
+$wp_customize->remove_control( 'background_position' );
+$wp_customize->remove_control( 'background_preset' );
+$wp_customize->remove_control( 'background_image' );
+$wp_customize->remove_control( 'background_color' );
 
 if ( isset( $wp_customize->selective_refresh ) ) {
 	$wp_customize->selective_refresh->add_partial(

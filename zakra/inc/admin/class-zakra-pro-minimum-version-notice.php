@@ -48,15 +48,15 @@ if ( ! class_exists( 'Zakra_Pro_Minimum_Version_Notice' ) ) {
 
 			$notice_dismiss = get_option( 'zakra_pro_min_version_notice_dismiss' );
 
-			// Only show notice if Zakra Pro plugin is active and the version is less that 2.0.0.
-			if ( ! $notice_dismiss && zakra_is_zakra_pro_active() && zakra_plugin_version_compare( 'zakra-pro/zakra-pro.php', '2.0.0', '<' ) ) :
+			// Only show notice if Zakra Pro plugin is active and the version is less that 3.0.0.
+			if ( ! $notice_dismiss && zakra_is_zakra_pro_active() && zakra_plugin_version_compare( 'zakra-pro/zakra-pro.php', '3.0.0', '<' ) ) :
 				?>
 				<div class="notice notice-error zakra-notice zakra-pro-min-version-notice" style="position:relative;">
 					<p>
 						<?php
 						printf(
 							/* Translators: %1$s Zakra Pro link, %2$s Zakra Pro update link, %3$s Zakra Pro update link opening, %4$s Zakra Pro update link closing, %5$s Opening strong tag, %5$s Closing strong tag */
-							esc_html__( 'Please update the %1$s plugin to latest version i.e %5$s2.0.0%6$s for %2$s to work properly. %5$s%3$sClick here to update Zakra Pro Plugin%4$s%6$s', 'zakra' ),
+							esc_html__( 'Please update the %1$s plugin to latest version i.e %5$s3.0.0%6$s for %2$s to work properly. %5$s%3$sClick here to update Zakra Pro Plugin%4$s%6$s', 'zakra' ),
 							'<a href="' . esc_url( admin_url( 'plugins.php' ) ) . '">Zakra Pro</a>',
 							'<a href="https://zakratheme.com/" target="_blank">Zakra</a>',
 							'<a href="' . esc_url( admin_url( 'plugins.php' ) ) . '">',

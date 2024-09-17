@@ -174,7 +174,7 @@ if ( ! class_exists( 'Zakra_Css_Classes' ) ) :
 				$header_style = get_post_meta( zakra_get_post_id(), 'zakra_main_header_style', true );
 			}
 
-			if ( ! empty( $header_style ) ) {
+			if ( ! empty( $header_style ) && 'default' !== $header_style ) {
 
 				if ( 'zak-layout-1-menu-style-2' === $header_style ) {
 					$classes[]    = 'zak-layout-1';
@@ -251,13 +251,17 @@ if ( ! class_exists( 'Zakra_Css_Classes' ) ) :
 		 */
 		public function zakra_add_footer_widget_container_classes( $classes ) {
 
-			$footer_layout  = get_theme_mod( 'zakra_footer_column_layout', 'layout-1' );
-			$footer_classes = get_theme_mod( 'zakra_footer_column_layout_1_style', 'style-4' );
+			$footer_layout             = get_theme_mod( 'zakra_footer_column_layout', 'layout-1' );
+			$footer_classes            = get_theme_mod( 'zakra_footer_column_layout_1_style', 'style-4' );
+			$footer_widgets_style_meta = get_post_meta( zakra_get_post_id(), 'zakra_footer_column_layout_1_style', true );
 
 			if ( 'layout-1' === $footer_layout ) {
 
 				$classes[] = 'zak-' . $footer_layout;
-				$classes[] = 'zak-' . $footer_layout . '-' . $footer_classes;
+
+				if ( 'customizer' === $footer_widgets_style_meta || empty( $footer_widgets_style_meta ) ) {
+					$classes[] = 'zak-' . $footer_layout . '-' . $footer_classes;
+				}
 			}
 
 			// Add hide class if the widget title is disabled.
@@ -293,17 +297,9 @@ if ( ! class_exists( 'Zakra_Css_Classes' ) ) :
 		 */
 		public function zakra_add_footer_bar_classes( $classes ) {
 
-			$footer_style = get_post_meta( zakra_get_post_id(), 'zakra_footer_style', true );
-
-			if ( ! empty( $footer_style ) ) {
-
-				$classes[] = $footer_style;
-			} else {
-
-				$footer_bar_style = get_theme_mod( 'zakra_footer_bar_style', 'style-2' );
-				$classes[]        = 'zak-' . $footer_bar_style;
-
-			}
+			$footer_style = get_post_meta( zakra_get_post_id(), 'zakra_footer_bar_style', true );
+			$footer_style = empty( $footer_style ) || 'customizer' === $footer_style ? get_theme_mod( 'zakra_footer_bar_style', 'style-2' ) : $footer_style;
+			$classes[]    = 'zak-' . $footer_style;
 
 			return $classes;
 		}
@@ -333,7 +329,7 @@ if ( ! class_exists( 'Zakra_Css_Classes' ) ) :
 
 				$meta_css .= '
 				.main-navigation.zak-primary-nav > ul > li > a {
-					color: ' . $zakra_menu_item_color . ' 
+					color: ' . $zakra_menu_item_color . '
 				}
 				';
 			}
@@ -342,7 +338,7 @@ if ( ! class_exists( 'Zakra_Css_Classes' ) ) :
 
 				$meta_css .= '
 				.main-navigation.zak-primary-nav > ul > li:hover > a {
-					color: ' . $zakra_menu_item_hover_color . ' 
+					color: ' . $zakra_menu_item_hover_color . '
 				}
 				';
 			}
@@ -352,8 +348,8 @@ if ( ! class_exists( 'Zakra_Css_Classes' ) ) :
 				$meta_css .= '
 				.main-navigation.zak-primary-nav > ul li:active > a,
 				.main-navigation.zak-primary-nav > ul > li.current_page_item > a,
-				.main-navigation.zak-primary-nav > ul > li.current-menu-item > a { 
-					color: ' . $zakra_menu_item_active_color . '; 
+				.main-navigation.zak-primary-nav > ul > li.current-menu-item > a {
+					color: ' . $zakra_menu_item_active_color . ';
 				}
 				';
 

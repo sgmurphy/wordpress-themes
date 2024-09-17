@@ -63,9 +63,9 @@ if ( ! class_exists( 'Zakra_Widgets' ) ) {
 							'id'            => $id,
 							'name'          => $name,
 							'description'   => esc_html__( 'Add widgets here.', 'zakra' ),
-							'before_widget' => '<section id="%1$s" class="widget %2$s">',
+							'before_widget' => '<section id="%1$s" class="widget widget-' . $id . ' %2$s">',
 							'after_widget'  => '</section>',
-							'before_title'  => '<h2 class="widget-title s">',
+							'before_title'  => '<h2 class="widget-title">',
 							'after_title'   => '</h2>',
 						)
 					)
@@ -89,19 +89,18 @@ if ( ! class_exists( 'Zakra_Widgets' ) ) {
 				'footer-sidebar-2'         => esc_html__( 'Footer Two', 'zakra' ),
 				'footer-sidebar-3'         => esc_html__( 'Footer Three', 'zakra' ),
 				'footer-sidebar-4'         => esc_html__( 'Footer Four', 'zakra' ),
-				'footer-bar-col-1-sidebar' => esc_html__( 'Footer Bar Column 1', 'zakra' ),
-				'footer-bar-col-2-sidebar' => esc_html__( 'Footer Bar Column 2', 'zakra' ),
+				'footer-bar-col-1-sidebar' => esc_html__( 'Footer Five', 'zakra' ),
+				'footer-bar-col-2-sidebar' => esc_html__( 'Footer Six', 'zakra' ),
 			);
 
 			if ( zakra_is_woocommerce_active() ) {
 
-				$sidebars[ 'wc-left-sidebar' ]  = esc_html__( 'WooCommerce Left Sidebar', 'zakra' );
-				$sidebars[ 'wc-right-sidebar' ] = esc_html__( 'WooCommerce Right Sidebar', 'zakra' );
+				$sidebars['wc-left-sidebar']  = esc_html__( 'WooCommerce Left Sidebar', 'zakra' );
+				$sidebars['wc-right-sidebar'] = esc_html__( 'WooCommerce Right Sidebar', 'zakra' );
 			}
 
 			return apply_filters( 'zakra_sidebars_args', $sidebars );
 		}
-
 	}
 
 }

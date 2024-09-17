@@ -33,7 +33,17 @@ if ( ! function_exists( 'zakra_get_sidebar' ) ) {
 
 		$current_layout = zakra_get_current_layout();
 
-		$sidebar_meta = get_post_meta( zakra_get_post_id(), 'zakra_sidebar', true );
+		$sidebar_meta              = get_post_meta( zakra_get_post_id(), 'zakra_sidebar', true );
+		$customizer_sidebar_layout = get_theme_mod( 'zakra_page_sidebar_layout', 'right' );
+
+		if ( 'customizer' === $sidebar_meta || 'default' === $sidebar_meta ) {
+			if ( 'right' === $customizer_sidebar_layout ) {
+				$sidebar = 'sidebar-right';
+			} elseif ( 'left' === $customizer_sidebar_layout ) {
+				$sidebar = 'sidebar-left';
+			}
+			return $sidebar;
+		}
 
 		if ( $sidebar_meta ) {
 			return $sidebar_meta;

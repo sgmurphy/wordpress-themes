@@ -32,8 +32,6 @@
 /* Social icons.
 --------------------------------------------- */
 .wp-block-social-links li a {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
 }
 
@@ -244,7 +242,6 @@ ul.wp-block-post-template {
 .editor-styles-wrapper .wp-block-file__textlink {
 	color: #027ABB;
 	text-decoration: none;
-	-webkit-transition: all 0.35s ease-in-out;
 	transition: all 0.35s ease-in-out;
 }
 
@@ -344,7 +341,6 @@ ul.wp-block-post-template {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -549,11 +545,7 @@ html {
 }
 
 .wc-block-components-pagination {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
 	justify-content: center;
 	gap: 16px;
 }
@@ -572,11 +564,7 @@ html {
 }
 
 .wc-block-all-products .wc-block-sort-select {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: end;
-	-ms-flex-pack: end;
 	justify-content: flex-end;
 }
 

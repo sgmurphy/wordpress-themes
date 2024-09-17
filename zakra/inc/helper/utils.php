@@ -304,6 +304,49 @@ if ( ! function_exists( 'zakra_footer_copyright' ) ) {
 	}
 }
 
+if ( ! function_exists( 'zakra_footer_builder_copyright' ) ) {
+
+	/**
+	 * Get Copyright text.
+	 *
+	 * @param string $section 'one' or 'two' only should be passed as param.
+	 *
+	 * @return array|string|string[]|null
+	 */
+	function zakra_footer_builder_copyright() {
+
+			$default = sprintf(
+			/* translators: 1: Current Year, 2: Site Name, 3: Theme Link, 4: WordPress Link. */
+				esc_html__( 'Copyright &copy; %1$s %2$s. Powered by %3$s and %4$s.', 'zakra' ),
+				'{the-year}',
+				'{site-link}',
+				'{theme-link}',
+				'{wp-link}'
+			);
+
+		$content      = get_theme_mod( 'zakra_footer_copyright', $default );
+		$theme_author = apply_filters(
+			'zakra_theme_author',
+			array(
+				'theme_name'       => __( 'Zakra', 'zakra' ),
+				'theme_author_url' => 'https://zakratheme.com/',
+			)
+		);
+		$site_link    = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" >' . get_bloginfo( 'name', 'display' ) . '</a>';
+		$theme_link   = '<a href="' . esc_url( $theme_author['theme_author_url'] ) . '" target="_blank" title="' . esc_attr( $theme_author['theme_name'] ) . '" rel="nofollow">' . $theme_author['theme_name'] . '</a>';
+		$wp_link      = '<a href="' . esc_url( 'https://wordpress.org/' ) . '" target="_blank" title="' . esc_attr__( 'WordPress', 'zakra' ) . '" rel="nofollow">' . __( 'WordPress', 'zakra' ) . '</a>';
+
+		if ( $content || is_customize_preview() ) {
+			$content = str_replace( '{the-year}', date_i18n( 'Y' ), $content );
+			$content = str_replace( '{site-link}', $site_link, $content );
+			$content = str_replace( '{theme-link}', $theme_link, $content );
+			$content = str_replace( '{wp-link}', $wp_link, $content );
+		}
+
+		return $content;
+	}
+}
+
 if ( ! function_exists( 'zakra_get_layout_type' ) ) {
 
 	/**
@@ -450,7 +493,7 @@ if ( ! function_exists( 'zakra_parse_css' ) ) :
 						continue;
 					}
 
-					$properties_added ++;
+					++$properties_added;
 					$temp_parse_css .= $property . ':' . $value . ';';
 				}
 
@@ -609,16 +652,16 @@ if ( ! function_exists( 'zakra_parse_typography_css' ) ) :
 		}
 
 		// For line height on desktop.
-		$line_height_unit_value = isset( $output_value['line-height']['desktop']['unit'] ) ? $output_value['line-height']['desktop']['unit'] : 'px';
-		$line_height_unit       = ( '-' !== $line_height_unit_value ) ? $line_height_unit_value : '';
+		$line_height_unit_value      = isset( $output_value['line-height']['desktop']['unit'] ) ? $output_value['line-height']['desktop']['unit'] : 'px';
+		$line_height_unit            = ( '-' !== $line_height_unit_value ) ? $line_height_unit_value : '';
 		$default_desktop_line_height = isset( $default_value['line-height']['desktop']['size'] ) ? $default_value['line-height']['desktop']['size'] : '';
 
-		if ( isset( $output_value['line-height']['desktop']['size'] ) && ! empty( $output_value['line-height']['desktop']['size'] ) && ( $output_value['line-height']['desktop']['size'] !==  $default_desktop_line_height) ) {
+		if ( isset( $output_value['line-height']['desktop']['size'] ) && ! empty( $output_value['line-height']['desktop']['size'] ) && ( $output_value['line-height']['desktop']['size'] !== $default_desktop_line_height ) ) {
 			$parse_css .= 'line-height:' . $output_value['line-height']['desktop']['size'] . $line_height_unit . ';';
 		}
 
 		// For letter spacing on desktop.
-		$letter_spacing_unit = isset( $output_value['letter-spacing']['desktop']['unit'] ) ? $output_value['letter-spacing']['desktop']['unit'] : 'px';
+		$letter_spacing_unit            = isset( $output_value['letter-spacing']['desktop']['unit'] ) ? $output_value['letter-spacing']['desktop']['unit'] : 'px';
 		$default_desktop_letter_spacing = isset( $default_value['letter-spacing']['desktop']['size'] ) ? $default_value['letter-spacing']['desktop']['size'] : '';
 
 		if ( isset( $output_value['letter-spacing']['desktop']['size'] ) && ! empty( $output_value['letter-spacing']['desktop']['size'] ) && ( $output_value['letter-spacing']['desktop']['size'] !== $default_desktop_letter_spacing ) ) {
@@ -865,12 +908,12 @@ if ( ! function_exists( 'zakra_search_icon_menu_item' ) ) {
 		if ( $header_search ) {
 			?>
 <div class="zak-header-action <?php zakra_css_class( 'zakra_header_search_class' ); ?>">
-    <a href="#" class="zak-header-search__toggle">
-        <?php zakra_get_icon( 'magnifying-glass' ); ?>
-    </a>
-    <?php get_search_form( true ); ?>
+	<a href="#" class="zak-header-search__toggle">
+			<?php zakra_get_icon( 'magnifying-glass' ); ?>
+	</a>
+			<?php get_search_form( true ); ?>
 </div>
-<?php
+			<?php
 		}
 
 		return ob_get_clean();

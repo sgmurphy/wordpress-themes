@@ -16,7 +16,6 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 	 * Zakra_Migration class.
 	 *
 	 */
-
 	class Zakra_Migration {
 		/**
 		 * @var array|false
@@ -30,8 +29,18 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 				 * Zakra revamp migrations.
 				 */
 				$this->old_theme_mods = get_theme_mods();
-				add_action( 'after_setup_theme', array( $this, 'customizer_migration_v3' ), 20 );
+
+				add_action( 'after_setup_theme', [ $this, 'customizer_migration_v3' ], 20 );
 			}
+
+			add_action( 'themegrill_ajax_demo_imported', [ $this, 'zakra_builder_migration' ], 25 );
+
+			$enable_builder = get_theme_mod( 'zakra_enable_builder', '' );
+			if ( $enable_builder ) {
+				add_action( 'after_setup_theme', [ $this, 'zakra_builder_migration' ], 25 );
+			}
+
+			// add_action( 'after_setup_theme', [ $this, 'zakra_builder_rollback' ], 25 );
 		}
 
 		/**
@@ -62,165 +71,165 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 				remove_theme_mod( 'header_textcolor' );
 			}
 
-			$normal_options = array(
-				array(
+			$normal_options = [
+				[
 					'old_key' => 'zakra_base_color_primary',
 					'new_key' => 'zakra_primary_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_base_color_text',
 					'new_key' => 'zakra_base_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_base_color_border',
 					'new_key' => 'zakra_border_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_button_text_color',
 					'new_key' => 'zakra_button_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_button_text_hover_color',
 					'new_key' => 'zakra_button_hover_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_button_bg_color',
 					'new_key' => 'zakra_button_background_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_button_bg_hover_color',
 					'new_key' => 'zakra_button_background_hover_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_top_text_color',
 					'new_key' => 'zakra_top_bar_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_button_bg_color',
 					'new_key' => 'zakra_header_button_background_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_button_bg_hover_color',
 					'new_key' => 'zakra_header_button_background_hover_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_main_border_bottom_color',
 					'new_key' => 'zakra_main_header_border_bottom_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_primary_menu_text_color',
 					'new_key' => 'zakra_main_menu_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_primary_menu_text_hover_color',
 					'new_key' => 'zakra_main_menu_hover_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_primary_menu_text_active_color',
 					'new_key' => 'zakra_main_menu_active_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_page_title_enabled',
 					'new_key' => 'zakra_page_title_position',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_breadcrumbs_seperator_color',
 					'new_key' => 'zakra_breadcrumb_separator_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_post_content_archive_blog',
 					'new_key' => 'zakra_blog_excerpt_type',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_footer_widgets_border_top_color',
 					'new_key' => 'zakra_footer_column_border_top_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_footer_widgets_text_color',
 					'new_key' => 'zakra_footer_column_widget_text_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_footer_widgets_link_color',
 					'new_key' => 'zakra_footer_column_widget_link_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_footer_widgets_link_hover_color',
 					'new_key' => 'zakra_footer_column_widget_link_hover_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_scroll_to_top_bg_color',
 					'new_key' => 'zakra_scroll_to_top_background',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_scroll_to_top_bg_hover_color',
 					'new_key' => 'zakra_scroll_to_top_hover_background',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_scroll_to_top_color',
 					'new_key' => 'zakra_scroll_to_top_icon_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_top_left_content',
 					'new_key' => 'zakra_top_bar_column_1_content_type',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_top_left_content_html',
 					'new_key' => 'zakra_top_bar_column_1_html',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_top_left_content_menu',
 					'new_key' => 'zakra_top_bar_column_1_menu',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_top_right_content',
 					'new_key' => 'zakra_top_bar_column_2_content_type',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_top_right_content_html',
 					'new_key' => 'zakra_top_bar_column_2_html',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_top_right_content_menu',
 					'new_key' => 'zakra_top_bar_column_2_menu',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_footer_bar_section_one',
 					'new_key' => 'zakra_footer_bar_column_1_content_type',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_footer_bar_section_one_html',
 					'new_key' => 'zakra_footer_bar_column_1_html',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_footer_bar_section_one_menu',
 					'new_key' => 'zakra_footer_bar_column_1_menu',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_footer_bar_section_two',
 					'new_key' => 'zakra_footer_bar_column_2_content_type',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_footer_bar_section_two_html',
 					'new_key' => 'zakra_footer_bar_column_2_html',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_footer_bar_section_two_menu',
 					'new_key' => 'zakra_footer_bar_column_2_menu',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_button_text_color',
 					'new_key' => 'zakra_header_button_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_button_text_hover_color',
 					'new_key' => 'zakra_header_button_hover_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_scroll_to_top_hover_color',
 					'new_key' => 'zakra_scroll_to_top_icon_hover_color',
-				),
+				],
 
-			);
+			];
 
 			foreach ( $normal_options as $option ) {
 
@@ -234,33 +243,33 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 			}
 
 			// Enable migration.
-			$enable_options = array(
-				array(
+			$enable_options = [
+				[
 					'old_key' => 'zakra_header_top_enabled',
 					'new_key' => 'zakra_enable_top_bar',
 					'default' => false,
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_scroll_to_top_enabled',
 					'new_key' => 'zakra_enable_scroll_to_top',
 					'default' => true,
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_enable_read_more_archive_blog',
 					'new_key' => 'zakra_enable_blog_button',
 					'default' => true,
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_breadcrumbs_enabled',
 					'new_key' => 'zakra_enable_breadcrumb',
 					'default' => true,
-				),
-				array(
+				],
+				[
 					'old_key' => 'tg_header_menu_search_enabled',
 					'new_key' => 'zakra_enable_header_search',
 					'default' => true,
-				),
-			);
+				],
+			];
 
 			foreach ( $enable_options as $option ) {
 
@@ -341,88 +350,88 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 			}
 
 			// Slider control migration.
-			$slider_options = array(
-				array(
+			$slider_options = [
+				[
 					'old_key' => 'zakra_general_container_width',
 					'new_key' => 'zakra_container_width',
-					'default' => array(
+					'default' => [
 						'size' => 1170,
 						'unit' => 'px',
-					),
-				),
-				array(
+					],
+				],
+				[
 					'old_key' => 'zakra_general_sidebar_width',
 					'new_key' => 'zakra_sidebar_width',
-					'default' => array(
+					'default' => [
 						'size' => 30,
 						'unit' => '%',
-					),
-				),
-				array(
+					],
+				],
+				[
 					'old_key' => 'zakra_header_button_roundness',
 					'new_key' => 'zakra_header_button_border_radius',
-					'default' => array(
+					'default' => [
 						'size' => '',
 						'unit' => 'px',
-					),
-				),
-				array(
+					],
+				],
+				[
 					'old_key' => 'zakra_header_main_border_bottom_width',
 					'new_key' => 'zakra_main_header_border_bottom_width',
-					'default' => array(
+					'default' => [
 						'size' => 1,
 						'unit' => 'px',
-					),
-				),
-				array(
+					],
+				],
+				[
 					'old_key' => 'zakra_footer_widgets_border_top_width',
 					'new_key' => 'zakra_footer_column_border_top_width',
-					'default' => array(
+					'default' => [
 						'size' => '',
 						'unit' => 'px',
-					),
-				),
-				array(
+					],
+				],
+				[
 					'old_key' => 'zakra_button_roundness',
 					'new_key' => 'zakra_button_border_radius',
-					'default' => array(
+					'default' => [
 						'size' => '',
 						'unit' => 'px',
-					),
-				),
-				array(
+					],
+				],
+				[
 					'old_key' => 'zakra_primary_menu_border_bottom_width',
 					'new_key' => 'zakra_primary_menu_border_bottom_width',
-					'default' => array(
+					'default' => [
 						'size' => '',
 						'unit' => 'px',
-					),
-				),
-				array(
+					],
+				],
+				[
 					'old_key' => 'zakra_footer_widgets_item_border_bottom_width',
 					'new_key' => 'zakra_footer_widgets_item_border_bottom_width',
-					'default' => array(
+					'default' => [
 						'size' => '',
 						'unit' => 'px',
-					),
-				),
-				array(
+					],
+				],
+				[
 					'old_key' => 'zakra_footer_bar_border_top_width',
 					'new_key' => 'zakra_footer_bar_border_top_width',
-					'default' => array(
+					'default' => [
 						'size' => 1,
 						'unit' => 'px',
-					),
-				),
-				array(
+					],
+				],
+				[
 					'old_key' => 'zakra_mobile_menu_breakpoint',
 					'new_key' => 'zakra_mobile_menu_breakpoint',
-					'default' => array(
+					'default' => [
 						'size' => 768,
 						'unit' => 'px',
-					),
-				),
-			);
+					],
+				],
+			];
 
 			// Loop through the options and migrate their values.
 			foreach ( $slider_options as $option ) {
@@ -443,10 +452,10 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 
 					set_theme_mod(
 						$option['new_key'],
-						array(
+						[
 							'size' => $old_value,
 							'unit' => $option['default']['unit'],
-						)
+						]
 					);
 
 					if ( $option['old_key'] !== $option['new_key'] ) {
@@ -458,13 +467,13 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 
 			// Extract size and unit from the value.
 			$typography_converted_value = function ( $value ) {
-				$unit_list = array( 'px', 'em', 'rem', '%', '-', 'vw', 'vh', 'pt', 'pc', '' );
+				$unit_list = [ 'px', 'em', 'rem', '%', '-', 'vw', 'vh', 'pt', 'pc', '' ];
 
 				if ( ! $value ) {
-					return array(
+					return [
 						'size' => '',
 						'unit' => '',
-					);
+					];
 				}
 
 				preg_match( '/^(\d+(?:\.\d+)?)(.*)$/', $value, $matches );
@@ -482,7 +491,7 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 					$unit = 'px';
 				}
 
-				$validUnits = array( 'px', 'em', 'rem' );
+				$validUnits = [ 'px', 'em', 'rem' ];
 
 				if ( ! in_array( $unit, $validUnits ) ) {
 
@@ -512,20 +521,20 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 					}
 				}
 
-				return array(
+				return [
 					'size' => $size,
 					'unit' => $unit,
-				);
+				];
 			};
 
 			$dimension_converted_value = function ( $value ) {
-				$unit_list = array( 'px', 'em', 'rem', '%', '-', 'vw', 'vh', 'pt', 'pc' );
+				$unit_list = [ 'px', 'em', 'rem', '%', '-', 'vw', 'vh', 'pt', 'pc' ];
 
 				if ( ! $value ) {
-					return array(
+					return [
 						'size' => '',
 						'unit' => 'px',
-					);
+					];
 				}
 
 				preg_match( '/^(\d+(?:\.\d+)?)(.*)$/', $value, $matches );
@@ -568,83 +577,83 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 					}
 				}
 
-				return array(
+				return [
 					'size' => $size,
 					'unit' => $unit,
-				);
+				];
 			};
 
 			// Migrate the typography options.
-			$typography_options = array(
-				array(
+			$typography_options = [
+				[
 					'old_key' => 'zakra_base_typography_body',
 					'new_key' => 'zakra_body_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_base_typography_heading',
 					'new_key' => 'zakra_heading_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_h1',
 					'new_key' => 'zakra_h1_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_h2',
 					'new_key' => 'zakra_h2_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_h3',
 					'new_key' => 'zakra_h3_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_h4',
 					'new_key' => 'zakra_h4_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_h5',
 					'new_key' => 'zakra_h5_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_h6',
 					'new_key' => 'zakra_h6_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_site_title',
 					'new_key' => 'zakra_site_title_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_site_description',
 					'new_key' => 'zakra_site_tagline_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_primary_menu',
 					'new_key' => 'zakra_main_menu_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_primary_menu_dropdown_item',
 					'new_key' => 'zakra_sub_menu_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_mobile_menu',
 					'new_key' => 'zakra_mobile_menu_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_post_page_title',
 					'new_key' => 'zakra_post_page_title_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_blog_post_title',
 					'new_key' => 'zakra_blog_post_title_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_widget_heading',
 					'new_key' => 'zakra_widget_title_typography',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_typography_widget_content',
 					'new_key' => 'zakra_widget_content_typography',
-				),
-			);
+				],
+			];
 
 			foreach ( $typography_options as $option ) {
 
@@ -652,115 +661,115 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 
 				if ( $old_value ) {
 
-					$new_desktop_font = isset( $old_value['font-size']['desktop'] ) ? $typography_converted_value( $old_value['font-size']['desktop'] ) : array(
+					$new_desktop_font = isset( $old_value['font-size']['desktop'] ) ? $typography_converted_value( $old_value['font-size']['desktop'] ) : [
 						'size' => '',
 						'unit' => 'px',
-					);
+					];
 
-					$new_tablet_font = isset( $old_value['font-size']['tablet'] ) ? $typography_converted_value( $old_value['font-size']['tablet'] ) : array(
+					$new_tablet_font = isset( $old_value['font-size']['tablet'] ) ? $typography_converted_value( $old_value['font-size']['tablet'] ) : [
 						'size' => '',
 						'unit' => 'px',
-					);
+					];
 
-					$new_mobile_font = isset( $old_value['font-size']['mobile'] ) ? $typography_converted_value( $old_value['font-size']['mobile'] ) : array(
+					$new_mobile_font = isset( $old_value['font-size']['mobile'] ) ? $typography_converted_value( $old_value['font-size']['mobile'] ) : [
 						'size' => '',
 						'unit' => 'px',
-					);
+					];
 
-					$new_desktop_line_height = isset( $old_value['line-height']['desktop'] ) ? $typography_converted_value( $old_value['line-height']['desktop'] ) : array(
+					$new_desktop_line_height = isset( $old_value['line-height']['desktop'] ) ? $typography_converted_value( $old_value['line-height']['desktop'] ) : [
 						'size' => '',
 						'unit' => '-',
-					);
+					];
 
 					if ( empty( $new_desktop_line_height['unit'] ) ) {
 
 						$new_desktop_line_height['unit'] = '-';
 					}
 
-					$new_tablet_line_height = isset( $old_value['line-height']['tablet'] ) ? $typography_converted_value( $old_value['line-height']['tablet'] ) : array(
+					$new_tablet_line_height = isset( $old_value['line-height']['tablet'] ) ? $typography_converted_value( $old_value['line-height']['tablet'] ) : [
 						'size' => '',
 						'unit' => '-',
-					);
+					];
 
 					if ( empty( $new_tablet_line_height['unit'] ) ) {
 
 						$new_tablet_line_height['unit'] = '-';
 					}
 
-					$new_mobile_line_height = isset( $old_value['line-height']['mobile'] ) ? $typography_converted_value( $old_value['line-height']['mobile'] ) : array(
+					$new_mobile_line_height = isset( $old_value['line-height']['mobile'] ) ? $typography_converted_value( $old_value['line-height']['mobile'] ) : [
 						'size' => '',
 						'unit' => '-',
-					);
+					];
 
 					if ( empty( $new_mobile_line_height['unit'] ) ) {
 
 						$new_mobile_line_height['unit'] = '-';
 					}
 
-					$new_desktop_letter_spacing = isset( $old_value['letter-spacing']['desktop'] ) ? $typography_converted_value( $old_value['letter-spacing']['desktop'] ) : array(
+					$new_desktop_letter_spacing = isset( $old_value['letter-spacing']['desktop'] ) ? $typography_converted_value( $old_value['letter-spacing']['desktop'] ) : [
 						'size' => '',
 						'unit' => 'px',
-					);
+					];
 
-					$new_tablet_letter_spacing = isset( $old_value['letter-spacing']['tablet'] ) ? $typography_converted_value( $old_value['letter-spacing']['tablet'] ) : array(
+					$new_tablet_letter_spacing = isset( $old_value['letter-spacing']['tablet'] ) ? $typography_converted_value( $old_value['letter-spacing']['tablet'] ) : [
 						'size' => '',
 						'unit' => 'px',
-					);
+					];
 
-					$new_mobile_letter_spacing = isset( $old_value['letter-spacing']['mobile'] ) ? $typography_converted_value( $old_value['letter-spacing']['mobile'] ) : array(
+					$new_mobile_letter_spacing = isset( $old_value['letter-spacing']['mobile'] ) ? $typography_converted_value( $old_value['letter-spacing']['mobile'] ) : [
 						'size' => '',
 						'unit' => 'px',
-					);
+					];
 
-					$new_value = array(
+					$new_value = [
 						'font-family'    => isset( $old_value['font-family'] ) ? $old_value['font-family'] : '',
 						'font-weight'    => isset( $old_value['font-weight'] ) ? $old_value['font-weight'] : '',
 						'subsets'        => isset( $old_value['subsets'] ) ? $old_value['subsets'] : '',
-						'font-size'      => array(
-							'desktop' => array(
+						'font-size'      => [
+							'desktop' => [
 								'size' => $new_desktop_font['size'],
 								'unit' => $new_desktop_font['unit'],
-							),
-							'tablet'  => array(
+							],
+							'tablet'  => [
 								'size' => $new_tablet_font['size'],
 								'unit' => $new_tablet_font['unit'],
-							),
-							'mobile'  => array(
+							],
+							'mobile'  => [
 								'size' => $new_mobile_font['size'],
 								'unit' => $new_mobile_font['unit'],
-							),
-						),
-						'line-height'    => array(
-							'desktop' => array(
+							],
+						],
+						'line-height'    => [
+							'desktop' => [
 								'size' => $new_desktop_line_height['size'],
 								'unit' => $new_desktop_line_height['unit'],
-							),
-							'tablet'  => array(
+							],
+							'tablet'  => [
 								'size' => $new_tablet_line_height['size'],
 								'unit' => $new_tablet_line_height['unit'],
-							),
-							'mobile'  => array(
+							],
+							'mobile'  => [
 								'size' => $new_mobile_line_height['size'],
 								'unit' => $new_mobile_line_height['unit'],
-							),
-						),
-						'letter-spacing' => array(
-							'desktop' => array(
+							],
+						],
+						'letter-spacing' => [
+							'desktop' => [
 								'size' => $new_desktop_letter_spacing['size'],
 								'unit' => $new_desktop_letter_spacing['unit'],
-							),
-							'tablet'  => array(
+							],
+							'tablet'  => [
 								'size' => $new_tablet_letter_spacing['size'],
 								'unit' => $new_tablet_letter_spacing['unit'],
-							),
-							'mobile'  => array(
+							],
+							'mobile'  => [
 								'size' => $new_mobile_letter_spacing['size'],
 								'unit' => $new_mobile_letter_spacing['unit'],
-							),
-						),
+							],
+						],
 						'font-style'     => isset( $old_value['font-style'] ) ? $old_value['font-style'] : '',
 						'text-transform' => isset( $old_value['text-transform'] ) ? $old_value['text-transform'] : '',
-					);
+					];
 
 					set_theme_mod( $option['new_key'], $new_value );
 					remove_theme_mod( $option['old_key'] );
@@ -772,52 +781,52 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 
 			if ( $breadcrumb_typography ) {
 
-				$new_value = array(
+				$new_value = [
 					'font-family' => '',
 					'font-weight' => '',
-					'font-size'   => array(
-						'desktop' => array(
+					'font-size'   => [
+						'desktop' => [
 							'size' => $breadcrumb_typography,
 							'unit' => 'px',
-						),
-						'tablet'  => array(
+						],
+						'tablet'  => [
 							'size' => '',
 							'unit' => '',
-						),
-						'mobile'  => array(
+						],
+						'mobile'  => [
 							'size' => '',
 							'unit' => '',
-						),
-					),
-				);
+						],
+					],
+				];
 
 				set_theme_mod( 'zakra_breadcrumb_typography', $new_value );
 				remove_theme_mod( 'zakra_breadcrumbs_font_size' );
 			}
 
 			// Background migration.
-			$background_option = array(
-				array(
+			$background_option = [
+				[
 					'old_key' => 'zakra_header_top_bg',
 					'new_key' => 'zakra_top_bar_background',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_main_bg',
 					'new_key' => 'zakra_main_header_background_color',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_page_title_bg',
 					'new_key' => 'zakra_page_header_background',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_footer_widgets_bg',
 					'new_key' => 'zakra_footer_column_background',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_footer_bar_bg',
 					'new_key' => 'zakra_footer_bar_background',
-				),
-			);
+				],
+			];
 
 			foreach ( $background_option as $option ) {
 
@@ -825,14 +834,14 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 
 				if ( $old_value ) {
 
-					$new_background_value = array(
+					$new_background_value = [
 						'background-color'      => isset( $old_value['background-color'] ) ? $old_value['background-color'] : '',
 						'background-image'      => isset( $old_value['background-image'] ) ? $old_value['background-image'] : '',
 						'background-repeat'     => isset( $old_value['background-repeat'] ) ? $old_value['background-repeat'] : '',
 						'background-position'   => isset( $old_value['background-position'] ) ? $old_value['background-position'] : '',
 						'background-size'       => isset( $old_value['background-size'] ) ? $old_value['background-size'] : '',
 						'background-attachment' => isset( $old_value['background-attachment'] ) ? $old_value['background-attachment'] : '',
-					);
+					];
 
 					set_theme_mod( $option['new_key'], $new_background_value );
 					remove_theme_mod( $option['old_key'] );
@@ -840,20 +849,20 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 			}
 
 			// Dimension control migration.
-			$dimension_option = array(
-				array(
+			$dimension_option = [
+				[
 					'old_key' => 'zakra_page_title_padding',
 					'new_key' => 'zakra_page_header_padding',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_header_button_padding',
 					'new_key' => 'zakra_header_button_padding',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_button_padding',
 					'new_key' => 'zakra_button_padding',
-				),
-			);
+				],
+			];
 
 			foreach ( $dimension_option as $option ) {
 
@@ -871,31 +880,31 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 
 				if ( $old_value ) {
 
-					$new_top = isset( $old_value['top'] ) ? $dimension_converted_value( $old_value['top'] ) : array(
+					$new_top = isset( $old_value['top'] ) ? $dimension_converted_value( $old_value['top'] ) : [
 						'size' => '',
 						'unit' => 'px',
-					);
+					];
 
-					$new_right  = isset( $old_value['right'] ) ? $dimension_converted_value( $old_value['right'] ) : array(
+					$new_right  = isset( $old_value['right'] ) ? $dimension_converted_value( $old_value['right'] ) : [
 						'size' => '',
 						'unit' => 'px',
-					);
-					$new_bottom = isset( $old_value['bottom'] ) ? $dimension_converted_value( $old_value['bottom'] ) : array(
+					];
+					$new_bottom = isset( $old_value['bottom'] ) ? $dimension_converted_value( $old_value['bottom'] ) : [
 						'size' => '',
 						'unit' => 'px',
-					);
-					$new_left   = isset( $old_value['left'] ) ? $dimension_converted_value( $old_value['left'] ) : array(
+					];
+					$new_left   = isset( $old_value['left'] ) ? $dimension_converted_value( $old_value['left'] ) : [
 						'size' => '',
 						'unit' => 'px',
-					);
+					];
 
-					$new_value = array(
+					$new_value = [
 						'top'    => $new_top['size'],
 						'right'  => $new_right['size'],
 						'bottom' => $new_bottom['size'],
 						'left'   => $new_left['size'],
 						'unit'   => $new_top['unit'],
-					);
+					];
 
 					set_theme_mod( $option['new_key'], $new_value );
 
@@ -907,25 +916,25 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 			}
 
 			// Sidebar layout migration.
-			$sidebar_layout_option = array(
-				array(
+			$sidebar_layout_option = [
+				[
 					'old_key' => 'zakra_structure_archive',
 					'new_key' => 'zakra_archive_sidebar_layout',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_structure_post',
 					'new_key' => 'zakra_post_sidebar_layout',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_structure_page',
 					'new_key' => 'zakra_page_sidebar_layout',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_structure_default',
 					'new_key' => 'zakra_others_sidebar_layout',
-				),
+				],
 
-			);
+			];
 
 			foreach ( $sidebar_layout_option as $option ) {
 
@@ -1116,8 +1125,8 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 
 			if ( $old_blog_post_elements ) {
 
-				$new_blog_post_elements = array();
-				$blog_post_elements     = array( 'featured_image', 'title', 'meta', 'content' );
+				$new_blog_post_elements = [];
+				$blog_post_elements     = [ 'featured_image', 'title', 'meta', 'content' ];
 
 				foreach ( $blog_post_elements as $element ) {
 
@@ -1136,8 +1145,8 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 
 			if ( $old_meta_elements ) {
 
-				$new_meta_elements = array();
-				$meta_elements     = array( 'author', 'date', 'categories', 'tags', 'comments' );
+				$new_meta_elements = [];
+				$meta_elements     = [ 'author', 'date', 'categories', 'tags', 'comments' ];
 
 				foreach ( $meta_elements as $element ) {
 
@@ -1156,8 +1165,8 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 
 			if ( $old_single_post_elements ) {
 
-				$new_single_post_elements = array();
-				$single_post_elements     = array( 'featured_image', 'title', 'meta', 'content' );
+				$new_single_post_elements = [];
+				$single_post_elements     = [ 'featured_image', 'title', 'meta', 'content' ];
 
 				foreach ( $single_post_elements as $element ) {
 
@@ -1176,8 +1185,8 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 
 			if ( $old_single_meta_elements ) {
 
-				$new_single_meta_elements = array();
-				$single_meta_elements     = array( 'author', 'date', 'categories', 'tags', 'comments' );
+				$new_single_meta_elements = [];
+				$single_meta_elements     = [ 'author', 'date', 'categories', 'tags', 'comments' ];
 
 				foreach ( $single_meta_elements as $element ) {
 
@@ -1209,12 +1218,12 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 			}
 
 			// Sidebar widgets.
-			$map = array(
+			$map = [
 				'header-top-left-sidebar'  => 'top-bar-col-1-sidebar',
 				'header-top-right-sidebar' => 'top-bar-col-2-sidebar',
 				'footer-bar-left-sidebar'  => 'footer-bar-col-1-sidebar',
 				'footer-bar-right-sidebar' => 'footer-bar-col-2-sidebar',
-			);
+			];
 
 			$sidebarwidgets = get_option( 'sidebars_widgets' );
 
@@ -1228,10 +1237,10 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 			}
 
 			// Post meta migration.
-			$arg       = array(
+			$arg       = [
 				'post_type'      => 'any',
-				'posts_per_page' => -1,
-			);
+				'posts_per_page' => - 1,
+			];
 			$the_query = new WP_Query( $arg );
 
 			// The loop.
@@ -1346,17 +1355,17 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 			endwhile;
 
 			// WooCommerce Sidebar layout migration.
-			$wc_sidebar_layout_option = array(
-				array(
+			$wc_sidebar_layout_option = [
+				[
 					'old_key' => 'zakra_structure_wc',
 					'new_key' => 'zakra_woocommerce_sidebar_layout',
-				),
-				array(
+				],
+				[
 					'old_key' => 'zakra_structure_wc_product',
 					'new_key' => 'zakra_woocommerce_single_product_sidebar_layout',
-				),
+				],
 
-			);
+			];
 
 			foreach ( $wc_sidebar_layout_option as $option ) {
 
@@ -1395,6 +1404,666 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 		}
 
 		/**
+		 * Migrate customizer options.
+		 *
+		 * @package Zakra
+		 *
+		 * @since 3.0.0
+		 */
+		public function zakra_builder_migration() {
+
+			$background_color      = get_theme_mod( 'background_color' );
+			$background_image      = get_theme_mod( 'background_image' );
+			$background_preset     = get_theme_mod( 'background_preset' );
+			$background_position   = get_theme_mod( 'background_position' );
+			$background_size       = get_theme_mod( 'background_size' );
+			$background_repeat     = get_theme_mod( 'background_repeat' );
+			$background_attachment = get_theme_mod( 'background_attachment' );
+
+			if ( $background_color || $background_image || $background_preset || $background_position || $background_size || $background_repeat || $background_attachment ) {
+				$background_value = array(
+					'background-color'      => $background_color,
+					'background-image'      => $background_image,
+					'background-repeat'     => $background_repeat,
+					'background-position'   => $background_position,
+					'background-size'       => $background_size,
+					'background-attachment' => $background_attachment,
+				);
+
+				set_theme_mod( 'zakra_outside_container_background', $background_value );
+			}
+
+			if ( get_option( 'zakra_builder_migration' ) ) {
+				return;
+			}
+
+			// Save old data.
+			$theme_mods = get_theme_mods();
+
+			update_option( 'zakra_customizer_before_builder_old_data', $theme_mods );
+
+			$header_builder_config = [
+				'desktop' => [
+					'top'    => [
+						'left'   => [],
+						'center' => [],
+						'right'  => [],
+					],
+					'main'   => [
+						'left'   => [],
+						'center' => [],
+						'right'  => [],
+					],
+					'bottom' => [
+						'left'   => [],
+						'center' => [],
+						'right'  => [],
+					],
+				],
+				'mobile'  => [
+					'top'    => [
+						'left'   => [],
+						'center' => [],
+						'right'  => [],
+					],
+					'main'   => [
+						'left'   => [ 'logo' ],
+						'center' => [],
+						'right'  => [ 'toggle-button' ],
+					],
+					'bottom' => [
+						'left'   => [],
+						'center' => [],
+						'right'  => [],
+					],
+				],
+				'offset'  => [],
+			];
+
+			// Top bar.
+			$top_bar_enable = get_theme_mod( 'zakra_enable_top_bar', false );
+			if ( $top_bar_enable ) {
+				$column_layout_1 = get_theme_mod( 'zakra_top_bar_column_1_content_type', 'text_html' );
+				$column_layout_2 = get_theme_mod( 'zakra_top_bar_column_2_content_type', 'text_html' );
+
+				switch ( $column_layout_1 ) {
+					case 'text_html':
+						$column_layout_1_html = get_theme_mod( 'zakra_top_bar_column_1_html', '' );
+						if ( $column_layout_1_html ) {
+							set_theme_mod( 'zakra_header_html_1', $column_layout_1_html );
+							remove_theme_mod( 'zakra_top_bar_column_1_html' );
+						}
+						$header_builder_config['desktop']['top']['left'] = [
+							'html-1',
+						];
+						break;
+					case 'menu':
+						$column_layout_1_menu = get_theme_mod( 'zakra_top_bar_column_1_menu', '' );
+						if ( $column_layout_1_menu ) {
+							set_theme_mod( 'zakra_header_tertiary_menu', $column_layout_1_menu );
+							$header_builder_config['desktop']['top']['left'] = [
+								'tertiary-menu',
+							];
+						}
+						break;
+					case 'widget':
+						$header_builder_config['desktop']['top']['left'] = [
+							'widget-1',
+						];
+						break;
+				}
+
+				switch ( $column_layout_2 ) {
+					case 'text_html':
+						$column_layout_2_html = get_theme_mod( 'zakra_top_bar_column_2_html', '' );
+						if ( $column_layout_2_html ) {
+							set_theme_mod( 'zakra_header_html_2', $column_layout_2_html );
+							remove_theme_mod( 'zakra_top_bar_column_2_html' );
+						}
+						$header_builder_config['desktop']['top']['right'] = [
+							'html-2',
+						];
+						break;
+					case 'menu':
+						$column_layout_2_menu = get_theme_mod( 'zakra_top_bar_column_2_menu', '' );
+						if ( $column_layout_2_menu ) {
+							set_theme_mod( 'zakra_header_quaternary_menu', $column_layout_2_menu );
+							$header_builder_config['desktop']['top']['right'] = [
+								'quaternary-menu',
+							];
+						}
+						break;
+					case 'widget':
+						$header_builder_config['desktop']['top']['right'] = [
+							'widget-2',
+						];
+						break;
+				}
+			}
+
+			// Main header.
+			$main_header_layout   = get_theme_mod( 'zakra_main_header_layout', 'layout-1' );
+			$primary_menu_enable  = get_theme_mod( 'zakra_enable_primary_menu', true );
+			$header_search_enable = get_theme_mod( 'zakra_enable_header_search', true );
+			$header_button_enable = get_theme_mod( 'zakra_enable_header_button', false );
+
+			if ( 'layout-1' === $main_header_layout ) {
+				$main_header_style = get_theme_mod( 'zakra_main_header_layout_1_style', 'style-1' );
+
+				switch ( $main_header_style ) {
+					case 'style-1':
+						$header_builder_config['desktop']['main']['left'] = [
+							'logo',
+						];
+						if ( $primary_menu_enable ) {
+							$header_builder_config['desktop']['main']['right'][] = 'primary-menu';
+						}
+						if ( $header_search_enable ) {
+							$header_builder_config['desktop']['main']['right'][] = 'search';
+						}
+						if ( class_exists( 'WooCommerce' ) ) {
+							$header_builder_config['desktop']['main']['right'][] = 'cart';
+						}
+						if ( $header_button_enable ) {
+							$header_builder_config['desktop']['main']['right'][] = 'button';
+						}
+						break;
+					case 'style-2':
+						$header_builder_config['desktop']['main']['center'] = [
+							'logo',
+						];
+						if ( $primary_menu_enable ) {
+							$header_builder_config['desktop']['bottom']['center'][] = 'primary-menu';
+						}
+						if ( $header_search_enable ) {
+							$header_builder_config['desktop']['bottom']['center'][] = 'search';
+						}
+						if ( class_exists( 'WooCommerce' ) ) {
+							$header_builder_config['desktop']['bottom']['center'][] = 'cart';
+						}
+						if ( $header_button_enable ) {
+							$header_builder_config['desktop']['bottom']['center'][] = 'button';
+						}
+						break;
+					case 'style-3':
+						if ( $primary_menu_enable ) {
+							$header_builder_config['desktop']['main']['left'][] = 'primary-menu';
+						}
+						if ( $header_search_enable ) {
+							$header_builder_config['desktop']['main']['left'][] = 'search';
+						}
+						if ( class_exists( 'WooCommerce' ) ) {
+							$header_builder_config['desktop']['main']['left'][] = 'cart';
+						}
+						if ( $header_button_enable ) {
+							$header_builder_config['desktop']['main']['left'][] = 'button';
+						}
+						$header_builder_config['desktop']['main']['right'] = [
+							'logo',
+						];
+						break;
+				}
+			} elseif ( 'layout-2' === $main_header_layout ) {
+				$main_header_layout_2_style     = get_theme_mod( 'zakra_main_header_layout_2_style', 'style-1' );
+				$menu_bg_default                = [
+					'background-color'      => '#F4F4F5',
+					'background-image'      => '',
+					'background-repeat'     => 'repeat',
+					'background-position'   => 'center center',
+					'background-size'       => 'contain',
+					'background-attachment' => 'scroll',
+				];
+				$bottom_area_border_width_value = [
+					'top'    => '1',
+					'right'  => '0',
+					'bottom' => '0',
+					'left'   => '0',
+					'unit'   => 'px',
+				];
+				$menu_background                = get_theme_mod( 'zakra_main_header_menu_background_color', $menu_bg_default );
+				set_theme_mod( 'zakra_header_bottom_area_background', $menu_background );
+				set_theme_mod( 'zakra_header_bottom_area_border_width', $bottom_area_border_width_value );
+				set_theme_mod( 'zakra_header_bottom_area_border_color', '#D4D4D8' );
+
+				switch ( $main_header_layout_2_style ) {
+					case 'style-1':
+						$header_builder_config['desktop']['main']['left'] = [
+							'logo',
+						];
+						if ( $primary_menu_enable ) {
+							$header_builder_config['desktop']['bottom']['left'][] = 'primary-menu';
+						}
+						$header_builder_config['desktop']['bottom']['center'] = [];
+						if ( $header_search_enable ) {
+							$header_builder_config['desktop']['bottom']['right'][] = 'search';
+						}
+						if ( class_exists( 'WooCommerce' ) ) {
+							$header_builder_config['desktop']['bottom']['right'][] = 'cart';
+						}
+						if ( $header_button_enable ) {
+							$header_builder_config['desktop']['bottom']['right'][] = 'button';
+						}
+						break;
+				}
+			}
+
+			// Get the current menu locations
+			$menu_locations = get_theme_mod( 'nav_menu_locations' );
+
+				// Check if 'menu-mobile' is set
+			if ( ! isset( $menu_locations['menu-mobile'] ) ) {
+				// Set 'menu-mobile' to the value of 'primary' menu location
+				$menu_locations['menu-mobile'] = $menu_locations['menu-primary'];
+
+				// Update the theme mod with the new menu locations
+				set_theme_mod( 'nav_menu_locations', $menu_locations );
+			}
+
+			$header_builder_config['offset'] = [ 'mobile-menu' ];
+
+			self::fix_components_indices( $header_builder_config );
+
+			set_theme_mod( 'zakra_header_builder', $header_builder_config );
+
+			// Footer builder migration.
+			$footer_builder_config = [
+				'desktop' => [
+					'top'    => [
+						'top-1' => [],
+						'top-2' => [],
+						'top-3' => [],
+						'top-4' => [],
+						'top-5' => [],
+					],
+					'main'   => [
+						'main-1' => [],
+						'main-2' => [],
+						'main-3' => [],
+						'main-4' => [],
+						'main-5' => [],
+					],
+					'bottom' => [
+						'bottom-1' => [],
+						'bottom-2' => [],
+						'bottom-3' => [],
+						'bottom-4' => [],
+						'bottom-5' => [],
+					],
+				],
+				'offset'  => [],
+			];
+			$footer_bar_style      = get_theme_mod( 'zakra_footer_bar_style', 'style-2' );
+			$footer_bar_content_1  = get_theme_mod( 'zakra_footer_bar_column_1_content_type', 'text_html' );
+			$footer_bar_content_2  = get_theme_mod( 'zakra_footer_bar_column_2_content_type', 'none' );
+
+			switch ( $footer_bar_content_1 ) {
+				case 'text_html':
+					$footer_bar_html = get_theme_mod( 'zakra_footer_bar_column_1_html', '' );
+					if ( $footer_bar_html ) {
+						set_theme_mod( 'zakra_footer_copyright', $footer_bar_html );
+						remove_theme_mod( 'zakra_footer_bar_column_1_html' );
+					}
+
+					if ( 'style-2' === $footer_bar_style ) {
+						set_theme_mod( 'zakra_footer_bottom_area_cols', 1 );
+						self::remove_component( 'copyright', $footer_builder_config );
+						$footer_builder_config['desktop']['bottom']['bottom-1'][] = 'copyright';
+					} elseif ( 'style-1' === $footer_bar_style ) {
+						set_theme_mod( 'zakra_footer_bottom_area_cols', 2 );
+						self::remove_component( 'copyright', $footer_builder_config );
+						$footer_builder_config['desktop']['bottom']['bottom-1'][] = 'copyright';
+					}
+					break;
+				case 'menu':
+					$footer_bar_menu = get_theme_mod( 'zakra_footer_bar_column_1_menu', 'none' );
+					if ( $footer_bar_menu ) {
+						set_theme_mod( 'zakra_footer_menu', $footer_bar_menu );
+						remove_theme_mod( 'zakra_footer_bar_column_1_menu' );
+
+						if ( 'style-2' === $footer_bar_style ) {
+							set_theme_mod( 'zakra_footer_bottom_area_cols', 1 );
+							$footer_builder_config['desktop']['bottom']['bottom-1'][] = 'footer-menu';
+						} elseif ( 'style-1' === $footer_bar_style ) {
+							set_theme_mod( 'zakra_footer_bottom_area_cols', 2 );
+							$footer_builder_config['desktop']['bottom']['bottom-1'][] = 'footer-menu';
+						}
+					}
+					break;
+				case 'widget':
+					if ( 'style-2' === $footer_bar_style ) {
+						set_theme_mod( 'zakra_footer_bottom_area_cols', 1 );
+						$footer_builder_config['desktop']['bottom']['bottom-1'][] = 'widget-5';
+					} elseif ( 'style-1' === $footer_bar_style ) {
+						set_theme_mod( 'zakra_footer_bottom_area_cols', 2 );
+						$footer_builder_config['desktop']['bottom']['bottom-1'][] = 'widget-5';
+					}
+					break;
+			}
+
+			switch ( $footer_bar_content_2 ) {
+				case 'text_html':
+					$footer_bar_html_2 = get_theme_mod( 'zakra_footer_bar_column_2_html', '' );
+					if ( $footer_bar_html_2 ) {
+						set_theme_mod( 'zakra_footer_html_1', $footer_bar_html_2 );
+						remove_theme_mod( 'zakra_footer_bar_column_2_html' );
+					}
+
+					if ( 'style-2' === $footer_bar_style ) {
+						set_theme_mod( 'zakra_footer_bottom_area_cols', 1 );
+						$footer_builder_config['desktop']['bottom']['bottom-1'][] = 'html-1';
+					} elseif ( 'style-1' === $footer_bar_style ) {
+						set_theme_mod( 'zakra_footer_bottom_area_cols', 2 );
+						$footer_builder_config['desktop']['bottom']['bottom-2'][] = 'html-1';
+					}
+					break;
+				case 'menu':
+					$footer_bar_menu_2 = get_theme_mod( 'zakra_footer_bar_column_2_menu', '' );
+					if ( $footer_bar_menu_2 ) {
+						set_theme_mod( 'zakra_footer_menu_2', $footer_bar_menu_2 );
+						remove_theme_mod( 'zakra_footer_bar_column_2_menu' );
+
+						if ( 'style-2' === $footer_bar_style ) {
+							set_theme_mod( 'zakra_footer_bottom_area_cols', 1 );
+							$footer_builder_config['desktop']['bottom']['bottom-1'][] = 'footer-menu-2';
+						} elseif ( 'style-1' === $footer_bar_style ) {
+							set_theme_mod( 'zakra_footer_bottom_area_cols', 2 );
+							$footer_builder_config['desktop']['bottom']['bottom-2'][] = 'footer-menu-2';
+						}
+					}
+					break;
+				case 'widget':
+					if ( 'style-2' === $footer_bar_style ) {
+						set_theme_mod( 'zakra_footer_bottom_area_cols', 1 );
+						$footer_builder_config['desktop']['bottom']['bottom-1'][] = 'widget-6';
+					} elseif ( 'style-1' === $footer_bar_style ) {
+						set_theme_mod( 'zakra_footer_bottom_area_cols', 2 );
+						$footer_builder_config['desktop']['bottom']['bottom-2'][] = 'widget-6';
+					}
+					break;
+			}
+
+			// Footer column.
+			$footer_column_enable = get_theme_mod( 'zakra_enable_footer_column', false );
+			if ( $footer_column_enable ) {
+				$footer_column_layout = get_theme_mod( 'zakra_footer_column_layout', 'layout-1' );
+				$footer_column_style  = get_theme_mod( 'zakra_footer_column_layout_1_style', 'style-4' );
+
+				if ( 'layout-2' !== $footer_column_layout ) {
+					switch ( $footer_column_style ) {
+						case 'style-1':
+							set_theme_mod( 'zakra_footer_main_area_cols', 1 );
+							if ( is_active_sidebar( 'footer-sidebar-1' ) ) {
+								$footer_builder_config['desktop']['main']['main-1'][] = 'widget-1';
+							}
+							break;
+						case 'style-2':
+							set_theme_mod( 'zakra_footer_main_area_cols', 2 );
+							if ( is_active_sidebar( 'footer-sidebar-1' ) ) {
+								$footer_builder_config['desktop']['main']['main-1'][] = 'widget-1';
+							}
+							if ( is_active_sidebar( 'footer-sidebar-2' ) ) {
+								$footer_builder_config['desktop']['main']['main-2'][] = 'widget-2';
+							}
+							break;
+						case 'style-3':
+							set_theme_mod( 'zakra_footer_main_area_cols', 3 );
+							if ( is_active_sidebar( 'footer-sidebar-1' ) ) {
+								$footer_builder_config['desktop']['main']['main-1'][] = 'widget-1';
+							}
+							if ( is_active_sidebar( 'footer-sidebar-2' ) ) {
+								$footer_builder_config['desktop']['main']['main-2'][] = 'widget-2';
+							}
+							if ( is_active_sidebar( 'footer-sidebar-3' ) ) {
+								$footer_builder_config['desktop']['main']['main-3'][] = 'widget-3';
+							}
+							break;
+						case 'style-4':
+							set_theme_mod( 'zakra_footer_main_area_cols', 4 );
+							if ( is_active_sidebar( 'footer-sidebar-1' ) ) {
+								$footer_builder_config['desktop']['main']['main-1'][] = 'widget-1';
+							}
+							if ( is_active_sidebar( 'footer-sidebar-2' ) ) {
+								$footer_builder_config['desktop']['main']['main-2'][] = 'widget-2';
+							}
+							if ( is_active_sidebar( 'footer-sidebar-3' ) ) {
+								$footer_builder_config['desktop']['main']['main-3'][] = 'widget-3';
+							}
+							if ( is_active_sidebar( 'footer-sidebar-4' ) ) {
+								$footer_builder_config['desktop']['main']['main-4'][] = 'widget-4';
+							}
+							break;
+					}
+				}
+			}
+
+			self::fix_components_indices( $footer_builder_config );
+			set_theme_mod( 'zakra_footer_builder', $footer_builder_config );
+
+			// Normal options to builder options.
+			function normal_to_builder_option( $old_mod, $new_mod, $_default = '' ) {
+				$value = get_theme_mod( $old_mod, '' );
+				if ( $value ) {
+					set_theme_mod( $new_mod, $value );
+					if ( 'zakra_footer_column_widget_text_color' !== $old_mod ) {
+						remove_theme_mod( $old_mod );
+					}
+				} elseif ( $_default ) {
+					set_theme_mod( $new_mod, $_default );
+				}
+			}
+
+			// Migrate top bar options
+			normal_to_builder_option( 'zakra_top_bar_color', 'zakra_header_top_area_color', '#FAFAFA' );
+			normal_to_builder_option(
+				'zakra_top_bar_background',
+				'zakra_header_top_area_background',
+				array(
+					'background-color'      => '#18181B',
+					'background-image'      => '',
+					'background-repeat'     => 'repeat',
+					'background-position'   => 'center center',
+					'background-size'       => 'contain',
+					'background-attachment' => 'scroll',
+				)
+			);
+
+			// Migrate main header options
+			$main_header_layout_1_style = get_theme_mod( 'zakra_main_header_layout_1_style', 'style-1' );
+			$main_layout_bg             = get_theme_mod( 'zakra_main_header_background_color' );
+			if ( 'layout-2' === $main_header_layout || 'style-2' === $main_header_layout_1_style ) {
+				set_theme_mod( 'zakra_header_main_area_background', $main_layout_bg );
+				set_theme_mod( 'zakra_header_bottom_area_background', $main_layout_bg );
+			} else {
+				normal_to_builder_option( 'zakra_main_header_background_color', 'zakra_header_main_area_background' );
+			}
+
+			$footer_bar_width = get_theme_mod(
+				'zakra_footer_bar_border_top_width',
+				array(
+					'size' => 1,
+					'unit' => 'px',
+				)
+			);
+			if ( $footer_bar_width ) {
+				$value = [
+					'top'    => $footer_bar_width['size'],
+					'right'  => '0',
+					'bottom' => '0',
+					'left'   => '0',
+					'units'  => 'px',
+				];
+				set_theme_mod( 'zakra_footer_bottom_area_border_width', $value );
+				remove_theme_mod( 'zakra_footer_bar_border_top_width' );
+			}
+
+			$main_header_border_width = get_theme_mod(
+				'zakra_main_header_border_bottom_width',
+				array(
+					'size'  => 1,
+					'units' => 'px',
+				)
+			);
+			if ( $main_header_border_width ) {
+				$value = [
+					'top'    => '0',
+					'right'  => '0',
+					'bottom' => $main_header_border_width['size'],
+					'left'   => '0',
+					'units'  => 'px',
+				];
+				set_theme_mod( 'zakra_header_builder_border_width', $value );
+				remove_theme_mod( 'zakra_main_header_border_bottom_width' );
+			}
+			normal_to_builder_option( 'zakra_main_header_border_bottom_color', 'zakra_header_main_area_border_color', '#E4E4E7' );
+			normal_to_builder_option( 'zakra_footer_bar_border_top_color', 'zakra_footer_bottom_area_border_color', '#3f3f46' );
+			normal_to_builder_option( 'zakra_primary_menu_border_bottom_width', 'zakra_header_menu_border_bottom_width' );
+			normal_to_builder_option( 'zakra_primary_menu_border_bottom_color', 'zakra_header_menu_border_bottom_color', '#e9ecef' );
+			normal_to_builder_option( 'zakra_main_menu_typography', 'zakra_header_main_menu_typography' );
+			normal_to_builder_option( 'zakra_sub_menu_typography', 'zakra_header_sub_menu_typography' );
+			normal_to_builder_option( 'zakra_mobile_menu_typography', 'zakra_header_mobile_menu_typography' );
+			normal_to_builder_option( 'zakra_site_identity_color', 'zakra_header_site_identity_color' );
+			normal_to_builder_option( 'zakra_site_title_typography', 'zakra_header_site_title_typography' );
+			normal_to_builder_option( 'zakra_site_tagline_color', 'zakra_header_site_tagline_color' );
+			normal_to_builder_option( 'zakra_site_tagline_typography', 'zakra_header_site_tagline_typography' );
+
+			// Migrate main menu options.
+			$main_menu_color        = get_theme_mod( 'zakra_main_menu_color', '' );
+			$main_menu_hover_color  = get_theme_mod( 'zakra_main_menu_hover_color', '' );
+			$main_menu_active_color = get_theme_mod( 'zakra_main_menu_active_color', '' );
+			if ( $main_menu_color ) {
+				set_theme_mod( 'zakra_header_main_menu_color', $main_menu_color );
+				set_theme_mod( 'zakra_header_secondary_menu_color', $main_menu_color );
+				remove_theme_mod( 'zakra_main_menu_color' );
+			}
+
+			if ( $main_menu_hover_color ) {
+				set_theme_mod( 'zakra_header_main_menu_hover_color', $main_menu_hover_color );
+				set_theme_mod( 'zakra_header_secondary_menu_hover_color', $main_menu_hover_color );
+				remove_theme_mod( 'zakra_main_menu_hover_color' );
+			}
+
+			if ( $main_menu_active_color ) {
+				set_theme_mod( 'zakra_header_main_menu_active_color', $main_menu_active_color );
+				set_theme_mod( 'zakra_header_secondary_menu_active_color', $main_menu_active_color );
+				remove_theme_mod( 'zakra_main_menu_active_color' );
+			}
+
+			// Migrate footer options
+			$footer_column_border_width = get_theme_mod( 'zakra_footer_column_border_top_width', '' );
+			if ( $footer_column_border_width ) {
+				$value = [
+					'top'    => '0',
+					'right'  => '0',
+					'bottom' => $footer_column_border_width['size'],
+					'left'   => '0',
+					'units'  => 'px',
+				];
+				set_theme_mod( 'zakra_footer_main_area_border_width', $value );
+				remove_theme_mod( 'zakra_footer_column_border_top_width' );
+			}
+
+			normal_to_builder_option( 'zakra_footer_column_border_top_color', 'zakra_footer_main_area_border_color', '#e9ecef' );
+			normal_to_builder_option( 'zakra_footer_column_widget_text_color', 'zakra_footer_top_area_color', '#D4D4D8' );
+			normal_to_builder_option( 'zakra_footer_column_widget_text_color', 'zakra_footer_main_area_color', '#D4D4D8' );
+			normal_to_builder_option( 'zakra_footer_column_widget_link_color', 'zakra_footer_main_area_link_color' );
+			normal_to_builder_option( 'zakra_footer_column_widget_link_hover_color', 'zakra_footer_main_area_link_hover_color' );
+			normal_to_builder_option(
+				'zakra_footer_bar_background',
+				'zakra_footer_bottom_area_background',
+				array(
+					'background-color'      => '#18181B',
+					'background-image'      => '',
+					'background-repeat'     => 'repeat',
+					'background-position'   => 'center center',
+					'background-size'       => 'contain',
+					'background-attachment' => 'scroll',
+				)
+			);
+			normal_to_builder_option( 'zakra_footer_bar_link_color', 'zakra_footer_copyright_link_color' );
+			normal_to_builder_option( 'zakra_footer_bar_link_hover_color', 'zakra_footer_copyright_link_hover_color' );
+
+			$footer_bg = get_theme_mod(
+				'zakra_footer_column_background',
+				array(
+					'background-color'      => '#18181B',
+					'background-image'      => '',
+					'background-repeat'     => 'repeat',
+					'background-position'   => 'center center',
+					'background-size'       => 'contain',
+					'background-attachment' => 'scroll',
+				)
+			);
+			if ( $footer_bg ) {
+				set_theme_mod( 'zakra_footer_main_area_background', $footer_bg );
+				set_theme_mod( 'zakra_footer_top_area_background', $footer_bg );
+				remove_theme_mod( 'zakra_footer_column_background' );
+			}
+
+			$footer_bar_content_color = get_theme_mod( 'zakra_footer_bar_text_color', '#fafafa' );
+			if ( $footer_bar_content_color ) {
+				set_theme_mod( 'zakra_footer_copyright_text_color', $footer_bar_content_color );
+			}
+
+			update_option( 'zakra_builder_migration', true );
+		}
+
+		public static function remove_component( $component_to_remove, &$_array ) {
+			foreach ( $_array as $key => &$value ) {
+				if ( is_array( $value ) ) {
+					self::remove_component( $component_to_remove, $value );
+				} else { // phpcs:ignore
+					if ( $value === $component_to_remove ) {
+						unset( $_array[ $key ] );
+					}
+				}
+			}
+			if ( array_values( $_array ) === $_array ) {
+				$_array = array_values( $_array );
+			}
+		}
+
+		public static function fix_components_indices( &$_array ) {
+			$fixed = false;
+
+			foreach ( $_array as &$value ) {
+				if ( is_array( $value ) ) {
+					if ( ! self::fix_components_indices( $value ) ) {
+						$numeric_keys = false;
+						$all_numeric  = true;
+						foreach ( array_keys( $value ) as $key ) {
+							if ( is_numeric( $key ) ) {
+								$numeric_keys = true;
+							} else {
+								$all_numeric = false;
+								break;
+							}
+						}
+						if ( $numeric_keys && $all_numeric ) {
+							$value = array_values( $value );
+							$fixed = true;
+						}
+					}
+				}
+			}
+
+			return $fixed;
+		}
+
+		public static function zakra_builder_rollback() {
+
+			update_option( 'theme_mods_zakra', '' );
+				$theme_mods_old = get_option( 'zakra_customizer_before_builder_old_data' );
+			if ( $theme_mods_old ) {
+				foreach ( $theme_mods_old as $key => $value ) {
+					set_theme_mod( $key, $value );
+				}
+			}
+				delete_option( 'zakra_customizer_before_builder_old_data' );
+				delete_option( 'zakra_builder_migration' );
+				delete_option( 'zakra_pro_builder_migration' );
+		}
+
+		/**
 		 * Return the value for customize migration on demo import.
 		 *
 		 * @return bool
@@ -1417,7 +2086,7 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 		/**
 		 * @return bool
 		 */
-		public static function is_fresh_install() {
+		public static function zakra_maybe_enable_builder() {
 
 			/**
 			 * If the option with keys zakra_stretched_style_transfer ( introduced in V1.0.8 )
@@ -1446,7 +2115,7 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 			 */
 			$migrated = get_option( 'zakra_customizer_migration_v3' );
 
-			if ( $migrated ) {
+			if ( $migrated || wp_doing_ajax() ) {
 
 				return false;
 			}
