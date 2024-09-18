@@ -330,6 +330,47 @@ if (!function_exists('total_add_custom_fonts')) {
 
 }
 
+function hdi_import_paymattic_options($args) {
+    if (!isset($args['slug']) || $args['slug'] !== 'hotel') {
+        return;
+    }
+
+    $import_file = $args['file_path'] . '/paymatic-form.json';
+
+    if ($import_file && class_exists('WPPayForm\Framework\Foundation\Application')) {
+
+        $data = array(
+            'post_title' => 'Hotel Booking Form',
+            'post_status' => 'publish'
+        );
+
+        /* Add new Form */
+        $formId = WPPayForm\App\Models\Form::store($data);
+
+        wp_update_post([
+            'ID' => $formId,
+            'post_title' => sanitize_text_field($data['post_title']) . ' (#' . $formId . ')'
+        ]);
+
+
+        $options = array('associative' => true);
+
+        $data = wp_json_file_decode($import_file, $options);
+
+        $metas = isset($data['form_meta']) ? $data['form_meta'] : [];
+        if (!is_array($metas)) {
+            return;
+        }
+        foreach ($metas as $metaKey => $metaValue) {
+            update_post_meta($formId, $metaKey, $metaValue);
+        }
+
+        (new \WPPayForm\App\Hooks\Handlers\ActivationHandler)->handle();
+    }
+
+}
+
+
 add_filter('total_regsiter_fonts', 'total_add_custom_fonts');
 add_filter('body_class', 'total_body_classes');
 add_filter('post_class', 'total_remove_hentry_class');
@@ -341,4 +382,4 @@ add_action('tgmpa_register', 'total_register_required_plugins');
 add_filter('hdi_import_files', 'total_premium_demo_config');
 add_action('init', 'total_create_elementor_kit');
 add_filter('wpforms_post_type_args', 'total_enable_wpform_export');
-
+add_action('hdi_after_demo_import', 'hdi_import_paymattic_options');
