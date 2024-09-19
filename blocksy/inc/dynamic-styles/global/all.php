@@ -507,7 +507,11 @@ if ($sidebar_type === 'type-2') {
 	]);
 }
 
-if ($sidebar_type === 'type-3') {
+if (
+	$sidebar_type === 'type-3'
+	||
+	is_customize_preview()
+) {
 	blocksy_output_border([
 		'css' => $css,
 		'tablet_css' => $tablet_css,

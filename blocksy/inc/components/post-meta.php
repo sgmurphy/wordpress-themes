@@ -8,7 +8,7 @@ add_filter('safe_style_css', function($styles) {
 if (! function_exists('blocksy_render_post_author_avatar')) {
 	function blocksy_render_post_author_avatar($author) {
 		global $blocksy_author_options, $blocksy_meta_args;
-		
+
 		if ($blocksy_author_options['has_author_avatar'] === 'no') {
 			return '';
 		}
@@ -83,14 +83,14 @@ if (! function_exists('blocksy_render_post_author_details')) {
 						'data-label' => $meta_label
 					] : []
 				)
-				
+
 			),
 			blocksy_html_tag(
 				'span',
 				blocksy_schema_org_definitions('author_name', ['array' => true]),
 				get_the_author()
 			)
-		); 
+		);
 
 		return $result;
 	}
@@ -109,7 +109,7 @@ if (! function_exists('blocksy_render_post_author')) {
 			$blocksy_author_options['label'],
 			$blocksy_meta_args['prefix'] . '_' . $blocksy_author_options['id'] . '_label'
 		) : $blocksy_author_options['label'];
-	
+
 		if (
 			! empty($meta_label)
 			&&
@@ -293,11 +293,11 @@ if (! function_exists('blocksy_post_meta')) {
 							[],
 							esc_html($meta_label)
 						);
-					}					
+					}
 				}
 
 				$author_output = '';
-				
+
 				if (
 					(
 						$args['meta_type'] === 'icons'
@@ -308,7 +308,7 @@ if (! function_exists('blocksy_post_meta')) {
 					$single_meta['has_author_avatar'] === 'no'
 				) {
 					$icon = '<svg width="13" height="13" viewBox="0 0 15 15"><path d="M13.6,1.4c-1.9-1.9-4.9-1.9-6.8,0L2.2,6C2.1,6.1,2,6.3,2,6.5V12l-1.8,1.8c-0.3,0.3-0.3,0.7,0,1C0.3,14.9,0.5,15,0.7,15s0.3-0.1,0.5-0.2L3,13h5.5c0.2,0,0.4-0.1,0.5-0.2l2.7-2.7c0,0,0,0,0,0l1.9-1.9C15.5,6.3,15.5,3.3,13.6,1.4z M8.2,11.6H4.4l1.4-1.4h3.9L8.2,11.6z M12.6,7.2L11,8.9H7.1l3.6-3.6c0.3-0.3,0.3-0.7,0-1C10.4,4,10,4,9.7,4.3L5,9.1c0,0,0,0,0,0l-1.6,1.6V6.8l4.4-4.4c1.3-1.3,3.5-1.3,4.8,0C14,3.7,14,5.9,12.6,7.2C12.6,7.2,12.6,7.2,12.6,7.2z"/></svg>';
-		
+
 					if (function_exists('blc_get_icon')) {
 						$icon = blc_get_icon([
 							'icon_descriptor' => blocksy_akg('icon', $single_meta, [
@@ -317,7 +317,7 @@ if (! function_exists('blocksy_post_meta')) {
 							'icon_container' => false
 						]);
 					}
-		
+
 					if (! empty($icon)) {
 						$author_output .= trim($icon);
 					}
@@ -328,7 +328,7 @@ if (! function_exists('blocksy_post_meta')) {
 					blocksy_render_post_author($authordata),
 					$blocksy_author_options['has_author_avatar'] === 'yes',
 					$meta_label
-				);				
+				);
 
 				echo blocksy_html_tag(
 					'li',

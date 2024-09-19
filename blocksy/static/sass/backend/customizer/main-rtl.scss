@@ -82,24 +82,24 @@ body.rtl {
 
 
 	// header builder
-	.ct-view-switch li {
-		border-right: none;
-		border-left: 1px solid #ddd;
-	}
+	// .ct-view-switch li {
+	// 	border-right: none;
+	// 	border-left: 1px solid #ddd;
+	// }
 
 	.ct-available-items .ct-item-in-builder:after {
 		content: "\f341";
 	}
 
 	.ct-builder-toggle {
-		--ui-margin: 0 auto 0 0;
-		border-left: none !important;
-		border-right: 1px solid #ddd !important;
+		// --ui-margin: 0 auto 0 0;
+		// border-left: none !important;
+		// border-right: 1px solid #ddd !important;
 
-		&:before {
-			margin-right: initial;
-			margin-left: 10px;
-		}
+		// &:before {
+		// 	margin-right: initial;
+		// 	margin-left: 10px;
+		// }
 	}
 
 	.ct-row-actions {

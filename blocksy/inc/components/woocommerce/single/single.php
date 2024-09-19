@@ -5,6 +5,19 @@ namespace Blocksy;
 class WooCommerceSingle {
 	public $additional_actions = null;
 
+	private $initial_woo_behavior = [
+		'product_title' => true,
+		'product_rating' => true,
+		'product_price' => true,
+		'product_desc' => true,
+		'product_meta' => true,
+		'product_sharing' => true,
+
+		// For now detect only someone disabled the add to cart
+		// from the summary.
+		'product_add_to_cart' => true
+	];
+
 	public function __construct() {
 		$this->additional_actions = new SingleProductAdditionalActions();
 
@@ -33,6 +46,14 @@ class WooCommerceSingle {
 		});
 	}
 
+	public function receive_initial_woo_behavior($initial_woo_behavior) {
+		$this->initial_woo_behavior = array_merge(
+			$this->initial_woo_behavior,
+			$initial_woo_behavior
+		);
+	}
+
+	// TODO: skip if no translation plugin is present
 	public function register_translations() {
 		$default_product_layout = blocksy_get_woo_single_layout_defaults();
 
@@ -133,6 +154,15 @@ class WooCommerceSingle {
 
 		foreach ($args['layout'] as $layer) {
 			if (! $layer['enabled']) {
+				continue;
+			}
+
+			// For now respect initial behavior only for add to cart layer.
+			if (
+				$layer['id'] === 'product_add_to_cart'
+				&&
+				! $this->initial_woo_behavior['product_add_to_cart']
+			) {
 				continue;
 			}
 

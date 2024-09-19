@@ -35,15 +35,6 @@ function blocksy_woocommerce_has_flexy_view() {
 	return !apply_filters('blocksy:woocommerce:product-view:use-default', false);
 }
 
-// Remove Default actions.
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
-
 add_action('init', function() {
 	blocksy_manager()->woocommerce->single->register_translations();
 });
@@ -159,6 +150,28 @@ if (wp_doing_ajax()) {
 }
 
 add_action($action_to_hook, function () {
+	blocksy_manager()->woocommerce->single->receive_initial_woo_behavior([
+		// Validation by priority might be needed to ensure consistency.
+		// This way we can also validate if other plugins interfered with the
+		// action.
+		'product_add_to_cart' => has_action(
+			'woocommerce_single_product_summary',
+			'woocommerce_template_single_add_to_cart'
+		)
+	]);
+
+	// Remove default WooCommerce actions a little later, so we can check if
+	// someone else has removed them before us.
+	// This way, we will skip the layers that are disabled by the user or some
+	// plugin.
+	remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+	remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+	remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+	remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+	remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+	remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+	remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
+
 	if (blocksy_get_theme_mod('woo_has_product_tabs', 'yes') === 'no') {
 		add_filter('woocommerce_product_tabs', function ($tabs) {
 			return [];
@@ -309,6 +322,7 @@ add_action('woocommerce_single_product_summary', function () {
 	$content = ob_get_clean();
 
 	$prefix = blocksy_manager()->screen->get_prefix();
+
 	$deep_link_args = [
 		'prefix' => $prefix,
 		'suffix' => 'woo_product_elements',
@@ -471,5 +485,6 @@ add_filter('comment_class', function ($classes, $class, $comment_id, $comment) {
 	if ($has_avatar) {
 		$classes[] = 'ct-has-avatar';
 	}
+
 	return $classes;
 }, 10, 4);

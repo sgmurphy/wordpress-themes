@@ -1,4 +1,5 @@
 .ct-footer {
+
 	.ct-widget {
 		color: var(--theme-text-color);
 		margin: var(--margin);
@@ -6,6 +7,11 @@
 		
 		&:not(:first-child) {
 			margin-top: var(--widgets-gap, 40px);
+		}
+
+		// https://github.com/sergiu-radu/blocksy/issues/3940
+		&:has(.ct-newsletter-subscribe-block) {
+			width: 100%;
 		}
 	}
 }

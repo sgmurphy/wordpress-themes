@@ -305,8 +305,53 @@ function blocksy_single_content($content = null) {
 					]
 				));
 
+				$tax_to_check = blocksy_maybe_get_matching_taxonomy(
+					get_post_type(),
+					false
+				);
+				$taxonomies_choices = [];
+
+				if ($tax_to_check) {
+					$all_taxonomies = array_values(array_diff(
+						get_object_taxonomies(get_post_type()),
+						['post_format']
+					));
+
+					foreach ($all_taxonomies as $single_taxonomy) {
+						$taxonomy_object = get_taxonomy($single_taxonomy);
+
+						if (! $taxonomy_object->hierarchical) {
+							$taxonomies_choices[] = $single_taxonomy;
+						}
+					}
+
+					if (count($taxonomies_choices) > 1) {
+						$post_tags_taxonomy = blocksy_get_theme_mod(
+							$prefix . '_post_tags_taxonomy',
+							$taxonomies_choices[0]
+						);
+
+						if (taxonomy_exists($post_tags_taxonomy)) {
+							$tax_to_check = $post_tags_taxonomy;
+						}
+					}
+				}
+
+				$module_title_default = __('Tags', 'blocksy');
+
+				if (count($taxonomies_choices) > 0) {
+					$taxonomy_object = get_taxonomy($taxonomies_choices[0]);
+
+					if ($taxonomy_object) {
+						$module_title_default = $taxonomy_object->label;
+					}
+				}
+
 				$module_title_output = '';
-				$module_title = blocksy_get_theme_mod($prefix . '_post_tags_title', __('Tags', 'blocksy'));
+				$module_title = blocksy_get_theme_mod(
+					$prefix . '_post_tags_title',
+					$module_title_default
+				);
 				$module_wrapper = blocksy_get_theme_mod($prefix . '_post_tags_title_wrapper', 'span');
 
 				if (!empty($module_title) || is_customize_preview()) {
@@ -328,10 +373,7 @@ function blocksy_single_content($content = null) {
 					]
 				);
 
-				$tax_to_check = blocksy_maybe_get_matching_taxonomy(
-					get_post_type(),
-					false
-				);
+
 
 				/**
 				 * Note to code reviewers: This line doesn't need to be escaped.

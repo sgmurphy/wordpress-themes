@@ -107,6 +107,7 @@ if ($is_general_cpt) {
 		]),
 
 		$maybe_taxonomy ? [
+			/*
 			$post_type->name . '_single_has_post_tags' => [
 				'label' => blocksy_safe_sprintf(
 					__('%s %s', 'blocksy'),
@@ -119,6 +120,12 @@ if ($is_general_cpt) {
 					'prefix' => $post_type->name . '_single'
 				]),
 			],
+			 */
+
+			blocksy_get_options('single-elements/post-tags', [
+				'prefix' => $post_type->name . '_single',
+				'post_type' => $post_type->name
+			]),
 		] : [],
 
 		blocksy_get_options('single-elements/post-share-box', [

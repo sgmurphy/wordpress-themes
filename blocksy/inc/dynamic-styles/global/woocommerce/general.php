@@ -53,6 +53,20 @@ if ($has_custom_quantity === 'yes') {
 
 
 // sale badge
+blocksy_output_font_css([
+	'font_value' => blocksy_get_theme_mod('product_badge_font',
+		blocksy_typography_default_values([
+			'size' => '12px',
+			'variation' => 'n6',
+			'line-height' => '1.2'
+		])
+	),
+	'css' => $css,
+	'tablet_css' => $tablet_css,
+	'mobile_css' => $mobile_css,
+	'selector' => '.onsale, .out-of-stock-badge, [class*="ct-woo-badge-"]'
+]);
+	
 blocksy_output_colors([
 	'value' => blocksy_get_theme_mod('saleBadgeColor'),
 	'default' => [

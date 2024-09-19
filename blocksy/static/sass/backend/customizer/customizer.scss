@@ -187,12 +187,17 @@ $customizer-width: 320px;
 // footer actions
 #customize-footer-actions {
 	width: #{$customizer-width - 1px};
+
+	.devices {
+		box-shadow: none;
+	}
 }
 
 
 .wp-full-overlay-sidebar {
 	width: $customizer-width;
 	box-shadow: none !important;
+	border-inline-end-color: #ddd;
 }
 
 // new customizer width

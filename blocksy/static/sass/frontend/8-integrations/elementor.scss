@@ -40,6 +40,7 @@
 .elementor-widget-text-editor {
 
 	p {
+		
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -61,11 +62,19 @@
 	--theme-button-transform: none;
 }
 
-// fix for Improved CSS Loading option
-// this option is adding a <style> tag and the heading thinks it is not the first child already
-.elementor-widget-container style + {
 
-	h1, h2, h3, h4, h5, h6 {
-		margin-top: 0;
+.elementor-widget-container {
+
+	.elementor-heading-title {
+		margin: 0;
 	}
+
+	// fix for Improved CSS Loading option
+	// this option is adding a <style> tag and the heading thinks it is not the first child already
+	// style + {
+
+	// 	h1, h2, h3, h4, h5, h6 {
+	// 		margin-top: 0;
+	// 	}
+	// }
 }

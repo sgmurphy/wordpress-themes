@@ -12,7 +12,7 @@
 
 	#customize-controls {
 		background: $background;
-		border-right-color: $border;
+		border-inline-end-color: $border;
 
 		.description {
 			color: lighten($background, 50%);
@@ -26,7 +26,7 @@
 				// color: $light;
 				color: $color_background_light;
 				background: transparent;
-				border-right-color: $border;
+				border-color: $border;
 
 				&:hover {
 					color: $light;
@@ -174,17 +174,17 @@
 
 		.devices {
 			background: inherit;
-			box-shadow: -20px 0 10px -5px $background_light;
+			// box-shadow: -20px 0 10px -5px $background_light;
 
-			&:before {
-				position: absolute;
-				content: '';
-				top: 0;
-				left: -5px;
-				width: 1px;
-				height: 100%;
-				background: $border;
-			}
+			// &:before {
+			// 	position: absolute;
+			// 	content: '';
+			// 	top: 0;
+			// 	left: -5px;
+			// 	width: 1px;
+			// 	height: 100%;
+			// 	background: $border;
+			// }
 
 			button {
 				&:not(.active) {
@@ -298,15 +298,6 @@
 		border-color: var(--optionBorderColor);
 		background: darken($background_light, 1.5%);
 	}
-
-	// .block-editor-button-block-appender {
-	// 	color: $light;
-	// 	box-shadow: inset 0 0 0 1px var(--optionBorderColor);
-
-	// 	&:hover {
-	// 		box-shadow: inset 0 0 0 1px var(--ui-accent-color);
-	// 	}
-	// }
 }
 
 

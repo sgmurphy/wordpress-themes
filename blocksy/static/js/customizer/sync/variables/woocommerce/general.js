@@ -1,3 +1,4 @@
+import { typographyOption } from '../typography'
 import { handleBackgroundOptionFor } from '../background'
 
 export const getWooGeneralVariablesFor = () => ({
@@ -37,6 +38,11 @@ export const getWooGeneralVariablesFor = () => ({
 	],
 
 	// sale badge
+	...typographyOption({
+		id: 'product_badge_font',
+		selector: '.onsale, .out-of-stock-badge, [class*="ct-woo-badge-"]',
+	}),
+	
 	saleBadgeColor: [
 		{
 			selector: ':root',

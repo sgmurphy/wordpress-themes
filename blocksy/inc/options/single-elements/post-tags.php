@@ -14,9 +14,48 @@ if (! isset($sync_prefix)) {
 	$sync_prefix = $prefix;
 }
 
+if (! isset($post_type)) {
+	$post_type = 'post';
+}
+
+$post_type_object = get_post_type_object($post_type);
+
+$taxonomies_choices = [];
+
+$all_taxonomies = array_values(array_diff(
+	get_object_taxonomies($post_type),
+	['post_format']
+));
+
+foreach ($all_taxonomies as $single_taxonomy) {
+	$taxonomy_object = get_taxonomy($single_taxonomy);
+
+	if (! $taxonomy_object->public) {
+		continue;
+	}
+
+	if (! $taxonomy_object->hierarchical) {
+		$taxonomies_choices[$single_taxonomy] = $taxonomy_object->label;
+	}
+}
+
+$label = sprintf(
+	__('%s %s', 'blocksy'),
+	$post_type_object->labels->singular_name,
+	array_values($taxonomies_choices)[0]
+);
+
+if (count($taxonomies_choices) > 1) {
+	$label = sprintf(
+		__('%s %s', 'blocksy'),
+		$post_type_object->labels->singular_name,
+		__('Tags', 'blocksy')
+	);
+}
+
 $options = [
 	$prefix . 'has_post_tags' => [
-		'label' => __( 'Post Tags', 'blocksy' ),
+		'label' => $label,
 		'type' => 'ct-panel',
 		'switch' => true,
 		'value' => 'no',
@@ -26,15 +65,29 @@ $options = [
 		'inner-options' => [
 
 			blocksy_rand_md5() => [
-				'title' => __( 'General', 'blocksy' ),
+				'title' => __('General', 'blocksy'),
 				'type' => 'tab',
 				'options' => [
+					count($taxonomies_choices) > 1 ? [
+						$prefix . 'post_tags_taxonomy' => [
+							'label' => __('Taxonomy', 'blocksy'),
+							'type' => 'ct-select',
+							'value' => array_keys($taxonomies_choices)[0],
+							'view' => 'text',
+							'design' => 'inline',
+							'choices' => blocksy_ordered_keys($taxonomies_choices),
+							'sync' => blocksy_sync_whole_page([
+								'prefix' => $sync_prefix,
+								'loader_selector' => '.entry-tags'
+							]),
+						],
+					] : [],
 
 					$prefix . 'post_tags_title' => array_merge([
 						'label' => __( 'Module Title', 'blocksy' ),
 						'type' => 'text',
 						'design' => 'inline',
-						'value' => __( 'Tags', 'blocksy' ),
+						'value' => array_values($taxonomies_choices)[0],
 					], $skip_sync_id ? [
 						'sync' => $skip_sync_id,
 						'setting' => [ 'transport' => 'postMessage' ],

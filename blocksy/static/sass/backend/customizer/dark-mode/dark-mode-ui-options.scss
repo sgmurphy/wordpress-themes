@@ -796,7 +796,7 @@
 
 		li {
 			color: lighten($background, 60%);
-			border-right-color: $border;
+			border-color: $border;
 
 			&.active {
 				&:after {

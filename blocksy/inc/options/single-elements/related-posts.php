@@ -64,7 +64,7 @@ $options = [
 												'__changed' => ['tablet', 'mobile']
 											],
 											'min' => 1,
-											'max' => 4,
+											'max' => 6,
 											'design' => 'block',
 											'attr' => [ 'data-width' => 'full' ],
 											'desc' => __('Number of columns', 'blocksy' ),
@@ -239,8 +239,8 @@ $options = [
 								$prefix . 'related_featured_image_ratio' => [
 									'label' => __( 'Image Ratio', 'blocksy' ),
 									'type' => 'ct-ratio',
+									'view' => 'inline',
 									'value' => '16/9',
-									'design' => 'inline',
 									'sync' => 'live'
 								],
 
@@ -250,6 +250,7 @@ $options = [
 									'value' => 'medium',
 									'view' => 'text',
 									'design' => 'inline',
+									'divider' => 'top',
 									'choices' => blocksy_ordered_keys(
 										blocksy_get_all_image_sizes()
 									),

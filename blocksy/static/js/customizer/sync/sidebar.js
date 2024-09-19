@@ -12,6 +12,7 @@ watchOptionsWithPrefix({
 		'widgets_title_wrapper',
 		'sidebar_type',
 		'sidebar_visibility',
+		'sidebar_stick_behavior',
 	],
 
 	render: ({ prefix }) => {
@@ -26,7 +27,7 @@ watchOptionsWithPrefix({
 			}
 		}
 
-		const sidebar = document.querySelector('.ct-sidebar')
+		const sidebar = document.querySelector('#sidebar .ct-sidebar')
 
 		if (!sidebar) return
 
@@ -44,7 +45,10 @@ watchOptionsWithPrefix({
 		sidebar.removeAttribute('data-sticky')
 
 		if (getOptionFor('has_sticky_sidebar') === 'yes') {
-			sidebar.dataset.sticky = ''
+			sidebar.dataset.sticky =
+				getOptionFor('sidebar_stick_behavior') === 'sidebar'
+					? 'sidebar'
+					: 'widgets'
 		}
 
 		;[...document.querySelectorAll('.widget-title')].map((el) =>

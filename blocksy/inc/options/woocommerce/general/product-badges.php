@@ -184,6 +184,17 @@ $options = [
 				'options' => [
 
 					[
+						'product_badge_font' => [
+							'type' => 'ct-typography',
+							'label' => __( 'Font', 'blocksy-companion' ),
+							'value' => blocksy_typography_default_values([
+								'size' => '12px',
+								'variation' => 'n6',
+								'line-height' => '1.2'
+							]),
+							'setting' => [ 'transport' => 'postMessage' ],
+						],
+				
 						'saleBadgeColor' => [
 							'label' => __( 'Sale Badge', 'blocksy' ),
 							'type'  => 'ct-color-picker',

@@ -1,3 +1,11 @@
+2.0.68: 2024-09-19
+- Improvement: Custom post types - improve handling of multiple non-hierarchical taxonomies
+- Improvement: Newsletter block correctly maintain container width when placed inside a footer column
+- Improvement: Product badges - add typography option
+- Improvement: Sidebar design choice does not correctly show separator in live preview when switching to it from a non-separator view
+- Improvement: Smarter detection for add to cart layer in the single product
+- Improvement: Sticky sidebar position issue in customizer preview if design choice (type) is changed
+
 2.0.67: 2024-09-12
 - Improvement: Better compatibility with Comment Form Editor with TinyMCE plugin
 - Improvement: Change archive cards content horizontal alignment option value from `left/right` to `start/end` for better RTL support

@@ -270,7 +270,7 @@ export const getSingleElementsVariables = () => ({
 
 	[`${prefix}_related_posts_slideshow_columns`]: [
 		{
-			selector: '.ct-related-posts .flexy-container',
+			selector: applyPrefixFor('.ct-related-posts .flexy-container', prefix),
 			variable: 'grid-columns-width',
 			responsive: true,
 			extractValue: (val) => {
