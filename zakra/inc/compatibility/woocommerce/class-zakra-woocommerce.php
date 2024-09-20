@@ -24,9 +24,9 @@ if ( ! class_exists( 'Zakra_WooCommerce' ) ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_scripts' ) );
 			add_filter( 'body_class', array( $this, 'woocommerce_active_body_class' ) );
 
-			add_action( 'woocommerce_before_quantity_input_field', array($this,'product_quantity_minus_button') );
-			add_action( 'woocommerce_after_quantity_input_field', array($this,'product_quantity_plus_button') );
-			add_action( 'wp_footer', array($this,'product_quantity') );
+			add_action( 'woocommerce_before_quantity_input_field', array( $this, 'product_quantity_minus_button' ) );
+			add_action( 'woocommerce_after_quantity_input_field', array( $this, 'product_quantity_plus_button' ) );
+			add_action( 'wp_footer', array( $this, 'product_quantity' ) );
 
 			// Remove WC wrappers.
 			remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
@@ -102,13 +102,13 @@ if ( ! class_exists( 'Zakra_WooCommerce' ) ) {
 
 		public function product_quantity_minus_button() {
 			?>
-            <button type="button" class="zak-qty-controller zak-qty-minus" data-qty="minus">-</button>
+			<button type="button" class="zak-qty-controller zak-qty-minus" data-qty="minus">-</button>
 			<?php
 		}
 
 		function product_quantity_plus_button() {
 			?>
-            <button type="button" class="zak-qty-controller zak-qty-plus" data-qty="plus">+</button>
+			<button type="button" class="zak-qty-controller zak-qty-plus" data-qty="plus">+</button>
 			<?php
 		}
 
@@ -284,15 +284,15 @@ if ( ! class_exists( 'Zakra_WooCommerce' ) ) {
 		public function get_sidebar( $sidebar ) {
 
 			if (
-				is_woocommerce() &&
+				( is_woocommerce() || is_cart() || is_checkout() ) &&
 				'zak-site-layout--left' === zakra_get_current_layout()
 			) {
 				return 'wc-left-sidebar';
 			}
 
 			if (
-				( is_woocommerce() && 'zak-site-layout--right' === zakra_get_current_layout() ) ||
-				( is_woocommerce() && 'zak-site-layout--2-sidebars' === zakra_get_current_layout() )
+				( ( is_woocommerce() || is_cart() || is_checkout() ) && 'zak-site-layout--right' === zakra_get_current_layout() ) ||
+				( ( is_woocommerce() || is_cart() || is_checkout() ) && 'zak-site-layout--2-sidebars' === zakra_get_current_layout() )
 			) {
 				return 'wc-right-sidebar';
 			}
@@ -313,8 +313,8 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
  *
  * @return void
 	 */
-	function zakra_woocommerce_filter_wrapper_before() {
-		echo '<div class="zak-wc-filter">';
+function zakra_woocommerce_filter_wrapper_before() {
+	echo '<div class="zak-wc-filter">';
 }
 
 /**

@@ -2,11 +2,11 @@
 
 Contributors: themegrill
 Author: ThemeGrill
-Version: 4.0.0.2
+Version: 4.0.1
 Tested up to: 6.6
 Requires PHP: 5.6
 Requires at least: 4.7
-Stable tag: 4.0.0.2
+Stable tag: 4.0.1
 
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -62,6 +62,11 @@ License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
 == Changelog ==
+= Version 4.0.1 - 2024-09-20 =
+* Fix - Menu color issue.
+* Fix - WooCommerce page sidebar issue.
+* Fix - Retina logo issue.
+
 = Version 4.0.0.2 - 2024-09-16 =
 * Fix       - Page sidebar issue.
 

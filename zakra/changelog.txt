@@ -1,4 +1,9 @@
 == Changelog ==
+= 4.0.1 - 2024-09-20 =
+* Fix - Menu color issue.
+* Fix - WooCommerce page sidebar issue.
+* Fix - Retina logo issue.
+
 = 4.0.0.2 - 2024-09-16 =
 * Fix       - Page sidebar issue.
 

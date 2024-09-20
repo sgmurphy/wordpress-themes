@@ -138,7 +138,7 @@ class Zakra_Meta_Box {
 			array(
 				'show_in_rest'  => true,
 				'single'        => true,
-				'default'       => get_theme_mod( 'zakra_menu_item_color', '#16181a' ),
+				'default'       => get_theme_mod( 'zakra_menu_item_color', '' ),
 				'type'          => 'string',
 				'auth_callback' => '__return_true',
 			)
@@ -149,7 +149,7 @@ class Zakra_Meta_Box {
 			array(
 				'show_in_rest'  => true,
 				'single'        => true,
-				'default'       => get_theme_mod( 'zakra_menu_item_hover_color', '#027abb' ),
+				'default'       => get_theme_mod( 'zakra_menu_item_hover_color', '' ),
 				'type'          => 'string',
 				'auth_callback' => '__return_true',
 			)
@@ -160,7 +160,7 @@ class Zakra_Meta_Box {
 			array(
 				'show_in_rest'  => true,
 				'single'        => true,
-				'default'       => get_theme_mod( 'zakra_menu_item_active_color', '#027abb' ),
+				'default'       => get_theme_mod( 'zakra_menu_item_active_color', '' ),
 				'type'          => 'string',
 				'auth_callback' => '__return_true',
 			)

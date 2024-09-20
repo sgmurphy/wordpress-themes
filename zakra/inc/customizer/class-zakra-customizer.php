@@ -123,6 +123,10 @@ if ( ! class_exists( 'Zakra_Customizer' ) ) :
 		 * @since 3.0.0
 		 */
 		public function customize_preview_js() {
+			if ( zakra_maybe_enable_builder() ) {
+				set_theme_mod( 'zakra_enable_builder', true );
+				update_option( 'zakra_builder_migration', true );
+			}
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 			wp_enqueue_script(

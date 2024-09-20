@@ -92,18 +92,26 @@ if ( ! function_exists( 'zakra_change_logo_attr' ) ) :
 
 		$custom_logo = get_theme_mod( 'custom_logo' );
 		$retina_logo = get_theme_mod( 'zakra_retina_logo' );
-
 		if ( $custom_logo && $retina_logo && isset( $attr['class'] ) && 'custom-logo' === $attr['class'] ) {
-
 			$custom_logo_src = wp_get_attachment_image_src( $custom_logo, 'full' );
-			$custom_logo_url = $custom_logo_src[0];
-
-			// Set srcset.
-			$attr['srcset'] = $custom_logo_url . ' 1x, ' . $retina_logo . ' 2x';
-		}
-
-		return $attr;
-	}
+			if ( ! $custom_logo_src ) {
+				return $attr;
+			}       $custom_logo_url = $custom_logo_src[0];
+			if ( is_numeric( $retina_logo ) ) {
+				$retina_logo_attachment = wp_get_attachment_image_src( $retina_logo, 'full' );
+				if ( isset( $retina_logo_attachment[0] ) ) {
+					$retina_logo_src = $retina_logo_attachment[0];
+				}
+			} else {
+				$retina_logo_id         = attachment_url_to_postid( $retina_logo );
+				$retina_logo_attachment = wp_get_attachment_image_src( $retina_logo_id, 'full' );
+				if ( isset( $retina_logo_attachment[0] ) ) {
+							$retina_logo_src = $retina_logo_attachment[0];
+				}
+			}         if ( isset( $retina_logo_src ) ) {
+				$attr['srcset'] = $custom_logo_url . ' 1x, ' . $retina_logo_src . ' 2x';
+			}
+		}    return $attr;}
 endif;
 
 add_filter( 'wp_get_attachment_image_attributes', 'zakra_change_logo_attr', 10, 3 );

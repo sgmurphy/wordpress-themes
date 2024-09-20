@@ -36,10 +36,12 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 			add_action( 'themegrill_ajax_demo_imported', [ $this, 'zakra_builder_migration' ], 25 );
 
 			$enable_builder = get_theme_mod( 'zakra_enable_builder', '' );
+
 			if ( $enable_builder ) {
 				add_action( 'after_setup_theme', [ $this, 'zakra_builder_migration' ], 25 );
 			}
 
+			add_action( 'after_setup_theme', [ $this, 'zakra_outside_background_migration' ], 25 );
 			// add_action( 'after_setup_theme', [ $this, 'zakra_builder_rollback' ], 25 );
 		}
 
@@ -1412,28 +1414,7 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 		 */
 		public function zakra_builder_migration() {
 
-			$background_color      = get_theme_mod( 'background_color' );
-			$background_image      = get_theme_mod( 'background_image' );
-			$background_preset     = get_theme_mod( 'background_preset' );
-			$background_position   = get_theme_mod( 'background_position' );
-			$background_size       = get_theme_mod( 'background_size' );
-			$background_repeat     = get_theme_mod( 'background_repeat' );
-			$background_attachment = get_theme_mod( 'background_attachment' );
-
-			if ( $background_color || $background_image || $background_preset || $background_position || $background_size || $background_repeat || $background_attachment ) {
-				$background_value = array(
-					'background-color'      => $background_color,
-					'background-image'      => $background_image,
-					'background-repeat'     => $background_repeat,
-					'background-position'   => $background_position,
-					'background-size'       => $background_size,
-					'background-attachment' => $background_attachment,
-				);
-
-				set_theme_mod( 'zakra_outside_container_background', $background_value );
-			}
-
-			if ( get_option( 'zakra_builder_migration' ) ) {
+			if ( get_option( 'zakra_builder_migration' ) && ! doing_action( 'themegrill_ajax_demo_imported' ) ) {
 				return;
 			}
 
@@ -1651,7 +1632,7 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 			$menu_locations = get_theme_mod( 'nav_menu_locations' );
 
 				// Check if 'menu-mobile' is set
-			if ( ! isset( $menu_locations['menu-mobile'] ) ) {
+			if ( ! isset( $menu_locations['menu-mobile'] ) && isset( $menu_locations['menu-primary'] ) ) {
 				// Set 'menu-mobile' to the value of 'primary' menu location
 				$menu_locations['menu-mobile'] = $menu_locations['menu-primary'];
 
@@ -2007,6 +1988,43 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 			update_option( 'zakra_builder_migration', true );
 		}
 
+		public function zakra_outside_background_migration() {
+
+			if ( get_option( 'zakra_outside_background_migration' ) ) {
+				return;
+			}
+
+			$background_color      = get_theme_mod( 'background_color' );
+			$background_image      = get_theme_mod( 'background_image' );
+			$background_preset     = get_theme_mod( 'background_preset' );
+			$background_position   = get_theme_mod( 'background_position' );
+			$background_size       = get_theme_mod( 'background_size' );
+			$background_repeat     = get_theme_mod( 'background_repeat' );
+			$background_attachment = get_theme_mod( 'background_attachment' );
+
+			if ( $background_color || $background_image || $background_preset || $background_position || $background_size || $background_repeat || $background_attachment ) {
+				$background_value = array(
+					'background-color'      => $background_color,
+					'background-image'      => $background_image,
+					'background-repeat'     => $background_repeat,
+					'background-position'   => $background_position,
+					'background-size'       => $background_size,
+					'background-attachment' => $background_attachment,
+				);
+
+				set_theme_mod( 'zakra_outside_container_background', $background_value );
+				remove_theme_mod( 'background_color' );
+				remove_theme_mod( 'background_image' );
+				remove_theme_mod( 'background_preset' );
+				remove_theme_mod( 'background_position' );
+				remove_theme_mod( 'background_size' );
+				remove_theme_mod( 'background_attachment' );
+				remove_theme_mod( 'background_repeat' );
+			}
+
+			update_option( 'zakra_outside_background_migration', true );
+		}
+
 		public static function remove_component( $component_to_remove, &$_array ) {
 			foreach ( $_array as $key => &$value ) {
 				if ( is_array( $value ) ) {
@@ -2113,7 +2131,7 @@ if ( ! class_exists( 'Zakra_Migration' ) ) {
 			 * If migration is already run then return false.
 			 *
 			 */
-			$migrated = get_option( 'zakra_customizer_migration_v3' );
+			$migrated = get_option( 'zakra_customizer_migration_v3' ) || get_theme_mod( 'zakra_enable_builder' );
 
 			if ( $migrated || wp_doing_ajax() ) {
 
