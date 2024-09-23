@@ -8,7 +8,7 @@
  */
 ?>
     <div class="container-fluid missed-section mg-posts-sec-inner">
-        <?php do_action('newsup_action_header_footer_missed'); ?>
+        <?php do_action('newsup_action_footer_missed'); ?>
     </div>
 <!--==================== FOOTER AREA ====================-->
 <?php $newsup_footer_widget_background = get_theme_mod('newsup_footer_widget_background');
@@ -64,48 +64,12 @@ if($newsup_footer_widget_background != '') { ?>
         </div>
         <!--End mg-footer-widget-area-->
         <div class="mg-footer-copyright">
-            <div class="container-fluid">
-                <div class="row">
-                    <?php $newsup_enable_footer_menu = esc_attr(get_theme_mod('newsup_enable_footer_menu','true'));
-                    if($newsup_enable_footer_menu == true){ ?>
-                    <div class="col-md-6 text-xs">
-                    <?php } else { ?> 
-                    <div class="col-md-12 text-xs text-center">
-                    <?php } ?>
-                        <p>
-                        <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'newsup' ) ); ?>">
-                        <?php
-                        /* translators: placeholder replaced with string */
-                        printf( esc_html__( 'Proudly powered by %s', 'newsup' ), 'WordPress' );
-                        ?>
-                        </a>
-                        <span class="sep"> | </span>
-                        <?php
-                        /* translators: placeholder replaced with string */
-                        printf( esc_html__( 'Theme: %1$s by %2$s.', 'newsup' ), 'Newsup', '<a href="' . esc_url( __( 'https://themeansar.com/', 'newsup' ) ) . '" rel="designer">Themeansar</a>' );
-                        ?>
-                        </p>
-                    </div>
-                        <?php if($newsup_enable_footer_menu == true){ ?>
-                            <div class="col-md-6 text-md-right text-xs">
-                                <?php wp_nav_menu( array(
-        								'theme_location' => 'footer',
-        								'container'  => 'nav-collapse collapse navbar-inverse-collapse',
-        								'menu_class' => 'info-right',
-        								'fallback_cb' => 'newsup_fallback_page_menu',
-        								'walker' => new newsup_nav_walker()
-        							) ); 
-        						?>
-                            </div>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
+            <?php do_action('newsup_action_footer_copyright'); ?>
         </div>
         <!--/overlay-->
-        </footer>
-        <!--/footer-->
-    </div>
+        </div>
+    </footer>
+    <!--/footer-->
   </div>
     <!--/wrapper-->
     <!--Scroll To Top-->
